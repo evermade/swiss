@@ -1,0 +1,13 @@
+{
+  "name": "Evermade Bare Theme",
+  "version": "1.0.0",
+  "authors": [
+    "Paul Stewart <paul.stewart@evermade.fi>"
+  ],
+  "dependencies": {
+    "modernizr": "latest",
+    "jquery": "latest",
+    "bootstrap-sass": "~3.3.4"
+  },
+  "private": true
+}
