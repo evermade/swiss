@@ -1,5 +1,9 @@
 var em = {}; //global var for all evermade modules 
 
 $(document).ready(function(){
-	em.base.init();
+
+	//lets loop the em object for keys are call their init functions
+	for(var key in em){
+		em[key].init();
+	}
 });

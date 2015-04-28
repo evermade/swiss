@@ -6,7 +6,7 @@ class em {
 	static public function blocks($name='blocks'){
 		//loop the blocks fields		
 		while(has_sub_field($name)){
-			$template = get_template_directory().'/templates/blocks/'.em::clean_template_name(get_row_layout()).'.php';
+			$template = get_template_directory().'/em/blocks/'.em::clean_template_name(get_row_layout()).'/index.php';
 			if(!file_exists($template)) continue;
 			include($template);
 		}
