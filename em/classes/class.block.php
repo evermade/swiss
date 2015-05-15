@@ -69,14 +69,16 @@ class Block extends BlockHelper{
 	}
 
 	public function addClass($class, $key){
-		if(!isset($this->classes[$key])){
+		if(!empty($class)) return null;
+
+		if(!isset($this->classes[$key]) || !is_array($this->classes[$key])){
 			$this->classes[$key] = array();
 		}
 		return array_push($this->classes[$key], $class);
 	}
 
 	public function displayClasses($key){
-		if(!is_array($this->classes[$key])) return null;
+		if(!is_array($this->classes[$key]) || empty($this->classes[$key])) return null;
 		return " ".implode(" ", $this->classes[$key]);
 	}
 
