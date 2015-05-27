@@ -1,19 +1,20 @@
 <?php 
 //lets keep block data in class for encapsulation and stopping conflicts across blocks
 $block = new Block;
+global $post;
 
 //set and get the fields for this post
-$block->set_fields(array('posts', 'posts_how_many'));
-$block->get_fields();
+$block->get_fields(array('posts', 'posts_how_many'));
 
 if(empty($block->fields['posts'])){
+
 	$block->fields['posts_how_many'] = (empty($block->fields['posts_how_many']))? 4 : $block->fields['posts_how_many'];
+
 	$args = array(
-	'posts_per_page'=>$block->fields['posts_how_many'],
-	'post_type'=>'post'
+		'posts_per_page'=>$block->fields['posts_how_many'],
+		'post_type'=>'post'
 	);
 
-	global $post;
 	$custom_posts = new WP_Query($args);
 	$block->data['posts'] = $custom_posts->posts;
 }
