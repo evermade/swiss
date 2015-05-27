@@ -7,14 +7,19 @@ class Block extends BlockHelper{
 
 	var $fields = array(); //for ACF fields only
 	var $data = array(); //for custom data, public accesible
-	var $repeater_blocks = array(); //for ACF repeater fields
+	var $repeaters = array(); //for ACF repeater fields
 	var $styles = array(); //for generic styling such as background images, css classes etc
 
 	public function __construct(){
 	}
 
 	//we use get_sub_field be default is we are currently in a loop of a post, so we are getting sub fields of the site blocks object
-	public function get_fields($parent=true){
+	public function get_fields($fields=array(), $parent=true){
+
+		if(!is_array($fields)) return false;
+
+		$this->fields = $fields;
+
 		foreach($this->fields as $field){
 			if($parent){
 				$this->fields[$field] = get_sub_field($field);
@@ -31,21 +36,34 @@ class Block extends BlockHelper{
 		return $this->data[$key] = $value;
 	}
 
-	//set acf fields
-	public function set_fields($fields = array()){
-		return $this->fields = $fields;
+	//get our data field
+	public function get($key){
+		if(!isset($this->data[$key])){
+			return null;
+		}
+		return $this->data[$key];
 	}
 
-	public function setup_repeater_field($name=null){
-		$this->repeater_blocks = get_sub_field($name);
-		$this->data['total'] = sizeof($this->repeater_blocks);
-		$this->setup_grid_columns();
+	public function get_repeater_field($repeaters= array()){
+
+		if(!is_array($repeaters)) return false;
+
+		foreach($repeaters as $repeater){
+			$this->repeaters[$repeater] = get_sub_field($repeater);
+			$this->data[$repeater.'_total'] = sizeof($this->repeaters[$repeater]);
+			$this->setup_grid_columns($repeater);
+		}
+		
 		return true;
 	}
 
+}
+
+class BlockHelper {
+
 	public function set_background_image($url=null, $name='background'){
 		if(!empty($url)){
-			$this->styles[$name] = 'background-image:url('.$url.'); background-size:cover;';
+			$this->styles[$name] = 'background-image:url('.$url.');';
 		}
 		else {
 			$this->styles[$name] = null;
@@ -60,13 +78,21 @@ class Block extends BlockHelper{
 		return $this->styles[$field] = null;
 	}
 
-	public function setup_grid_columns(){
-		$this->data['grid_columns'] = 'col-md-12'; //default
-		if($this->data['total'] > 1){
-			$this->data['grid_columns'] = 'col-sm-'.em::number_of_columns($this->data['total']);
+	public function setup_grid_columns($repeater=null){
+		$this->data[$repeater.'_grid_columns'] = 'col-xs-12'; //default
+
+		if(!isset($this->data[$repeater.'_total'])){
+			return $this->data[$repeater.'_grid_columns'];
 		}
-		return true;
+
+		if($this->data[$repeater.'_total'] > 1){
+			$this->data[$repeater.'_grid_columns'] .= ' col-md-'.em::number_of_columns($this->data[$repeater.'_total']);
+		}
+
+		return $this->data[$repeater.'_grid_columns'];
 	}
+
+	//some methods for helping with css stuff
 
 	public function addClass($class, $key){
 		if(!empty($class)) return null;
@@ -81,9 +107,5 @@ class Block extends BlockHelper{
 		if(!is_array($this->classes[$key]) || empty($this->classes[$key])) return null;
 		return " ".implode(" ", $this->classes[$key]);
 	}
-
-}
-
-class BlockHelper {
 
 }

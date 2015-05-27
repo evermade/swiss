@@ -4,6 +4,13 @@
  */
 class em {
 	static public function blocks($name='blocks'){
+
+		//lets check is ACF available
+		if (!is_plugin_active('advanced-custom-fields-pro/acf.php')){
+			em::log("advanced-custom-fields-pro is not installed/active.");
+			return false;
+		}
+
 		//loop the blocks fields		
 		while(has_sub_field($name)){
 			$template = get_template_directory().'/em/blocks/'.em::clean_template_name(get_row_layout()).'/index.php';
@@ -14,6 +21,14 @@ class em {
 
 	static public function clean_template_name($name){
 		return str_replace(' ', '_', strtolower($name));
+	}
+
+	static public function log($msg=null){
+		if(defined('WP_DEBUG') && WP_DEBUG){
+			echo '<pre>'.$msg.'</pre>';
+			return true;
+		}
+		return false;
 	}
 
 	//for creating dynamic columns with boostrap grid

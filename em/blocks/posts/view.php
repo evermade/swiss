@@ -1,3 +1,6 @@
+<?php
+global $post; 
+?>
 <section class="section">
 	<div class="container">
 		
@@ -7,7 +10,7 @@
 			</div>
 		</div>
 
-		<?php if(!empty($block->data['posts'])): global $post; foreach(array_chunk($block->data['posts'], $block->data['per_row']) as $set): ?>
+		<?php if(!empty($block->data['posts'])): foreach(array_chunk($block->data['posts'], $block->data['per_row']) as $set): ?>
 
 			<div class="row">
 
@@ -17,8 +20,7 @@
 				$post_block = new Block;
 
 				//set and get the fields for this post
-				$post_block->fields = array('test');
-				$post_block->get_fields(false);//false signals we need to use the native get_fields as its not a sub field at this level
+				$post_block->get_fields(array('test'), false);//false signals we need to use the native get_fields as its not a sub field at this level
 				?>
 				
 				<div class="col-xs-12 col-sm-6 col-md-<?php echo $block->data['grid_columns'];?>">
