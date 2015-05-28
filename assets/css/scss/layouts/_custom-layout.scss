@@ -1,0 +1,10 @@
+.custom_layout {
+	
+	section {
+	    @include make-row();
+	    
+	    article {
+	        @include make-lg-column(2);
+	    }
+	}
+}

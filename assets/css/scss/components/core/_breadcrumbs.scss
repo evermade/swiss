@@ -1,0 +1,23 @@
+.breadcrumbs {
+    list-style: none;
+    padding: 3px;
+    margin: 0 0 10px 0;
+    background: #eee;
+    li {
+        display: inline-block;
+        position: relative;
+        &:before {
+            content: "\f101";
+            font-family: "FontAwesome";
+            padding-right: 3px;
+        }
+        &:first-child {
+            &:before {
+                content: "";
+            }
+        }
+        a {
+            padding: 0;
+        }
+    }
+}

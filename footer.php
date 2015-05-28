@@ -11,8 +11,10 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri();?>/assets/vendor/jquery/dist/jquery.min.js"><\/script>')</script>
 <script src="<?php echo get_template_directory_uri();?>/assets/vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
-<script src="<?php echo get_template_directory_uri();?>/assets/dist/main.all.js"></script>
+<script src="<?php echo get_template_directory_uri();?>/assets/dist/js/myquery.js"></script>
 
 <?php wp_footer();?>
+
+</div>
 </body>
 </html>

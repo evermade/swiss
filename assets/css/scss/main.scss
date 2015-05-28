@@ -1,15 +1,37 @@
-//include bootstrap
-$icon-font-path: "../../assets/vendor/bootstrap-sass/assets/fonts/bootstrap/" !default; 
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap";
+//include vendor grid and get responsive utlilities 
+@import "../../vendor/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
-//config
-@import "config/colors";
+//include the base variables and mixins
+@import "base/variables";
+@import "base/mixins";
 
-//mixins
-@import "mixins/typography";
+//include the base helpers, typography etc
+@import "base/base";
+@import "base/helpers";
+@import "base/typography";
 
-//components
-@import "components/columns";
+//include the components core which can/would be amended to that project
+@import "components/core/navigation";
+@import "components/core/print";
+@import "components/core/alerts";
+@import "components/core/forms";
+@import "components/core/tables";
+@import "components/core/btns";
 
-//blocks
-@import "../../../em/blocks/columns/index";
+//lists
+@import "components/core/lists";
+@import "components/core/lists-social";
+
+@import "components/core/tabs";
+@import "components/core/accordians";
+@import "components/core/pagination";
+@import "components/core/breadcrumbs";
+@import "components/core/grid";
+
+//include custom components, or modifiers of core components
+@import "components/all";
+
+//include our layouts
+@import "layouts/general";
+@import "layouts/header";
+@import "layouts/footer";

@@ -1,0 +1,17 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: $wrapper-padding 0;
+  max-width: $container-max-width;
+
+  @include bp(sm) {
+  	padding:$wrapper-padding-sm 0;
+  }
+  @include bp(md) {
+  	padding:$wrapper-padding-md 0;
+  }
+
+  &--full {
+    max-width: $container-full-max-width;
+  }
+}

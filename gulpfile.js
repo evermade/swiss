@@ -6,17 +6,18 @@ var gulp = require('gulp');
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     jshint = require('gulp-jshint'),
+    //watch = require('gulp-watch'),
     autoprefixer = require('gulp-autoprefixer');
 
 //global src, dist and watch paths
 var paths = {
   css: {
-    src: ['./assets/css/scss/**/*.scss', './assets/vendor/bootstrap-sass/assets/stylesheets/bootstrap/**/*.scss', './em/blocks/**/*.scss'],
-    dist: './assets/dist/'
+    src: ['assets/css/scss/**/*.scss', 'assets/vendor/bootstrap-sass/assets/stylesheets/**/*.scss'],
+    dist: 'assets/dist/css/'
   },
   js: {
-    src: ['./assets/js/*.js', './assets/js/components/**/*.js', './em/blocks/**/*.js'],
-    dist: './assets/dist/'
+    src: ['assets/js/*.js', 'assets/js/components/**/*.js'],
+    dist: 'assets/dist/js/'
   }
 }
 
@@ -38,7 +39,7 @@ gulp.task('js', function () {
       .pipe(jshint())
       .pipe(jshint.reporter('jshint-stylish'))
       .pipe(uglify())
-      .pipe(concat('main.all.js'))
+      .pipe(concat('myquery.js'))
       .pipe(gulp.dest(paths.js.dist));
 });
 

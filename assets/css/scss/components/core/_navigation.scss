@@ -1,0 +1,191 @@
+//navigation stuff
+ //basic nav bar for re use
+
+
+body.nav-open {
+    overflow-y: hidden;
+
+    .nav {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .mobile-menu-button {
+        color: #fff;
+    }
+}
+
+$mobile-menu-toggle: "lg";
+
+ .nav {
+     &__list {
+         &, ul {
+             padding: 0;
+             margin: 0;
+             list-style-type: none;
+         }
+         li {
+             display: inline-block;
+             position: relative;
+             float: left;
+             width: auto;
+             background: $brand-color;
+            @include transition(all, 0.3s, ease-in-out);
+            padding: 10px 20px;
+
+            &:hover {
+                background: lighten($brand-color, 4%);
+            }
+         }
+        li a {
+             color: #fff;
+         }
+         li ul {
+             position: absolute;
+             top: 100%;
+             left: 0;
+             width: 150%;
+             @include transition(all, 0.3s, ease-in-out);
+             opacity: 0;
+             visibility: hidden;
+         }
+         li:hover ul {
+            opacity: 1;
+            visibility: visible;
+            li:hover {
+                 background: lighten($brand-color, 5%);
+             }
+         }
+         li ul li {
+             display: block;
+             float: none;
+             width: 100%;
+            background: lighten($brand-color, 4%);
+         }
+
+     }
+ }
+ 
+ .nav-bar {
+     position: relative;
+     z-index: 100;
+
+     //the header variation navbar
+     &--header {
+         // position: absolute;
+         // top: 0;
+         // left: 0;
+         width: 100%;
+
+        .nav-bar__logo {
+             display: block;
+             width: 100%;
+             max-width: 200px;
+             height: 50px;
+             background: $brand-color;
+             background-size: contain;
+             text-indent: -9990px;
+             color: $text-color;
+             float: left;
+         }
+
+         .mobile-menu-button {
+             display: none;
+             font-size: 2em;
+             border: none;
+             background: none;
+             padding: 0;
+             margin: 0;
+             &:focus {
+                 outline: none;
+             }
+             &--show {
+                 float: right;
+                 color: $brand-color;
+             }
+             position: relative;
+             z-index: 200;
+             @include bp($mobile-menu-toggle, max) {
+                 display: block;
+             }
+         }
+
+         .nav {
+
+             //mobile nav
+             @include bp($mobile-menu-toggle, max) {
+
+                visibility: hidden;
+                opacity: 0;
+
+                position:fixed;
+                top:0;
+                left:0;
+                z-index: 100;
+                height:100%;
+                width:100%;
+                background: $brand-color;
+
+                overflow-y: auto;
+                overflow-x: hidden;
+
+                text-align: center;
+
+                @include transition(all, 0.2s, ease-in-out);
+
+                &__list {
+
+                    float: left;
+                    width: 100%;
+                    
+                    padding-top: 100px;
+
+                     li {
+                         background: $brand-color;
+                         padding: 2px 0;
+                         display: block;
+                         float: left;
+                         width: 100%;
+                     }
+                     li a {
+                         color: #fff;
+                         font-size: em(36px);
+                         font-weight: 700;
+                         width: 70%;
+                         @include center-block;
+
+                         background: rgba(255, 255, 255, 0);
+                         @include transition(all, 0.4s, ease-in-out);
+
+                         padding: 10px 0;
+
+                         &:hover {
+                            background: rgba(255, 255, 255, 0.2);
+                         }
+                     }
+                }
+
+             }
+             //desktop nav
+             @include bp($mobile-menu-toggle) {
+                 float: right;
+                 &__list {
+                     li {
+                     }
+                     li a {
+                     }
+                     li:hover {
+                         
+                     }
+                     li ul li {
+                        
+                     }
+                     li ul li:hover {
+                     }
+                     li ul li a {}
+                 }
+             }
+         }
+
+     }
+ }

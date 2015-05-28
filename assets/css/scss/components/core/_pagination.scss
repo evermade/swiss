@@ -1,0 +1,20 @@
+.pagination {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+        display: inline-block;
+        position: relative;
+        a{
+            display: block;
+        	padding: 5px 10px;
+            background: $brand-color;
+            color: #fff;
+            @include transition();
+
+            &.active, &:hover {
+                background: lighten($brand-color, 10%);
+            }
+        }
+    }
+}

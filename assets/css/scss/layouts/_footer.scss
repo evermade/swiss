@@ -1,0 +1,13 @@
+.footer {
+
+	text-align: center;
+
+	@include bp(sm){
+		
+		text-align: left;
+
+		&__credits {
+			text-align: right;
+		}
+	}
+}

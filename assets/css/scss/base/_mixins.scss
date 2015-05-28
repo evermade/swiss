@@ -1,0 +1,95 @@
+@function em($px, $base: $font-size-base) {
+    @return ($px / $base) * 1em;
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin transition($properties: all, $duration: .3s, $easing: ease-out) {
+  @if length($properties) > 1 {
+    transition-property: $properties;
+    transition-duration: $duration;
+    transition-timing-function: $easing;
+  } @else {
+    transition: $properties $duration $easing;
+  }
+}
+
+@mixin circle($radius) {
+  @include border-radius(50%);
+  height: $radius;
+  width: $radius;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+// Breakpoint mixins
+@mixin bp($point:"sm", $mobile-first: "min") {
+
+  @if $point == sm { 
+    @media (#{$mobile-first}-width: $screen-sm-min) { @content }
+  }
+  @if $point == md { 
+    @media (#{$mobile-first}-width: $screen-md-min) { @content; }
+  }
+  @else if $point == lg {
+    @media (#{$mobile-first}-width: $screen-lg-min) { @content; }
+  }
+
+}
+
+// some mixins to help with font sizes
+// base/_variables.scss
+@mixin font-size($size: base){
+    @if $size == base { 
+      font-size: $font-size-base;
+    }
+
+    @if $size == sm { 
+      font-size: $font-size-sm;
+    }
+
+    @if $size == md { 
+      font-size: $font-size-md;
+    }
+
+    @if $size == lg { 
+      font-size: $font-size-lg;
+    }
+
+    @if $size == xlg { 
+      font-size: $font-size-xlg;
+    }
+
+    @if $size == xxlg { 
+      font-size: $font-size-xxlg;
+    }
+
+    @if $size == xxxlg { 
+      font-size: $font-size-xxlg;
+      @include bp(sm){
+        font-size: $font-size-xxxlg;
+      }
+    }
+}

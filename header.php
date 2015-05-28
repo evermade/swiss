@@ -9,7 +9,7 @@
 	<title>Evermade Bare Theme</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/dist/main.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/dist/css/main.css">
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 	<!--[if lt IE 9]>
@@ -17,6 +17,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
 	<![endif]-->
+
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/vendor/fontawesome/css/font-awesome.min.css">
 
 	<?php wp_head();?>
 </head>
@@ -27,16 +30,24 @@
       You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.    </div>
   <![endif]-->
 
-<header>
+<div class="body">
 
-      <div class="container">
+<header class="header">
+	
+		<div class="nav-bar nav-bar--header">
 
-        <a href="/" title="<?php echo get_bloginfo('name'); ?>"><?php echo get_bloginfo('name'); ?></a>
-      
-            <nav role="navigation">
-              <?php wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => '')); ?>
-          	</nav>
+			<div class="container">
 
-      </div><!-- end of wrapper -->
+				<a href="/" title="embaretheme" class="nav-bar__logo">embaretheme</a>
+
+				<button class="mobile-menu-button mobile-menu-button--show"><i class="fa fa-bars"></i></button>
+			
+				<nav class="nav" role="navigation">
+	              <?php wp_nav_menu(array('theme_location' => 'Primary Navigation', 'menu_class' => 'nav__list')); ?>
+	          	</nav>
+
+			</div><!-- end of wrapper -->
+
+		</div><!-- end of bar -->
 
 </header><!--end of header -->
