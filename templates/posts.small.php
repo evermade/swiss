@@ -4,7 +4,7 @@
 foreach(array_chunk($custom_posts->posts, 99) as $set ):
 	foreach($set as $post): setup_postdata($post) ?>
 		
-	<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>	
+	<li><a href="<?php the_permalink(); ?>" class="btn"><?php the_title(); ?></a></li>	
 
 <?php endforeach;
 endforeach; wp_reset_postdata(); ?>

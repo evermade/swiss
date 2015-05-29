@@ -21,34 +21,6 @@
             "max": "",
             "layouts": [
                 {
-                    "key": "54de062e10c2d",
-                    "name": "image",
-                    "label": "Image",
-                    "display": "row",
-                    "sub_fields": [
-                        {
-                            "key": "field_54de063310c2e",
-                            "label": "image",
-                            "name": "image",
-                            "prefix": "",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "preview_size": "thumbnail",
-                            "library": "all"
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                {
                     "key": "54de0df974740",
                     "name": "posts",
                     "label": "Posts",
@@ -68,7 +40,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "default_value": 4,
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
@@ -278,9 +250,9 @@
                             "label": "Text Color",
                             "name": "columns_text_color",
                             "prefix": "",
-                            "type": "select",
+                            "type": "radio",
                             "instructions": "If your background is dark then select light text, and vice versa. If your background is light then select dark text.",
-                            "required": 1,
+                            "required": 0,
                             "conditional_logic": [
                                 [
                                     {
@@ -296,87 +268,46 @@
                                 "id": ""
                             },
                             "choices": {
-                                "light": "Light",
-                                "dark": "Dark"
+                                "columns-text--dark": "Dark",
+                                "columns-text--light": "Light"
                             },
-                            "default_value": {
-                                "dark": "dark"
-                            },
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "placeholder": "",
-                            "disabled": 0,
-                            "readonly": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                {
-                    "key": "54f07f589b033",
-                    "name": "slider",
-                    "label": "Slider",
-                    "display": "row",
-                    "sub_fields": [
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "dark",
+                            "layout": "horizontal"
+                        },
                         {
-                            "key": "field_54f07f5e9b034",
-                            "label": "Slides",
-                            "name": "slider_slides",
+                            "key": "field_556816d44d3b3",
+                            "label": "Padding",
+                            "name": "columns_padding",
                             "prefix": "",
-                            "type": "repeater",
-                            "instructions": "",
+                            "type": "radio",
+                            "instructions": "If you have blocks up against each other, then you can remove the top\/bottom to push them against each other to bring the layout together.",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5530ec4b55db1",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
                                 "id": ""
                             },
-                            "min": "",
-                            "max": "",
-                            "layout": "row",
-                            "button_label": "Add Slide",
-                            "sub_fields": [
-                                {
-                                    "key": "field_54f07f6d9b035",
-                                    "label": "Image",
-                                    "name": "slide_image",
-                                    "prefix": "",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "preview_size": "thumbnail",
-                                    "library": "all"
-                                },
-                                {
-                                    "key": "field_54f07f7e9b036",
-                                    "label": "Content",
-                                    "name": "slide_content",
-                                    "prefix": "",
-                                    "type": "wysiwyg",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1
-                                }
-                            ]
+                            "choices": {
+                                "columns-padding--all": "All",
+                                "columns-padding--top": "Top",
+                                "columns-padding--bottom": "Bottom",
+                                "columns-padding--none": "None"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "all",
+                            "layout": "horizontal"
                         }
                     ],
                     "min": "",
@@ -400,5 +331,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430220106
+    "modified": 1432886027
 }

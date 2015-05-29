@@ -6,10 +6,7 @@ class em {
 	static public function blocks($name='blocks'){
 
 		//lets check is ACF available
-		if (!is_plugin_active('advanced-custom-fields-pro/acf.php')){
-			em::log("advanced-custom-fields-pro is not installed/active.");
-			return false;
-		}
+		if (!em::is_acf_active()) return false;
 
 		//loop the blocks fields		
 		while(has_sub_field($name)){
@@ -82,13 +79,28 @@ class em {
 		return substr($s, 0, $l = min(strlen($s),  $l + $i)) . (count($tags = array_reverse($tags)) ? '</' . implode('></', $tags) . '>' : '') . (strlen($s) > $l ? $e : '');
 	}
 
-	static function my_options($group_prefix, $group_fields){
+	static function is_acf_active(){
+		if(!function_exists('has_sub_field')){
+			em::log("advanced-custom-fields-pro is not installed/active.");
+			return false;
+		}
+
+		return true;
+	}
+
+	static function acf_options($group_fields){
+		
+		if(empty($group_fields) || !is_array($group_fields) || !em::is_acf_active()){
+			return false;
+		}
+
 		$group_data = array();
 
 		foreach($group_fields as $field){
-			$group_data[$field] = get_field($group_prefix.$field, 'option');
+			$group_data[$field] = get_field($field, 'option');
 		}
 
 		return $group_data;
 	}
+
 }

@@ -1,4 +1,4 @@
-<section class="section">
+<section class="section<?php echo $block->getCss('section');?>">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">

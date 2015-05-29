@@ -30,6 +30,11 @@
 
 //include custom components, or modifiers of core components
 @import "components/all";
+@import "components/blog";
+@import "components/single-post";
+
+//blocks scss
+@import "../../../em/blocks/columns/_index.scss";
 
 //include our layouts
 @import "layouts/general";

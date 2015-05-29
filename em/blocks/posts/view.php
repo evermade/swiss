@@ -27,7 +27,7 @@ global $post;
 					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<?php the_excerpt(); ?>
 					<?php if($post_block->fields['test']): ?><strong><?php echo $post_block->fields['test']; ?></strong><?php endif; ?>
-					<p><a href="<?php the_permalink(); ?>">Read More</a></p>
+					<p><a href="<?php the_permalink(); ?>" class="btn">Read More</a></p>
 				</div>
 						
 				<?php endforeach; ?>

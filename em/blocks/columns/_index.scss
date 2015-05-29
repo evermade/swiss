@@ -4,7 +4,31 @@
 		max-width: 100%;
 	}
 
-	&--modifier {
-		
+	&-padding {
+		&--top {
+			.container {
+				padding-bottom: 0;
+			}
+		}
+		&--bottom {
+			.container {
+				padding-top: 0;
+			}
+		}
+		&--none {
+			.container {
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+		}
 	}
+
+	&-text {
+		&--dark {
+		}
+		&--light {
+			color: #fff;
+		}
+	}
+
 }

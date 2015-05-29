@@ -1,0 +1,10 @@
+.single-post {
+	&__container{
+		@extend .container;
+	}
+
+	&__content{
+		@include make-sm-column(8);
+		@include make-sm-column-offset(2);
+	}
+}

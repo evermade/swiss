@@ -8,21 +8,26 @@ $block->get_fields(array('posts', 'posts_how_many'));
 
 if(empty($block->fields['posts'])){
 
-	$block->fields['posts_how_many'] = (empty($block->fields['posts_how_many']))? 4 : $block->fields['posts_how_many'];
+	if(empty($block->fields['posts_how_many'])){
+		$block->set('posts_how_many', 4);
+	}
+	else {
+		$block->set('posts_how_many', $block->fields['posts_how_many']);
+	}
 
 	$args = array(
-		'posts_per_page'=>$block->fields['posts_how_many'],
+		'posts_per_page'=>$block->get('posts_how_many'),
 		'post_type'=>'post'
 	);
 
 	$custom_posts = new WP_Query($args);
-	$block->data['posts'] = $custom_posts->posts;
+	$block->set('posts', $custom_posts->posts);
 }
 else {
-	$block->data['posts'] = $block->fields['posts'];
+	$block->set('posts', $block->fields['posts']);
 }
 
-$block->data['grid_columns'] = em::number_of_columns(sizeof($block->data['posts']));
-$block->data['per_row'] = 2;
+$block->set('grid_columns', em::number_of_columns(sizeof($block->data['posts'])));
+$block->set('per_row', 2);
 
 include(__DIR__.'/view.php');

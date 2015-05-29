@@ -1,4 +1,4 @@
- <section class="columns <?php echo $block->displayClasses('section');?>" style="<?php echo $block->styles['columns_background']; ?>">
+ <section class="columns<?php echo $block->getCss('section');?>" style="<?php echo $block->getCss('columns_background'); ?>">
 	<div class="container clearfix">
 		<?php foreach(array_chunk($block->repeaters['columns_columns'], $block->data['per_row']) as $set): ?>
 			<div class="row">

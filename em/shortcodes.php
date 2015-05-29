@@ -3,12 +3,12 @@
 function button_shortcode_function($atts){
 
 	extract(shortcode_atts(array(
-      'class' => 'btn',
+      'class' => '',
       'text' => 'Continue',
       'url' => '#',
    ), $atts));
 
-	$return = '<a href="'.$url.'" class="'.$class.'"><span>'.$text.'</span></a>';
+	$return = '<a href="'.$url.'" class="btn '.$class.'"><span>'.$text.'</span></a>';
 
 	return $return;
 }

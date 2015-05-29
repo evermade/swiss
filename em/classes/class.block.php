@@ -8,7 +8,7 @@ class Block extends BlockHelper{
 	var $fields = array(); //for ACF fields only
 	var $data = array(); //for custom data, public accesible
 	var $repeaters = array(); //for ACF repeater fields
-	var $styles = array(); //for generic styling such as background images, css classes etc
+	protected $css = array();
 
 	public function __construct(){
 	}
@@ -18,9 +18,7 @@ class Block extends BlockHelper{
 
 		if(!is_array($fields)) return false;
 
-		$this->fields = $fields;
-
-		foreach($this->fields as $field){
+		foreach($fields as $field){
 			if($parent){
 				$this->fields[$field] = get_sub_field($field);
 			}
@@ -36,14 +34,15 @@ class Block extends BlockHelper{
 		return $this->data[$key] = $value;
 	}
 
-	//get our data field
-	public function get($key){
-		if(!isset($this->data[$key])){
+	//get our data field, you can pass in data or fields to grab specific array data
+	public function get($key, $array='data'){
+		if(!isset($this->{$array}[$key])){
 			return null;
 		}
-		return $this->data[$key];
+		return $this->{$array}[$key];
 	}
 
+	//get and setup repeater fields
 	public function get_repeater_field($repeaters= array()){
 
 		if(!is_array($repeaters)) return false;
@@ -61,23 +60,7 @@ class Block extends BlockHelper{
 
 class BlockHelper {
 
-	public function set_background_image($url=null, $name='background'){
-		if(!empty($url)){
-			$this->styles[$name] = 'background-image:url('.$url.');';
-		}
-		else {
-			$this->styles[$name] = null;
-		}
-		return $this->styles[$name];
-	}
-
-	public function setup_background_image($field){
-		if(is_array($this->fields[$field])){
-			return $this->set_background_image($this->fields[$field]['sizes']['large'], $field);
-		}
-		return $this->styles[$field] = null;
-	}
-
+	//a helper method to dynamically generate boostrap columns classes
 	public function setup_grid_columns($repeater=null){
 		$this->data[$repeater.'_grid_columns'] = 'col-xs-12'; //default
 
@@ -92,20 +75,33 @@ class BlockHelper {
 		return $this->data[$repeater.'_grid_columns'];
 	}
 
-	//some methods for helping with css stuff
+	//a method to build css classes, inline styles for elements
+	public function addCss($css=null, $key=null){
+		if(empty($css) || empty($key)) return null;
 
-	public function addClass($class, $key){
-		if(!empty($class)) return null;
-
-		if(!isset($this->classes[$key]) || !is_array($this->classes[$key])){
-			$this->classes[$key] = array();
+		if(!isset($this->css[$key]) || !is_array($this->css[$key])){
+			$this->css[$key] = null;
 		}
-		return array_push($this->classes[$key], $class);
+
+		$this->css[$key] .= ' '.$css;
+
+		return $this->css[$key];
 	}
 
-	public function displayClasses($key){
-		if(!is_array($this->classes[$key]) || empty($this->classes[$key])) return null;
-		return " ".implode(" ", $this->classes[$key]);
+	//the getter method for the results of the addCss method
+	public function getCss($key=null){
+		if(!isset($this->css[$key])){
+			return null;
+		}
+		return $this->css[$key];
+	}
+
+	//a wrapper function addCss specifically for background images
+	public function set_background_image($field){
+		if(is_array($this->fields[$field])){
+			return $this->addCss('background-image:url('.$this->fields[$field]['sizes']['large'].');', $field);
+		}
+		return false;
 	}
 
 }

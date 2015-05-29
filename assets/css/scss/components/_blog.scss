@@ -1,0 +1,22 @@
+.blog {
+	&__filter {
+		@include make-sm-column(4);
+		@include make-sm-column-push(8);
+
+		background: #eee;
+		padding: 20px;
+
+		&__list {
+			ul{
+				padding: 0;
+			}
+			margin: 40px 0;
+		}
+
+	}
+
+	&__posts{
+		@include make-sm-column(8);
+		@include make-sm-column-pull(4);
+	}
+}
