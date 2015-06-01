@@ -35,7 +35,7 @@ gulp.task('sass', function () {
 
 //lets handle our js scripts
 gulp.task('js', function () {
-   return gulp.src(paths.js.src)
+   gulp.src(paths.js.src)
       .pipe(jshint())
       .pipe(jshint.reporter('jshint-stylish'))
       .pipe(uglify())

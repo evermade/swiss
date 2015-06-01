@@ -19,5 +19,10 @@ require_once(get_template_directory().'/em/shortcodes.php');
 //intended for enqueue scripts
 require_once(get_template_directory().'/em/assets.php');
 
+//lets loop and include the block init files
+foreach(glob(get_template_directory().'/em/blocks/*/init.php') as $block_config){
+	include_once($block_config);	
+}
+
 //lets initialise our app
 $app = new app;

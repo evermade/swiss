@@ -8,7 +8,8 @@
     "modernizr": "latest",
     "jquery": "latest",
     "bootstrap-sass": "~3.3.4",
-    "fontawesome": "latest"
+    "fontawesome": "latest",
+    "bourbon": "~4.2.3"
   },
   "private": true
 }

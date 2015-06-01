@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * A generic App class
+ */
 class app {
 	protected $data = array();
 
@@ -9,6 +12,10 @@ class app {
 		$this->set_options(array('opt_social_media_facebook', 'opt_social_media_twitter', 'opt_social_media_google_plus'));
 	}
 
+	/**
+	 * [set_options description]
+	 * @param array $options [description]
+	 */
 	public function set_options($options = array()){
 		if(empty($options) || !is_array($options)){
 			return false;
@@ -22,7 +29,11 @@ class app {
 		return true;
 	}
 
-	//a setter method for our app data
+	/**
+	 * [set description]
+	 * @param [type] $key   [description]
+	 * @param [type] $value [description]
+	 */
 	public function set($key, $value){
 		if(isset($this->data) && is_array($this->data)){
 			return $this->data[$key] = $value;
@@ -30,7 +41,11 @@ class app {
 		return false;
 	}
 
-	//a getter method, we can use data, options
+	/**
+	 * [get description]
+	 * @param  [type] $key [description]
+	 * @return [type]      [description]
+	 */
 	public function get($key){
 		if(!isset($this->data[$key])){
 			return null;

@@ -1,5 +1,6 @@
 //include vendor grid and get responsive utlilities 
 @import "../../vendor/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../vendor/bourbon/app/assets/stylesheets/_bourbon.scss";
 
 //include the base variables and mixins
 @import "base/variables";
@@ -34,7 +35,7 @@
 @import "components/single-post";
 
 //blocks scss
-@import "../../../em/blocks/columns/_index.scss";
+@import "../../../em/blocks/columns/scss/index";
 
 //include our layouts
 @import "layouts/general";

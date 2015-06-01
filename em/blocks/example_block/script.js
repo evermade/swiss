@@ -3,11 +3,18 @@
 	//create empty object in the global em var, dont forget to add the init call in the main.js!
 	em.block = {};
 
-	//call any functions to be trigger on dom ready
+	/**
+	 * [init description]
+	 * @return {[type]} [description]
+	 */
 	em.block.init = function(){
 		em.block.example();
 	};
 
+	/**
+	 * [example description]
+	 * @return {[type]} [description]
+	 */
 	em.block.example  = function(){
 	};
 

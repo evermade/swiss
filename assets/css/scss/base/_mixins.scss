@@ -1,20 +1,4 @@
-@function em($px, $base: $font-size-base) {
-    @return ($px / $base) * 1em;
-}
-
-@mixin clearfix() {
-    &:before,
-    &:after {
-        content: "";
-        display: table;
-    }
-    &:after {
-        clear: both;
-    }
-}
-
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
   border-radius: $radius;
   background-clip: padding-box;  /* stops bg color from leaking outside the border: */
 }
@@ -23,16 +7,6 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-@mixin transition($properties: all, $duration: .3s, $easing: ease-out) {
-  @if length($properties) > 1 {
-    transition-property: $properties;
-    transition-duration: $duration;
-    transition-timing-function: $easing;
-  } @else {
-    transition: $properties $duration $easing;
-  }
 }
 
 @mixin circle($radius) {

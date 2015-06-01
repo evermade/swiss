@@ -13,7 +13,12 @@ class Block extends BlockHelper{
 	public function __construct(){
 	}
 
-	//we use get_sub_field be default is we are currently in a loop of a post, so we are getting sub fields of the site blocks object
+	/**
+	 * [get_fields we use get_sub_field be default is we are currently in a loop of a post, so we are getting sub fields of the site blocks object]
+	 * @param  array   $fields [description]
+	 * @param  boolean $parent [description]
+	 * @return [type]          [description]
+	 */
 	public function get_fields($fields=array(), $parent=true){
 
 		if(!is_array($fields)) return false;
@@ -29,12 +34,22 @@ class Block extends BlockHelper{
 		return $this->fields;
 	}
 
-	//set our data field
+	/**
+	 * [set description]
+	 * @param [type] $key   [description]
+	 * @param [type] $value [description]
+	 */
 	public function set($key, $value){
 		return $this->data[$key] = $value;
 	}
 
-	//get our data field, you can pass in data or fields to grab specific array data
+	//
+	/**
+	 * [get get our data field, you can pass in data or fields to grab specific array data]
+	 * @param  [type] $key   [description]
+	 * @param  string $array [description]
+	 * @return [type]        [description]
+	 */
 	public function get($key, $array='data'){
 		if(!isset($this->{$array}[$key])){
 			return null;
@@ -42,7 +57,11 @@ class Block extends BlockHelper{
 		return $this->{$array}[$key];
 	}
 
-	//get and setup repeater fields
+	/**
+	 * [get_repeater_field get and setup repeater fields]
+	 * @param  array  $repeaters [description]
+	 * @return [type]            [description]
+	 */
 	public function get_repeater_field($repeaters= array()){
 
 		if(!is_array($repeaters)) return false;
@@ -60,7 +79,11 @@ class Block extends BlockHelper{
 
 class BlockHelper {
 
-	//a helper method to dynamically generate boostrap columns classes
+	/**
+	 * a helper method to dynamically generate boostrap columns classes
+	 * @param  [type] $repeater [description]
+	 * @return [type]           [description]
+	 */
 	public function setup_grid_columns($repeater=null){
 		$this->data[$repeater.'_grid_columns'] = 'col-xs-12'; //default
 
@@ -75,7 +98,11 @@ class BlockHelper {
 		return $this->data[$repeater.'_grid_columns'];
 	}
 
-	//a method to build css classes, inline styles for elements
+	/**
+	 * a method to build css classes, inline styles for elements
+	 * @param [type] $css [description]
+	 * @param [type] $key [description]
+	 */
 	public function addCss($css=null, $key=null){
 		if(empty($css) || empty($key)) return null;
 
@@ -88,7 +115,11 @@ class BlockHelper {
 		return $this->css[$key];
 	}
 
-	//the getter method for the results of the addCss method
+	/**
+	 * the getter method for the results of the addCss method
+	 * @param  [type] $key [description]
+	 * @return [type]      [description]
+	 */
 	public function getCss($key=null){
 		if(!isset($this->css[$key])){
 			return null;
@@ -96,7 +127,10 @@ class BlockHelper {
 		return $this->css[$key];
 	}
 
-	//a wrapper function addCss specifically for background images
+	/**
+	 * a wrapper function addCss specifically for background images
+	 * @param [type] $field [description]
+	 */
 	public function set_background_image($field){
 		if(is_array($this->fields[$field])){
 			return $this->addCss('background-image:url('.$this->fields[$field]['sizes']['large'].');', $field);
