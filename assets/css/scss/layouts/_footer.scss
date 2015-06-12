@@ -1,4 +1,8 @@
 .footer {
 	background: #eee;
 	text-align: center;
+
+	&__navigation {
+		@include margin(base, bottom);
+	}
 }

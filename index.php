@@ -3,24 +3,27 @@
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 blog__title">
+			<div class="col-xs-12 blog__header">
 				<?php if(is_search()): ?>
-					<h1>Search</h1>
+					<h1 class="blog__title">Search</h1>
 
 					<p>You search for: <strong><?php echo get_search_query(); ?></strong></p>
 					<p><strong><?php echo $wp_query->found_posts; ?></strong> results found.</p>
 
 					<?php else: ?>
 
-					<h1>Blog</h1>	
+					<h1 class="blog__title">Blog</h1>	
 
 				<?php endif; ?>
 			</div>
 		</div>
 		<div class="row">
 			<div class="blog__filter">
-				<h2>Filter</h2>
-				<?php get_search_form(); ?>
+				<h2 class="blog__filter__title">Filter</h2>
+
+				<div class="blog__filter__search">
+					<?php get_search_form(); ?>
+				</div>
 				
 				<ul class="list list--vertical blog__filter__list">
 				<?php wp_list_categories(); ?>
@@ -39,7 +42,7 @@
 			<div class="blog__posts">
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-					<article>
+					<article class="post post--small">
 						<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 						<h4>Posted on <?php the_time('F jS, Y') ?></h4>
 						<?php the_excerpt(); ?>

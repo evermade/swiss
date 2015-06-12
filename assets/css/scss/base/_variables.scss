@@ -19,13 +19,20 @@ $line-height-base: 1.628571429;
 $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 
 //font sizes
-$font-size-base: 18px; //mobile first
-$font-size-sm: ceil(($font-size-base * 0.8)); // ~12px
-$font-size-md: ceil(($font-size-base * 1.25)); // ~18px
-$font-size-lg: ceil(($font-size-base * 1.7)); // ~24px
-$font-size-xlg: floor(($font-size-base * 2.15)); // ~30px
-$font-size-xxlg: floor(($font-size-base * 2.6)); // ~36px
-$font-size-xxxlg: floor(($font-size-base * 3.5)); // ~36px
+$font-size-rem-sm: 8.5px;
+$font-size-rem-md: 9.5px;
+$font-size-rem-base: 10px;
+
+$font-size-sm: 14px;
+$font-size-base: 16px; //base!!
+$font-size-md: 18px;
+$font-size-lg: 24px;
+$font-size-xl: 50px;
+$font-size-xxl: 80px;
+$font-size-xxxl: 140px;
+
+//for bourbon
+$em-base: $font-size-rem-base;
 
 //headings
 $headings-font-family: inherit;
@@ -42,8 +49,12 @@ $font-size-h5: $font-size-base;
 $font-size-h6: ceil(($font-size-base * 0.85)); // ~12px
 
 //layout stuff
-$container-max-width: 1200px;
+$container-max-width: 1170px;
 $container-full-max-width: 1600px;
-$wrapper-padding: 50px;
-$wrapper-padding-sm: 60px;
-$wrapper-padding-md: 70px;
+
+$padding-xs: 10px;
+$padding-sm: 20px;
+$padding: 30px;//base
+$padding-md: 50px;
+$padding-lg: 100px;
+$padding-xl: 150px;

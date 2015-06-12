@@ -1,12 +1,12 @@
 <?php
 global $post; 
 ?>
-<section class="section">
+<section class="posts-listing">
 	<div class="container">
 		
 		<div class="row">
 			<div class="col-xs-12">
-				<h2>Posts</h2>
+				<h1 class="posts-listing__title">Posts</h1 class="posts-listing__title">
 			</div>
 		</div>
 
@@ -23,11 +23,14 @@ global $post;
 				$post_block->get_fields(array('test'), false);//false signals we need to use the native get_fields as its not a sub field at this level
 				?>
 				
-				<div class="col-xs-12 col-sm-6 col-md-<?php echo $block->data['grid_columns'];?>">
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-					<?php the_excerpt(); ?>
-					<?php if($post_block->fields['test']): ?><strong><?php echo $post_block->fields['test']; ?></strong><?php endif; ?>
-					<p><a href="<?php the_permalink(); ?>" class="btn">Read More</a></p>
+				<div class="posts-listing__post col-xs-12 col-sm-6 col-md-<?php echo $block->data['grid_columns'];?>">
+					<h2 class="posts-listing__post__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+
+					<div class="posts-listing__post__excerpt">
+						<?php the_excerpt(); ?>
+					</div>
+
+					<a href="<?php the_permalink(); ?>" class="btn posts-listing__post__read">Read More</a>
 				</div>
 						
 				<?php endforeach; ?>
@@ -39,7 +42,7 @@ global $post;
 		<?php else: ?>
 
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-xs-12 text-center">
 				<p>No posts found.</p>
 			</div>
 		</div>

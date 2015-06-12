@@ -9,7 +9,8 @@
     "jquery": "latest",
     "bootstrap-sass": "~3.3.4",
     "fontawesome": "latest",
-    "bourbon": "~4.2.3"
+    "bourbon": "~4.2.3",
+    "Justified-Gallery": "~3.5.4"
   },
   "private": true
 }

@@ -26,7 +26,7 @@
   <![endif]-->
 
 <div class="body">
-
+<span id="top"></span>
 <header class="header">
 	
 		<div class="nav-bar nav-bar--header">
@@ -35,10 +35,10 @@
 
 				<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="nav-bar__logo"><?php bloginfo('name'); ?></a>
 
-				<button class="mobile-menu-button mobile-menu-button--show"><i class="fa fa-bars"></i></button>
+				<div class="navtoggle"><div class="div"></div><div class="div"></div><div class="div"></div></div>
 			
 				<nav class="nav" role="navigation">
-	              <?php wp_nav_menu(array('theme_location' => 'Primary Navigation', 'menu_class' => 'nav__list')); ?>
+	              <?php wp_nav_menu(array('theme_location' => 'header-navigation', 'menu_class' => 'nav__list')); ?>
 	          	</nav>
 
 			</div><!-- end of wrapper -->

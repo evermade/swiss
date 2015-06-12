@@ -1,0 +1,42 @@
+.block-listing {
+	
+	background: $brand-color;
+	color: #fff;
+	text-align: center;
+
+	&__header {
+		
+		@include make-row();
+
+		&__column {
+			@include make-sm-column(8);
+			@include make-sm-column-offset(2);
+		}
+	}
+
+	&__title {
+		margin:0;
+		@include margin(base, bottom);
+		color: #fff;
+	}
+
+	&__blocks {
+		@include make-row();
+	}
+
+	&__block {
+		@include make-sm-column(4);
+
+		&__title {
+			color: #fff;
+		}
+
+		@include bp(sm, max){
+			@include margin(base, bottom);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		} 
+	}
+}

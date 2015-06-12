@@ -1,22 +1,39 @@
 .blog {
+
+	&__header {
+		.blog__title {
+			margin: 0;
+			@include margin(md, bottom);
+		}
+	}
+
 	&__filter {
-		@include make-sm-column(4);
-		@include make-sm-column-push(8);
+		@include make-md-column(4);
+		@include make-md-column-push(8);
 
 		background: #eee;
-		padding: 20px;
+		@include padding(base, all);
 
 		&__list {
 			ul{
 				padding: 0;
 			}
-			margin: 40px 0;
+			@include margin(base, bottom);
+		}
+
+		&__title {
+			margin: 0;
+			@include margin(base, bottom);
+		}
+
+		&__search {
+			@include margin(base, bottom);
 		}
 
 	}
 
 	&__posts{
-		@include make-sm-column(8);
-		@include make-sm-column-pull(4);
+		@include make-md-column(8);
+		@include make-md-column-pull(4);
 	}
 }

@@ -3,6 +3,12 @@
   background-clip: padding-box;  /* stops bg color from leaking outside the border: */
 }
 
+@mixin bgimg(){
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+}
+
 @mixin center-block {
   display: block;
   margin-left: auto;
@@ -33,37 +39,120 @@
 
 }
 
+@mixin paddingMargin($which: padding, $size: base, $where: top){
+    
+    $paddingDirection: #{$which}-#{$where} !default;
+
+    @if $where == all {
+      $paddingDirection: $which;
+    }
+  
+    @if $size == xs { 
+      #{$paddingDirection}: rem($padding-xs);
+    }
+
+    @if $size == sm { 
+      #{$paddingDirection}: rem($padding-sm);
+    }
+
+    @if $size == base { 
+      #{$paddingDirection}: rem($padding);
+    }
+
+    @if $size == md { 
+      #{$paddingDirection}: rem($padding);
+      @include bp(md){
+       #{$paddingDirection}: rem($padding-md);
+      }
+    }
+
+    @if $size == lg { 
+      #{$paddingDirection}: rem($padding-md);
+      @include bp(md){
+       #{$paddingDirection}: rem($padding-lg);
+      }
+    }
+
+    @if $size == xl { 
+      #{$paddingDirection}: rem($padding-lg);
+      @include bp(sm){
+       #{$paddingDirection}: rem($padding-xl);
+      }
+    }
+}
+
+@mixin margin($size: base, $where: top){
+  @include paddingMargin(margin, $size, $where);
+}
+
+@mixin padding($size: base, $where: top){
+  @include paddingMargin(padding, $size, $where);
+}
+
 // some mixins to help with font sizes
 // base/_variables.scss
 @mixin font-size($size: base){
     @if $size == base { 
-      font-size: $font-size-base;
+      font-size: rem($font-size-base);
     }
 
     @if $size == sm { 
-      font-size: $font-size-sm;
+      font-size: rem($font-size-sm);
     }
 
     @if $size == md { 
-      font-size: $font-size-md;
+      font-size: rem($font-size-md);
     }
 
     @if $size == lg { 
-      font-size: $font-size-lg;
+      font-size: rem($font-size-lg);
     }
 
-    @if $size == xlg { 
-      font-size: $font-size-xlg;
+    @if $size == xl { 
+      font-size: rem($font-size-xl);
     }
 
-    @if $size == xxlg { 
-      font-size: $font-size-xxlg;
-    }
-
-    @if $size == xxxlg { 
-      font-size: $font-size-xxlg;
+    @if $size == xxl { 
+      font-size: rem($font-size-xl);
       @include bp(sm){
-        font-size: $font-size-xxxlg;
+        font-size: rem($font-size-xxl);
       }
     }
+
+    @if $size == xxxl { 
+      font-size: rem($font-size-xl);
+      @include bp(sm){
+        font-size: rem($font-size-xxxl);
+      }
+    }
+}
+
+//as an example which would need to be setup per project per font family etc
+@mixin font-type($font: pn, $size: base, $weight:"") {
+    @if $font==pn {
+        font-family: "proxima-nova", Verdana, sans-serif;
+        @if $weight!="" {
+          font-weight: $weight;
+        }
+        @elseif $weight==""{
+          font-weight: $font-weight-base;
+        }
+    }
+
+    @if $font==rd {
+        font-family: "refrigerator-deluxe", Impact, sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1;
+        letter-spacing: -0.02em;
+    }
+
+    @if $font==ft {
+        font-family: "felt-tip-roman", "Comic Sans MS", sans-serif;
+        font-weight: 700;
+        text-transform: none;
+        line-height: 1;
+    }
+
+    @include font-size($size);
 }

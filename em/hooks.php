@@ -37,9 +37,3 @@ function register_mce_button( $buttons ) {
   array_push( $buttons, 'custom_mce_em_posts' );
   return $buttons;
 }
-
-//menus
-function register_my_menu() {
-  register_nav_menu('primary-navigation',__( 'Primary Navigation' ));
-}
-add_action( 'init', 'register_my_menu' );

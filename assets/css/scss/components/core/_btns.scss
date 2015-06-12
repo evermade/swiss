@@ -8,8 +8,9 @@
     @include border-radius(2px);
     text-transform: capitalize;
     background: $brand-color;
-    font-size:em($font-size-base);
+    font-size: rem($font-size-base);
     @include transition(all, 0.8s);
+
     &:hover {
         background: darken($brand-color, 10%);
         text-decoration: none;

@@ -1,0 +1,9 @@
+.hero--portal {
+	.hero__subtitle {
+		@include margin(md, bottom);
+	}
+
+	.hero__btn {
+		@include margin(md, bottom);
+	}
+}

@@ -1,0 +1,73 @@
+//add to scss/main.scss
+
+$border-size: 1px;
+
+.logo-listing {
+	text-align: center;
+
+	background: #f4f4f5;
+
+	&__title {
+		margin: 0;
+		@include margin(md, bottom);
+	}
+
+	&__text {
+		@include margin(md, bottom);
+	}
+	
+}
+
+.logo-list {
+	
+	@include margin(md, bottom);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&__images {
+		@include make-row($gutter: 0);
+	}
+
+	&__image {
+		
+		@include make-xs-column(6);
+		
+		//negative margins to the borders
+		margin-top: -$border-size;
+		margin-left: -$border-size;
+
+		@include bp(sm){
+			@include make-sm-column(3);
+
+			&:first-child {
+				margin-left: 0;
+			}
+		} 
+	
+		background: #fff;
+		padding: rem(10px) rem(10px);
+
+		@include bp(sm){
+			padding: rem(20px) rem(40px);
+		} 
+
+		border: $border-size solid #dae0e9;
+		
+		&__inner {
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			height: 100px;
+			width: 70%;
+			@include center-block;
+		}
+	}
+
+	&__title {
+
+		margin: 0;
+		@include margin(base, bottom);
+	}
+}

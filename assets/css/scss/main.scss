@@ -31,11 +31,29 @@
 
 //include custom components, or modifiers of core components
 @import "components/all";
+
+//nav-bar
+@import "components/nav-bar";
+
+//blog
 @import "components/blog";
 @import "components/single-post";
 
-//blocks scss
-@import "../../../em/blocks/columns/scss/index";
+//hero
+@import "components/hero";
+@import "components/hero-text";
+
+//gallery
+@import "components/gallery-flickr";
+
+//logo-listing
+@import "components/logo-listing";
+
+//block listing
+@import "components/block-listing";
+
+//posts-listing
+@import "components/posts-listing";
 
 //include our layouts
 @import "layouts/general";

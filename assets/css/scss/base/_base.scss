@@ -1,5 +1,14 @@
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: $font-size-rem-sm;
+
+    @include bp(sm) {
+        font-size: $font-size-rem-md;
+    }
+
+    @include bp(md) {
+        font-size: $font-size-rem-base;
+    }
 }
 
 *, *:before, *:after {
@@ -13,7 +22,6 @@ select,
 textarea {
     color: $text-color;
     font-family: inherit;
-    font-size: inherit;
     line-height: inherit;
 }
 

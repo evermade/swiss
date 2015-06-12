@@ -1,4 +1,9 @@
 .columns {
+
+	.container {
+		@include padding(md, top);
+		@include padding(md, bottom);
+	}
 	
 	img {
 		max-width: 100%;
@@ -28,6 +33,12 @@
 		}
 		&--light {
 			color: #fff;
+		}
+	}
+
+	& + .columns {
+		.container {
+			padding-top: 0;
 		}
 	}
 

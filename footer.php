@@ -1,7 +1,10 @@
  <section class="footer">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 text-center">
+			<div class="col-xs-12">
+				<?php wp_nav_menu(array('theme_location' => 'footer-navigation', 'menu_class' => 'nav__list footer__navigation')); ?>
+			</div>
+			<div class="col-xs-12">
 				<p>hand crafted by <a href="http://www.evermade.fi/" target="_blank">evermade</a></p>
 			</div>
 		</div><!-- end of row -->

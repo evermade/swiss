@@ -2,3 +2,4 @@ node_modules/
 npm-debug.log
 assets/vendor/*
 .DS_Store
+._*

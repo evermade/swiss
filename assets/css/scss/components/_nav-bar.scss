@@ -1,0 +1,204 @@
+$mobile-menu-toggle: "md";
+
+//a generic class for the logo to be used in header and footer
+.nav-bar__logo {
+     display: block;
+     width: 100%;
+     max-width: 98px;
+     height: 45px;
+     background: $brand-color;
+     background-size: contain;
+     text-indent: -9990px;
+     float: left;
+     position: relative;
+     z-index: 200;
+ }
+
+//the fancy menu hide show animation icon
+ .navtoggle {
+    position: relative;
+    float: right;
+    margin-top: 10px;
+    cursor: pointer;
+    z-index: 200;
+     div {
+        width: 25px;
+        height: 4px;
+        background: $brand-color;
+        margin-bottom: 4px;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        top: 0px;
+        border-radius: 3px;
+    }
+    
+    display: none;
+    @include bp($mobile-menu-toggle, max) {
+            display: block;
+    }
+}
+
+.navtoggle:hover div {
+}
+
+body.nav-open .navtoggle {
+
+    div {
+        opacity: 0;
+        background: #fff;
+        margin-bottom: 3px;
+
+        &:first-child {
+            transform: rotate(45deg);
+            opacity: 1;
+            top: 7px;
+        }
+
+        &:last-child {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            opacity: 1;
+            top: -7px;
+        }
+    }
+
+    &:hover {
+        div {
+            background: #fff;
+        }
+    }
+}
+
+//now lets style the header nav bar
+.nav-bar--header {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+
+    .container {       
+        padding-top: rem(30);
+        padding-bottom: rem(30);
+    }
+
+    .nav {
+        //mobile nav
+        @include bp($mobile-menu-toggle, max) {
+            visibility: hidden;
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            height: 100%;
+            width: 100%;
+            background: $brand-color;
+            overflow-y: auto;
+            overflow-x: hidden;
+            text-align: center;
+            @include transition(all, 0.2s ease-in-out);
+            &__list {
+                float: left;
+                width: 100%;
+                padding-top: 130px;
+                li {
+                    background: $brand-color;
+                    padding: 2px 0;
+                    display: block;
+                    float: left;
+                    width: 100%;
+                }
+                li a {
+                    color: #fff;
+                    @include font-type(pn, lg, 300);
+                    width: 70%;
+                    @include center-block;
+                    background: rgba(255, 255, 255, 0);
+                    @include transition(all, 0.4s, ease-in-out);
+                    padding: 10px 0;
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.2);
+                    }
+                }
+
+                li.current_page_item a {
+                    @include font-type(pn, lg, 600);
+                }
+            }
+        }
+        //desktop nav
+        @include bp($mobile-menu-toggle) {
+            float: right;
+            &__list {
+                li {
+                    background: none;
+                }
+                li a {
+                    color: $text-color;
+                }
+                li:hover,
+                li.current_page_item {
+                    background: $brand-color;
+                    a {
+                        color: #fff;
+                    }
+                }
+                li ul li {}
+                li ul li:hover {}
+                li ul li a {}
+            }
+        }
+    }
+
+    //on larger devices lets change the nav to left aligned
+    @media only screen and (min-width : 1900px) {
+
+        .nav-bar__logo {
+            margin-left: -280px;
+        }
+
+        .nav {
+            margin-left: 0;
+        }
+    }
+}
+
+//when nav is open lets change a few things
+body.nav-open {
+    overflow-y: hidden;
+    .nav {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .nav-bar__logo {
+       background: #fff;
+    }
+}
+
+//as an example for bringup up the nav and inverting it, need to implement!
+.js-hero-active {
+
+    @include bp(sm){
+        .nav-bar--header {
+
+            .container {
+                margin-top: 0;
+            }
+
+            .nav-bar__logo {
+                background: #fff;
+            }
+            .nav {
+                li a {
+                    color: #fff;
+                }
+            }
+
+            .navtoggle {
+                div {
+                    background: #fff;
+                }
+            }
+        }
+    }
+}
