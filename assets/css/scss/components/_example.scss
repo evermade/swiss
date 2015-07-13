@@ -1,7 +1,6 @@
-.block-listing {
+//an bootstrap to bem example :)
+.example {
 	
-	text-align: center;
-
 	&__container {
 		@include container();
 	}
@@ -16,7 +15,7 @@
 		@include make-row();
 	}
 
-	&__item {
+	&__col {
 		
 		@include make-xs-column(12);
 		@include make-sm-column(6);
@@ -24,7 +23,7 @@
 
 		@include margin(md, bottom);
 
-		@include bp(md){
+		@include bp(sm){
 			margin-bottom: 0;
 		} 
 
@@ -39,7 +38,10 @@
 
 		&__btn {
 			@extend .btn;
-			@extend .btn--white;
 		}
+	}
+
+	&__full-col {
+		@include make-xs-column(12);
 	}
 }

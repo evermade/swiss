@@ -7,7 +7,7 @@
         position: relative;
         a{
             display: block;
-        	padding: 5px 10px;
+        	padding: rem(5) rem(10);
             background: $brand-color;
             color: #fff;
             @include transition();

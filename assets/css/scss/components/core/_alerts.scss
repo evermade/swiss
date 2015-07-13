@@ -1,11 +1,16 @@
 .alert {
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: rem(10);
+    margin-bottom: rem(10);
     border: 1px solid $brand-color;
     color: $brand-color;
     background-color: #fff;
     border-color: $brand-color;
     @include border-radius(2px);
+
+    &__hint {
+        font-weight: bold;
+    }
+
     &--info {
         color: #31708f;
         background-color: #d9edf7;

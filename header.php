@@ -27,19 +27,28 @@
 
 <div class="body">
 <span id="top"></span>
-<header class="header">
+
+<header class="main-header">
 	
-		<div class="nav-bar nav-bar--header">
+		<div class="nav-bar nav-bar--header" data-vp-add-class="animatedslow fadeIn animateddelay1">
 
 			<div class="container">
 
-				<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="nav-bar__logo"><?php bloginfo('name'); ?></a>
+				<div class="row">
 
-				<div class="navtoggle"><div class="div"></div><div class="div"></div><div class="div"></div></div>
-			
-				<nav class="nav" role="navigation">
-	              <?php wp_nav_menu(array('theme_location' => 'header-navigation', 'menu_class' => 'nav__list')); ?>
-	          	</nav>
+					<div class="col-xs-12">
+
+						<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="nav-bar__logo"><?php bloginfo('name'); ?></a>
+
+						<div class="navtoggle"><div class="div"></div><div class="div"></div><div class="div"></div></div>
+					
+						<nav class="nav" role="navigation">
+			              <?php wp_nav_menu(array('theme_location' => 'header-navigation', 'menu_class' => 'nav__list nav__list--bar')); ?>
+			          	</nav>
+
+		          	</div>
+
+	          	</div>
 
 			</div><!-- end of wrapper -->
 

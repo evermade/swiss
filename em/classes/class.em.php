@@ -25,6 +25,43 @@ class em {
 		}
 	}
 
+	
+	/**
+	 * a generic sprintf for handling both arrays and single strings for quick if templating
+	 * @param  string $str   [description]
+	 * @param  [type] $input [description]
+	 * @return [type]        [description]
+	 */
+	static function sprint($str='', $input){
+
+		//if an array
+		if(is_array($input) && !empty($input)){
+
+			$broken = false;
+			$data = array();
+
+			foreach($input as $field){
+				if(!empty($field)){
+					$data[$field] = $field;
+				}
+				else {
+					$broken = true;
+					break;
+				}
+			}
+
+			if(!empty($data) && !$broken){
+				return @vsprintf($str, $data);
+			}
+		}
+		else {
+			//else just a single sprint
+			return @sprintf($str, $input);
+		}
+
+		return null;
+	}
+
 	/**
 	 * [clean_template_name description]
 	 * @param  [type] $name [description]

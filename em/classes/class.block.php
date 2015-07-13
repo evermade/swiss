@@ -10,7 +10,11 @@ class Block extends BlockHelper{
 	var $repeaters = array(); //for ACF repeater fields
 	protected $css = array();
 
-	public function __construct(){
+	public function __construct($data=array()){
+
+		if(!empty($data)){
+			$this->data = $data;
+		}
 	}
 
 	/**
@@ -136,6 +140,57 @@ class BlockHelper {
 			return $this->addCss('background-image:url('.$this->fields[$field]['sizes']['large'].');', $field);
 		}
 		return false;
+	}
+
+	/**
+	 * a little function to save repetitive if echo statements within the view
+	 * @param  [type] $field [description]
+	 * @param  [type] $html  [description]
+	 * @param  string $array [description]
+	 * @return [type]        [description]
+	 */
+	public function sprint($field, $html='', $array='fields'){
+
+		if(is_array($field)){
+			return $this->sprint_array($field);
+		}
+
+		if(isset($this->{$array}[$field]) && !empty($this->{$array}[$field])){
+			return sprintf($html, $this->{$array}[$field]);
+		}
+
+		return null;
+	}
+
+	/**
+	 * [sprint_array description]
+	 * @param  array  $fields [description]
+	 * @param  [type] $html   [description]
+	 * @param  string $array  [description]
+	 * @return [type]         [description]
+	 */
+	public function sprint_array($fields=array(), $html='', $array='fields'){
+
+		if(!is_array($fields) || empty($fields)){
+			return null;
+		}
+
+		$data = array();
+		$broken = false;//number of placeholders need to match the elements in array or bad things happen
+		foreach($fields as $field){
+			if(isset($this->{$array}[$field]) && !empty($this->{$array}[$field])){
+				$data[$field] = $this->get($field, $array);
+			}
+			else {
+				$broken = true;
+			}
+		}
+
+		if(!empty($data) && !$broken){
+			return vsprintf($html, $data);
+		}
+
+		return null;
 	}
 
 }

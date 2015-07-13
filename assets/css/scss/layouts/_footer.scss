@@ -2,7 +2,34 @@
 	background: #eee;
 	text-align: center;
 
-	&__navigation {
-		@include margin(base, bottom);
+	@include bp(sm){
+		text-align: left;
+	} 
+
+	&__container {
+		@include container();
+	}
+	
+	&__row{
+		@include make-row();
+	}
+
+	&__copyright, &__credits {
+		@include make-xs-column(12);
+		@include make-sm-column(6);
+
+		p {
+			@include bp(sm){
+				margin: 0;
+			} 
+		}
+	}
+
+	&__credits {
+
+		@include bp(sm){
+			text-align: right;
+		} 
+		
 	}
 }

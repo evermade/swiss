@@ -1,0 +1,85 @@
+header.main-header + section.hero {
+	@include counter-body-margin(-1);
+}
+
+.hero{
+
+	position: relative;
+	overflow: hidden;
+
+	.hero__slides {
+
+	}
+
+	.hero__slide {
+		
+		color: #fff;
+
+		&__background {
+			@include full-cover();
+			@include bgimg();
+		}
+
+		&__bgvideo {
+			position: absolute;
+			top: 0;
+			left: 0;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			z-index: 100;
+
+			display: none;
+
+			@include bp(sm){
+				display: block;
+			} 
+		}
+
+		&__overlay{
+			@include overlay(#000000, 0.7);
+			z-index: 200;
+		}
+
+		&__container {
+			@include container($padding: false);
+			z-index: 300;
+			position: relative;
+		}
+
+		&__row{
+			@include make-row($gutter:0);
+		}
+
+		&__col {
+			@include make-xs-column(12);
+			@include make-sm-column(8);
+			@include make-sm-column-offset(2);
+			
+			@include align('content');
+	
+			height: 100vh;
+
+			text-align: center;
+		}
+
+		&__title {
+			@include font-size(xxxl);
+			text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+			line-height: 1;
+			@include margin(base, bottom, true);
+		}
+
+		&__sub-title {
+			@include font-size(xl);
+			text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+			@include margin(md, bottom, true);
+		}
+
+		&__btn {
+			@extend .btn;
+		}
+		
+	}
+}

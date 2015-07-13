@@ -1,45 +1,57 @@
 .columns {
-
-	.container {
-		@include padding(md, top);
-		@include padding(md, bottom);
-	}
 	
-	img {
-		max-width: 100%;
+	&__container {
+		@include container();
 	}
 
-	&-padding {
-		&--top {
-			.container {
-				padding-bottom: 0;
+	&__row{
+		@include make-row();
+
+		@include bp(md){
+			display: flex;
+
+			&--align-top {
+			}
+			
+			&--align-middle {
+				align-items: center;
+			}
+
+			&--align-bottom {
+				align-items: baseline;
 			}
 		}
-		&--bottom {
-			.container {
-				padding-top: 0;
-			}
-		}
-		&--none {
-			.container {
-				padding-top: 0;
-				padding-bottom: 0;
-			}
-		}
+
+		@extend .columns__row--align-middle; //for demo default
 	}
 
-	&-text {
-		&--dark {
-		}
-		&--light {
-			color: #fff;
+	&__item {
+		@include make-xs-column(12);
+		@include make-sm-column(6);
+	}
+
+	//lets push and pull columns
+	&--stagger{
+		
+		&:nth-child(odd){
+
+			@include bp(sm){
+			
+				.columns__item:first-child {
+					@include make-sm-column-push(6);
+				}
+
+				.columns__item:last-child {
+					@include make-sm-column-pull(6);
+				}
+
+			} 
 		}
 	}
 
 	& + .columns {
-		.container {
-			padding-top: 0;
+		.columns__container {
+			padding-top: 0 !important;
 		}
 	}
-
 }

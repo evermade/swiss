@@ -12,7 +12,7 @@
 @import "base/typography";
 
 //include the components core which can/would be amended to that project
-@import "components/core/navigation";
+@import "components/core/nav";
 @import "components/core/print";
 @import "components/core/alerts";
 @import "components/core/forms";
@@ -28,32 +28,48 @@
 @import "components/core/pagination";
 @import "components/core/breadcrumbs";
 @import "components/core/grid";
+@import "components/core/icons";
+@import "components/core/overlay";
+@import "components/core/table-div";
 
 //include custom components, or modifiers of core components
 @import "components/all";
 
-//nav-bar
-@import "components/nav-bar";
+//example
+@import "components/example";
 
 //blog
 @import "components/blog";
+
+//single-post
 @import "components/single-post";
 
-//hero
-@import "components/hero";
-@import "components/hero-text";
+//animations
+@import "components/animations";
 
-//gallery
-@import "components/gallery-flickr";
+//nav-bar
+@import "components/nav-bar";
+
+//columns
+@import "components/columns";
+
+//hero
+@import "components/hero/basic";
+
+//quotes
+@import "components/quotes";
+
+//contact
+@import "components/contact";
+
+//block-listing
+@import "components/block-listing";
 
 //logo-listing
 @import "components/logo-listing";
 
-//block listing
-@import "components/block-listing";
-
-//posts-listing
-@import "components/posts-listing";
+//full-width-grid
+@import "components/full-width-grid";
 
 //include our layouts
 @import "layouts/general";

@@ -10,10 +10,6 @@
 
 	em.slideshows.slick  = function(){
 
-		if(typeof $.fn.Slick === 'undefined'){
-			return false;
-		}
-
 		// $('.slick--cases').slick({
 		// 	slidesToShow: 3,
 		// 	slidesToScroll: 3,

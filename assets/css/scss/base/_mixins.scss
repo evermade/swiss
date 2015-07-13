@@ -3,16 +3,16 @@
   background-clip: padding-box;  /* stops bg color from leaking outside the border: */
 }
 
-@mixin bgimg(){
-  background-size: cover;
-  background-position: center;
-  background-repeat: none;
-}
-
 @mixin center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+@mixin overlay($color: $brand-color, $percentage: 0.2, $z-index: 1){
+  @extend .overlay;
+  z-index: $z-index;
+  background: rgba($color, $percentage);
 }
 
 @mixin circle($radius) {
@@ -20,31 +20,65 @@
   height: $radius;
   width: $radius;
   display: table-cell;
-  text-align: center;
   vertical-align: middle;
+  text-align: center;
+}
+
+@mixin bgimg(){
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 // Breakpoint mixins
 @mixin bp($point:"sm", $mobile-first: "min") {
+  
+  $sm: $screen-sm-min;
+  $md: $screen-md-min;
+  $lg: $screen-lg-min;
+
+  @if($mobile-first == max){
+    $sm: $sm - 1;
+    $md: $md - 1;
+    $lg: $lg - 1;
+  }
 
   @if $point == sm { 
-    @media (#{$mobile-first}-width: $screen-sm-min) { @content }
+    @media (#{$mobile-first}-width: $sm) { @content }
   }
   @if $point == md { 
-    @media (#{$mobile-first}-width: $screen-md-min) { @content; }
+    @media (#{$mobile-first}-width: $md) { @content; }
   }
   @else if $point == lg {
-    @media (#{$mobile-first}-width: $screen-lg-min) { @content; }
+    @media (#{$mobile-first}-width: $lg) { @content; }
   }
 
 }
 
-@mixin paddingMargin($which: padding, $size: base, $where: top){
+@mixin fa-icon($icon: "", $beforeAfter: "before", $padding: 0, $color:""){
+  &:#{$beforeAfter} {
+    display: inline-block;
+    content: $icon;
+    font-family: "FontAwesome";
+    margin: $padding;
+
+    @if $color!="" {
+      color: $color;
+    }
+  }
+}
+
+@mixin paddingMargin($which: padding, $size: base, $where: top, $reset: false){
     
     $paddingDirection: #{$which}-#{$where} !default;
 
     @if $where == all {
       $paddingDirection: $which;
+    }
+    
+    //sometimes we need to reset the padding/margin
+    @if $reset == true {
+      #{$which}: 0;
     }
   
     @if $size == xs { 
@@ -81,35 +115,43 @@
     }
 }
 
-@mixin margin($size: base, $where: top){
-  @include paddingMargin(margin, $size, $where);
+@mixin margin($size: base, $where: top, $reset: false){
+  @include paddingMargin(margin, $size, $where, $reset);
 }
 
-@mixin padding($size: base, $where: top){
-  @include paddingMargin(padding, $size, $where);
+@mixin padding($size: base, $where: top, $reset: false){
+  @include paddingMargin(padding, $size, $where, $reset);
 }
 
 // some mixins to help with font sizes
 // base/_variables.scss
 @mixin font-size($size: base){
+  
+    $custom: true;
+
     @if $size == base { 
       font-size: rem($font-size-base);
+      $custom: false;
     }
 
     @if $size == sm { 
       font-size: rem($font-size-sm);
+      $custom: false;
     }
 
     @if $size == md { 
       font-size: rem($font-size-md);
+      $custom: false;
     }
 
     @if $size == lg { 
       font-size: rem($font-size-lg);
+      $custom: false;
     }
 
     @if $size == xl { 
       font-size: rem($font-size-xl);
+      $custom: false;
     }
 
     @if $size == xxl { 
@@ -117,19 +159,26 @@
       @include bp(sm){
         font-size: rem($font-size-xxl);
       }
+      $custom: false;
     }
 
     @if $size == xxxl { 
-      font-size: rem($font-size-xl);
+      font-size: rem($font-size-xxl);
       @include bp(sm){
         font-size: rem($font-size-xxxl);
       }
+      $custom: false;
+    }
+    
+    @if($custom == true) {
+      //we must be using a custom size
+      //@debug($size);
+      font-size: rem($size);
     }
 }
 
-//as an example which would need to be setup per project per font family etc
 @mixin font-type($font: pn, $size: base, $weight:"") {
-    @if $font==pn {
+    @if $font==fontx {
         font-family: "proxima-nova", Verdana, sans-serif;
         @if $weight!="" {
           font-weight: $weight;
@@ -139,20 +188,119 @@
         }
     }
 
-    @if $font==rd {
+    @if $font==fonty {
         font-family: "refrigerator-deluxe", Impact, sans-serif;
         font-weight: 700;
         text-transform: uppercase;
         line-height: 1;
         letter-spacing: -0.02em;
     }
-
-    @if $font==ft {
-        font-family: "felt-tip-roman", "Comic Sans MS", sans-serif;
-        font-weight: 700;
-        text-transform: none;
-        line-height: 1;
-    }
+    
 
     @include font-size($size);
+}
+
+@mixin container($padding:true){
+  width: 100%;
+  margin: 0 auto;
+  max-width: $container-max-width;
+
+  @include bp(sm) {
+    width: 90%;
+  }
+
+  @include bp(lg) {
+    width: 100%;
+  }
+  
+   @if $padding == true {
+    padding: $padding-md 15px;
+
+    @include bp(sm) {
+      padding: $padding-md 15px;
+    }
+    @include bp(md) {
+      padding: $padding-lg 15px;
+    }
+  }
+}
+
+@mixin counter-body-margin($plus-negative: 1, $whichPadding: margin){
+
+  #{$whichPadding}-top: $header-margin-top-sm * $plus-negative;
+
+  @include bp(md){
+      #{$whichPadding}-top: $header-margin-top * $plus-negative;
+  }
+}
+
+@mixin align($dir: 'all'){
+    @if($dir == all) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+     @if($dir == vertical) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+     @if($dir == horizontal) {
+        @include center-block();
+    }
+    @if($dir == content) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@mixin equal-height(){
+    display: flex;
+    flex: 1 0 auto;
+}
+
+@mixin full-cover($position: absolute) {
+  display: block;
+  position: $position;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin counter-col-margin(){
+  margin-left: -$col-padding;
+  margin-right: -$col-padding;
+}
+
+@mixin btn($background: $brand-color, $text: #fff){
+    display: inline-block;
+    text-decoration: none;
+    padding: rem(10) rem(20);
+    color: $text;
+    cursor: pointer;
+    border: none;
+    @include border-radius(2px);
+    text-transform: capitalize;
+    background: $background;
+    font-size: rem($font-size-base);
+    @include transition(all, 0.8s);
+
+    &:hover, &:active, &:focus {
+        outline: 0;
+        color: inherit;
+    }
+
+    &:hover {
+        background: darken($background, 6%);
+        text-decoration: none;
+        color: $text;
+    }
+}
+
+//functions
+@function span($how-many:1, $grid-size: 12){
+  @return ($how-many / $grid-size) * 100%
 }

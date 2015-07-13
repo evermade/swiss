@@ -3,11 +3,42 @@
 	em.helper = {};
 
 	em.helper.init = function(){
-		em.helper.imgClear();
+		//em.helper.imgClear();
 		//em.helper.resizeVideos();
 		em.helper.spemail();
 		em.helper.jumpTo();
-		em.helper.equalizeHeight();
+		//em.helper.showOverflown();
+		//em.helper.resize();
+		em.helper.toggleHeroNav();
+	};
+
+	em.helper.toggleHeroNav = function(){
+		if($('header.main-header').next().hasClass('hero')){
+			$('body').addClass('js-hero-active');
+		}
+	};
+
+	em.helper.showOverflown = function(){
+
+		var docWidth = document.documentElement.offsetWidth;
+
+		[].forEach.call(
+		  document.querySelectorAll('*'),
+		  function(el) {
+		    if (el.offsetWidth > docWidth) {
+		      console.log(el);
+		    }
+		  }
+		);
+
+	};
+
+	em.helper.resize = function(){
+		$( window ).resize(function() {
+		  for (var i = 0; i < em.helper.resizers.length; i++) {
+				em.helper.resizers[i]();
+			}
+		});
 	};
 
 	em.helper.imgClear = function(){
@@ -58,40 +89,5 @@
 		   return false;
 		});
 	};
-
-	//a function to equalize hieghts of elements within a parent
-     em.helper.equalizeHeight = function(){
-
-            // if($(window).width() < 768){
-            //     return false;
-            // }
-
-            $(".js-equalizeHeight").each(function(){
-                var el = $(this);
-                var largestHeight = 0;
-                var divs;
-
-                if(el.data("equalize")){
-                    divs = el.find("."+el.data("equalize"));
-                }
-                else {
-                    divs = el.find("> div");
-                }
-
-                //get the biggest height
-                divs.each(function(){
-                    var height = $(this).outerHeight();
-                    if(height > largestHeight){
-                        largestHeight = height;
-                    }
-                });
-
-                //set the biggest hieght to all
-                divs.each(function(){
-                    $(this).css({height: largestHeight});
-                });
-            });
-
-        };
 	
 })();

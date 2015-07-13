@@ -1,19 +1,6 @@
 .container {
-  width: 90%;
-  margin: 0 auto;
-  padding: $padding-md 15px;
-  max-width: $container-max-width;
-
-  @include bp(sm) {
-    padding: $padding-md 15px;
-  }
-  @include bp(md) {
-    padding: $padding-lg 15px;
-  }
-
-  @include bp(lg) {
-    width: 100%;
-  }
+  
+  @include container();
 
   &--full {
     max-width: $container-full-max-width;

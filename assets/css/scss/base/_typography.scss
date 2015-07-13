@@ -13,9 +13,6 @@ h1, h2, h3, h4, h5, h6,
     color: $headings-small-color;
   }
 
-  &.heading {
-    margin-top: 0;
-  }
 }
 
 h1, .h1,
@@ -48,6 +45,13 @@ h4, .h4 { font-size: $font-size-h4; }
 h5, .h5 { font-size: $font-size-h5; }
 h6, .h6 { font-size: $font-size-h6; }
 
+//some helper methods we can use to extend from within css, rather than multiple classes in the markup
+.heading {
+  @include margin(md, bottom, true); 
+  text-transform: uppercase;
+  text-align: center;
+}
+
 p {
   margin: 0 0 ($line-height-computed / 2);
 }
@@ -65,11 +69,12 @@ ol {
 
 //links
 a {
-    color: $link-color;
+    color: inherit;
     text-decoration: none;
     &:hover, &:focus {
         text-decoration: none;
         cursor: pointer;
+        color: inherit;
     }
     &:focus {}
 }

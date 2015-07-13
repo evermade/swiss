@@ -1,6 +1,6 @@
 (function() {
 
-	//create empty object in the global em variable
+	//create empty object in the global em var, dont forget to add the init call in the main.js!
 	em.base = {};
 
 	//call any functions to be trigger on dom ready

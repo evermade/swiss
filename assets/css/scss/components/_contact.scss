@@ -1,0 +1,40 @@
+.contact {
+	&__container {
+		@include container();
+	}
+
+	&__header {
+		&__title {
+			@extend .heading;
+		}
+	}
+	
+	&__row {
+		@include make-row();
+	}
+
+	&__info {
+		@include make-xs-column(12);
+		@include make-sm-column(5);
+		@include make-md-column(4);
+
+		&__text {
+			@include margin(md, bottom);
+		}
+
+		&__address {
+			@include margin(md, bottom);
+		}
+
+		&__opening {
+			@include margin(md, bottom);
+		}
+	}
+
+	&__map {
+		@include make-xs-column(12);
+		@include make-sm-column(7);
+		@include make-md-column(8);
+	}
+
+}

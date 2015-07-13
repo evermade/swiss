@@ -14,17 +14,29 @@
 
 .center {
     &--all {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include align('all');
     }
     &--vertical {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        @include align('vertical');
     }
     &--horizontal {
-      @include center-block();
+        @include align('horizontal');
     }
+    &--content {
+        @include align('content');
+    }
+}
+
+.equal-height, .equal-height > div {
+    @include equal-height();
+}
+
+.js-clickable {
+  position: relative;
+  cursor: pointer;
+  display: block;
+
+  &__item {
+    @include overlay(transparent, 0);
+  }
 }

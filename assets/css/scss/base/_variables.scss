@@ -4,7 +4,7 @@ $grey: #222;
 $light-grey: #666;
 
 //link colors to meaninful vars
-$brand-color: $light-grey;
+$brand-color: $red;
 $body-bg: #fff;
 $text-color: $grey;
 $link-color: $brand-color;
@@ -27,9 +27,9 @@ $font-size-sm: 14px;
 $font-size-base: 16px; //base!!
 $font-size-md: 18px;
 $font-size-lg: 24px;
-$font-size-xl: 50px;
-$font-size-xxl: 80px;
-$font-size-xxxl: 140px;
+$font-size-xl: 36px;
+$font-size-xxl: 48px;
+$font-size-xxxl: 90px;
 
 //for bourbon
 $em-base: $font-size-rem-base;
@@ -50,11 +50,18 @@ $font-size-h6: ceil(($font-size-base * 0.85)); // ~12px
 
 //layout stuff
 $container-max-width: 1170px;
-$container-full-max-width: 1600px;
+$container-full-max-width: 2600px;
 
 $padding-xs: 10px;
 $padding-sm: 20px;
 $padding: 30px;//base
 $padding-md: 50px;
-$padding-lg: 100px;
+$padding-lg: 70px;
 $padding-xl: 150px;
+
+$col-padding: 15px;
+
+$header-margin-top: 110px;
+$header-margin-top-sm: 75px; //height of the header
+
+$mobile-menu-toggle: "md";

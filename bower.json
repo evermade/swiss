@@ -10,7 +10,8 @@
     "bootstrap-sass": "~3.3.4",
     "fontawesome": "latest",
     "bourbon": "~4.2.3",
-    "Justified-Gallery": "~3.5.4"
+    "Justified-Gallery": "~3.5.4",
+    "slick.js": "~1.5.6"
   },
   "private": true
 }

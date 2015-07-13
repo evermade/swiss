@@ -1,30 +1,9 @@
 .btn {
-    display: inline-block;
-    text-decoration: none;
-    padding: 8px 11px;
-    color: #fff;
-    cursor: pointer;
-    border: none;
-    @include border-radius(2px);
-    text-transform: capitalize;
-    background: $brand-color;
-    font-size: rem($font-size-base);
-    @include transition(all, 0.8s);
+    
+    @include btn();
 
-    &:hover {
-        background: darken($brand-color, 10%);
-        text-decoration: none;
-        color: #fff;
-    }
-    &--danger {
-        color: #fff;
-        background-color: #e23f3f;
-        &:hover {
-            background: lighten(#e23f3f, 10%);
-        }
+    &--white {
+        @include btn(#fff, #000);
     }
 
-    &:hover, &:active, &:focus {
-        outline: 0;
-    }
 }

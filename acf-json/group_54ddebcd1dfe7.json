@@ -145,9 +145,9 @@
                                 },
                                 {
                                     "key": "field_54f07e3df900c",
-                                    "label": "Column Class",
-                                    "name": "column_class",
-                                    "type": "text",
+                                    "label": "Column Type",
+                                    "name": "column_type",
+                                    "type": "radio",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -156,13 +156,14 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": "",
-                                    "readonly": 0,
-                                    "disabled": 0
+                                    "choices": {
+                                        "image": "Image",
+                                        "text": "Text"
+                                    },
+                                    "other_choice": 0,
+                                    "save_other_choice": 0,
+                                    "default_value": "text",
+                                    "layout": "horizontal"
                                 }
                             ]
                         },
@@ -303,6 +304,37 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "all",
+                            "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_55a3b9fe751e1",
+                            "label": "Vertical Alignment",
+                            "name": "columns_vertical_alignment",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5530ec4b55db1",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "top": "Top",
+                                "middle": "Middle",
+                                "bottom": "Bottom"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "top",
                             "layout": "horizontal"
                         }
                     ],
@@ -850,15 +882,6 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                {
-                    "key": "557acc3bb24a4",
-                    "name": "pekka",
-                    "label": "pekka",
-                    "display": "row",
-                    "sub_fields": [],
-                    "min": "",
-                    "max": ""
                 }
             ]
         }
@@ -878,5 +901,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1434111044
+    "modified": 1436793512
 }
