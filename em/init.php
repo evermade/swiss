@@ -4,9 +4,9 @@ require_once(get_template_directory().'/em/config.php');
 
 //classes, maybe use psr auto loading?
 require_once(get_template_directory().'/em/classes/class.app.php');
+require_once(get_template_directory().'/em/classes/class.helper.php');
 require_once(get_template_directory().'/em/classes/class.em.php');
 require_once(get_template_directory().'/em/classes/class.block.php');
-require_once(get_template_directory().'/em/classes/class.animate.php');
 
 //hooks
 require_once(get_template_directory().'/em/hooks.php');

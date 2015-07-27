@@ -8,11 +8,12 @@
 	//call any functions to be trigger on dom ready
 	em.animations.init = function(){
 		//em.animations.animateFirstBlockIn();
+		em.animations.getElements();
+		em.animations.setup();		
+	};
 
+	em.animations.getElements = function(){
 		em.animations.elements = $("[data-vp-add-class]");
-
-		em.animations.setup();
-		
 	};
 
 	em.animations.canWe = function(){

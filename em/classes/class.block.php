@@ -54,7 +54,7 @@ class Block extends BlockHelper{
 	 * @param  string $array [description]
 	 * @return [type]        [description]
 	 */
-	public function get($key, $array='data'){
+	public function get($key, $array='fields'){
 		if(!isset($this->{$array}[$key])){
 			return null;
 		}
@@ -66,12 +66,20 @@ class Block extends BlockHelper{
 	 * @param  array  $repeaters [description]
 	 * @return [type]            [description]
 	 */
-	public function get_repeater_field($repeaters= array()){
+	public function get_repeater_field($repeaters= array(), $sub=true){
 
 		if(!is_array($repeaters)) return false;
 
 		foreach($repeaters as $repeater){
-			$this->repeaters[$repeater] = get_sub_field($repeater);
+
+			//if in main loop and loop of flexible content
+			if($sub){
+				$this->repeaters[$repeater] = get_sub_field($repeater);
+			}
+			else {
+				$this->repeaters[$repeater] = get_field($repeater);
+			}
+
 			$this->data[$repeater.'_total'] = sizeof($this->repeaters[$repeater]);
 			$this->setup_grid_columns($repeater);
 		}
@@ -96,7 +104,7 @@ class BlockHelper {
 		}
 
 		if($this->data[$repeater.'_total'] > 1){
-			$this->data[$repeater.'_grid_columns'] .= ' col-md-'.em::number_of_columns($this->data[$repeater.'_total']);
+			$this->data[$repeater.'_grid_columns'] .= ' col-md-'.Helper::number_of_columns($this->data[$repeater.'_total']);
 		}
 
 		return $this->data[$repeater.'_grid_columns'];
@@ -149,48 +157,12 @@ class BlockHelper {
 	 * @param  string $array [description]
 	 * @return [type]        [description]
 	 */
-	public function sprint($field, $html='', $array='fields'){
-
-		if(is_array($field)){
-			return $this->sprint_array($field);
-		}
+	public function sprint($html='', $field=null, $array='fields'){
 
 		if(isset($this->{$array}[$field]) && !empty($this->{$array}[$field])){
-			return sprintf($html, $this->{$array}[$field]);
+			return Helper::sprint($html, $this->{$array}[$field]);
 		}
 
 		return null;
 	}
-
-	/**
-	 * [sprint_array description]
-	 * @param  array  $fields [description]
-	 * @param  [type] $html   [description]
-	 * @param  string $array  [description]
-	 * @return [type]         [description]
-	 */
-	public function sprint_array($fields=array(), $html='', $array='fields'){
-
-		if(!is_array($fields) || empty($fields)){
-			return null;
-		}
-
-		$data = array();
-		$broken = false;//number of placeholders need to match the elements in array or bad things happen
-		foreach($fields as $field){
-			if(isset($this->{$array}[$field]) && !empty($this->{$array}[$field])){
-				$data[$field] = $this->get($field, $array);
-			}
-			else {
-				$broken = true;
-			}
-		}
-
-		if(!empty($data) && !$broken){
-			return vsprintf($html, $data);
-		}
-
-		return null;
-	}
-
 }

@@ -6,7 +6,7 @@ var gulp = require('gulp');
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     jshint = require('gulp-jshint'),
-    //watch = require('gulp-watch'),
+    plumber = require('gulp-plumber'),
     autoprefixer = require('gulp-autoprefixer');
 
 //global src, dist and watch paths
@@ -36,6 +36,7 @@ gulp.task('sass', function () {
 //lets handle our js scripts
 gulp.task('js', function () {
    gulp.src(paths.js.src)
+      .pipe(plumber())
       .pipe(jshint())
       .pipe(jshint.reporter('jshint-stylish'))
       .pipe(uglify())

@@ -80,6 +80,37 @@ header.main-header + section.hero {
 		&__btn {
 			@extend .btn;
 		}
+
+		.hero__continue {
+
+			display: inline-block;
+			
+			span {
+				display: block;
+				float: left;
+				width: 100%;
+				clear: both;
+				text-align: center;
+
+				&:last-child {
+	           		@extend .chevron--down;
+				}
+			}
+
+			@include margin(sm, top);
+
+			@include bp(sm){
+				position: absolute;
+				bottom: -50px;
+				left: 0;
+				right: 0;
+				margin-top: 0;
+			}
+
+			@include bp(md){
+				bottom: -50px;
+			} 
+		}
 		
 	}
 }

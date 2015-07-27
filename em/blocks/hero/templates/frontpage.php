@@ -3,7 +3,7 @@
 	//echo "<pre>"; print_r($hero); echo "</pre>";
 ?>
 
-<section class="hero hero--basic" <?php echo $hero_background; ?>>
+<section class="hero hero--frontpage" <?php echo $hero_background; ?>>
 	<div class="hero__slides">
 
 		<?php for($i=0; $i<1; $i++): ?>

@@ -1,17 +1,17 @@
 {
-  "name": "Evermade Bare Theme",
+  "name": "onefastchop",
   "version": "1.0.0",
   "authors": [
-    "Paul Stewart <paul.stewart@evermade.fi>"
+    "paul <paul@onefastsnail.com>"
   ],
   "dependencies": {
     "modernizr": "latest",
     "jquery": "latest",
-    "bootstrap-sass": "~3.3.4",
     "fontawesome": "latest",
+    "bootstrap-sass": "~3.3.4",
+    "slick.js": "~1.5.5",
     "bourbon": "~4.2.3",
-    "Justified-Gallery": "~3.5.4",
-    "slick.js": "~1.5.6"
+    "Justified-Gallery": "~3.6.0"
   },
   "private": true
 }

@@ -4,7 +4,16 @@
 
 //include the base variables and mixins
 @import "base/variables";
-@import "base/mixins";
+
+//mixins
+@import "mixins/all";
+@import "mixins/content";
+@import "mixins/helpers";
+@import "mixins/structure";
+@import "mixins/typography";
+
+//functions
+@import "base/functions";
 
 //include the base helpers, typography etc
 @import "base/base";
@@ -20,11 +29,9 @@
 @import "components/core/btns";
 
 //lists
-@import "components/core/lists";
-@import "components/core/lists-social";
+@import "components/core/list";
+@import "components/core/list-social";
 
-@import "components/core/tabs";
-@import "components/core/accordians";
 @import "components/core/pagination";
 @import "components/core/breadcrumbs";
 @import "components/core/grid";
@@ -38,14 +45,20 @@
 //example
 @import "components/example";
 
-//blog
-@import "components/blog";
-
 //single-post
 @import "components/single-post";
 
+//blog
+@import "components/blog";
+
+//gallery
+@import "components/gallery";
+
 //animations
 @import "components/animations";
+
+//coming-soon
+@import "components/coming-soon";
 
 //nav-bar
 @import "components/nav-bar";
@@ -58,9 +71,6 @@
 
 //quotes
 @import "components/quotes";
-
-//contact
-@import "components/contact";
 
 //block-listing
 @import "components/block-listing";

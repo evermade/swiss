@@ -27,7 +27,35 @@
 
 	&__item {
 		@include make-xs-column(12);
-		@include make-sm-column(6);
+		@include wysiwyg-html();
+	}
+
+	&[data-count="1"] {
+		.columns__item {
+			@include make-xs-column(12);
+		}
+	}
+
+	&[data-count="2"] {
+		.columns__item {
+			@include make-xs-column(12);
+			@include make-sm-column(6);
+		}
+	}
+
+	&[data-count="3"] {
+		.columns__item {
+			@include make-xs-column(12);
+			@include make-sm-column(4);
+		}
+	}
+
+	&[data-count="4"] {
+		.columns__item {
+			@include make-xs-column(12);
+			@include make-sm-column(6);
+			@include make-md-column(3);
+		}
 	}
 
 	//lets push and pull columns

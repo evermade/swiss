@@ -27,7 +27,7 @@ else {
 	$block->set('posts', $block->fields['posts']);
 }
 
-$block->set('grid_columns', em::number_of_columns(sizeof($block->data['posts'])));
+$block->set('grid_columns', Helper::number_of_columns(sizeof($block->data['posts'])));
 $block->set('per_row', 2);
 
 include(__DIR__.'/view.php');

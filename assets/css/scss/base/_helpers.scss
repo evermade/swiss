@@ -14,16 +14,16 @@
 
 .center {
     &--all {
-        @include align('all');
+        @include align(all);
     }
     &--vertical {
-        @include align('vertical');
+        @include align(vertical);
     }
     &--horizontal {
-        @include align('horizontal');
+        @include align(horizontal);
     }
     &--content {
-        @include align('content');
+        @include align(content);
     }
 }
 

@@ -1,15 +1,13 @@
 .pagination {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    @extend .list;
+    @extend .list--horizontal;
     li {
-        display: inline-block;
-        position: relative;
         a{
             display: block;
         	padding: rem(5) rem(10);
             background: $brand-color;
             color: #fff;
+            border: none;
             @include transition();
 
             &.active, &:hover {

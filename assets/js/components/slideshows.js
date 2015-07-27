@@ -5,7 +5,7 @@
 
 	//call any functions to be trigger on dom ready
 	em.slideshows.init = function(){
-		//em.slideshows.slick();
+		em.slideshows.slick();
 	};
 
 	em.slideshows.slick  = function(){

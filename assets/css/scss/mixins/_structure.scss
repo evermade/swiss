@@ -1,0 +1,24 @@
+@mixin container($padding:true){
+  width: 100%;
+  margin: 0 auto;
+  max-width: $container-max-width;
+
+  @include bp(sm) {
+    width: 90%;
+  }
+
+  @include bp(lg) {
+    width: 100%;
+  }
+  
+   @if $padding == true {
+    padding: $padding-md 15px;
+
+    @include bp(sm) {
+      padding: $padding-md 15px;
+    }
+    @include bp(md) {
+      padding: $padding-lg 15px;
+    }
+  }
+}

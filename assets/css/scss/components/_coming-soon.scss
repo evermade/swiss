@@ -1,0 +1,48 @@
+.coming-soon {
+	background: $brand-color;
+	color: #fff;
+	text-align: center;
+
+	@include padding(md, top, true); 
+	@include padding(md, bottom, true); 
+
+	@include bp(sm){
+		padding: 0;
+		@include align('content');
+	} 
+
+	&__container {
+		@include container();
+	}
+
+	&__header {
+		&__title {
+		  @include margin(md, bottom, true); 
+		  text-transform: uppercase;
+		  @include font-size(xxxl);
+		}
+
+		&__sub-title {
+		  @include margin(md, bottom, true); 
+		  text-transform: lowercase;
+		  @include font-size(xxl);
+		}
+	}
+	
+	&__row{
+		@include make-row();
+	}
+
+	&__col {
+		@include make-xs-column(12);
+		@include make-sm-column(8);
+		@include make-sm-column-offset(2);		
+
+		@include padding(lg, top);
+		@include padding(lg, bottom);
+	}
+
+	.list--social {
+		@include margin(md, top, true); 
+	}
+}

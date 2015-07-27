@@ -4,7 +4,7 @@ global $app;
 $block = new Block;
 
 //set and get the acf fields for this block
-$block->get_fields(array('columns_id', 'columns_background', 'columns_text_color', 'columns_padding'));
+$block->get_fields(array('columns_id', 'columns_background', 'columns_text_color', 'columns_padding', 'columns_title', 'columns_vertical_alignment'));
 
 //set and get the repeater columns for this post
 $block->get_repeater_field(['columns_columns']);

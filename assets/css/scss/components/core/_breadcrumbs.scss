@@ -1,11 +1,11 @@
 .breadcrumbs {
-    list-style: none;
+    @extend .list;
+    @extend .list--horizontal;
+
     padding: rem(5);
-    margin: 0 0 10px 0;
+    margin: 0 0 rem(10) 0;
     background: #eee;
     li {
-        display: inline-block;
-        position: relative;
         &:before {
             content: "\f101";
             font-family: "FontAwesome";
@@ -15,9 +15,6 @@
             &:before {
                 content: "";
             }
-        }
-        a {
-            padding: 0;
         }
     }
 }

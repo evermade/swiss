@@ -1,9 +1,9 @@
- <section class="columns columns--stagger<?php echo $block->getCss('section');?>" style="<?php echo $block->getCss('columns_background'); ?>" data-count="<?php echo sizeof($block->repeaters['columns_columns']); ?>">
-	<div class="container">
+ <section class="columns<?php echo $block->getCss('section');?>" style="<?php echo $block->getCss('columns_background'); ?>" data-count="<?php echo sizeof($block->repeaters['columns_columns']); ?>">
+	<div class="columns__container">
 
 		<?php if (!empty($block->fields['columns_title'])): ?>
 		<div class="row">
-			<div class="col-xs-12 col-sm-6">
+			<div class="col-xs-12">
 				<header class="columns__header">
 		        <h1 class="columns__header__title"><?php echo $block->fields['columns_title']; ?></h1>
 		    </header>
@@ -22,7 +22,6 @@
 				<?php endforeach; ?>
 			</div><!-- end of row -->
 		<?php endforeach; ?>
-	
-	</div><!-- end of wrapper -->
 
-</section><!-- end of section --> 
+	</div><!-- end of wrapper -->
+</section><!-- end of section -->

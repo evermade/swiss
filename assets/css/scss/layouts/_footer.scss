@@ -2,10 +2,6 @@
 	background: #eee;
 	text-align: center;
 
-	@include bp(sm){
-		text-align: left;
-	} 
-
 	&__container {
 		@include container();
 	}
@@ -14,22 +10,11 @@
 		@include make-row();
 	}
 
-	&__copyright, &__credits {
+	&__content {
 		@include make-xs-column(12);
-		@include make-sm-column(6);
 
-		p {
-			@include bp(sm){
-				margin: 0;
-			} 
+		.nav__list--bar li {
+			float: none;
 		}
-	}
-
-	&__credits {
-
-		@include bp(sm){
-			text-align: right;
-		} 
-		
 	}
 }

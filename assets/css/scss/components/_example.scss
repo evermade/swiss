@@ -40,8 +40,4 @@
 			@extend .btn;
 		}
 	}
-
-	&__full-col {
-		@include make-xs-column(12);
-	}
 }

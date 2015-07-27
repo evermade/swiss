@@ -1,0 +1,146 @@
+@mixin bp($point:"sm", $mobile-first: "min") {
+  
+  $sm: $screen-sm-min;
+  $md: $screen-md-min;
+  $lg: $screen-lg-min;
+
+  @if($mobile-first == max){
+    $sm: $sm - 1;
+    $md: $md - 1;
+    $lg: $lg - 1;
+  }
+
+  @if $point == sm { 
+    @media (#{$mobile-first}-width: $sm) { @content }
+  }
+  @if $point == md { 
+    @media (#{$mobile-first}-width: $md) { @content; }
+  }
+  @else if $point == lg {
+    @media (#{$mobile-first}-width: $lg) { @content; }
+  }
+
+}
+
+@mixin paddingMargin($which: padding, $size: base, $where: top, $reset: false){
+    
+    $paddingDirection: #{$which}-#{$where} !default;
+
+    @if $where == all {
+      $paddingDirection: $which;
+    }
+    
+    //sometimes we need to reset the padding/margin
+    @if $reset == true {
+      #{$which}: 0;
+    }
+  
+    @if $size == xs { 
+      #{$paddingDirection}: rem($padding-xs);
+    }
+
+    @if $size == sm { 
+      #{$paddingDirection}: rem($padding-sm);
+    }
+
+    @if $size == base { 
+      #{$paddingDirection}: rem($padding);
+    }
+
+    @if $size == md { 
+      #{$paddingDirection}: rem($padding);
+      @include bp(md){
+       #{$paddingDirection}: rem($padding-md);
+      }
+    }
+
+    @if $size == lg { 
+      #{$paddingDirection}: rem($padding-md);
+      @include bp(md){
+       #{$paddingDirection}: rem($padding-lg);
+      }
+    }
+
+    @if $size == xl { 
+      #{$paddingDirection}: rem($padding-lg);
+      @include bp(sm){
+       #{$paddingDirection}: rem($padding-xl);
+      }
+    }
+}
+
+@mixin margin($size: base, $where: top, $reset: false){
+  @include paddingMargin(margin, $size, $where, $reset);
+}
+
+@mixin padding($size: base, $where: top, $reset: false){
+  @include paddingMargin(padding, $size, $where, $reset);
+}
+
+@mixin align($dir: all){
+    @if($dir == all) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+     @if($dir == vertical) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+     @if($dir == horizontal) {
+        @include center-block();
+    }
+    @if($dir == content) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@mixin equal-height(){
+    display: flex;
+    flex: 1 0 auto;
+}
+
+@mixin full-cover($position: absolute) {
+  display: block;
+  position: $position;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin overlay($color: $brand-color, $percentage: 0.2, $z-index: 1){
+  @extend .overlay;
+  z-index: $z-index;
+  background: rgba($color, $percentage);
+}
+
+@mixin circle($radius) {
+  @include border-radius(50%);
+  height: $radius;
+  width: $radius;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+@mixin bgimg($size: cover, $position: center, $repeat: no-repeat){
+  background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+}
