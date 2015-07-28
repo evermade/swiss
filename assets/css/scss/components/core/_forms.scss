@@ -25,6 +25,10 @@
         &:focus {
             outline: 0;
         }
+
+        &.error {
+            border: 1px solid red;
+        }
     }
     input[type="checkbox"], input[type="radio"] {
         margin-left: rem(10);

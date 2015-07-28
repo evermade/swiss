@@ -14,6 +14,8 @@ global $post;
 
 			<div class="row">
 
+			<div class="col-xs-12">
+
 				<?php foreach($set as $post): setup_postdata($post); 
 
 				//now lets get any ACF on this post object
@@ -21,19 +23,12 @@ global $post;
 
 				//set and get the fields for this post
 				$post_block->get_fields(array('test'), false);//false signals we need to use the native get_fields as its not a sub field at this level
-				?>
 				
-				<div class="posts-listing__post col-xs-12 col-sm-6 col-md-<?php echo $block->data['grid_columns'];?>">
-					<h2 class="posts-listing__post__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				include(get_template_directory().'/templates/post-small.php');
 
-					<div class="posts-listing__post__excerpt">
-						<?php the_excerpt(); ?>
-					</div>
+				endforeach; ?>
 
-					<a href="<?php the_permalink(); ?>" class="btn posts-listing__post__read">Read More</a>
-				</div>
-						
-				<?php endforeach; ?>
+			</div>
 
 			</div><!-- end of row -->
 

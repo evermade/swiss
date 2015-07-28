@@ -10,9 +10,12 @@ $block->get_fields(array('hero_type'));
 //set and get the repeater columns for this block
 $block->get_repeater_field(['hero_slides']);
 
-if(is_array($block->repeaters['hero_slides'])){
+if(is_array($block->repeaters['hero_slides'])){ ?>
 
-	foreach($block->repeaters['hero_slides'] as $k => $hero){
+<section class="hero hero--<?php echo $block->fields['hero_type'];?>">
+	<div class="hero__slides slick--hero">
+		
+	<?php foreach($block->repeaters['hero_slides'] as $k => $hero){
 
 		//generate tmp file name from hero type
 		$block->data['tmp'] = get_template_directory().'/em/blocks/hero/templates/'.$block->fields['hero_type'].'.php';
@@ -32,6 +35,9 @@ if(is_array($block->repeaters['hero_slides'])){
 		else {
 			continue;
 		}
-	}
+	} ?>
 
-}
+	</div><!-- end of wrapper -->
+</section><!-- end of section -->
+
+<?php }

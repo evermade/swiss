@@ -14,6 +14,7 @@ header.main-header + section.hero {
 	.hero__slide {
 		
 		color: #fff;
+		position: relative;
 
 		&__background {
 			@include full-cover();
@@ -38,7 +39,7 @@ header.main-header + section.hero {
 		}
 
 		&__overlay{
-			@include overlay(#000000, 0.7);
+			@include overlay(#000000, 0.3);
 			z-index: 200;
 		}
 
@@ -56,10 +57,16 @@ header.main-header + section.hero {
 			@include make-xs-column(12);
 			@include make-sm-column(8);
 			@include make-sm-column-offset(2);
-			
+
+			@include padding(xl, top);
+			@include padding(xl, bottom);
+			min-height: 100vh;
 			@include align('content');
-	
-			height: 100vh;
+			
+			@include bp(md){
+				
+				height: 100vh;
+			}
 
 			text-align: center;
 		}

@@ -1,0 +1,67 @@
+//an bootstrap to bem example :)
+.media-object-listing {
+	
+	background: #fff;
+
+	&__container {
+		@include container();
+	}
+	
+	&__row{
+		@include make-row();
+		
+		@include bp(sm){
+			
+			&:last-child {
+				.media-object-listing__item {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	&__item {
+		
+		@include make-xs-column(12);
+		@include make-sm-column(6);
+
+		@include margin(md, bottom);
+
+		&__image {
+			float: left;
+			width: 30%;
+			@include padding(base, right);
+
+			img {
+				border-radius: 50%;
+			}
+		}
+
+		&__content {
+			float: left;
+			width: 70%;
+
+			h2 {
+				@include font-type(pn, md, 600);
+				@include margin(xs, bottom, true);
+				text-transform: none;
+			}
+		}
+
+		&__email {
+			@extend .alink;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		&__position{
+			//@include font-size(sm);
+			@include font-type(pn, base, 600);
+			color: $light-grey;
+			@include margin(sm, top, true);
+		}
+
+	}
+}

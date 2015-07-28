@@ -26,6 +26,9 @@ require_once(get_template_directory().'/em/navigation.php');
 //image sizes
 require_once(get_template_directory().'/em/image-sizes.php');
 
+//ajax
+require_once(get_template_directory().'/em/ajax.php');
+
 //lets loop and include the block init files
 foreach(glob(get_template_directory().'/em/blocks/*/init.php') as $block_config){
 	include_once($block_config);	

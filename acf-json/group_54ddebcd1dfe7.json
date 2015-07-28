@@ -102,15 +102,24 @@
                     "max": ""
                 },
                 {
+                    "key": "55b625c9ac9a9",
+                    "name": "dev",
+                    "label": "dev",
+                    "display": "row",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                {
                     "key": "55825c64bf91e",
-                    "name": "contact_us_listing",
-                    "label": "Contact Us Listing",
+                    "name": "media_object_listing",
+                    "label": "Media Object Listing",
                     "display": "row",
                     "sub_fields": [
                         {
                             "key": "field_55827a2f72bc9",
-                            "label": "Contact Categories",
-                            "name": "contact_categories",
+                            "label": "Items",
+                            "name": "media_object_items",
                             "type": "repeater",
                             "instructions": "",
                             "required": 0,
@@ -120,7 +129,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "min": 2,
+                            "min": 1,
                             "max": "",
                             "layout": "table",
                             "button_label": "Add Row",
@@ -128,7 +137,7 @@
                                 {
                                     "key": "field_55827a3d72bca",
                                     "label": "Image",
-                                    "name": "contact_category_image",
+                                    "name": "media_object_item_image",
                                     "type": "image",
                                     "instructions": "",
                                     "required": 1,
@@ -152,7 +161,7 @@
                                 {
                                     "key": "field_55827a5672bcb",
                                     "label": "Title",
-                                    "name": "contact_category_title",
+                                    "name": "media_object_item_title",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 1,
@@ -173,7 +182,7 @@
                                 {
                                     "key": "field_55827a5f72bcc",
                                     "label": "Text",
-                                    "name": "contact_category_text",
+                                    "name": "media_object_item_text",
                                     "type": "textarea",
                                     "instructions": "",
                                     "required": 1,
@@ -194,7 +203,7 @@
                                 {
                                     "key": "field_55827a7a72bcd",
                                     "label": "Email",
-                                    "name": "contact_category_email",
+                                    "name": "media_object_item_email",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 1,
@@ -214,8 +223,8 @@
                                 },
                                 {
                                     "key": "field_55a3a0329a328",
-                                    "label": "Position",
-                                    "name": "contact_category_position",
+                                    "label": "Role",
+                                    "name": "media_object_item_role",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 0,
@@ -495,6 +504,42 @@
                             "save_other_choice": 0,
                             "default_value": "all",
                             "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_55b61e6ef1817",
+                            "label": "Type",
+                            "name": "columns_type",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5530ec4b55db1",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "basic": "Basic",
+                                "staggered": "Staggered"
+                            },
+                            "default_value": {
+                                "staggered": "staggered"
+                            },
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "disabled": 0,
+                            "readonly": 0
                         }
                     ],
                     "min": "",
@@ -506,6 +551,27 @@
                     "label": "Gallery",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_55b6203222894",
+                            "label": "Title",
+                            "name": "gallery_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
                         {
                             "key": "field_55b5e82b6b2d3",
                             "label": "Type",
@@ -791,7 +857,7 @@
                                 "id": ""
                             },
                             "min": 1,
-                            "max": 1,
+                            "max": 4,
                             "layout": "row",
                             "button_label": "Add Row",
                             "sub_fields": [
@@ -1359,5 +1425,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1437990690
+    "modified": 1438001369
 }

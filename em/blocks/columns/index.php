@@ -4,7 +4,7 @@ global $app;
 $block = new Block;
 
 //set and get the acf fields for this block
-$block->get_fields(array('columns_id', 'columns_background', 'columns_text_color', 'columns_padding', 'columns_title', 'columns_vertical_alignment'));
+$block->get_fields(array('columns_id', 'columns_background', 'columns_text_color', 'columns_padding', 'columns_title', 'columns_vertical_alignment', 'columns_type'));
 
 //set and get the repeater columns for this post
 $block->get_repeater_field(['columns_columns']);
@@ -21,5 +21,6 @@ $block->set_background_image('columns_background');
 $block->addCss($block->fields['columns_id'], 'section');
 $block->addCss($block->fields['columns_text_color'], 'section');
 $block->addCss($block->fields['columns_padding'], 'section');
+$block->addCss('columns--'.$block->fields['columns_type'], 'section');
 
 include(__DIR__.'/view.php');

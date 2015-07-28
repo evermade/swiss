@@ -3,6 +3,9 @@
 	//echo "<pre>"; print_r($block->repeaters['gallery_images']); echo "</pre>";
 ?>
 <section class="gallery gallery--flickr<?php echo $block->getCss('section');?>">
+
+<?php echo Helper::sprint('<header class="gallery__header"><h1 class="gallery__header__title">%s</h1></header>', $block->fields['gallery_title']); ?>
+
 	<div class="gallery__images">
 
 		<?php foreach($block->repeaters['gallery_images'] as $k => $image): ?>
