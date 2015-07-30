@@ -1,0 +1,20 @@
+.breadcrumbs {
+    @extend .list;
+    @extend .list--horizontal;
+
+    padding: rem(5);
+    margin: 0 0 rem(10) 0;
+    background: #eee;
+    li {
+        &:before {
+            content: "\f101";
+            font-family: "FontAwesome";
+            padding-right: 3px;
+        }
+        &:first-child {
+            &:before {
+                content: "";
+            }
+        }
+    }
+}

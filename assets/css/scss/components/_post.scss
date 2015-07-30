@@ -1,0 +1,5 @@
+.post {
+	&--small {
+		@include make-xs-column(12);
+	}
+}

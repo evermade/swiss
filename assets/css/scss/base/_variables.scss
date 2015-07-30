@@ -1,0 +1,67 @@
+// colours
+$red: #e97770;
+$grey: #222;
+$light-grey: #666;
+
+//link colors to meaninful vars
+$brand-color: $red;
+$body-bg: #fff;
+$text-color: $grey;
+$link-color: $brand-color;
+$link-hover-color: darken($link-color, 15%);
+
+//Typography, revise multiple serif and sans serif fonts
+$font-family-sans-serif: "Source Sans Pro", sans-serif;
+$font-family-serif: Georgia, "Times New Roman", Times, serif;
+$font-family-base: $font-family-sans-serif;
+$font-weight-base: 400;
+$line-height-base: 1.628571429;
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
+
+//font sizes
+$font-size-rem-sm: 8.5px;
+$font-size-rem-md: 9.5px;
+$font-size-rem-base: 10px;
+
+$font-size-sm: 14px;
+$font-size-base: 16px; //base!!
+$font-size-md: 18px;
+$font-size-lg: 24px;
+$font-size-xl: 36px;
+$font-size-xxl: 48px;
+$font-size-xxxl: 90px;
+
+//for bourbon
+$em-base: $font-size-rem-base;
+
+//headings
+$headings-font-family: inherit;
+$headings-font-weight: 700;
+$headings-line-height: 1.1;
+$headings-color: inherit;
+$headings-small-color: inherit;
+
+$font-size-h1: floor(($font-size-base * 2.6)); // ~36px
+$font-size-h2: floor(($font-size-base * 2.15)); // ~30px
+$font-size-h3: ceil(($font-size-base * 1.7)); // ~24px
+$font-size-h4: ceil(($font-size-base * 1.25)); // ~18px
+$font-size-h5: $font-size-base;
+$font-size-h6: ceil(($font-size-base * 0.85)); // ~12px
+
+//layout stuff
+$container-max-width: 1170px;
+$container-full-max-width: 2600px;
+
+$padding-xs: 10px;
+$padding-sm: 20px;
+$padding: 30px;//base
+$padding-md: 50px;
+$padding-lg: 70px;
+$padding-xl: 150px;
+
+$col-padding: 15px;
+
+$header-margin-top: 110px;
+$header-margin-top-sm: 75px; //height of the header
+
+$mobile-menu-toggle: "md";

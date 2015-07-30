@@ -1,0 +1,43 @@
+.blog {
+
+	&__container {
+		@include container();
+	}
+
+	&__header {
+		.blog__title {
+			@include margin(md, bottom, true);
+		}
+	}
+
+	&__filter {
+		@include make-md-column(4);
+		@include make-md-column-push(8);
+
+		background: #eee;
+		padding: $col-padding;
+
+		&__list {
+			ul{
+				padding: 0;
+			}
+			@extend .list;
+			@extend .list--vertical;
+			@include margin(base, bottom);
+		}
+
+		&__title {
+			@include margin(base, bottom, true);
+		}
+
+		&__search {
+			@include margin(base, bottom);
+		}
+
+	}
+
+	&__posts{
+		@include make-md-column(8);
+		@include make-md-column-pull(4);
+	}
+}

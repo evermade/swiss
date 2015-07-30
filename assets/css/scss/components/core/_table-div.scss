@@ -1,0 +1,97 @@
+$tableBlockBreak: lg;
+
+.table-div  {
+
+    display: block;//on mobile we will be block
+
+    @include bp($tableBlockBreak){
+        display: table;
+        border-collapse: separate;
+    }
+
+    width: 100%;
+
+    &__row {
+      display: block;
+
+      @include bp($tableBlockBreak){
+        display: table-row;
+      } 
+    }
+    &__col {
+
+        display: block;
+
+        @include bp($tableBlockBreak){
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        padding: rem($padding);
+        position: relative;
+        
+    }
+}
+
+//example for modifying
+.table-div--example {
+
+    .table-div__row {
+
+    }
+
+    .table-div__col {
+
+        &__inner {
+
+        }
+
+    }
+
+}
+
+//a common example of table div styled
+.table-div--dummy {
+
+    @include bp($tableBlockBreak){
+        border-spacing: 15px;
+        text-align: center;
+        table-layout: fixed; //make fixed widths
+
+        //lets apply negative margin to compensate for border spacing
+        @include counter-col-margin();
+    } 
+
+    .table-div__row {
+    }
+
+    .table-div__col {
+
+        border: 1px solid #eee;
+        padding: rem(20);
+        vertical-align: top;
+        position: relative;
+
+         @include bp($tableBlockBreak, max){
+            margin-top: -1px;
+         }
+
+        &__btn {
+            @extend .btn;
+        }
+
+        @include bp($tableBlockBreak){
+            &__text {
+                @include margin(lg, bottom);
+            }
+
+            &__btn {
+                position: absolute;
+                bottom: $padding;
+                transform: translateX(-50%);
+            }
+        } 
+
+    }
+
+}

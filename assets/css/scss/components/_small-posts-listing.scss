@@ -1,0 +1,5 @@
+.small-posts-listing {
+	&__container {
+		@include container();
+	}
+}

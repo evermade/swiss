@@ -1,0 +1,11 @@
+.list--social {
+    li {
+        i {
+          color: #fff !important;
+          @include circle(40px);
+          margin-right: 5px;
+          font-size: 1.3em;
+          background: $brand-color;
+        }
+    }
+}

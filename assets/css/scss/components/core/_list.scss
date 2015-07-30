@@ -1,0 +1,17 @@
+.list {
+
+  padding:0;
+
+  &--horizontal {
+    li {
+      display: inline-block;
+    }
+  }
+
+  &--vertical {
+    li {
+      list-style: none;
+    }
+  }
+
+}

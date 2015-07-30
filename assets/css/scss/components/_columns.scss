@@ -1,0 +1,85 @@
+.columns {
+	
+	&__container {
+		@include container();
+	}
+
+	&__row{
+		@include make-row();
+
+		@include bp(md){
+			display: flex;
+
+			&--align-top {
+			}
+			
+			&--align-middle {
+				align-items: center;
+			}
+
+			&--align-bottom {
+				align-items: baseline;
+			}
+		}
+
+		@extend .columns__row--align-middle; //for demo default
+	}
+
+	&__item {
+		@include make-xs-column(12);
+		@include wysiwyg-html();
+	}
+
+	&[data-count="1"] {
+		.columns__item {
+			@include make-xs-column(12);
+		}
+	}
+
+	&[data-count="2"] {
+		.columns__item {
+			@include make-xs-column(12);
+			@include make-sm-column(6);
+		}
+	}
+
+	&[data-count="3"] {
+		.columns__item {
+			@include make-xs-column(12);
+			@include make-sm-column(4);
+		}
+	}
+
+	&[data-count="4"] {
+		.columns__item {
+			@include make-xs-column(12);
+			@include make-sm-column(6);
+			@include make-md-column(3);
+		}
+	}
+
+	//lets push and pull columns
+	&--staggered{
+		
+		&:nth-child(odd){
+
+			@include bp(sm){
+			
+				.columns__item:first-child {
+					@include make-sm-column-push(6);
+				}
+
+				.columns__item:last-child {
+					@include make-sm-column-pull(6);
+				}
+
+			} 
+		}
+	}
+
+	& + .columns {
+		.columns__container {
+			padding-top: 0 !important;
+		}
+	}
+}

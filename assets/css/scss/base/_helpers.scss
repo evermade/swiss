@@ -1,0 +1,42 @@
+// base helper classes
+.el {
+    position: relative;
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+.center {
+    &--all {
+        @include align(all);
+    }
+    &--vertical {
+        @include align(vertical);
+    }
+    &--horizontal {
+        @include align(horizontal);
+    }
+    &--content {
+        @include align(content);
+    }
+}
+
+.equal-height, .equal-height > div {
+    @include equal-height();
+}
+
+.js-clickable {
+  position: relative;
+  cursor: pointer;
+  display: block;
+
+  &__item {
+    @include overlay(transparent, 0);
+  }
+}

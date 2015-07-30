@@ -1,0 +1,96 @@
+//include vendor grid and get responsive utlilities 
+@import "../../vendor/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../vendor/bourbon/app/assets/stylesheets/_bourbon.scss";
+
+//include the base variables and mixins
+@import "base/variables";
+
+//mixins
+@import "mixins/all";
+@import "mixins/content";
+@import "mixins/helpers";
+@import "mixins/structure";
+@import "mixins/typography";
+
+//functions
+@import "base/functions";
+
+//include the base helpers, typography etc
+@import "base/base";
+@import "base/helpers";
+@import "base/typography";
+
+//include the components core which can/would be amended to that project
+@import "components/core/nav";
+@import "components/core/print";
+@import "components/core/alerts";
+@import "components/core/forms";
+@import "components/core/tables";
+@import "components/core/btns";
+
+//lists
+@import "components/core/list";
+@import "components/core/list-social";
+
+@import "components/core/pagination";
+@import "components/core/breadcrumbs";
+@import "components/core/grid";
+@import "components/core/icons";
+@import "components/core/overlay";
+@import "components/core/table-div";
+
+//include custom components, or modifiers of core components
+@import "components/all";
+
+//example
+@import "components/example";
+
+//section-header
+@import "components/section-header";
+
+//media_object_listing
+@import "components/media-object-listing";
+
+//masonry
+@import "components/masonry";
+
+//slick
+@import "components/slick";
+
+//blog stuff
+@import "components/blog";
+@import "components/post";
+@import "components/single-post";
+@import "components/small-posts-listing";
+
+//gallery
+@import "components/gallery";
+
+//animations
+@import "components/animations";
+
+//nav-bar
+@import "components/nav-bar";
+
+//columns
+@import "components/columns";
+
+//hero
+@import "components/hero/basic";
+
+//quotes
+@import "components/quotes";
+
+//block-listing
+@import "components/block-listing";
+
+//logo-listing
+@import "components/logo-listing";
+
+//full-width-grid
+@import "components/full-width-grid";
+
+//include our layouts
+@import "layouts/general";
+@import "layouts/header";
+@import "layouts/footer";

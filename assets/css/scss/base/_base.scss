@@ -1,0 +1,55 @@
+html {
+    box-sizing: border-box;
+    font-size: $font-size-rem-sm;
+
+    @include bp(sm) {
+        font-size: $font-size-rem-md;
+    }
+
+    @include bp(md) {
+        font-size: $font-size-rem-base;
+    }
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    color: $text-color;
+    font-family: inherit;
+    line-height: inherit;
+}
+
+body {
+  font-family: $font-family-base;
+  @include font-size(base);
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $body-bg;
+  font-weight: $font-weight-base;
+  
+  -webkit-font-smoothing:antialiased;
+  font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+
+}
+
+// ::-moz-selection {
+//     background: #eee;
+//     text-shadow: none;
+// }
+
+// ::selection {
+//     background: #eee;
+//     text-shadow: none;
+// }
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+}

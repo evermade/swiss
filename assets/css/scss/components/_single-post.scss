@@ -1,0 +1,9 @@
+.single-post {
+	&__container{
+		@include container();
+	}
+
+	&__content{
+		@include make-xs-column(12);
+	}
+}
