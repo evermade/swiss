@@ -11,12 +11,12 @@
 				
 			<div class="masonry__item">
 
-				<div class="masonry__item__inner">
+				<div class="masonry__item__inner" <?php Helper::animate('', ['el-up']); ?>>
 					<div class="masonry__item__image">
-						<img src="http://fakeimg.pl/650x<?php echo rand(350, 500);?>/666666/fff/?text=img" alt="fake img"/>
+						<img src="http://fakeimg.pl/650x<?php echo rand(150, 500);?>/666666/fff/?text=img" alt="fake img"/>
 					</div>
 					<div class="masonry__item__text">
-						<?php echo Helper::lorem(rand(1, 4)); ?>
+						<?php echo Helper::lorem(rand(1, 2)); ?>
 
 						<div class="masonry__item__meta">
 							<p><a href="http://twitter.com/onefastsnail">@onefastsnail</a></p>

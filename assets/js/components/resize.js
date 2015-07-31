@@ -13,6 +13,8 @@
 		//in future maybe attach this to a array to methods are relative to content
 		$( window ).resize(function() {
 			$("body.nav-open .navtoggle").click();
+			em.animations.checkRequiredWidth();
+			em.helper.resizeVideos();
 		});
 	};
 

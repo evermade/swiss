@@ -71,7 +71,7 @@
 
                             //and/or add error class to input
                             form.find('*[name="' + error + '"]').addClass('error');
-                        };
+                        }
                     }
 
                     //for more demo purposes

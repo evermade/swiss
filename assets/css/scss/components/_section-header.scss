@@ -4,6 +4,8 @@
 	&__title {
 		text-transform: uppercase;
   		margin: 0;
+  		word-break: break-all;
+  		@include font-size(xl);
 	}
 
 	&__subtitle {

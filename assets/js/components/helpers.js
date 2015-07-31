@@ -7,7 +7,6 @@
 		em.helper.resizeVideos();
 		em.helper.spemail();
 		em.helper.jumpTo();
-		//em.helper.showOverflown();
 		em.helper.toggleHeroNav();
 		em.helper.hashCheck();
 		em.helper.goToNext();
@@ -40,21 +39,6 @@
 		if($('header.main-header').next().hasClass('hero')){
 			$('body').addClass('js-hero-active');
 		}
-	};
-
-	em.helper.showOverflown = function(){
-
-		var docWidth = document.documentElement.offsetWidth;
-
-		[].forEach.call(
-		  document.querySelectorAll('*'),
-		  function(el) {
-		    if (el.offsetWidth > docWidth) {
-		      console.log(el);
-		    }
-		  }
-		);
-
 	};
 
 	em.helper.imgRemoveDimensions = function(){

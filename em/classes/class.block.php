@@ -13,7 +13,7 @@ class Block extends BlockHelper{
 	public function __construct($data=array()){
 
 		if(!empty($data)){
-			$this->data = $data;
+			$this->fields = $data;
 		}
 	}
 
@@ -90,6 +90,14 @@ class Block extends BlockHelper{
 
 class BlockHelper {
 
+	public function is_empty($key=null, $array='fields'){
+		if(isset($this->{$array}[$key]) && !empty($this->{$array}[$key])){
+			return false;
+		}
+
+		return true;
+	}
+
 	/**
 	 * a method to build css classes, inline styles for elements
 	 * @param [type] $css [description]
@@ -123,9 +131,9 @@ class BlockHelper {
 	 * a wrapper function addCss specifically for background images
 	 * @param [type] $field [description]
 	 */
-	public function set_background_image($field){
+	public function set_background_image($field, $size='large'){
 		if(is_array($this->fields[$field])){
-			return $this->addCss('background-image:url('.$this->fields[$field]['sizes']['large'].');', $field);
+			return $this->addCss('background-image:url('.$this->fields[$field]['sizes'][$size].');', $field);
 		}
 		return false;
 	}

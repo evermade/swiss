@@ -125,7 +125,7 @@
 }
 
 @mixin overlay($color: $brand-color, $percentage: 0.2, $z-index: 1){
-  @extend .overlay;
+  @include full-cover();
   z-index: $z-index;
   background: rgba($color, $percentage);
 }

@@ -2,19 +2,22 @@ $masonry-item-gutter: 10px;
 .masonry {
 
 	background: #eee;
+	overflow: hidden;
 	
 	&__container {
 		@include container();
 	}
 	
 	&__items{
-		@include make-row($masonry-item-gutter);
+		@include make-row($masonry-item-gutter*2);
 	}
 
 	&__item {
 		
 		@include make-xs-column(12);
-		@include make-sm-column(4);
+		@include make-sm-column(6);
+		@include make-md-column(4);
+		@include make-lg-column(3);
 		padding: 0 $masonry-item-gutter;
 		margin-bottom: $masonry-item-gutter*2;
 

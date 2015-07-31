@@ -2,22 +2,37 @@
 
 	//create empty object in the global em variable
 	em.animations = {
-		elements: {}
+		elements: {},
+		winWidthOk: false
 	};
 
 	//call any functions to be trigger on dom ready
 	em.animations.init = function(){
-		//em.animations.animateFirstBlockIn();
-		em.animations.getElements();
-		em.animations.setup();		
+
+		em.animations.elements = $("[data-vp-add-class]");
+
+		em.animations.checkRequiredWidth();
+
+		em.animations.animateFirstBlockIn();
+
+		em.animations.setup();
+		
 	};
 
-	em.animations.getElements = function(){
-		em.animations.elements = $("[data-vp-add-class]");
+	em.animations.checkRequiredWidth = function(){
+		if($(window).width()>1024){
+			em.animations.winWidthOk = true;
+			em.animations.animate();
+			em.animations.animateFirstBlockIn();
+		}
+		else {
+			em.animations.winWidthOk = false;
+		}
+
 	};
 
 	em.animations.canWe = function(){
-		if($(window).width() > 1024 && em.animations.elements.length) {
+		if(em.animations.elements.length && em.animations.winWidthOk == true) {
 			return true;
 		}
 
@@ -26,37 +41,37 @@
 
 	em.animations.setup  = function(){
 		
-		if(em.animations.canWe()){
+		$(window).on("scroll", function() {
 
-			$(window).on("scroll", function() {
+			if(!em.animations.canWe()){
+				return false;
+			}
 
-				if(!em.animations.canWe()){
-					return false;
-				}
+			em.animations.animate();
+		    
+		}).scroll();
+	};
 
-			    em.animations.elements.each(function(){
+	em.animations.animate = function(){
+		em.animations.elements.each(function(){
 
-			        var win = $(window),
-			        	el = $(this),
-			        	scrollTop = win.scrollTop(),
-			            windowHeight = win.height(),
-			            elTop = el.offset().top;
+	        var win = $(window),
+	        	el = $(this),
+	        	scrollTop = win.scrollTop(),
+	            windowHeight = win.height(),
+	            elTop = el.offset().top;
 
-			        //for repeately animate
-			        el.toggleClass( el.data("vp-add-class"), elTop < (scrollTop+windowHeight));
+	        el.toggleClass( el.data("vp-add-class"), elTop < (scrollTop+windowHeight));
 
-			        //for a one time wonder
-			        // if(elTop < (scrollTop+windowHeight)){
-			        // 	el.addClass( el.data("vp-add-class"));
-			        // }
-			    });
-			}).scroll();
-		}
+	        // if(elTop < (scrollTop+windowHeight)){
+	        // 	el.addClass( el.data("vp-add-class"));
+	        // }
+	    });
 	};
 
 	em.animations.animateFirstBlockIn = function(){
-		if($(window).width() > 1024){
-			var el = $('.page-blocks > section.hero + section');
+		if(em.animations.canWe()){
+			var el = $('.main-header > section.hero + section');
 			var container = el.find('div').eq(0);
 
 			if(!el.hasClass('toBeAnimated')){

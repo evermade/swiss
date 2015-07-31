@@ -1,6 +1,6 @@
 //lets animated yall!
 
-@include bp(lg){
+@media only screen and (min-width : 1025px) {
 	*[data-vp-add-class] {
 		opacity: 0;
 
