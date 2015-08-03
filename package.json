@@ -1,16 +1,12 @@
 {
-  "name": "Evermade Base Theme",
+  "name": "evermade-bare-theme",
   "version": "1.0.0",
   "description": "Evermade Base Theme",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/username/repository.git"
-  },
-  "author": "Paul Stewart",
+  "author": "Mr Evermade",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.8.10",
