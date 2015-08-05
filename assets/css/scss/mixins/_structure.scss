@@ -1,24 +1,23 @@
-@mixin container($padding:true){
-  width: 100%;
-  margin: 0 auto;
-  max-width: $container-max-width;
+@mixin container($max: true){
+  @include container-fixed;
 
-  @include bp(sm) {
-    width: 90%;
-  }
-
-  @include bp(lg) {
+  @if($max == true){
     width: 100%;
-  }
-  
-   @if $padding == true {
-    padding: $padding-md 15px;
+    @media (min-width: $screen-sm-min) {
+      max-width: $container-sm-max;
+    }
+    @media (min-width: $screen-md-min) {
+      max-width: $container-md-max;
+    }
+    @media (min-width: $screen-lg-min) {
+      max-width: $container-lg-max;
+    }
+    @media (min-width: $screen-xl-min) {
+      max-width: $container-xl-max;
+    }
 
-    @include bp(sm) {
-      padding: $padding-md 15px;
-    }
-    @include bp(md) {
-      padding: $padding-lg 15px;
-    }
+    padding-left:  $container-gutter-width;
+    padding-right: $container-gutter-width;
   }
+
 }

@@ -1,6 +1,6 @@
 .full-width-grid {
 	&__container {
-		@include container($padding: false);
+		@include container();
 		@include padding(md, top);
 		width: 100% !important;
 		max-width: 100%;

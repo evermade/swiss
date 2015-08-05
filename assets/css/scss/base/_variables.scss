@@ -69,3 +69,17 @@ $header-margin-top: 110px;
 $header-margin-top-sm: 75px; //height of the header
 
 $mobile-menu-toggle: "md";
+
+//lets setup a new xl breakpoint
+$screen-xl: 1600px;
+$screen-xl-min: $screen-xl;
+$screen-lg-max: $screen-xl-min - 1;
+
+//container sizes
+$container-sm-max: 100%;
+$container-md-max: 100%;
+$container-lg-max: 1170px;
+$container-xl-max: 1441px;
+
+//container gutter width
+$container-gutter-width: $grid-gutter-width / 2; // divide by 2 as how bootstrap works

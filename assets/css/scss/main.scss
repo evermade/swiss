@@ -7,10 +7,10 @@
 
 //mixins
 @import "mixins/all";
-@import "mixins/content";
 @import "mixins/helpers";
 @import "mixins/structure";
 @import "mixins/typography";
+@import "mixins/common";
 
 //functions
 @import "base/functions";

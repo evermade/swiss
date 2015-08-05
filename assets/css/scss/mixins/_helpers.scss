@@ -1,15 +1,16 @@
 @mixin bp($point:"sm", $mobile-first: "min") {
   
-  $xs: $screen-xs-min;
+  $xs: 0;
   $sm: $screen-sm-min;
   $md: $screen-md-min;
   $lg: $screen-lg-min;
+  $xl: $screen-xl-min;
 
   @if($mobile-first == max){
-    $xs: $xs - 1;
-    $sm: $sm - 1;
-    $md: $md - 1;
-    $lg: $lg - 1;
+    $xs: $screen-xs-max;
+    $sm: $screen-sm-max;
+    $md: $screen-md-max;
+    $lg: $screen-lg-max;
   }
   
   @if $point == xs { 
@@ -21,8 +22,11 @@
   @if $point == md { 
     @media (#{$mobile-first}-width: $md) { @content; }
   }
-  @else if $point == lg {
+  @if $point == lg {
     @media (#{$mobile-first}-width: $lg) { @content; }
+  }
+  @else if $point == xl {
+    @media (#{$mobile-first}-width: $xl) { @content; }
   }
 
 }

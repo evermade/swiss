@@ -6,6 +6,7 @@ $logo-row-border-size: 1px;
 
 	.logo-listing__container {
 		@include container();
+		@include section();
 	}
 
 	.logo-listing__text {

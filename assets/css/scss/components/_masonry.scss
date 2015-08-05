@@ -6,6 +6,7 @@ $masonry-item-gutter: 10px;
 	
 	&__container {
 		@include container();
+		@include section();
 	}
 	
 	&__items{

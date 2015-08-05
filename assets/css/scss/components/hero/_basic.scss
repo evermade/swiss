@@ -44,7 +44,7 @@ header.main-header + section.hero {
 		}
 
 		&__container {
-			@include container($padding: false);
+			@include container();
 			z-index: 300;
 			position: relative;
 		}

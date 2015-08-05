@@ -1,6 +1,7 @@
 .single-post {
 	&__container{
 		@include container();
+		@include section();
 	}
 
 	&__content{

@@ -1,6 +1,7 @@
 .quotes{
 	&__container {
 		@include container();
+		@include section();
 	}
 
 	&__header {
@@ -17,7 +18,7 @@
 .quote {
 
 	&__container {
-		@include container($padding: false);
+		@include container();
 		@include margin(md, bottom);
 	}
 

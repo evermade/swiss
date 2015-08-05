@@ -4,6 +4,7 @@
 
 	&__container {
 		@include container();
+		@include section();
 	}
 	
 	&__row{

@@ -2,10 +2,8 @@
 	@extend .clearfix;
 
 	.gallery__container {
-		@include container($padding: false);
+		@include container(false);
 		@include padding(md, top);
-		width: 100% !important;
-		max-width: 100%;
 	}
 }
 
@@ -68,4 +66,9 @@
 
 .gallery--flickr {
 	overflow: hidden;
+
+	.gallery__container {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
