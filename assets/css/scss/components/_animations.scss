@@ -4,9 +4,12 @@
 	*[data-vp-add-class] {
 		opacity: 0;
 
-		&.animated{
-			opacity:1;
-		}
+                &.animatedsuperslow,
+                &.animatedslow,
+                &.animated {
+                    opacity:1;
+                }
+
 	}
 } 
 
