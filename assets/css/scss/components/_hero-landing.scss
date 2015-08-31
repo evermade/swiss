@@ -1,0 +1,20 @@
+.hero--landing {
+	.hero__image {
+		display: inline-block;
+		max-height: 200px;
+	}
+
+	.hero__title {
+		@include font-size(xxxl);
+	}
+
+	.hero__subtitle {
+		@include font-size(lg);
+	}
+
+	.hero__countdown {
+		@include padding(base, top);
+		@include padding(base, bottom);
+		@include font-size(xl);
+	}
+}

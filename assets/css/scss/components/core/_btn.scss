@@ -1,0 +1,10 @@
+.btn {
+    
+    @include btn();
+
+    &--white {
+    	@include shadow;
+        @include btn(#fff, #000);
+    }
+
+}

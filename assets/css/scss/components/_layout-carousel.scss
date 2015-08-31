@@ -1,0 +1,30 @@
+.layout-carousel{
+	
+	padding:1px 0;
+
+	.slick--centermode{
+		/*margin:0 -($padding-sm/2);*/
+	}
+
+	.slide{
+		display:block;
+		height:600px;
+		width:300px;
+		/*margin:$padding-sm/2;*/
+		-ms-transform: scale(0.9,0.9);
+    	-webkit-transform: scale(0.9,0.9);
+    	transform: scale(0.9,0.9);
+    	@include transition(all, 0.4s);
+	}
+
+	.slick-list{overflow:visible;}
+
+	.slick-active{
+		-ms-transform: scale(1,1);
+    	-webkit-transform: scale(1,1);
+    	transform: scale(1,1);
+	}
+
+	&__content{
+	}
+}

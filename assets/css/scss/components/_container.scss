@@ -1,0 +1,8 @@
+.container {
+  
+  @include container();
+
+  &--full {
+    max-width: $container-full-max-width;
+  }
+}

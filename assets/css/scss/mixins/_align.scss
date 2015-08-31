@@ -1,0 +1,21 @@
+@mixin align($dir: all){
+    @if($dir == all) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+     @if($dir == vertical) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+     @if($dir == horizontal) {
+        @include center-block();
+    }
+    @if($dir == content) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,29 @@
+.headline{
+
+	&--xxxl{
+		@include font-size(xxxl);
+	}
+
+	&--xxl{
+		@include font-size(xxl);
+	}
+
+	&--xl{
+		@include font-size(xl);
+	}
+
+	&--lg{
+		@include font-size(lg);
+	}
+
+	&--md{
+		@include font-size(md);
+		font-weight:400;
+	}
+
+	&--sm{
+		@include font-size(sm);
+		font-weight:500;
+	}
+
+}
