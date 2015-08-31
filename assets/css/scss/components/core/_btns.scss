@@ -1,9 +1,0 @@
-.btn {
-    
-    @include btn();
-
-    &--white {
-        @include btn(#fff, #000);
-    }
-
-}
