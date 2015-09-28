@@ -2,6 +2,8 @@
 /*
 Template Name: Elements
 */
+include(get_template_directory() . '/em/classes/class.pageelements.php');
+$page_elements = new PageElements();
 ?>
 
 <ul class="nav nav-tabs nav-tabs-example">
@@ -24,10 +26,13 @@ Template Name: Elements
 
 	<div class="tab-pane active" id="layouts">
 		<section class="example-template">
-			<?php include(locate_template('templates/layouts/layout-collage.php')); ?>
-			<?php include(locate_template('templates/layouts/layout-blocklisting.php')); ?>
-			<?php include(locate_template('templates/layouts/layout-dividedbyfour.php')); ?>
-			<?php include(locate_template('templates/layouts/layout-carousel.php')); ?>
+			<?php
+			$layouts = $page_elements->get_layouts();
+			foreach ($layouts as $layout) {
+				echo '<div class="container"><h2>'.$layout['name'].'</h2></div>';
+				include(locate_template('templates/layouts/' . $layout['filename']));
+			}
+			?>
 		</section>
 	</div>
 
@@ -39,56 +44,16 @@ Template Name: Elements
 				<h2><i class="fa fa-coffee"></i>  Components</h2>
 				<table class="example-template__table">
 					<tr>
-						<th>Listing Vertical</th>
+						<th>All components</th>
 						<td>
-							<div class="example-template__wrapper-vertical cup">
-								<?php include(locate_template('templates/components/listing-item-vertical--center.php')); ?>
-							</div>
-							<div class="example-template__wrapper-vertical cup">
-								<?php include(locate_template('templates/components/listing-item-vertical--bottom.php')); ?>
-							</div>
-							<div class="example-template__wrapper-vertical cup">
-								<?php include(locate_template('templates/components/listing-item-vertical.php')); ?>
-							</div>
-							<div class="example-template__wrapper-vertical cup">
-								<?php include(locate_template('templates/components/listing-item-vertical--center.php')); ?>
-							</div>
-							<div class="example-template__wrapper-vertical cup">
-								<?php include(locate_template('templates/components/listing-item-vertical--bottom.php')); ?>
-							</div>
-							<div class="example-template__wrapper-vertical cup">
-								<?php include(locate_template('templates/components/listing-item-vertical.php')); ?>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<th>Listing Horizontal</th>
-						<td>
-							<div class="example-template__wrapper-horizontal cup">
-								<?php include(locate_template('templates/components/listing-item-horizontal.php')); ?>
-							</div>
-							<div class="example-template__wrapper-horizontal cup">
-								<?php include(locate_template('templates/components/listing-item-horizontal--small.php')); ?>
-							</div>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</section>
-		<section class="example-template">
-			<div class="container">
-				<h2><i class="fa fa-coffee"></i> Images</h2>
-				<table class="example-template__table">
-					<tr>
-						<th>Basic Image Elements</th>
-						<td>
-							<div class="example-template__wrapper-vertical cup">
-								<div class="image coffee" style="background-image:url('http://lorempixel.com/600/400/');"></div>
-							</div>
-							<div class="example-template__wrapper-vertical cup">
-								<div class="image coffee" style="background-image:url('http://lorempixel.com/600/400/');"></div>
-								<div class="overlay coffee"></div>
-							</div>
+							<?php
+							$components = $page_elements->get_components();
+							foreach ($components as $component) {
+								echo '<div class="example-template__wrapper-vertical cup">';
+								include(locate_template('templates/components/' . $component['filename']));
+								echo '</div>';
+							}
+							?>
 						</td>
 					</tr>
 				</table>
@@ -120,7 +85,7 @@ Template Name: Elements
 							<div class="example-template__smalle" data-vp-add-class="animated fadeInUp">.animated</div>
 							<div class="example-template__smalle" data-vp-add-class="animatedslow fadeInUp">.animatedslow</div>
 							<div class="example-template__smalle" data-vp-add-class="animatedsuperslow fadeInUp">.animatedsuperslow</div>
-							
+
 						</td>
 					</tr>
 					<tr>
@@ -136,7 +101,7 @@ Template Name: Elements
 							<div class="example-template__smalle" data-vp-add-class="animated animateddelay8 fadeInUp">.animateddelay8</div>
 							<div class="example-template__smalle" data-vp-add-class="animated animateddelay9 fadeInUp">.animateddelay9</div>
 							<div class="example-template__smalle" data-vp-add-class="animated animateddelay10 fadeInUp">.animateddelay10</div>
-							
+
 						</td>
 					</tr>
 					<tr>
@@ -248,13 +213,13 @@ Template Name: Elements
 									</div>
 								</div>
 							</div>
-							
+
 						</td>
 					</tr>
 				</table>
 			</div>
 		</section>
-		
+
 		<section class="example-template">
 			<div class="container">
 				<h2>Wysiwyg HTML</h2>
@@ -313,35 +278,35 @@ Template Name: Elements
 								          <td>table data</td>
 								          <td>table data</td>
 								      </tr>
-								  </table>    
-									
+								  </table>
+
 								  <h3>A sub heading which is not as important as the second, but should be used with consideration</h3>
 								  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 								  <blockquote><p>“Ooh - a blockquote! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.”</p></blockquote>
 								  <h4>A sub heading which is not as important as the second, but should be used with consideration</h4>
 								  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 								  <pre><code>
-								#header h1 a { 
-								    display: block; 
-								    width: 300px; 
-								    height: 80px; 
+								#header h1 a {
+								    display: block;
+								    width: 300px;
+								    height: 80px;
 								}
 								</code></pre>
 								  <h5>A sub heading which is not as important as the second, but should be used with consideration</h5>
 								  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 								  <dl>
 								 <dt>Definition list</dt>
-								 <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-								aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+								 <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+								aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
 								commodo consequat.</dd>
 								   <dt>Lorem ipsum dolor sit amet</dt>
-								   <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-								aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+								   <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+								aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
 								commodo consequat.</dd>
 								</dl>
 								<h6>This heading plays a relatively small bit part role, if you use it at all</h6>
 								  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-		
+
 							</div>
 						</td>
 					</tr>

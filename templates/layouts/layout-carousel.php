@@ -1,7 +1,4 @@
 
-<div class="container">
-	<h2>.layout-carousel</h2>
-</div>
 <section class="layout-carousel">
 	<div class="container">
 		<div class="slick--centermode">
