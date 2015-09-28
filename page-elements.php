@@ -8,8 +8,8 @@ $page_elements = new PageElements();
 
 <ul class="nav nav-tabs nav-tabs-example">
 	<li><a href="#introduction" data-toggle="tab">Introduction</a></li>
-	<li class="active"><a href="#layouts" data-toggle="tab">Layouts</a></li>
-	<li><a href="#components" data-toggle="tab">Components</a></li>
+	<li><a href="#layouts" data-toggle="tab">Layouts</a></li>
+	<li class="active"><a href="#components" data-toggle="tab">Components</a></li>
 	<li><a href="#animations" data-toggle="tab">Animations</a></li>
 	<li><a href="#markups" data-toggle="tab">Markups</a></li>
 </ul>
@@ -24,7 +24,7 @@ $page_elements = new PageElements();
 		</section>
 	</div>
 
-	<div class="tab-pane active" id="layouts">
+	<div class="tab-pane" id="layouts">
 		<section class="example-template">
 			<?php
 			$layouts = $page_elements->get_layouts();
@@ -38,13 +38,13 @@ $page_elements = new PageElements();
 
 
 
-	<div class="tab-pane" id="components">
+	<div class="tab-pane active" id="components">
 		<section class="example-template">
 			<div class="container">
 				<h2><i class="fa fa-coffee"></i>  Components</h2>
 				<table class="example-template__table">
 					<tr>
-						<th>All components</th>
+						<!-- <th>All components</th> -->
 						<td>
 							<?php
 							$components = $page_elements->get_components();

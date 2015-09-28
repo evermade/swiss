@@ -8,10 +8,7 @@ class PageElements {
 
 
 	// Path to layouts.
-	private $path_layouts = '';
-
-	// Path to components.
-	private $path_components = '';
+	private $templates_path = '';
 
 
 
@@ -19,8 +16,7 @@ class PageElements {
 	 * Init variables ect.
 	 */
 	public function __construct() {
-		$this->path_layouts = get_template_directory() . '/templates/layouts';
-		$this->path_components = get_template_directory() . '/templates/components';
+		$this->templates_path = get_template_directory() . '/templates';
 	}
 
 
@@ -34,7 +30,7 @@ class PageElements {
 		$layouts = array();
 
 		// Open dir.
-		if ($handle = opendir($this->path_layouts)) {
+		if ($handle = opendir($this->templates_path . '/layouts')) {
 
 		    /* This is the correct way to loop over the directory. */
 		    while (false !== ($entry = readdir($handle))) {
@@ -64,7 +60,7 @@ class PageElements {
 		$layouts = array();
 
 		// Open dir.
-		if ($handle = opendir($this->path_components)) {
+		if ($handle = opendir($this->templates_path . '/components')) {
 
 		    /* This is the correct way to loop over the directory. */
 		    while (false !== ($entry = readdir($handle))) {
@@ -80,6 +76,15 @@ class PageElements {
 		}
 
 		return $layouts;
+
+	}
+
+
+
+	/**
+	 * Check if this components has stylesheet.
+	 */
+	public function component_has_stylesheet($component) {
 
 	}
 
