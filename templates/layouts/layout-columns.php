@@ -1,5 +1,5 @@
 <div class="container">
-	<h2>.layout-2columns-corner</h2>
+	<h2>.layout-columns</h2>
 </div>
 
 <div class="layout-columns">
