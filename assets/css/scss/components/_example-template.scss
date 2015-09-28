@@ -65,13 +65,13 @@
 
 		&:hover{
 			outline-color:$brand-color;
-			/*&::after{
+			&::after{
 				z-index:4;
 				position:absolute;
 				top:0;
 				right:0;
 				content: "copy";
-			}*/
+			}
 		}
 
 	}
@@ -88,6 +88,10 @@
 		margin:0;
 		padding:0;
 		margin-top:-10px;
+	}
+
+	.layout-2columns-corner__columnbg{
+		background:$almost-white;
 	}
 }
 

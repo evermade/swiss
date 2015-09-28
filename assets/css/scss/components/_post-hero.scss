@@ -1,0 +1,13 @@
+.post-hero{
+	background:$almost-white;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center;
+	position:relative;
+	margin-bottom:1rem;
+
+	.container{
+		position:relative;
+		min-height:400px;
+	}
+}

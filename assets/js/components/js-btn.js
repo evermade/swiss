@@ -1,4 +1,4 @@
-$('.btn-overflow').click(function(event){
+$('.js-btn--overflow').click(function(event){
 	var originalHref = $(this).attr("href");
 	event.preventDefault();
 	var resizeElement = $(this).closest(".coffee")

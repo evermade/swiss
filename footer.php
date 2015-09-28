@@ -1,4 +1,5 @@
-</div>
+	</div><!-- end of .page-content -->
+</div><!-- end of .body -->
 
 <footer class="footer">
 	<div class="footer__container">

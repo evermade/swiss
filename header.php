@@ -55,3 +55,4 @@
 			</div><!-- end of bar -->
 	
 	</header><!--end of header -->
+	<div class="page-content">
