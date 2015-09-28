@@ -1,0 +1,51 @@
+@mixin font-size($size: base){
+  
+    $custom: true;
+
+    @if $size == base { 
+      font-size: rem($font-size-base);
+      $custom: false;
+    }
+
+    @if $size == sm { 
+      font-size: rem($font-size-sm);
+      $custom: false;
+    }
+
+    @if $size == md { 
+      font-size: rem($font-size-md);
+      $custom: false;
+    }
+
+    @if $size == lg { 
+      font-size: rem($font-size-lg);
+      $custom: false;
+    }
+
+    @if $size == xl { 
+      font-size: rem($font-size-xl);
+      $custom: false;
+    }
+
+    @if $size == xxl { 
+      font-size: rem($font-size-xl);
+      @include bp(sm){
+        font-size: rem($font-size-xxl);
+      }
+      $custom: false;
+    }
+
+    @if $size == xxxl { 
+      font-size: rem($font-size-xxl);
+      @include bp(sm){
+        font-size: rem($font-size-xxxl);
+      }
+      $custom: false;
+    }
+    
+    @if($custom == true) {
+      //we must be using a custom size
+      //@debug($size);
+      font-size: rem($size);
+    }
+}

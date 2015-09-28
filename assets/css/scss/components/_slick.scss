@@ -1,12 +1,10 @@
 .slick-dots {
 
-    position: absolute;
-    bottom: $padding-sm;
     @include bp(sm){
-        bottom: $padding;
-    } 
-    margin: 0;
 
+    } 
+
+    margin: $padding-sm 0 0 0;
     display: block;
     width: 100%;
     padding: 0;
@@ -21,9 +19,28 @@
         background: #fff;
         text-indent: -9999px;
         margin: 0 4px;
+        border:1px solid $brand-color;
 
         &.slick-active {
             background: $brand-color;
         }
+    }
+}
+
+.slick-arrow{
+    @include btn;
+
+    &.slick-prev{
+        position:absolute;
+        left:0;
+        bottom:0%;
+        z-index:1;
+    }
+
+    &.slick-next{
+        position:absolute;
+        bottom:0%;
+        right:0;
+        z-index:1;
     }
 }

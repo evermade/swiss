@@ -1,0 +1,43 @@
+$padding-sm-divided: $padding-sm/2;
+
+.listing-item-horizontal{
+	
+	figure{
+		position:absolute;
+		left:$padding-sm;
+		top:$padding-sm;
+		bottom:$padding-sm;
+		background:$almost-white;
+		width:100px;
+		display:block;
+	}
+
+	&__content{
+		position:relative;
+		padding:$padding-sm $padding-sm $padding-sm 140px;
+	}
+
+	.image{
+		background-position:center;
+		background-repeat:no-repeat;
+		background-size:cover;
+	}
+
+	&__meta{
+		float:right;
+	}
+
+	&--small{
+		&__content{
+			position:relative;
+			padding:$padding-sm-divided $padding-sm-divided $padding-sm-divided 50px;
+		}
+		figure{
+			width:30px;
+			top: $padding-sm-divided;
+			bottom: $padding-sm-divided;
+			left: $padding-sm-divided;
+		}
+	}
+
+}

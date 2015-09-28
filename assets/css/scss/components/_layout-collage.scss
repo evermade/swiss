@@ -1,0 +1,34 @@
+.layout-collage{
+	/*padding: $padding-xl 0;*/
+	
+
+	&__large{
+			height:250px;
+
+		@include bp(sm) {
+			height:400px;
+		}
+
+		@include bp(md) {
+			float:left;
+			width:60%;
+			height:700px;
+		}
+	}
+
+	&__small{
+		width:100%;
+		height:150px;
+
+		@include bp(sm) {
+			float:right;
+			width:50%;
+			height:250px;
+		}
+
+		@include bp(md) {
+			width:40%;
+			height:350px;
+		}
+	}
+}

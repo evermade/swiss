@@ -1,0 +1,5 @@
+@mixin overlay($color: #000, $percentage: 0.7, $z-index: auto){
+  @include full-cover();
+  z-index: $z-index;
+  background: rgba($color, $percentage);
+}

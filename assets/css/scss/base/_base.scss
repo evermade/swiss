@@ -1,4 +1,5 @@
 html {
+    overflow-y: scroll;
     box-sizing: border-box;
     font-size: $font-size-rem-sm;
 
@@ -13,6 +14,7 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+  outline:none;
 }
 
 html,
@@ -32,11 +34,15 @@ body {
   color: $text-color;
   background-color: $body-bg;
   font-weight: $font-weight-base;
-  
-  -webkit-font-smoothing:antialiased;
-  font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
 
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+a{
+  cursor:pointer;
 }
 
 // ::-moz-selection {

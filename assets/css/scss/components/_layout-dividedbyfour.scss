@@ -1,0 +1,22 @@
+.layout-dividedbyfour{
+	
+	&__area{
+		float:left;
+		width:100%;
+		height:30vh;
+	}
+
+	@include bp(450px) {
+		&__area{
+			width:50%;
+			height:30vh;
+		}
+	}
+
+	@include bp(md) {
+		&__area{
+			width:25%;
+			height:60vh;
+		}
+	}
+}

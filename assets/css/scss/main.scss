@@ -79,7 +79,6 @@
 @import "../../vendor/bourbon/app/assets/stylesheets/_bourbon.scss";
 
 
-
 /**
  * #CUSTOM
  *
@@ -92,9 +91,27 @@
 //mixins
 @import "mixins/all";
 @import "mixins/helpers";
-@import "mixins/structure";
+@import "mixins/container";
 @import "mixins/typography";
-@import "mixins/common";
+@import "mixins/section";
+@import "mixins/btn";
+@import "mixins/wysiwyg-html";
+@import "mixins/font-size";
+@import "mixins/font-type";
+@import "mixins/fa-icon";
+@import "mixins/bp";
+@import "mixins/paddingmargin";
+@import "mixins/border-radius";
+@import "mixins/equal-height";
+@import "mixins/align";
+@import "mixins/bgimg";
+@import "mixins/circle";
+@import "mixins/overlay";
+@import "mixins/center-block";
+@import "mixins/full-cover";
+@import "mixins/padding";
+@import "mixins/margin";
+@import "mixins/shadow";
 
 //functions
 @import "base/functions";
@@ -110,7 +127,7 @@
 @import "components/core/alerts";
 @import "components/core/forms";
 @import "components/core/tables";
-@import "components/core/btns";
+@import "components/core/btn";
 
 //lists
 @import "components/core/list";
@@ -129,8 +146,15 @@
 //example
 @import "components/example";
 
+//headline
+@import "components/headline";
+
 //links-block
 @import "components/links-block";
+
+//listing-item-horizontal-center
+@import "components/listing-item-horizontal";
+@import "components/listing-item-vertical";
 
 //section-header
 @import "components/section-header";
@@ -144,6 +168,16 @@
 //slick
 @import "components/slick";
 
+//layouts
+@import "components/layout-carousel";
+@import "components/layout-collage";
+@import "components/layout-dividedbyfour";
+@import "components/layout-blocklisting";
+
+//cup & coffee
+@import "components/cup";
+@import "components/coffee";
+
 //blog stuff
 @import "components/blog";
 @import "components/post";
@@ -153,8 +187,14 @@
 //gallery
 @import "components/gallery";
 
+//full-cover
+@import "components/full-cover";
+
 //animations
 @import "components/animations";
+
+//body
+@import "components/body";
 
 //nav-bar
 @import "components/nav-bar";
@@ -162,9 +202,12 @@
 //columns
 @import "components/columns";
 
+//shadow
+@import "components/shadow";
+
 //hero
-@import "components/hero/basic";
-@import "components/hero/landing";
+@import "components/hero-basic";
+@import "components/hero-landing";
 
 //quotes
 @import "components/quotes";
@@ -179,6 +222,10 @@
 @import "components/full-width-grid";
 
 //include our layouts
-@import "layouts/general";
-@import "layouts/header";
-@import "layouts/footer";
+@import "components/container";
+@import "components/footer";
+
+@import "components/wysiwyg-html";
+
+//Example Template
+@import "components/example-template";
