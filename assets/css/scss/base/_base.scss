@@ -1,14 +1,22 @@
 html {
     overflow-y: scroll;
     box-sizing: border-box;
-    font-size: $font-size-rem-sm;
+    font-size: 8px;
+
+    @include bp(xs) {
+      font-size: 8.5px;
+    }
 
     @include bp(sm) {
-        font-size: $font-size-rem-md;
+        font-size: 9px;
     }
 
     @include bp(md) {
-        font-size: $font-size-rem-base;
+        font-size: 9.5px;
+    }
+
+    @include bp(lg) {
+        font-size: 10px;
     }
 }
 

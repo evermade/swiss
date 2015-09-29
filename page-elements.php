@@ -2,6 +2,7 @@
 /*
 Template Name: Elements
 */
+
 ?>
 
 <ul class="nav nav-tabs nav-tabs-example">
@@ -28,6 +29,8 @@ Template Name: Elements
 			<?php include(locate_template('templates/layouts/layout-blocklisting.php')); ?>
 			<?php include(locate_template('templates/layouts/layout-dividedbyfour.php')); ?>
 			<?php include(locate_template('templates/layouts/layout-carousel.php')); ?>
+			<?php include(locate_template('templates/layouts/layout-2columns-corner.php')); ?>
+			<?php include(locate_template('templates/layouts/layout-columns.php')); ?>
 		</section>
 	</div>
 
@@ -244,7 +247,7 @@ Template Name: Elements
 							<div class="example-template__wrapper-vertical cup">
 								<div class="listing-item-vertical coffee">
 									<div class="content">
-										<a class="btn btn-overflow">.btn-overflow</a>
+										<a class="btn js-btn--overflow">.btn-overflow</a>
 									</div>
 								</div>
 							</div>

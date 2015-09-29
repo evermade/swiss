@@ -173,6 +173,8 @@
 @import "components/layout-collage";
 @import "components/layout-dividedbyfour";
 @import "components/layout-blocklisting";
+@import "components/layout-2columns-corner";
+@import "components/layout-columns";
 
 //cup & coffee
 @import "components/cup";
@@ -181,8 +183,12 @@
 //blog stuff
 @import "components/blog";
 @import "components/post";
+@import "components/post-hero";
 @import "components/single-post";
 @import "components/small-posts-listing";
+
+//page-content
+@import "components/page-content";
 
 //gallery
 @import "components/gallery";

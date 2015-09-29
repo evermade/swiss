@@ -44,7 +44,7 @@ h6, .h6 { @include font-size(sm); }
 
 h1,h2,h3,h4,h5,h6{
   &+p,&+ul,&+ol{
-    margin-top:$padding-xs;
+    
   }
 }
 
@@ -56,7 +56,9 @@ h1,h2,h3,h4,h5,h6{
 }
 
 p {
-  margin: 0 0 ($line-height-computed / 2);
+  margin: 0;
+  padding:0;
+  max-width:700px;
 
   &:last-child{
     margin:0;
