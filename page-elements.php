@@ -2,6 +2,13 @@
 /*
 Template Name: Elements
 */
+
+if (isset($_GET['element-editor'])) {
+
+	include(locate_template('page-element-editor.php'));
+
+} else {
+
 include(get_template_directory() . '/em/classes/class.pageelements.php');
 $page_elements = new PageElements();
 ?>
@@ -50,6 +57,7 @@ $page_elements = new PageElements();
 							$components = $page_elements->get_components();
 							foreach ($components as $component) {
 								echo '<div class="example-template__wrapper-vertical cup">';
+								echo '<a class="cup-menu" href="?element-editor='.$component['filename'].'" target="_blank">Open in viewer</a>';
 								include(locate_template('templates/components/' . $component['filename']));
 								echo '</div>';
 							}
@@ -315,3 +323,9 @@ $page_elements = new PageElements();
 		</section>
 	</div>
 </div>
+
+<?php
+
+}
+
+?>
