@@ -137,4 +137,81 @@ class PageElements {
 
 
 
+	/**
+	 * Get list of all mixins.
+	 */
+	public function get_mixins() {
+
+		// List of available layouts.
+		$layouts = array();
+
+		// Open dir.
+		if ($handle = opendir(get_template_directory() . '/assets/css/scss/mixins')) {
+
+		    while (false !== ($entry = readdir($handle))) {
+				if ($entry != '.' && $entry != '..') {
+
+					$default_headers = array('Description' => 'Description', 'Tags' => 'Tags', 'Preview' => 'Preview');
+					$filename = get_template_directory() . '/assets/css/scss/mixins/' . $entry;
+					$filedata = get_file_data($filename, $default_headers);
+
+					$preview = false;
+					if ($filedata['Preview']) {
+						$preview = true;
+					}
+
+					array_push($layouts, array(
+						'filename' => $entry,
+						'description' => $filedata['Description'],
+						'tags' =>  !empty($filedata['Tags']) ? explode(',', $filedata['Tags']) : array(),
+						'preview' => $preview,
+						'name' => $entry,
+						'definitions' => $this->get_mixin_definitions(file_get_contents($filename))
+					));
+				}
+		    }
+
+		    closedir($handle);
+		}
+
+		return $layouts;
+
+	}
+
+
+
+	/**
+	 * Extract mixin definitions from source.
+	 */
+	public function get_mixin_definitions($source) {
+
+		$definitions = array();
+
+		$rows = explode("\n", $source);
+
+		foreach ($rows as $row) {
+
+			// Is mixin row.
+			if (preg_match('/@mixin/', $row)) {
+
+				// Remove bracket.
+				$row = str_replace('{', '', $row);
+
+				// Add color coding.
+				$row = preg_replace("/(@mixin)/i", "<span style='color:grey'>$1</span>", $row);
+				//$row = preg_replace("/@mixin(.*)/i", "<span style='color:red'>$1</span>", $row);
+
+				// Add to list.
+				array_push($definitions, $row);
+
+			}
+
+		}
+
+		return $definitions;
+
+	}
+
+
+
 }

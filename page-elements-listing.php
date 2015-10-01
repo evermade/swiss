@@ -6,10 +6,11 @@ $page_elements = new PageElements();
 
 <ul class="nav nav-tabs nav-tabs-example">
 	<li><a href="#introduction" data-toggle="tab">Introduction</a></li>
-	<li class="active"><a href="#layouts" data-toggle="tab">Layouts</a></li>
+	<li><a href="#layouts" data-toggle="tab">Layouts</a></li>
 	<li><a href="#components" data-toggle="tab">Components</a></li>
+	<li><a href="#elements" data-toggle="tab">HTML Elements</a></li>
+	<li class="active"><a href="#mixins" data-toggle="tab">Mixins</a></li>
 	<li><a href="#animations" data-toggle="tab">Animations</a></li>
-	<li><a href="#markups" data-toggle="tab">Markups</a></li>
 </ul>
 
 <div class="tab-content" id="tabs">
@@ -29,7 +30,7 @@ $page_elements = new PageElements();
 
 
 	<!-- Layouts -->
-	<div class="tab-pane active" id="layouts">
+	<div class="tab-pane" id="layouts">
 		<section class="example-template">
 			<?php
 			$layouts = $page_elements->get_layouts();
@@ -112,6 +113,46 @@ $page_elements = new PageElements();
 					*/
 				}
 				?>
+			</div>
+		</section>
+	</div>
+
+
+
+	<!-- Mixins -->
+	<div class="tab-pane active" id="mixins">
+		<section class="example-template">
+			<div class="container">
+
+				<h2><i class="fa fa-coffee"></i>  Mixins</h2>
+
+				<table class="table">
+					<tbody>
+						<tr>
+							<th>Filename</th>
+							<th>Description</th>
+						</tr>
+						<?php
+						$mixins = $page_elements->get_mixins();
+						foreach ($mixins as $mixin) {
+							?>
+							<tr>
+								<td><b><?php echo $mixin['name'] ?></b></td>
+								<td>
+									<p><?php echo $mixin['description'] ?></p>
+									<?php foreach ($mixin['definitions'] as $definition) : ?>
+										<?php echo $definition ?><br />
+									<?php endforeach ?>
+								</td>
+							</tr>
+							<?php
+						}
+						?>
+
+					</tbody>
+				</table>
+
+
 			</div>
 		</section>
 	</div>
@@ -204,7 +245,7 @@ $page_elements = new PageElements();
 
 
 	<!-- Markups -->
-	<div class="tab-pane" id="markups">
+	<div class="tab-pane" id="elements">
 		<section class="example-template">
 			<div class="container">
 				<h2>Typography</h2>

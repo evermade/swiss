@@ -1,3 +1,6 @@
+/*
+Description: Adjust alignment.
+*/
 @mixin align($dir: all){
     @if($dir == all) {
         position: absolute;
