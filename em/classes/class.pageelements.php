@@ -35,8 +35,28 @@ class PageElements {
 		    /* This is the correct way to loop over the directory. */
 		    while (false !== ($entry = readdir($handle))) {
 				if ($entry != '.' && $entry != '..') {
+
+					$default_headers = array('Description' => 'Description', 'Tags' => 'Tags', 'Preview' => 'Preview');
+					$filedata = get_file_data($this->templates_path . '/layouts/' . $entry, $default_headers);
+
+					$preview = false;
+					if ($filedata['Preview']) {
+						$preview = true;
+					}
+
+					// Get css and js paths.
+					$cssPath = '/assets/css/scss/components/_' . $this->get_component_asset_name($entry) . '.scss';
+					$jsPath = '/assets/js/components/' . $this->get_component_asset_name($entry) . '.js';
+
 					array_push($layouts, array(
 						'filename' => $entry,
+						'description' => $filedata['Description'],
+						'tags' =>  !empty($filedata['Tags']) ? explode(',', $filedata['Tags']) : array(),
+						'preview' => $preview,
+						'csspath' => $cssPath,
+						'cssexists' => file_exists(get_template_directory() . $cssPath),
+						'jspath' => $jsPath,
+						'jsexists' => file_exists(get_template_directory() . $jsPath),
 						'name' => '.' . str_replace('.php', '', $entry)
 					));
 				}
@@ -62,11 +82,30 @@ class PageElements {
 		// Open dir.
 		if ($handle = opendir($this->templates_path . '/components')) {
 
-		    /* This is the correct way to loop over the directory. */
 		    while (false !== ($entry = readdir($handle))) {
 				if ($entry != '.' && $entry != '..') {
+
+					$default_headers = array('Description' => 'Description', 'Tags' => 'Tags', 'Preview' => 'Preview');
+					$filedata = get_file_data($this->templates_path . '/components/' . $entry, $default_headers);
+
+					$preview = false;
+					if ($filedata['Preview']) {
+						$preview = true;
+					}
+
+					// Get css and js paths.
+					$cssPath = '/assets/css/scss/components/_' . $this->get_component_asset_name($entry) . '.scss';
+					$jsPath = '/assets/js/components/' . $this->get_component_asset_name($entry) . '.js';
+
 					array_push($layouts, array(
 						'filename' => $entry,
+						'description' => $filedata['Description'],
+						'tags' =>  !empty($filedata['Tags']) ? explode(',', $filedata['Tags']) : array(),
+						'preview' => $preview,
+						'csspath' => $cssPath,
+						'cssexists' => file_exists(get_template_directory() . $cssPath),
+						'jspath' => $jsPath,
+						'jsexists' => file_exists(get_template_directory() . $jsPath),
 						'name' => '.' . str_replace('.php', '', $entry)
 					));
 				}
@@ -82,9 +121,17 @@ class PageElements {
 
 
 	/**
-	 * Check if this components has stylesheet.
+	 *  Return an asset name for component. Asset name is
+	 *  a name used to load CSS and JS files. Asset name is the element name
+	 *  without modifiers.
+	 *
+	 *  Ex: component--large.php => component
+	 *  Ex: hero--videobg.php => video
 	 */
-	public function component_has_stylesheet($component) {
+	public function get_component_asset_name($filename) {
+
+		$without_extension = preg_replace('/\.php$/', '', $filename);
+		return preg_replace('/\-\-.*/', '', $without_extension);
 
 	}
 

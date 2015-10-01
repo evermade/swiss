@@ -1,43 +1,44 @@
+// This needs either simplifying or proper documentation -jaamo
 @mixin paddingMargin($which: padding, $size: base, $where: top, $reset: false){
-    
+
     $paddingDirection: #{$which}-#{$where} !default;
 
     @if $where == all {
       $paddingDirection: $which;
     }
-    
+
     //sometimes we need to reset the padding/margin
     @if $reset == true {
       #{$which}: 0;
     }
-  
-    @if $size == xs { 
+
+    @if $size == xs {
       #{$paddingDirection}: rem($padding-xs);
     }
 
-    @if $size == sm { 
+    @if $size == sm {
       #{$paddingDirection}: rem($padding-sm);
     }
 
-    @if $size == base { 
+    @if $size == base {
       #{$paddingDirection}: rem($padding);
     }
 
-    @if $size == md { 
+    @if $size == md {
       #{$paddingDirection}: rem($padding);
       @include bp(md){
        #{$paddingDirection}: rem($padding-md);
       }
     }
 
-    @if $size == lg { 
+    @if $size == lg {
       #{$paddingDirection}: rem($padding-md);
       @include bp(md){
        #{$paddingDirection}: rem($padding-lg);
       }
     }
 
-    @if $size == xl { 
+    @if $size == xl {
       #{$paddingDirection}: rem($padding-lg);
       @include bp(sm){
        #{$paddingDirection}: rem($padding-xl);

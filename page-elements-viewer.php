@@ -1,5 +1,5 @@
 <?php
-$filename = $_GET['element-editor'];
+$filename = $_GET['element-viewer'];
 if (!file_exists(locate_template('templates/components/' . $filename))) {
 	die('Component not found!');
 }
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	height: 400px;
 }
 .layout-element-editor__cup--jumbo {
-	height: 800px;
+	height: 700px;
 }
 .margin-top {
 	margin-top: 30px;
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				<div class="cup layout-element-editor__cup layout-element-editor__cup--taller"></div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row margin-top">
 			<div class="col-xs-2">
 				<div class="cup layout-element-editor__cup layout-element-editor__cup--taller"></div>
 			</div>
