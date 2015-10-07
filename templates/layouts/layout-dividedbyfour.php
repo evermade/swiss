@@ -1,9 +1,6 @@
 <?php
 $elementName = "dividedbyfour";
 ?>
-<div class="container">
-	<h2>.layout-dividedbyfour</h2>
-</div>
 
 <div class="layout-<?=$elementName?> delay-sequence2">
 	<?php for ($i=0; $i < 4; $i++) { ?>

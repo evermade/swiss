@@ -1,37 +1,56 @@
-.example-template{
+$example-template-cup-width: 30rem;
+$example-template-cup-height: 30rem;
+$example-template-cup-spacing: 3rem;
+
+.example-template {
+
 	padding-bottom:10rem;
 	background:$almost-white;
-
-	&__table{
-		border-width:1px 0 0;
-		border-style:solid;
-		border-color:$light-grey;
-		tr{
-			td, th{
-				border-width:0 0 1px;
-				border-style:solid;
-				border-color:$light-grey;
-				padding:1rem 0;
-				overflow:hidden;
-			}
-	
-			th{
-				min-width:14rem;
-				vertical-align:top;
-				font-weight:400;
-				font-size:15px;
-				color:$brand-color;
-				width:200px;
-			}
-		}
-	}
 
 	& > .container > h2{
 		margin-top:10rem;
 		margin-bottom:2rem;
 	}
 
-	&__wrapper-vertical{
+	/* Container for single element. */
+	&__element-container {
+
+		display: inline-block;
+		width: 2 * $example-template-cup-width;
+		height: $example-template-cup-height;
+		margin-right: $example-template-cup-spacing;
+		margin-bottom: 2 * $example-template-cup-spacing;
+
+		/* Element info */
+		&__info {
+			width: $example-template-cup-width;
+			height: $example-template-cup-height;
+			float: left;
+			position: relative;
+
+			&__footer {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				&__icons {
+					display: inline-block;
+					i {
+						margin-left: 1rem;
+					}
+				}
+			}
+		}
+
+		/* Element preview */
+		&__cup {
+			width: $example-template-cup-width;
+			float: left;
+		}
+
+	}
+
+	&__wrapper {
 		height:300px;
 		width:300px;
 		margin-right:1rem;
@@ -53,7 +72,9 @@
 		margin-bottom:0.4rem;
 	}
 
-	.cup{
+	.cup {
+		width: $example-template-cup-width;
+		height: $example-template-cup-height;
 		@include shadow;
 		background:#fff;
 		outline-style:dashed;
@@ -95,8 +116,38 @@
 	}
 }
 
-	.nav-tabs-example{
-		.active a{
-			background:$almost-white !important;
-		}
+.nav-tabs-example{
+	.active a{
+		background:$almost-white !important;
 	}
+}
+
+.example-tags {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	li {
+		@include font-size(10);
+		margin: 0 0 0 0.1rem;
+		padding: 0 0.5rem;
+		display: inline-block;
+		background: $light-grey;
+		color: $grey;
+	}
+}
+
+.example-tags--align-bottom {
+	position: absolute;
+	bottom: 4rem;
+}
+
+i.file-exists {
+	opacity: 1;
+}
+i.file-not-found {
+	opacity: 0.2;
+}
+
+.container--layout-info {
+	@include paddingMargin(padding, sm, bottom);
+}
