@@ -1,12 +1,12 @@
 .footer {
-	background: #eee;
+	background: $almost-white;
 	text-align: center;
 
 	&__container {
 		@include container();
 		@include section();
 	}
-	
+
 	&__row{
 		@include make-row();
 	}

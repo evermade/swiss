@@ -3,7 +3,11 @@
     @include btn();
 
     &--white {
+    	@include shadow;
         @include btn(#fff, #000);
     }
-
+	
+	p+&{
+		margin-top:0.5em; 
+	}
 }

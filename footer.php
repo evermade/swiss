@@ -1,3 +1,6 @@
+	</div><!-- end of .page-content -->
+</div><!-- end of .body -->
+
 <footer class="footer">
 	<div class="footer__container">
 		<div class="footer__row">
@@ -17,7 +20,5 @@
 <script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri();?>/assets/vendor/jquery/dist/jquery.min.js"><\/script>')</script>
 
 <?php wp_footer();?>
-
-</div>
 </body>
 </html>
