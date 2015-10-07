@@ -1,0 +1,32 @@
+.table-div  {
+
+    display: block;//on mobile we will be block
+
+    @include bp($tableBlockBreak){
+        display: table;
+        border-collapse: separate;
+    }
+
+    width: 100%;
+
+    &__row {
+      display: block;
+
+      @include bp($tableBlockBreak){
+        display: table-row;
+      } 
+    }
+    &__col {
+
+        display: block;
+
+        @include bp($tableBlockBreak){
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        padding: rem($padding);
+        position: relative;
+        
+    }
+}
