@@ -1,6 +1,6 @@
 <?php
-$filename = $_GET['element-viewer'];
-if (!file_exists(locate_template('templates/components/' . $filename))) {
+$filename = $_GET['element'];
+if (!file_exists(locate_template('templates/toolbox/' . $filename))) {
 	die('Component not found!');
 }
 ?>
@@ -31,7 +31,7 @@ LiveElement.prototype.init = function(themeUrl, templateFilename) {
 			data: ""
 		},
 		html: {
-			url: this.themeUrl + "/templates/components/" + templateFilename,
+			url: this.themeUrl + "/templates/toolbox/" + templateFilename,
 			data: ""
 		},
 		js: {

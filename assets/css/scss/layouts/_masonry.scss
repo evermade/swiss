@@ -1,12 +1,12 @@
 $masonry-item-gutter: 10px;
 .masonry {
 
-	background: #eee;
+	@include section();
+
 	overflow: hidden;
 	
 	&__container {
 		@include container();
-		@include section();
 	}
 	
 	&__items{
@@ -24,18 +24,6 @@ $masonry-item-gutter: 10px;
 
 		&__inner {
 			background: #fff;
-		}
-
-		&__text {
-			padding: rem($padding-sm);
-		}
-
-		&__meta {
-			@include margin(base, top);
-			p {
-				margin: 0;
-				@include font-size(sm);
-			}
 		}
 
 	}

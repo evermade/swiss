@@ -1,0 +1,27 @@
+.toolbox {
+	.container {
+		@include container();
+	}
+
+	&__navbar {
+		padding-bottom: 5rem;
+	}
+	
+	&__item__title {
+		color: $brand-color;
+	}
+
+	&__item__meta {
+		margin-bottom: 50px;
+	}
+
+	&__item__title, &__navbar h2, &__item__subtitle {
+		padding-bottom: 3rem;
+		margin-bottom: 3rem;
+		border-bottom: 1px solid #eee;
+	}
+
+	&__item__preview {
+		position: relative;
+	}
+}

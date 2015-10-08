@@ -8,67 +8,14 @@
  * Custom...........Our code
  */
 
-
-
 /**
- * #BOOTSTRAP
+ * #CUSTOM VENDOR
  *
- * Because most projects do not require all of Bootstrap, we have already commented
- * out some rarely used components from the import.
+ * All of our custom vendor code.
  */
 
-// Core variables and mixins
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables";
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
-
-// Reset and dependencies
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/print";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
-
-// Core CSS
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/type";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/code";
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/grid";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/tables";
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/forms";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
-
-// Components
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/navs";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/navbar";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/pager";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/labels";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/badges";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/jumbotron";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/alerts";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars";
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/media";
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/list-group";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/panels";
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/wells";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/close";
-
-// Components w/ JavaScript
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/modals";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/popovers";
-//@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/carousel";
-
-// Utility classes
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
-@import "../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
-
-
+@import "vendor/bootstrap";
+@import "vendor/animate.css";
 
 /**
  * #BOURBON
@@ -127,7 +74,6 @@
  * 
  * include the base helpers, typography etc
  */
-@import "base/animations";
 @import "base/base";
 @import "base/body";
 @import "base/helpers";
@@ -139,15 +85,15 @@
  * Layouts
  * A bunch of layouts
  */
+@import "layouts/2columns-corner";
+@import "layouts/blocklisting";
+@import "layouts/carousel";
+@import "layouts/collage";
+@import "layouts/columns";
 @import "layouts/cup";
-@import "layouts/full-width-grid";
-@import "layouts/grid";
-@import "layouts/layout-2columns-corner";
-@import "layouts/layout-blocklisting";
-@import "layouts/layout-carousel";
-@import "layouts/layout-collage";
-@import "layouts/layout-columns";
-@import "layouts/layout-dividedbyfour";
+@import "layouts/dividedbyfour";
+@import "layouts/grid-full";
+@import "layouts/grid-fixed";
 @import "layouts/links-block";
 @import "layouts/masonry";
 @import "layouts/table-div";
@@ -168,6 +114,10 @@
 @import "blocks/hero-landing";
 @import "blocks/logo-listing";
 @import "blocks/media-object-listing";
+@import "blocks/post";
+@import "blocks/post-hero";
+@import "blocks/single-post";
+@import "blocks/toolbox";
 
 /**
  * Components
@@ -189,12 +139,10 @@
 @import "components/nav-bar";
 @import "components/overlay";
 @import "components/pagination";
-@import "components/post";
-@import "components/post-hero";
 @import "components/quotes";
 @import "components/section-header";
 @import "components/shadow";
-@import "components/single-post";
+@import "components/share-this";
 @import "components/slick";
 @import "components/small-posts-listing";
 @import "components/tables";

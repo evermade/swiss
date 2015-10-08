@@ -1,6 +1,4 @@
 <?php
-
-include(get_template_directory() . '/em/classes/class.pageelements.php');
 $page_elements = new PageElements();
 ?>
 
@@ -93,7 +91,7 @@ $page_elements = new PageElements();
 							<?php endif ?>
 
 							<div class="example-template__element-container__info__footer">
-								<a href="?element-viewer=<?php echo $component['filename'] ?>" target="_blank" class="btn">Open</a>
+								<a href="?toolbox&element-viewer=<?php echo $component['filename'] ?>" target="_blank" class="btn">Open</a>
 								<div class="example-template__element-container__info__footer__icons">
 									<i title="<?php echo $component['jspath'] ?>" class="fa fa-file-text-o <?php echo $component['jsexists'] ? 'file-exists' : 'file-not-found' ?>"></i>
 									<i title="<?php echo $component['csspath'] ?>" class="fa fa-css3 <?php echo $component['cssexists'] ? 'file-exists' : 'file-not-found' ?>"></i>

@@ -1,9 +1,10 @@
 //an bootstrap to bem example :)
 .example {
+
+	@include section();
 	
 	&__container {
 		@include container();
-		@include section();
 	}
 	
 	&__row{
@@ -11,8 +12,6 @@
 	}
 
 	&__item {
-		
 		@include make-xs-column(12);
-
 	}
 }

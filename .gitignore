@@ -3,3 +3,5 @@ npm-debug.log
 assets/vendor/*
 .DS_Store
 ._*
+*._.*
+assets/dist/*

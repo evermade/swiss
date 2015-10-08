@@ -5,6 +5,10 @@ $grey:			#50525b;
 $light-grey: 	#ccc;
 $almost-white:	#e4e4e4;
 
+//brand colors
+$facebook: #3b5999;
+$twitter: #00adff;
+$google: #de4b39;
 
 //link colors to meaninful vars
 $brand-color: $red;
@@ -18,7 +22,7 @@ $font-family-sans-serif: "Roboto", sans-serif;
 $font-family-serif: Georgia, "Times New Roman", Times, serif;
 $font-family-base: $font-family-sans-serif;
 $font-weight-base: 400;
-$font-weight-strong-base: 400;
+$font-weight-strong-base: 700;
 $line-height-base: 1.628571429;
 $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 

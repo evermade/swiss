@@ -96,17 +96,6 @@ class Helper {
 	}
 	
 	/**
-	 * [spemail description]
-	 * @param  [type] $email [description]
-	 * @return [type]        [description]
-	 */
-	static public function spemail($email) {
-		$find = array('.', '@');
-		$replace   = array('(dot)', '(at)');
-		return str_replace($find, $replace, $email);							
-	}
-
-	/**
 	 * [truncate description]
 	 * @param  [type]  $s      [description]
 	 * @param  [type]  $l      [description]

@@ -1,0 +1,74 @@
+/**
+ * The .share-this component is for sharing social media content.
+ */
+.share-this {
+	padding: 0;
+	margin: 0;
+
+	&__item {
+		list-style: none;
+		padding: 0;
+	    display: inline-block;
+
+		a {
+			line-height: 0;
+	   		font-size: 0;
+			padding: 0;
+	   		color: transparent;
+			width: 40px;
+			height: 40px;
+			display: block;
+			background-color: $brand-color;
+			color: #fff;
+			font-family: "FontAwesome";
+			position: relative;
+		}
+
+		a:before {
+	        position: absolute;
+			@include font-size(md);
+			line-height: 1;
+			color: #fff;
+	        top: 50%;
+	        left: 50%;
+	        transform: translate(-50%, -50%);
+	    }
+
+	   	a:hover {
+	        color: #fff;
+
+	        a:before {
+	        	
+	        }
+	    }
+
+		&--email a {
+			&:before{ content: "\f1d8"; }
+		}
+
+		&--facebook a {
+			background-color: $facebook;
+			&:before{ content: "\f09a"; }
+		}
+
+		&--linkedin a {
+			&:before { content: "\f0e1"; }
+		}
+
+		&--twitter a {
+			background-color: $twitter;
+			&:before { content: "\f099"; }
+		}
+
+		&--google a {
+			background-color: $google;
+			&:before { content: "\f0d5"; }
+		}
+
+	}
+
+	&--center {
+		text-align: center;
+	}
+
+}

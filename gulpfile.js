@@ -23,6 +23,7 @@ var paths = {
 
 //lets handle the sexy ass stylesheets
 gulp.task('sass', function () {
+  setTimeout(function(){
     gulp.src(paths.css.src)
         .pipe(sass({errLogToConsole: true}))
         .pipe(autoprefixer({
@@ -31,10 +32,12 @@ gulp.task('sass', function () {
         }))
         .pipe(minifyCSS({keepBreaks:true}))
         .pipe(gulp.dest(paths.css.dist));
+  }, 500);
 });
 
 //lets handle our js scripts
 gulp.task('js', function () {
+  setTimeout(function(){
    gulp.src(paths.js.src)
       .pipe(plumber())
       .pipe(jshint())
@@ -42,6 +45,7 @@ gulp.task('js', function () {
       .pipe(uglify())
       .pipe(concat('myquery.js'))
       .pipe(gulp.dest(paths.js.dist));
+   }, 500);
 });
 
 //default task for dev

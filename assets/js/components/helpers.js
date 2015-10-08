@@ -5,7 +5,6 @@
 	em.helper.init = function(){
 		em.helper.imgRemoveDimensions();
 		em.helper.resizeVideos();
-		em.helper.spemail();
 		em.helper.jumpTo();
 		em.helper.toggleHeroNav();
 		em.helper.hashCheck();
@@ -75,17 +74,6 @@
 			el.attr("width", "100%");
 			var height = el.attr("data-original-height") * el.width() /  el.attr("data-original-width");
 			el.attr("height", height);
-		});
-	};
-
-	em.helper.spemail = function(){
-		$("a.spemail").each(function(index) {
-			var el = $(this);
-			var address = el.text();
-			address = address.replace(/\(at\)/g, '@');
-			address = address.replace(/\(dot\)/g, '.');
-			el.attr("href", "mailto:"+address);
-			el.text(address);
 		});
 	};
 
