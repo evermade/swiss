@@ -1,25 +1,6 @@
-<?php $folders = array('components', 'layouts', 'blocks'); ?>
-
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
 <section class="toolbox">
-<div class="toolbox__navbar">
-	<div class="toolbox__navbar__bar"><i class="fa fa-wrench"></i></div>
-	<div class="container">
-		<div class="row">
-			<?php foreach($folders as $folder): 
-			$folders[$folder] = glob(get_template_directory().'/templates/toolbox/'.$folder.'/*.php'); 
-			?>
-				<div class="col-xs-12 col-sm-3">
-				<h2><?php echo $folder; ?></h2>
-				<?php foreach($folders[$folder] as $c):
-					echo '<p><a href="#'.basename($c).'">'.basename($c).'</a></p>';
-				endforeach; ?>
-				</div>
-			<?php endforeach; ?>
-		</div>
-	</div>
-</div>
 
 <span id="top"></span>
 

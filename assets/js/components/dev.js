@@ -39,6 +39,12 @@
 
 		    return true;
  		});
+
+ 		$(document).on('keydown', function(e){
+		    if(e.which == 84){
+		        $('.toolbox__navbar__bar').click();
+		    }
+		});
 	}
 
 })();

@@ -12,7 +12,8 @@ header.main-header + section.hero {
 	}
 
 	.hero__slide {
-		
+
+		background: $brand-color;
 		color: #fff;
 		position: relative;
 
@@ -39,7 +40,7 @@ header.main-header + section.hero {
 		}
 
 		&__overlay{
-			@include overlay(#000000, 0.3);
+			//@include overlay(#000000, 0.3);
 			z-index: 200;
 		}
 
@@ -60,63 +61,28 @@ header.main-header + section.hero {
 
 			@include padding(xl, top);
 			@include padding(xl, bottom);
-			min-height: 100vh;
 			@include align('content');
 			
-			@include bp(md){
-				
-				height: 100vh;
-			}
-
 			text-align: center;
 		}
 
 		&__title {
 			@include font-size(xxxl);
-			text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
 			line-height: 1;
-			@include margin(base, bottom, true);
 		}
 
-		&__sub-title {
+		&__subtitle {
 			@include font-size(xl);
-			text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-			@include margin(md, bottom, true);
+			@include margin(sm, top);
+		}
+
+		&__text {
+			@include margin(sm, top);
 		}
 
 		&__btn {
-			@extend .btn;
-		}
-
-		.hero__continue {
-
-			display: inline-block;
-			
-			span {
-				display: block;
-				float: left;
-				width: 100%;
-				clear: both;
-				text-align: center;
-
-				&:last-child {
-	           		@extend .chevron--down;
-				}
-			}
-
+			@include btn(#fff, $brand-color);
 			@include margin(sm, top);
-
-			@include bp(sm){
-				position: absolute;
-				bottom: -50px;
-				left: 0;
-				right: 0;
-				margin-top: 0;
-			}
-
-			@include bp(md){
-				bottom: -50px;
-			} 
 		}
 		
 	}

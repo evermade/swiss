@@ -4,4 +4,4 @@ assets/vendor/*
 .DS_Store
 ._*
 *._.*
-assets/dist/*
+assets/dist/

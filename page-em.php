@@ -7,22 +7,38 @@ if(!isset($_GET['page'])){
 	$_GET['page'] = 'index';
 }
 
+$folders = array('components', 'layouts', 'blocks');
+
 ?>
 
-<section class="section">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				<ul class="nav list list--horizontal">
-					<li><a href="?page=index">Home</a></li>
-					<li><a href="?page=styleguide">Styleguide</a></li>
-					<li><a href="?page=mixins">Mixins</a></li>
-					<li><a href="?page=animations">Animations</a></li>
-				</ul>
+<section class="toolbox">
+	<div class="toolbox__navbar">
+		<div class="toolbox__navbar__bar"><i class="fa fa-wrench"></i></div>
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-xs-12 col-sm-3">
+					<h2>Navigation</h2>
+					<p><a href="?page=index">Home</a></p>
+					<p><a href="?page=styleguide">Styleguide</a></p>
+					<p><a href="?page=mixins">Mixins</a></p>
+					<p><a href="?page=animations">Animations</a></p>
+				</div>
+
+				<?php foreach($folders as $folder): 
+				$folders[$folder] = glob(get_template_directory().'/templates/toolbox/'.$folder.'/*.php'); 
+				?>
+					<div class="col-xs-12 col-sm-3">
+					<h2><?php echo $folder; ?></h2>
+					<?php foreach($folders[$folder] as $c):
+						echo '<p><a href="/em/#'.basename($c).'">'.basename($c).'</a></p>';
+					endforeach; ?>
+					</div>
+				<?php endforeach; ?>
 			</div>
-		</div><!-- end of row -->
-	</div><!-- end of wrapper -->
-</section><!-- end of section --> 
+		</div>
+	</div>
+</section>
 
 <?php
 
