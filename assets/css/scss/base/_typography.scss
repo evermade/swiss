@@ -4,7 +4,6 @@ h1, h2, h3, h4, h5, h6,
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
-  color: $headings-color;
   margin:0;
   padding:0;
 
@@ -33,6 +32,10 @@ h6, .h6 {
   .small {
     font-size: 75%;
   }
+}
+
+.headline {
+  color: $headings-color;
 }
 
 h1, .headline--xxxl {

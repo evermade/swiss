@@ -7,13 +7,13 @@
 			<tr>
 				<td>
 					<div class="">
-						<h1 class="headline--xxxl">h1, headline--xxxl</h1>
-						<h2 class="headline--xxl">h2, headline--xxl</h2>
-						<h3 class="headline--xl">h3, headline--xl</h3>
-						<h4 class="headline--lg">h4, headline--lg</h4>
-						<h5 class="headline--md">h5, headline--md</h5>
-						<h6 class="headline--sm">h6, headline--sm</h6>
-						<h6 class="headline--xs">h6, headline--xs</h6>
+						<h1 class="headline headline--xxxl">h1, headline--xxxl</h1>
+						<h2 class="headline headline--xxl">h2, headline--xxl</h2>
+						<h3 class="headline headline--xl">h3, headline--xl</h3>
+						<h4 class="headline headline--lg">h4, headline--lg</h4>
+						<h5 class="headline headline--md">h5, headline--md</h5>
+						<h6 class="headline headline--sm">h6, headline--sm</h6>
+						<h6 class="headline headline--xs">h6, headline--xs</h6>
 					</div>
 				</td>
 			</tr>
