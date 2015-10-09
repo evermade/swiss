@@ -13,7 +13,11 @@ Preview: true
 
 			<?php for($j=0; $j<$i; $j++): ?>
 			<div class="grid__item">
-				<img src="http://fakeimg.pl/850x550/eeeeee/666/?text=img" alt="fake img"/>
+
+				<div class="component">
+					<img class="component__image" src="http://fakeimg.pl/850x550/eeeeee/666/?text=img" alt="fake img"/>
+				</div><!-- an example of component within a layout, this should be reusable and be saved in /assets/css/scss/components -->
+
 			</div><!-- end of grid item -->
 			<?php endfor; ?> 
 

@@ -4,27 +4,23 @@ Tags: layout, masonry
 Preview: true
 -->
 
-<section class="masonry">
-	<div class="masonry__container">
+<div class="masonry">
+	<div class="masonry__items">
+		<?php for($i=0; $i<20; $i++): ?>
+			
+		<div class="masonry__item">
 
-		<header class="section-header">
-	        <h1 class="section-header__title">Masonry Block template</h1>
-	    </header>
+			<div class="masonry__item__inner" data-animate="animated fadeInUp">
 
-		<div class="masonry__items">
-
-			<?php for($i=0; $i<20; $i++): ?>
+				<div class="component">
+					<img class="component__image" src="http://fakeimg.pl/650x<?php echo rand(100, 600);?>/eeeeee/666/?text=img" alt="fake img"/>
+					<p class="component__text">This is a paragraph of text. Some of the text may be <em>emphasised</em> and some it might even be <strong>strongly emphasised</strong>.</p>
+				</div><!-- an example of component within a layout, this should be reusable and be saved in /assets/css/scss/components -->
 				
-			<div class="masonry__item">
+			</div>
+		</div><!-- end of masonry item -->
 
-				<div class="masonry__item__inner" data-vp-add-class="animated fadeInUp">
-					<img src="http://fakeimg.pl/650x<?php echo rand(100, 600);?>/eeeeee/666/?text=img" alt="fake img"/>
-				</div>
-			</div><!-- end of masonry item -->
+		<?php endfor; ?> 
 
-			<?php endfor; ?> 
-
-		</div><!-- end of masonry row -->
-
-	</div><!-- end of masonry container -->
-</section><!-- end of masonry section--> 
+	</div><!-- end of masonry row -->
+</div><!-- end of masonry section--> 

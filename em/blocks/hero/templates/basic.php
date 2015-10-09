@@ -3,9 +3,9 @@
 	//echo "<pre>"; print_r($hero); echo "</pre>";
 ?>
 <div class="hero__slide">
-	<div class="hero__slide__background" data-vp-add-class=" animatedsuperslow fadeIn animateddelay1" <?php echo $hero_background; ?>></div>
+	<div class="hero__slide__background" data-animate="animatedsuperslow fadeIn animateddelay1" <?php echo $hero_background; ?>></div>
 
-	<!-- <video autoplay loop class="hero__slide__bgvideo" data-vp-add-class=" animatedsuperslow fadeIn animateddelay1">
+	<!-- <video autoplay loop class="hero__slide__bgvideo" data-animate=" animatedsuperslow fadeIn animateddelay1">
 		<source src="assets/dev/snow-falling-video.mp4" type="video/mp4">
 	</video> -->
 
@@ -14,7 +14,7 @@
 	<div class="hero__slide__container">
 
 		<div class="hero__slide__row">
-			<div class="hero__slide__col" data-vp-add-class="animatedslow fadeIn">
+			<div class="hero__slide__col" data-animate="animatedslow fadeIn">
 				<div class="el">
 					<h1 class="hero__title"><?php echo $hero['slide_title'] ?></h1>
 

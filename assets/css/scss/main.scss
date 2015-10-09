@@ -15,7 +15,7 @@
  */
 
 @import "vendor/bootstrap";
-@import "vendor/animate.css";
+@import "vendor/animate-css";
 
 /**
  * #BOURBON
@@ -39,29 +39,29 @@
  * Mixins
  *
  */
+@import "mixins/align";
 @import "mixins/all";
-@import "mixins/helpers";
-@import "mixins/container";
-@import "mixins/typography";
-@import "mixins/section";
+@import "mixins/bgimg";
+@import "mixins/border-radius";
+@import "mixins/bp";
 @import "mixins/btn";
-@import "mixins/wysiwyg-html";
+@import "mixins/center-block";
+@import "mixins/circle";
+@import "mixins/container";
+@import "mixins/equal-height";
+@import "mixins/fa-icon";
 @import "mixins/font-size";
 @import "mixins/font-type";
-@import "mixins/fa-icon";
-@import "mixins/bp";
-@import "mixins/paddingmargin";
-@import "mixins/border-radius";
-@import "mixins/equal-height";
-@import "mixins/align";
-@import "mixins/bgimg";
-@import "mixins/circle";
-@import "mixins/overlay";
-@import "mixins/center-block";
 @import "mixins/full-cover";
-@import "mixins/padding";
+@import "mixins/helpers";
 @import "mixins/margin";
+@import "mixins/overlay";
+@import "mixins/padding";
+@import "mixins/paddingmargin";
+@import "mixins/section";
 @import "mixins/shadow";
+@import "mixins/typography";
+@import "mixins/wysiwyg-html";
 
 /**
  * Functions
@@ -92,8 +92,9 @@
 @import "layouts/columns";
 @import "layouts/cup";
 @import "layouts/dividedbyfour";
-@import "layouts/grid-full";
 @import "layouts/grid-fixed";
+@import "layouts/grid-full";
+@import "layouts/layout-columns";
 @import "layouts/links-block";
 @import "layouts/masonry";
 @import "layouts/table-div";
@@ -104,7 +105,6 @@
  */
 @import "blocks/block-listing";
 @import "blocks/blog";
-@import "blocks/columns";
 @import "blocks/container";
 @import "blocks/example";
 @import "blocks/example-template";
@@ -145,5 +145,6 @@
 @import "components/share-this";
 @import "components/slick";
 @import "components/small-posts-listing";
+@import "components/social-links";
 @import "components/tables";
 @import "components/wysiwyg-html";

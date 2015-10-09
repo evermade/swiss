@@ -18,7 +18,7 @@
 
 	<?php wp_head();?>
 </head>
-<body <?php body_class(); ?> data-vp-add-class="animated fadeIn">
+<body <?php body_class(); ?> data-animate="animated fadeIn">
 
   <!--[if lt IE 8]>
     <div class="chromeframe">

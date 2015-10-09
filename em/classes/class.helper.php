@@ -28,7 +28,7 @@ class Helper {
 		//lets cleanse
 		$classes = implode(' ', array_unique(explode(' ', $classes)));
 
-		echo sprintf('data-vp-add-class="%s"', $classes);
+		echo sprintf('data-animate="%s"', $classes);
 		return true;
 	}
 

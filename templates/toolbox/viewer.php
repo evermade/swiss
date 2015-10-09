@@ -169,14 +169,14 @@ document.addEventListener("DOMContentLoaded", function() {
 <style>
 .layout-element-editor__cup {
 	width: 100%;
-	height: 200px;
+	/*height: 200px;*/
 	border: 1px dotted #cccccc;
 }
 .layout-element-editor__cup--taller {
-	height: 400px;
+	/*height: 400px;*/
 }
 .layout-element-editor__cup--jumbo {
-	height: 700px;
+	/*height: 700px;*/
 }
 .margin-top {
 	margin-top: 30px;

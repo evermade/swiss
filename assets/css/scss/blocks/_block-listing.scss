@@ -36,19 +36,19 @@
 		}
 	}
 
-	&[data-count="2"] {
+	&__row[data-count="2"] {
 		.block-listing__item {
 			@include make-sm-column(6);
 		}
 	}
 
-	&[data-count="3"] {
+	&__row[data-count="3"] {
 		.block-listing__item {
 			@include make-sm-column(4);
 		}
 	}
 
-	&[data-count="4"] {
+	&__row[data-count="4"] {
 		.block-listing__item {
 			@include make-sm-column(3);
 		}
