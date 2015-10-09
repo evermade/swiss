@@ -66,7 +66,7 @@ $headings-line-height: 1.1;
 $headings-color: #000;
 $headings-small-color: inherit;
 
-//layout stuff 
+//layout stuff
 $container-max-width: 1170px;
 $container-full-max-width: 2600px;
 
@@ -76,13 +76,13 @@ $container-full-max-width: 2600px;
  * are used in other spacing contexts too.
  */
 // Spacings
-$padding-xxl: 15rem;
-$padding-xl: 10rem;
-$padding-lg: 6rem;
-$padding-md: 4rem;
-$padding-sm: 3rem;
-$padding-xs: 2rem;
-$padding-xxs: 1rem;
+$padding-xxl: 150px;
+$padding-xl: 100px;
+$padding-lg: 60px;
+$padding-md: 40px;
+$padding-sm: 30px;
+$padding-xs: 20px;
+$padding-xxs: 10px;
 $padding: $padding-md; // Define base spacing, used by Bourbon and others.
 
 $col-padding: 15px;

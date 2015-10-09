@@ -37,37 +37,37 @@ h6, .h6 {
 
 h1, .headline--xxxl {
     @include font-size(xxxl);
-    margin-bottom: $padding;
+    margin-bottom: rem($padding);
 }
 
 h2, .headline--xxl {
     @include font-size(xxl);
-    margin-bottom: $padding;
+    margin-bottom: rem($padding);
 }
 
 h3, .headline--xl {
     @include font-size(xl);
-    margin-bottom: $padding;
+    margin-bottom: rem($padding);
 }
 
 h4, .headline--lg {
     @include font-size(lg);
-    margin-bottom: $padding;
+    margin-bottom: rem($padding);
 }
 
 h5, .headline--md {
     @include font-size(md);
-    margin-bottom: $padding;
+    margin-bottom: rem($padding);
 }
 
 h6, .headline--sm {
     @include font-size(sm);
-    margin-bottom: $padding;
+    margin-bottom: rem($padding);
 }
 
 .headline--xs {
     @include font-size(xs);
-    margin-bottom: $padding;
+    margin-bottom: rem($padding);
 }
 
 
