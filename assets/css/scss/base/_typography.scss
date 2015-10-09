@@ -35,22 +35,51 @@ h6, .h6 {
   }
 }
 
-h1, .h1 { @include font-size(xxxl); }
-h2, .h2 { @include font-size(xxl); }
-h3, .h3 { @include font-size(xl); }
-h4, .h4 { @include font-size(lg); }
-h5, .h5 { @include font-size(md); }
-h6, .h6 { @include font-size(sm); }
+h1, .headline--xxxl {
+    @include font-size(xxxl);
+    margin-bottom: $padding;
+}
+
+h2, .headline--xxl {
+    @include font-size(xxl);
+    margin-bottom: $padding;
+}
+
+h3, .headline--xl {
+    @include font-size(xl);
+    margin-bottom: $padding;
+}
+
+h4, .headline--lg {
+    @include font-size(lg);
+    margin-bottom: $padding;
+}
+
+h5, .headline--md {
+    @include font-size(md);
+    margin-bottom: $padding;
+}
+
+h6, .headline--sm {
+    @include font-size(sm);
+    margin-bottom: $padding;
+}
+
+.headline--xs {
+    @include font-size(xs);
+    margin-bottom: $padding;
+}
+
 
 h1,h2,h3,h4,h5,h6{
   &+p,&+ul,&+ol{
-    
+
   }
 }
 
 //some helper methods we can use to extend from within css, rather than multiple classes in the markup
 .heading {
-  @include margin(md, bottom, true); 
+  @include margin(md, bottom, true);
   text-transform: uppercase;
   text-align: center;
 }

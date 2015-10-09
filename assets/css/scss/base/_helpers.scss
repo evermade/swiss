@@ -8,30 +8,39 @@
     padding: 0;
 }
 
+
 .clearfix {
     @include clearfix;
 }
 
+
 .center {
+
     &--all {
         @include align(all);
     }
+
     &--vertical {
         @include align(vertical);
     }
+
     &--horizontal {
         @include align(horizontal);
     }
+
     &--content {
         @include align(content);
     }
+
 }
+
 
 .equal-height, .equal-height > div {
     @include equal-height();
 }
 
-.js-clickable {
+
+.clickable {
   position: relative;
   cursor: pointer;
   display: block;
@@ -39,4 +48,81 @@
   &__item {
     @include overlay(transparent, 0);
   }
+
+}
+
+
+
+/*------
+#PADDING
+------*/
+.padding {
+    padding: $padding;
+
+    &--xxl {
+        padding: $padding-xxl;
+    }
+
+    &--xl {
+        padding: $padding-xl;
+    }
+
+    &--lg {
+        padding: $padding-lg;
+    }
+
+    &--md {
+        padding: $padding-md;
+    }
+
+    &--sm {
+        padding: $padding-sm;
+    }
+
+    &--xs {
+        padding: $padding-xs;
+    }
+
+    &--xxs {
+        padding: $padding-xxs;
+    }
+
+}
+
+
+
+/*-----
+#MARGIN
+-----*/
+.margin {
+    margin: $padding;
+
+    &--xxl {
+        margin: $padding-xxl;
+    }
+
+    &--xl {
+        margin: $padding-xl;
+    }
+
+    &--lg {
+        margin: $padding-lg;
+    }
+
+    &--md {
+        margin: $padding-md;
+    }
+
+    &--sm {
+        margin: $padding-sm;
+    }
+
+    &--xs {
+        margin: $padding-xs;
+    }
+
+    &--xxs {
+        margin: $padding-xxs;
+    }
+
 }
