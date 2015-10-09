@@ -31,18 +31,30 @@ $font-weight-strong-base: 700;
 $line-height-base: 1.628571429;
 $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 
-//font sizes
+
+
+/**
+ * Font sizes for <html> element, used as a base for the rem units in different
+ * breakpoints. This should not be changed.
+ */
 $font-size-rem-sm: 8.5px;
 $font-size-rem-md: 9.5px;
 $font-size-rem-base: 10px;
 
-$font-size-sm: 14px;
-$font-size-base: 16px; //base!!
-$font-size-md: 20px;
-$font-size-lg: 25px;
+// font sizes
+$font-size-xs: 14px;
+$font-size-sm: 16px;
+$font-size-md: 18px;
+$font-size-lg: 23px;
 $font-size-xl: 30px;
 $font-size-xxl: 40px;
-$font-size-xxxl: 45px;
+$font-size-xxxl: 60px;
+$font-size-xxxxl: 80px;
+$font-size-xxxxxl: 100px;
+
+$font-size-base: $font-size-md;
+
+
 
 //for bourbon
 $em-base: $font-size-rem-base;
@@ -59,12 +71,19 @@ $container-max-width: 1170px;
 $container-full-max-width: 2600px;
 
 
-$padding-xs: 	10px;
-$padding-sm: 	20px;
-$padding: 		30px; //base
-$padding-md: 	50px;
-$padding-lg: 	80px;
-$padding-xl: 	100px;
+/**
+ * Spacing variables. Currently misnamed as "padding" variables, but these vars
+ * are used in other spacing contexts too.
+ */
+// Spacings
+$padding-xxl: 150px;
+$padding-xl: 100px;
+$padding-lg: 60px;
+$padding-md: 40px;
+$padding-sm: 30px;
+$padding-xs: 20px;
+$padding-xxs: 10px;
+$padding: $padding-md; // Define base spacing, used by Bourbon and others.
 
 $col-padding: 15px;
 
