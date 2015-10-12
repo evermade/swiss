@@ -3,5 +3,5 @@
 
 	<div class="post__excerpt"><?php the_excerpt(); ?></div>
 
-	<a href="<?php the_permalink(); ?>" class="btn">Read More</a>
+	<a href="<?php the_permalink(); ?>" class="post__btn btn">Read More</a>
 </div>

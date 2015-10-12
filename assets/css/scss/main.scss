@@ -109,12 +109,10 @@
 @import "blocks/example"; 
 @import "blocks/example-template";
 @import "blocks/footer";
-@import "blocks/gallery";
 @import "blocks/hero-basic";
 @import "blocks/hero-landing";
 @import "blocks/logo-listing";
 @import "blocks/media-object-listing";
-@import "blocks/post";
 @import "blocks/post-hero";
 @import "blocks/single-post";
 @import "blocks/toolbox";
@@ -129,6 +127,7 @@
 @import "components/coffee";
 @import "components/forms";
 @import "components/full-cover";
+@import "components/gallery-item";
 @import "components/headline";
 @import "components/icons";
 @import "components/list";
@@ -139,6 +138,7 @@
 @import "components/nav-bar";
 @import "components/overlay";
 @import "components/pagination";
+@import "components/post-small";
 @import "components/quotes";
 @import "components/section-header";
 @import "components/shadow";

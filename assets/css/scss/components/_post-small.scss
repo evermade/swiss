@@ -1,0 +1,19 @@
+.post {
+	&--small {
+		@include make-xs-column(12);
+
+		.post__title{
+			margin-bottom: 0;
+		}
+
+		.post__excerpt {
+			margin-top: rem($padding-xs);
+		}
+
+		.post__btn {
+			margin-top: rem($padding-xs);
+		}
+	}
+
+	margin-bottom: rem($padding);
+}
