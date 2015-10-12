@@ -9,7 +9,7 @@
 	//call any functions to be trigger on dom ready
 	em.animations.init = function(){
 
-		em.animations.elements = $("[data-vp-add-class]");
+		em.animations.elements = $("[data-animate]");
 
 		em.animations.checkRequiredWidth();
 
@@ -61,10 +61,10 @@
 	            windowHeight = win.height(),
 	            elTop = el.offset().top;
 
-	        el.toggleClass( el.data("vp-add-class"), elTop < (scrollTop+windowHeight));
+	        el.toggleClass( el.data("animate"), elTop < (scrollTop+windowHeight));
 
 	        // if(elTop < (scrollTop+windowHeight)){
-	        // 	el.addClass( el.data("vp-add-class"));
+	        // 	el.addClass( el.data("animate"));
 	        // }
 	    });
 	};

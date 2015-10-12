@@ -1,18 +1,18 @@
 {
-  "name": "onefastchop",
+  "name": "Mr Evermade",
   "version": "1.0.0",
   "authors": [
-    "paul <paul@onefastsnail.com>"
+    "hello <hello@evermade.fi>"
   ],
   "dependencies": {
-    "modernizr": "latest",
-    "jquery": "latest",
-    "fontawesome": "latest",
     "bootstrap-sass": "~3.3.4",
-    "slick.js": "~1.5.5",
     "bourbon": "~4.2.3",
-    "Justified-Gallery": "~3.6.0",
-    "masonry": "~3.3.1"
+    "fontawesome": "latest",
+    "jquery": "latest",
+    "masonry": "~3.3.1",
+    "modernizr": "latest",
+    "slick.js": "~1.5.5",
+    "zeroclipboard": "~2.2.0"
   },
   "private": true
 }

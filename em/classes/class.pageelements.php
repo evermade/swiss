@@ -212,6 +212,9 @@ class PageElements {
 
 	}
 
-
+	static public function get_meta($file=null){
+		$default_headers = array('Description' => 'Description', 'Tags' => 'Tags', 'Preview' => 'Preview');
+		return get_file_data($file, $default_headers);
+	}
 
 }

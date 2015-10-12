@@ -19,7 +19,7 @@ global $post;
 				//set and get the fields for this post
 				$post_block->get_fields(array('test'), false);//false signals we need to use the native get_fields as its not a sub field at this level
 				
-				include(get_template_directory().'/templates/post-small.php');
+				include(get_template_directory().'/templates/_post-small.php');
 
 				endforeach; ?>
 			</div><!-- end of row -->

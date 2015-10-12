@@ -1,11 +1,11 @@
-<section class="block-listing" data-count="<?php echo sizeof($block->repeaters['block_listing_items']); ?>">	
+<section class="block-listing">	
 	<div class="block-listing__container">
 
 	    <header class="section-header section-header--block-listing" <?php Helper::animate('', ['el-up']); ?>>
 	        <?php echo Helper::sprint('<h1 class="section-header__title">%s</h1>', $block->fields['block_listing_title']); ?>
 	    </header>
 
-	    <div class="block-listing__row" <?php Helper::animate('', ['el-up']); ?>>
+	    <div class="block-listing__row" <?php Helper::animate('', ['el-up']); ?> data-count="<?php echo sizeof($block->repeaters['block_listing_items']); ?>">
 			
 			<?php foreach($block->repeaters['block_listing_items'] as $k => $p): 	?>	
 			<div class="block-listing__item">

@@ -1,13 +1,14 @@
+(function() {
 
-function copyToClipboard(element) {
-	console.log($(element).parent().html());
-    var $temp = $("<input>")
-    $("body").append($temp);
-    $temp.val($(element).parent().html());
-    document.execCommand("copy");
-    $temp.remove();
-}
+	//create empty object in the global em var, dont forget to add the init call in the main.js!
+	em.example = {};
 
-$('.example-template .cup').click(function(){
-	copyToClipboard($(this).find(".coffee"));
-})
+	//call any functions to be trigger on dom ready
+	em.example.init = function(){
+		em.example.setup();
+	};
+
+	em.example.setup  = function(){
+	};
+
+})();

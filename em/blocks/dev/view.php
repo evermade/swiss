@@ -36,6 +36,3 @@
 </section><!-- end of section --> 
 
 <?php include(get_template_directory().'/em/blocks/example_block/view.php'); ?>
-<?php include(get_template_directory().'/em/blocks/masonry/view.php'); ?>
-
-<?php include(get_template_directory().'/em/blocks/dev/templates/kitchen-sink.php'); ?>

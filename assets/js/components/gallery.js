@@ -5,26 +5,11 @@
 
 	//call any functions to be trigger on dom ready
 	em.gallery.init = function(){
-		em.gallery.flickr();
+		em.gallery.setup();
 	};
 
-	em.gallery.flickr  = function(){
-		$(".gallery--flickr .gallery__images").justifiedGallery({
-            rowHeight : 250,
-            margins: 10,
-            captions: false
-        });
+	em.gallery.setup  = function(){
 
-        function setUpGallery(){
-            var galleryWidth = $("body").outerWidth();
-            $(".gallery--flickr .gallery__images").width(galleryWidth);
-        }
-
-        setUpGallery();
-
-        $(window).resize(function() {
-            setUpGallery();
-        });
 	};
 
 })();

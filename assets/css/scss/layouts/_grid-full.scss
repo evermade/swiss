@@ -1,0 +1,64 @@
+.grid{
+	
+	&--full & {
+
+		&__container {
+			width: 100% !important;
+			max-width: 100%;
+		}
+		
+		&__row{
+			@include make-row($gutter:0);
+		}
+
+		&__item {
+			@include make-xs-column(12);
+			overflow: hidden;
+			padding: 0 !important;
+		}
+
+		&__row {
+
+			&[data-count="2"] {
+				.grid__item {
+					@include make-xs-column(12);
+					@include make-sm-column(6);
+				}
+			}
+
+			&[data-count="3"] {
+				.grid__item {
+					@include make-xs-column(12);
+					@include make-sm-column(4);
+				}
+			}
+
+			&[data-count="4"] {
+				.grid__item {
+					@include make-xs-column(12);
+					@include make-sm-column(6);
+					@include make-md-column(3);
+				}
+			}
+
+			&[data-count="5"] {
+				.grid__item {
+					@include make-xs-column(12);
+					@include make-sm-column(6);
+					@include make-md-column(3);
+				}
+			}
+
+			&[data-count="6"] {
+				.grid__item {
+					@include make-xs-column(6);
+					@include make-sm-column(3);
+					@include make-md-column(3);
+					@include make-lg-column(2);
+				}
+			}
+
+		}
+
+	}
+}

@@ -1,0 +1,12 @@
+.grid{
+	
+	&--fixed & {
+		
+		&__item {
+			height: 400px;
+			background: $brand-color;
+			position: relative;
+		}
+
+	}
+}

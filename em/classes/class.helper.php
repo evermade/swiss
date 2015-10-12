@@ -28,7 +28,7 @@ class Helper {
 		//lets cleanse
 		$classes = implode(' ', array_unique(explode(' ', $classes)));
 
-		echo sprintf('data-vp-add-class="%s"', $classes);
+		echo sprintf('data-animate="%s"', $classes);
 		return true;
 	}
 
@@ -95,17 +95,6 @@ class Helper {
 		return ($strlen>=$limit) ? substr($str, 0, $limit)."&hellip;" : $str;		
 	}
 	
-	/**
-	 * [spemail description]
-	 * @param  [type] $email [description]
-	 * @return [type]        [description]
-	 */
-	static public function spemail($email) {
-		$find = array('.', '@');
-		$replace   = array('(dot)', '(at)');
-		return str_replace($find, $replace, $email);							
-	}
-
 	/**
 	 * [truncate description]
 	 * @param  [type]  $s      [description]
