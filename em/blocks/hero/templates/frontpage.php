@@ -6,7 +6,7 @@
 	<div class="hero__slide__background" data-animate=" animatedsuperslow fadeIn animateddelay1" <?php echo $hero_background; ?>></div>
 
 	<!-- <video autoplay loop class="hero__slide__bgvideo" data-animate=" animatedsuperslow fadeIn animateddelay1">
-		<source src="assets/dev/snow-falling-video.mp4" type="video/mp4">
+		<source src="http://cdn.evermade.fi/video/video-bg-small.mp4" type="video/mp4">
 	</video> -->
 
 	<div class="hero__slide__overlay"></div>
