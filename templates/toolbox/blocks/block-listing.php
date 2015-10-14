@@ -7,7 +7,7 @@ Preview: true
 <section class="block-listing">
 	<div class="block-listing__container">
 
-		<header class="section-header section-header--block-listing">
+		<header class="section-header section-header--centered">
 			<h1 class="section-header__title">A block listing</h1>
 		</header>
 

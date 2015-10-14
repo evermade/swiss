@@ -2,7 +2,7 @@
 	
 	<div class="media-object-listing__container">
 
-	<header class="section-header">
+	<header class="section-header section-header--centered">
         <?php echo Helper::sprint('<h1 class="section-header__title">%s</h1>', $block->fields['media_object_title']); ?>
     </header>
 

@@ -4,7 +4,7 @@ global $post;
 <section class="small-posts-listing">
 	<div class="small-posts-listing__container">
 		
-		<header class="section-header">
+		<header class="section-header section-header--centered">
 	        <h1 class="section-header__title">Small Posts Block</h1>
 	    </header>
 
