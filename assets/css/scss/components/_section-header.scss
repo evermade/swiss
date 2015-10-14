@@ -1,8 +1,7 @@
 .section-header {
-	text-align: center;
-
+	
 	&__title {
-		text-transform: uppercase;
+		text-transform: capitalize;
   		margin: 0;
   		word-break: break-all;
   		@include font-size(xl);
@@ -10,8 +9,7 @@
 
 	&__subtitle {
 		@include font-size(base);
-  		@include margin(base, bottom, true);
-  		font-weight: normal;
+  		@include margin(xs, top, true);
 	}
 
 	&:after {
@@ -19,12 +17,27 @@
 		display: block;
 		width: 56px;
 		height: 1px;
-		background: #ccc;
+		background: $brand-color;
 		@include margin(sm, top, true);
-		margin-left: auto;
-		margin-right: auto;
 	}
 
 	@include margin(md, bottom, true);
+
+	&--centered {
+		text-align: center;
+
+		&:after{
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	&--right {
+		text-align: right;
+
+		&:after{
+			float: right;
+		}
+	}
 
 }

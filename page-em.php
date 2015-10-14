@@ -13,11 +13,19 @@ $folders = array('components', 'layouts', 'blocks');
 
 <section class="toolbox">
 	<div class="toolbox__navbar">
-		<div class="toolbox__navbar__bar"><i class="fa fa-wrench"></i></div>
-		<div class="container">
+		
+		<div class="toolbox__navbar__nav-container">
+			<div class="row">
+				<div class="col-xs-4"><i class="fa fa-wrench toolbox__open"></i></div>
+				<div class="col-xs-4 hidden"><i class="fa fa-code"></i></div>
+				<div class="col-xs-4 hidden"><i class="fa fa-pencil"></i></div>
+			</div>
+		</div>
+
+		<div class="toolbox__navbar__boxs-container">
 			<div class="row">
 				
-				<div class="col-xs-12 col-sm-3">
+				<div class="col-xs-12">
 					<h2>Navigation</h2>
 					<p><a href="?page=index">Home</a></p>
 					<p><a href="?page=styleguide">Styleguide</a></p>
@@ -28,11 +36,14 @@ $folders = array('components', 'layouts', 'blocks');
 				<?php foreach($folders as $folder): 
 				$folders[$folder] = glob(get_template_directory().'/templates/toolbox/'.$folder.'/*.php'); 
 				?>
-					<div class="col-xs-12 col-sm-3">
+					<div class="col-xs-12">
 					<h2><?php echo $folder; ?></h2>
+
+					<div class="toolbox__navbar__box">
 					<?php foreach($folders[$folder] as $c):
 						echo '<p><a href="/em/#'.basename($c).'">'.basename($c).'</a></p>';
 					endforeach; ?>
+					</div>
 					</div>
 				<?php endforeach; ?>
 			</div>

@@ -7,7 +7,7 @@ Preview: true
 <section class="example">
 	<div class="example__container">
 
-		<header class="section-header section-header--example">
+		<header class="section-header section-header--centered">
 			<h1 class="section-header__title">An Example Block</h1>
 		</header>
 

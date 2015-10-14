@@ -1,7 +1,7 @@
 <section class="block-listing">	
 	<div class="block-listing__container">
 
-	    <header class="section-header section-header--block-listing" <?php Helper::animate('', ['el-up']); ?>>
+	    <header class="section-header section-header--centered" <?php Helper::animate('', ['el-up']); ?>>
 	        <?php echo Helper::sprint('<h1 class="section-header__title">%s</h1>', $block->fields['block_listing_title']); ?>
 	    </header>
 
