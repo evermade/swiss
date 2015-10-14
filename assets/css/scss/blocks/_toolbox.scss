@@ -10,9 +10,11 @@ $toolboxBarWidth: 400px;
 
 	.toolbox__navbar {
 		width: $toolboxBarWidth;
+		overflow-y: auto;
 
 		.toolbox__navbar__boxs-container {
 			opacity: 1;
+			visibility: visible;
 		}
 	}
 }
@@ -32,7 +34,6 @@ $toolboxBarWidth: 400px;
 		z-index: 900;
 		background: $brand-color;
 		color: #fff;
-		overflow-y: auto;
 
 		h2 {
 			color: #fff;
@@ -52,21 +53,11 @@ $toolboxBarWidth: 400px;
 			@include container();
 			margin-bottom: rem(30);
 			opacity: 0;
+			visibility: hidden;
 		}
 
-		&__bar {
-			height: 100%;
-			background: $brand-color;
-			width: 100%;
-			position: absolute;
-			top: 0px;
-			left: -5px;
-			text-align: left;
-			padding-left: rem(10);
-			
-			&:hover {
-				cursor: pointer;
-			}
+		&:hover {
+			cursor: pointer;
 		}
 
 		// &__box {
