@@ -3,7 +3,7 @@
 	<div class="container">
 		
 		<?php if (!empty($block->fields['columns_title'])): ?>
-		<header class="section-header section-header--columns-block">
+		<header class="section-header section-header--centered">
 	        <?php echo Helper::sprint('<h1 class="section-header__title">%s</h1>', $block->fields['columns_title']); ?>
 	    </header>
 		<?php endif; ?>
