@@ -24,10 +24,12 @@ foreach($folders as $folder => $templates):
 						<h2 class="toolbox__item__title">
 							<?php echo basename($template); ?> 
 							<a href="#" class="btn js-copy" data-clipboard-text="<?php echo htmlentities($contents); ?>"><i class="fa fa-clipboard"></i> Copy Code</a>
-							<a href="?page=viewer&amp;element=<?php echo $folder.'/'.basename($template); ?>" target="_blank" class="btn">Open in Viewer</a>
+							<a href="?page=viewer&amp;element=<?php echo $folder.'/'.basename($template); ?>" target="_blank" class="btn">Open in Viewer</a> 
+							<a href="#code" class="btn js-toggle-code">Toggle Code</a>
 						</h2>
 
 						<div class="toolbox__item__meta">
+							<p><strong>Type: </strong><?php echo $folder; ?></p>
 							<p><strong>Location: </strong><?php echo str_replace(get_template_directory(), '', $template);?></p>
 							<p><strong>Description: </strong><?php echo $meta['Description']; ?></p>
 							<p><strong>Tags: </strong><?php echo $meta['Tags']; ?></p>
@@ -35,19 +37,16 @@ foreach($folders as $folder => $templates):
 					</div>
 				</div> 
 				<div class="row">
-					<div class="col-xs-12 toolbox__item__code">
-						<h3 class="toolbox__item__subtitle">Code</h3>
+					<div class="col-xs-12 toolbox__item__code hidden">
 						<pre class="prettyprint"><?php echo htmlentities($contents); ?></pre>
 					</div>
 					<div class="col-xs-12 toolbox__item__preview">
-						<h3 class="toolbox__item__subtitle">Live Preview</h3>
 						<?php include($template); ?>
 					</div>
 				</div> 
 			</div>
 		</section>
 
-		<p style="text-align: center; margin:150px 0; max-width: 100%;"><a href="#top" class="btn">Back to top</a></p>
 
 <?php endforeach; 
 

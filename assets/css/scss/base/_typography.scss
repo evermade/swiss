@@ -6,71 +6,68 @@ h1, h2, h3, h4, h5, h6,
   line-height: $headings-line-height;
   margin:0;
   padding:0;
-
-  small,
-  .small {
-    font-weight: normal;
-    line-height: 1;
-    color: $headings-small-color;
-  }
-
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3 {
-  small,
-  .small {
-    font-size: 65%;
-  }
-}
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-
-  small,
-  .small {
-    font-size: 75%;
-  }
-}
-
-.headline {
-  color: $headings-color;
-}
-
-h1, .headline--xxxl {
+h1, .h1 {
     @include font-size(xxxl);
-    margin-bottom: rem($padding);
 }
 
-h2, .headline--xxl {
+h2, .h2 {
     @include font-size(xxl);
-    margin-bottom: rem($padding);
 }
 
-h3, .headline--xl {
+h3, .h3 {
     @include font-size(xl);
-    margin-bottom: rem($padding);
 }
 
-h4, .headline--lg {
+h4, .h4 {
     @include font-size(lg);
-    margin-bottom: rem($padding);
 }
 
-h5, .headline--md {
+h5, .h5 {
     @include font-size(md);
-    margin-bottom: rem($padding);
 }
 
-h6, .headline--sm {
+h6, .h6 {
     @include font-size(sm);
-    margin-bottom: rem($padding);
 }
 
-.headline--xs {
+//font sizes
+
+.text-xxxl {
+    @include font-size(xxxl);
+}
+
+.text-xxl {
+    @include font-size(xxl);
+}
+
+.text-xl {
+    @include font-size(xl);
+}
+
+.text-lg {
+    @include font-size(lg);
+}
+
+.text-md {
+    @include font-size(md);
+}
+
+.text-sm {
     @include font-size(xs);
-    margin-bottom: rem($padding);
+}
+
+.text-xs {
+    @include font-size(xs);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 
@@ -81,11 +78,6 @@ h1,h2,h3,h4,h5,h6{
 }
 
 //some helper methods we can use to extend from within css, rather than multiple classes in the markup
-.heading {
-  @include margin(md, bottom, true);
-  text-transform: uppercase;
-  text-align: center;
-}
 
 p {
   margin: 0;
@@ -93,14 +85,6 @@ p {
 
   &:last-child{
     margin:0;
-  }
-
-  &.large{
-    font-size:$font-size-md;
-  }
-
-  &.small{
-    font-size:$font-size-sm;
   }
 
   &.accent{
@@ -142,7 +126,7 @@ p a:hover {
     text-decoration: underline;
 }
 
-
+//schemes
 .scheme2{
   h1,h2,h3,h4,h5,h6,p{
     color:#fff;

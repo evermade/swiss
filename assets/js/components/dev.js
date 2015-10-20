@@ -24,25 +24,23 @@
 	};
 
 	em.dev.toolbox = function(){
-		$('.toolbox__navbar__bar').on('click', function(e){
+		$('.toolbox__navbar .toolbox__open').on('click', function(e){
 			e.preventDefault();
-			$('.body').toggleClass('js-toolbox-open');
+			$('body').toggleClass('js-toolbox-open');
 			$(this).next().toggleClass('js-show');		
 		});
 
-		//using event delegation to attach event handler to the body when toolbox is opened so we can shut upon loss of focus
-		$("body").on("click", ".body.js-toolbox-open", function(e){
-
-		    if(!$(e.target).closest('.toolbox__navbar').length || $(e.target).closest('a').length) {
-		      $('.toolbox__navbar__bar').click();
-		    }
-
-		    return true;
- 		});
+		//lets toggle the code
+		$('.js-toggle-code').on('click', function(e){
+			e.preventDefault();
+			var el = $(this);
+			var parent = el.closest('.toolbox__item');
+			parent.find('.toolbox__item__code').toggleClass('hidden');		
+		});
 
  		$(document).on('keydown', function(e){
 		    if(e.which == 84){
-		        $('.toolbox__navbar__bar').click();
+		        $('.toolbox__navbar .toolbox__open').click();
 		    }
 		});
 	}

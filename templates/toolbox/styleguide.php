@@ -7,13 +7,25 @@
 			<tr>
 				<td>
 					<div class="">
-						<h1 class="headline headline--xxxl">h1, headline--xxxl</h1>
-						<h2 class="headline headline--xxl">h2, headline--xxl</h2>
-						<h3 class="headline headline--xl">h3, headline--xl</h3>
-						<h4 class="headline headline--lg">h4, headline--lg</h4>
-						<h5 class="headline headline--md">h5, headline--md</h5>
-						<h6 class="headline headline--sm">h6, headline--sm</h6>
-						<h6 class="headline headline--xs">h6, headline--xs</h6>
+						<?php for($i=1; $i<6; $i++): ?>
+							<h1 class="h<?php echo $i;?>">Heading <?php echo $i;?></h1>
+						<?php endfor; ?> 
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Headlines -->
+	<div class="container">
+		<h2>Font sizes</h2>
+		<table class="example-template__table">
+			<tr>
+				<td>
+					<div class="">
+					<?php foreach (['xs', '', 'md', 'lg', 'xl', 'xxl', 'xxxl'] as $size): ?>
+						<p class="text-<?php echo $size;?>">Text Size <?php echo $size;?></p>
+					<?php endforeach ?>
 					</div>
 				</td>
 			</tr>
