@@ -45,10 +45,10 @@ $font-size-rem-base: 10px;
 $font-size-xs: 14px;
 $font-size-sm: 16px;
 $font-size-md: 18px;
-$font-size-lg: 23px;
-$font-size-xl: 30px;
-$font-size-xxl: 40px;
-$font-size-xxxl: 60px;
+$font-size-lg: 24px;
+$font-size-xl: 36px;
+$font-size-xxl: 48px;
+$font-size-xxxl: 72px;
 
 $font-size-base: $font-size-md;
 
@@ -89,8 +89,6 @@ $body-padding: 10px;
 
 $header-margin-top: 110px;
 $header-margin-top-sm: 75px; //height of the header
-
-$mobile-menu-toggle: "md";
 
 //lets setup a new xl breakpoint
 $screen-xl: 1600px;

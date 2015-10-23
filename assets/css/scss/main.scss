@@ -92,8 +92,9 @@
 @import "layouts/columns";
 @import "layouts/cup";
 @import "layouts/dividedbyfour";
+@import "layouts/grid";
 @import "layouts/grid-fixed";
-@import "layouts/grid-full";
+@import "layouts/grid-no-gutter";
 @import "layouts/layout-columns";
 @import "layouts/links-block";
 @import "layouts/masonry";
@@ -112,7 +113,6 @@
 @import "blocks/hero-basic";
 @import "blocks/hero-landing";
 @import "blocks/logo-listing";
-@import "blocks/media-object-listing";
 @import "blocks/post-hero";
 @import "blocks/single-post";
 @import "blocks/toolbox";
@@ -134,6 +134,7 @@
 @import "components/list-social";
 @import "components/listing-item-horizontal";
 @import "components/listing-item-vertical";
+@import "components/media-object-item";
 @import "components/nav";
 @import "components/nav-bar";
 @import "components/overlay";

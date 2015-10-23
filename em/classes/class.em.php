@@ -16,7 +16,7 @@ class em {
 
 		//loop the blocks fields		
 		while(has_sub_field($name)){
-			$template = get_template_directory().'/em/blocks/'.em::clean_template_name(get_row_layout()).'/index.php';
+			$template = get_template_directory().'/em/'.$name.'/'.em::clean_template_name(get_row_layout()).'/index.php';
 			if(!file_exists($template)){
 				Helper::log($template ." - Template not found");
 				continue;

@@ -31,6 +31,7 @@ $folders = array('components', 'layouts', 'blocks');
 					<p><a href="?page=styleguide">Styleguide</a></p>
 					<p><a href="?page=mixins">Mixins</a></p>
 					<p><a href="?page=animations">Animations</a></p>
+					<p><a href="?page=playground">Playground</a></p>
 				</div>
 
 				<?php foreach($folders as $folder): 
@@ -41,7 +42,7 @@ $folders = array('components', 'layouts', 'blocks');
 
 					<div class="toolbox__navbar__box">
 					<?php foreach($folders[$folder] as $c):
-						echo '<p><a href="/em/#'.basename($c).'">'.basename($c).'</a></p>';
+						echo '<p><a href="/em/#'.basename($c).'">'.basename($c, '.php').'</a></p>';
 					endforeach; ?>
 					</div>
 					</div>
@@ -56,6 +57,9 @@ $folders = array('components', 'layouts', 'blocks');
 switch ($_GET['page']) {
 	case 'animations':
 		include(get_template_directory().'/templates/toolbox/animations.php');
+		break;
+	case 'playground':
+		include(get_template_directory().'/templates/toolbox/playground.php');
 		break;
 	case 'styleguide':
 		include(get_template_directory().'/templates/toolbox/styleguide.php');

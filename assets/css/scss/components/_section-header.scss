@@ -18,7 +18,7 @@
 		width: 56px;
 		height: 1px;
 		background: $brand-color;
-		@include margin(sm, top, true);
+		@include margin(xs, top, true);
 	}
 
 	@include margin(md, bottom, true);
