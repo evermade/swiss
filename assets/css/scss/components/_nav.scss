@@ -16,6 +16,7 @@
                 padding: 10px 20px;
                 display: block;
                 width: 100%;
+                text-transform: capitalize;
              }
          }
 
@@ -36,7 +37,7 @@
          //and modifier for a horizontal bar
          &--bar {
 
-            @include bp($mobile-menu-toggle){
+            @include bp(md){
                  li {
                     display: inline-block;
                     float: left;

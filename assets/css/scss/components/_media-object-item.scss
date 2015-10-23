@@ -1,0 +1,38 @@
+.media-object-item {
+	display: table;
+	width: 100%;
+	
+	&__object, &__body {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	&__object {
+		@include padding(sm, right);
+	}
+
+	&__title {
+
+	}
+
+	&__meta{
+	}
+
+	&__body {
+	}
+
+	&__content {
+	}
+
+
+	//on mobiles lets have a modifier to stack cells upon each other
+	&--stack {		
+		@include bp(xs, max){
+			display: block;
+			.media-object-item__object, .media-object-item__content {
+				display: block;
+				width: 100%;
+			} 
+		}
+	}
+}

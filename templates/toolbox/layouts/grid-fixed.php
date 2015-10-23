@@ -4,7 +4,7 @@ Tags: grid, full width
 Preview: true
 -->
 
-<section class="grid grid--full grid--fixed">
+<section class="grid grid--no-gutter grid--fixed">
 	<div class="grid__container">
 
 		<div class="grid__row" data-count="4">

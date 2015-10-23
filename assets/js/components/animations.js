@@ -9,7 +9,7 @@
 	//call any functions to be trigger on dom ready
 	em.animations.init = function(){
 
-		em.animations.elements = $("[data-animate]");
+		em.animations.capture();
 
 		em.animations.checkRequiredWidth();
 
@@ -19,8 +19,12 @@
 		
 	};
 
+	em.animations.capture = function(){
+		em.animations.elements = $("[data-animate]");
+	};
+
 	em.animations.checkRequiredWidth = function(){
-		if($(window).width()>1024){
+		if(window.innerWidth>1024){
 			em.animations.winWidthOk = true;
 			em.animations.animate();
 			em.animations.animateFirstBlockIn();
