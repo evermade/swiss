@@ -59,7 +59,7 @@
 
 		<div class="row">
 			<div class="col-xs-12 text-center">
-				<?php echo paginate_links(); ?>
+				<?php echo paginate_links(['type'=>'list', 'prev_next'=>false]); ?>
 			</div>
 		</div>
 	</div><!-- end of blog container-->

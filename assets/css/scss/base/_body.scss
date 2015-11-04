@@ -1,5 +1,3 @@
 .body{
-	padding-top:100px;
-	//margin:$padding-sm;
-	/*background:$almost-white;*/
+	@include counter-body-margin(1);
 }

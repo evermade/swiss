@@ -9,6 +9,20 @@
 		em.helper.toggleHeroNav();
 		em.helper.hashCheck();
 		em.helper.goToNext();
+		em.helper.externalLinks();
+	};
+
+	em.helper.externalLinks = function(){
+		var anchors = document.querySelectorAll('a');
+	    
+	    if(anchors.length>0){
+	      for (var i = 0; i < anchors.length; ++i) {
+			   var a = new RegExp('/' + window.location.host + '/');
+			   if(!a.test(anchors[i].href)) {
+			       anchors[i].setAttribute("target","_blank");
+			   }
+			}
+		}
 	};
 
 	em.helper.hashCheck = function(){

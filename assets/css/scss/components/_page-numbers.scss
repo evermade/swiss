@@ -1,0 +1,37 @@
+.page-numbers {
+	text-align: center;
+
+	@extend .list;
+    @extend .list--horizontal;
+    
+    li {
+
+    	border:1px solid $brand-color;
+    	background: $brand-color;
+    	color: #fff;
+    	@include transition(all 0.4s);
+
+    	&.current, &:hover {
+    		background: none;
+    		color: $brand-color;
+
+    		a, span {
+    			color: $brand-color;
+    		}
+    	}
+
+        a, span{
+            display: inline-block;
+		    padding: rem(7) rem(12);
+		    margin-right: 2px;
+            color: #fff;
+            border: none;
+            @include font-size(sm);
+            line-height: 1;
+
+            &.current{
+            	
+            }
+        }
+    }
+}
