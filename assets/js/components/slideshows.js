@@ -49,7 +49,7 @@
 		});
 
 		$(".slick--hero").slick({
-			dots: true,
+			dots: false,
 			arrows: false,
 			autoplay: true,
 			autoplaySpeed: 4000,

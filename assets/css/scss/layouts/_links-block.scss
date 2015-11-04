@@ -2,7 +2,6 @@
 
 	&__container {
 		@include container();
-		@include section();
 	}
 
 	&--full {
@@ -14,45 +13,19 @@
 	}
 
 	&__item {
-
+		
 		color: #fff;
 		
 		&__background {
-			background: $brand-color;
 			@include bgimg();
         	@include full-cover();
         	z-index: -1;
 		}
 
 		&__overlay {
-			@include overlay(#000, 0.6);
+			@include overlay($brand-color, 0.6);
 			z-index: -1;
 		}
 
-		&__btn {
-			@include btn(#fff, #000);
-		}
-
 	}
-}
-
-.table-div--links {
-    text-align: center;
-
-    .table-div__row {
-    }
-
-    .table-div__col {
-
-        @include bp($tableBlockBreak){
-             @for $i from 1 through 4 {
-                &--span#{$i} {
-                    $percent: (100  / 4 * $i);
-                    width: #{$percent}%;
-                }
-            }
-
-            padding: 8rem 6rem;
-        } 
-    }
 }

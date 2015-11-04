@@ -17,3 +17,5 @@ $standard_posts = $wp_query->posts;
 		</div>
 	</div>
 <?php endforeach; wp_reset_postdata(); ?>
+
+<?php echo paginate_links(['type'=>'list', 'prev_next'=>false]); ?>

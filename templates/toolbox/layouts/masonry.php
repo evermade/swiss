@@ -10,11 +10,11 @@ Preview: true
 			
 		<div class="masonry__item">
 
-			<div class="masonry__item__inner" data-animate="animated fadeInUp">
+			<div class="masonry__item__inner" data-animate="animated bounceIn">
 
 				<div class="component">
 					<img class="component__image" src="http://fakeimg.pl/650x<?php echo rand(100, 600);?>/eeeeee/666/?text=img" alt="fake img"/>
-					<p class="component__text">This is a paragraph of text. Some of the text may be <em>emphasised</em> and some it might even be <strong>strongly emphasised</strong>.</p>
+					<p class="component__text">This is a component within the masonry layout. This way this component can be reused. So it should respond to its parent structure.</p>
 				</div><!-- an example of component within a layout, this should be reusable and be saved in /assets/css/scss/components -->
 				
 			</div>

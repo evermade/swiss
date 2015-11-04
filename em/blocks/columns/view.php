@@ -1,6 +1,6 @@
-  <section class="columns-block <?php echo $block->getCss('section');?>" style="<?php echo $block->getCss('columns_background'); ?>">
+  <section class="columns-block <?php echo $block->getCss('section');?>">
 	
-	<div class="container">
+	<div class="columns-block__container">
 		
 		<?php if (!empty($block->fields['columns_title'])): ?>
 		<header class="section-header section-header--centered">
