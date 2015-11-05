@@ -35,7 +35,7 @@
 }
 
 
-.equal-height, .equal-height > div {
+.equal-height{
     @include equal-height();
 }
 
@@ -51,7 +51,10 @@
 
 }
 
-
+.background-image {
+    @include full-cover;
+    @include bgimg;
+}
 
 /*------
 #PADDING
