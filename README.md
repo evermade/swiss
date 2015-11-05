@@ -1,17 +1,14 @@
-a bare ass wordpress theme.
+**Swiss**, the bestest Wordpress theme on the market evermade.
 
-clone me.
-sudo npm install
-bower install
-gulp
+**Usage**
 
-and enjoy :)
+1. clone me and cd into this theme.
+1. npm install
+1. bower install
+1. gulp
 
-Some dev notes
+**Requirements**
 
-In best use with the WP Build via Composer.
+* Advanced Custom Fields Pro plugin
 
-Try to use the same variables names across blocks, by resetting the value when reused rather than creating yet another variable in memory.
-
-If you use setup_postdata to setup post data within a template be sure to wp_reset_postdata to return the main query obj back to original post.
-
+And enjoy :)
