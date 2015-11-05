@@ -2,20 +2,24 @@
 
 get_header(); ?>
 
-<section class="columns">
-    <div class="columns__container">
+<section class="hero">
 
-    <header class="section-header section-header--example">
-        <h1 class="section-header__title">Whoops a daisy</h1>
-        <h2 class="section-header__subtitle">The page you were looking for could not be found.</h2>
-    </header>
+    <div class="hero__slides slick--hero">
+            
+        <div class="hero__slide">
 
-        <div class="columns__row">
-            <div class="columns__item text-center">
-            	<p><a href="<?php echo home_url(); ?>" class="btn">Go to Home</a></p>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="hero__slide__content">
+
+                <h1 class="hero__slide__title">Whoops a daisy</h1>
+
+                <h2 class="hero__slide__subtitle">This page could not be found&hellip;</h2>
+                <a href="<?php echo home_url(); ?>" class="btn hero__slide__btn">Go to Home</a>
+            </div><!-- end of hero-slide content -->
+
+        </div><!-- end of hero-slide -->
+
+    </div><!-- end of hero-slides -->
+
+</section><!-- end of hero -->
 
 <?php get_footer();
