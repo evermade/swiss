@@ -106,7 +106,7 @@ class BlockHelper {
 	public function addCss($css=null, $key=null){
 		if(empty($css) || empty($key)) return null;
 
-		if(!isset($this->css[$key]) || !is_array($this->css[$key])){
+		if(!isset($this->css[$key])){
 			$this->css[$key] = null;
 		}
 

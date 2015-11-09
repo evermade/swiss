@@ -3,20 +3,20 @@
     display: block;
     width: 100%;
     max-width: 162px;
-    height: 22px; //normal height
+    height: 25px; //normal height
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left center;
-    background-image: url(../../img/logo-dark.png);
+    background: $brand-color;
     text-indent: -9990px;
     float: left;
     position: relative;
     z-index: 200;
-    @include bp($mobile-menu-toggle) {
+    @include bp(md) {
         height: 46px; //same as nav
     }
     &--inverted {
-        background-image: url(../../img/logo-light.png);
+        background: lighten($brand-color, 20%);
     }
 }
 
@@ -36,7 +36,7 @@
         top: 0px;
     }
     display: none;
-    @include bp($mobile-menu-toggle, max) {
+    @include bp(sm, max) {
         display: block;
     }
 }
@@ -68,7 +68,6 @@ body.nav-open .navtoggle {
 
 //now lets style the header nav bar
 .nav-bar--header {
-    position: relative;
     z-index: 500;
     width: 100%;
     position: absolute;
@@ -81,7 +80,7 @@ body.nav-open .navtoggle {
     }
     .nav {
         //mobile nav
-        @include bp($mobile-menu-toggle, max) {
+        @include bp(sm, max) {
             visibility: hidden;
             opacity: 0;
             @include full-cover(fixed);
@@ -113,7 +112,7 @@ body.nav-open .navtoggle {
             }
         }
         //desktop nav
-        @include bp($mobile-menu-toggle) {
+        @include bp(md) {
             float: right;
             &__list {
                 li {}
@@ -154,9 +153,13 @@ body.nav-open .navtoggle {
 }
 
 //when nav is open lets change a few things
+
+html, body {
+    height: 100%;
+}
+
 body.nav-open {
-    position: fixed;
-    overflow-y: scroll;
+    overflow: hidden;
     width: 100%;
     .nav {
         visibility: visible;

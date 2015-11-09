@@ -85,16 +85,10 @@
  * Layouts
  * A bunch of layouts
  */
-@import "layouts/2columns-corner";
-@import "layouts/blocklisting";
-@import "layouts/carousel";
-@import "layouts/collage";
 @import "layouts/columns";
-@import "layouts/cup";
-@import "layouts/dividedbyfour";
+@import "layouts/grid";
 @import "layouts/grid-fixed";
-@import "layouts/grid-full";
-@import "layouts/layout-columns";
+@import "layouts/grid-no-gutter";
 @import "layouts/links-block";
 @import "layouts/masonry";
 @import "layouts/table-div";
@@ -105,14 +99,12 @@
  */
 @import "blocks/block-listing";
 @import "blocks/blog";
+@import "blocks/columns-block";
 @import "blocks/container";
 @import "blocks/example"; 
-@import "blocks/example-template";
 @import "blocks/footer";
 @import "blocks/hero-basic";
-@import "blocks/hero-landing";
 @import "blocks/logo-listing";
-@import "blocks/media-object-listing";
 @import "blocks/post-hero";
 @import "blocks/single-post";
 @import "blocks/toolbox";
@@ -124,7 +116,6 @@
 @import "components/alerts";
 @import "components/breadcrumbs";
 @import "components/btn";
-@import "components/coffee";
 @import "components/forms";
 @import "components/full-cover";
 @import "components/gallery-item";
@@ -132,19 +123,14 @@
 @import "components/icons";
 @import "components/list";
 @import "components/list-social";
-@import "components/listing-item-horizontal";
-@import "components/listing-item-vertical";
+@import "components/media-object-item";
 @import "components/nav";
 @import "components/nav-bar";
 @import "components/overlay";
+@import "components/page-numbers";
 @import "components/pagination";
 @import "components/post-small";
-@import "components/quotes";
 @import "components/section-header";
-@import "components/shadow";
-@import "components/share-this";
-@import "components/slick";
-@import "components/small-posts-listing";
 @import "components/social-links";
 @import "components/tables";
 @import "components/wysiwyg-html";

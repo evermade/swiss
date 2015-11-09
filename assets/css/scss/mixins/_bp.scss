@@ -16,19 +16,19 @@
   @if $point == xs { 
     @media (#{$mobile-first}-width: $xs) { @content }
   }
-  @if $point == sm { 
+  @else if $point == sm {
     @media (#{$mobile-first}-width: $sm) { @content }
   }
-  @if $point == md { 
+  @else if $point == md {
     @media (#{$mobile-first}-width: $md) { @content; }
   }
-  @if $point == lg {
+  @else if $point == lg {
     @media (#{$mobile-first}-width: $lg) { @content; }
   }
-  @if $point == xl {
+  @else if $point == xl {
     @media (#{$mobile-first}-width: $xl) { @content; }
   }
-  @else{
+  @else {
     @media (#{$mobile-first}-width: $point) { @content; }
   }
 

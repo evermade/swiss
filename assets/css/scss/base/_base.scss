@@ -1,5 +1,4 @@
 html {
-    overflow-y: scroll;
     box-sizing: border-box;
     font-size: 8px;
 
@@ -13,6 +12,7 @@ html {
 
     @include bp(md) {
         font-size: 9.5px;
+        overflow-y: scroll;
     }
 
     @include bp(lg) {

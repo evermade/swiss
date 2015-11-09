@@ -1,4 +1,5 @@
-header.main-header + section.hero {
+//lets counter act the position absolute narvbar with negative margin
+div.page-content > section.hero {
 	@include counter-body-margin(-1);
 }
 
@@ -6,20 +7,23 @@ header.main-header + section.hero {
 
 	position: relative;
 	overflow: hidden;
+	background: $brand-color;
 
-	.hero__slides {
-
-	}
+	.hero__slides {}
 
 	.hero__slide {
+		
+		width: 100%;
+		height: 500px;
 
-		background: $brand-color;
-		color: #fff;
-		position: relative;
-
+		@include bp(sm){
+			height: 800px;
+		} 
+		
 		&__background {
 			@include full-cover();
 			@include bgimg();
+			z-index: 100;
 		}
 
 		&__bgvideo {
@@ -40,29 +44,25 @@ header.main-header + section.hero {
 		}
 
 		&__overlay{
-			//@include overlay(#000000, 0.3);
+			@include overlay($brand-color, 0.3);
 			z-index: 200;
 		}
 
-		&__container {
-			@include container();
-			z-index: 300;
+		&__content {
 			position: relative;
-		}
-
-		&__row{
-			@include make-row($gutter:0);
-		}
-
-		&__col {
-			@include make-xs-column(12);
-			@include make-sm-column(8);
-			@include make-sm-column-offset(2);
-
-			@include padding(xl, top);
-			@include padding(xl, bottom);
-			@include align('content');
+			z-index: 300;
+			width: 100%;
+			max-width: 800px;
+			@include align(all);
+			@include padding(base, all);
+			@include counter-body-margin(1, padding);
 			
+			text-align: center;
+			color: #fff;
+		}
+
+		&__image {
+			@include margin(sm, bottom);
 			text-align: center;
 		}
 

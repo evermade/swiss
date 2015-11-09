@@ -25,8 +25,39 @@
             vertical-align: middle;
         }
 
-        padding: rem($padding);
         position: relative;
         
+    }
+}
+
+.table-div--links {
+    text-align: center;
+
+    .table-div__row {
+        
+        //for this case lets make 3 spans equal 33% at lower resolutions, and let the below handle the large sizes
+        &[data-count="3"] {
+
+            @include bp(md){
+                .table-div__col {
+                    width: 33.33%;
+                }
+            }
+        }
+
+        .table-div__col {
+
+            padding: 8rem 6rem;
+
+            @include bp(lg){
+                 @for $i from 1 through 4 {
+                    &--span#{$i}{
+                        $percent: (100  / 4 * $i);
+                        width: #{$percent}% !important;
+                    }
+                }
+            }
+
+        } 
     }
 }

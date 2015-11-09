@@ -43,6 +43,6 @@
 		        $('.toolbox__navbar .toolbox__open').click();
 		    }
 		});
-	}
+	};
 
 })();

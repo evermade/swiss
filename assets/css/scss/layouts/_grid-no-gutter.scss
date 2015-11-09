@@ -1,0 +1,20 @@
+.grid{
+	
+	&--no-gutter & {
+
+		&__container {
+			width: 100% !important;
+			max-width: 100%;
+		}
+		
+		&__row{
+			@include make-row($gutter:0);
+		}
+
+		&__item {
+			overflow: hidden;
+			padding: 0 !important;
+		}
+
+	}
+}

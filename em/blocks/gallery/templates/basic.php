@@ -2,7 +2,7 @@
 	//to help debug and show what you have access to
 	//echo "<pre>"; print_r($block->repeaters['gallery_images']); echo "</pre>";
 ?>
-<section class="grid grid--full">
+<section class="grid grid--no-gutter">
 	<div class="grid__container">
 
 		<div class="grid__row" data-count="4">

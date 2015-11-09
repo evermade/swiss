@@ -22,13 +22,16 @@
 		} 
 
 		&__image {
+			@include margin(xs, bottom);
 		}
 
 		&__title {
 			@include font-size(lg);
+			@include margin(xs, bottom);
 		}
 
 		&__content {
+			@include margin(xs, bottom);
 		}
 
 		&__btn {
