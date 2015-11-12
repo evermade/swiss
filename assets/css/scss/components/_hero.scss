@@ -36,8 +36,8 @@
 	&__content {
 
 		@include align(vertical);
+		@include padding(base, all);
 		width:100%;
-		padding: 8rem 6rem;
 		text-align:center;
 		z-index:3;
 

@@ -1,5 +1,5 @@
 <!--
-Description: A basic hero component. Tested with Chrome, Firefox,
+Description: A basic hero component. Tested with Chrome, Firefox, IE11, IE10, IE9, iPhone 6 (iOS 8), Android (Chrome)
 Tags: hero, component
 Preview: true
 -->
@@ -18,6 +18,8 @@ Preview: true
 
 </div><!-- end of hero -->
 
+<br>
+
 <div class="hero" style="height:500px;">
 
 	<div class="hero__background" style=" background-image:url(http://fakeimg.pl/650x650/eee/666/?text=bg);"></div>
@@ -30,6 +32,8 @@ Preview: true
 	</div>
 
 </div><!-- end of hero -->
+
+<br>
 
 <div class="hero">
 
@@ -45,6 +49,9 @@ Preview: true
 
 </div><!-- end of hero -->
 
+<br>
+
+
 <div class="hero hero--square">
 
 	<div class="hero__background" style=" background-image:url(http://fakeimg.pl/650x650/eee/666/?text=bg);"></div>
@@ -58,6 +65,8 @@ Preview: true
 	</div>
 
 </div><!-- end of hero -->
+
+<br>
 
 <div class="el" style="height:400px;">
 	<div class="hero hero--cover">
