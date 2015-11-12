@@ -19,7 +19,7 @@
 		min-height: 100%;
 		width: auto;
 		height: auto;
-		z-index: 100;
+		z-index: 2;
 
 		display: none;
 
@@ -30,7 +30,7 @@
 
 	&__overlay {
 		@include full-cover();
-		@include overlay($brand-color, 0.6, 2);
+		@include overlay($brand-color, 0.6, 3);
 	}
 
 	&__content {
@@ -39,7 +39,7 @@
 		@include padding(base, all);
 		width:100%;
 		text-align:center;
-		z-index:3;
+		z-index:4;
 
 		&__overlay {
 			@include full-cover();
