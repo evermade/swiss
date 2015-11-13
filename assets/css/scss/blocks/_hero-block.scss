@@ -1,5 +1,5 @@
 //lets counter act the position absolute narvbar with negative margin
-div.page-content > section.hero {
+div.page-content > section.hero-block {
 	@include counter-body-margin(-1);
 }
 
