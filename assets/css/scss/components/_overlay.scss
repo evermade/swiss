@@ -1,3 +1,11 @@
 .overlay {
 	@include overlay();
+
+	&--fade-bottom {
+		@include overlay($brand-color, 0.6, -1, true, bottom);
+	}
+
+	&--fade-top {
+		@include overlay($brand-color, 0.6, -1, true, top);
+	}
 }

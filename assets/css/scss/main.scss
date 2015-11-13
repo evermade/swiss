@@ -89,7 +89,6 @@
 @import "layouts/grid";
 @import "layouts/grid-fixed";
 @import "layouts/grid-no-gutter";
-@import "layouts/links-block";
 @import "layouts/masonry";
 @import "layouts/table-div";
 
@@ -101,9 +100,9 @@
 @import "blocks/blog";
 @import "blocks/columns-block";
 @import "blocks/container";
-@import "blocks/example"; 
+@import "blocks/example";
 @import "blocks/footer";
-@import "blocks/hero-basic";
+@import "blocks/hero-block";
 @import "blocks/logo-listing";
 @import "blocks/post-hero";
 @import "blocks/single-post";
@@ -120,6 +119,7 @@
 @import "components/full-cover";
 @import "components/gallery-item";
 @import "components/headline";
+@import "components/hero";
 @import "components/icons";
 @import "components/list";
 @import "components/list-social";
