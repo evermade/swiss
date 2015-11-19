@@ -1,13 +1,13 @@
-$listing-item-height: 20rem;
-$listing-item-height-small: 12rem;
+$list-item-height: 20rem;
+$list-item-height-small: 12rem;
 
-.listing-item {
+.list-item {
 	position:relative;
 	overflow:hidden;
 
 	&__image {
 		float:left;
-		height:$listing-item-height;
+		height:$list-item-height;
 		overflow:hidden;
 
 		img {
@@ -22,7 +22,7 @@ $listing-item-height-small: 12rem;
 		top:0;
 		right:0;
 		bottom:0;
-		left:$listing-item-height;
+		left:$list-item-height;
 	}
 
 	&__content {
@@ -37,7 +37,7 @@ $listing-item-height-small: 12rem;
 	&__overlay {
 		@include overlay(#fff, 1, 2);
 
-		left:$listing-item-height;
+		left:$list-item-height;
 		right:0;
 		width:auto;
 		visibility: hidden;
@@ -55,13 +55,13 @@ $listing-item-height-small: 12rem;
 	}
 
 	&--small {
-		.listing-item__image {
-			height:$listing-item-height-small;
+		.list-item__image {
+			height:$list-item-height-small;
 		}
 
-		.listing-item__body,
-		.listing-item__overlay {
-			left:$listing-item-height-small;
+		.list-item__body,
+		.list-item__overlay {
+			left:$list-item-height-small;
 		}
 
 		h1, h2, h3, h4, h5, h6 {
@@ -81,10 +81,16 @@ $listing-item-height-small: 12rem;
 				transform: scale(1.1);
 			}
 
-			~ .listing-item__overlay {
+			~ .list-item__overlay {
 				visibility: visible;
 				opacity: 1;
 			}
+		}
+	}
+
+	&--extend--onclick & {
+		&__image:hover {
+			cursor:pointer;
 		}
 	}
 }
