@@ -76,7 +76,7 @@ $list-item-height-small: 12rem;
 
 	&--extend & {
 
-		&__image.active {
+		&__image.js-active {
 			img {
 				transform: scale(1.1);
 			}
