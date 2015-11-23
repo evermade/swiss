@@ -1,0 +1,96 @@
+$list-item-height: 20rem;
+$list-item-height-small: 12rem;
+
+.list-item {
+	position:relative;
+	overflow:hidden;
+
+	&__image {
+		float:left;
+		height:$list-item-height;
+		overflow:hidden;
+
+		img {
+			max-height:100%;
+
+			@include transition(all 0.3s ease);
+		}
+	}
+
+	&__body {
+		position:absolute;
+		top:0;
+		right:0;
+		bottom:0;
+		left:$list-item-height;
+	}
+
+	&__content {
+		@include align(vertical);
+		@include padding(xs, left);
+		@include padding(xs, right);
+		@include wysiwyg-html--nowrap();
+
+		width:100%;
+	}
+
+	&__overlay {
+		@include overlay(#fff, 1, 2);
+
+		left:$list-item-height;
+		right:0;
+		width:auto;
+		visibility: hidden;
+		opacity: 0;
+
+		@include transition(all 0.3s ease);
+
+		&__content {
+			@include align(vertical);
+			@include padding(xs, left);
+			@include padding(xs, right);
+
+			width:100%;
+		}
+	}
+
+	&--small {
+		.list-item__image {
+			height:$list-item-height-small;
+		}
+
+		.list-item__body,
+		.list-item__overlay {
+			left:$list-item-height-small;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			@include font-size(sm);
+		}
+
+		ul li, ol li,
+		p {
+			@include font-size(xs);
+		}
+	}
+
+	&--extend & {
+
+		&__image.js-active {
+			img {
+				transform: scale(1.1);
+			}
+
+			~ .list-item__overlay {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+
+	&--extend--onclick & {
+		&__image:hover {
+			cursor:pointer;
+		}
+	}
+}
