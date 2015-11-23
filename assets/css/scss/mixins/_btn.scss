@@ -1,22 +1,44 @@
+/*----------------------------*/
+/* #BTN / #BUTTON / #MIXIN
+/*----------------------------*/
 
-@mixin btn($background: $brand-color, $text: #fff){
-    @include border-radius;
+/**
+ * Create an element that visually looks like a button.
+ *
+ * Allows adding an icon and an "icon container" through pseudoelements.
+ *
+ * VARIABLES:
+ *
+ * $background - Background color value for the button.
+ * $text - Text color value for the button.
+ * $padding-horizontal - Horizontal padding.
+ * $padding-vertical - Vertical padding.
+ * $icon - Include FontAwesome icon by unicode characters, or false for nothing.
+ * $icon-side - Side of icon.
+ * $icon-bg - Background color for the icon bg element, or false for nothing.
+ * $icon-bg-text - Text color for the icon bg element.
+ */
+@mixin btn(
+    $background: $brand-color,
+    $text: #fff,
+    $padding-horizontal: rem(30),
+    $padding-vertical: rem(15),
+    $icon: false,
+    $icon-side: left,
+    $icon-bg: false,
+    $icon-bg-text: $text
+){
 
     display: inline-block;
     text-decoration: none;
-    padding: rem(6) rem(20);
+    padding: $padding-vertical $padding-horizontal;
     color: $text;
     cursor: pointer;
     border: none;
-
-   
-    text-transform: capitalize;
     background: $background;
+    font-weight: $button-weight;
+    text-transform: $button-text-transform;
     font-size: rem($font-size-base);
-
-    font-weight:$font-weight-strong-base;
-    text-transform:uppercase;
-
 
     &:hover, &:active, &:focus {
         outline: 0;
@@ -27,5 +49,126 @@
         background: darken($background, 6%);
         text-decoration: none;
         color: $text;
+
+        // Apply extra hover effect if icon-bg pseudoelement is in use
+        @if $icon-bg != false {
+            &:before {
+                background-color: darken($icon-bg, 15%);
+            }
+        }
+
     }
+
+
+
+
+    /**
+     * Create icon-bg element for the button.
+     *
+     * While it may seem counterintuitive to use :before for elements that can
+     * appear both before and after the element, we will want to keep :after
+     * available for other CSS tricks such as button hover effects.
+     *
+     * [1] - Create space between button content and icon-bg depending on the
+     * default padding set for the button.
+     * [2] - Use same values as the parent button element.
+     */
+    @if $icon-bg != false {
+        position: relative;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: auto;
+            text-align: center;
+            color: $icon-bg-text;
+            padding: $padding-vertical $padding-horizontal / 1.5;
+            line-height: inherit; /*[2]*/
+            transition: inherit; /*[2]*/
+            background-color: darken($icon-bg, 10%);
+        }
+
+        @if $icon-side == left {
+            padding-left: $padding-horizontal * 3; /*[1]*/
+
+            &:before {
+                left: 0;
+                border-top-left-radius: inherit; /*[2]*/
+                border-bottom-left-radius: inherit; /*[2]*/
+            }
+
+        }
+
+        @if $icon-side == right {
+            padding-right: $padding-horizontal * 3; /*[1]*/
+
+            &:before {
+                right: 0;
+                border-top-right-radius: inherit; /*[2]*/
+                border-bottom-right-radius: inherit; /*[2]*/
+            }
+
+        }
+
+    }
+
+
+    /**
+     * Add an icon to the button. Default to FontAwesome icon font, but can be
+     * swapped for anything.
+     */
+    @if $icon != false {
+
+        &:before {
+            font-family: "FontAwesome";
+        }
+
+        @if $icon-bg != false {
+            &:before {
+                content: "#{$icon}";
+            }
+        }
+
+    }
+
+    /**
+     * Adding an icon without an icon-bg element means that we will want to
+     * position them next to the text instead of to the sides.
+     */
+    @if ( $icon != false and $icon-bg == false ) {
+
+        &:before {
+            content: "#{$icon}";
+            display: inline-block;
+        }
+
+        @if ( $icon-side == left ) {
+            &:before {
+                margin-right: 1rem;
+            }
+        }
+
+        @if ( $icon-side == right  ) {
+            &:before {
+                float: right;
+                margin-left: 1rem;
+            }
+        }
+
+    }
+
+
+
+
+    /**
+	 * Print warnings to console upon wrong values. Assist developer to quickly
+     * understand the issue rather than just producing wrong results.
+	 */
+	@if not index(left right, $icon-side) {
+    	@warn "icon-side must be one of `right` or `left`; currently `#{$icon-side}`.";
+	}
+
 }
