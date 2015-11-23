@@ -36,7 +36,7 @@
 	};
 
 	em.animations.canWe = function(){
-		if(em.animations.elements.length && em.animations.winWidthOk == true) {
+		if(em.animations.elements.length && em.animations.winWidthOk === true) {
 			return true;
 		}
 

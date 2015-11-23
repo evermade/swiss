@@ -1,6 +1,6 @@
 <!--
 Description: Different variations of our buttons, produced with different mixin variable combinations.
-Tested: Chrome (Mac), Firefox (Mac), Android 5 Chrome, iOS 9 Safari
+Tested: Chrome (Mac), Firefox (Mac), Android 5 Chrome, iOS 9 Safari, IE 9 (animations dont work), 10, 11
 Tags: button, buttons, icon
 Preview: true
 -->

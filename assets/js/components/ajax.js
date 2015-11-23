@@ -41,13 +41,13 @@
                 success: function(data) {
 
                     //if no errors
-                    if (data.errors.length == 0) {
+                    if (data.errors.length === 0) {
 
                         //empty list as we now have data
                         errorList.empty();
 
                         //setup target to append our ajax data
-                        if (target.length == 0) {
+                        if (target.length === 0) {
                             form.after('<div></div>');
 
                             target = form.next();

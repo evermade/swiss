@@ -1,7 +1,70 @@
 {
     "key": "group_5527a7de81584",
     "title": "Website Options",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_5652f15ee21de",
+            "label": "Google Analytics Trackers",
+            "name": "opt_google_analytics",
+            "type": "repeater",
+            "instructions": "If multiple trackers are in use, we need to name at least 1 unnamed tracker, and the remaining trackers named.\r\n\r\nSo typically lets not name the clients tracker as for default and name each tracker after that. So evermade would be a named tracker.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_5652f46334582",
+                    "label": "Name",
+                    "name": "opt_google_analytics_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 50,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5652f42de21df",
+                    "label": "Code",
+                    "name": "opt_google_analytics_code",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 50,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                }
+            ]
+        }
+    ],
     "location": [
         [
             {
@@ -17,6 +80,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1432884016,
-    "local": "json"
+    "active": 1,
+    "description": "",
+    "modified": 1448278730
 }
