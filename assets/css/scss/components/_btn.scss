@@ -11,12 +11,19 @@
 		margin-top:0.5em;
 	}
 
-    &--facebook {
-        @include btn($icon:\f082, $background:$facebook);
+    &--copy {
+        @include btn($icon:\f0c5);
     }
 
-    &--play-boxed {
+    &--play {
         @include btn($icon:\f144, $icon-bg:$google, $icon-side:right);
+    }
+
+    &--loading {
+        @include btn($icon:\f021);
+        &:before {
+            animation: fa-spin 2s infinite linear;
+        }
     }
 
 }

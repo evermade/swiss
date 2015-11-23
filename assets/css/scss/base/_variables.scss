@@ -32,6 +32,10 @@ $line-height-base: 1.628571429;
 $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 
 
+// Buttons
+$button-weight: $font-weight-base;
+$button-text-transform: capitalized;
+
 
 /**
  * Font sizes for <html> element, used as a base for the rem units in different

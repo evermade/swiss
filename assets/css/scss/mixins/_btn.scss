@@ -36,6 +36,8 @@
     cursor: pointer;
     border: none;
     background: $background;
+    font-weight: $button-weight;
+    text-transform: $button-text-transform;
     font-size: rem($font-size-base);
 
     &:hover, &:active, &:focus {
