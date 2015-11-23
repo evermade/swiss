@@ -1,13 +1,22 @@
 .btn {
-    
+
     @include btn();
 
     &--white {
     	@include shadow;
         @include btn(#fff, #000);
     }
-	
+
 	p+&{
-		margin-top:0.5em; 
+		margin-top:0.5em;
 	}
+
+    &--facebook {
+        @include btn($icon:\f082, $background:$facebook);
+    }
+
+    &--play-boxed {
+        @include btn($icon:\f144, $icon-bg:$google, $icon-side:right);
+    }
+
 }
