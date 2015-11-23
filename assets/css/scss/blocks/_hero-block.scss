@@ -1,0 +1,23 @@
+//lets counter act the position absolute narvbar with negative margin
+div.page-content > section.hero-block {
+	@include counter-body-margin(-1);
+}
+
+.hero-block {
+
+	position: relative;
+	overflow: hidden;
+	background: $brand-color;
+
+	.hero-block__slides {}
+
+	.hero-block__slide {
+
+		width: 100%;
+		height: 500px;
+
+		@include bp(sm){
+			height: 800px;
+		}
+	}
+}

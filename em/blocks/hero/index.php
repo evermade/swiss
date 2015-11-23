@@ -12,9 +12,9 @@ $block->get_repeater_field(['hero_slides']);
 
 if(is_array($block->repeaters['hero_slides'])){ ?>
 
-<section class="hero hero--<?php echo $block->fields['hero_type'];?>">
-	<div class="hero__slides slick--hero">
-		
+<section class="hero-block hero-block--<?php echo $block->fields['hero_type'];?>">
+	<div class="hero-block__slides slick--hero">
+
 	<?php foreach($block->repeaters['hero_slides'] as $k => $hero){
 
 		//generate tmp file name from hero type
