@@ -132,7 +132,7 @@ class Helper {
 	}
 
 	static function is_dev(){
-		return (defined('WP_ENV') && WP_ENV=='development')? true : false;
+		return (defined('WP_ENV') && WP_ENV!='production')? true : false;
 	}
 
 	/**
