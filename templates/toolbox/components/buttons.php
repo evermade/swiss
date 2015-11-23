@@ -1,7 +1,7 @@
 <!--
 Description: Different variations of our buttons, produced with different mixin variable combinations.
-Tested:
-Tags: button, buttons
+Tested: Chrome (Mac), Firefox (Mac), Android 5 Chrome, iOS 9 Safari
+Tags: button, buttons, icon
 Preview: true
 -->
 
