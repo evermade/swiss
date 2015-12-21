@@ -9,7 +9,7 @@ class app {
 	public function __construct(){
 
 		//lets set our social media links by default
-		$this->set_options(array('opt_social_media_facebook', 'opt_social_media_twitter', 'opt_social_media_google_plus'));
+		$this->set_options(array('opt_social_media_facebook', 'opt_social_media_twitter', 'opt_social_media_google_plus', 'opt_google_analytics'));
 	}
 
 	/**

@@ -16,6 +16,8 @@
 	<![endif]-->
 
 	<?php wp_head();?>
+
+	<?php include(get_template_directory().'/templates/ga-tracking.php'); ?>
 </head>
 <body <?php body_class(); ?> data-animate="animated fadeIn">
 

@@ -131,6 +131,10 @@ class Helper {
 	    echo "<script>console.log(".json_encode($info).");</script>";
 	}
 
+	static function is_dev(){
+		return (defined('WP_ENV') && WP_ENV!='production')? true : false;
+	}
+
 	/**
 	 * [lorem description]
 	 * @param  integer $number [description]
