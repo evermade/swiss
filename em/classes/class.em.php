@@ -41,12 +41,7 @@ class em {
 	 * @return boolean [description]
 	 */
 	static function is_acf_active(){
-		if(!function_exists('has_sub_field')){
-			Helper::log("advanced-custom-fields-pro is not installed/active.");
-			return false;
-		}
-
-		return true;
+		return (function_exists('has_sub_field'))? true : false;
 	}
 
 	/**

@@ -5,26 +5,30 @@
 
     //call any functions to be trigger on dom ready
     em.ajax.init = function() {
-        em.ajax.basic();
+        em.ajax.postsSearch();
     };
 
-    em.ajax.basic = function() {
+    em.ajax.postsSearch = function() {
+
+        var form = $('form.ajax-posts');
 
         //an example of a js ajax call
-        $('form.form-ajax').on('submit', function(event) {
+        form.on('submit', function(e) {
 
-            event.preventDefault();
+            e.preventDefault();
 
             //get form and other vars
             var form = $(this);
-            var errorList = form.find('ul.errors');
+            var errorList = form.find('.ajax-posts__errors');
             var url = '/wp-site/wp/wp-admin/admin-ajax.php';
-            var target = $('.' + form.data('target'));
-            var offset = form.find('input[name="offset"]');
+            var results = form.find('.ajax-posts__results');
+
+            //some filter options
+            var paged = form.find('input[name="paged"]');
             var per_page = form.find('input[name="per_page"]');
 
             //lets add a little loading icon, for more demo purposes
-            form.find('button[type="submit"] i').addClass('fa-spin');
+            form.find('.ajax-posts__show-more i').addClass('fa-spin');
 
             //gather and serialize form data
             var formData = form.serializeArray();
@@ -38,44 +42,43 @@
                 url: url,
                 type: form.attr('method'),
                 data: formData,
-                success: function(data) {
+                success: function(resp) {
+
+                    //empty list as we now have a resp
+                    errorList.empty();
 
                     //if no errors
-                    if (data.errors.length === 0) {
+                    if (resp.errors.length === 0) {
 
-                        //empty list as we now have data
-                        errorList.empty();
+                        //lets increment the paged values
+                        paged.val( function(i, oldval) {
+                            return ++oldval;
+                        });
 
-                        //setup target to append our ajax data
-                        if (target.length === 0) {
-                            form.after('<div></div>');
+                        //append resp to target
+                        results.append($(resp.data.html));
 
-                            target = form.next();
-                        }
-
-                        //lets increment the offset values
-                        offset.val(parseInt(offset.val()) + parseInt(per_page.val()));
-
-                        //append data to target
-                        target.append($(data.html));
+                        //lets recapture the items to animate
+                        em.animations.capture();
                     } else {
 
-                        //empty list and loop errors
-                        errorList.empty();
-                        for (var error in data.errors) {
+                        $('.ajax-posts__show-more').css({opacity: 0, visibility: 'hidden'});
+
+                        //loop errors
+                        for (var error in resp.errors) {
+                            if(error == 'end'){
+                                continue;
+                            }
 
                             //create error list item
                             var li = $('<li></li>');
-                            li.html(data.errors[error]);
+                            li.html(resp.errors[error]);
                             errorList.append(li);
-
-                            //and/or add error class to input
-                            form.find('*[name="' + error + '"]').addClass('error');
                         }
                     }
 
                     //for more demo purposes
-                    form.find('button[type="submit"] i').removeClass('fa-spin');
+                    form.find('.ajax-posts__show-more i').removeClass('fa-spin');
 
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
@@ -86,6 +89,15 @@
                     console.log(log);
                 }
             });
+        });
+
+        //a default submit upon page load
+        form.submit();
+
+        //lets now add a little click handler for the show more button
+        form.find('.ajax-posts__show-more').on('click', function(e) {
+            e.preventDefault();
+            form.submit();
         });
 
     };
