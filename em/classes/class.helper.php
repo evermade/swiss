@@ -166,13 +166,15 @@ class Helper {
 
 	static function activate_plugin($plugin=null){
 
-		if(empty($plugin)) return false;
+		if(empty($plugin) || !is_readable(WP_PLUGIN_DIR.'/'.$plugin)) return false;
 
 		$active_plugins = get_option('active_plugins');
 
 		if(empty($active_plugins)) $active_plugins = [];
 
-		array_push($active_plugins, $plugin);
+		if(!in_array($plugin, $active_plugins)){
+			 array_push($active_plugins, $plugin);
+		}
 
 		update_option('active_plugins', $active_plugins);
 
