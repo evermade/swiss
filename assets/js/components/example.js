@@ -8,7 +8,6 @@
 		em.example.setup();
 	};
 
-	em.example.setup  = function(){
-	};
+	em.example.setup  = function(){};
 
 })();

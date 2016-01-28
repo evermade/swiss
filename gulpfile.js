@@ -1,7 +1,7 @@
 //require our modules
 var gulp = require('gulp');
     sass = require('gulp-sass'),
-    minifyCSS = require('gulp-minify-css'),
+    cssnano = require('gulp-cssnano'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
@@ -30,7 +30,7 @@ gulp.task('sass', function () {
             browsers: ['last 3 versions'],
             cascade: false
         }))
-        .pipe(minifyCSS({keepBreaks:true}))
+        .pipe(cssnano())
         .pipe(gulp.dest(paths.css.dist));
   }, 500);
 });

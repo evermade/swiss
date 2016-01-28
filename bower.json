@@ -5,14 +5,14 @@
     "hello <hello@evermade.fi>"
   ],
   "dependencies": {
-    "bootstrap-sass": "~3.3.4",
-    "bourbon": "~4.2.3",
+    "bootstrap-sass": "~3.3",
+    "bourbon": "~4.2",
     "fontawesome": "latest",
-    "jquery": "latest",
-    "masonry": "~3.3.1",
-    "modernizr": "latest",
-    "slick.js": "~1.5.5",
-    "zeroclipboard": "~2.2.0"
+    "jquery": "~2.2",
+    "masonry": "~3.3",
+    "modernizr": "~2.8",
+    "slick.js": "~1.5",
+    "zeroclipboard": "~2.2"
   },
   "private": true
 }
