@@ -25,7 +25,7 @@ var paths = {
 gulp.task('sass', function () {
   setTimeout(function(){
     gulp.src(paths.css.src)
-        .pipe(sass({errLogToConsole: true}))
+        .pipe(sass().on('error', sass.logError)) 
         .pipe(autoprefixer({
             browsers: ['last 3 versions'],
             cascade: false

@@ -25,7 +25,8 @@
 // 	    'supports'      => array(),
 // 	    'has_archive'   => true,
 // 	    'publicly_queryable'  => false,
-// 	    'exclude_from_search' => true
+// 	    'exclude_from_search' => true,
+// 	    'menu_icon'   => 'dashicons-book',
 // 	  );
 // 	  register_post_type( 'testimonial', $args ); 
 // }
