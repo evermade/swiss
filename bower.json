@@ -2,17 +2,16 @@
   "name": "Mr Evermade",
   "version": "1.0.0",
   "authors": [
-    "hello <hello@evermade.fi>"
+    "webmaster <webmaster@evermade.fi>"
   ],
   "dependencies": {
     "bootstrap-sass": "~3.3",
     "bourbon": "~4.2",
     "fontawesome": "latest",
-    "jquery": "~2.2",
+    "jquery": "~1.12",
     "masonry": "~3.3",
-    "modernizr": "~2.8",
-    "slick.js": "~1.5",
-    "zeroclipboard": "~2.2"
+    "zeroclipboard": "~2.2",
+    "slick-carousel": "~1.5"
   },
   "private": true
 }

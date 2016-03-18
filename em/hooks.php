@@ -29,6 +29,9 @@ function register_mce_button( $buttons ) {
   return $buttons;
 }
 
+function em_load_theme_textdomain() {
+   load_theme_textdomain('swiss', get_template_directory() . '/languages');
+}
 
 //our filters that use the function above
 
@@ -43,3 +46,6 @@ add_action('admin_head', 'custom_mce_em_buttons');
 
 //lets remove the main text editor from the post type as we are using block system
 add_action("admin_init", "custom_post_types_editing");
+
+//lets add our local languages for the swiss text domain
+add_action( 'after_setup_theme', 'em_load_theme_textdomain' );

@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title><?php wp_title('|', true, 'right'); ?></title>
+	<title><?php wp_title(); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!--[if lt IE 9]>
@@ -16,6 +16,15 @@
 	<![endif]-->
 
 	<?php wp_head();?>
+
+	<script>
+	if (window.jQuery) {
+	    if(!window.$) $ = jQuery;
+	}
+	else {
+	    document.write('<script src="<?php echo get_template_directory_uri();?>/assets/vendor/jquery/dist/jquery.min.js"><\/script>');
+	}
+	</script>
 
 	<?php include(get_template_directory().'/templates/ga-tracking.php'); ?>
 </head>

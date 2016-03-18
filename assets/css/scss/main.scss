@@ -94,7 +94,7 @@
 
 /**
  * Blocks
- * Block contain of layouts and components, and those should styled indvidually with modifiers
+ * Block contain of layouts and components, and those should styled individually with modifiers
  */
 @import "blocks/block-listing";
 @import "blocks/blog";
@@ -115,6 +115,7 @@
 @import "components/alerts";
 @import "components/breadcrumbs";
 @import "components/btn";
+@import "components/chromeframe";
 @import "components/forms";
 @import "components/full-cover";
 @import "components/gallery-item";
