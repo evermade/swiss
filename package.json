@@ -4,7 +4,9 @@
   "description": "Swiss, the best theme Evermade",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "sudo npm install && npm run bower-install && npm run gulp-build",
+    "gulp-build": "gulp",
+    "bower-install": "bower update --allow-root"
   },
   "author": "Mr Evermade",
   "license": "ISC",
@@ -23,3 +25,4 @@
     "jshint-stylish": "~2.1"
   }
 }
+

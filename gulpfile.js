@@ -33,7 +33,7 @@ gulp.task('sass', function () {
             cascade: false
         }))
         .pipe(cleanCSS({compatibility: 'ie9'}))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest(paths.css.dist));
   }, 500);
 });
@@ -48,13 +48,15 @@ gulp.task('js', function () {
       .pipe(jshint.reporter('jshint-stylish'))
       .pipe(uglify())
       .pipe(concat('myquery.js'))
-      .pipe(sourcemaps.write())
+      .pipe(sourcemaps.write('../maps'))
       .pipe(gulp.dest(paths.js.dist));
    }, 500);
 });
 
 //default task for dev
 gulp.task('default', ['sass', 'js', 'watch'], function() {});
+
+gulp.task('build', ['sass', 'js'], function() {});
 
 //setup watch tasks
 gulp.task('watch', function () {
