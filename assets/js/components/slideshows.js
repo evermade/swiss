@@ -10,32 +10,6 @@
 
 	em.slideshows.slick  = function(){
 
-		// $('.slick--cases').slick({
-		// 	slidesToShow: 3,
-		// 	slidesToScroll: 3,
-		// 	dots: true,
-		// 	  responsive: [
-		// 	      {
-		// 	      breakpoint: 1025,
-		// 	      settings: {
-		// 	        slidesToShow: 2,
-		// 	        slidesToScroll: 1,
-		// 	        infinite: true,
-		// 	        dots: true,
-		// 	        arrows:false
-		// 	      }
-		// 	    },
-		// 	    {
-		// 	      breakpoint: 480,
-		// 	      settings: {
-		// 	        slidesToShow: 1,
-		// 	        slidesToScroll: 1,
-		// 	        arrows:false
-		// 	      }
-		// 	    }
-		// 	  ]
-		// });
-
 		$(".slick").slick({
 			dots: true,
 			arrows: false,

@@ -25,9 +25,6 @@
                         values: [{
                             text: 'Normal',
                             value: 'btn'
-                        }, {
-                            text: 'Green',
-                            value: 'btn--green'
                         },
                         {
                             text: 'Media',
@@ -40,26 +37,6 @@
                             '[button class=&quot;' +  e.data.className + '&quot; text=&quot;' + e.data.buttonName + '&quot; url=&quot;' + e.data.buttonUrl + '&quot; ]' +
                             editor.selection
                             .getContent()
-                        );
-                    }
-                });
-            }
-        }),
-        editor.addButton('custom_mce_em_posts', {
-            icon: false,
-            text: 'Posts',
-            onclick: function() {
-                editor.windowManager.open({
-                    title: 'Insert Posts',
-                    body: [{
-                        type: 'textbox',
-                        name: 'number',
-                        label: 'How many?',
-                        value: ''
-                    }],
-                    onsubmit: function(e) {
-                        editor.insertContent(
-                            '[posts number=&quot;' +  e.data.number + '&quot; ]'
                         );
                     }
                 });

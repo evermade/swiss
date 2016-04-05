@@ -6,7 +6,6 @@
 		em.helper.imgRemoveDimensions();
 		em.helper.resizeVideos();
 		em.helper.jumpTo();
-		em.helper.toggleHeroNav();
 		em.helper.hashCheck();
 		em.helper.goToNext();
 		em.helper.externalLinks();
@@ -43,22 +42,15 @@
 		}
 	};
 
-	em.helper.attachUserAgent = function(){
-		var doc = document.documentElement;
-		doc.setAttribute('data-useragent', navigator.userAgent);
-	};
-
-	em.helper.toggleHeroNav = function(){
-		if($('header.main-header').next().hasClass('hero')){
-			$('body').addClass('js-hero-active');
-		}
-	};
-
 	em.helper.imgRemoveDimensions = function(){
-		$("img").each(function(){ 
-			$(this).removeAttr("width");
-			$(this).removeAttr("height");
-		});
+
+		var imgs = document.querySelectorAll('img');
+
+		for (var i = 0, len = imgs.length; i < len; i++) {
+		    imgs[i].removeAttribute('width');
+		    imgs[i].removeAttribute('height');
+		}
+
 	};
 
 	em.helper.goToNext = function(){

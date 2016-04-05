@@ -163,4 +163,113 @@ class Helper {
 		}
 		return false;
 	}
+
+	static function activate_plugin($plugin=null){
+
+		if(empty($plugin) || !is_readable(WP_PLUGIN_DIR.'/'.$plugin)) return false;
+
+		$active_plugins = get_option('active_plugins');
+
+		if(empty($active_plugins)) $active_plugins = [];
+
+		if(!in_array($plugin, $active_plugins)){
+			 array_push($active_plugins, $plugin);
+		}
+
+		update_option('active_plugins', $active_plugins);
+
+		return true;
+	}
+
+	static function cur_page_url() {
+		 $pageURL = 'http';
+		 if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+		 $pageURL .= "://";
+		 if ($_SERVER["SERVER_PORT"] != "80") {
+		  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+		 } else {
+		  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+		 }
+		 return $pageURL;
+	}
+
+	static function share_page(){
+
+		$html = null;
+		$template = get_template_directory().'/templates/_share-page.php';
+
+		if(is_readable($template)){
+			$services = array(
+				'facebook'=> array(
+					'url'=>'',
+					'icon' => 'fa fa-facebook'
+				),
+				'twitter'=> array(
+					'url'=>'',
+					'icon' => 'fa fa-twitter'
+				),
+				'linkedin'=> array(
+					'url'=>'',
+					'icon' => 'fa fa-linkedin'
+				),
+				'google'=> array(
+					'url'=>'',
+					'icon' => 'fa fa-google'
+				),
+				'email'=> array(
+					'url'=>'',
+					'icon' => 'fa fa-envelope'
+				)
+			);
+
+			foreach($services as $key => $value){
+				 $services[$key]['url'] = Helper::share_link($key);
+			}
+
+			ob_start();
+			include(get_template_directory().'/templates/_share-page.php');
+			$html = ob_get_contents();
+			ob_clean();
+
+		}
+
+		return $html;
+
+	}
+
+	static function share_link($type='facebook', $url=null, $title=''){
+
+		$data = array();
+		$urls = array(
+			'facebook'=> 'http://www.facebook.com/sharer/sharer.php?u=%s',
+			'twitter'=> 'http://twitter.com/share?url=%s&text=%s',
+			'google'=> 'https://plus.google.com/share?url=%s',
+			'linkedin' => 'https://www.linkedin.com/shareArticle?mini=true&url=%s&title=%s&summary=%s&source=%s',
+			'email'=> 'mailto:?subject=%s&body=%s'
+			);
+
+		if(array_key_exists($type, $urls)){
+			$data['url'] = (empty($url))? Helper::cur_page_url() : $url;
+
+			if($type=='twitter'){
+				$data['title'] = (empty($title))? get_the_title() : $title;
+			}
+
+			if($type=='email'){
+				$data['body'] = (empty($title))? get_the_title() : $title;
+
+				array_unshift($data, $data['body']);
+			}
+
+			if($type=='linkedin'){
+				$data['title'] = (empty($title))? get_the_title() : $title;
+				$data['summary'] = get_the_excerpt();
+				$data['source'] = get_bloginfo('name');
+			}
+
+			return vsprintf($urls[$type], $data);
+		}
+
+		return null;
+	}
 }

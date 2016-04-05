@@ -8,21 +8,6 @@
 		em.dev.toolbox();
 	};
 
-	em.dev.showOverflown = function(){
-
-		var docWidth = document.documentElement.offsetWidth;
-
-		[].forEach.call(
-		  document.querySelectorAll('*'),
-		  function(el) {
-		    if (el.offsetWidth > docWidth) {
-		      console.log(el);
-		    }
-		  }
-		);
-
-	};
-
 	em.dev.toolbox = function(){
 		$('.toolbox__navbar .toolbox__open').on('click', function(e){
 			e.preventDefault();

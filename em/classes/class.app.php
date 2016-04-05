@@ -22,8 +22,11 @@ class app {
 		}
 
 		$links = em::acf_options($options);
-		foreach($links as $k => $v){
-			$this->data[$k] = $v;
+
+		if(!empty($links)){
+			foreach($links as $k => $v){
+				$this->data[$k] = $v;
+			}
 		}
 
 		return true;
