@@ -1,6 +1,3 @@
-<section class="section">
-	<div class="container">
-
 		<div class="wysiwyg-html">
 
 			<h1>Heading 1</h1>
@@ -66,6 +63,3 @@
 			</dl>
 
 		</div>
-
-	</div><!-- end of example container -->
-</section><!-- end of example section-->
