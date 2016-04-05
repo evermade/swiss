@@ -3,7 +3,6 @@
 	em.helper = {};
 
 	em.helper.init = function(){
-		em.helper.imgRemoveDimensions();
 		em.helper.resizeVideos();
 		em.helper.jumpTo();
 		em.helper.hashCheck();

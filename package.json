@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "build": "sudo npm install && npm run bower-install && npm run gulp-build",
-    "gulp-build": "gulp",
+    "gulp-build": "gulp build",
     "bower-install": "bower update --allow-root"
   },
   "author": "Mr Evermade",
