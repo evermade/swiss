@@ -42,16 +42,6 @@
 		}
 	};
 
-	em.helper.imgRemoveDimensions = function(){
-
-		var imgs = document.querySelectorAll('img');
-
-		for (var i = 0, len = imgs.length; i < len; i++) {
-		    imgs[i].removeAttribute('width');
-		    imgs[i].removeAttribute('height');
-		}
-
-	};
 
 	em.helper.goToNext = function(){
 		$(".js-go-to-next").on("click", function(e) {
