@@ -91,10 +91,10 @@ class Helper {
 	 * @return [type]         [description]
 	 */
 	static public function excerpt($str, $limit = 255){
-		$strlen = strlen($str);	
-		return ($strlen>=$limit) ? substr($str, 0, $limit)."&hellip;" : $str;		
+		$strlen = strlen($str);
+		return ($strlen>=$limit) ? substr($str, 0, $limit)."&hellip;" : $str;
 	}
-	
+
 	/**
 	 * [truncate description]
 	 * @param  [type]  $s      [description]
@@ -142,7 +142,7 @@ class Helper {
 	 */
 	static function lorem($number=1){
 		$str = 'This is a paragraph of text. ';
-		
+
 		for($i=0; $i<$number; $i++){
 			$str .= $str;
 		}
@@ -158,7 +158,7 @@ class Helper {
 	 */
 	static public function log($msg=null){
 		if(defined('WP_DEBUG') && WP_DEBUG){
-			echo "<pre>"; print_r($msg); echo "</pre>"; 
+			echo "<pre>"; print_r($msg); echo "</pre>";
 			return true;
 		}
 		return false;
@@ -263,7 +263,7 @@ class Helper {
 
 			if($type=='linkedin'){
 				$data['title'] = (empty($title))? get_the_title() : $title;
-				$data['summary'] = get_the_excerpt();
+				$data['summary'] = strip_tags(get_the_excerpt());
 				$data['source'] = get_bloginfo('name');
 			}
 
