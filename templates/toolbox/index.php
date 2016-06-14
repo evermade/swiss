@@ -23,7 +23,7 @@ foreach($folders as $folder => $templates):
 					<div class="col-xs-12">
 						<h2 class="toolbox__item__title">
 							<?php echo basename($template, '.php'); ?> 
-							<a href="#" class="btn js-copy" data-clipboard-text="<?php echo htmlentities($contents); ?>"><i class="fa fa-clipboard"></i> Copy Code</a>
+							<a href="javascript:void(0);" class="btn js-copy" data-clipboard-text="<?php echo htmlentities($contents); ?>"><i class="fa fa-clipboard"></i> Copy Code</a>
 							<a href="?page=viewer&amp;element=<?php echo $folder.'/'.basename($template); ?>" target="_blank" class="btn">Open in Viewer</a> 
 							<a href="#code" class="btn js-toggle-code">Toggle Code</a>
 						</h2>

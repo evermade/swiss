@@ -10,7 +10,6 @@
     "fontawesome": "latest",
     "jquery": "~1.12",
     "masonry": "~3.3",
-    "zeroclipboard": "~2.2",
     "slick-carousel": "~1.5"
   },
   "private": true

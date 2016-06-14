@@ -28,12 +28,12 @@
 
 	<?php include(get_template_directory().'/templates/ga-tracking.php'); ?>
 </head>
-<body <?php body_class(); ?> data-animate="animated fadeIn">
+<body <?php body_class(); ?>>
 
   <!--[if lt IE 8]>
     <div class="chromeframe">
       You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.    </div>
   <![endif]-->
 
-<div class="body">
+<div class="body" data-animate="animated fadeIn">
 	<span id="top"></span>

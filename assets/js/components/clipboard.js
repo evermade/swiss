@@ -5,41 +5,25 @@
 
     //call any functions to be trigger on dom ready
     em.clipboard.init = function() {
-        em.clipboard.copy();
+        em.clipboard.setup();
     };
 
-    em.clipboard.copy = function() {
+    em.clipboard.setup = function() {
 
-    	var links = $('.js-copy');
+        var clipboard = new Clipboard('.js-copy');
 
-    	links.on('click', function(e){
-    		e.preventDefault();
+        clipboard.on('success', function(e) {
 
-    		var el = $(this);
+            $(e.trigger).find('i').removeClass('fa-clipboard'); 
+            $(e.trigger).find('i').addClass('fa-check');
 
-    		el.find('i').removeClass('fa-clipboard'); 
-            el.find('i').addClass('fa-check');
-    	});
+            e.clearSelection();
 
-
-        var client = new ZeroClipboard(links);
-
-        client.on('ready', function(event) {
-           	//console.log( 'movie is loaded' );
-
-            //copy specific content
-            // client.on('copy', function(event) {
-            //     event.clipboardData.setData('text/plain', event.target.innerHTML);
-            // });
-
-            client.on('aftercopy', function(event) {
-               //console.log('Copied text to clipboard: ' + event.data['text/plain']);                
-            });
         });
 
-        client.on('error', function(event) {
-            //console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
-            ZeroClipboard.destroy();
+        clipboard.on('error', function(e) {
+            console.error('Action:', e.action);
+            console.error('Trigger:', e.trigger);
         });
     };
 

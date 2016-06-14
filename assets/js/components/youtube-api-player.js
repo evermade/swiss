@@ -140,11 +140,11 @@ Example with parameters:
 			em.youtubeAPIPlayer.makeLoop(player);
 		}
 
-		// add a resize function
-		// $(window).resizeend(function() {
-		$(window).smartresize(function(){
+		var debounceMe = em.helper.debounce(function() {
 			em.youtubeAPIPlayer.onResize(el);
-		});
+		}, 250);
+
+		window.addEventListener('resize', debounceMe);
 
 		// make the video cover the parent container
 		if (cover) {

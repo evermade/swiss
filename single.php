@@ -10,7 +10,7 @@
 			</header>
 			<article>
 				<?php the_content(); ?>
-				<?php echo Helper::share_page(); ?>
+				<?php echo \Swiss\share_page(); ?>
 			</article>
 
 			<?php endwhile; else: ?>

@@ -5,6 +5,6 @@ Template Name: Page Blocks
 
 get_header();
 
-em::blocks();
+\Swiss\post_blocks();
 
 get_footer();

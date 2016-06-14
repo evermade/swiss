@@ -5,11 +5,4 @@
 
 	em.config.init = function(){};
 
-	em.config.breakpoints = {
-		xs: 0,
-		sm: 768,
-		md: 992,
-		lg: 1200
-	};
-
 })();
