@@ -16,7 +16,7 @@
     }
 
     &--play {
-        @include btn($icon:\f144, $icon-bg:$google, $icon-side:right);
+        @include btn($icon:\f144, $icon-bg:$brand-color, $icon-side:right);
     }
 
     &--loading {

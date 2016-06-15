@@ -12,51 +12,20 @@
 		a {
 			padding: rem(10);
 			font-size: rem(25);
-			
+
 			@include bp(sm){
 				font-size: rem(40);
 				padding: rem(20);
-			} 
+			}
 		}
 
 		&:hover {
 			top: -10px;
 		}
 
-		&--facebook{
-			color: $facebook;
-			&:hover {
-			}
-		}
-
-		&--twitter{
-			color: $twitter;
-
-			&:hover {
-			}
-		}
-
-		&--flickr{
-			color: $flickr;
-			&:hover {
-			}
-		}
-
-		&--instagram{
-			color: $instagram;
-			&:hover {
-			}
-		}
-
-		&--linkedin{
-			color: $facebook;
-			&:hover {
-			}
-		}
-
-		&--vimeo{
-			color: $vimeo;
-			&:hover {
+		@each $brand, $color in $brand-colors {
+			&--#{$brand} {
+				color: $color;
 			}
 		}
 	}
