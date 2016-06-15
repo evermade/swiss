@@ -15,6 +15,7 @@ $toolboxBarWidth: 400px;
 
 	.toolbox__navbar {
 		height: 100%;
+		height: calc(100% - 10px);
 		width: $toolboxBarWidth;
 		overflow-y: auto;
 
@@ -37,7 +38,7 @@ $toolboxBarWidth: 400px;
 
 	&__navbar {
 		position: fixed;
-		top: 0;
+		top: 5px;
 		left: 0;
 		height: $toolboxBarClosedWidth;
 		width: $toolboxBarClosedWidth;
@@ -45,6 +46,8 @@ $toolboxBarWidth: 400px;
 		background: $almost-black;
 		color: #fff;
 		transition: all 0.25s $ease-out-expo;
+		border-top-right-radius: 15px;
+		border-bottom-right-radius: 15px;
 
 		h2 {
 			color: #fff;
