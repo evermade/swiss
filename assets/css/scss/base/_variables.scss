@@ -2,8 +2,10 @@
 $red: 			#ff0060;
 $dark-grey: 	#50525b;
 $grey:			#50525b;
+$green:			#0ac572;
 $light-grey: 	#ccc;
 $almost-white:	#e4e4e4;
+$almost-black:	#22182c;
 
 /**
  * Brand color profiles. Find more at: http://brandcolors.net
@@ -59,7 +61,7 @@ $brand-colors: (
 );
 
 //link colors to meaninful vars
-$brand-color: $red;
+$brand-color: $green;
 $body-bg: #fff;
 $text-color: $dark-grey;
 $link-color: $brand-color;
@@ -108,6 +110,9 @@ $headings-font-family: inherit;
 $headings-font-weight: 300;
 $headings-line-height: 1.1;
 $headings-color: #000;
+
+// Easing methods
+$ease-out-expo: cubic-bezier(0.190, 1.000, 0.220, 1.000);
 
 //layout stuff
 $container-max-width: 1170px;

@@ -13,7 +13,7 @@ $folders = array('components', 'layouts', 'blocks');
 
 <section class="toolbox">
 	<div class="toolbox__navbar">
-		
+
 		<div class="toolbox__navbar__nav-container">
 			<div class="row">
 				<div class="col-xs-4"><i class="fa fa-wrench toolbox__open"></i></div>
@@ -24,7 +24,7 @@ $folders = array('components', 'layouts', 'blocks');
 
 		<div class="toolbox__navbar__boxs-container">
 			<div class="row">
-				
+
 				<div class="col-xs-12">
 					<h2>Navigation</h2>
 					<p><a href="<?php echo add_query_arg('t', 'index'); ?>">Home</a></p>
@@ -34,15 +34,15 @@ $folders = array('components', 'layouts', 'blocks');
 					<p><a href="<?php echo add_query_arg('t', 'playground'); ?>">Playground</a></p>
 				</div>
 
-				<?php foreach($folders as $folder): 
-				$folders[$folder] = glob(get_template_directory().'/templates/toolbox/'.$folder.'/*.php'); 
+				<?php foreach($folders as $folder):
+				$folders[$folder] = glob(get_template_directory().'/templates/toolbox/'.$folder.'/*.php');
 				?>
 					<div class="col-xs-12">
 					<h2><?php echo $folder; ?></h2>
 
 					<div class="toolbox__navbar__box">
 					<?php foreach($folders[$folder] as $c):
-						echo '<p><a href="/lib/#'.basename($c).'">'.basename($c, '.php').'</a></p>';
+						echo '<p><a href="/em/#'.basename($c).'">'.basename($c, '.php').'</a></p>';
 					endforeach; ?>
 					</div>
 					</div>

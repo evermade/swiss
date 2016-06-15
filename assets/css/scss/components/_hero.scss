@@ -30,7 +30,7 @@
 
 	&__overlay {
 		@include full-cover();
-		@include overlay($brand-color, 0.6, 3);
+		@include overlay(#000, 0.6, 3);
 	}
 
 	&__content {
@@ -43,14 +43,14 @@
 
 		&__overlay {
 			@include full-cover();
-			@include overlay($brand-color, 0.6, -1);
+			@include overlay(#000, 0.6, -1);
 
 			&--fade-bottom {
-				@include overlay($brand-color, 0.6, -1, true, bottom);
+				@include overlay(#000, 0.6, -1, true, bottom);
 			}
 
 			&--fade-top {
-				@include overlay($brand-color, 0.6, -1, true, top);
+				@include overlay(#000, 0.6, -1, true, top);
 			}
 		}
 
