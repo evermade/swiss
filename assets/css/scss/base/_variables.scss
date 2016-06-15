@@ -5,15 +5,58 @@ $grey:			#50525b;
 $light-grey: 	#ccc;
 $almost-white:	#e4e4e4;
 
-//social media colors
-$facebook: #3b5998;
-$twitter: #00aced;
-$instagram: #125688;
-$vimeo: #aad450;
-$flickr: #ff0084;
-$linkedin: #007bb5;
-$google: #de4b39;
+/**
+ * Brand color profiles. Find more at: http://brandcolors.net
+ *
+ * Use map with the "brand" helper function:
+ *   ...
+ *   color: brand(facebook);
+ *   background-color: brand(instagram);
+ */
 
+$brand-colors: (
+	airbnb: #fd5c63,
+	android: #a4c639,
+	bandcamp: #629aa9,
+	behance: #1769ff,
+	blogger: #f57d00,
+	deviantart: #05cc47,
+	disqus: #2e9fff,
+	etsy: #d5641c,
+	facebook: #3b5998,
+	flickr: #ff0084,
+	foursquare: #2d5be3,
+	google-plus: #dc4e41,
+	html5: #e34f26,
+	imdb: #f5de50,
+	imgur: #85bf25,
+	instagram: #405de6,
+	kickstarter: #2bde73,
+	linkedin: #0077b5,
+	medium: #00ab6b,
+	myspace: #000000,
+	patreon: #e6461a,
+	periscope: #3aa4c6,
+	pinterest: #bd081c,
+	quora: #a82400,
+	reddit: #ff4500,
+	rss: #f26522,
+	shopify: #96bf48,
+	skype: #00aff0,
+	soundcloud: #ff8800,
+	spotify: #2ebd59,
+	stackoverflow: #fe7a15,
+	streamable: #0f90fa,
+	tripadvisor: #589442,
+	tumblr: #35465c,
+	twitch-tv: #6441a5,
+	twitter: #55acee,
+	vimeo: #162221,
+	vine: #00b488,
+	vkontakte: #45668e,
+	yahoo: #410093,
+	youtube: #cd201f
+);
 
 //link colors to meaninful vars
 $brand-color: $red;
