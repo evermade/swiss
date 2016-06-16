@@ -39,6 +39,7 @@
     font-weight: $button-weight;
     text-transform: $button-text-transform;
     font-size: rem($font-size-base);
+    line-height: $line-height-base;
 
     &:hover, &:active, &:focus {
         outline: 0;
