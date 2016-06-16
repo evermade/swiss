@@ -9,18 +9,18 @@
 
 		@include bp(sm){
 			height: 200px;
-		} 
+		}
 
 		@include bp(sm){
 			height: 300px;
-		} 
+		}
 	}
 
 	&__caption {
-		@include overlay($brand-color, 0.8);
+		@include overlay(#000, 0.8);
 		color: #fff;
 		opacity: 0;
-		
+
 		padding: rem($padding);
 
 		&__inner {
@@ -34,7 +34,7 @@
 	}
 
 	&:hover {
-		
+
 		.gallery-item__image {
 			transform: scale(1.2);
 		}

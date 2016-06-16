@@ -4,4 +4,4 @@ Tags: snippet, video
 Preview: true
 -->
 
-<div class="youtube-api-player" data-video-id="wPaTfMyEbVg" data-autoplay="1" data-loop="1" data-sound="0"></div>
+<div class="youtube-api-player" data-video-id="0aYLUj68JHA" data-autoplay="1" data-loop="1" data-sound="0"></div>

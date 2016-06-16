@@ -1,3 +1,4 @@
+$toolboxBarClosedWidth: 45px;
 $toolboxBarWidth: 400px;
 
 //lets setup some special styling for when toolbox is opened
@@ -8,9 +9,19 @@ $toolboxBarWidth: 400px;
 		padding-left: $toolboxBarWidth;
 	}
 
+	.toolbox {
+		padding-left: 0 !important;
+	}
+
 	.toolbox__navbar {
+		height: 100%;
+		height: calc(100% - 10px);
 		width: $toolboxBarWidth;
 		overflow-y: auto;
+
+		.toolbox__navbar__nav-container {
+			padding-left: 15px;
+		}
 
 		.toolbox__navbar__boxs-container {
 			opacity: 1;
@@ -27,13 +38,16 @@ $toolboxBarWidth: 400px;
 
 	&__navbar {
 		position: fixed;
-		top: 0;
+		top: 5px;
 		left: 0;
-		height: 100%;
-		width: 45px;
+		height: $toolboxBarClosedWidth;
+		width: $toolboxBarClosedWidth;
 		z-index: 900;
-		background: $brand-color;
+		background: $almost-black;
 		color: #fff;
+		transition: all 0.25s $ease-out-expo;
+		border-top-right-radius: 15px;
+		border-bottom-right-radius: 15px;
 
 		h2 {
 			color: #fff;
@@ -47,6 +61,7 @@ $toolboxBarWidth: 400px;
 		&__nav-container {
 			@include container();
 			margin-top: rem(10);
+			cursor: pointer;
 		}
 
 		&__boxs-container {
@@ -56,14 +71,17 @@ $toolboxBarWidth: 400px;
 			visibility: hidden;
 		}
 
-		&:hover {
-			cursor: pointer;
-		}
-
 		// &__box {
 		// 	max-height: 200px;
 		// 	overflow-y: auto;
 		// }
+	}
+
+	&__btn {
+		display: none;
+        @include btn(#fff, $brand-color);
+
+        border: solid 1px $brand-color;
 	}
 
 	.container {
@@ -80,10 +98,16 @@ $toolboxBarWidth: 400px;
 			margin-top: 0;
 		}
 	}
-	
-	&__item__title {
-		color: $brand-color;
+
+	&__item__header {
+		@include clearfix();
 		margin: 2rem 0;
+	}
+
+	&__item__title {
+		float: left;
+		letter-spacing: -1px;
+		color: $almost-black;
 	}
 
 	&__item__meta {
@@ -109,5 +133,21 @@ $toolboxBarWidth: 400px;
 		min-height: 300px;
 		// padding: 4rem;
   //   	background-color: #fff;
+	}
+
+	&__item__tools {
+		text-align: right;
+		float: right;
+
+		.btn {
+			@include btn(#eee, $grey);
+
+			padding: 0.8rem 2rem;
+
+			&:hover {
+				background: $grey;
+				color: #fff;
+			}
+		}
 	}
 }
