@@ -87,7 +87,7 @@
             text-align: center;
             color: $icon-bg-text;
             padding: $padding-vertical $padding-horizontal / 1.5;
-            line-height: inherit; /*[2]*/
+            line-height: $line-height-base; /*[2]*/
             transition: inherit; /*[2]*/
             background-color: darken($icon-bg, 10%);
         }
@@ -144,6 +144,7 @@
         &:before {
             content: "#{$icon}";
             display: inline-block;
+            line-height: 1;
         }
 
         @if ( $icon-side == left ) {
