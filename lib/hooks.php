@@ -1,8 +1,8 @@
 <?php namespace Swiss\Hooks;
 
 function theme_setup_options () {
-  Helper::activate_plugin('advanced-custom-fields-pro/acf.php');
-  Helper::activate_plugin('rest-api/plugin.php');
+  \Swiss\activate_plugin('advanced-custom-fields-pro/acf.php');
+  \Swiss\activate_plugin('rest-api/plugin.php');
 }
 
 function register_my_menus() {
@@ -25,8 +25,8 @@ function custom_mce_em_buttons() {
   }
   // Check if WYSIWYG is enabled then add filters
   if ( 'true' == get_user_option( 'rich_editing' ) ) {
-    add_filter( 'mce_external_plugins', 'custom_tinymce_plugin' );
-    add_filter( 'mce_buttons', 'register_mce_button' );
+    add_filter( 'mce_external_plugins', '\Swiss\Hooks\custom_tinymce_plugin' );
+    add_filter( 'mce_buttons', '\Swiss\Hooks\register_mce_button' );
   }
 }
 
