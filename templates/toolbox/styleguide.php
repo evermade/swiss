@@ -7,9 +7,9 @@
 			<tr>
 				<td>
 					<div class="">
-						<?php for($i=1; $i<6; $i++): ?>
+						<?php for($i=1; $i<7; $i++): ?>
 							<h1 class="h<?php echo $i;?>">Heading <?php echo $i;?></h1>
-						<?php endfor; ?> 
+						<?php endfor; ?>
 					</div>
 				</td>
 			</tr>
@@ -23,7 +23,7 @@
 			<tr>
 				<td>
 					<div class="">
-					<?php foreach (['xs', '', 'md', 'lg', 'xl', 'xxl', 'xxxl'] as $size): ?>
+					<?php foreach (['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'] as $size): ?>
 						<p class="text-<?php echo $size;?>">Text Size <?php echo $size;?></p>
 					<?php endforeach ?>
 					</div>
