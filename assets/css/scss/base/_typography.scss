@@ -9,67 +9,47 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-    @include font-size(xxxl);
+    @include font-size(xxl);
 }
 
 h2, .h2 {
-    @include font-size(xxl);
+    @include font-size(xl);
 }
 
 h3, .h3 {
-    @include font-size(xl);
+    @include font-size(lg);
 }
 
 h4, .h4 {
-    @include font-size(lg);
+    @include font-size(md);
 }
 
 h5, .h5 {
-    @include font-size(md);
-}
-
-h6, .h6 {
     @include font-size(sm);
 }
 
-//font sizes
-
-.text-xxxl {
-    @include font-size(xxxl);
-}
-
-.text-xxl {
-    @include font-size(xxl);
-}
-
-.text-xl {
-    @include font-size(xl);
-}
-
-.text-lg {
-    @include font-size(lg);
-}
-
-.text-md {
-    @include font-size(md);
-}
-
-.text-sm {
+h6, .h6 {
     @include font-size(xs);
 }
 
-.text-xs {
-    @include font-size(xs);
+// generate helper classes for all font-sizes (.text-xs, .text-sm, etc..)
+@each $font-size-label, $font-size-map in $font-sizes {
+  .text-#{$font-size-label} {
+    @include font-size($font-size-label, important);
+  }
 }
 
 .text-center {
-  text-align: center;
+  text-align: center !important;
 }
 
 .text-right {
-  text-align: right;
+  text-align: right !important;
 }
 
+.text-left {
+  text-align: left !important;
+}
 
 h1,h2,h3,h4,h5,h6{
   &+p,&+ul,&+ol{

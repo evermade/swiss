@@ -1,56 +1,37 @@
-@mixin font-size($size: base){
+@mixin font-size($font-size-label: base, $important: false) {
 
-    $custom: true;
+  // check if we want to declare it as important, for ex. helper classes
+  @if $important == important {
+    $important: !important;
+  } @else {
+    $important: null;
+  }
 
-    @if $size == base {
-      font-size: rem($font-size-base);
-      $custom: false;
-    }
+  @if $font-size-label == base {
+    @include font-size($font-size-base);
+  }
 
-    @if $size == xs {
-      font-size: rem($font-size-xs);
-      $custom: false;
-    }
+  // check if we have matching font-size
+  @else if map-has-key($font-sizes, $font-size-label) {
 
-    @if $size == sm {
-      font-size: rem($font-size-sm);
-      $custom: false;
-    }
+    // set the var for checking the prev breakpoint font-size
+    $prev-font-size: 0;
 
-    @if $size == md {
-      font-size: rem($font-size-md);
-      $custom: false;
-    }
+    // loop through breakpoints
+    @each $bp-label, $font-size in map-get($font-sizes, $font-size-label) {
 
-    @if $size == lg {
-      font-size: rem($font-size-lg);
-      $custom: false;
-    }
-
-    @if $size == xl {
-      font-size: rem($font-size-xl);
-      $custom: false;
-    }
-
-    @if $size == xxl {
-      font-size: rem($font-size-xl);
-      @include bp(sm){
-        font-size: rem($font-size-xxl);
+      // only add new font-size declaration if we don't already have it for previous breakpoint
+      @if $bp-label == xs {
+        font-size: rem($font-size) $important;
       }
-      $custom: false;
-    }
-
-    @if $size == xxxl {
-      font-size: rem($font-size-xxl);
-      @include bp(sm){
-        font-size: rem($font-size-xxxl);
+      @else if $font-size != $prev-font-size {
+        @include bp($bp-label) {
+          font-size: rem($font-size) $important;
+        }
       }
-      $custom: false;
-    }
 
-    @if($custom == true) {
-      //we must be using a custom size
-      //@debug($size);
-      font-size: rem($size);
+      // this for checking that we don't add duplicate font-sizes
+      $prev-font-size: $font-size;
     }
+  }
 }
