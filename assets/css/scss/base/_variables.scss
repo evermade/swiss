@@ -90,17 +90,18 @@ $font-size-rem-sm: 8.5px;
 $font-size-rem-md: 9.5px;
 $font-size-rem-base: 10px;
 
-// font sizes
-$font-size-xs: 14px;
-$font-size-sm: 16px;
-$font-size-md: 18px;
-$font-size-lg: 24px;
-$font-size-xl: 36px;
-$font-size-xxl: 48px;
-$font-size-xxxl: 72px;
+// font sizes for responsive scalability (used by font-size mixin)
+$font-sizes: (
+  xs:   (xs: 12px, sm: 12px, md: 12px, lg: 12px, xl: 12px), // h6
+  sm:   (xs: 14px, sm: 14px, md: 14px, lg: 14px, xl: 14px), // h5
+  md:   (xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px), // h4, usually same as body font-size
+  lg:   (xs: 22px, sm: 22px, md: 22px, lg: 22px, xl: 22px), // h3
+  xl:   (xs: 26px, sm: 26px, md: 26px, lg: 26px, xl: 26px), // h2
+  xxl:  (xs: 28px, sm: 28px, md: 34px, lg: 34px, xl: 34px), // h1
+  xxxl: (xs: 36px, sm: 36px, md: 46px, lg: 46px, xl: 46px)
+);
 
-$font-size-base: $font-size-sm;
-
+$font-size-base: md; // base size based on font-size labels in the sass map
 
 //for bourbon
 $em-base: $font-size-rem-base;
