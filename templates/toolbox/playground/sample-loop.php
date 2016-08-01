@@ -30,11 +30,9 @@ if($custom_query->have_posts()) : ?>
 				$my_post = new \Swiss\Post($post);
 
 				//include your template, dont use html here directly
-		?>
+				include(get_template_directory().'/templates/blog/post-small.php');
 
-				<h1><?php the_title();?></h1>
-
-		<?php endforeach; ?>
+			endforeach; ?>
 
 	<?php endforeach; wp_reset_postdata(); //this is important to restore the post object back to current post for other things ?>
 

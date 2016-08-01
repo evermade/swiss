@@ -55,7 +55,7 @@ function default_img($size='thumbnail', $text='img', $type='default'){
 
 function feature_image_url($post, $size='medium-large'){
 
-	$img = wp_get_attachment_image_src(get_post_thumbnail_id($post, $size))[0];
+	$img = wp_get_attachment_image_src(get_post_thumbnail_id($post), $size)[0];
 
 	if(empty($img)){
 		$img = default_img($size,'');
