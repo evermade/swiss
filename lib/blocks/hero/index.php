@@ -18,7 +18,7 @@ if(is_array($block->repeaters['hero_slides'])){ ?>
 	<?php foreach($block->repeaters['hero_slides'] as $k => $hero){
 
 		//generate tmp file name from hero type
-		$block->data['tmp'] = get_template_directory().'/em/blocks/hero/templates/'.$block->fields['hero_type'].'.php';
+		$block->data['tmp'] = get_template_directory().'/lib/blocks/hero/templates/'.$block->fields['hero_type'].'.php';
 
 		//lets check if template exists and include it
 		if(file_exists($block->data['tmp'])){
