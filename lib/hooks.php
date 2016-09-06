@@ -1,5 +1,16 @@
 <?php namespace Swiss\Hooks;
 
+function remove_wp_logo( $wp_admin_bar ) {
+  $wp_admin_bar->remove_node( 'updates' );
+  $wp_admin_bar->remove_node( 'comments' );
+  $wp_admin_bar->remove_node( 'wpseo-menu' );
+}
+
+function hide_wp_update_nag() {
+    remove_action( 'admin_notices', 'update_nag', 3 ); //update notice at the top of the screen
+    remove_filter( 'update_footer', 'core_update_footer' ); //update notice in the footer
+}
+
 function theme_setup_options () {
   \Swiss\activate_plugin('advanced-custom-fields-pro/acf.php');
   \Swiss\activate_plugin('rest-api/plugin.php');
@@ -58,13 +69,13 @@ add_filter('show_admin_bar', '__return_false');
 add_theme_support( 'post-thumbnails', array('post'));
 
 //register new buttons in the editor
-add_action('admin_head', 'Swiss\Hooks\custom_mce_em_buttons');
+add_action('admin_head', '\Swiss\Hooks\custom_mce_em_buttons');
 
 //lets remove the main text editor from the post type as we are using block system
-add_action("admin_init", "Swiss\Hooks\custom_post_types_editing");
+add_action('admin_init', '\Swiss\Hooks\custom_post_types_editing');
 
 //lets add our local languages for the swiss text domain
-add_action( 'after_setup_theme', 'Swiss\Hooks\em_load_theme_textdomain' );
+add_action( 'after_setup_theme', '\Swiss\Hooks\em_load_theme_textdomain' );
 
 //remove stupid wp and plugin tags for security
 remove_action('wp_head', 'rsd_link');
@@ -81,11 +92,17 @@ remove_action('admin_print_styles', 'print_emoji_styles');
 remove_action('wp_head', 'wp_shortlink_wp_head', 10);
 
 //remove version numbers from asset links
-add_filter('script_loader_src', 'Swiss\Hooks\remove_script_version', 15, 1);
-add_filter('style_loader_src', 'Swiss\Hooks\remove_script_version', 15, 1);
+add_filter('script_loader_src', '\Swiss\Hooks\remove_script_version', 15, 1);
+add_filter('style_loader_src', '\Swiss\Hooks\remove_script_version', 15, 1);
 
 //navigation
-add_action( 'init', 'Swiss\Hooks\register_my_menus' );
+add_action( 'init', '\Swiss\Hooks\register_my_menus' );
 
 //lets setup our theme upon activating it
-add_action('after_switch_theme', 'Swiss\Hooks\theme_setup_options');
+add_action('after_switch_theme', '\Swiss\Hooks\theme_setup_options');
+
+// hide update nags
+add_action('admin_menu','\Swiss\Hooks\hide_wp_update_nag');
+
+//remove wp top bar stuff
+add_action( 'admin_bar_menu', '\Swiss\Hooks\remove_wp_logo', 999 );

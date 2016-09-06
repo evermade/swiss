@@ -18,8 +18,8 @@ function my_awesome_posts() {
         foreach($query->posts as $post){
 
             setup_postdata($post);
-            $wp_post = new \Em\WP_Post($post); 
-
+            
+            $wp_post = new \Swiss\Post($post); 
             array_push($json, $wp_post);
         }
     }

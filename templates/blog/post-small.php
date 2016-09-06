@@ -1,6 +1,6 @@
 <div class="hero" data-animate="animated bounceIn" style="height:400px;">
 
-	<div class="hero__background" style="background-image:url(<?php echo \Swiss\feature_image_url($post, 'hero-large'); ?>)"></div>
+	<div class="hero__background" style="background-image:url(<?php echo $my_post->get_feature_image('hero-large', true); ?>)"></div>
 
 	<div class="hero__content hero__content--bottom hero__content--left">
 		<div class="hero__content__overlay hero__content__overlay--fade-top"></div>

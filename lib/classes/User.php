@@ -3,7 +3,7 @@
 class User {
 
 	protected $image_keys = array('user_profile_image');
-	public $meta, $user, $images, $data;
+	public $meta, $user, $data;
 
 	public function __construct($id=null){
 
@@ -12,21 +12,33 @@ class User {
 			$user = get_userdata($id);
 
 			if(!empty($user)){
-
-				$this->user = new \stdClass;
-
-				foreach($user->data as $key => $value){
-					if($key == 'user_pass') continue;
-					$this->user->{$key} = $value;
-				}
-
-				$this->setup_meta();
-
-				$this->data = new \stdClass;
-
-				$this->get_social();
+				$this->setup($user);
 			}
 		}
+	}
+
+	public function setup($user = null){
+
+		if(empty($user)) return false;
+
+		$this->user = new \stdClass;
+
+		foreach($user->data as $key => $value){
+
+			$ignore = array('user_pass', 'user_activation_key');
+
+			if(in_array($key, $ignore)) continue;
+			
+			$this->user->{$key} = $value;
+		}
+
+		//$this->setup_meta();
+
+		$this->data = new \stdClass;
+
+		$this->get_social();
+
+		return $this;
 	}
 
 	public function setup_meta(){
@@ -38,34 +50,15 @@ class User {
 
 				$this->meta = new \stdClass;
 
+				$ignore = array('session_tokens');
+
 				 //lets loop and setup meta
 				foreach($meta as $key => $value){
+
+					if(in_array($key, $ignore)) continue;
+
 					if(isset($value[0]) && !empty($value[0])){
 						$this->meta->{$key} = $value[0];
-					}
-				}
-			}
-		}
-
-		return true;
-	}
-
-	public function setup_images(){
-		//setup our images from our meta
-		if(!empty($this->image_keys)){
-
-			$this->images = new \stdClass;
-
-			foreach($this->image_keys as $key => $value){
-
-				if(isset($this->meta->{$key})){
-					$image = wp_get_attachment_image_src($this->meta->{$key}, $value);
-
-					if(is_array($image)){
-						$this->images->{$key} = $image[0];
-					}
-					else {
-						$this->images->{$key} = 'http://fakeimg.pl/650x650/eeeeee/666/?text=img';
 					}
 				}
 			}
@@ -89,10 +82,6 @@ class User {
 		return $this->get('meta', 'first_name').' '.$this->get('meta', 'last_name');
 	}
 
-	public function author_posts_link(){
-		return sprintf('<a href="%s" title="View posts from %s">%s</a>', $this->data->url, $this->get_full_name(), $this->get_full_name());
-	}
-
 	public function get_social(){
 		$services = array('user_facebook', 'user_twitter', 'user_linkedin');
 		$this->data->social_links = array();
@@ -103,7 +92,7 @@ class User {
 			}
 		}
 
-		return true;
+		return $this->data->social_links;
 	}
 
 	public function get_email(){
@@ -114,17 +103,18 @@ class User {
 		return $this->get('meta', 'user_telephone');
 	}
 
-	public function get_all_posts($post_type = 'post', $post_status = 'publish' ) {
-     	
-     	$args = array(
-     			'posts_per_page'=>-1,
-     			'fields'=>'ids',
-     			'author'=> $this->user->ID,
-     			'post_type'=>$post_type, 
-     			'post_status'=> $post_status
-     		); 
+	public function get_posts($post_type = 'post', $post_status = 'publish', $args = array()) {
+
+		$default_args = array(
+ 			'posts_per_page'=>-1,
+ 			'author'=> $this->user->ID,
+ 			'post_type'=>$post_type, 
+ 			'post_status'=> $post_status
+ 		); 
+
+		$merged_args = array_merge($default_args, $args);
 	     
-	    $query = new \WP_Query($args);
+	    $query = new \WP_Query($merged_args);
 	     
 	    return $query->posts;
 	}
