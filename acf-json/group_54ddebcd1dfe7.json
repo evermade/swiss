@@ -63,6 +63,7 @@
                             "max": 4,
                             "layout": "block",
                             "button_label": "Add Column",
+                            "collapsed": "",
                             "sub_fields": [
                                 {
                                     "key": "field_54de1392f46d0",
@@ -110,7 +111,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_55923575291a5",
@@ -133,7 +135,9 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "top",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0,
+                            "return_format": "value"
                         }
                     ],
                     "min": "",
@@ -191,7 +195,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_556e9abfa1d41",
@@ -216,7 +221,8 @@
                             "max_width": "",
                             "max_height": "",
                             "max_size": "",
-                            "mime_types": ""
+                            "mime_types": "",
+                            "insert": "append"
                         }
                     ],
                     "min": "",
@@ -290,6 +296,7 @@
                             "max": 4,
                             "layout": "block",
                             "button_label": "Add Item",
+                            "collapsed": "",
                             "sub_fields": [
                                 {
                                     "key": "field_5570055cfaae7",
@@ -391,7 +398,8 @@
                             "ajax": 0,
                             "placeholder": "",
                             "disabled": 0,
-                            "readonly": 0
+                            "readonly": 0,
+                            "return_format": "value"
                         },
                         {
                             "key": "field_557551800a89d",
@@ -410,6 +418,7 @@
                             "max": 4,
                             "layout": "row",
                             "button_label": "Add Slide",
+                            "collapsed": "",
                             "sub_fields": [
                                 {
                                     "key": "field_557552300a8a2",
@@ -614,6 +623,7 @@
                             "max": 4,
                             "layout": "row",
                             "button_label": "Add Item",
+                            "collapsed": "",
                             "sub_fields": [
                                 {
                                     "key": "field_55bb3fec93556",
@@ -641,7 +651,8 @@
                                     "ajax": 0,
                                     "placeholder": "",
                                     "disabled": 0,
-                                    "readonly": 0
+                                    "readonly": 0,
+                                    "return_format": "value"
                                 },
                                 {
                                     "key": "field_5587fd3efcdeb",
@@ -671,7 +682,8 @@
                                     "ajax": 0,
                                     "placeholder": "",
                                     "disabled": 0,
-                                    "readonly": 0
+                                    "readonly": 0,
+                                    "return_format": "value"
                                 },
                                 {
                                     "key": "field_5587feaccec0b",
@@ -823,5 +835,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1446646063
+    "active": 1,
+    "description": "",
+    "modified": 1473081560
 }

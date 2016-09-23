@@ -1,7 +1,7 @@
 <?php 
 
 define( 'DISALLOW_FILE_EDIT', true );
-define( 'DEFAULT_IMG_ID', 974 );
+define( 'DEFAULT_IMG_ID', 668 ); //image ID from https://unsplash.it/images
 
 if( function_exists('acf_add_options_page') ) {
 

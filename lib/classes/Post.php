@@ -14,14 +14,18 @@ class Post {
 
 		$this->post = new \stdClass;
 
-		if(!empty($post)){
+		if(!empty($post) && is_object($post)){
 			$this->setup_post($post)->setup_wp_stuff($setup);
 		}
 	}
 
+	public function is_valid_post(){
+		return (empty($this->post) || !is_object($this->post))? false : true;
+	}
+
 	public function setup_post($post=null){
 
-		if(empty($post) && !is_object($post)) return false;
+		if(empty($post) || !is_object($post)) return false;
 
 		$this->post = $post;
 
@@ -30,19 +34,10 @@ class Post {
 
 	public function setup_wp_stuff($setup=array()){
 
-		if(empty($this->post)) return false;
+		if(!$this->is_valid_post()) return false;
 
 		if(in_array('meta', $setup)){
-
-			$this->meta = new \stdClass;
-
-			$meta = get_post_meta($this->post->ID, null, false ); 
-			
-			foreach($meta as $key => $value){
-				if(isset($value[0]) && !empty($value[0])){
-					$this->meta->{$key} = $value[0];
-				}
-			}
+			$this->get_meta();
 		}
 
 		if(in_array('tags', $setup)){
@@ -58,7 +53,7 @@ class Post {
 		}
 
 		if(in_array('acf', $setup)){
-			$this->setup_acf();
+			$this->get_acf();
 		}
 
 		return $this;
@@ -66,9 +61,28 @@ class Post {
 
 	public function get($key=null, $array='post'){
 		if(isset($this->{$array}->{$key})){
-			$this->{$array}->{$key};
+			return $this->{$array}->{$key};
 		}
 		return null;
+	}
+
+	public function get_meta(){
+
+		if(!$this->is_valid_post()) return false;
+
+		$this->meta = new \stdClass;
+
+		$meta = get_post_meta($this->post->ID, null, false ); 
+		
+		if(!empty($meta)){
+			foreach($meta as $key => $value){
+				if(isset($value[0]) && !empty($value[0])){
+					$this->meta->{$key} = $value[0];
+				}
+			}
+		}
+
+		return $this->meta;
 	}
 
 	public function get_tags(){
@@ -84,14 +98,16 @@ class Post {
 		return $this->author;
 	}
 
-	public function get_feature_image($size='medium', $force = false, $default=true){
+	public function get_feature_image($size='medium-large', $force = false, $default=true){
 
+		//if we have a feature image and we are not forcing to use the prefetched image use that
 		if(!empty($this->feature_image) && !$force){
 			return $this->feature_image;
 		}
 		
 		$this->feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($this->post->ID), $size)[0];
 
+		//if no default image is found, and we want a default, get one
 		if(empty($this->feature_image) && $default){
 			$this->feature_image = \Swiss\default_img($size, '');
 		}
@@ -105,14 +121,14 @@ class Post {
 
 	public function comments_open(){
 		if(isset($this->post->ID)){
-			return comments_open($this->post->ID); //need to implement
+			return \comments_open($this->post->ID); //need to implement
 		}
 
 		return false;
 	}
 
-	public function setup_acf(){
-		$fields = get_fields($this->post->ID);
+	public function get_acf(){
+		$fields = \get_fields($this->post->ID);
 		
 		if(!empty($fields)){
 			$this->acf = new \stdClass;
