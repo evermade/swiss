@@ -35,40 +35,7 @@ Preview: true
 
 <br>
 
-<div class="hero">
-
-	<div class="hero__background" style=" background-image:url(http://fakeimg.pl/650x650/eee/666/?text=bg);"></div>
-
-	<div class="hero__overlay"></div>
-
-	<div class="hero__content hero__content--dynamic">
-		<h2>Dynamic height</h2>
-		<p>The hero can also scale vertically with the content. <br><br>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu.</p>
-		<a href="1" class="btn">Read More</a>
-	</div>
-
-</div><!-- end of hero -->
-
-<br>
-
-
-<div class="hero hero--square">
-
-	<div class="hero__background" style=" background-image:url(http://fakeimg.pl/650x650/eee/666/?text=bg);"></div>
-
-	<div class="hero__overlay"></div>
-
-	<div class="hero__content">
-		<h2>Square scaling</h2>
-		<p>The links block can scale vertically using the containing width to form a square.</p>
-		<a href="1" class="btn">Read More</a>
-	</div>
-
-</div><!-- end of hero -->
-
-<br>
-
-<div class="el" style="height:400px;">
+<div class="el" style="height:500px;">
 	<div class="hero hero--cover">
 
 		<div class="hero__background" style=" background-image:url(http://fakeimg.pl/650x650/eee/666/?text=bg);"></div>

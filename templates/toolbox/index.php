@@ -4,8 +4,8 @@
 
 <span id="top"></span>
 
-<?php 
-foreach($folders as $folder => $templates):  
+<?php
+foreach($folders as $folder => $templates):
 
 	if(!is_array($templates)) continue;
 
@@ -21,12 +21,14 @@ foreach($folders as $folder => $templates):
 			<div class="container">
 			 	<div class="row">
 					<div class="col-xs-12">
-						<h2 class="toolbox__item__title">
-							<?php echo basename($template, '.php'); ?> 
-							<a href="#" class="btn js-copy" data-clipboard-text="<?php echo htmlentities($contents); ?>"><i class="fa fa-clipboard"></i> Copy Code</a>
-							<a href="?page=viewer&amp;element=<?php echo $folder.'/'.basename($template); ?>" target="_blank" class="btn">Open in Viewer</a> 
-							<a href="#code" class="btn js-toggle-code">Toggle Code</a>
-						</h2>
+						<div class="toolbox__item__header">
+							<h2 class="toolbox__item__title"><?php echo basename($template, '.php'); ?></h2>
+							<div class="toolbox__item__tools">
+								<a href="javascript:void(0);" class="btn btn--outline js-copy" data-clipboard-text="<?php echo htmlentities($contents); ?>"><i class="fa fa-clipboard"></i> Copy Code</a>
+								<a href="?page=viewer&amp;element=<?php echo $folder.'/'.basename($template); ?>" target="_blank" class="btn btn--outline">Open in Viewer</a>
+								<a href="#code" class="btn btn--outline js-toggle-code">Toggle Code</a>
+							</div>
+						</div>
 
 						<div class="toolbox__item__meta">
 							<p><strong>Type: </strong><?php echo $folder; ?></p>
@@ -35,7 +37,7 @@ foreach($folders as $folder => $templates):
 							<p><strong>Tags: </strong><?php echo $meta['Tags']; ?></p>
 						</div>
 					</div>
-				</div> 
+				</div>
 				<div class="row">
 					<div class="col-xs-12 toolbox__item__code hidden">
 						<pre class="prettyprint"><?php echo htmlentities($contents); ?></pre>
@@ -43,12 +45,12 @@ foreach($folders as $folder => $templates):
 					<div class="col-xs-12 toolbox__item__preview">
 						<?php include($template); ?>
 					</div>
-				</div> 
+				</div>
 			</div>
 		</section>
 
 
-<?php endforeach; 
+<?php endforeach;
 
 endforeach; ?>
 

@@ -29,6 +29,8 @@
     $icon-bg-text: $text
 ){
 
+    @include font-size(base);
+
     display: inline-block;
     text-decoration: none;
     padding: $padding-vertical $padding-horizontal;
@@ -38,7 +40,7 @@
     background: $background;
     font-weight: $button-weight;
     text-transform: $button-text-transform;
-    font-size: rem($font-size-base);
+    line-height: $line-height-base;
 
     &:hover, &:active, &:focus {
         outline: 0;
@@ -86,7 +88,7 @@
             text-align: center;
             color: $icon-bg-text;
             padding: $padding-vertical $padding-horizontal / 1.5;
-            line-height: inherit; /*[2]*/
+            line-height: $line-height-base; /*[2]*/
             transition: inherit; /*[2]*/
             background-color: darken($icon-bg, 10%);
         }
@@ -143,6 +145,7 @@
         &:before {
             content: "#{$icon}";
             display: inline-block;
+            line-height: 1;
         }
 
         @if ( $icon-side == left ) {

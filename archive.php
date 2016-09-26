@@ -1,5 +1,5 @@
 <?php get_header();
 
-include(get_template_directory().'/templates/listing-news-default.php');
+include(get_template_directory().'/templates/blog/index.php');
 
 get_footer();

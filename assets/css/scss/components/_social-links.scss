@@ -1,7 +1,6 @@
 .social-links {
 	margin: rem($padding) 0;
 	padding: 0;
-	text-align: center;
 
 	&__item {
 		display: inline;
@@ -10,54 +9,38 @@
 		@include transition(all 0.4s);
 
 		a {
-			padding: rem(10);
-			font-size: rem(25);
-			
-			@include bp(sm){
-				font-size: rem(40);
-				padding: rem(20);
-			} 
+			padding: 0 rem(5);
 		}
 
 		&:hover {
-			top: -10px;
+			opacity: 0.5;
 		}
+	}
 
-		&--facebook{
-			color: $facebook;
-			&:hover {
+	&--large {
+
+		.social-links__item {
+
+			a {
+				@include font-size(xxl);
+				padding: 0 rem(15);
 			}
+
 		}
 
-		&--twitter{
-			color: $twitter;
+	}
 
-			&:hover {
+	&--colored {
+
+		.social-links__item {
+
+			@each $brand, $color in $brand-colors {
+				&--#{$brand} {
+					color: $color;
+				}
 			}
+
 		}
 
-		&--flickr{
-			color: $flickr;
-			&:hover {
-			}
-		}
-
-		&--instagram{
-			color: $instagram;
-			&:hover {
-			}
-		}
-
-		&--linkedin{
-			color: $facebook;
-			&:hover {
-			}
-		}
-
-		&--vimeo{
-			color: $vimeo;
-			&:hover {
-			}
-		}
 	}
 }

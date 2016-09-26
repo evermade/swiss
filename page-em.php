@@ -1,10 +1,10 @@
 <?php
 get_header();
 
-include_once(get_template_directory() . '/em/classes/class.pageelements.php');
+include_once(get_template_directory() . '/lib/classes/PageElements.php');
 
-if(!isset($_GET['page'])){
-	$_GET['page'] = 'index';
+if(!isset($_GET['t'])){
+	$_GET['t'] = 'index';
 }
 
 $folders = array('components', 'layouts', 'blocks');
@@ -13,7 +13,7 @@ $folders = array('components', 'layouts', 'blocks');
 
 <section class="toolbox">
 	<div class="toolbox__navbar">
-		
+
 		<div class="toolbox__navbar__nav-container">
 			<div class="row">
 				<div class="col-xs-4"><i class="fa fa-wrench toolbox__open"></i></div>
@@ -24,18 +24,18 @@ $folders = array('components', 'layouts', 'blocks');
 
 		<div class="toolbox__navbar__boxs-container">
 			<div class="row">
-				
+
 				<div class="col-xs-12">
 					<h2>Navigation</h2>
-					<p><a href="?page=index">Home</a></p>
-					<p><a href="?page=styleguide">Styleguide</a></p>
-					<p><a href="?page=mixins">Mixins</a></p>
-					<p><a href="?page=animations">Animations</a></p>
-					<p><a href="?page=playground">Playground</a></p>
+					<p><a href="<?php echo add_query_arg('t', 'index'); ?>">Home</a></p>
+					<p><a href="<?php echo add_query_arg('t', 'styleguide'); ?>">Styleguide</a></p>
+					<p><a href="<?php echo add_query_arg('t', 'mixins'); ?>">Mixins</a></p>
+					<p><a href="<?php echo add_query_arg('t', 'animations'); ?>">Animations</a></p>
+					<p><a href="<?php echo add_query_arg('t', 'playground'); ?>">Playground</a></p>
 				</div>
 
-				<?php foreach($folders as $folder): 
-				$folders[$folder] = glob(get_template_directory().'/templates/toolbox/'.$folder.'/*.php'); 
+				<?php foreach($folders as $folder):
+				$folders[$folder] = glob(get_template_directory().'/templates/toolbox/'.$folder.'/*.php');
 				?>
 					<div class="col-xs-12">
 					<h2><?php echo $folder; ?></h2>
@@ -54,7 +54,7 @@ $folders = array('components', 'layouts', 'blocks');
 
 <?php
 
-switch ($_GET['page']) {
+switch ($_GET['t']) {
 	case 'animations':
 		include(get_template_directory().'/templates/toolbox/animations.php');
 		break;

@@ -3,7 +3,6 @@
     @include btn();
 
     &--white {
-    	@include shadow;
         @include btn(#fff, #000);
     }
 
@@ -12,15 +11,15 @@
 	}
 
     &--copy {
-        @include btn($icon:\f0c5);
+        @include btn($icon:"\f0c5");
     }
 
     &--play {
-        @include btn($icon:\f144, $icon-bg:$google, $icon-side:right);
+        @include btn($icon:"\f144", $icon-bg:$brand-color, $icon-side:right);
     }
 
     &--loading {
-        @include btn($icon:\f021);
+        @include btn($icon:"\f021");
         &:before {
             animation: fa-spin 2s infinite linear;
         }

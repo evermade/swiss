@@ -1,5 +1,8 @@
 <?php
 global $app;
+
+if(empty($app)) return false;
+
 $analytics = $app->get('opt_google_analytics');
 if(isset($analytics) && is_array($analytics) && !Helper::is_dev()): ?>
 <script>
