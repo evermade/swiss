@@ -16,7 +16,7 @@
 		em.animations.animateFirstBlockIn();
 
 		em.animations.setup();
-		
+
 	};
 
 	em.animations.capture = function(){
@@ -44,7 +44,7 @@
 	};
 
 	em.animations.setup  = function(){
-		
+
 		$(window).on("scroll", function() {
 
 			if(!em.animations.canWe()){
@@ -52,7 +52,7 @@
 			}
 
 			em.animations.animate();
-		    
+
 		}).scroll();
 	};
 
@@ -65,11 +65,11 @@
 	            windowHeight = win.height(),
 	            elTop = el.offset().top;
 
-	        el.toggleClass( el.data("animate"), elTop < (scrollTop+windowHeight));
+	        // el.toggleClass( el.data("animate"), elTop < (scrollTop+windowHeight));
 
-	        // if(elTop < (scrollTop+windowHeight)){
-	        // 	el.addClass( el.data("animate"));
-	        // }
+	        if(elTop < (scrollTop+windowHeight)){
+	        	el.addClass( el.data("animate"));
+	        }
 	    });
 	};
 
@@ -84,7 +84,7 @@
 			else {
 				container.css({opacity: 1});
 			}
-			
+
 		}
 	};
 
