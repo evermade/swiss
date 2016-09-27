@@ -150,4 +150,73 @@ $toolboxBarWidth: 400px;
 			}
 		}
 	}
+
+	&__animations {
+		position: relative;
+		overflow: hidden;
+
+		&__title {
+			h2 {
+				margin-bottom: 1rem;
+			}
+
+			ul {
+				margin-bottom: 2.5rem;
+			}
+		}
+
+		&__table {
+
+			th {
+				width: 50%;
+				vertical-align: top;
+				border-color: #f0f0f0;
+				padding-top: 2rem;
+				text-transform: uppercase;
+			}
+
+			td {
+				width: 50%;
+				padding: 0;
+			}
+		}
+
+		&__item {
+			width: 45%;
+			height: 100px;
+			float: left;
+			border: solid 1px #f0f0f0;
+			box-shadow: 0 5px 25px 0 rgba(0,0,0,0.075);
+			background-color: #fff;
+			color: $grey;
+			margin: 0 5% 5% 0;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&__refresh {
+			font-size: 2.4rem;
+			background-color: $almost-black;
+			width: 60px;
+			height: 60px;
+			line-height: 60px;
+			color: #fff;
+			text-align: center;
+			position: fixed;
+			top: 50%;
+			margin-top: -30px;
+			right: 0;
+			border-top-left-radius: 60px;
+			border-bottom-left-radius: 60px;
+			cursor: pointer;
+			transition: all 0.25s $ease-out-expo;
+
+			&:hover {
+				width: 80px;
+				text-indent: -10px;
+			}
+		}
+	}
 }

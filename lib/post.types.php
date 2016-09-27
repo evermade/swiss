@@ -14,7 +14,7 @@ function objects_setup_type() {
 	    'view_item'          => __( 'View Object', 'swiss' ),
 	    'search_items'       => __( 'Search Objects', 'swiss' ),
 	    'not_found'          => __( 'No Objects found', 'swiss' ),
-	    'not_found_in_trash' => __( 'No Objects found in the Trash', 'swiss' ), 
+	    'not_found_in_trash' => __( 'No Objects found in the Trash', 'swiss' ),
 	    'parent_item_colon'  => '',
 	    'menu_name'          => __('Objects')
 	  );
@@ -29,11 +29,11 @@ function objects_setup_type() {
 	    'exclude_from_search' => true,
 	    'menu_icon'   => 'dashicons-book',
 	  );
-	  register_post_type( 'object', $args ); 
+	  register_post_type( 'object', $args );
 }
 
 function set_custom_types(){
-	objects_setup_type();
+	//objects_setup_type();
 }
 
 add_action( 'init', 'Swiss\PostTypes\set_custom_types' );
