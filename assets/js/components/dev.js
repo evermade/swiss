@@ -38,6 +38,17 @@
 			});
 		});
 
+		$('.js-toolbox-animations-item').on('click', function(e) {
+			e.preventDefault();
+			var el = $(this);
+			var animation = el.data('animate');
+			el.removeClass(animation);
+
+			setTimeout(function() {
+				el.addClass(animation);
+			}, 150);
+		});
+
  		$(document).on('keydown', function(e){
 		    if(e.which == 84){
 		        $('.toolbox__navbar .toolbox__open').click();
