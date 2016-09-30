@@ -3,7 +3,6 @@
   "block-no-single-line": true,
 
   "comment-no-empty": [true, { "severity": "warning" }],
-  "comment-empty-line-before": always,
 
   "color-no-hex": [true, {
     "message": "Illegal use of a HEX color. Instead of directly specifying a color, you should use variables to specify colors."
