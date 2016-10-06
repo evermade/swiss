@@ -35,5 +35,5 @@
       You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.    </div>
   <![endif]-->
 
-<div class="body" data-animate="animated fadeIn">
+<div class="body">
 	<span id="top"></span>
