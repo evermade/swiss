@@ -1,15 +1,17 @@
 <h3>Archive</h3>
 <?php
-	$args = array(
-		'show_post_count' => true,
-		'format' => 'custom',
-		'before' => '<div class="">',
-		'after' => '</div>',
-		'echo' => false,
-		'post_type' => get_post_type()
-	);
+$args = array(
+	'show_post_count' => true,
+	'format' => 'custom',
+	'before' => '<div class="">',
+	'after' => '</div>',
+	'echo' => false
+);
 
-	$archives = wp_get_archives($args);
+if(!empty(get_post_type())){
+	$args['post_type'] = get_post_type();
+}
 
-	echo $archives;
-?>
+$archives = wp_get_archives($args);
+
+echo $archives;

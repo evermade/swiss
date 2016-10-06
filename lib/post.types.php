@@ -26,15 +26,15 @@ function objects_setup_type() {
 	    'supports'      => array('title', 'editor', 'thumbnail'),
 	    'taxonomies'    => array('category', 'post_tag'),
 	    'has_archive'   => true,
-	    'publicly_queryable'  => true,
-	    'exclude_from_search' => false,
+	    'publicly_queryable'  => false,
+	    'exclude_from_search' => true,
 	    'menu_icon'   => 'dashicons-book',
 	  );
 	  register_post_type( 'object', $args );
 }
 
 function set_custom_types(){
-	objects_setup_type();
+	//objects_setup_type();
 }
 
 add_action( 'init', 'Swiss\PostTypes\set_custom_types' );
