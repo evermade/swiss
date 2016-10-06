@@ -1,114 +1,118 @@
+/*	
+	----------------------------------------
+
+	TYPOGRAPHY
+	--
+	Let's try to keep this clear from colors because 
+	these elements can be used in dark and light areas.
+	
+	----------------------------------------
+*/
+
 // Headings
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  margin:0;
-  padding:0;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	line-height: $headings-line-height;
+	margin:0;
+	padding:0;
 }
 
 h1, .h1 {
-    @include font-size(xxl);
+	@include font-size(xxl);
 }
 
 h2, .h2 {
-    @include font-size(xl);
+	@include font-size(xl);
 }
 
 h3, .h3 {
-    @include font-size(lg);
+	@include font-size(lg);
 }
 
 h4, .h4 {
-    @include font-size(md);
+	@include font-size(md);
 }
 
 h5, .h5 {
-    @include font-size(sm);
+	@include font-size(sm);
 }
 
 h6, .h6 {
-    @include font-size(xs);
+	@include font-size(xs);
 }
 
 // generate helper classes for all font-sizes (.text-xs, .text-sm, etc..)
 @each $font-size-label, $font-size-map in $font-sizes {
-  .text-#{$font-size-label} {
-    @include font-size($font-size-label, important);
-  }
+	.text-#{$font-size-label} {
+		@include font-size($font-size-label, important);
+	}
 }
 
 .text-center {
-  text-align: center !important;
+	text-align: center !important;
 }
 
 .text-right {
-  text-align: right !important;
+	text-align: right !important;
 }
 
 .text-left {
-  text-align: left !important;
+	text-align: left !important;
 }
 
 h1,h2,h3,h4,h5,h6{
-  &+p,&+ul,&+ol{
+	&+p,&+ul,&+ol{
 
-  }
+	}
 }
 
 //some helper methods we can use to extend from within css, rather than multiple classes in the markup
 
 p {
-  margin: 0;
-  padding:0;
+	margin: 0;
+	padding:0;
 
-  &:last-child{
-    margin:0;
-  }
+	&:last-child{
+		margin:0;
+	}
 
-  &.accent{
-    color:$light-grey;
-    font-style:italic;
-  }
+	&.accent{
+		font-style:italic;
+	}
 }
 
 strong{
-  font-weight:$font-weight-strong-base;
+	font-weight:$font-weight-strong-base;
 }
 
 // Unordered and Ordered lists
 ul,
 ol {
-  margin-top: 0;
-  margin-bottom: ($line-height-computed / 2);
-  ul,
-  ol {
-    margin-bottom: 0;
-  }
+	margin-top: 0;
+	margin-bottom: ($line-height-computed / 2);
+	ul,
+	ol {
+		margin-bottom: 0;
+	}
 }
 
 //links
 a {
-    color: inherit;
-    text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 
-    @include transition(all, 0.1s);
+	@include transition(all, 0.1s);
 
-    &:hover, &:focus {
-        text-decoration: none;
-        cursor: pointer;
-        color: inherit;
-    }
-    &:focus {}
+	&:hover, &:focus {
+		text-decoration: none;
+		cursor: pointer;
+		color: inherit;
+	}
+	&:focus {}
 }
+
 p a:hover {
-    text-decoration: underline;
-}
-
-//schemes
-.scheme2{
-  h1,h2,h3,h4,h5,h6,p{
-    color:#fff;
-  }
+	text-decoration: underline;
 }
