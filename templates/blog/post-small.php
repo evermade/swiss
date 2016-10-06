@@ -1,4 +1,4 @@
-<div class="hero" data-animate="animated bounceIn" style="height:400px;">
+<div class="hero" style="height:400px;">
 
 	<div class="hero__background" style="background-image:url(<?php echo $my_post->get_feature_image('hero-large', true); ?>)"></div>
 

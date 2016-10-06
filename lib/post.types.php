@@ -23,17 +23,18 @@ function objects_setup_type() {
 	    'description'   => __('Objects'),
 	    'public'        => true,
 	    'menu_position' => 5,
-	    'supports'      => array(),
+	    'supports'      => array('title', 'editor', 'thumbnail'),
+	    'taxonomies'    => array('category', 'post_tag'),
 	    'has_archive'   => true,
-	    'publicly_queryable'  => false,
-	    'exclude_from_search' => true,
+	    'publicly_queryable'  => true,
+	    'exclude_from_search' => false,
 	    'menu_icon'   => 'dashicons-book',
 	  );
 	  register_post_type( 'object', $args );
 }
 
 function set_custom_types(){
-	//objects_setup_type();
+	objects_setup_type();
 }
 
 add_action( 'init', 'Swiss\PostTypes\set_custom_types' );
