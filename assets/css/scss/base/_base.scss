@@ -1,28 +1,43 @@
 html {
-    box-sizing: border-box;
-    font-size: 8px;
+	box-sizing: border-box;
+	font-size: 8px;
 
-    @include bp(xs) {
-      font-size: 8.5px;
-    }
+	@include bp(xs) {
+		font-size: 8.5px;
+	}
 
-    @include bp(sm) {
-        font-size: 9px;
-    }
+	@include bp(sm) {
+		font-size: 9px;
+	}
 
-    @include bp(md) {
-        font-size: 9.5px;
-        overflow-y: scroll;
-    }
+	@include bp(md) {
+		font-size: 9.5px;
+		overflow-y: scroll;
+	}
 
-    @include bp(lg) {
-        font-size: 10px;
-    }
+	@include bp(lg) {
+		font-size: 10px;
+	}
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
-  outline:none;
+	box-sizing: inherit;
+	outline:none;
+}
+
+body {
+	@include font-size(base);
+
+	background-color: $body-bg;
+	color: $text-color;
+	font-family: $font-family-base;
+	font-weight: $font-weight-base;
+	line-height: $line-height-base;
+
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
 }
 
 html,
@@ -30,28 +45,13 @@ button,
 input,
 select,
 textarea {
-    color: $text-color;
-    font-family: inherit;
-    line-height: inherit;
-}
-
-body {
-  @include font-size(base);
-
-  background-color: $body-bg;
-  color: $text-color;
-  font-family: $font-family-base;
-  font-weight: $font-weight-base;
-  line-height: $line-height-base;
-
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
+	color: $text-color;
+	font-family: inherit;
+	line-height: inherit;
 }
 
 a{
-  cursor:pointer;
+	cursor:pointer;
 }
 
 // ::-moz-selection {
@@ -65,7 +65,7 @@ a{
 // }
 
 img {
-    vertical-align: middle;
-    max-width: 100%;
-    height: auto;
+	vertical-align: middle;
+	max-width: 100%;
+	height: auto;
 }
