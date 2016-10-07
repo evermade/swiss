@@ -1,20 +1,19 @@
 <?php namespace Swiss\Shortcodes;
 
-function button_shortcode_function($atts){
+function button($atts){
 
 	extract(shortcode_atts(array(
       'class' => '',
-      'text' => 'Continue',
+      'text' => 'Submit',
       'url' => '#',
    ), $atts));
 
-	$return = '<a href="'.$url.'" class="btn '.$class.'"><span>'.$text.'</span></a>';
+	return sprintf('<a href="%s" class="btn %s"><span>%s</span></a>', $url, $class, $text);
 
-	return $return;
 }
 
-function register_shortcodes(){
-   add_shortcode('button', 'Swiss\Shortcodes\button_shortcode_function');
+function register(){
+   add_shortcode('button', 'Swiss\Shortcodes\button');
 }
 
-add_action( 'init', '\Swiss\Shortcodes\register_shortcodes');
+add_action( 'init', '\Swiss\Shortcodes\register');

@@ -15,7 +15,7 @@ class Post {
 		$this->post = new \stdClass;
 
 		if(!empty($post) && is_object($post)){
-			$this->setup_post($post)->setup_wp_stuff($setup);
+			$this->set_post($post)->setup_wp_stuff($setup);
 		}
 	}
 
@@ -23,7 +23,7 @@ class Post {
 		return (empty($this->post) || !is_object($this->post))? false : true;
 	}
 
-	public function setup_post($post=null){
+	public function set_post($post=null){
 
 		if(empty($post) || !is_object($post)) return false;
 
@@ -72,7 +72,7 @@ class Post {
 
 		$this->meta = new \stdClass;
 
-		$meta = get_post_meta($this->post->ID, null, false ); 
+		$meta = \get_post_meta($this->post->ID, null, false); 
 		
 		if(!empty($meta)){
 			foreach($meta as $key => $value){
@@ -86,7 +86,7 @@ class Post {
 	}
 
 	public function get_tags(){
-		$this->tags = wp_get_post_tags($this->post->ID);
+		$this->tags = \wp_get_post_tags($this->post->ID);
 		return $this->tags;
 	}
 
@@ -105,7 +105,7 @@ class Post {
 			return $this->feature_image;
 		}
 		
-		$this->feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($this->post->ID), $size)[0];
+		$this->feature_image = \wp_get_attachment_image_src(get_post_thumbnail_id($this->post->ID), $size)[0];
 
 		//if no default image is found, and we want a default, get one
 		if(empty($this->feature_image) && $default){
