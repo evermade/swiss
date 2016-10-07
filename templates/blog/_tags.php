@@ -1,4 +1,4 @@
 <h3>Tags</h3>
 <?php
-echo get_the_tag_list();
+echo get_the_tag_list('<ul><li>','</li><li>','</li></ul>');
 ?>

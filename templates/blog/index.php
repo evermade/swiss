@@ -30,7 +30,6 @@
 						endwhile;
 
 					endif;
-
 				?>
 
 			</div>

@@ -1,15 +1,17 @@
 <?php get_header();
 
-//a simple switch so we can offer different index pages per post type, including custom post types, all defaulting the the blog
-switch (get_post_type()) {
+//check our current post type 
+$type = (empty(get_post_type()) || get_post_type() == 'post')? 'blog' : get_post_type();
 
-	// case 'object':
-	// 	include(get_template_directory().'/templates/object/index.php');
-	// 	break;
+//our post index path within templates
+$path = get_template_directory().'/templates/'.$type.'/index.php';
 
-	default:
-		include(get_template_directory().'/templates/blog/index.php');
-		break;
+//if we have a post type index file, use it, else default to blog
+if(file_exists($path)){
+	include($path);
+}
+else {
+	include(get_template_directory().'/templates/blog/index.php');
 }
 
 get_footer();
