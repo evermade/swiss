@@ -4,7 +4,7 @@
 	<div class="footer__container">
 		<div class="footer__row">
 			<div class="footer__content">
-				<?php wp_nav_menu(array('theme_location' => 'footer-navigation', 'menu_class' => 'nav__list nav__list--bar footer__navigation')); ?>
+				<?php wp_nav_menu(array('theme_location' => 'footer-navigation', 'menu_class' => 'footer__navigation')); ?>
 			</div>
 		</div>
 		<div class="footer__row">

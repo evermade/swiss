@@ -2,7 +2,7 @@
   @include container-fixed;
 
   @if($max == true){
-    width: 100%;
+    width: 90%;
     @media (min-width: $screen-sm-min) {
       max-width: $container-sm-max;
     }
@@ -16,8 +16,8 @@
       max-width: $container-xl-max;
     }
 
-    padding-left:  $container-gutter-width;
-    padding-right: $container-gutter-width;
+    padding-left:0;
+    padding-right:0;
   }
 
 }

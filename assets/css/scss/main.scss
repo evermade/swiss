@@ -39,6 +39,8 @@
  * Mixins
  *
  */
+@import "mixins/animation";
+@import "mixins/keyframes";
 @import "mixins/align";
 @import "mixins/all";
 @import "mixins/bgimg";
@@ -63,6 +65,7 @@
 @import "mixins/typography";
 @import "mixins/wysiwyg-html";
 
+
 /**
  * Functions
  *
@@ -77,10 +80,10 @@
 @import "base/base";
 @import "base/body";
 @import "base/helpers";
-@import "base/page-content";
 @import "base/print";
 @import "base/typography";
 @import "base/scheme";
+@import "base/animations";
 
 /**
  * Layouts
@@ -98,15 +101,12 @@
  * Block contain of layouts and components, and those should styled individually with modifiers
  */
 @import "blocks/block-listing";
-@import "blocks/blog";
 @import "blocks/columns-block";
 @import "blocks/container";
-@import "blocks/example";
 @import "blocks/footer";
 @import "blocks/hero-block";
 @import "blocks/logo-listing";
 @import "blocks/post-hero";
-@import "blocks/single-post";
 @import "blocks/toolbox";
 
 /**
@@ -120,19 +120,13 @@
 @import "components/forms";
 @import "components/full-cover";
 @import "components/gallery-item";
-@import "components/headline";
 @import "components/hero";
-@import "components/icons";
-@import "components/list";
 @import "components/list-item";
 @import "components/list-social";
 @import "components/media-object-item";
-@import "components/nav";
-@import "components/nav-bar";
 @import "components/overlay";
-@import "components/page-numbers";
-@import "components/pagination";
-@import "components/post-small";
+@import "components/page-navigation";
+@import "components/page-content";
 @import "components/section-header";
 @import "components/social-links";
 @import "components/tables";

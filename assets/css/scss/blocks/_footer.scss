@@ -18,4 +18,20 @@
 			float: none;
 		}
 	}
+
+	&__navigation{
+		text-align:center;
+		li{
+			display:inline-block;
+
+			&.current_page_item{
+				font-weight:700;
+			}
+		}
+
+		a{
+			display:block;
+			padding:0.5em;
+		}
+	}
 }
