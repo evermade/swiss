@@ -1,0 +1,12 @@
+@mixin animation($name: pageInRight, $duration: 0.6s, $fill: backwards, $timing: $ease-out-expo, $delay: 0){
+	-webkit-animation-name: $name;
+	        animation-name: $name;
+	-webkit-animation-duration: $duration;
+	        animation-duration: $duration;
+	-webkit-animation-fill-mode: $fill;
+	        animation-fill-mode: $fill;
+	-webkit-animation-timing-function: $timing;
+	        animation-timing-function: $timing;
+	-webkit-animation-delay: $delay;
+	        animation-delay: $delay;
+}
