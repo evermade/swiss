@@ -87,15 +87,27 @@ strong{
 	font-weight:$font-weight-strong-base;
 }
 
+blockquote{
+	padding:0 0 0 2em;
+	border-left:0.5em solid $brand-color;
+	margin:0;
+}
+
 // Unordered and Ordered lists
 ul,
 ol {
-	margin-top: 0;
-	margin-bottom: ($line-height-computed / 2);
+	margin:0;
+	padding:0 0 0 2em;
 	ul,
 	ol {
-		margin-bottom: 0;
+
 	}
+}
+
+hr{
+	height:1px;
+	border:none;
+	background:rgba(125,125,125,0.5);
 }
 
 //links

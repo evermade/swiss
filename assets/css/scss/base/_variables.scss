@@ -25,7 +25,7 @@ $almost-black:	#22182c;
 
 // Link colors to meaningful variables
 $brand-color:		$green;
-$body-bg:			#fff;
+$body-bg:			#f4f4f4;
 $text-color:		$dark-grey;
 $link-color:		$brand-color;
 $link-hover-color: 	darken($link-color, 15%);
@@ -36,10 +36,10 @@ $font-sizes: (
 	xs:		(xs: 12px, sm: 12px, md: 12px, lg: 12px, xl: 12px), // h6
 	sm:		(xs: 14px, sm: 14px, md: 14px, lg: 14px, xl: 14px), // h5
 	md:		(xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px), // h4, usually same as body font-size
-	lg:		(xs: 22px, sm: 22px, md: 22px, lg: 22px, xl: 22px), // h3
-	xl:		(xs: 26px, sm: 26px, md: 26px, lg: 26px, xl: 26px), // h2
-	xxl:	(xs: 28px, sm: 28px, md: 34px, lg: 34px, xl: 34px), // h1
-	xxxl:	(xs: 36px, sm: 36px, md: 46px, lg: 46px, xl: 46px)
+	lg:		(xs: 22px, sm: 22px, md: 22px, lg: 22px, xl: 25px), // h3
+	xl:		(xs: 26px, sm: 26px, md: 26px, lg: 26px, xl: 30px), // h2
+	xxl:	(xs: 28px, sm: 28px, md: 34px, lg: 34px, xl: 40px), // h1
+	xxxl:	(xs: 36px, sm: 36px, md: 46px, lg: 46px, xl: 50px)
 );
 
 $font-size-base: md; // base size based on font-size labels in the sass map
@@ -57,8 +57,8 @@ $line-height-computed:		floor(($font-size-base * $line-height-base)) !default;
 
 // Headings
 $headings-font-family:	inherit;
-$headings-font-weight:	300;
-$headings-line-height:	1.1;
+$headings-font-weight:	900;
+$headings-line-height:	1.2;
 $headings-color:		#000;
 
 
