@@ -64,6 +64,8 @@
 @import "mixins/shadow";
 @import "mixins/typography";
 @import "mixins/wysiwyg-html";
+@import "mixins/animation-sequence";
+
 
 
 /**
@@ -83,7 +85,6 @@
 @import "base/print";
 @import "base/typography";
 @import "base/scheme";
-@import "base/animations";
 
 /**
  * Layouts
@@ -95,11 +96,13 @@
 @import "layouts/grid-no-gutter";
 @import "layouts/masonry";
 @import "layouts/table-div";
+@import "layouts/l-column-sidebar";
 
 /**
  * Blocks
  * Block contain of layouts and components, and those should styled individually with modifiers
  */
+@import "blocks/b-block";
 @import "blocks/block-listing";
 @import "blocks/columns-block";
 @import "blocks/container";
@@ -108,6 +111,8 @@
 @import "blocks/logo-listing";
 @import "blocks/post-hero";
 @import "blocks/toolbox";
+@import "blocks/b-single-hero";
+@import "blocks/b-single-article";
 
 /**
  * Components
@@ -127,8 +132,19 @@
 @import "components/overlay";
 @import "components/page-navigation";
 @import "components/page-content";
+@import "components/page-numbers";
 @import "components/section-header";
 @import "components/social-links";
 @import "components/tables";
 @import "components/wysiwyg-html";
 @import "components/youtube-api-player";
+
+@import "components/c-sidebar";
+@import "components/c-post-large";
+
+/**
+ * Animations
+ * Custom Animations go here.
+ * We can also use _animate-css.scss but if you want to create your own do it here.
+ */
+@import "animations/example";

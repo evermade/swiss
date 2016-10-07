@@ -1,6 +1,6 @@
 <?php include(get_template_directory().'/templates/head.php'); ?>
 	
-<header class="page-navigation page-navigation--fixed">
+<header class="page-navigation page-navigation--relative">
 
 	<div class="page-navigation__container">
 
@@ -15,7 +15,7 @@
 				<!-- Add mobile extra elements here here -->
 			</div>
 		</div>
-
+	
 	</div>
 
 </header><!--end of header -->

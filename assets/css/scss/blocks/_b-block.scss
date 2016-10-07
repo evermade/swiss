@@ -1,0 +1,11 @@
+.b-block{
+	padding:5% 0;
+
+	@include bp(md){
+		padding:8rem 0;
+	}
+
+	&+&{
+		padding-top:0;
+	}
+}

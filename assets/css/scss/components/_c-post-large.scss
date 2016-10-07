@@ -1,0 +1,28 @@
+.c-post-large{
+	padding-top:30%;
+	min-height:200px;
+	position:relative;
+	background:#000;
+
+	&__background{
+		@include full-cover;
+		background-size:cover;
+		background-position:center;
+
+		&:after{
+			@include overlay;
+			content:"";
+		}
+	}
+
+	&__content{
+		position:absolute;
+		bottom:0;
+		left:0;
+		padding:$spacing-md;
+	}
+
+	&+&{
+		margin-top:$spacing-sm;
+	}
+}
