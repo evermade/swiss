@@ -1,0 +1,31 @@
+/*	
+	----------------------------------------
+
+	ANIMATIONS
+	--
+	Add animations here so you can reference them from other SCSS files
+	Uses mixin/_animation.scss
+	Uses mixin/_keyframes.scss
+	
+	----------------------------------------
+
+						anim			animtime	fill		easing			delay
+						--				--			--			--				--
+	@include animation(	pageInRight, 	0.6s, 		backwards, 	$ease-out-expo, 0.3s);
+
+	or
+
+	@include animation(pageInRight);
+*/ 
+
+@include keyframes(pageInRight){
+  0% {
+  	transform:scale3d(0.95,0.95,0.95) translate(110%,0);
+  }
+  70% {
+  	transform:scale3d(0.95,0.95,0.95) translate(0, 0);
+  }
+  100% {
+    transform:translate(0, 0);
+  }
+}
