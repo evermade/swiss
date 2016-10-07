@@ -77,7 +77,6 @@
 @import "base/base";
 @import "base/body";
 @import "base/helpers";
-@import "base/page-content";
 @import "base/print";
 @import "base/typography";
 @import "base/scheme";
@@ -130,6 +129,8 @@
 @import "components/nav";
 @import "components/nav-bar";
 @import "components/overlay";
+@import "components/page-navigation";
+@import "components/page-content";
 @import "components/page-numbers";
 @import "components/pagination";
 @import "components/post-small";
