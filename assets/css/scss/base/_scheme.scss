@@ -25,6 +25,25 @@
 		}
 	}
 
+	&--inverted{
+		h1,h2,h3,h4,h5,h6{
+			color:#fff;
+		}
+	
+		ul,li,p,span{
+			color:#fff;
+		}
+
+		&__bg{
+			background:darken($body-bg,100%);
+		}
+
+		a{
+			color:#fff;
+		}
+
+	}
+
 	/* Add Another scheme here */
 
 }

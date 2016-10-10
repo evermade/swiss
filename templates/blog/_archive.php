@@ -1,4 +1,4 @@
-<h3>Archive</h3>
+<h3 class="h4">Archive</h3>
 <?php
 $args = array(
 	'show_post_count' => true,

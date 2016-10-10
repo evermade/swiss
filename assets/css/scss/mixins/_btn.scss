@@ -38,8 +38,8 @@
     cursor: pointer;
     border: none;
     background: $background;
-    font-weight: $button-weight;
-    text-transform: $button-text-transform;
+    font-weight: $font-weight-base;
+    text-transform: none;
     line-height: $line-height-base;
 
     &:hover, &:active, &:focus {
