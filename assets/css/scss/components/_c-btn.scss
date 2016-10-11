@@ -1,4 +1,4 @@
-body .btn {
+body .c-btn {
     @include transition(all, 0.6s $ease-out-expo);
 
     background:$ui-bg;
@@ -14,14 +14,8 @@ body .btn {
     }
 }
 
-
-
-
-
-
-
 // WILL BE DEPRECATED
-.btn{
+.c-btn{
     &--white {
         @include btn(#fff, #000);
     }

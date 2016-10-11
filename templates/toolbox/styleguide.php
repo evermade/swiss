@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-5">
-				<div class="wysiwyg-html">
+				<div class="c-wysiwyg-html">
 
 					<?php for($i=1; $i<7; $i++): ?>
 						<h1 class="h<?php echo $i;?>">Heading <?php echo $i;?></h1>

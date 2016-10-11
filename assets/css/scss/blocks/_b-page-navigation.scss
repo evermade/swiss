@@ -1,7 +1,7 @@
 $desktopNavBreakpoint: md;
 $mobileNavBreakpoint: sm,max;
 
-.page-navigation{
+.b-page-navigation{
 
 	/* Reset lists */
 
@@ -23,7 +23,7 @@ $mobileNavBreakpoint: sm,max;
 		&--relative,&--fixed{
 			background:$brand-color;
 
-			.page-navigation__container{
+			.b-page-navigation__container{
 				@include container();
 				padding-top:2rem;
 				padding-bottom:2rem;
@@ -35,7 +35,7 @@ $mobileNavBreakpoint: sm,max;
 				}
 			}
 	
-				.page-navigation__logo{
+				.b-page-navigation__logo{
 					font-weight:700;
 					padding:0.5em 0;
 					color:#fff;
@@ -43,7 +43,7 @@ $mobileNavBreakpoint: sm,max;
 					float:left;
 				}
 
-				.page-navigation__pages-wrapper{
+				.b-page-navigation__pages-wrapper{
 					float:right;
 
 					&__mobile{
@@ -51,7 +51,7 @@ $mobileNavBreakpoint: sm,max;
 					}
 				}
 		
-					.page-navigation__pages{
+					.b-page-navigation__pages{
 						margin:0 -1em;
 			
 						li{
@@ -75,7 +75,7 @@ $mobileNavBreakpoint: sm,max;
 						}
 					}
 	
-				.page-navigation__mobile-toggle{
+				.b-page-navigation__mobile-toggle{
 		
 				}
 
@@ -111,17 +111,17 @@ $mobileNavBreakpoint: sm,max;
 			width:100%;
 			z-index:100;
 
-			&.page-navigation--scroll-hidden{
+			&.b-page-navigation--scroll-hidden{
 				transform:translate(0,-100%);
 				-webkit-transform:translate(0,-100%);
 
-				.page-navigation--open &{
+				.b-page-navigation--open &{
 					transform:none;
 					-webkit-transform:none;
 				}
 			}
 
-			.page-navigation__logo{
+			.b-page-navigation__logo{
 				top:$mobileNavHeight/2;
 				left:$mobileSidePadding;
 				color:#fff;
@@ -133,7 +133,7 @@ $mobileNavBreakpoint: sm,max;
 				-webkit-transform:translate(0,-50%);
 			}
 
-			.page-navigation__pages-wrapper{
+			.b-page-navigation__pages-wrapper{
 				background:$brand-color;
 				padding:$mobileNavHeight $mobileSidePadding $mobileSidePadding $mobileSidePadding;
 
@@ -150,12 +150,12 @@ $mobileNavBreakpoint: sm,max;
 					display:block;
 				}
 
-				.page-navigation--open &{
+				.b-page-navigation--open &{
 					display:block;
 				}
 			}
 
-				.page-navigation__pages{
+				.b-page-navigation__pages{
 					li{
 						a{
 							color:#fff;
@@ -167,7 +167,7 @@ $mobileNavBreakpoint: sm,max;
 					}
 				}
 
-			.page-navigation__mobile-toggle{
+			.b-page-navigation__mobile-toggle{
 				right:$mobileSidePadding;
 				top:50%;
 				transform:translate(0,-50%);
@@ -191,7 +191,7 @@ $mobileNavBreakpoint: sm,max;
 						margin-top:0;
 					}
 
-					.page-navigation--open &{
+					.b-page-navigation--open &{
 
 						&:nth-child(1){
 							transform:rotate(45deg);

@@ -1,4 +1,4 @@
-<div class="c-post-large scheme--inverted">
+<div class="c-post-large">
 
 	<div class="c-post-large__background" style="background-image:url(<?php echo $my_post->get_feature_image('hero-large', true); ?>)"></div>
 	

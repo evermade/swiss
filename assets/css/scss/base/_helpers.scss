@@ -129,3 +129,11 @@
     }
 
 }
+
+.wysiwyg-html{
+    @include wysiwyg-html;
+}
+
+.full-cover{
+    @include full-cover;
+}

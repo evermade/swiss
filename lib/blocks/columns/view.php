@@ -1,29 +1,28 @@
-  <section class="columns-block <?php echo $block->getCss('section');?>">
-	
-	<div class="columns-block__container">
-		
-		<?php if (!empty($block->fields['columns_title'])): ?>
-		<header class="section-header section-header--centered">
-	        <?php echo \Swiss\sprint('<h1 class="section-header__title">%s</h1>', $block->fields['columns_title']); ?>
-	    </header>
-		<?php endif; ?>
+<section class="b-section">
+    <div class="b-section__container">
+        <div class="b-section__row">
+            <div class="b-section__content">
+                <div class="b-section__wrapper">
 
-		 <div class="columns" data-count="<?php echo sizeof($block->repeaters['columns_columns']); ?>">
-			<div class="columns__container">
+                <?php if(!empty($block->repeaters['columns_columns'])): foreach(array_chunk($block->repeaters['columns_columns'], $block->data['per_row']) as $set): ?>
 
-				<?php if(is_array($block->repeaters['columns_columns']) && !empty($block->repeaters['columns_columns'])): foreach(array_chunk($block->repeaters['columns_columns'], $block->data['per_row']) as $set): ?>
-					<div class="columns__row columns__row--align-<?php echo $block->get('columns_vertical_alignment', 'fields');?>">
+					<div class="l-columns" data-column-count="<?php echo sizeof($set); ?>">
+
 						<?php foreach($set as $p): 	?>				
-						<div class="columns__item">
-							<div class="el"><?php echo $p['column']; ?></div>
-						</div>						
+						<div class="l-columns__item">
+                            <div class="c-wysiwyg-html">
+							     <?php echo $p['column']; ?>
+                            </div>
+						</div>					
+
 						<?php endforeach; ?>
-					</div><!-- end of row -->
+
+					</div><!-- end of l-columns layout -->
+
 				<?php endforeach; endif; ?>
 
-			</div><!-- end of wrapper -->
-		</div><!-- end of columns -->
-
-	</div>
-
- </section><!-- end of columns-block -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

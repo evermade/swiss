@@ -83,64 +83,34 @@
 @import "base/body";
 @import "base/helpers";
 @import "base/print";
-@import "base/typography";
 @import "base/scheme";
+@import "base/typography";
 
 /**
  * Layouts
  * A bunch of layouts
  */
-@import "layouts/columns";
-@import "layouts/grid";
-@import "layouts/grid-fixed";
-@import "layouts/grid-no-gutter";
-@import "layouts/masonry";
-@import "layouts/table-div";
-@import "layouts/l-column-sidebar";
+@import "layouts/l-columns";
 
 /**
  * Blocks
  * Block contain of layouts and components, and those should styled individually with modifiers
  */
-@import "blocks/b-block";
-@import "blocks/block-listing";
-@import "blocks/columns-block";
-@import "blocks/container";
-@import "blocks/footer";
-@import "blocks/hero-block";
-@import "blocks/logo-listing";
-@import "blocks/post-hero";
-@import "blocks/toolbox";
-@import "blocks/b-single-hero";
-@import "blocks/b-single-article";
+@import "blocks/b-footer";
+@import "blocks/b-page-content";
+@import "blocks/b-page-navigation";
+@import "blocks/b-section";
+@import "blocks/b-toolbox";
 
 /**
  * Components
  * Include the components core which can/would be amended to that project
  */
-@import "components/alerts";
-@import "components/breadcrumbs";
-@import "components/btn";
-@import "components/chromeframe";
-@import "components/forms";
-@import "components/full-cover";
-@import "components/gallery-item";
-@import "components/hero";
-@import "components/list-item";
-@import "components/list-social";
-@import "components/media-object-item";
-@import "components/overlay";
-@import "components/page-navigation";
-@import "components/page-content";
-@import "components/page-numbers";
-@import "components/section-header";
-@import "components/social-links";
-@import "components/tables";
-@import "components/wysiwyg-html";
-@import "components/youtube-api-player";
-
-@import "components/c-sidebar";
-@import "components/c-post-large";
+@import "components/c-btn";
+@import "components/c-chromeframe";
+@import "components/c-page-numbers";
+@import "components/c-table";
+@import "components/c-wysiwyg-html";
 
 /**
  * Animations
