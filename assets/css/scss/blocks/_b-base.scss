@@ -1,6 +1,7 @@
-.b-section {
+.b-base {
     // generic section/block styles (paddings, ect..)
     @include section;
+    position: relative;
 
     // different container sizes
     &__container {
@@ -48,11 +49,11 @@
 
         &--padded {
             box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.04);
-            padding: rem(50) rem(15) rem(80) rem(15);
+            padding: 2rem;
             background-color: #fff;
 
             @include bp(md) {
-                padding: rem(50) 7.5% rem(80) 7.5%;
+                padding: 5rem;
             }
         }
     }

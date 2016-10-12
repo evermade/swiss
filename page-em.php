@@ -70,6 +70,9 @@ switch ($_GET['t']) {
 	case 'viewer':
 		include(get_template_directory().'/templates/toolbox/viewer.php');
 		break;
+	case 'static':
+		include(get_template_directory().'/templates/toolbox/static.php');
+		break;
 	default:
 		include(get_template_directory().'/templates/toolbox/index.php');
 		break;

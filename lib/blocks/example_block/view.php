@@ -1,8 +1,8 @@
-<section class="b-section">
-    <div class="b-section__container">
-        <div class="b-section__row">
-            <div class="b-section__content">
-                <div class="b-section__wrapper">
+<section class="b-base">
+    <div class="b-base__container">
+        <div class="b-base__row">
+            <div class="b-base__content">
+                <div class="b-base__wrapper">
                     <div class="l-columns" data-column-count="1">
                         <div class="l-columns__item">
                             <div class="c-wysiwyg-html">

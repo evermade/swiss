@@ -3,24 +3,20 @@
         <div class="b-base__row">
             <div class="b-base__content">
                 <div class="b-base__wrapper">
+                
+					<div class="l-columns" data-column-count="3">
 
-                <?php if(!empty($block->repeaters['columns_columns'])): foreach(array_chunk($block->repeaters['columns_columns'], $block->data['per_row']) as $set): ?>
-
-					<div class="l-columns" data-column-count="<?php echo sizeof($set); ?>">
-
-						<?php foreach($set as $p): 	?>				
+						<?php for ($i=0; $i < 3; $i++): ?>
 						<div class="l-columns__item">
                             <div class="c-wysiwyg-html">
-							     <?php echo $p['column']; ?>
+							    <h2>Hello Columns</h2>
+								<p>This is a paragraph of text. Some of the text may be <em>emphasised</em> and some it might even be <strong>strongly emphasised</strong>. Occasionally <q>quoted text</q> may be found within a paragraph.</p>
                             </div>
-						</div>					
-
-						<?php endforeach; ?>
-
+						</div>
+						<?php endfor; ?>
+						
 					</div><!-- end of l-columns layout -->
-
-				<?php endforeach; endif; ?>
-
+				
                 </div>
             </div>
         </div>

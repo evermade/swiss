@@ -2,26 +2,15 @@
 // //lets keep block data in class for encapsulation and stopping conflicts across blocks
 $block = new \Swiss\Block;
 
-$block->data['fields'] = array('hero_title', 'hero_subtitle');
-
-//set and get the acf fields for this block
-$block->get_fields(array('hero_type'));
-
 //set and get the repeater columns for this block
 $block->get_repeater_field(['hero_slides']);
 
 if(is_array($block->repeaters['hero_slides'])){ ?>
 
-<section class="hero-block hero-block--<?php echo $block->fields['hero_type'];?>">
-	<div class="hero-block__slides slick--hero">
+<section class="">
+	<div class="">
 
 	<?php foreach($block->repeaters['hero_slides'] as $k => $hero){
-
-		//generate tmp file name from hero type
-		$block->data['tmp'] = get_template_directory().'/lib/blocks/hero/templates/'.$block->fields['hero_type'].'.php';
-
-		//lets check if template exists and include it
-		if(file_exists($block->data['tmp'])){
 
 			//lets do some common tasks such as background images, default image?
 			$hero_background = 'style=""';
@@ -30,11 +19,8 @@ if(is_array($block->repeaters['hero_slides'])){ ?>
 				$hero_background = 'style="background-image: url('.$hero['slide_background']['sizes']['large'].');"';
 			}
 
-			include($block->data['tmp']);
-		}
-		else {
-			continue;
-		}
+			include(__DIR__.'/view.php');
+			
 	} ?>
 
 	</div><!-- end of wrapper -->

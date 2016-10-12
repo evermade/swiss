@@ -8,37 +8,18 @@
     padding: 0;
 }
 
-
 .clearfix {
     @include clearfix;
 }
 
-
-.center {
-
-    &--all {
-        @include align(all);
-    }
-
-    &--vertical {
-        @include align(vertical);
-    }
-
-    &--horizontal {
-        @include align(horizontal);
-    }
-
-    &--content {
-        @include align(content);
-    }
-
+.h-vertical-align {
+    display: flex;
+    align-items: center;
 }
-
 
 .equal-height{
     @include equal-height();
 }
-
 
 .clickable {
   position: relative;
@@ -49,11 +30,6 @@
     @include overlay(transparent, 0);
   }
 
-}
-
-.background-image {
-    @include full-cover;
-    @include bgimg;
 }
 
 /*------

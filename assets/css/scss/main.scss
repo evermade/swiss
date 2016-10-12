@@ -96,19 +96,24 @@
  * Blocks
  * Block contain of layouts and components, and those should styled individually with modifiers
  */
+@import "blocks/b-base";
 @import "blocks/b-footer";
+@import "blocks/b-hero";
 @import "blocks/b-page-content";
 @import "blocks/b-page-navigation";
-@import "blocks/b-section";
 @import "blocks/b-toolbox";
 
 /**
  * Components
  * Include the components core which can/would be amended to that project
  */
+@import "components/c-background-image";
 @import "components/c-btn";
 @import "components/c-chromeframe";
+@import "components/c-hero";
+@import "components/c-overlay";
 @import "components/c-page-numbers";
+@import "components/c-post-small";
 @import "components/c-table";
 @import "components/c-wysiwyg-html";
 

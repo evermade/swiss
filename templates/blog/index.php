@@ -1,10 +1,10 @@
 <?php global $wp_query; ?>
 
- <section class="b-section">
-    <div class="b-section__container">
-        <div class="b-section__row">
-            <div class="b-section__content">
-                <div class="b-section__wrapper">
+ <section class="b-base">
+    <div class="b-base__container">
+        <div class="b-base__row">
+            <div class="b-base__content">
+                <div class="b-base__wrapper">
 
 					<div class="row">
 						<div class="col-xs-12 col-sm-4 col-sm-push-8">
@@ -25,13 +25,15 @@
 					
 										$my_post = new \Swiss\Post($post);
 					
-										include(get_template_directory().'/templates/blog/c-post-large.php');
+										include(get_template_directory().'/templates/blog/post-small.php');
 					
 									endwhile;
+
+									else: ?>
+									
+									<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 					
-								endif;
-					
-								?>
+								<?php endif; ?>
 					
 							<?php echo paginate_links(['type'=>'list', 'prev_next'=>false]); ?>	
 
