@@ -10,7 +10,7 @@
         &--full {
             @include container(full);
 
-            @media (min-width: $screen-lg-min) {
+            @media (min-width: $screen-xl-min) {
               max-width: 100%;
             }
 

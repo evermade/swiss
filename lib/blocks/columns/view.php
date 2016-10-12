@@ -10,7 +10,7 @@
 
 						<?php foreach($set as $p): 	?>				
 						<div class="l-columns__item">
-                            <div class="c-wysiwyg-html">
+                            <div class="wysiwyg-html">
 							     <?php echo $p['column']; ?>
                             </div>
 						</div>					

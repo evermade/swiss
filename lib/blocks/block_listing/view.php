@@ -8,7 +8,7 @@
 
 						<?php if(!empty($block->repeaters['block_listing_items'])): foreach($block->repeaters['block_listing_items'] as $k => $p): 	?>				
 						<div class="l-columns__item">
-							<div class="c-wysiwyg-html">
+							<div class="wysiwyg-html">
 							<?php echo \Swiss\image($p['block_listing_item_image'], 'medium-large', 'img'); ?>
 							<?php echo \Swiss\sprint('<h2 class="">%s</h2>', $p['block_listing_item_title']); ?>
 							<?php echo \Swiss\sprint('<div class="">%s</div>', $p['block_listing_item_text']); ?>

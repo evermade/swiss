@@ -4,17 +4,14 @@
     background-color: $brand-color;
     position: relative;
     color: #fff;
-    padding-top: rem(200);
-    padding-bottom: rem(75);
+    padding: 8rem 0;
 
     @include bp(sm) {
-        padding-top: rem(250);
-        padding-bottom: rem(150);
+        padding: 16rem 0;
     }
 
     @include bp(md) {
-        padding-top: rem(300);
-        padding-bottom: rem(200);
+        padding: 18rem 0;
     }
 
     // different container sizes

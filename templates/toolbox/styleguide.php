@@ -5,13 +5,15 @@
                 <div class="b-base__wrapper">
 					<div class="row">
 						<div class="col-xs-12 col-sm-6">
-							<h1>With .wysiwyg-html</h1><br>
+							<h1>With .wysiwyg-html</h1>
+							<hr><br>
 							<div class="wysiwyg-html">
 								<?php include(get_template_directory().'/templates/_style-guide.php'); ?>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6">
-							<h1>Without .wysiwyg-html</h1><br>
+							<h1>Without .wysiwyg-html</h1>
+							<hr><br>
 							<?php include(get_template_directory().'/templates/_style-guide.php'); ?>
 						</div>
 					</div>
