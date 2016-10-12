@@ -1,0 +1,26 @@
+.l-column-sidebar{
+	&__container{
+		@include container;
+
+		&:after{
+			content:"";
+			clear:both;
+			display:block;
+		}
+	}
+
+	&__content{
+
+		@include bp(md){
+			width:77%;
+			float:left;
+		}
+	}
+
+	&__sidebar{
+		@include bp(md){
+			float:right;
+			width:20%;
+		}
+	}
+}

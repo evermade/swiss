@@ -20,7 +20,7 @@ $mobileNavBreakpoint: sm,max;
 
 	@include bp($desktopNavBreakpoint){
 
-		&--relative,&--absolute,&--fixed{
+		&--relative,&--fixed{
 			background:$brand-color;
 
 			.page-navigation__container{
@@ -81,18 +81,6 @@ $mobileNavBreakpoint: sm,max;
 
 		}
 
-		&--absolute{
-			position:absolute;
-			top:0;
-			left:0;
-			width:100%;
-			z-index:100;
-
-			& + .page-content{
-				padding-top:8rem;
-			}
-		}
-
 		&--fixed{
 			position:fixed;
 			top:0;
@@ -114,7 +102,7 @@ $mobileNavBreakpoint: sm,max;
 	$mobileSidePadding: $container-gutter-width;
 
 	@include bp(sm,max){
-		&--relative,&--absolute,&--fixed{
+		&--relative,&--fixed{
 			@include transition(all, 0.6s $ease-out-expo);
 			height:$mobileNavHeight;
 			background:$brand-color;

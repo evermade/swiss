@@ -46,25 +46,38 @@ $font-size-base: md; // base size based on font-size labels in the sass map
 
 
 // Typography
-$font-family-sans-serif: 	"Roboto", sans-serif;
-$font-family-serif:			Georgia, "Times New Roman", Times, serif;
-$font-family-base: 			$font-family-sans-serif;
+$font-family-base: 			"Roboto", sans-serif;
+
 $font-weight-base: 			400;
 $font-weight-strong-base:	700;
-$line-height-base: 			1.628571429;
+
+$line-height-base: 			1.628571429em;
 $line-height-computed:		floor(($font-size-base * $line-height-base)) !default;
 
 
 // Headings
-$headings-font-family:	inherit;
-$headings-font-weight:	900;
-$headings-line-height:	1.2;
-$headings-color:		#000;
+$headings-font-family:		"Roboto", sans-serif;
+$headings-font-weight:		900;
+
+$headings-line-height:		1.2em;
+$headings-color:			#000;
+
+
+// Effects
+$overlay-bg: 				darken($brand-color,35%); 		//@include overlay;
+$overlay-alpha:				0.7;							//@include overlay;
+$border-radius: 			3px;							//@include border-radius;
+$shadow:					0 1px 4px 0 rgba(0,0,0,0.1);	//@include shadow;
 
 
 // Buttons
-$button-weight:			$font-weight-base;
-$button-text-transform:	none;
+// components/btn, components/page-numbers
+$ui-padding:				0.5em 1em;
+$ui-bg:						#fff;
+$ui-color:					#000;
+$ui-weight:					$font-weight-base;
+$ui-border-radius:			$border-radius;
+$ui-shadow:					$shadow;
 
 
 // Animation Easing
@@ -72,27 +85,9 @@ $ease-out-expo: cubic-bezier(0.190, 1.000, 0.220, 1.000);
 
 
 /**
- * Spacing variables. Currently misnamed as "padding" variables, but these vars
- * are used in other spacing contexts too.
+ * Breakpoints and Container Defaults
  */
-// Spacings
-$padding-xxl: 			150px;
-$padding-xl: 			100px;
-$padding-lg: 			60px;
-$padding-md: 			40px;
-$padding-sm: 			30px;
-$padding-xs: 			20px;
-$padding-xxs: 			10px;
-$padding: 				$padding-md; // Define base spacing, used by Bourbon and others.
-$col-padding: 			15px;
-$body-padding-bp: 		sm;
-$body-padding-sm: 		10px;
-$body-padding: 			10px;
-$header-margin-top: 	110px;
-$header-margin-top-sm: 	75px; //height of the header
-
-
-//lets setup a new xl breakpoint
+// Breakpoints
 $screen-xl: 	1600px;
 $screen-xl-min:	$screen-xl;
 $screen-lg-max:	$screen-xl-min - 1;
@@ -114,8 +109,29 @@ $container-xl-max: 1241px;
 $container-gutter-width: 5%; // divide by 2 as how bootstrap works
 
 
-// Effects
-$border-radius: 3px;
+/**
+ * Spacing variables. Currently misnamed as "padding" variables, but these vars
+ * are used in other spacing contexts too.
+ */
+$spacing-sm:				1.5rem;	// Example: component between padding
+$spacing-md:				3rem;	// Example: component inner padding
+$spacing-lg:				6rem;	// Example: bigger component inner padding
+
+// PADDINGS WILL BE DEPRECATED
+$padding-xxl: 				150px;
+$padding-xl: 				100px;
+$padding-lg: 				60px;
+$padding-md: 				40px;
+$padding-sm: 				30px;
+$padding-xs: 				20px;
+$padding-xxs: 				10px;
+$padding: 					$padding-md; // Define base spacing, used by Bourbon and others.
+$col-padding: 				15px;
+$body-padding-bp: 			sm;
+$body-padding-sm: 			10px;
+$body-padding: 				10px;
+$header-margin-top: 		110px;
+$header-margin-top-sm: 		75px; //height of the header
 
 
 //	For table div
