@@ -6,10 +6,18 @@
     // different container sizes
     &__container {
         @include container;
-    }
 
-    &__container-full {
-        @include container(full);
+        &--full {
+            @include container(full);
+
+            @media (min-width: $screen-lg-min) {
+              max-width: 100%;
+            }
+
+            @media (min-width: $screen-xl-min) {
+              max-width: 100%;
+            }
+        }
     }
 
     // just a row :)

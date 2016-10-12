@@ -2,7 +2,6 @@
   @include container-fixed;
 
   @if($max == true){
-    width: 90%;
     @media (min-width: $screen-sm-min) {
       max-width: $container-sm-max;
     }
@@ -16,8 +15,6 @@
       max-width: $container-xl-max;
     }
 
-    padding-left:0;
-    padding-right:0;
   }
 
 }

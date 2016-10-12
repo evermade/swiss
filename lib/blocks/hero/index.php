@@ -5,10 +5,9 @@ $block = new \Swiss\Block;
 //set and get the repeater columns for this block
 $block->get_repeater_field(['hero_slides']);
 
-if(is_array($block->repeaters['hero_slides'])){ ?>
+if(!empty($block->repeaters['hero_slides'])){ ?>
 
-<section class="">
-	<div class="">
+<section class="b-hero-slideshow">
 
 	<?php foreach($block->repeaters['hero_slides'] as $k => $hero){
 
@@ -23,7 +22,6 @@ if(is_array($block->repeaters['hero_slides'])){ ?>
 			
 	} ?>
 
-	</div><!-- end of wrapper -->
-</section><!-- end of section -->
+</section><!-- end of b-hero-slideshow -->
 
 <?php }

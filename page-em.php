@@ -32,6 +32,8 @@ $folders = array('components', 'layouts', 'blocks');
 					<p><a href="<?php echo add_query_arg('t', 'mixins'); ?>">Mixins</a></p>
 					<p><a href="<?php echo add_query_arg('t', 'animations'); ?>">Animations</a></p>
 					<p><a href="<?php echo add_query_arg('t', 'playground'); ?>">Playground</a></p>
+					<p><a href="<?php echo add_query_arg('t', 'static'); ?>">Demo</a></p>
+					<p><a href="<?php echo add_query_arg('t', 'snippets'); ?>">Snippets</a></p>
 				</div>
 
 				<?php foreach($folders as $folder):
@@ -72,6 +74,9 @@ switch ($_GET['t']) {
 		break;
 	case 'static':
 		include(get_template_directory().'/templates/toolbox/static.php');
+		break;
+	case 'snippets':
+		include(get_template_directory().'/templates/toolbox/snippets.php');
 		break;
 	default:
 		include(get_template_directory().'/templates/toolbox/index.php');
