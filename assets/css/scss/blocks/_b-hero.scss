@@ -1,10 +1,11 @@
 .b-hero {
     @include section;
-    
+
     background-color: $brand-color;
     position: relative;
     color: #fff;
     padding: 8rem 0;
+    width:100%;
 
     @include bp(sm) {
         padding: 16rem 0;
