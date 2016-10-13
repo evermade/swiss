@@ -1,4 +1,4 @@
-/*	
+/*
 	----------------------------------------
 
 	VARIABLES
@@ -8,7 +8,7 @@
 	Once these are done check these:
 		- base/typography.scss
 		- base/scheme.scss
-	
+
 	----------------------------------------
 */
 
@@ -26,7 +26,6 @@ $almost-black:	#22182c;
 // Link colors to meaningful variables
 $brand-color:		$green;
 $body-bg:			#f4f4f4;
-$text-color:		$dark-grey;
 $link-color:		$brand-color;
 $link-hover-color: 	darken($link-color, 15%);
 
@@ -47,7 +46,7 @@ $font-size-base: md; // base size based on font-size labels in the sass map
 
 // Typography
 $font-family-base: 			"Roboto", sans-serif;
-
+$text-color:				$dark-grey;
 $font-weight-base: 			400;
 $font-weight-strong-base:	700;
 
@@ -57,10 +56,10 @@ $line-height-computed:		floor(($font-size-base * $line-height-base)) !default;
 
 // Headings
 $headings-font-family:		"Roboto", sans-serif;
+$headings-color:			#000;
 $headings-font-weight:		900;
 
 $headings-line-height:		1.2em;
-$headings-color:			#000;
 
 
 // Effects
@@ -94,8 +93,9 @@ $screen-lg-max:	$screen-xl-min - 1;
 
 
 // Container Defaults
-$container-max-width:		1170px;
-$container-full-max-width:	2600px;
+$container-max-width:		1270px;
+$container-width:			90%;
+$container-gutter-width: 	5%; // divide by 2 as how bootstrap works
 
 
 // Container Breakpoint sizes
@@ -103,10 +103,6 @@ $container-sm-max: 100%;
 $container-md-max: 100%;
 $container-lg-max: 1170px;
 $container-xl-max: 1241px;
-
-
-// Container gutter width
-$container-gutter-width: 5%; // divide by 2 as how bootstrap works
 
 
 /**
