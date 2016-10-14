@@ -1,5 +1,5 @@
 <section class="b-base">
- <div class="c-background-image" style="background-image:url(http://s3.amazonaws.com/linkkerbus/wp-content/uploads/2016/09/18083431/WP_20160917_14_30_28_Pro.jpg);"></div>
+ <div class="c-background-image" style="background-image:url(<?php echo \Swiss\default_img('hero-large'); ?>);"></div>
 
     <div class="c-overlay"></div>
     <div class="b-base__container">
