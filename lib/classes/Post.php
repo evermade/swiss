@@ -109,7 +109,7 @@ class Post {
 
 		//if no default image is found, and we want a default, get one
 		if(empty($this->feature_image) && $default){
-			$this->feature_image = \Swiss\default_img($size, '');
+			$this->feature_image = \Swiss\default_img($size, 'img');
 		}
 
 		return $this->feature_image;

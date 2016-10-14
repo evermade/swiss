@@ -8,9 +8,9 @@
 						
 						<?php for ($i=0; $i < 3; $i++): ?>
 						<div class="l-columns__item">
-							<div class="wysiwyg-html">
+							<div class="wysiwyg-html text-center">
 
-								<img src="http://paul.em87.io/wp-content/uploads/2016/10/a2bcd155-5047-372b-91ce-b02f467dd6da-650x433.jpg" alt="a2bcd155-5047-372b-91ce-b02f467dd6da-650x433.jpg">
+								<img src="<?php echo \Swiss\default_img('medium'); ?>" alt="image">
 
 								<h2>Blocking listing item</h2>
 
