@@ -14,7 +14,6 @@
  * All of our custom vendor code.
  */
 
-@import "vendor/animate-css";
 @import "vendor/bootstrap";
 @import "vendor/flickity";
 
@@ -120,7 +119,17 @@
 
 /**
  * Animations
- * Custom Animations go here.
- * We can also use _animate-css.scss but if you want to create your own do it here.
+ * New animations should go under /animations/
  */
-@import "animations/example";
+@import "animations/animated";
+
+@import "animations/zoomIn";
+@import "animations/fadeIn";
+@import "animations/fadeInUp";
+@import "animations/fadeInLeft";
+@import "animations/fadeInRight";
+@import "animations/fadeInUp";
+@import "animations/fadeInDown";
+@import "animations/flipInX";
+@import "animations/flipInY";
+@import "animations/shake";

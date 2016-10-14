@@ -8,12 +8,12 @@
 
 					<div class="l-columns" data-column-count="<?php echo sizeof($set); ?>">
 
-						<?php foreach($set as $p): 	?>				
+						<?php foreach($set as $p): 	?>
 						<div class="l-columns__item">
                             <div class="wysiwyg-html">
 							     <?php echo $p['column']; ?>
                             </div>
-						</div>					
+						</div>
 
 						<?php endforeach; ?>
 
