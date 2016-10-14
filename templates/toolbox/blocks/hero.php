@@ -6,7 +6,7 @@
 
     <div class="b-hero__container">
         <div class="b-hero__row">
-            <div class="b-hero__content" data-column-size="6">
+            <div class="b-hero__content" data-column-size="8">
                 <div class="b-hero__wrapper">
                     
                      <div class="row h-vertical-align">
@@ -14,7 +14,7 @@
 
                             <div class="wysiwyg-html">
                                 <h1>A hero block</h1>
-                                <h2>Using normal Bootstrap for layout</h2>
+                                <p>Using Bootstrap for layout</p>
                                 <p><a href="#" class="c-btn">A button</a></p>
                             </div>
                         </div>

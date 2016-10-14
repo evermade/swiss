@@ -17,7 +17,7 @@
     align-items: center;
 }
 
-.equal-height{
+.h-equal-height{
     @include equal-height();
 }
 
@@ -30,6 +30,14 @@
     @include overlay(transparent, 0);
   }
 
+}
+
+.wysiwyg-html{
+    @include wysiwyg-html;
+}
+
+.full-cover{
+    @include full-cover;
 }
 
 /*------
@@ -104,12 +112,4 @@
         margin: $padding-xxs;
     }
 
-}
-
-.wysiwyg-html{
-    @include wysiwyg-html;
-}
-
-.full-cover{
-    @include full-cover;
 }
