@@ -21,7 +21,7 @@
 
 ## Usage
 
-* If .b-base doesnt meet your needs then copy /assets/css/scss/blocks/_b-base-example.scss as your new block, modify and enjoy.
+* If .b-base doesnt meet your needs then copy /assets/css/scss/blocks/_b-example.scss as your new block, modify and enjoy.
 * .b-base__wrapper you should put layouts with components, or simply just components here. For example in the demo below we have a bootstrap row and columns giving us a layout, with some components within.
 * Easy way to get started is to empty the contents .b-base__wrapper and insert your elements weather its a grid with components, or simply a component.
 * If unsure about any of this please ask someone for help.
