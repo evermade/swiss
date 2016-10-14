@@ -3,8 +3,8 @@
 	em.pagenavigation = {};
 
 	em.pagenavigation.init = function(){
-		$(".js-page-navigation__mobile-toggle").on("click", function(){
-			$("body").toggleClass("page-navigation--open");
+		$(".js-b-page-navigation__mobile-toggle").on("click", function(){
+			$("body").toggleClass("b-page-navigation--open");
 			return false;
 		});
 
@@ -13,11 +13,11 @@
 		if($(window).width() < 992){
 			$(window).scroll(function(){
 				if(windowLastScrollPosition > $(window).scrollTop()){
-					$('.page-navigation').removeClass("page-navigation--scroll-hidden");
-				} else if($(window).scrollTop() > $('.page-navigation').height()){
-					$('.page-navigation').addClass("page-navigation--scroll-hidden");
+					$('.b-page-navigation').removeClass("page-navigation--scroll-hidden");
+				} else if($(window).scrollTop() > $('.b-page-navigation').height()){
+					$('.b-page-navigation').addClass("page-navigation--scroll-hidden");
 				} else {
-					$('.page-navigation').removeClass("page-navigation--scroll-hidden");
+					$('.b-page-navigation').removeClass("page-navigation--scroll-hidden");
 				}
 
 				windowLastScrollPosition = $(window).scrollTop();

@@ -1,33 +1,31 @@
-<!--
-Description: A basic block listing example. 
-Tags: block listing, block
-Preview: true
--->
+<section class="b-base">
+    <div class="b-base__container">
+        <div class="b-base__row">
+            <div class="b-base__content">
+                <div class="b-base__wrapper">
 
-<section class="block-listing">
-	<div class="block-listing__container">
+					<div class="l-columns" data-column-count="3">
+						
+						<?php for ($i=0; $i < 3; $i++): ?>
+						<div class="l-columns__item">
+							<div class="wysiwyg-html text-center">
 
-		<header class="section-header section-header--centered">
-			<h1 class="section-header__title">A block listing</h1>
-		</header>
+								<img src="<?php echo \Swiss\default_img('medium'); ?>" alt="image">
 
-		<div class="block-listing__row" data-count="3">
-			
-			<?php for($i=0; $i<3; $i++): ?>
-				
-			<div class="block-listing__item">
-				<img src="http://fakeimg.pl/650x350/eeeeee/666/?text=img" alt="fakeimg-4-651x296.png" class="block-listing__item__image">
-				<h2 class="block-listing__item__title">This is an item title</h2>
-				<div class="block-listing__item__content">
-					<p>This is a paragraph of text. Some of the text may be <em>emphasised</em> and some it might even be <strong>strongly emphasised</strong>.</p>
-				</div>
-				<p><a href="#" class="btn">This is a button</a></p>
-			</div><!-- end of block-listing item -->
+								<h2>Blocking listing item</h2>
 
-			<?php endfor; ?> 
+								<p>This is simply the base block (b-base) with the columns layout within. Within our columns we only using normal DOM elements, and/or our components.</p>
 
-		</div>
-		
-	</div><!-- end of block-listing row -->
-	
-</section><!-- end of block-listing container -->
+								<p><a href="#" class="c-btn">A Button</a></p>
+
+							</div>
+						</div>
+						<?php endfor; ?>
+						
+					</div><!-- end of l-columns layout -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

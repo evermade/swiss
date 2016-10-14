@@ -42,23 +42,23 @@ function get_image_sizes($size = '') {
         return $sizes;
 }
 
-function default_img($size='thumbnail', $text='img', $type='default'){
+function default_img($size='thumbnail', $text='img'){
 
 	$sizes = \Swiss\get_image_sizes();
 
 	if(isset($sizes[$size])){
-		return sprintf('https://unsplash.it/%sx%s?image='.DEFAULT_IMG_ID, $sizes[$size]['width'], $sizes[$size]['height']);
+		return sprintf('http://fakeimg.pl/%sx%s/666/fff/?text=%s', $sizes[$size]['width'], $sizes[$size]['height'], $text);
 	}
 
-	return 'https://unsplash.it/850/850?image='.DEFAULT_IMG_ID;
+	return sprintf('http://fakeimg.pl/%sx%s/666/fff/?text=%s', 850, 850, $text);
 }
 
 function feature_image_url($post, $size='medium-large'){
 
-	$img = wp_get_attachment_image_src(get_post_thumbnail_id($post), $size)[0];
+	$img = \wp_get_attachment_image_src(get_post_thumbnail_id($post), $size)[0];
 
 	if(empty($img)){
-		$img = \Swiss\default_img($size,'');
+		$img = \Swiss\default_img($size, 'img');
 	}
 
 	return $img;

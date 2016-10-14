@@ -1,4 +1,4 @@
-/*	
+/*
 	----------------------------------------
 
 	ANIMATIONS
@@ -8,7 +8,7 @@
 	Uses mixin/_keyframes.scss
 
 	Remember to add your newly made animation to _main.scss
-	
+
 	----------------------------------------
 
 						anim		animtime	fill		easing			delay
@@ -22,16 +22,20 @@
 	or
 
 	@include animation( fadeInLeft ); // from animate-css.scss
-*/ 
+*/
 
 @include keyframes(example){
-  0% {
-  	transform:scale3d(0.95,0.95,0.95) translate(110%,0);
-  }
-  70% {
-  	transform:scale3d(0.95,0.95,0.95) translate(0, 0);
-  }
-  100% {
-    transform:translate(0, 0);
-  }
+
+    0% {
+        transform: scale3d(0.95,0.95,0.95) translate(110%,0);
+    }
+
+    70% {
+        transform: scale3d(0.95,0.95,0.95) translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+
 }
