@@ -11,4 +11,3 @@ include(get_template_directory().'/templates/toolbox/blocks/example-with-sidebar
 include(get_template_directory().'/templates/toolbox/blocks/example.php');
 include(get_template_directory().'/templates/toolbox/blocks/example-padded-image.php');
 include(get_template_directory().'/templates/toolbox/blocks/example-padded.php');
-include(get_template_directory().'/templates/toolbox/blocks/example-equal-height.php');
