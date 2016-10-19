@@ -11,26 +11,31 @@
 
 	----------------------------------------
 
-						anim		animtime	fill		easing			delay
-						--			--			--			--				--
-	@include animation(	example, 	0.6s, 		backwards, 	$ease-out-expo, 0.3s);
+						anim		    animtime	fill		easing			delay
+						--			    --			--			--				--
+	@include animation(	exampleAnim, 	0.6s, 		backwards, 	$ease-out-expo, 0.3s);
 
-	or
+    ----------------------------------------
 
-	@include animation( example );
+	Examples:
+    @include animation(	exampleAnim, 0.6s, backwards, $ease-out-expo, 0.3s);
+	@include animation( exampleAnim );
+    <div data-animate="animated exampleAnim"></div>
+    <div class="exampleAnim"></div>
 
-	or
-
-	@include animation( fadeInLeft ); // from animate-css.scss
 */
 
-@include keyframes(example){
+.exampleAnim {
+    @include animation( exampleAnim );
+}
+
+@include keyframes( exampleAnim ) {
 
     0% {
-        transform: scale3d(0.95,0.95,0.95) translate(110%,0);
+        transform: scale3d(0.95,0.95,0.95) translate(100%,0);
     }
 
-    70% {
+    50% {
         transform: scale3d(0.95,0.95,0.95) translate(0, 0);
     }
 
