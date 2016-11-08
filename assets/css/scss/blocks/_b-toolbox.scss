@@ -1,0 +1,221 @@
+$toolboxBarClosedWidth: 45px;
+$toolboxBarWidth: 400px;
+
+//lets setup some special styling for when toolbox is opened
+.js-toolbox-open {
+
+	//move the .body element the width of the navbar
+	.body, .main-header .nav-bar {
+		padding-left: $toolboxBarWidth;
+	}
+
+	.toolbox {
+		padding-left: 0 !important;
+	}
+
+	.toolbox__navbar {
+		height: 100%;
+		height: calc(100% - 10px);
+		width: $toolboxBarWidth;
+		overflow-y: auto;
+
+		.toolbox__navbar__nav-container {
+			padding-left: 15px;
+		}
+
+		.toolbox__navbar__boxs-container {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.toolbox {
+
+	// background: #eee;
+
+	padding: 0 !important;
+
+	&__navbar {
+		position: fixed;
+		top: 5px;
+		left: 0;
+		height: $toolboxBarClosedWidth;
+		width: $toolboxBarClosedWidth;
+		z-index: 900;
+		background: $almost-black;
+		color: #fff;
+		transition: all 0.25s $ease-out-expo;
+
+		h2 {
+			color: #fff;
+			@include font-size(lg);
+			text-transform: capitalize;
+			padding-bottom: 2rem;
+			margin: 3rem 0;
+			border-bottom: 1px solid #eee;
+		}
+
+		&__nav-container {
+			@include container();
+			margin-top: rem(10);
+			cursor: pointer;
+		}
+
+		&__boxs-container {
+			@include container();
+			margin-bottom: rem(30);
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		// &__box {
+		// 	max-height: 200px;
+		// 	overflow-y: auto;
+		// }
+	}
+
+	&__btn {
+		display: none;
+        @include btn(#fff, $brand-color);
+
+        border: solid 1px $brand-color;
+	}
+
+	.container {
+		@include container();
+	}
+
+
+	&__item {
+
+		margin: 20rem auto;
+		@extend .clearfix;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&__item__header {
+		@include clearfix();
+		margin: 2rem 0;
+	}
+
+	&__item__title {
+		float: left;
+		letter-spacing: -1px;
+		color: $almost-black;
+	}
+
+	&__item__meta {
+		margin-bottom: 5rem;
+		background: #eee;
+		@include padding(xs, all);
+	}
+
+	&__item__code {
+
+		&.js-show {
+			display: block;
+		}
+
+		.prettyprint {
+			max-height: 500px;
+			overflow: auto;
+		}
+	}
+
+	&__item__preview {
+		position: relative;
+		min-height: 300px;
+		// padding: 4rem;
+  //   	background-color: #fff;
+	}
+
+	&__item__tools {
+		text-align: right;
+		float: right;
+
+		.btn {
+			@include btn(#eee, $grey);
+
+			padding: 0.8rem 2rem;
+
+			&:hover {
+				background: $grey;
+				color: #fff;
+			}
+		}
+	}
+
+	&__animations {
+		position: relative;
+		overflow: hidden;
+
+		&__title {
+			h2 {
+				margin-bottom: 1rem;
+			}
+
+			ul {
+				margin-bottom: 2.5rem;
+			}
+		}
+
+		&__table {
+
+			th {
+				width: 50%;
+				vertical-align: top;
+				border-color: #f0f0f0;
+				padding-top: 2rem;
+				text-transform: uppercase;
+			}
+
+			td {
+				width: 50%;
+				padding: 0;
+			}
+		}
+
+		&__item {
+			width: 45%;
+			height: 100px;
+			float: left;
+			border: solid 1px #f0f0f0;
+			box-shadow: 0 5px 25px 0 rgba(0,0,0,0.075);
+			background-color: #fff;
+			color: $grey;
+			margin: 0 5% 5% 0;
+			text-align: center;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&__refresh {
+			font-size: 2.4rem;
+			background-color: $almost-black;
+			width: 60px;
+			height: 60px;
+			line-height: 60px;
+			color: #fff;
+			text-align: center;
+			position: fixed;
+			top: 50%;
+			margin-top: -30px;
+			right: 0;
+			border-top-left-radius: 60px;
+			border-bottom-left-radius: 60px;
+			cursor: pointer;
+			transition: all 0.25s $ease-out-expo;
+
+			&:hover {
+				width: 80px;
+				text-indent: -10px;
+			}
+		}
+	}
+}

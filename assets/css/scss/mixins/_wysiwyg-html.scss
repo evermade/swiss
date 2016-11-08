@@ -5,92 +5,115 @@
  */
 @mixin wysiwyg-html(){
 
-  h1, h2, h3, h4, h5, h6 {
-      margin: 1em 0 0.3em 0;
-      color: $headings-color;
-      margin-bottom: rem($padding);
-  }
+	position: relative;
 
-  ul, ol {
-    li {
-      margin: 0 0 5px 0;
-    }
-  }
+	h1, h2, h3, h4, h5, h6 {
+		margin: 1.4em 0 0.4em 0;
 
-  p {
-  	margin-bottom: rem($padding);
+		&:first-child{
+			margin-top:0;
+		}
+	}
 
-  	&:last-child{
-  		margin-bottom:0;
-  	}
-  }
+	ul, ol {
+		margin-bottom:1em;
 
-  dl,dd,blockquote,ul,ol{
-  	margin-bottom: rem($padding);
+		ul, ol{
+			margin-bottom:0;
+		}
 
-  	&+ol,&+ul{
-  		margin-bottom:0;
-  	}
-  }
+		li {
 
-  /* Editor image styles */
-  img {
-    height:auto; // overwrite height-attribute set by WP
-  }
+		}
+	}
 
-  // images with captions
-  .wp-caption {
-    max-width: 100%;
-    img {
-      margin-bottom: 0.3em;
-    }
-  }
-  p.wp-caption-text {
-    @include font-size(xs);
-    opacity: 0.6;
-    margin: 0;
-  }
+	p {
+		margin-bottom: 1.5em;
 
-  .alignnone {
-    width: 100%;
-    display:block;
-    margin-bottom: rem($padding);
+		&:last-child{
+			margin-bottom:0;
+		}
+	}
 
-    img {
-      width: 100%;
-    }
-  }
+	hr{
+		margin-bottom:1.5em;
+	}
 
-  .aligncenter {
-    text-align:center;
-    margin-left:auto;
-    margin-right:auto;
-    display:block;
-    margin-bottom: rem($padding);
-  }
+	dl,dd,blockquote{
+		margin-bottom: 1em;
 
-  .alignleft,
-  .alignright {
-    max-width: 48%;
-    margin-bottom: rem($padding-xs);
-  }
-  .alignleft {
-    float: left;
-    margin-right: 2%;
-  }
-  .alignright {
-    float: right;
-    margin-left: 2%;
-  }
+		&+ol,&+ul{
+			margin-bottom:0;
+		}
+	}
+
+	/* Editor image styles */
+	img {
+		height:auto; // overwrite height-attribute set by WP
+	}
+
+	pre{
+		padding:1rem 2rem;
+		border:1px solid rgba(0,0,0,0.1);
+		display:block;
+		border-radius:$border-radius;
+		font-size:0.9em;
+		margin:0 0 1em;
+	}
+
+	// images with captions
+	.wp-caption {
+		max-width: 100%;
+		img {
+			margin-bottom: 0.3em;
+		}
+	}
+	p.wp-caption-text {
+		@include font-size(xs);
+		opacity: 0.6;
+		margin: 0;
+	}
+
+	.alignnone {
+		width: 100%;
+		display:block;
+		margin-bottom: rem($padding);
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.aligncenter {
+		text-align:center;
+		margin-left:auto;
+		margin-right:auto;
+		display:block;
+		margin-bottom: rem($padding);
+	}
+
+	.alignleft,
+	.alignright {
+		max-width: 48%;
+		margin-bottom: rem($padding-xs);
+	}
+	.alignleft {
+		float: left;
+		margin-right: 2%;
+	}
+	.alignright {
+		float: right;
+		margin-left: 2%;
+	}
 }
 
 @mixin wysiwyg-html--nowrap(){
-  h1, h2, h3, h4, h5, h6,
-  ul li, ol li,
-  p,
-  {
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-  }
+	h1, h2, h3, h4, h5, h6,
+	ul li, ol li,
+	p,
+	{
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+	}
 }

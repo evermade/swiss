@@ -2,26 +2,28 @@
 
 get_header(); ?>
 
-<div class="hero-block">
+<section class="b-base">
+    <div class="b-base__container">
+        <div class="b-base__row">
+            <div class="b-base__content">
+                <div class="b-base__wrapper">
 
-	<div class="hero-block__slides slick--hero">
+                    <div class="l-columns" data-column-count="2">
+                        <div class="l-columns__item">
 
-		<div class="hero-block__slide">
+                            <div class="c-wysiwyg-html">
+                                <h2>Whoops a daisy</h2>
+								<p>This page could not be found&hellip;</p>
+								<a href="<?php echo home_url(); ?>" class="btn btn--white">Go to Home</a>
+                            </div>
 
-			<div class="hero hero--cover">
+                        </div>
+                    </div>
 
-				<div class="hero__content">
-					<h2>Whoops a daisy</h2>
-					<p>This page could not be found&hellip;</p>
-					<a href="<?php echo home_url(); ?>" class="btn btn--white">Go to Home</a>
-				</div>
-
-			</div><!-- end of hero component -->
-
-		</div><!-- end of hero block slide -->
-
-	</div><!-- end of hero block slides -->
-
-</div><!-- end of hero block -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php get_footer();

@@ -19,8 +19,8 @@ function my_awesome_posts() {
 
             setup_postdata($post);
             
-            $wp_post = new \Swiss\Post($post); 
-            array_push($json, $wp_post);
+            $my_post = new \Swiss\Post($post); 
+            array_push($json, $my_post);
         }
     }
 

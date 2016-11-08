@@ -1,3 +1,19 @@
+<!--
+
+	≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+	 _________    _____ 
+	|_________|  |  ___|                                   _
+	 _________   | |_  __   _____ _ __ _ __ ___   __ _  __| | ___ 
+	|_________|  |  _| \ \ / / _ \ '__| '_ ` _ \ / _` |/ _` |/ _ \
+	 _________   | |___ \ V /  __/ |  | | | | | | (_| | (_| |  __/
+	|_________|  |_____| \_/ \___|_|  |_| |_| |_|\__,_|\__,_|\___|
+
+	              ≡ Evermade.fi - Design & Development
+
+	≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+
+
+-->
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -31,9 +47,9 @@
 <body <?php body_class(); ?>>
 
   <!--[if lt IE 8]>
-    <div class="chromeframe">
+    <div class="c-chromeframe">
       You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.    </div>
   <![endif]-->
 
-<div class="body" data-animate="animated fadeIn">
+<div class="body">
 	<span id="top"></span>

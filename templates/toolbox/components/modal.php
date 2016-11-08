@@ -1,4 +1,4 @@
-<a data-remodal-target="modal-some-unique-id">Open modal</a>
+<a data-remodal-target="modal-some-unique-id" class="c-btn">Open modal</a>
 
 <div class="remodal" data-remodal-id="modal-some-unique-id">
 	

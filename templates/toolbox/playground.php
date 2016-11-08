@@ -26,10 +26,6 @@
 		<?php if(isset($_GET['file'])): ?>
 		<div class="row">
 			<div class="col-xs-12">
-			<header class="section-header">
-				<h1 class="section-header__title"><?php echo basename($file);?></h1>
-			</header>
-
 				<?php
 				$template = get_template_directory().'/templates/toolbox/playground/'.$_GET['file'];
 				if(file_exists($template)) include($template);

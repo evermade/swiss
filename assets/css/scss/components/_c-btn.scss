@@ -1,0 +1,42 @@
+body .c-btn {
+    @include transition(all, 0.6s $ease-out-expo);
+
+    background:$ui-bg;
+    color:$ui-color;
+    padding:$ui-padding;
+    display:inline-block;
+    border-radius:$ui-border-radius;
+    box-shadow:$ui-shadow;
+    font-weight:$ui-weight;
+
+    &:hover{
+        background:darken($ui-bg,5%);
+    }
+}
+
+// WILL BE DEPRECATED
+.c-btn{
+    &--white {
+        @include btn(#fff, #000);
+    }
+
+    p+&{
+        margin-top:0.5em;
+    }
+
+    &--copy {
+        @include btn($icon:"\f0c5");
+    }
+
+    &--play {
+        @include btn($icon:"\f144", $icon-bg:$brand-color, $icon-side:right);
+    }
+
+    &--loading {
+        @include btn($icon:"\f021");
+        &:before {
+            animation: fa-spin 2s infinite linear;
+        }
+    }
+
+}

@@ -1,0 +1,46 @@
+/*
+	----------------------------------------
+
+	ANIMATIONS
+	--
+	Add animations here so you can reference them from other SCSS files
+	Uses mixin/_animation.scss
+	Uses mixin/_keyframes.scss
+
+	Remember to add your newly made animation to _main.scss
+
+	----------------------------------------
+
+						anim		    animtime	fill		easing			delay
+						--			    --			--			--				--
+	@include animation(	flipInX, 	    0.6s, 		backwards, 	$ease-out-expo, 0.3s);
+
+    ----------------------------------------
+
+	Examples:
+    @include animation(	flipInX, 0.6s, backwards, $ease-out-expo, 0.3s);
+	@include animation( flipInX );
+    <div data-animate="animated flipInX"></div>
+    <div class="flipInX"></div>
+
+*/
+
+.flipInX {
+    backface-visibility: visible !important;
+    transform-origin: top;
+    @include animation( flipInX );
+}
+
+@include keyframes( flipInX ) {
+
+    0% {
+        transform: perspective(1000px) rotate3d(1, 0, 0, -80deg);
+        transition-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    100% {
+        transform: perspective(1000px);
+    }
+
+}

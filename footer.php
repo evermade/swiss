@@ -1,14 +1,14 @@
 	</div><!-- end of .page-content -->
 
-<footer class="footer">
-	<div class="footer__container">
-		<div class="footer__row">
-			<div class="footer__content">
-				<?php wp_nav_menu(array('theme_location' => 'footer-navigation', 'menu_class' => 'nav__list nav__list--bar footer__navigation')); ?>
+<footer class="b-footer">
+	<div class="b-footer__container">
+		<div class="b-footer__row">
+			<div class="b-footer__content">
+				<?php wp_nav_menu(array('theme_location' => 'footer-navigation', 'menu_class' => 'b-footer__navigation')); ?>
 			</div>
 		</div>
-		<div class="footer__row">
-			<div class="footer__content">
+		<div class="b-footer__row">
+			<div class="b-footer__content">
 				<p>&copy; Copyright <?php echo date('Y');?>&nbsp;•&nbsp;<?php bloginfo('name'); ?>&nbsp;•&nbsp;All rights reserved</p>
 			</div>
 		</div>
