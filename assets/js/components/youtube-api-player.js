@@ -3,10 +3,10 @@
 Fast way to put youtube-videos into blocks/layouts
 
 Simple usage example:
- <div class="youtube-api-player" data-video-id="wPaTfMyEbVg"></div>
+ <div class="c-youtube-api-player" data-video-id="wPaTfMyEbVg"></div>
 
 Example with parameters:
- <div class="youtube-api-player" data-video-id="wPaTfMyEbVg" data-autoplay="1" data-loop="1" data-sound="0"></div>
+ <div class="c-youtube-api-player" data-video-id="wPaTfMyEbVg" data-autoplay="1" data-loop="1" data-sound="0" data-cover="1"></div>
 
 */
 
@@ -50,7 +50,7 @@ Example with parameters:
 	 */
 	window.onYouTubeIframeAPIReady = function() {
 
-		$('.youtube-api-player').each(function(){
+		$('.c-youtube-api-player').each(function(){
 			var el = $(this);
 
 			if (!em.youtubeAPIPlayer.canAutoplay()) {
@@ -265,4 +265,3 @@ Example with parameters:
 	};
 
 })();
-
