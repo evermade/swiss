@@ -1,0 +1,4 @@
+.c-background-image {
+	@include full-cover();
+	@include bgimg;
+}

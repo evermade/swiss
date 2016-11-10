@@ -1,4 +1,6 @@
 @mixin section(){
   @include padding(lg, top);
   @include padding(lg, bottom);
+
+  position: relative;
 }

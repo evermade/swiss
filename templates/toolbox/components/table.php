@@ -4,7 +4,7 @@ Tags: table, cell
 Preview: true
 -->
 
-<table>
+<table class="c-table">
   <thead>
     <tr>
       <th>Table Header</th>

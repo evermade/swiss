@@ -1,0 +1,49 @@
+/*	
+	----------------------------------------
+
+	SCHEMES
+	--
+	Create schemes that can be used to manipulate components and blocks.
+	Try to define colors in components and blocks as little as possible.
+	
+	----------------------------------------
+*/
+
+.scheme{
+
+	&--default{
+		h1,h2,h3,h4,h5,h6{
+			color:$headings-color;
+		}
+	
+		ul,li,p,span{
+			color:$font-family-sans-serif;
+		}
+
+		&__bg{
+			background:$body-bg;
+		}
+	}
+
+	&--inverted{
+		h1,h2,h3,h4,h5,h6{
+			color:#fff;
+		}
+	
+		ul,li,p,span{
+			color:#fff;
+		}
+
+		&__bg{
+			background:darken($body-bg,100%);
+		}
+
+		a{
+			color:#fff;
+		}
+
+	}
+
+	/* Add Another scheme here */
+
+}

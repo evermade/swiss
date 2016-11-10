@@ -42,13 +42,24 @@ foreach($folders as $folder => $templates):
 					<div class="col-xs-12 toolbox__item__code hidden">
 						<pre class="prettyprint"><?php echo htmlentities($contents); ?></pre>
 					</div>
-					<div class="col-xs-12 toolbox__item__preview">
-						<?php include($template); ?>
-					</div>
 				</div>
 			</div>
-		</section>
 
+		<?php if($folder == 'blocks'): ?>
+			<?php include($template); ?>
+		<?php else: ?>
+			<section class="section">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 toolbox__item__preview">
+							<?php include($template); ?>
+						</div>
+					</div><!-- end of row -->
+				</div><!-- end of wrapper -->
+			</section><!-- end of section --> 
+		<?php endif; ?>
+
+		</section>
 
 <?php endforeach;
 

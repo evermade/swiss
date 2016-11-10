@@ -1,18 +1,32 @@
-<!--
-Description: A basic example of a block. Simply multiselect the word example with the name of your block.
-Tags: block listing, block
-Preview: true
--->
+ <section class="b-base">
+    <div class="b-base__container">
+        <div class="b-base__row">
+            <div class="b-base__content">
+                <div class="b-base__wrapper">
 
-<section class="example">
-	<div class="example__container">
+                    <div class="l-columns" data-column-count="2">
+                        <div class="l-columns__item">
 
-		<header class="section-header section-header--centered">
-			<h1 class="section-header__title">An Example Block</h1>
-		</header>
+                            <div class="c-wysiwyg-html">
+                                <h2>An b-base example</h2>
+                            	<p>This is a paragraph of text. Some of the text may be <em>emphasised</em> and some it might even be <strong>strongly emphasised</strong>.</p>
+                                <p><a href="#" class="c-btn">A button</a></p>
+                            </div>
 
-		<p>This is a paragraph of text. Some of the text may be <em>emphasised</em> and some it might even be <strong>strongly emphasised</strong>. Occasionally <q>quoted text</q> may be found within a paragraph &hellip;and of course <a href="#">a link</a> may appear at any point in the text. The average paragraph contains five or six sentences although some may contain as little or one or two while others carry on for anything up to ten sentences and beyond.</p>
+                        </div>
+                        <div class="l-columns__item">
+                        	<div class="c-wysiwyg-html">
 
-	</div><!-- end of example container -->
+                                <h2>A headline</h2>
+                                <p>This is a paragraph of text. Some of the text may be <em>emphasised</em> and some it might even be <strong>strongly emphasised</strong>.</p>
+                                <p><a href="#" class="c-btn">A button</a></p>
+                            </div>
+                            
+                        </div>
+                    </div>
 
-</section><!-- end of example section -->
+                </div><!-- end of b-base__wrapper -->
+            </div><!-- end of b-base__content -->
+        </div><!-- end of b-base__row -->
+    </div><!-- end of b-base__container -->
+</section><!-- end of b-base -->

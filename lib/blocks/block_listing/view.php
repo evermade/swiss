@@ -1,20 +1,26 @@
-<section class="block-listing">	
-	<div class="block-listing__container">
+<section class="b-base">
+    <div class="b-base__container">
+        <div class="b-base__row">
+            <div class="b-base__content">
+                <div class="b-base__wrapper">
 
-	    <header class="section-header section-header--centered" <?php \Swiss\animate('', ['el-up']); ?>>
-	        <?php echo \Swiss\sprint('<h1 class="section-header__title">%s</h1>', $block->fields['block_listing_title']); ?>
-	    </header>
+					<div class="l-columns" data-column-count="<?php echo sizeof($block->repeaters['block_listing_items']); ?>">
 
-	    <div class="block-listing__row" data-count="<?php echo sizeof($block->repeaters['block_listing_items']); ?>">
-			
-			<?php $counter = 0; foreach($block->repeaters['block_listing_items'] as $k => $p): ?>	
-			<div class="block-listing__item" data-animate="animated bounceIn animateddelay<?php echo $counter;?>">
-	    		<?php echo \Swiss\image($p['block_listing_item_image'], 'medium-large', 'block-listing__item__image'); ?>
-				<?php echo \Swiss\sprint('<h2 class="block-listing__item__title">%s</h2>', $p['block_listing_item_title']); ?>
-				<?php echo \Swiss\sprint('<div class="block-listing__item__content">%s</div>', $p['block_listing_item_text']); ?>
-	    	</div><!-- end of block listing item -->
-			<?php ++$counter; endforeach; ?>
-	    	
-	    </div><!-- end of block listing row -->
-    </div><!-- end of block listing container -->
-</section><!-- end of block listing section-->
+						<?php if(!empty($block->repeaters['block_listing_items'])): foreach($block->repeaters['block_listing_items'] as $k => $p): 	?>				
+						<div class="l-columns__item">
+							<div class="wysiwyg-html">
+							<?php echo \Swiss\image($p['block_listing_item_image'], 'medium-large', 'img'); ?>
+							<?php echo \Swiss\sprint('<h2 class="">%s</h2>', $p['block_listing_item_title']); ?>
+							<?php echo \Swiss\sprint('<div class="">%s</div>', $p['block_listing_item_text']); ?>
+							</div>
+						</div>					
+
+						<?php endforeach; endif; ?>
+
+					</div><!-- end of l-columns layout -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

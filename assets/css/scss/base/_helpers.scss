@@ -8,37 +8,18 @@
     padding: 0;
 }
 
-
 .clearfix {
     @include clearfix;
 }
 
-
-.center {
-
-    &--all {
-        @include align(all);
-    }
-
-    &--vertical {
-        @include align(vertical);
-    }
-
-    &--horizontal {
-        @include align(horizontal);
-    }
-
-    &--content {
-        @include align(content);
-    }
-
+.h-vertical-align {
+    display: flex;
+    align-items: center;
 }
 
-
-.equal-height{
+.h-equal-height{
     @include equal-height();
 }
-
 
 .clickable {
   position: relative;
@@ -51,9 +32,12 @@
 
 }
 
-.background-image {
+.wysiwyg-html{
+    @include wysiwyg-html;
+}
+
+.full-cover{
     @include full-cover;
-    @include bgimg;
 }
 
 /*------

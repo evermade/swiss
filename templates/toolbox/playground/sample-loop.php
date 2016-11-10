@@ -5,35 +5,24 @@ $args = array(
 	'posts_per_page' => -1,
 );
 
-//how many per row when we chunk the output array, like 4 per row for example
-$per_row = 100;
-
 //run the query
 $custom_query = new WP_Query($args);
 
 //lets check if our query returned results
-if($custom_query->have_posts()) : ?>
+if($custom_query->have_posts()):
 
-	<?php 
 		//bring the post var into this scope
         global $post; 
-        
-        //lets chunk our results into rows if needed
-        foreach(array_chunk($custom_query->posts, $per_row) as $set): 
-    ?>
 
-		<?php
-            //lets loop and setup the post data per post object from our query to utilise the WP template tags
-			foreach($set as $post): setup_postdata($post); 
-                
-                //an example of getting the acf fields from this post
-				$my_post = new \Swiss\Post($post);
+        //lets loop and setup the post data per post object from our query to utilise the WP template tags
+		foreach($custom_query->posts as $post): setup_postdata($post); 
+            
+            //an example of getting the acf fields from this post
+			$my_post = new \Swiss\Post($post);
 
-				//include your template, dont use html here directly
-				include(get_template_directory().'/templates/blog/post-small.php');
+			//include your template, dont use html here directly
+			include(get_template_directory().'/templates/blog/post-small.php');
 
-			endforeach; ?>
+		endforeach; wp_reset_postdata(); //this is important to restore the post object back to current post for other things 
 
-	<?php endforeach; wp_reset_postdata(); //this is important to restore the post object back to current post for other things ?>
-
-<?php endif;
+endif;
