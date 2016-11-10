@@ -28,6 +28,8 @@
 	<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
 	<link rel="dns-prefetch" href="//unpkg.com">
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//ajax.googleapis.com">
+	<link rel="dns-prefetch" href="//s3.amazonaws.com">
 
 	<!--[if lt IE 9]>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
