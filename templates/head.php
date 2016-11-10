@@ -1,9 +1,9 @@
 <!--
 
 	≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
-	 _________    _____ 
+	 _________    _____
 	|_________|  |  ___|                                   _
-	 _________   | |_  __   _____ _ __ _ __ ___   __ _  __| | ___ 
+	 _________   | |_  __   _____ _ __ _ __ ___   __ _  __| | ___
 	|_________|  |  _| \ \ / / _ \ '__| '_ ` _ \ / _` |/ _` |/ _ \
 	 _________   | |___ \ V /  __/ |  | | | | | | (_| | (_| |  __/
 	|_________|  |_____| \_/ \___|_|  |_| |_| |_|\__,_|\__,_|\___|
@@ -24,6 +24,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title><?php wp_title(); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+	<link rel="dns-prefetch" href="//unpkg.com">
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 
 	<!--[if lt IE 9]>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
