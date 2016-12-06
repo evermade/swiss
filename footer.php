@@ -1,4 +1,5 @@
-	</div><!-- end of .page-content -->
+	</div><!-- end scheme -->	
+</div><!-- end of .page-content -->
 
 <footer class="b-footer">
 	<div class="b-footer__container">

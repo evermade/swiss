@@ -12,7 +12,7 @@
 
                         <div class="col-xs-12 col-sm-6">
                             
-                            <div class="wysiwyg-html">
+                            <div class="h-wysiwyg-html">
                                 <h2>Vertical Align with Flex</h2>
                                 <p>Here we use a helper class <strong>.h-vertical-align</strong> which uses flexbox so vertically align center the content. Sorry IE 9.</p>
                                 <p>This is a paragraph of text. Some of the text may be <em>emphasised</em> and some it might even be <strong>strongly emphasised</strong>. Occasionally <q>quoted text</q> may be found within a paragraph &hellip;and of course <a href="#">a link</a> may appear at any point in the text.</p>

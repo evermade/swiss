@@ -1,5 +1,23 @@
 <?php namespace Swiss;
 
+/**
+ * a little function to return html from a template, whilst you pass in data as a reference, for example partials
+ * @param  [type] $name  [template name]
+ * @param  [type] &$data [data pass in by reference to template]
+ * @return [type]        [html]
+ */
+function template($name = null, &$data=null){
+
+	if(!file_exists((get_template_directory().'/templates/'.$name))) return null;
+
+	ob_start();
+	include(get_template_directory().'/templates/'.$name);
+	$html = ob_get_contents();
+	ob_end_clean();
+
+	return $html;
+}
+
 function get_image_sizes($size = '') {
 
     global $_wp_additional_image_sizes;
@@ -84,7 +102,7 @@ function get_acf_options($group_fields){
 }
 
 function is_dev(){
-	return (defined('WP_ENV') && WP_ENV=='dev')? true : false;
+	return (getenv('APP_ENV') == 'dev')? true : false;
 }
 
 function js_log($info=''){
@@ -113,7 +131,7 @@ function log($str='', $file='swiss.log'){
 }
 
 function debug($msg=null){
-	if(defined('WP_DEBUG') && WP_DEBUG){
+	if(\Swiss\is_dev()){
 		echo "<pre>"; print_r($msg); echo "</pre>";
 		return true;
 	}

@@ -73,8 +73,8 @@ $shadow:					0 1px 4px 0 rgba(0,0,0,0.1);	// @include shadow;
 // Buttons
 // components/btn, components/page-numbers
 $ui-padding:				0.5em 1em;
-$ui-bg:						#fff;
-$ui-color:					#000;
+$ui-bg:						$brand-color;
+$ui-color:					#fff;
 $ui-weight:					$font-weight-base;
 $ui-border-radius:			$border-radius;
 $ui-shadow:					$shadow;

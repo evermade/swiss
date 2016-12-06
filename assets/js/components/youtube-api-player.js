@@ -50,7 +50,7 @@ Example with parameters:
 	 */
 	window.onYouTubeIframeAPIReady = function() {
 
-		$('.js-youtube-api-player').each(function(){
+		$('.c-youtube-api-player').each(function(){
 			var el = $(this);
 
 			if (!em.youtubeAPIPlayer.canAutoplay()) {

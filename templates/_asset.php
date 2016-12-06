@@ -1,0 +1,1 @@
+<div class="c-asset <?php echo $data['class']; ?>" style="background-image: url(<?php echo $data['image']['url']; ?>); <?php echo $data['style']; ?>"></div>

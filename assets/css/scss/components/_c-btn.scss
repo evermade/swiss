@@ -1,13 +1,16 @@
-body .c-btn {
+.c-btn {
     @include transition(all, 0.6s $ease-out-expo);
 
     background:$ui-bg;
-    color:$ui-color;
     padding:$ui-padding;
     display:inline-block;
     border-radius:$ui-border-radius;
     box-shadow:$ui-shadow;
     font-weight:$ui-weight;
+
+    span, & {
+        color:$ui-color;
+    }
 
     &:hover{
         background:darken($ui-bg,5%);
@@ -17,7 +20,11 @@ body .c-btn {
 // WILL BE DEPRECATED
 .c-btn{
     &--white {
-        @include btn(#fff, #000);
+        background: #fff;
+
+        span, & {
+            color: $brand-color;
+        }
     }
 
     p+&{
