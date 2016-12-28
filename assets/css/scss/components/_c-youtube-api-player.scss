@@ -5,33 +5,17 @@ $youtubeIframeLogoHeight: 46px;
  * Basic styling for the YouTube API Player component.
  */
 .c-youtube-api-player {
-	position: relative;
+	@include full-cover;
+	video {
+		position: absolute; 
+	    right: 0; 
+	    bottom: 0;
+	    min-width: 100%; 
+	    min-height: 100%;
+	    width: auto; 
+	    height: auto; 
+	    background-size: cover;
+	    overflow: hidden;
+	}
 	overflow: hidden;
-	padding-top: 56.25%;
-
-	iframe {
-		@include full-cover;
-	}
-
-	&[data-mask-logo="1"] iframe {
-		top: -$youtubeIframeLogoHeight;
-		bottom: -$youtubeIframeLogoHeight;
-		height: calc(100% + (#{$youtubeIframeLogoHeight*2}));
-	}
-
-
-	// if we want for example 1:1 aspect ratio
-	&--square {
-		padding-top: 100%;
-	}
-
-	&--square[data-mask-logo="1"] iframe {
-		top: 0;
-		bottom: 0;
-		height: 100%;
-		left: -37%;
-		right: auto;
-		width: 178%; // 16/9 ~ 1.78
-	}
-
 }

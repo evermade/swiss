@@ -12,7 +12,7 @@
                      <div class="row h-vertical-align">
                         <div class="col-xs-12 col-sm-6">
 
-                            <div class="wysiwyg-html">
+                            <div class="h-wysiwyg-html">
                                 <h1>A hero block</h1>
                                 <p>Using Bootstrap for layout</p>
                                 <p><a href="#" class="c-btn">A button</a></p>

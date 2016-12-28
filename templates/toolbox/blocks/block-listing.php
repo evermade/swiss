@@ -8,7 +8,7 @@
 						
 						<?php for ($i=0; $i < 3; $i++): ?>
 						<div class="l-columns__item">
-							<div class="wysiwyg-html text-center">
+							<div class="h-wysiwyg-html text-center">
 
 								<img src="<?php echo \Swiss\default_img('medium'); ?>" alt="image">
 

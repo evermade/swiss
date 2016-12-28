@@ -1,4 +1,5 @@
 .c-background-image {
 	@include full-cover();
 	@include bgimg;
+	pointer-events: none;
 }

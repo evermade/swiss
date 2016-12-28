@@ -1,10 +1,9 @@
 <?php
 global $app;
-
-if(empty($app)) return false;
+if(empty($app) || \Swiss\is_dev()) return false;
 
 $analytics = $app->get('opt_google_analytics');
-if(isset($analytics) && is_array($analytics) && !Helper::is_dev()): ?>
+if(isset($analytics) && is_array($analytics)): ?>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -23,6 +22,5 @@ if(isset($analytics) && is_array($analytics) && !Helper::is_dev()): ?>
   	ga('create', '<?php echo $analytic['opt_google_analytics_code'];?>', 'auto');
   	ga('send', 'pageview');	 
   <?php endif; endforeach; ?>
-
 </script>
 <?php endif;
