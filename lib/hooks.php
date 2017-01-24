@@ -1,5 +1,36 @@
 <?php namespace Swiss\Hooks;
 
+function acf_swagger() { ?>
+  <script type="text/javascript">
+  jQuery(function(){
+
+    function collapseAll(el) {
+      el.addClass("-collapsed");
+
+      var schemeFound = el.find('div.acf-field-5846bc36abec7').eq(0);
+
+      if(schemeFound.length == 1){
+
+          el.css({'background': '#eee'});
+
+          if(found > 1){
+            el.css({'margin-top': '40px'});
+          }
+
+          found++;
+      }
+    }
+
+    var found = 0;
+
+    jQuery('.layout').each(function( index) {
+      collapseAll(jQuery(this));
+    });
+
+  });
+  </script>
+<?php }
+
 function remove_wp_logo( $wp_admin_bar ) {
   $wp_admin_bar->remove_node( 'updates' );
   $wp_admin_bar->remove_node( 'comments' );
@@ -49,6 +80,7 @@ function custom_tinymce_plugin( $plugin_array ) {
 
 function register_mce_button( $buttons ) {
   array_push( $buttons, 'custom_mce_em_buttons' );
+  if(\Swiss\is_dev()) array_push( $buttons, 'custom_mce_em_lorem' );
   return $buttons;
 }
 
@@ -106,3 +138,6 @@ add_action('admin_menu','\Swiss\Hooks\hide_wp_update_nag');
 
 //remove wp top bar stuff
 add_action( 'admin_bar_menu', '\Swiss\Hooks\remove_wp_logo', 999 );
+
+//split blocks into schemes and collapse all to help usablity
+add_action('acf/input/admin_head', '\Swiss\Hooks\acf_swagger');

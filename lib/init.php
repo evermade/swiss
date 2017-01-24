@@ -4,7 +4,8 @@
 require_once(get_template_directory().'/lib/config.php');
 
 //functions
-require_once(get_template_directory().'/lib/functions.php');
+require_once(get_template_directory().'/lib/functions/index.php');
+require_once(get_template_directory().'/lib/functions/acf.php');
 
 //classes, maybe use psr auto loading?
 require_once(get_template_directory().'/lib/classes/App.php');

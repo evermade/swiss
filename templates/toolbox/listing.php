@@ -325,7 +325,7 @@ $page_elements = new PageElements();
 				<table class="example-template__table">
 					<tr>
 						<td>
-							<div class="wysiwyg-html">
+							<div class="h-wysiwyg-html">
 								<h1>This is the primary heading and there should only be one of these per page</h1>
 								  <p>A small paragraph to <em>emphasis</em> and show <strong>important</strong> bits.</p>
 								  <ul>

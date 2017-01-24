@@ -21,7 +21,7 @@
 				}
 
 				windowLastScrollPosition = $(window).scrollTop();
-			})
+			});
 		}
 	};
 

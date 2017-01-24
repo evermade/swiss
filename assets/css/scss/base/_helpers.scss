@@ -8,11 +8,18 @@
     padding: 0;
 }
 
-.clearfix {
+.h-clearfix {
     @include clearfix;
 }
 
-.h-vertical-align {
+.h-valign {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.h-valign-flexbox {
     display: flex;
     align-items: center;
 }
@@ -21,7 +28,7 @@
     @include equal-height();
 }
 
-.clickable {
+.h-clickable {
   position: relative;
   cursor: pointer;
   display: block;
@@ -32,15 +39,20 @@
 
 }
 
-.wysiwyg-html{
+.h-wysiwyg-html{
     @include wysiwyg-html;
 }
 
-.full-cover{
+.h-full-cover{
     @include full-cover;
 }
 
 /*------
+
+
+The below all needs revised!!
+
+
 #PADDING
 ------*/
 .padding {

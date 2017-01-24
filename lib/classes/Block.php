@@ -8,7 +8,7 @@ class Block extends BlockHelper{
 	var $fields = array(); //for ACF fields only
 	var $data = array(); //for custom data, public accesible
 	var $repeaters = array(); //for ACF repeater fields
-	protected $css = array();
+	var $css = array(); //for css styles
 
 	public function __construct($data=array()){
 
@@ -43,8 +43,9 @@ class Block extends BlockHelper{
 	 * @param [type] $key   [description]
 	 * @param [type] $value [description]
 	 */
-	public function set($key, $value){
-		return $this->data[$key] = $value;
+	public function set($key, $value, $array = 'data'){
+		if(!isset($this->{$array})) return false;
+		return $this->{$array}[$key] = $value;
 	}
 
 	//
@@ -55,9 +56,7 @@ class Block extends BlockHelper{
 	 * @return [type]        [description]
 	 */
 	public function get($key, $array='fields'){
-		if(!isset($this->{$array}[$key])){
-			return null;
-		}
+		if(!isset($this->{$array}[$key])) return null;
 		return $this->{$array}[$key];
 	}
 
@@ -90,14 +89,6 @@ class Block extends BlockHelper{
 
 class BlockHelper {
 
-	public function is_empty($key=null, $array='fields'){
-		if(isset($this->{$array}[$key]) && !empty($this->{$array}[$key])){
-			return false;
-		}
-
-		return true;
-	}
-
 	/**
 	 * a method to build css classes, inline styles for elements
 	 * @param [type] $css [description]
@@ -112,7 +103,7 @@ class BlockHelper {
 
 		$this->css[$key] .= ' '.$css;
 
-		return $this->css[$key];
+		return true;
 	}
 
 	/**
@@ -121,10 +112,7 @@ class BlockHelper {
 	 * @return [type]      [description]
 	 */
 	public function getCss($key=null){
-		if(!isset($this->css[$key])){
-			return null;
-		}
-		return $this->css[$key];
+		return $this->get($key, 'css');
 	}
 
 	/**
@@ -132,25 +120,14 @@ class BlockHelper {
 	 * @param [type] $field [description]
 	 */
 	public function set_background_image($field, $size='large'){
-		if(is_array($this->fields[$field])){
-			return $this->addCss('background-image:url('.$this->fields[$field]['sizes'][$size].');', $field);
+		if(isset($this->fields[$field]['sizes'][$size])){
+			return $this->set($field, 'background-image:url('.$this->fields[$field]['sizes'][$size].');', 'css');
 		}
 		return false;
 	}
 
-	/**
-	 * a little function to save repetitive if echo statements within the view
-	 * @param  [type] $field [description]
-	 * @param  [type] $html  [description]
-	 * @param  string $array [description]
-	 * @return [type]        [description]
-	 */
-	public function sprint($html='', $field=null, $array='fields'){
-
-		if(isset($this->{$array}[$field]) && !empty($this->{$array}[$field])){
-			return \Swiss\sprint($html, $this->{$array}[$field]);
-		}
-
-		return null;
+	public function get_background_image($field){
+		return $this->get($field, 'css');
 	}
+
 }

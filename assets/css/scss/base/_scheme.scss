@@ -11,7 +11,12 @@
 
 .scheme{
 
+	position: relative;
+
 	&--default{
+		
+		background:$body-bg;
+
 		h1,h2,h3,h4,h5,h6{
 			color:$headings-color;
 		}
@@ -20,22 +25,18 @@
 			color:$font-family-sans-serif;
 		}
 
-		&__bg{
-			background:$body-bg;
-		}
 	}
 
-	&--inverted{
+	&--black{
+		
+		background: #000;
+
 		h1,h2,h3,h4,h5,h6{
 			color:#fff;
 		}
 	
 		ul,li,p,span{
 			color:#fff;
-		}
-
-		&__bg{
-			background:darken($body-bg,100%);
 		}
 
 		a{
