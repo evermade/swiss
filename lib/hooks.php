@@ -85,20 +85,24 @@ function register_mce_button( $buttons ) {
 }
 
 function em_load_theme_textdomain() {
-   load_theme_textdomain('swiss', get_template_directory() . '/languages');
+  load_theme_textdomain('swiss', get_template_directory() . '/languages');
 }
 
 function remove_script_version($src) {
   return $src ? esc_url(remove_query_arg('ver', $src)) : false;
 }
 
+function lower_wpseo_priority( $html ) {
+  return 'low';
+}
+
 //our filters that use the function above
 
 //lets hide the admin bar in the
-add_filter('show_admin_bar', '__return_false'); 
+add_filter('show_admin_bar', '__return_false');
 
 //lets add feature image to posts by default
-add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails' );
 
 //register new buttons in the editor
 add_action('admin_head', '\Swiss\Hooks\custom_mce_em_buttons');
@@ -141,3 +145,6 @@ add_action( 'admin_bar_menu', '\Swiss\Hooks\remove_wp_logo', 999 );
 
 //split blocks into schemes and collapse all to help usablity
 add_action('acf/input/admin_head', '\Swiss\Hooks\acf_swagger');
+
+// Lower the display priority of Yoast SEO meta box
+add_filter( 'wpseo_metabox_prio', '\Swiss\Hooks\lower_wpseo_priority' );
