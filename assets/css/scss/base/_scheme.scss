@@ -1,46 +1,46 @@
-/*	
+/*
 	----------------------------------------
 
 	SCHEMES
 	--
 	Create schemes that can be used to manipulate components and blocks.
 	Try to define colors in components and blocks as little as possible.
-	
+
 	----------------------------------------
 */
 
-.scheme{
+.scheme {
 
 	position: relative;
 
-	&--default{
-		
-		background:$body-bg;
+	&--default {
 
-		h1,h2,h3,h4,h5,h6{
-			color:$headings-color;
+		background: $body-bg;
+
+		h1,h2,h3,h4,h5,h6 {
+			color: $headings-color;
 		}
-	
-		ul,li,p,span{
-			color:$font-family-sans-serif;
+
+		ul,li,p,span {
+			color: $text-color;
 		}
 
 	}
 
-	&--black{
-		
+	&--black {
+
 		background: #000;
 
-		h1,h2,h3,h4,h5,h6{
-			color:#fff;
-		}
-	
-		ul,li,p,span{
-			color:#fff;
+		h1,h2,h3,h4,h5,h6 {
+			color: #fff;
 		}
 
-		a{
-			color:#fff;
+		ul,li,p,span {
+			color: #fff;
+		}
+
+		a {
+			color: #fff;
 		}
 
 	}
