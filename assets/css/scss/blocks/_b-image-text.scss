@@ -1,0 +1,74 @@
+.b-image-text {
+
+    position: relative;
+
+    padding: 0;
+    //margin: 4rem 0;
+
+    @include bp(sm){
+        padding: 6rem 0;
+        //margin: 6rem 0;
+    }
+
+    @include bp(md){
+        padding: 10rem 0;
+    }
+
+    &__image {
+
+        pointer-events: none;
+        height: 40vh;
+        @include bgimg;
+
+        @include bp(sm){
+            @include full-cover();
+
+            left: 0;
+            right:auto;
+            width: 50%;
+            margin-bottom: 0;
+        }
+    }
+
+    &--contain {
+        .b-image-text__image {
+            background-size: contain;
+        }
+    }
+
+    &__text {
+
+        padding: 4rem 15px;
+
+        @include bp(sm){
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 60%;
+        }
+
+    }
+
+    & + & {
+        margin-top: 4rem;
+
+        @include bp(sm){
+            margin-top: 0;
+        }
+    }
+
+
+    &--left{
+
+        .b-image-text__image{
+            right: 0;
+            left: auto;
+        }
+
+        .b-image-text__text{
+            @include bp(sm){
+                padding-left: 0 !important;
+                padding-right: 60%;
+            }
+        }
+    }
+}

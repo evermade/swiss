@@ -1,6 +1,25 @@
 <?php namespace Swiss;
 
 /**
+ * a simple function to help dry out views of checking array indexes and object properties
+ * @param  [type] $key   [description]
+ * @param  array  $array [description]
+ * @return [type]        [description]
+ */
+function get_from($key=null, $array=array()){
+
+	//if we have an object
+	if(is_object($array) && isset($array->{$key})){
+		return $array->{$key};
+	}
+
+	//else we have an array
+	if(is_array($array) && isset($array[$key])) return $array[$key];
+
+	return null;
+}
+
+/**
  * a little function to return html from a template, whilst you pass in data as a reference, for example partials
  * @param  [type] $name  [template name]
  * @param  [type] &$data [data pass in by reference to template]
