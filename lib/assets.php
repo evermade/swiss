@@ -1,6 +1,6 @@
 <?php namespace Swiss\Assets;
 
-function scripts_and_styles() {
+function public_scripts_and_styles() {
 
 	// de-register jquery, since we are manually adding it
 	wp_deregister_script('jquery');
@@ -29,4 +29,10 @@ function scripts_and_styles() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'Swiss\Assets\scripts_and_styles' );
+add_action( 'wp_enqueue_scripts', 'Swiss\Assets\public_scripts_and_styles' );
+
+function admin_scripts_and_styles() {
+    wp_enqueue_script( 'em_acf', get_template_directory_uri().'/assets/admin/js/acf.'.filemtime(get_stylesheet_directory() . '/assets/admin/js/acf.js').'.js', array(), null, true);
+}
+
+add_action( 'admin_enqueue_scripts', 'Swiss\Assets\admin_scripts_and_styles' );

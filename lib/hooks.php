@@ -1,36 +1,5 @@
 <?php namespace Swiss\Hooks;
 
-function acf_swagger() { ?>
-  <script type="text/javascript">
-  jQuery(function(){
-
-    function collapseAll(el) {
-      el.addClass("-collapsed");
-
-      var schemeFound = el.find('div.acf-field-5846bc36abec7').eq(0);
-
-      if(schemeFound.length == 1){
-
-          el.css({'background': '#eee'});
-
-          if(found > 1){
-            el.css({'margin-top': '40px'});
-          }
-
-          found++;
-      }
-    }
-
-    var found = 0;
-
-    jQuery('.layout').each(function( index) {
-      collapseAll(jQuery(this));
-    });
-
-  });
-  </script>
-<?php }
-
 function remove_wp_logo( $wp_admin_bar ) {
   $wp_admin_bar->remove_node( 'updates' );
   $wp_admin_bar->remove_node( 'comments' );
@@ -142,9 +111,6 @@ add_action('admin_menu','\Swiss\Hooks\hide_wp_update_nag');
 
 //remove wp top bar stuff
 add_action( 'admin_bar_menu', '\Swiss\Hooks\remove_wp_logo', 999 );
-
-//split blocks into schemes and collapse all to help usablity
-add_action('acf/input/admin_head', '\Swiss\Hooks\acf_swagger');
 
 // Lower the display priority of Yoast SEO meta box
 add_filter( 'wpseo_metabox_prio', '\Swiss\Hooks\lower_wpseo_priority' );
