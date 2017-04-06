@@ -6,13 +6,9 @@
 
 		<a class="b-page-navigation__logo" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>
 
-		<div class="b-page-navigation__mobile-toggle js-b-page-navigation__mobile-toggle"><div></div><div></div><div></div></div>
+		<div class="c-mobile-toggle"><div></div><div></div><div></div></div>
 
-		<div class="b-page-navigation__pages-wrapper">
-
-			<?php wp_nav_menu(array('menu_class' => 'b-page-navigation__pages', 'theme_location' => 'header-navigation')); ?>
-
-		</div>
+		<?php wp_nav_menu(array('container_class' => 'b-page-navigation__list', 'menu_class' => 'b-page-navigation__list__ul', 'theme_location' => 'header-navigation')); ?>
 
 	</div>
 

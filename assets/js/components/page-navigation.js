@@ -3,8 +3,8 @@
 	em.pagenavigation = {};
 
 	em.pagenavigation.init = function(){
-		$(".js-b-page-navigation__mobile-toggle").on("click", function(){
-			$("body").toggleClass("b-page-navigation--open");
+		$(".c-mobile-toggle").on("click", function(){
+			$("body").toggleClass("js-navigation-open");
 			return false;
 		});
 
