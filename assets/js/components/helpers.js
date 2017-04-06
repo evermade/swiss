@@ -59,7 +59,7 @@
 					 }, 400, function(){
 				   });
 				}, 1000);
-			   
+
 			}
 		}
 	};
@@ -82,7 +82,7 @@
 	};
 
 	em.helper.resizeVideos  = function(){
-		$("iframe").each(function(){ 
+		$("iframe").each(function(){
 			var el = $(this);
 			if(!el.attr("data-original-width")){
 				el.attr("data-original-width", el.attr("width"));
@@ -111,5 +111,25 @@
 		   return false;
 		});
 	};
-	
+
+	em.helper.inViewPort = function(el) {
+		// only accepts native JS element DOM object (not jQuery object) for more efficiency
+
+		/*
+			http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+			- Now most browsers support getBoundingClientRect method, which has become the best practice. Using an old answer is very slow, not accurate and has several bugs.
+			- IE8 supports it fully, IE7 is not perfect, however it works better than the old answer.
+		*/
+
+		// modified from stackoverflow: take into consideration the element's dimensions
+
+		var rect = el.getBoundingClientRect();
+		return (
+			rect.top >= -el.offsetHeight &&
+			rect.left >= -el.offsetWidth &&
+			rect.bottom <= el.offsetHeight+(window.innerHeight || document.documentElement.clientHeight) &&
+			rect.right <= el.offsetWidth+(window.innerWidth || document.documentElement.clientWidth)
+		);
+	};
+
 })();

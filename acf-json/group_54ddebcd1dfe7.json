@@ -318,6 +318,25 @@
                                     "ui": 0,
                                     "ui_on_text": "",
                                     "ui_off_text": ""
+                                },
+                                {
+                                    "key": "field_58e613671057e",
+                                    "label": "Youtube ID",
+                                    "name": "youtube_id",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
                                 }
                             ]
                         }
@@ -453,5 +472,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1491472101
+    "modified": 1491473272
 }

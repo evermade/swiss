@@ -2,6 +2,8 @@
 
     <div class="c-background-image" <?php echo $hero_background; ?>></div>
 
+    <?php echo \Swiss\sprint('<div class="c-youtube-api-player js-youtube-api-player" data-video-id="%s" data-autoplay="1" data-autoplay-viewport="1" data-loop="1" data-sound="0" data-cover="1"></div>', \Swiss\get_from('youtube_id', $hero)); ?>
+
     <?php if(\Swiss\get_from('overlay', $hero)): ?>
     <div class="c-overlay"></div>
     <?php endif; ?>
