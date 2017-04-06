@@ -48,7 +48,7 @@
 	}
 	</script>
 
-	<?php include(get_template_directory().'/templates/ga-tracking.php'); ?>
+	<?php include(get_template_directory().'/templates/tracking.php'); ?>
 </head>
 <body <?php body_class(); ?>>
 

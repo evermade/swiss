@@ -121,7 +121,7 @@ function get_acf_options($group_fields){
 }
 
 function is_dev(){
-	return (getenv('APP_ENV') == 'dev')? true : false;
+	return (getenv('APP_ENV') == 'production')? false : true;
 }
 
 function js_log($info=''){
