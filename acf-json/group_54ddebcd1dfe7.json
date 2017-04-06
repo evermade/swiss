@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_54ddee97933e5",
-            "label": "Page Blocks",
-            "name": "blocks",
+            "label": "Blocks",
+            "name": "page_blocks",
             "type": "flexible_content",
             "instructions": "",
             "required": 0,
@@ -40,7 +40,7 @@
                             },
                             "choices": {
                                 "default": "Default",
-                                "black": "Black"
+                                "dark": "Dark"
                             },
                             "default_value": [
                                 "default"
@@ -109,8 +109,8 @@
                                 "id": ""
                             },
                             "collapsed": "",
-                            "min": "",
-                            "max": "",
+                            "min": 0,
+                            "max": 0,
                             "layout": "table",
                             "button_label": "Add Row",
                             "sub_fields": [
@@ -223,7 +223,8 @@
                                     "default_value": "",
                                     "tabs": "all",
                                     "toolbar": "full",
-                                    "media_upload": 1
+                                    "media_upload": 1,
+                                    "delay": 0
                                 }
                             ]
                         }
@@ -362,7 +363,8 @@
                                     "default_value": "",
                                     "tabs": "all",
                                     "toolbar": "basic",
-                                    "media_upload": 1
+                                    "media_upload": 1,
+                                    "delay": 0
                                 }
                             ]
                         }
@@ -411,7 +413,8 @@
                                     "default_value": "",
                                     "tabs": "all",
                                     "toolbar": "full",
-                                    "media_upload": 1
+                                    "media_upload": 1,
+                                    "delay": 0
                                 },
                                 {
                                     "key": "field_5575793299a2e",
@@ -470,5 +473,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1481031817
+    "modified": 1491469984
 }

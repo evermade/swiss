@@ -18,4 +18,4 @@
 
 </header>
 <div class="b-page-content">
-	<div class="scheme scheme--default">
+	<div class="scheme">

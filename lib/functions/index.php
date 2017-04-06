@@ -36,7 +36,7 @@ function get_image_sizes($size = '') {
 
                 } elseif ( isset( $_wp_additional_image_sizes[ $_size ] ) ) {
 
-                        $sizes[ $_size ] = array( 
+                        $sizes[ $_size ] = array(
                                 'width' => $_wp_additional_image_sizes[ $_size ]['width'],
                                 'height' => $_wp_additional_image_sizes[ $_size ]['height'],
                                 'crop' =>  $_wp_additional_image_sizes[ $_size ]['crop']
@@ -138,18 +138,28 @@ function debug($msg=null){
 	return false;
 }
 
-function post_blocks($name='blocks'){
+/**
+ * get the post blocks by a specific type, by default we get the page type of blocks
+ * this way it allows different block groups to be created and not pollute the main page block space
+ * for example we could have the following post types each with thier own block group (page, story etc)
+ * @param  string $name [description]
+ * @return [type]       [description]
+ */
+function post_blocks($name='page'){
 
 	//lets check is ACF available
-	if (!\Swiss\is_acf_active()) return false;
+	if (!\Swiss\is_acf_active() || empty($name)) return false;
 
 	//loop the blocks fields
-	while(has_sub_field($name)){
-		$template = get_template_directory().'/lib/'.$name.'/'.str_replace(' ', '_', strtolower(get_row_layout())).'/index.php';
+	while(has_sub_field($name.'_blocks')){
+		$template = get_template_directory().'/lib/blocks/'.$name.'/'.str_replace(' ', '_', strtolower(get_row_layout())).'/index.php';
 		if(!file_exists($template)){
 			\Swiss\debug($template ." - Template not found");
 			continue;
 		}
+
+		//to help debugging
+		echo '<!-- ('.basename(dirname($template)).') block -->';
 		include($template);
 	}
 
