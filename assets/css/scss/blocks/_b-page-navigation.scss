@@ -116,6 +116,9 @@
 }
 
 body.js-navigation-open {
+
+	overflow: hidden;
+
 	.b-page-navigation__list {
 		display: block;
 	}
