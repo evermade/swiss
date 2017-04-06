@@ -65,7 +65,7 @@ $headings-line-height:		1.2em;
 // Effects
 $animated-min-width:		1025px;							// animated classes work from this viewport up
 $overlay-bg: 				darken($brand-color,35%); 		// @include overlay;
-$overlay-alpha:				0.7;							// @include overlay;
+$overlay-alpha:				0.5;							// @include overlay;
 $border-radius: 			3px;							// @include border-radius;
 $shadow:					0 1px 4px 0 rgba(0,0,0,0.1);	// @include shadow;
 
