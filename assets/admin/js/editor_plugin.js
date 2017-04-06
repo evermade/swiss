@@ -1,6 +1,9 @@
 (function() {
+    //lets add our custom buttons to the editor
     tinymce.PluginManager.add('custom_mce_em_buttons', function(editor, url) {
-        editor.addButton('custom_mce_em_buttons', {
+
+        //Lets add our button shortcode
+        editor.addButton('custom_mce_em_button', {
             icon: false,
             text: 'Button',
             onclick: function() {
@@ -43,6 +46,7 @@
             }
         });
 
+        //Lets add a lorem generator for primary dev use to spin ourselves some content
         editor.addButton('custom_mce_em_lorem', {
             icon: false,
             text: 'Lorem',
