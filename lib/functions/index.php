@@ -25,12 +25,12 @@ function get_from($key=null, $array=array()){
  * @param  [type] &$data [data pass in by reference to template]
  * @return [type]        [html]
  */
-function template($name = null, &$data=null){
+function template($name = null, $data=null, $dir='templates'){
 
-	if(!file_exists((get_template_directory().'/templates/'.$name))) return null;
+	if(!file_exists((get_template_directory().'/'.$dir.'/'.$name))) return null;
 
 	ob_start();
-	include(get_template_directory().'/templates/'.$name);
+	include(get_template_directory().'/'.$dir.'/'.$name);
 	$html = ob_get_contents();
 	ob_end_clean();
 
