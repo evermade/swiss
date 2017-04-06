@@ -12,11 +12,7 @@
 
   &--padded {
     li {
-      padding: 0 1rem 1rem 0;
-
-      @include bp(sm){
-        padding: 0 1rem 0 0;
-      }
+      padding: 0 1rem 0 0;
     }
   }
 
