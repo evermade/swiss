@@ -6,7 +6,7 @@ function my_awesome_posts() {
 
     $args = array(
         'post_type' => 'post',
-        'posts_per_page' => 250
+        'posts_per_page' => -1
     );
 
     $query = new \WP_Query($args);
@@ -17,10 +17,10 @@ function my_awesome_posts() {
 
         foreach($query->posts as $post){
 
-            setup_postdata($post);
-            
-            $my_post = new \Swiss\Post($post); 
-            array_push($json, $my_post);
+            //setup_postdata($post);
+            //$my_post = new \Swiss\Post($post);
+
+            array_push($json, $post);
         }
     }
 

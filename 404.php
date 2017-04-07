@@ -2,28 +2,30 @@
 
 get_header(); ?>
 
-<section class="b-base">
-    <div class="b-base__container">
-        <div class="b-base__row">
-            <div class="b-base__content">
-                <div class="b-base__wrapper">
+</div>
 
-                    <div class="l-columns" data-column-count="2">
-                        <div class="l-columns__item">
+<div class="scheme scheme--dark">
 
-                            <div class="c-wysiwyg-html">
-                                <h2>Whoops a daisy</h2>
-								<p>This page could not be found&hellip;</p>
-								<a href="<?php echo home_url(); ?>" class="btn btn--white">Go to Home</a>
-                            </div>
+<section class="b-hero">
 
+    <div class="c-background-image"></div>
+
+    <div class="b-hero__container">
+            <div class="b-hero__row">
+                <div class="b-hero__content" data-column-size="8">
+                    <div class="b-hero__wrapper">
+                        <div class="h-wysiwyg-html text-center">
+                            <h1>Whoops a daisy</h1>
+                            <p>This page could not be found&hellip;</p>
+                            <a href="<?php echo home_url(); ?>" class="c-btn">Go to Home</a>
                         </div>
-                    </div>
-
                 </div>
             </div>
         </div>
     </div>
+
 </section>
+
+<div class="scheme">
 
 <?php get_footer();

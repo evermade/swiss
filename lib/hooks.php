@@ -13,7 +13,6 @@ function hide_wp_update_nag() {
 
 function theme_setup_options () {
   \Swiss\activate_plugin('advanced-custom-fields-pro/acf.php');
-  \Swiss\activate_plugin('rest-api/plugin.php');
 }
 
 function register_my_menus() {
