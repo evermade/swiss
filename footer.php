@@ -15,8 +15,7 @@
 
 			<div class="b-footer__navigation__column">
 				<ul class="c-list c-list--horizontal c-list--padded">
-					<li><a href="/">Support</a></li>
-					<li><a href="/">Privacy Policy</a></li>
+					<li><a href="/privacy-policy/">Privacy Policy</a></li>
 				</ul>
 			</div>
 		</div>
