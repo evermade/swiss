@@ -17,7 +17,7 @@ get_header(); ?>
                         <div class="h-wysiwyg-html text-center">
                             <h1>Whoops a daisy</h1>
                             <p>This page could not be found&hellip;</p>
-                            <a href="<?php echo home_url(); ?>" class="c-btn">Go to Home</a>
+                            <a href="<?php echo home_url(); ?>" class="c-btn c-btn--white">Go to Home</a>
                         </div>
                 </div>
             </div>

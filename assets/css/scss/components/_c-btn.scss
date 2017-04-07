@@ -14,36 +14,19 @@
 
     &:hover{
         background:darken($ui-bg,5%);
+        text-decoration: none;
     }
-}
 
-// WILL BE DEPRECATED
-.c-btn{
     &--white {
         background: #fff;
 
         span, & {
             color: $brand-color;
         }
-    }
 
-    p+&{
-        margin-top:0.5em;
-    }
-
-    &--copy {
-        @include btn($icon:"\f0c5");
-    }
-
-    &--play {
-        @include btn($icon:"\f144", $icon-bg:$brand-color, $icon-side:right);
-    }
-
-    &--loading {
-        @include btn($icon:"\f021");
-        &:before {
-            animation: fa-spin 2s infinite linear;
+        &:hover{
+            background:darken(#fff,5%);
+            color: $brand-color;
         }
     }
-
 }
