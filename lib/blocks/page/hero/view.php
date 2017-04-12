@@ -12,7 +12,7 @@
         <div class="b-hero__row">
             <div class="b-hero__content" data-column-size="8">
                 <div class="b-hero__wrapper">
-                    <?php echo \Swiss\sprint('<div class="h-wysiwyg-html">%s</h2>', \Swiss\get_from('text', $hero)); ?>
+                    <?php echo \Swiss\sprint('<div class="h-wysiwyg-html">%s</div>', \Swiss\get_from('text', $hero)); ?>
                 </div><!-- end of b-hero__wrapper -->
             </div><!-- end of b-hero__content -->
         </div><!-- end of b-hero__row -->
