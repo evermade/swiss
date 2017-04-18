@@ -1,3 +1,11 @@
+@mixin margin($size: base, $where: top, $reset: false){
+  @include spacing($size, $where, $reset, margin);
+}
+
+@mixin padding($size: base, $where: top, $reset: false){
+  @include spacing($size, $where, $reset, padding);
+}
+
 //for counteracting body margin for pos absolute header
 @mixin counter-body-margin($plus-negative: 1, $whichPadding: margin){
 

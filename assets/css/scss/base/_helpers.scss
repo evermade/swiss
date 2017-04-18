@@ -1,13 +1,4 @@
 // base helper classes
-.el {
-    position: relative;
-    display: block;
-    float: left;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 .h-clearfix {
     @include clearfix;
 }
@@ -56,34 +47,34 @@ The below all needs revised!!
 #PADDING
 ------*/
 .padding {
-    padding: $padding;
+    padding: $spacing;
 
     &--xxl {
-        padding: $padding-xxl;
+        padding: $spacing-xxl;
     }
 
     &--xl {
-        padding: $padding-xl;
+        padding: $spacing-xl;
     }
 
     &--lg {
-        padding: $padding-lg;
+        padding: $spacing-lg;
     }
 
     &--md {
-        padding: $padding-md;
+        padding: $spacing-md;
     }
 
     &--sm {
-        padding: $padding-sm;
+        padding: $spacing-sm;
     }
 
     &--xs {
-        padding: $padding-xs;
+        padding: $spacing-xs;
     }
 
     &--xxs {
-        padding: $padding-xxs;
+        padding: $spacing-xxs;
     }
 
 }
@@ -94,34 +85,34 @@ The below all needs revised!!
 #MARGIN
 -----*/
 .margin {
-    margin: $padding;
+    margin: $spacing;
 
     &--xxl {
-        margin: $padding-xxl;
+        margin: $spacing-xxl;
     }
 
     &--xl {
-        margin: $padding-xl;
+        margin: $spacing-xl;
     }
 
     &--lg {
-        margin: $padding-lg;
+        margin: $spacing-lg;
     }
 
     &--md {
-        margin: $padding-md;
+        margin: $spacing-md;
     }
 
     &--sm {
-        margin: $padding-sm;
+        margin: $spacing-sm;
     }
 
     &--xs {
-        margin: $padding-xs;
+        margin: $spacing-xs;
     }
 
     &--xxs {
-        margin: $padding-xxs;
+        margin: $spacing-xxs;
     }
 
 }

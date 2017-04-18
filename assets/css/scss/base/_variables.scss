@@ -106,23 +106,17 @@ $container-lg-max:			1170px;
 $container-xl-max:			1241px;
 
 
-/**
- * Spacing variables. Currently misnamed as "padding" variables, but these vars
- * are used in other spacing contexts too.
- */
-$spacing-sm:				1.5rem;	// Example: component between padding
-$spacing-md:				3rem;	// Example: component inner padding
-$spacing-lg:				6rem;	// Example: bigger component inner padding
+// generic spacing sizes
+$spacing-xxl: 				150px;
+$spacing-xl: 				100px;
+$spacing-lg: 				60px;
+$spacing-md: 				40px;
+$spacing-sm: 				30px;
+$spacing-xs: 				20px;
+$spacing-xxs: 				10px;
+$spacing: 					$spacing-md; // Define base spacing, used by Bourbon and others.
 
-// PADDINGS WILL BE DEPRECATED
-$padding-xxl: 				150px;
-$padding-xl: 				100px;
-$padding-lg: 				60px;
-$padding-md: 				40px;
-$padding-sm: 				30px;
-$padding-xs: 				20px;
-$padding-xxs: 				10px;
-$padding: 					$padding-md; // Define base spacing, used by Bourbon and others.
+// misc padding/margin sizes
 $col-padding: 				15px;
 $body-padding-bp: 			sm;
 $body-padding-sm: 			10px;
