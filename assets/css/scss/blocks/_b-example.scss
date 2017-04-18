@@ -15,11 +15,13 @@
 
     // this is what we use to control the width of the inside
     &__content {
-        
+
+        @include make-xs-column(12);
+
         // here we are using the simple bootstrap mixins to give us width
         // @include make-md-column(10);
         // @include make-lg-column(8);
-        
+
         //to center our element with offsets
         // @include make-md-column-push(1);
         // @include make-lg-column-push(2);

@@ -36,7 +36,7 @@
 
         // margins when stacked
         &:not(:last-child) {
-            margin-bottom: rem(75);
+            @include margin(lg, bottom);
 
             @include bp(md) {
                 margin-bottom: 0;

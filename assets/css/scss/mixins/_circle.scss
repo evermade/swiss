@@ -5,4 +5,5 @@
   display: table-cell;
   vertical-align: middle;
   text-align: center;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
 }

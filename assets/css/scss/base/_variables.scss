@@ -131,13 +131,6 @@ $header-margin-top: 		110px;
 $header-margin-top-sm: 		75px; //height of the header
 
 
-//	For table div
-$tableBlockBreak: md;
-
-
-
-
-
 /**
  * Font sizes for <html> element, used as a base for the rem units in different
  * breakpoints. This should not be changed.
@@ -146,9 +139,6 @@ $font-size-rem-sm:			8.5px;
 $font-size-rem-md:			9.5px;
 $font-size-rem-base:		10px;
 
-
-// Bourbon
-$em-base: $font-size-rem-base;
 
 
 /**

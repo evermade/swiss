@@ -4,7 +4,6 @@
  * (Pro tip: prefix your search with '#' to jump directly to titles)
  *
  * Bootstrap........Include Bootstrap pieces separately
- * Bourbon..........Mixin library
  * Custom...........Our code
  */
 
@@ -16,15 +15,7 @@
 
 @import "vendor/bootstrap";
 @import "vendor/flickity";
-
-/**
- * #BOURBON
- *
- * Include the Bourbon mixin library.
- */
-
-@import "../../vendor/bourbon/app/assets/stylesheets/_bourbon.scss";
-
+@import "vendor/remodal";
 
 /**
  * #CUSTOM
@@ -42,9 +33,7 @@
 @import "mixins/animation";
 @import "mixins/keyframes";
 @import "mixins/align";
-@import "mixins/all";
 @import "mixins/bgimg";
-@import "mixins/border-radius";
 @import "mixins/bp";
 @import "mixins/btn";
 @import "mixins/center-block";
@@ -61,7 +50,6 @@
 @import "mixins/padding";
 @import "mixins/paddingmargin";
 @import "mixins/section";
-@import "mixins/shadow";
 @import "mixins/typography";
 @import "mixins/wysiwyg-html";
 @import "mixins/animation-sequence";
@@ -80,7 +68,6 @@
  * include the base helpers, typography etc
  */
 @import "base/base";
-@import "base/body";
 @import "base/helpers";
 @import "base/print";
 @import "base/scheme";

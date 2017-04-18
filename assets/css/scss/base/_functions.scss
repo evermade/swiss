@@ -6,3 +6,15 @@
 @function brand($company) {
 	@return map-get($brand-colors, $company);
 };
+
+@function rem($pixels, $context: $font-size-rem-base) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}

@@ -1,4 +1,0 @@
-@mixin border-radius($radius:$default-radius) {
-  border-radius: $radius;
-  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
-}
