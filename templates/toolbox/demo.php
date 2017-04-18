@@ -2,7 +2,7 @@
 
 <div class="scheme scheme--dark">
 <?php include(get_template_directory().'/templates/toolbox/blocks/hero.php'); ?>
-<?php include(get_template_directory().'/templates/toolbox/blocks/hero-with-components.php'); ?>
+<?php include(get_template_directory().'/templates/toolbox/blocks/example-image-text.php'); ?>
 <?php include(get_template_directory().'/templates/toolbox/blocks/hero-flickity.php'); ?>
 </div>
 
@@ -11,6 +11,7 @@
 <?php include(get_template_directory().'/templates/toolbox/blocks/example-v-align.php'); ?>
 <?php include(get_template_directory().'/templates/toolbox/blocks/example-with-sidebar-padded.php'); ?>
 <?php include(get_template_directory().'/templates/toolbox/blocks/block-listing.php'); ?>
+<?php include(get_template_directory().'/templates/toolbox/blocks/hero-with-components.php'); ?>
 </div>
 
 <div class="scheme scheme--dark">

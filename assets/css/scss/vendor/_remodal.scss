@@ -22,7 +22,7 @@
 /* Default theme styles of the overlay */
 
 .remodal-overlay {
-  background: rgba(43, 46, 56, 0.9);
+  background: rgba($brand-color, 0.9);
 }
 
 .remodal-overlay.remodal-is-opening,

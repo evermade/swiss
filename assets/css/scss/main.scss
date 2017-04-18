@@ -8,14 +8,10 @@
  */
 
 /**
- * #CUSTOM VENDOR
- *
- * All of our custom vendor code.
+ * As Bootstrap is required by our core, for grids etc we need this first
  */
 
 @import "vendor/bootstrap";
-@import "vendor/flickity";
-@import "vendor/remodal";
 
 /**
  * #CUSTOM
@@ -30,9 +26,9 @@
  * Mixins
  *
  */
-@import "mixins/animation";
-@import "mixins/keyframes";
 @import "mixins/align";
+@import "mixins/animation";
+@import "mixins/animation-sequence";
 @import "mixins/bgimg";
 @import "mixins/bp";
 @import "mixins/btn";
@@ -45,16 +41,25 @@
 @import "mixins/font-type";
 @import "mixins/full-cover";
 @import "mixins/helpers";
+@import "mixins/keyframes";
 @import "mixins/margin";
 @import "mixins/overlay";
 @import "mixins/padding";
 @import "mixins/paddingmargin";
+@import "mixins/scheme-html";
 @import "mixins/section";
 @import "mixins/typography";
 @import "mixins/wysiwyg-html";
-@import "mixins/animation-sequence";
 
+/**
+ * #CUSTOM VENDOR
+ *
+ * All of our custom vendor code.
+ */
 
+@import "vendor/bootstrap";
+@import "vendor/flickity";
+@import "vendor/remodal";
 
 /**
  * Functions
@@ -86,27 +91,27 @@
 @import "blocks/b-base";
 @import "blocks/b-footer";
 @import "blocks/b-hero";
+@import "blocks/b-image-text";
 @import "blocks/b-page-content";
 @import "blocks/b-page-navigation";
 @import "blocks/b-toolbox";
-@import "blocks/b-image-text";
 
 /**
  * Components
  * Include the components core which can/would be amended to that project
  */
+@import "components/c-asset";
 @import "components/c-background-image";
 @import "components/c-btn";
 @import "components/c-chromeframe";
 @import "components/c-hero";
+@import "components/c-list";
+@import "components/c-mobile-toggle";
 @import "components/c-overlay";
 @import "components/c-page-numbers";
 @import "components/c-post-small";
 @import "components/c-table";
-@import "components/c-asset";
 @import "components/c-youtube-api-player";
-@import "components/c-list";
-@import "components/c-mobile-toggle";
 
 /**
  * Animations
@@ -114,13 +119,13 @@
  */
 @import "animations/animated";
 
-@import "animations/zoomIn";
 @import "animations/fadeIn";
-@import "animations/fadeInUp";
+@import "animations/fadeInDown";
 @import "animations/fadeInLeft";
 @import "animations/fadeInRight";
 @import "animations/fadeInUp";
-@import "animations/fadeInDown";
+@import "animations/fadeInUp";
 @import "animations/flipInX";
 @import "animations/flipInY";
 @import "animations/shake";
+@import "animations/zoomIn";

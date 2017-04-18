@@ -33,6 +33,8 @@
 			transform:translateY(0%);
 		}
 
+		@include scheme-html-dark();
+
 	}
 
 	&--cover {

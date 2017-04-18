@@ -1,0 +1,29 @@
+/**
+ * the idea here is this merely affects the html markup, leaving background to the scheme block, or proper content
+ */
+@mixin scheme-html-default(){
+
+	h1,h2,h3,h4,h5,h6 {
+		color: $headings-color;
+	}
+
+	ul,li,p,span {
+		color: $text-color;
+	}
+}
+
+@mixin scheme-html-dark(){
+
+	h1,h2,h3,h4,h5,h6 {
+		color: #fff;
+	}
+
+	ul,li,p,span {
+		color: #fff;
+	}
+
+	a:not(.c-btn) {
+		color: #fff;
+	}
+
+}

@@ -8,14 +8,14 @@
         <div class="b-hero__row">
             <div class="b-hero__content" data-column-size="8">
                 <div class="b-hero__wrapper">
-                    
+
                      <div class="row h-vertical-align">
                         <div class="col-xs-12 col-sm-6">
 
                             <div class="h-wysiwyg-html">
                                 <h1>A hero block</h1>
                                 <p>Using Bootstrap for layout</p>
-                                <p><a href="#" class="c-btn">A button</a></p>
+                                <?php include(get_template_directory().'/templates/toolbox/components/modal.php'); ?>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6">
