@@ -26,19 +26,17 @@
  * Mixins
  *
  */
-@import "mixins/align";
+@import "mixins/align-element";
 @import "mixins/animation";
 @import "mixins/animation-sequence";
 @import "mixins/bgimg";
 @import "mixins/bp";
-@import "mixins/btn";
-@import "mixins/center-block";
+@import "mixins/center-align-content";
 @import "mixins/circle";
 @import "mixins/container";
 @import "mixins/equal-height";
 @import "mixins/fa-icon";
 @import "mixins/font-size";
-@import "mixins/font-type";
 @import "mixins/full-cover";
 @import "mixins/helpers";
 @import "mixins/keyframes";
@@ -46,7 +44,6 @@
 @import "mixins/spacing";
 @import "mixins/scheme-html";
 @import "mixins/section";
-@import "mixins/typography";
 @import "mixins/wysiwyg-html";
 
 /**

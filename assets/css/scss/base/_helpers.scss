@@ -3,16 +3,12 @@
     @include clearfix;
 }
 
-.h-valign {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.h-center-align-element {
+    @include align-element(all);
 }
 
-.h-valign-flexbox {
-    display: flex;
-    align-items: center;
+.h-center-align-content {
+    @include center-align-content;
 }
 
 .h-equal-height{
@@ -36,83 +32,4 @@
 
 .h-full-cover{
     @include full-cover;
-}
-
-/*------
-
-
-The below all needs revised!!
-
-
-#PADDING
-------*/
-.padding {
-    padding: $spacing;
-
-    &--xxl {
-        padding: $spacing-xxl;
-    }
-
-    &--xl {
-        padding: $spacing-xl;
-    }
-
-    &--lg {
-        padding: $spacing-lg;
-    }
-
-    &--md {
-        padding: $spacing-md;
-    }
-
-    &--sm {
-        padding: $spacing-sm;
-    }
-
-    &--xs {
-        padding: $spacing-xs;
-    }
-
-    &--xxs {
-        padding: $spacing-xxs;
-    }
-
-}
-
-
-
-/*-----
-#MARGIN
------*/
-.margin {
-    margin: $spacing;
-
-    &--xxl {
-        margin: $spacing-xxl;
-    }
-
-    &--xl {
-        margin: $spacing-xl;
-    }
-
-    &--lg {
-        margin: $spacing-lg;
-    }
-
-    &--md {
-        margin: $spacing-md;
-    }
-
-    &--sm {
-        margin: $spacing-sm;
-    }
-
-    &--xs {
-        margin: $spacing-xs;
-    }
-
-    &--xxs {
-        margin: $spacing-xxs;
-    }
-
 }

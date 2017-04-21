@@ -7,7 +7,7 @@
 
 	&__content {
 
-		@include align(vertical);
+		@include align-element(vertical);
 		@include padding(base, all);
 		width:100%;
 		text-align:center;

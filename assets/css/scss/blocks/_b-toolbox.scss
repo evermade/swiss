@@ -77,7 +77,7 @@ $toolboxBarWidth: 400px;
 
 	&__btn {
 		display: none;
-        @include btn(#fff, $brand-color);
+        //@include btn(#fff, $brand-color);
 
         border: solid 1px $brand-color;
 	}
@@ -138,7 +138,7 @@ $toolboxBarWidth: 400px;
 		float: right;
 
 		.btn {
-			@include btn(#eee, $grey);
+			//@include btn(#eee, $grey);
 
 			padding: 0.8rem 2rem;
 
