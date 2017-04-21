@@ -1,8 +1,6 @@
 <?php
 get_header();
 
-include_once(get_template_directory() . '/lib/classes/PageElements.php');
-
 if(!isset($_GET['t'])){
 	$_GET['t'] = 'index';
 }
@@ -10,76 +8,76 @@ if(!isset($_GET['t'])){
 $folders = array('components', 'layouts', 'blocks');
 
 ?>
+<section class="b-toolbox">
+    <div class="b-toolbox__container">
+        <div class="b-toolbox__row">
+            <div class="b-toolbox__content">
+                <div class="b-toolbox__wrapper">
 
-<section class="toolbox">
-	<div class="toolbox__navbar">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-3">
 
-		<div class="toolbox__navbar__nav-container">
-			<div class="row">
-				<div class="col-xs-4"><i class="fa fa-wrench toolbox__open"></i></div>
-				<div class="col-xs-4 hidden"><i class="fa fa-code"></i></div>
-				<div class="col-xs-4 hidden"><i class="fa fa-pencil"></i></div>
-			</div>
-		</div>
+							<div class="h-wysiwyg-html">
 
-		<div class="toolbox__navbar__boxs-container">
-			<div class="row">
+                        	<h2>Navigation</h2>
+                        	<ul>
+                        	<li><a href="<?php echo add_query_arg('t', 'index'); ?>">Home</a></li>
+                        	<li><a href="<?php echo add_query_arg('t', 'styleguide'); ?>">Styleguide</a></li>
+                        	<!-- <li><a href="<?php echo add_query_arg('t', 'animations'); ?>">Animations</a></li> -->
+                        	<li><a href="<?php echo add_query_arg('t', 'playground'); ?>">Playground</a></li>
+                        	<!-- <li><a href="<?php echo add_query_arg('t', 'demo'); ?>">Demo Page</a></li> -->
+                        	</ul>
 
-				<div class="col-xs-12">
-					<h2>Navigation</h2>
-					<p><a href="<?php echo add_query_arg('t', 'index'); ?>">Home</a></p>
-					<p><a href="<?php echo add_query_arg('t', 'styleguide'); ?>">Styleguide</a></p>
-					<p><a href="<?php echo add_query_arg('t', 'mixins'); ?>">Mixins</a></p>
-					<p><a href="<?php echo add_query_arg('t', 'animations'); ?>">Animations</a></p>
-					<p><a href="<?php echo add_query_arg('t', 'playground'); ?>">Playground</a></p>
-					<p><a href="<?php echo add_query_arg('t', 'demo'); ?>">Demo Page</a></p>
-				</div>
+							<?php
 
-				<?php foreach($folders as $folder):
-				$folders[$folder] = glob(get_template_directory().'/templates/toolbox/'.$folder.'/*.php');
-				?>
-					<div class="col-xs-12">
-					<h2><?php echo $folder; ?></h2>
+							foreach($folders as $folder):
+								$folders[$folder] = glob(get_template_directory().'/templates/toolbox/'.$folder.'/*.php');
 
-					<div class="toolbox__navbar__box">
-					<?php foreach($folders[$folder] as $c):
-						echo '<p><a href="/em/#'.basename($c).'">'.basename($c, '.php').'</a></p>';
-					endforeach; ?>
-					</div>
-					</div>
-				<?php endforeach; ?>
-			</div>
-		</div>
-	</div>
-</section>
+							?>
 
-<?php
+							<h2><?php echo $folder; ?></h2>
+							<ul>
+							<?php
+							foreach($folders[$folder] as $c):
+								echo '<li><a href="/em/#'.basename($c).'">'.basename($c, '.php').'</a></li>';
+							endforeach; ?>
+							</ul>
+							<?php endforeach; ?>
 
-switch ($_GET['t']) {
-	case 'animations':
-		include(get_template_directory().'/templates/toolbox/animations.php');
-		break;
-	case 'playground':
-		include(get_template_directory().'/templates/toolbox/playground.php');
-		break;
-	case 'styleguide':
-		include(get_template_directory().'/templates/toolbox/styleguide.php');
-		break;
-	case 'mixins':
-		include(get_template_directory().'/templates/toolbox/mixins.php');
-		break;
-	case 'viewer':
-		include(get_template_directory().'/templates/toolbox/viewer.php');
-		break;
-	case 'demo':
-		include(get_template_directory().'/templates/toolbox/demo.php');
-		break;
-	case 'snippets':
-		include(get_template_directory().'/templates/toolbox/snippets.php');
-		break;
-	default:
-		include(get_template_directory().'/templates/toolbox/index.php');
-		break;
-}
+							</div>
 
-get_footer();
+                        </div>
+                        <div class="col-xs-12 col-sm-9">
+
+                            <?php
+
+                            switch ($_GET['t']) {
+                            	case 'animations':
+                            		//include(get_template_directory().'/templates/toolbox/animations.php');
+                            		break;
+                            	case 'playground':
+                            		include(get_template_directory().'/templates/toolbox/playground.php');
+                            		break;
+                            	case 'styleguide':
+                            		include(get_template_directory().'/templates/toolbox/styleguide.php');
+                            		break;
+                            	case 'demo':
+                            		//include(get_template_directory().'/templates/toolbox/demo.php');
+                            		break;
+                            	default:
+                            		include(get_template_directory().'/templates/toolbox/index.php');
+                            		break;
+                            };
+
+                            ?>
+
+                        </div>
+                    </div><!-- end of row -->
+
+                </div><!-- end of b-toolbox__wrapper -->
+            </div><!-- end of b-toolbox__content -->
+        </div><!-- end of b-toolbox__row -->
+    </div><!-- end of b-toolbox__container -->
+</section><!-- end of b-toolbox -->
+
+<?php get_footer();
