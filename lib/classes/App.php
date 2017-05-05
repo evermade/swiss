@@ -9,19 +9,19 @@ class App {
 	public function __construct(){
 
 		//lets set our social media links by default
-		$this->set_options(array('opt_social_media_facebook', 'opt_social_media_twitter', 'opt_social_media_google_plus', 'opt_google_analytics'));
+		$this->setOptions(array('opt_social_media', 'opt_google_analytics'));
 	}
 
 	/**
-	 * [set_options description]
+	 * [setOptions description]
 	 * @param array $options [description]
 	 */
-	public function set_options($options = array()){
+	public function setOptions($options = array()){
 		if(empty($options) || !is_array($options)){
 			return false;
 		}
 
-		$links = \Swiss\get_acf_options($options);
+		$links = \Swiss\Acf\getOption($options);
 
 		if(!empty($links)){
 			foreach($links as $k => $v){

@@ -16,7 +16,7 @@ function public_scripts_and_styles() {
 	wp_enqueue_script( 'flickity', 'https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js', array(), null, true);
 
 	//fonts
-	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,100italic,100,300italic,500,500italic,700,700italic,900,900italic');
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,100italic,100,300italic,500,500italic,700,700italic,900,900italic');
 
 	//styles
 	wp_enqueue_style( 'our-css', get_template_directory_uri().'/assets/dist/css/main.'.filemtime(get_stylesheet_directory() . '/assets/dist/css/main.css').'.css');

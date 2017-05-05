@@ -30,3 +30,18 @@ function get_image_url($key, $size='large'){
 
 	return null;
 }
+
+function getOption($group_fields){
+
+	if(empty($group_fields) || !is_array($group_fields) || !\Swiss\is_acf_active()){
+		return false;
+	}
+
+	$group_data = array();
+
+	foreach($group_fields as $field){
+		$group_data[$field] = \get_field($field, 'option');
+	}
+
+	return $group_data;
+}

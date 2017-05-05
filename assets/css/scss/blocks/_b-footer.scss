@@ -35,6 +35,16 @@
 		}
 	}
 
+	&__social {
+		@include make-row;
+
+		&__column {
+			@include make-xs-column(12);
+		}
+
+		margin-bottom: 4rem;
+	}
+
 	&__logo {
 		width: 100%;
 		max-width: 120px;
