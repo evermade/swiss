@@ -52,7 +52,7 @@ function example_setup_type() {
 */
 
 function set_custom_types(){
-	example_setup_type();
+	//example_setup_type();
 }
 
 add_action( 'init', 'Swiss\PostTypes\set_custom_types' );
