@@ -8,11 +8,25 @@
 
 function example_setup_type() {
 
-	  $labels = createPostLabels("Example","Examples");
+	  $labels = array(
+	  	'name'               => _x( 'Examples', 'post type general name', 'swiss'),
+	  	'singular_name'      => _x( 'Example', 'post type singular name', 'swiss'),
+	  	'add_new'            => _x( 'Add New Example', 'the add new post text',  'swiss'),
+	  	'add_new_item'       => _x( 'Add New Example', 'the add new post text', 'swiss'),
+	  	'edit_item'          => _x( 'Edit Example', 'the edit post text', 'swiss'),
+	  	'new_item'           => _x( 'New Example', 'add new post text', 'swiss'),
+	  	'all_items'          => _x( 'All Examples', 'String for the submenu', 'swiss'),
+	  	'view_item'          => _x( 'View Example', 'view post text', 'swiss'),
+	  	'search_items'       => _x( 'Search Examples', 'search post text', 'swiss'),
+	  	'not_found'          => _x( 'No Examples found', 'not found post text', 'swiss'),
+	  	'not_found_in_trash' => _x( 'No Examples found in the Trash', 'not found trash post text', 'swiss'),
+	  	'parent_item_colon'  => '',
+	  	'menu_name'          => _x( 'All Examples', 'post type general name for menu', 'swiss')
+	  );
 
 	  $args = array(
 	    'labels'        => $labels,
-	    'description'   => __('This is an example description'),
+	    'description'   => _x('This is an example description', 'post type description', 'swiss'),
 	    'public'        => true,
 	    'menu_position' => 5,
 	    'supports'      => array('title', 'editor', 'thumbnail'),
@@ -21,12 +35,13 @@ function example_setup_type() {
 	    'publicly_queryable'  => false,
 	    'exclude_from_search' => true,
 	    'menu_icon'   => 'dashicons-book',
+	    'rewrite' => array (
+            'slug' => _x( 'example', 'URL slug', 'swiss' )
+        )
 	  );
 
 	  register_post_type( 'example', $args );
 }
-
-
 
 
 
@@ -37,36 +52,7 @@ function example_setup_type() {
 */
 
 function set_custom_types(){
-	//example_setup_type();
+	example_setup_type();
 }
 
 add_action( 'init', 'Swiss\PostTypes\set_custom_types' );
-
-
-/*
- * -----------------------------------------------------
- * LABEL MAKER
- * Makes it easy to create all labels with a function
- * createPostLabels("Example","Examples");
- * -----------------------------------------------------
-*/
-
-function createPostLabels($singular,$plural){
-	$labels = array(
-		'name'               => _x( $plural, 'post type general name' ),
-		'singular_name'      => _x( $singular, 'post type singular name' ),
-		'add_new'            => _x( 'Add New '.$singular, 'book' ),
-		'add_new_item'       => __( 'Add New '.$singular ),
-		'edit_item'          => __( 'Edit '.$singular ),
-		'new_item'           => __( 'New '.$singular ),
-		'all_items'          => __( 'All '.$plural ),
-		'view_item'          => __( 'View '.$singular ),
-		'search_items'       => __( 'Search '.$plural ),
-		'not_found'          => __( 'No '.$plural.' found' ),
-		'not_found_in_trash' => __( 'No '.$plural.' found in the Trash' ),
-		'parent_item_colon'  => '',
-		'menu_name'          => $plural
-	);
-
-	return($labels);
-}

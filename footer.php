@@ -31,7 +31,8 @@
 
 		<div class="b-footer__credits">
 			<div class="b-footer__credits__column">
-				<p>&copy; Copyright <?php echo date('Y');?>&nbsp;•&nbsp;<?php bloginfo('name'); ?>&nbsp;•&nbsp;All rights reserved</p>
+				<p>&copy; Copyright <?php echo date('Y');?>&nbsp;•&nbsp;<?php bloginfo('name'); ?>&nbsp;•&nbsp;All rights reserved.</p>
+				<p>Website crafted by <a href="https://www.evermade.fi" target="_blank" rel="noopener noreferrer">Evermade</a>.</p>
 			</div>
 		</div>
 	</div>

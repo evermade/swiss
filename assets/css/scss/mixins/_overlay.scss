@@ -10,7 +10,7 @@
 			background: linear-gradient(to bottom,  rgba($color,0) 0%,rgba($color,$percentage) 35%,rgba($color,$percentage) 100%);
 		}
 		@if($dir == bottom) {
-			background: -moz-linear-gradient(top,  rgba($color,$percentage) 0%, rgba($color,$percentage) 655%, rgba($color,0) 100%);
+			background: -moz-linear-gradient(top,  rgba($color,$percentage) 0%, rgba($color,$percentage) 65%, rgba($color,0) 100%);
 			background: -webkit-linear-gradient(top,  rgba($color,$percentage) 0%,rgba($color,$percentage) 65%,rgba($color,0) 100%);
 			background: linear-gradient(to bottom,  rgba($color,$percentage) 0%,rgba($color,$percentage) 65%,rgba($color,0) 100%);
 		}

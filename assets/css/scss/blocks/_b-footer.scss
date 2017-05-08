@@ -32,6 +32,7 @@
 
 		&__column {
 			@include make-xs-column(12);
+			@include font-size(sm);
 		}
 	}
 
