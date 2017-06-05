@@ -9,7 +9,7 @@ function get_image($size='large', $key, $type='img', $class=null){
 
 		//if an image is requested do so, else return a url
 		if($type == 'img'){
-			return sprintf('<img src="%s" alt="%s" class="%s" %s>', $image['sizes'][$size], $image['alt'], $class, $data_attrs);
+			return sprintf('<img src="%s" alt="%s" class="%s" %s>', $image['sizes'][$size], $image['alt'], $class);
 		}
 		else {
 			return $image['sizes'][$size];
