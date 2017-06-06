@@ -90,7 +90,17 @@ function default_img($size='thumbnail', $text='img'){
 	return sprintf('http://fakeimg.pl/%sx%s/666/fff/?text=%s', 850, 850, $text);
 }
 
-function feature_image_url($post, $size='medium-large'){
+function feature_image_url($size='medium-large', $post=null){
+
+	//if we have no post then lets bring in the global post
+	if(empty($post)){
+		global $post;
+	}
+
+	//if we still dont have a post, lets bail out
+	if(empty($post)){
+		return null;
+	}
 
 	$img = \wp_get_attachment_image_src(get_post_thumbnail_id($post), $size)[0];
 
