@@ -1,10 +1,8 @@
-@mixin font-size($font-size-label: base, $important: false) {
+@mixin font-size($font-size-label: base, $important: null) {
 
   // check if we want to declare it as important, for ex. helper classes
   @if $important == important {
-    $important: !important;
-  } @else {
-    $important: null;
+    $important: unquote('!important');
   }
 
   @if $font-size-label == base {
@@ -33,5 +31,10 @@
       // this for checking that we don't add duplicate font-sizes
       $prev-font-size: $font-size;
     }
+  }
+
+  // error message
+  @else {
+    @warn "`#{$font-size-label}` font-size could not be found on the font-size matrix.";
   }
 }
