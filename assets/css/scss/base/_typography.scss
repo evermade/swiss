@@ -1,130 +1,128 @@
 /*
-	----------------------------------------
+    ----------------------------------------
 
-	TYPOGRAPHY
-	--
-	Let's try to keep this clear from colors because
-	these elements can be used in dark and light areas.
+    TYPOGRAPHY
+    --
+    Let's try to keep this clear from colors because
+    these elements can be used in dark and light areas.
 
-	----------------------------------------
+    ----------------------------------------
 */
 
 // Headings
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-	font-family: $headings-font-family;
-	font-weight: $headings-font-weight;
-	line-height: $headings-line-height;
-	margin:0;
-	padding:0;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    margin: 0;
+    padding: 0;
 }
 
 h1, .h1 {
-	@include font-size(h1);
+    @include font-size(h1);
 }
 
 h2, .h2 {
-	@include font-size(h2);
+    @include font-size(h2);
 }
 
 h3, .h3 {
-	@include font-size(h3);
+    @include font-size(h3);
 }
 
 h4, .h4 {
-	@include font-size(h4);
+    @include font-size(h4);
 }
 
 h5, .h5 {
-	@include font-size(h5);
+    @include font-size(h5);
 }
 
 h6, .h6 {
-	@include font-size(h6);
+    @include font-size(h6);
 }
 
 // generate helper classes for all font-sizes (.text-sm, .text-md, etc..)
 @each $font-size-label, $font-size-map in $font-sizes {
-	.text-#{$font-size-label} {
-		@include font-size($font-size-label, important);
-	}
+    .text-#{$font-size-label} {
+        @include font-size($font-size-label, important);
+    }
 }
 
 .text-center {
-	text-align: center !important;
+    text-align: center !important;
 }
 
 .text-right {
-	text-align: right !important;
+    text-align: right !important;
 }
 
 .text-left {
-	text-align: left !important;
+    text-align: left !important;
 }
 
-h1,h2,h3,h4,h5,h6{
-	&+p,&+ul,&+ol{
+h1,h2,h3,h4,h5,h6 {
+    &+p,&+ul,&+ol {
 
-	}
+    }
 }
 
 //some helper methods we can use to extend from within css, rather than multiple classes in the markup
 
 p {
-	margin: 0;
-	padding:0;
+    margin: 0;
+    padding: 0;
 
-	&:last-child{
-		margin:0;
-	}
+    &:last-child {
+        margin: 0;
+    }
 
-	&.accent{
-		font-style:italic;
-	}
+    &.accent {
+        font-style: italic;
+    }
 }
 
-strong{
-	font-weight:$font-weight-strong-base;
+strong {
+    font-weight: $font-weight-strong-base;
 }
 
-blockquote{
-	padding:0 0 0 2em;
-	border-left:0.5em solid $brand-color;
-	margin:0;
+blockquote {
+    padding: 0 0 0 2em;
+    border-left: 0.5em solid $brand-color;
+    margin: 0;
 }
 
 // Unordered and Ordered lists
 ul,
 ol {
-	margin:0;
-	padding:0 0 0 2em;
-	ul,
-	ol {
+    margin: 0;
+    padding: 0 0 0 2em;
 
-	}
+    ul,
+    ol {}
 }
 
-hr{
-	height:1px;
-	border:none;
-	background:rgba(125,125,125,0.5);
+hr {
+    height: 1px;
+    border: none;
+    background: rgba(125,125,125,0.5);
 }
 
 //links
 a {
-	color: inherit;
-	text-decoration: none;
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.1s ease;
 
-	@include transition(all, 0.1s);
-
-	&:hover, &:focus {
-		text-decoration: none;
-		cursor: pointer;
-		color: inherit;
-	}
-	&:focus {}
+    &:hover, &:focus {
+        text-decoration: none;
+        cursor: pointer;
+        color: inherit;
+    }
+    &:focus {}
 }
 
 p a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }

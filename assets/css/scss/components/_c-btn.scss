@@ -1,19 +1,18 @@
 .c-btn {
-    @include transition(all, 0.6s $ease-out-expo);
-
-    background:$ui-bg;
-    padding:$ui-padding;
-    display:inline-block;
-    border-radius:$ui-border-radius;
-    box-shadow:$ui-shadow;
-    font-weight:$ui-weight;
+    background: $ui-bg;
+    border-radius: $ui-border-radius;
+    box-shadow: $ui-shadow;
+    display: inline-block;
+    font-weight: $ui-weight;
+    padding: $ui-padding;
+    transition: all 0.6s $ease-out-expo;
 
     span, & {
-        color:$ui-color;
+        color: $ui-color;
     }
 
     &:hover{
-        background:darken($ui-bg,5%);
+        background: darken($ui-bg,5%);
         text-decoration: none;
     }
 
@@ -25,7 +24,7 @@
         }
 
         &:hover{
-            background:darken(#fff,5%);
+            background: darken(#fff,5%);
             color: $brand-color;
         }
     }
