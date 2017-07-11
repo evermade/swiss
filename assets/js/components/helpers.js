@@ -50,10 +50,10 @@
 
 	em.helper.hashCheck = function(){
 		if(window.location.hash) {
-			var el = $('[data-jump="'+window.location.hash.substring(1)+'"]').eq(0);
+			var $el = $('[data-jump="'+window.location.hash.substring(1)+'"]').eq(0);
 
-			if(el.length==1){
-			   var target = el.offset();
+			if($el.length==1){
+			   var target = $el.offset();
 
 			   setTimeout(function(){
 					$('html,body').stop(true, true).animate({
@@ -70,10 +70,10 @@
 	em.helper.goToNext = function(){
 		$(".js-go-to-next").on("click", function(e) {
 			e.preventDefault();
-			var el = $(this);
-			var next = el.closest("section").next();
+			var $el = $(this);
+			var $next = $el.closest("section").next();
 
-			var target = $(next).offset();
+			var target = $next.offset();
 
 		   $('html,body').stop(true, true).animate({
 				scrollTop: target.top
@@ -85,15 +85,15 @@
 
 	em.helper.resizeVideos  = function(){
 		$("iframe").each(function(){
-			var el = $(this);
-			if(!el.attr("data-original-width")){
-				el.attr("data-original-width", el.attr("width"));
-				el.attr("data-original-height", el.attr("height"));
+			var $el = $(this);
+			if(!$el.attr("data-original-width")){
+				$el.attr("data-original-width", $el.attr("width"));
+				$el.attr("data-original-height", $el.attr("height"));
 			}
 
-			el.attr("width", "100%");
-			var height = el.attr("data-original-height") * el.width() /  el.attr("data-original-width");
-			el.attr("height", height);
+			$el.attr("width", "100%");
+			var height = $el.attr("data-original-height") * $el.width() /  $el.attr("data-original-width");
+			$el.attr("height", height);
 		});
 	};
 
@@ -138,14 +138,14 @@
 		// make a whole area clickable while not breaking nested links
 		// usage: <div class="c-my-component js-clickable h-clickable" data-url="http://km.em87.io">Kilometer race! by <a href="http://www.evermade.fi">Evermade</a></div>
 		$(document).on('click', '.js-clickable', function(e) {
-			var el = $(this);
+			var $el = $(this);
 
 			//if an node clicked within is an achor lets allow to bubble up and do its thing, else go to link
 			if (e.target.tagName.toLowerCase()=="a") {
 				return true;
 			} else {
-				var url = el.attr("data-url");
-				var target = el.attr('target');
+				var url = $el.attr("data-url");
+				var target = $el.attr('target');
 
 				if (url) {
 

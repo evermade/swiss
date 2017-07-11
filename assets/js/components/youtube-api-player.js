@@ -51,31 +51,31 @@ Example with parameters:
 	window.onYouTubeIframeAPIReady = function() {
 
 		$('.c-youtube-api-player').each(function(){
-			var el = $(this);
+			var $el = $(this);
 
 			if (!em.youtubeAPIPlayer.canAutoplay()) {
 				// force some settings for devices that won't autoplay videos (modify the data-attributes because onReady-function needs to read them again)
-				el.data('controls',1);
-				el.data('loop',0);
-				el.data('autoplay',0);
-				el.data('autoplay-viewport',0);
+				$el.data('controls',1);
+				$el.data('loop',0);
+				$el.data('autoplay',0);
+				$el.data('autoplay-viewport',0);
 			}
 
 			// read settings
-			var id = el.data('video-id');
-			var sound = Number(el.data('sound')) || 0;
-			var autoplay = Number(el.data('autoplay')) || 0;
-			var autoplayViewport = Number(el.data('autoplay-viewport')) || 0;
-			var loop = Number(el.data('loop')) || 0;
-			var maskLogo = Number(el.data('mask-logo')) || 0;
-			var controls = Number(el.data('controls')) || 0;
-			var showinfo = Number(el.data('showinfo')) || 0;
-			var related = Number(el.data('related')) || 0;
-			var cover = Number(el.data('cover')) || 0;
+			var id = $el.data('video-id');
+			var sound = Number($el.data('sound')) || 0;
+			var autoplay = Number($el.data('autoplay')) || 0;
+			var autoplayViewport = Number($el.data('autoplay-viewport')) || 0;
+			var loop = Number($el.data('loop')) || 0;
+			var maskLogo = Number($el.data('mask-logo')) || 0;
+			var controls = Number($el.data('controls')) || 0;
+			var showinfo = Number($el.data('showinfo')) || 0;
+			var related = Number($el.data('related')) || 0;
+			var cover = Number($el.data('cover')) || 0;
 
 			// hide element if it's used as a background cover
 			if (cover) {
-				el.css({
+				$el.css({
 					'opacity' : 0
 				});
 			}
@@ -84,7 +84,7 @@ Example with parameters:
 			var playerId = 'em-player-'+id+'-'+Math.ceil(Math.random()*9999);
 
 			// create a stunt-div that YT script will turn into an iframe
-			$('<div id="'+playerId+'"></div>').appendTo(el);
+			$('<div id="'+playerId+'"></div>').appendTo($el);
 
 			var player = new YT.Player( playerId, {
 				height: '390', // will be overwritten by css
@@ -112,25 +112,25 @@ Example with parameters:
 	em.youtubeAPIPlayer.onReady = function(event){
 
 		var player = event.target;
-		var el = $(player.getIframe().parentNode);
+		var $el = $(player.getIframe().parentNode);
 
-		var sound = Number(el.data('sound')) || 0;
-		var loop = Number(el.data('loop')) || 0;
-		var autoplay = Number(el.data('autoplay')) || 0;
-		var autoplayViewport = Number(el.data('autoplay-viewport')) || 0;
-		var cover = Number(el.data('cover')) || 0;
+		var sound = Number($el.data('sound')) || 0;
+		var loop = Number($el.data('loop')) || 0;
+		var autoplay = Number($el.data('autoplay')) || 0;
+		var autoplayViewport = Number($el.data('autoplay-viewport')) || 0;
+		var cover = Number($el.data('cover')) || 0;
 
 		if (!sound) {
 			event.target.mute();
 		}
 
 		if (autoplayViewport) {
-			em.youtubeAPIPlayer.playIfInViewport(player,el,loop);
+			em.youtubeAPIPlayer.playIfInViewport(player,$el,loop);
 
 			// add a window scroll -listener that will start the video once it gets on the screen
 			$(window).on('scroll',function(){
 
-				em.youtubeAPIPlayer.playIfInViewport(player,el,loop);
+				em.youtubeAPIPlayer.playIfInViewport(player,$el,loop);
 
 			});
 
@@ -141,18 +141,18 @@ Example with parameters:
 		}
 
 		var debounceMe = em.helper.debounce(function() {
-			em.youtubeAPIPlayer.onResize(el);
+			em.youtubeAPIPlayer.onResize($el);
 		}, 250);
 
 		window.addEventListener('resize', debounceMe);
 
 		// make the video cover the parent container
 		if (cover) {
-			em.youtubeAPIPlayer.videoFill(el);
+			em.youtubeAPIPlayer.videoFill($el);
 
 			// wait a bit before showing the player, to make sure video is playing
 			setTimeout(function() {
-				el.css({
+				$el.css({
 					'opacity' : 1,
 					'transition' : 'all 5s ease'
 				});
@@ -165,22 +165,22 @@ Example with parameters:
 	 */
 	em.youtubeAPIPlayer.onPlayerStateChange = function(event){
 		var player = event.target;
-		var el = $(player.getIframe().parentNode);
+		var $el = $(player.getIframe().parentNode);
 	};
 
 	/**
 	 * Start a player if it's in the viewport
 	 */
-	em.youtubeAPIPlayer.playIfInViewport = function(player,el,loop){
+	em.youtubeAPIPlayer.playIfInViewport = function(player,$el,loop){
 
 		// var scrollTop = window.pageYOffset;
 		// var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-		if (em.helper.inViewPort(el[0])) {
+		if (em.helper.inViewPort($el[0])) {
 			// in viewport, start playing
 
-			if (!el.data('playing')) {
-				el.data('playing',1);
+			if (!$el.data('playing')) {
+				$el.data('playing',1);
 
 				player.playVideo(); //console.log('video started');
 
@@ -190,8 +190,8 @@ Example with parameters:
 			}
 		} else {
 			// not in viewport - stop playback
-			if (el.data('playing')) {
-				el.data('playing',0);
+			if ($el.data('playing')) {
+				$el.data('playing',0);
 
 				player.pauseVideo(); //console.log('video paused');
 			}
@@ -232,35 +232,35 @@ Example with parameters:
 	/**
 	 * Make the player behave exactly like the background-size: cover css attribute
 	 */
-	em.youtubeAPIPlayer.videoFill = function(player, aspectRatio) {
+	em.youtubeAPIPlayer.videoFill = function($player, aspectRatio) {
 		var videoHeight, videoWidth;
 		aspectRatio = typeof(aspectRatio) === 'undefined' ? 16/9 : aspectRatio;
 
 		// calculate height and width based on container size
-		if ((player.width() / player.height()) < aspectRatio) {
+		if (($player.width() / $player.height()) < aspectRatio) {
 
-			videoHeight = player.height();
+			videoHeight = $player.height();
 			videoWidth = videoHeight * aspectRatio;
 
 		} else {
 
-			videoWidth = player.width();
+			videoWidth = $player.width();
 			videoHeight = videoWidth / aspectRatio;
 
 		}
 
 		// set video dimensions
-		player.find('iframe').css({'height': videoHeight+'px', 'width': videoWidth+'px'});
+		$player.find('iframe').css({'height': videoHeight+'px', 'width': videoWidth+'px'});
 	};
 
 	/**
 	 * Handle browser window resizing
 	 */
-	em.youtubeAPIPlayer.onResize = function(el) {
-		var cover = Number(el.data('cover')) || 0;
+	em.youtubeAPIPlayer.onResize = function($el) {
+		var cover = Number($el.data('cover')) || 0;
 
 		if (cover) {
-			em.youtubeAPIPlayer.videoFill(el);
+			em.youtubeAPIPlayer.videoFill($el);
 		}
 	};
 
