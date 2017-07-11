@@ -59,30 +59,30 @@
 	em.animations.animate = function(){
 		em.animations.elements.each(function(){
 
-	        var win = $(window),
-	        	el = $(this),
-	        	scrollTop = win.scrollTop(),
-	            windowHeight = win.height(),
-	            elTop = el.offset().top;
+	        var $win = $(window),
+	        	$el = $(this),
+	        	scrollTop = $win.scrollTop(),
+	            windowHeight = $win.height(),
+	            elTop = $el.offset().top;
 
 	        // el.toggleClass( el.data("animate"), elTop < (scrollTop+windowHeight));
 
 	        if(elTop < (scrollTop+windowHeight)){
-	        	el.addClass( el.data("animate"));
+	        	$el.addClass($el.data("animate"));
 	        }
 	    });
 	};
 
 	em.animations.animateFirstBlockIn = function(){
 		if(em.animations.canWe()){
-			var el = $('.main-header > section.hero + section');
-			var container = el.find('div').eq(0);
+			var $el = $('.main-header > section.hero + section');
+			var $container = $el.find('div').eq(0);
 
 			if(!el.hasClass('toBeAnimated')){
-				container.addClass('animated fadeInUp');
+				$container.addClass('animated fadeInUp');
 			}
 			else {
-				container.css({opacity: 1});
+				$container.css({opacity: 1});
 			}
 
 		}
