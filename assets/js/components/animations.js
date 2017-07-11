@@ -78,7 +78,7 @@
 			var $el = $('.main-header > section.hero + section');
 			var $container = $el.find('div').eq(0);
 
-			if(!el.hasClass('toBeAnimated')){
+			if(!$el.hasClass('toBeAnimated')){
 				$container.addClass('animated fadeInUp');
 			}
 			else {
