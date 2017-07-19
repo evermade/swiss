@@ -6,20 +6,19 @@
 
                 <?php if(!empty($block->repeaters['columns_columns'])): foreach(array_chunk($block->repeaters['columns_columns'], $block->data['per_row']) as $set): ?>
 
-					<div class="l-columns" data-column-count="<?php echo sizeof($set); ?>">
+                    <div class="l-columns" data-column-count="<?php echo sizeof($set); ?>">
 
-						<?php foreach($set as $p): 	?>
-						<div class="l-columns__item">
+                        <?php foreach($set as $p): 	?>
+                        <div class="l-columns__item">
                             <div class="h-wysiwyg-html">
-							     <?php echo $p['column']; ?>
+                                 <?php echo $p['column']; ?>
                             </div>
-						</div>
+                        </div>
+                        <?php endforeach; ?>
 
-						<?php endforeach; ?>
+                    </div><!-- end of l-columns layout -->
 
-					</div><!-- end of l-columns layout -->
-
-				<?php endforeach; endif; ?>
+                <?php endforeach; endif; ?>
 
                 </div>
             </div>
