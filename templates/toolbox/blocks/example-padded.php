@@ -9,19 +9,19 @@
 
                             <div class="h-wysiwyg-html">
                                 <h2>An b-base example with padding</h2>
-                            	<p>This is a paragraph of text. Some of the text may be <em>emphasised</em> and some it might even be <strong>strongly emphasised</strong>.</p>
+                                <p>This is a paragraph of text. Some of the text may be <em>emphasised</em> and some it might even be <strong>strongly emphasised</strong>.</p>
                                 <p><a href="#" class="c-btn">A button</a></p>
                             </div>
 
                         </div>
                         <div class="l-columns__item">
-                        	<div class="h-wysiwyg-html">
+                            <div class="h-wysiwyg-html">
 
                                 <h2>A headline</h2>
                                 <p>This is a paragraph of text. Some of the text may be <em>emphasised</em> and some it might even be <strong>strongly emphasised</strong>.</p>
                                 <p><a href="#" class="c-btn">A button</a></p>
                             </div>
-                            
+
                         </div>
                     </div>
 
