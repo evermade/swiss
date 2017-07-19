@@ -1,30 +1,29 @@
 (function() {
 
-  jQuery(function(){
+    jQuery(function() {
 
-    function collapseAll(el) {
-      el.addClass("-collapsed");
+        function collapseAll(el) {
 
-      var schemeFound = el.find('div.acf-field-5846bc36abec7').eq(0);
+            el.addClass("-collapsed");
+            var schemeFound = el.find('div.acf-field-5846bc36abec7').eq(0);
 
-      if(schemeFound.length == 1){
+            if(schemeFound.length == 1) {
 
-          el.css({'background': '#eee'});
+                el.css({'background': '#eee'});
 
-          if(found > 1){
-            el.css({'margin-top': '40px'});
-          }
+                if(found > 1) {
+                    el.css({'margin-top': '40px'});
+                }
 
-          found++;
-      }
-    }
+                found++;
+            }
+        }
 
-    var found = 0;
+        var found = 0;
 
-    jQuery('.layout').each(function( index) {
-      collapseAll(jQuery(this));
+        jQuery('.layout').each(function(index) {
+            collapseAll(jQuery(this));
+        });
     });
-
-  });
 
 })();
