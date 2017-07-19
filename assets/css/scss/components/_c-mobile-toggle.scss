@@ -1,21 +1,22 @@
 .c-mobile-toggle {
-	position: relative;
+    position: relative;
     cursor: pointer;
     z-index: 200;
-	 div {
-	    width: 20px;
-	    height: 3px;
-	    background: #fff;
-	    margin-bottom: 4px;
-	    transition: all 0.2s ease-in-out;
-	    position: relative;
-	    top: 0px;
-	    border-radius: 3px;
 
-	    &:last-child {
-	    	margin-bottom: 0;
-	    }
-	}
+    div {
+        width: 20px;
+        height: 3px;
+        background: #fff;
+        margin-bottom: 4px;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        top: 0px;
+        border-radius: 3px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .c-mobile-toggle:hover div {
@@ -23,27 +24,27 @@
 
 body.js-navigation-open .c-mobile-toggle {
 
-	div {
-	    opacity: 0;
-	    background: #fff;
+    div {
+        opacity: 0;
+        background: #fff;
 
-	    &:first-child {
-		    transform: rotate(45deg);
-		    opacity: 1;
-		    top: 7px;
-		}
+        &:first-child {
+            transform: rotate(45deg);
+            opacity: 1;
+            top: 7px;
+        }
 
-		&:last-child {
-		    transform: rotate(-45deg);
-		    -webkit-transform: rotate(-45deg);
-		    opacity: 1;
-		    top: -7px;
-		}
-	}
+        &:last-child {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            opacity: 1;
+            top: -7px;
+        }
+    }
 
-	&:hover {
-		div {
-		    background: #fff;
-		}
-	}
+    &:hover {
+        div {
+            background: #fff;
+        }
+    }
 }

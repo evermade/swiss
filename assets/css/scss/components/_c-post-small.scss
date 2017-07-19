@@ -1,27 +1,27 @@
 .c-post-small {
-	position:relative;
-	margin-bottom: 1rem;
+    position: relative;
+    margin-bottom: 1rem;
 
-	@include bp(sm){
-		min-height: 300px;
-	}
+    @include bp(sm) {
+        min-height: 300px;
+    }
 
-	&__content {
-		@include padding(base, all);
-		width:100%;
-		text-align:center;
-		position: relative;
-		z-index:4;
-		text-align:left;
+    &__content {
+        @include padding(base, all);
+        width: 100%;
+        text-align: center;
+        position: relative;
+        z-index: 4;
+        text-align: left;
 
-		@include bp(sm){
-			position: absolute;
-			bottom:0;
-		}
+        @include bp(sm) {
+            position: absolute;
+            bottom: 0;
+        }
 
-		h2, p {
-			color:#fff;
-		}
-
-	}
+        h2,
+        p {
+            color: #fff;
+        }
+    }
 }

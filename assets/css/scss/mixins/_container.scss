@@ -1,6 +1,6 @@
-@mixin container($max: true){
-  margin-left:auto;
-  margin-right:auto;
-  width:$container-width;
-  max-width:$container-max-width;
+@mixin container($max: true) {
+    margin-left: auto;
+    margin-right: auto;
+    width: $container-width;
+    max-width: $container-max-width;
 }

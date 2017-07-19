@@ -1,20 +1,20 @@
-@function span($how-many:1, $grid-size: 12){
-	@return ($how-many / $grid-size) * 100%
+@function span($how-many:1, $grid-size: 12) {
+    @return ($how-many / $grid-size) * 100%
 };
 
 // A shorthand for using the brand color profile map
 @function brand($company) {
-	@return map-get($brand-colors, $company);
+    @return map-get($brand-colors, $company);
 };
 
 @function rem($pixels, $context: $font-size-rem-base) {
-  @if (unitless($pixels)) {
-    $pixels: $pixels * 1px;
-  }
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
 
-  @if (unitless($context)) {
-    $context: $context * 1px;
-  }
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
 
-  @return $pixels / $context * 1rem;
+    @return $pixels / $context * 1rem;
 }

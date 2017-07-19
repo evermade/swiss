@@ -1,25 +1,25 @@
 /*
-	----------------------------------------
-	ANIMATIONS
-	----------------------------------------
-	Uses mixin/_animation.scss
-	Uses mixin/_keyframes.scss
+    ----------------------------------------
+    ANIMATIONS
+    ----------------------------------------
+    Uses mixin/_animation.scss
+    Uses mixin/_keyframes.scss
 
-	Remember to add your newly made animation to _main.scss
+    Remember to add your newly made animation to _main.scss
 
 
-						anim		    animtime	fill		easing			delay
-						--			    --			--			--				--
-	@include animation(	exampleAnim, 	0.6s, 		backwards, 	$ease-out-expo, 0.3s);
+                        anim            animtime	fill        easing          delay
+                        --              --          --          --              --
+    @include animation( exampleAnim,    0.6s,       backwards,  $ease-out-expo, 0.3s);
 
     ----------------------------------------
-	Examples
+    Examples
     ----------------------------------------
 
     SCSS
     ------
     @include animation(	fadeInUp, 0.6s, backwards, $ease-out-expo, 0.3s);
-	@include animation( fadeInUp );
+    @include animation( fadeInUp );
 
     HTML
     ------
@@ -44,13 +44,13 @@
 
 @media only screen and (min-width : $animated-min-width) {
 
-	*[data-animate] {
-		opacity: 0;
+    *[data-animate] {
+        opacity: 0;
 
         &.animated {
             opacity:1;
         }
-	}
+    }
 }
 
 /**

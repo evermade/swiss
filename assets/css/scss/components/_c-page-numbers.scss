@@ -1,24 +1,25 @@
-.page-numbers{
-	margin:$spacing-sm 0 0 0;
-	padding:0;
-	text-align:center;
+.page-numbers {
+    margin: $spacing-sm 0 0 0;
+    padding: 0;
+    text-align: center;
 
-	li{
-		display:inline-block;
-	}
+    li {
+        display: inline-block;
+    }
 
-	a,span{
-		padding:$ui-padding;
-		background:$ui-bg;
-		color:$ui-color;
-		display:block;
-		border-radius:$ui-border-radius;
-		box-shadow:$ui-shadow;
-		font-weight:$ui-weight;
-	}
+    a,
+    span {
+        padding: $ui-padding;
+        background: $ui-bg;
+        color: $ui-color;
+        display: block;
+        border-radius: $ui-border-radius;
+        box-shadow: $ui-shadow;
+        font-weight: $ui-weight;
+    }
 
-	.current{
-		background:$brand-color;
-		color:#fff;
-	}
+    .current {
+        background: $brand-color;
+        color: #fff;
+    }
 }

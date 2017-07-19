@@ -1,40 +1,40 @@
 @mixin font-size($font-size-label: base, $important: null) {
 
-  // check if we want to declare it as important, for ex. helper classes
-  @if $important == important {
-    $important: unquote('!important');
-  }
-
-  @if $font-size-label == base {
-    @include font-size($font-size-base);
-  }
-
-  // check if we have matching font-size
-  @else if map-has-key($font-sizes, $font-size-label) {
-
-    // set the var for checking the prev breakpoint font-size
-    $prev-font-size: 0;
-
-    // loop through breakpoints
-    @each $bp-label, $font-size in map-get($font-sizes, $font-size-label) {
-
-      // only add new font-size declaration if we don't already have it for previous breakpoint
-      @if $bp-label == xs {
-        font-size: rem($font-size) $important;
-      }
-      @else if $font-size != $prev-font-size {
-        @include bp($bp-label) {
-          font-size: rem($font-size) $important;
-        }
-      }
-
-      // this for checking that we don't add duplicate font-sizes
-      $prev-font-size: $font-size;
+    // check if we want to declare it as important, for ex. helper classes
+    @if $important == important {
+        $important: unquote('!important');
     }
-  }
 
-  // error message
-  @else {
-    @warn "`#{$font-size-label}` font-size could not be found on the font-size matrix.";
-  }
+    @if $font-size-label == base {
+        @include font-size($font-size-base);
+    }
+
+    // check if we have matching font-size
+    @else if map-has-key($font-sizes, $font-size-label) {
+
+        // set the var for checking the prev breakpoint font-size
+        $prev-font-size: 0;
+
+        // loop through breakpoints
+        @each $bp-label, $font-size in map-get($font-sizes, $font-size-label) {
+
+            // only add new font-size declaration if we don't already have it for previous breakpoint
+            @if $bp-label == xs {
+                font-size: rem($font-size) $important;
+            }
+            @else if $font-size != $prev-font-size {
+                @include bp($bp-label) {
+                    font-size: rem($font-size) $important;
+                }
+            }
+
+            // this for checking that we don't add duplicate font-sizes
+            $prev-font-size: $font-size;
+        }
+    }
+
+    // error message
+    @else {
+        @warn "`#{$font-size-label}` font-size could not be found on the font-size matrix.";
+    }
 }
