@@ -8,12 +8,12 @@
 
         <div class="h-wysiwyg-html">
             <h2>
-    			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-    				<?php the_title(); ?>
-    			</a>
-    		</h2>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                    <?php the_title(); ?>
+                </a>
+            </h2>
 
-    		<p class="accent"><?php the_date(); ?></p>
+            <p class="accent"><?php the_date(); ?></p>
 
             <a class="c-btn" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php _e('Read Article', 'swiss'); ?></a>
         </div>
