@@ -1,18 +1,18 @@
 .c-chromeframe {
-  @include font-size(sm);
+    @include font-size(sm);
 
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: $brand-color;
-  color: #fff;
-  z-index: 99998;
-  padding: 10px 15px;
-  text-align: center;
-
-  a {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $brand-color;
     color: #fff;
-    font-weight: bold;
-  }
+    z-index: 99998;
+    padding: 10px 15px;
+    text-align: center;
+
+    a {
+        color: #fff;
+        font-weight: bold;
+    }
 }
