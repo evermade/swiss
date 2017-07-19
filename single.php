@@ -36,14 +36,14 @@
                 <div class="b-base__wrapper">
 
                     <div class="row">
-						<div class="col-sm-8 col-sm-offset-2">
-							<div class="h-wysiwyg-html">
-								<?php the_content(); ?>
-							</div>
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <div class="h-wysiwyg-html">
+                                <?php the_content(); ?>
+                            </div>
 
                             <?php echo \Swiss\share_page(); ?>
-						</div>
-					</div>
+                        </div>
+                    </div>
 
                 </div><!-- end of b-base__wrapper -->
             </div><!-- end of b-base__content -->
