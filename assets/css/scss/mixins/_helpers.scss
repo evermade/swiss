@@ -1,22 +1,22 @@
-@mixin margin($size: base, $where: top, $reset: false){
-  @include spacing($size, $where, $reset, margin);
+@mixin margin($size: base, $where: top, $reset: false) {
+    @include spacing($size, $where, $reset, margin);
 }
 
-@mixin padding($size: base, $where: top, $reset: false){
-  @include spacing($size, $where, $reset, padding);
+@mixin padding($size: base, $where: top, $reset: false) {
+    @include spacing($size, $where, $reset, padding);
 }
 
-//for counteracting body margin for pos absolute header
-@mixin counter-body-margin($plus-negative: 1, $whichPadding: margin){
+// for counteracting body margin for pos absolute header
+@mixin counter-body-margin($plus-negative: 1, $whichPadding: margin) {
 
-  #{$whichPadding}-top: $header-margin-top-sm * $plus-negative;
+    #{$whichPadding}-top: $header-margin-top-sm * $plus-negative;
 
-  @include bp(md){
-      #{$whichPadding}-top: $header-margin-top * $plus-negative;
-  }
+    @include bp(md) {
+        #{$whichPadding}-top: $header-margin-top * $plus-negative;
+    }
 }
 
-@mixin counter-col-margin(){
-  margin-left: -$col-padding;
-  margin-right: -$col-padding;
+@mixin counter-col-margin() {
+    margin-left: -$col-padding;
+    margin-right: -$col-padding;
 }

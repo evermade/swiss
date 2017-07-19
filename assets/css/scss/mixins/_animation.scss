@@ -1,17 +1,16 @@
-@mixin animation($name: pageInRight, $duration: "", $fill: backwards, $timing: "", $delay: 0){
+@mixin animation($name: pageInRight, $duration: "", $fill: backwards, $timing: "", $delay: 0) {
     animation-name: $name;
     animation-fill-mode: $fill;
 
-	@if $duration != "" {
-		animation-duration: $duration;
-	}
+    @if $duration != "" {
+        animation-duration: $duration;
+    }
 
-	@if $timing != "" {
-    	animation-timing-function: $timing;
-	}
+    @if $timing != "" {
+        animation-timing-function: $timing;
+    }
 
-	@if $delay != "" {
-    	animation-delay: $delay;
-	}
-
+    @if $delay != "" {
+        animation-delay: $delay;
+    }
 }
