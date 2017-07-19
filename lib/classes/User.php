@@ -2,121 +2,120 @@
 
 class User {
 
-	protected $image_keys = array('user_profile_image');
-	public $meta, $user, $data;
+    protected $image_keys = array('user_profile_image');
+    public $meta, $user, $data;
 
-	public function __construct($id=null){
+    public function __construct($id=null) {
 
-		if(!empty($id)){
+        if(!empty($id)) {
 
-			$user = get_userdata($id);
+            $user = get_userdata($id);
 
-			if(!empty($user)){
-				$this->setup($user);
-			}
-		}
-	}
+            if(!empty($user)){
+                $this->setup($user);
+            }
+        }
+    }
 
-	public function setup($user = null){
+    public function setup($user = null) {
 
-		if(empty($user)) return false;
+        if(empty($user)) return false;
 
-		$this->user = new \stdClass;
+        $this->user = new \stdClass;
 
-		foreach($user->data as $key => $value){
+        foreach($user->data as $key => $value) {
 
-			$ignore = array('user_pass', 'user_activation_key');
+            $ignore = array('user_pass', 'user_activation_key');
 
-			if(in_array($key, $ignore)) continue;
-			
-			$this->user->{$key} = $value;
-		}
+            if(in_array($key, $ignore)) continue;
 
-		//$this->setup_meta();
+            $this->user->{$key} = $value;
+        }
 
-		$this->data = new \stdClass;
+        // $this->setup_meta();
 
-		$this->get_social();
+        $this->data = new \stdClass;
 
-		return $this;
-	}
+        $this->get_social();
 
-	public function setup_meta(){
+        return $this;
+    }
 
-		if(isset($this->user->ID)){
-			$meta = get_user_meta($this->user->ID);
+    public function setup_meta() {
 
-			if(!empty($meta)){
+        if(isset($this->user->ID)) {
+            $meta = get_user_meta($this->user->ID);
 
-				$this->meta = new \stdClass;
+            if(!empty($meta)) {
 
-				$ignore = array('session_tokens');
+                $this->meta = new \stdClass;
 
-				 //lets loop and setup meta
-				foreach($meta as $key => $value){
+                $ignore = array('session_tokens');
 
-					if(in_array($key, $ignore)) continue;
+                // lets loop and setup meta
+                foreach($meta as $key => $value) {
 
-					if(isset($value[0]) && !empty($value[0])){
-						$this->meta->{$key} = $value[0];
-					}
-				}
-			}
-		}
+                    if(in_array($key, $ignore)) continue;
 
-		return true;
-	}
+                    if(isset($value[0]) && !empty($value[0])) {
+                        $this->meta->{$key} = $value[0];
+                    }
+                }
+            }
+        }
 
-	public function get($array = 'data', $key='display_name'){
-		if(isset($this->{$array}->{$key})){
-			return $this->{$array}->{$key};
-		}
-		return null;
-	}
+        return true;
+    }
 
-	public function get_image($key='user_profile_image'){
-		return $this->get('images', $key);
-	}
+    public function get($array = 'data', $key='display_name') {
+        if(isset($this->{$array}->{$key})) {
+            return $this->{$array}->{$key};
+        }
 
-	public function get_full_name(){
-		return $this->get('meta', 'first_name').' '.$this->get('meta', 'last_name');
-	}
+        return null;
+    }
 
-	public function get_social(){
-		$services = array('user_facebook', 'user_twitter', 'user_linkedin');
-		$this->data->social_links = array();
+    public function get_image($key='user_profile_image') {
+        return $this->get('images', $key);
+    }
 
-		foreach($services as $service){
-			if(isset($this->meta->{$service}) && !empty($this->meta->{$service})){
-				$this->data->social_links[str_ireplace('user_', '', $service)] = $this->meta->{$service};
-			}
-		}
+    public function get_full_name() {
+        return $this->get('meta', 'first_name').' '.$this->get('meta', 'last_name');
+    }
 
-		return $this->data->social_links;
-	}
+    public function get_social() {
+        $services = array('user_facebook', 'user_twitter', 'user_linkedin');
+        $this->data->social_links = array();
 
-	public function get_email(){
-		return $this->get('user', 'user_email');
-	}
+        foreach($services as $service) {
+            if(isset($this->meta->{$service}) && !empty($this->meta->{$service})) {
+                $this->data->social_links[str_ireplace('user_', '', $service)] = $this->meta->{$service};
+            }
+        }
 
-	public function get_telephone(){
-		return $this->get('meta', 'user_telephone');
-	}
+        return $this->data->social_links;
+    }
 
-	public function get_posts($post_type = 'post', $post_status = 'publish', $args = array()) {
+    public function get_email() {
+        return $this->get('user', 'user_email');
+    }
 
-		$default_args = array(
- 			'posts_per_page'=>-1,
- 			'author'=> $this->user->ID,
- 			'post_type'=>$post_type, 
- 			'post_status'=> $post_status
- 		); 
+    public function get_telephone() {
+        return $this->get('meta', 'user_telephone');
+    }
 
-		$merged_args = array_merge($default_args, $args);
-	     
-	    $query = new \WP_Query($merged_args);
-	     
-	    return $query->posts;
-	}
+    public function get_posts($post_type = 'post', $post_status = 'publish', $args = array()) {
 
+        $default_args = array(
+             'posts_per_page'   => -1,
+             'author'           => $this->user->ID,
+             'post_type'        => $post_type,
+             'post_status'      => $post_status
+         );
+
+        $merged_args = array_merge($default_args, $args);
+        $query = new \WP_Query($merged_args);
+
+        return $query->posts;
+    }
 }
