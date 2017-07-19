@@ -14,7 +14,7 @@
 
                             <div class="h-wysiwyg-html">
                                 <h2>Example c-youtube-api-player component</h2>
-                            	<p>We have also made use of the c-background-image and c-overlay components.</p>
+                                <p>We have also made use of the c-background-image and c-overlay components.</p>
                                 <p><a href="#" class="c-btn">A button</a></p>
                             </div>
 
