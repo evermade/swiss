@@ -1,4 +1,4 @@
-//our basic dependencies
+// our basic dependencies
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
@@ -11,11 +11,11 @@ var plumber = require('gulp-plumber');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 
-//some utils
+// some utils
 var wait = require('gulp-wait');
 var debug = require('gulp-debug');
 
-//as we sometimes work on droplets, file saving may have latency so this is used as a delay to accomodate such behaviour
+// as we sometimes work on droplets, file saving may have latency so this is used as a delay to accomodate such behaviour
 var gulpTaskTimeout = 100;
 
 /**

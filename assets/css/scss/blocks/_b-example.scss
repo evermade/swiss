@@ -1,5 +1,4 @@
 .b-example {
-
     // generic section/block styles (paddings, ect..)
     @include section;
 
@@ -15,7 +14,6 @@
 
     // this is what we use to control the width of the inside
     &__content {
-
         @include make-xs-column(12);
 
         // here we are using the simple bootstrap mixins to give us width

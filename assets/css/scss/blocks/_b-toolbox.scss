@@ -1,5 +1,4 @@
 .b-toolbox {
-
     // generic section/block styles (paddings, ect..)
     @include section;
 
@@ -23,7 +22,7 @@
         position: relative;
     }
 
-    //@TODO: cheating i know, for now this will do to allow blocks in the toolbox column
+    // @TODO: cheating i know, for now this will do to allow blocks in the toolbox column
     .b-base__container {
         width: 100%;
     }

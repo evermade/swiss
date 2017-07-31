@@ -1,83 +1,87 @@
 /*
-	----------------------------------------
+    ----------------------------------------
 
-	VARIABLES
-	--
-	Go through this and try to get them as close to the design as possible.
+    VARIABLES
+    --
+    Go through this and try to get them as close to the design as possible.
 
-	Once these are done check these:
-		- base/typography.scss
-		- base/scheme.scss
+    Once these are done check these:
+        - base/typography.scss
+        - base/scheme.scss
 
-	----------------------------------------
+    ----------------------------------------
 */
 
 
 // Colors
-$red: 			#ff0060;
-$dark-grey: 	#50525b;
-$grey:			#50525b;
-$green:			#0ac572;
-$light-grey: 	#ccc;
-$almost-white:	#e4e4e4;
-$almost-black:	#22182c;
+$red:           #ff0060;
+$dark-grey:     #50525b;
+$grey:          #50525b;
+$green:         #0ac572;
+$light-grey:    #ccc;
+$almost-white:  #e4e4e4;
+$almost-black:  #22182c;
 
 
 // Link colors to meaningful variables
-$brand-color:		$green;
-$body-bg:			#fff;
-$link-color:		$brand-color;
-$link-hover-color: 	darken($link-color, 15%);
+$brand-color:       $green;
+$body-bg:           #fff;
+$link-color:        $brand-color;
+$link-hover-color:  darken($link-color, 15%);
 
 
-// Font sizes for responsive scalability (used by font-size mixin)
+// Font sizes for responsive scalability (used by font-size mixin). Feel free to add new sizes on project basis if needed :)
+// Sizes are taken from the Swiss-Template-v2-beta.sketch
 $font-sizes: (
-	xs:		(xs: 12px, sm: 12px, md: 12px, lg: 12px, xl: 12px), // h6
-	sm:		(xs: 14px, sm: 14px, md: 14px, lg: 14px, xl: 14px), // h5
-	md:		(xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px), // h4, usually same as body font-size
-	lg:		(xs: 22px, sm: 22px, md: 22px, lg: 22px, xl: 25px), // h3
-	xl:		(xs: 26px, sm: 26px, md: 26px, lg: 26px, xl: 30px), // h2
-	xxl:	(xs: 28px, sm: 28px, md: 34px, lg: 34px, xl: 40px), // h1
-	xxxl:	(xs: 36px, sm: 36px, md: 46px, lg: 46px, xl: 50px)
+    sm:     (xs: 14px, sm: 14px, md: 14px, lg: 14px, xl: 14px),
+    md:     (xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px), // body text size
+    lg:     (xs: 20px, sm: 20px, md: 20px, lg: 20px, xl: 20px),
+    button: (xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px),
+    h6:     (xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px),
+    h5:     (xs: 18px, sm: 18px, md: 18px, lg: 18px, xl: 18px),
+    h4:     (xs: 20px, sm: 20px, md: 20px, lg: 20px, xl: 20px),
+    h3:     (xs: 24px, sm: 24px, md: 24px, lg: 24px, xl: 24px),
+    h2:     (xs: 36px, sm: 36px, md: 36px, lg: 36px, xl: 36px),
+    h1:     (xs: 48px, sm: 48px, md: 48px, lg: 48px, xl: 48px)
 );
 
 $font-size-base: md; // base size based on font-size labels in the sass map
 
 
 // Typography
-$font-family-base: 			"Roboto", sans-serif;
-$text-color:				$dark-grey;
-$font-weight-base: 			400;
-$font-weight-strong-base:	700;
+$font-family-base:          "Roboto", sans-serif;
+$text-color:                $dark-grey;
+$font-weight-base:          400;
+$font-weight-strong-base:   700;
 
-$line-height-base: 			1.628571429em;
-$line-height-computed:		floor(($font-size-base * $line-height-base)) !default;
+$line-height-base:          1.628571429;
+$line-height-computed:      floor(($font-size-base * $line-height-base)) !default;
 
 
 // Headings
-$headings-font-family:		"Roboto", sans-serif;
-$headings-color:			#000;
-$headings-font-weight:		900;
+$headings-font-family:      "Roboto", sans-serif;
+$headings-color:            #000;
+$headings-font-weight:      900;
 
-$headings-line-height:		1.2em;
+$headings-line-height:      1.2;
 
 
 // Effects
-$animated-min-width:		1025px;							// animated classes work from this viewport up
-$overlay-bg: 				darken($brand-color,35%); 		// @include overlay;
-$overlay-alpha:				0.5;							// @include overlay;
-$border-radius: 			3px;							// @include border-radius;
-$shadow:					0 1px 4px 0 rgba(0,0,0,0.1);	// @include shadow;
+$animated-min-width:        1025px;                             // animated classes work from this viewport up
+$overlay-bg:                darken($brand-color, 35%);          // @include overlay;
+$overlay-alpha:             0.5;                                // @include overlay;
+$border-radius:             3px;                                // @include border-radius;
+$shadow:                    0 1px 4px 0 rgba(0, 0, 0, 0.1);     // @include shadow;
 
 
 // Buttons
 // components/btn, components/page-numbers
-$ui-padding:				0.5em 1em;
-$ui-bg:						$brand-color;
-$ui-color:					#fff;
-$ui-weight:					$font-weight-base;
-$ui-border-radius:			$border-radius;
-$ui-shadow:					$shadow;
+$ui-padding:                0.5em 1em;
+$ui-bg:                     $brand-color;
+$ui-color:                  #fff;
+$ui-weight:                 $font-weight-base;
+$ui-border-radius:          $border-radius;
+$ui-shadow:                 $shadow;
 
 
 // Animation Easing
@@ -88,50 +92,50 @@ $ease-out-expo: cubic-bezier(0.190, 1.000, 0.220, 1.000);
  * Breakpoints and Container Defaults
  */
 // Breakpoints
-$screen-xl: 				1600px;
-$screen-xl-min:				$screen-xl;
-$screen-lg-max:				$screen-xl-min - 1;
+$screen-xl:                 1600px;
+$screen-xl-min:             $screen-xl;
+$screen-lg-max:             $screen-xl-min - 1;
 
 
 // Container Defaults
-$container-max-width:		1270px;
-$container-width:			90%;
-$container-gutter-width: 	5%; // divide by 2 as how bootstrap works
+$container-max-width:       1270px;
+$container-width:           90%;
+$container-gutter-width:    5%;
 
 
 // Container Breakpoint sizes
-$container-sm-max: 			100%;
-$container-md-max:			100%;
-$container-lg-max:			1170px;
-$container-xl-max:			1241px;
+$container-sm-max:          100%;
+$container-md-max:          100%;
+$container-lg-max:          1170px;
+$container-xl-max:          1241px;
 
 
-// generic spacing sizes
-$spacing-xxl: 				150px;
-$spacing-xl: 				100px;
-$spacing-lg: 				60px;
-$spacing-md: 				40px;
-$spacing-sm: 				30px;
-$spacing-xs: 				20px;
-$spacing-xxs: 				10px;
-$spacing: 					$spacing-md; // Define base spacing, used by Bourbon and others.
+// Generic spacing sizes
+$spacing-xxl:               150px;
+$spacing-xl:                100px;
+$spacing-lg:                60px;
+$spacing-md:                40px;
+$spacing-sm:                30px;
+$spacing-xs:                20px;
+$spacing-xxs:               10px;
+$spacing:                   $spacing-md; // Define base spacing, used by Bourbon and others.
 
-// misc padding/margin sizes
-$col-padding: 				15px;
-$body-padding-bp: 			sm;
-$body-padding-sm: 			10px;
-$body-padding: 				10px;
-$header-margin-top: 		110px;
-$header-margin-top-sm: 		75px; //height of the header
+// Misc padding/margin sizes
+$col-padding:               15px;
+$body-padding-bp:           sm;
+$body-padding-sm:           10px;
+$body-padding:              10px;
+$header-margin-top:         110px;
+$header-margin-top-sm:      75px; // height of the header
 
 
 /**
  * Font sizes for <html> element, used as a base for the rem units in different
  * breakpoints. This should not be changed.
  */
-$font-size-rem-sm:			8.5px;
-$font-size-rem-md:			9.5px;
-$font-size-rem-base:		10px;
+$font-size-rem-sm:          8.5px;
+$font-size-rem-md:          9.5px;
+$font-size-rem-base:        10px;
 
 
 
@@ -145,45 +149,45 @@ $font-size-rem-base:		10px;
  */
 
 $brand-colors: (
-	airbnb: 		#fd5c63,
-	android: 		#a4c639,
-	bandcamp: 		#629aa9,
-	behance: 		#1769ff,
-	blogger: 		#f57d00,
-	deviantart: 	#05cc47,
-	disqus: 		#2e9fff,
-	etsy: 			#d5641c,
-	facebook: 		#3b5998,
-	flickr: 		#ff0084,
-	foursquare: 	#2d5be3,
-	google-plus: 	#dc4e41,
-	html5: 			#e34f26,
-	imdb: 			#f5de50,
-	imgur: 			#85bf25,
-	instagram: 		#405de6,
-	kickstarter: 	#2bde73,
-	linkedin: 		#0077b5,
-	medium: 		#00ab6b,
-	myspace: 		#000000,
-	patreon: 		#e6461a,
-	periscope: 		#3aa4c6,
-	pinterest: 		#bd081c,
-	quora: 			#a82400,
-	reddit: 		#ff4500,
-	rss: 			#f26522,
-	shopify: 		#96bf48,
-	skype: 			#00aff0,
-	soundcloud: 	#ff8800,
-	spotify: 		#2ebd59,
-	stackoverflow:	#fe7a15,
-	streamable: 	#0f90fa,
-	tripadvisor: 	#589442,
-	tumblr: 		#35465c,
-	twitch-tv: 		#6441a5,
-	twitter: 		#55acee,
-	vimeo: 			#162221,
-	vine: 			#00b488,
-	vkontakte: 		#45668e,
-	yahoo: 			#410093,
-	youtube: 		#cd201f
+    airbnb:         #fd5c63,
+    android:        #a4c639,
+    bandcamp:       #629aa9,
+    behance:        #1769ff,
+    blogger:        #f57d00,
+    deviantart:     #05cc47,
+    disqus:         #2e9fff,
+    etsy:           #d5641c,
+    facebook:       #3b5998,
+    flickr:         #ff0084,
+    foursquare:     #2d5be3,
+    google-plus:    #dc4e41,
+    html5:          #e34f26,
+    imdb:           #f5de50,
+    imgur:          #85bf25,
+    instagram:      #405de6,
+    kickstarter:    #2bde73,
+    linkedin:       #0077b5,
+    medium:         #00ab6b,
+    myspace:        #000000,
+    patreon:        #e6461a,
+    periscope:      #3aa4c6,
+    pinterest:      #bd081c,
+    quora:          #a82400,
+    reddit:         #ff4500,
+    rss:            #f26522,
+    shopify:        #96bf48,
+    skype:          #00aff0,
+    soundcloud:     #ff8800,
+    spotify:        #2ebd59,
+    stackoverflow:  #fe7a15,
+    streamable:     #0f90fa,
+    tripadvisor:    #589442,
+    tumblr:         #35465c,
+    twitch-tv:      #6441a5,
+    twitter:        #55acee,
+    vimeo:          #162221,
+    vine:           #00b488,
+    vkontakte:      #45668e,
+    yahoo:          #410093,
+    youtube:        #cd201f
 );

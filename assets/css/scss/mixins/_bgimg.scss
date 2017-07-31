@@ -1,5 +1,5 @@
-@mixin bgimg($size: cover, $position: center, $repeat: no-repeat){
-  background-size: $size;
-  background-position: $position;
-  background-repeat: $repeat;
+@mixin bgimg($size: cover, $position: center, $repeat: no-repeat) {
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
 }

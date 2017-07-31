@@ -6,17 +6,17 @@
  * @param  array  $array [description]
  * @return [type]        [description]
  */
-function get_from($key=null, $array=array()){
+function get_from($key=null, $array=array()) {
 
-	//if we have an object
-	if(is_object($array) && isset($array->{$key})){
-		return $array->{$key};
-	}
+    // if we have an object
+    if(is_object($array) && isset($array->{$key})) {
+        return $array->{$key};
+    }
 
-	//else we have an array
-	if(is_array($array) && isset($array[$key])) return $array[$key];
+    // else we have an array
+    if(is_array($array) && isset($array[$key])) return $array[$key];
 
-	return null;
+    return null;
 }
 
 /**
@@ -25,16 +25,16 @@ function get_from($key=null, $array=array()){
  * @param  [type] &$data [data pass in by reference to template]
  * @return [type]        [html]
  */
-function template($name = null, $data=null, $dir='templates'){
+function template($name = null, $data=null, $dir='templates') {
 
-	if(!file_exists((get_template_directory().'/'.$dir.'/'.$name))) return null;
+    if(!file_exists((get_template_directory().'/'.$dir.'/'.$name))) return null;
 
-	ob_start();
-	include(get_template_directory().'/'.$dir.'/'.$name);
-	$html = ob_get_contents();
-	ob_end_clean();
+    ob_start();
+    include(get_template_directory().'/'.$dir.'/'.$name);
+    $html = ob_get_contents();
+    ob_end_clean();
 
-	return $html;
+    return $html;
 }
 
 function get_image_sizes($size = '') {
@@ -79,77 +79,77 @@ function get_image_sizes($size = '') {
         return $sizes;
 }
 
-function default_img($size='thumbnail', $text='img'){
+function default_img($size='thumbnail', $text='img') {
 
-	$sizes = \Swiss\get_image_sizes();
+    $sizes = \Swiss\get_image_sizes();
 
-	if(isset($sizes[$size])){
-		return sprintf('http://fakeimg.pl/%sx%s/666/fff/?text=%s', $sizes[$size]['width'], $sizes[$size]['height'], $text);
-	}
+    if(isset($sizes[$size])) {
+        return sprintf('http://fakeimg.pl/%sx%s/666/fff/?text=%s', $sizes[$size]['width'], $sizes[$size]['height'], $text);
+    }
 
-	return sprintf('http://fakeimg.pl/%sx%s/666/fff/?text=%s', 850, 850, $text);
+    return sprintf('http://fakeimg.pl/%sx%s/666/fff/?text=%s', 850, 850, $text);
 }
 
-function feature_image_url($size='medium-large', $post=null){
+function feature_image_url($size='medium-large', $post=null) {
 
-	//if we have no post then lets bring in the global post
-	if(empty($post)){
-		global $post;
-	}
+    //if we have no post then lets bring in the global post
+    if(empty($post)){
+        global $post;
+    }
 
-	//if we still dont have a post, lets bail out
-	if(empty($post)){
-		return null;
-	}
+    //if we still dont have a post, lets bail out
+    if(empty($post)){
+        return null;
+    }
 
-	$img = \wp_get_attachment_image_src(get_post_thumbnail_id($post), $size)[0];
+    $img = \wp_get_attachment_image_src(get_post_thumbnail_id($post), $size)[0];
 
-	if(empty($img)){
-		$img = \Swiss\default_img($size, 'img');
-	}
+    if(empty($img)) {
+        $img = \Swiss\default_img($size, 'img');
+    }
 
-	return $img;
+    return $img;
 }
 
-function is_acf_active(){
-	return (function_exists('has_sub_field'))? true : false;
+function is_acf_active() {
+    return (function_exists('has_sub_field'))? true : false;
 }
 
-function is_dev(){
-	return (getenv('APP_ENV') == 'production')? false : true;
+function is_dev() {
+    return (getenv('APP_ENV') == 'production')? false : true;
 }
 
-function js_log($info=''){
+function js_log($info='') {
     echo "<script>console.log(".json_encode($info).");</script>";
 }
 
-function log($str='', $file='swiss.log'){
+function log($str='', $file='swiss.log') {
 
-	//check is writable and env is correct
-	if(!\Swiss\is_dev() || !is_writable(get_template_directory().'/'.$file)){
-		return false;
-	}
+    //check is writable and env is correct
+    if(!\Swiss\is_dev() || !is_writable(get_template_directory().'/'.$file)){
+        return false;
+    }
 
-	//if annray then encode
-	if(is_array($str)){
-		$str = "\r\n".json_encode($str)."\r\n";
-	}
-	else {
-		$str = "\r\n".$str."\r\n";
-	}
+    // if annray then encode
+    if(is_array($str)) {
+        $str = "\r\n".json_encode($str)."\r\n";
+    }
+    else {
+        $str = "\r\n".$str."\r\n";
+    }
 
-	//write/append to file
- 	$myfile = file_put_contents(get_template_directory().'/'.$file, $str.PHP_EOL , FILE_APPEND);
+    // write/append to file
+    $myfile = file_put_contents(get_template_directory().'/'.$file, $str.PHP_EOL , FILE_APPEND);
 
- 	return true;
+    return true;
 }
 
-function debug($msg=null){
-	if(\Swiss\is_dev()){
-		echo "<pre>"; print_r($msg); echo "</pre>";
-		return true;
-	}
-	return false;
+function debug($msg=null) {
+    if(\Swiss\is_dev()) {
+        echo "<pre>"; print_r($msg); echo "</pre>";
+        return true;
+    }
+    return false;
 }
 
 /**
@@ -159,25 +159,25 @@ function debug($msg=null){
  * @param  string $name [description]
  * @return [type]       [description]
  */
-function post_blocks($name='page'){
+function post_blocks($name='page') {
 
-	//lets check is ACF available
-	if (!\Swiss\is_acf_active() || empty($name)) return false;
+    //lets check is ACF available
+    if (!\Swiss\is_acf_active() || empty($name)) return false;
 
-	//loop the blocks fields
-	while(has_sub_field($name.'_blocks')){
-		$template = get_template_directory().'/lib/blocks/'.$name.'/'.str_replace(' ', '_', strtolower(get_row_layout())).'/index.php';
-		if(!file_exists($template)){
-			\Swiss\debug($template ." - Template not found");
-			continue;
-		}
+    //loop the blocks fields
+    while(has_sub_field($name.'_blocks')) {
+        $template = get_template_directory().'/lib/blocks/'.$name.'/'.str_replace(' ', '_', strtolower(get_row_layout())).'/index.php';
+        if(!file_exists($template)) {
+            \Swiss\debug($template ." - Template not found");
+            continue;
+        }
 
-		//to help debugging
-		echo '<!-- ('.basename(dirname($template)).') block -->';
-		include($template);
-	}
+        //to help debugging
+        echo '<!-- ('.basename(dirname($template)).') block -->';
+        include($template);
+    }
 
-	return true;
+    return true;
 }
 
 /**
@@ -186,26 +186,26 @@ function post_blocks($name='page'){
  * @param  array  $defaults_selected [description]
  * @return [type]                    [description]
  */
-function animate($classes='animated fadeInUp', $defaults_selected=array()){
+function animate($classes='animated fadeInUp', $defaults_selected=array()) {
 
-	$defaults = array(
-		'background'=>'animatedsuperslow fadeIn animateddelay1',
-		'heading'=>'animatedslow fadeIn',
-		'el-up'=>'animated fadeInUp',
-		'el-in'=>'animated fadeIn',
-	);
+    $defaults = array(
+        'background'    => 'animatedsuperslow fadeIn animateddelay1',
+        'heading'       => 'animatedslow fadeIn',
+        'el-up'         => 'animated fadeInUp',
+        'el-in'         => 'animated fadeIn',
+    );
 
-	if(is_array($defaults_selected)){
-		foreach ($defaults_selected as $value) {
-			if(array_key_exists($value, $defaults)) $classes .= ' '.$defaults[$value];
-		}
-	}
+    if(is_array($defaults_selected)) {
+        foreach ($defaults_selected as $value) {
+            if(array_key_exists($value, $defaults)) $classes .= ' '.$defaults[$value];
+        }
+    }
 
-	//lets cleanse
-	$classes = implode(' ', array_unique(explode(' ', $classes)));
+    //lets cleanse
+    $classes = implode(' ', array_unique(explode(' ', $classes)));
 
-	echo sprintf('data-animate="%s"', $classes);
-	return true;
+    echo sprintf('data-animate="%s"', $classes);
+    return true;
 }
 
 /**
@@ -214,14 +214,14 @@ function animate($classes='animated fadeInUp', $defaults_selected=array()){
  * @param  string $size [description]
  * @return [type]       [description]
  */
-function image($img=null, $size='large', $classes=''){
-	if(isset($img) && is_array($img) && isset($img['sizes'][$size])){
-		$caption = (!empty($img['cpation']))? $img['cpation'] : basename($img['sizes'][$size]);
-		return '<img src="'.$img['sizes'][$size].'" alt="'.$caption.'" class="'.$classes.'" />';
-	}
-	else {
-		return false;
-	}
+function image($img=null, $size='large', $classes='') {
+    if(isset($img) && is_array($img) && isset($img['sizes'][$size])) {
+        $caption = (!empty($img['cpation']))? $img['cpation'] : basename($img['sizes'][$size]);
+        return '<img src="'.$img['sizes'][$size].'" alt="'.$caption.'" class="'.$classes.'" />';
+    }
+    else {
+        return false;
+    }
 }
 
 /**
@@ -230,34 +230,34 @@ function image($img=null, $size='large', $classes=''){
  * @param  [type] $input [description]
  * @return [type]        [description]
  */
-function sprint($str='', $input){
+function sprint($str='', $input) {
 
-	//if an array
-	if(is_array($input) && !empty($input)){
+    //if an array
+    if(is_array($input) && !empty($input)) {
 
-		$broken = false;
-		$data = array();
+        $broken = false;
+        $data = array();
 
-		foreach($input as $field){
-			if(!empty($field)){
-				$data[] = $field;
-			}
-			else {
-				$broken = true;
-				break;
-			}
-		}
+        foreach($input as $field) {
+            if(!empty($field)) {
+                $data[] = $field;
+            }
+            else {
+                $broken = true;
+                break;
+            }
+        }
 
-		if(!empty($data) && !$broken){
-			return vsprintf($str, $data);
-		}
-	}
-	elseif(!empty($input)) {
-		//else just a single sprint
-		return sprintf($str, $input);
-	}
+        if(!empty($data) && !$broken) {
+            return vsprintf($str, $data);
+        }
+    }
+    elseif(!empty($input)) {
+        //else just a single sprint
+        return sprintf($str, $input);
+    }
 
-	return null;
+    return null;
 }
 
 /**
@@ -266,9 +266,9 @@ function sprint($str='', $input){
  * @param  integer $limit [description]
  * @return [type]         [description]
  */
-function excerpt($str, $limit = 255){
-	$strlen = strlen($str);
-	return ($strlen>=$limit) ? substr($str, 0, $limit)."&hellip;" : $str;
+function excerpt($str, $limit = 255) {
+    $strlen = strlen($str);
+    return ($strlen>=$limit) ? substr($str, 0, $limit)."&hellip;" : $str;
 }
 
 /**
@@ -279,130 +279,132 @@ function excerpt($str, $limit = 255){
  * @param  boolean $isHTML [description]
  * @return [type]          [description]
  */
-function truncate($s, $l, $e = '...', $isHTML = false){
-	$i = 0;
-	$tags = array();
-	if($isHTML){
-		preg_match_all('/<[^>]+>([^<]*)/', $s, $m, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
-		foreach($m as $o){
-			if($o[0][1] - $i >= $l)
-				break;
-			$t = substr(strtok($o[0][0], " \t\n\r\0\x0B>"), 1);
-			if($t[0] != '/')
-				$tags[] = $t;
-			elseif(end($tags) == substr($t, 1))
-				array_pop($tags);
-			$i += $o[1][1] - $o[0][1];
-		}
-	}
-	return substr($s, 0, $l = min(strlen($s),  $l + $i)) . (count($tags = array_reverse($tags)) ? '</' . implode('></', $tags) . '>' : '') . (strlen($s) > $l ? $e : '');
+function truncate($s, $l, $e = '...', $isHTML = false) {
+    $i = 0;
+    $tags = array();
+
+    if($isHTML) {
+        preg_match_all('/<[^>]+>([^<]*)/', $s, $m, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
+        foreach($m as $o){
+            if($o[0][1] - $i >= $l)
+                break;
+            $t = substr(strtok($o[0][0], " \t\n\r\0\x0B>"), 1);
+            if($t[0] != '/')
+                $tags[] = $t;
+            elseif(end($tags) == substr($t, 1))
+                array_pop($tags);
+            $i += $o[1][1] - $o[0][1];
+        }
+    }
+
+    return substr($s, 0, $l = min(strlen($s),  $l + $i)) . (count($tags = array_reverse($tags)) ? '</' . implode('></', $tags) . '>' : '') . (strlen($s) > $l ? $e : '');
 }
 
-function activate_plugin($plugin=null){
+function activate_plugin($plugin=null) {
 
-	if(empty($plugin) || !is_readable(WP_PLUGIN_DIR.'/'.$plugin)) return false;
+    if(empty($plugin) || !is_readable(WP_PLUGIN_DIR.'/'.$plugin)) return false;
 
-	$active_plugins = get_option('active_plugins');
+    $active_plugins = get_option('active_plugins');
 
-	if(empty($active_plugins)) $active_plugins = [];
+    if(empty($active_plugins)) $active_plugins = [];
 
-	if(!in_array($plugin, $active_plugins)){
-		 array_push($active_plugins, $plugin);
-	}
+    if(!in_array($plugin, $active_plugins)) {
+         array_push($active_plugins, $plugin);
+    }
 
-	update_option('active_plugins', $active_plugins);
+    update_option('active_plugins', $active_plugins);
 
-	return true;
+    return true;
 }
 
 function cur_page_url() {
-	 $pageURL = 'http';
-	 if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
-	 $pageURL .= "://";
-	 if ($_SERVER["SERVER_PORT"] != "80") {
-	  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-	 } else {
-	  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-	 }
-	 return $pageURL;
+    $pageURL = 'http';
+    if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") { $pageURL .= "s"; }
+    $pageURL .= "://";
+    if ($_SERVER["SERVER_PORT"] != "80") {
+        $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+    } else {
+        $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+    }
+
+    return $pageURL;
 }
 
-function share_page(){
+function share_page() {
 
-	$html = null;
-	$template = get_template_directory().'/templates/_share-page.php';
+    $html = null;
+    $template = get_template_directory().'/templates/_share-page.php';
 
-	if(is_readable($template)){
-		$services = array(
-			'facebook'=> array(
-				'url'=>'',
-				'icon' => 'fa fa-facebook'
-			),
-			'twitter'=> array(
-				'url'=>'',
-				'icon' => 'fa fa-twitter'
-			),
-			'linkedin'=> array(
-				'url'=>'',
-				'icon' => 'fa fa-linkedin'
-			),
-			'google'=> array(
-				'url'=>'',
-				'icon' => 'fa fa-google'
-			),
-			'email'=> array(
-				'url'=>'',
-				'icon' => 'fa fa-envelope'
-			)
-		);
+    if(is_readable($template)) {
+        $services = array(
+            'facebook'=> array(
+                'url'=>'',
+                'icon' => 'fa fa-facebook'
+            ),
+            'twitter'=> array(
+                'url'=>'',
+                'icon' => 'fa fa-twitter'
+            ),
+            'linkedin'=> array(
+                'url'=>'',
+                'icon' => 'fa fa-linkedin'
+            ),
+            'google'=> array(
+                'url'=>'',
+                'icon' => 'fa fa-google'
+            ),
+            'email'=> array(
+                'url'=>'',
+                'icon' => 'fa fa-envelope'
+            )
+        );
 
-		foreach($services as $key => $value){
-			 $services[$key]['url'] = \Swiss\share_link($key);
-		}
+        foreach($services as $key => $value) {
+             $services[$key]['url'] = \Swiss\share_link($key);
+        }
 
-		ob_start();
-		include(get_template_directory().'/templates/_share-page.php');
-		$html = ob_get_contents();
-		ob_clean();
+        ob_start();
+        include(get_template_directory().'/templates/_share-page.php');
+        $html = ob_get_contents();
+        ob_clean();
 
-	}
+    }
 
-	return $html;
-
+    return $html;
 }
 
-function share_link($type='facebook', $url=null, $title=''){
+function share_link($type='facebook', $url=null, $title='') {
 
-	$data = array();
-	$urls = array(
-		'facebook'=> 'http://www.facebook.com/sharer/sharer.php?u=%s',
-		'twitter'=> 'http://twitter.com/share?url=%s&text=%s',
-		'google'=> 'https://plus.google.com/share?url=%s',
-		'linkedin' => 'https://www.linkedin.com/shareArticle?mini=true&url=%s&title=%s&summary=%s&source=%s',
-		'email'=> 'mailto:?subject=%s&body=%s'
-		);
+    $data = array();
+    $urls = array(
+        'facebook'  => 'http://www.facebook.com/sharer/sharer.php?u=%s',
+        'twitter'   => 'http://twitter.com/share?url=%s&text=%s',
+        'google'    => 'https://plus.google.com/share?url=%s',
+        'linkedin'  => 'https://www.linkedin.com/shareArticle?mini=true&url=%s&title=%s&summary=%s&source=%s',
+        'email'     => 'mailto:?subject=%s&body=%s'
+        );
 
-	if(array_key_exists($type, $urls)){
-		$data['url'] = (empty($url))? \Swiss\cur_page_url() : $url;
+    if(array_key_exists($type, $urls)) {
+        $data['url'] = (empty($url))? \Swiss\cur_page_url() : $url;
 
-		if($type=='twitter'){
-			$data['title'] = (empty($title))? get_the_title() : $title;
-		}
+        if($type=='twitter') {
+            $data['title'] = (empty($title))? get_the_title() : $title;
+        }
 
-		if($type=='email'){
-			$data['body'] = (empty($title))? get_the_title() : $title;
+        if($type=='email') {
+            $data['body'] = (empty($title))? get_the_title() : $title;
 
-			array_unshift($data, $data['body']);
-		}
+            array_unshift($data, $data['body']);
+        }
 
-		if($type=='linkedin'){
-			$data['title'] = (empty($title))? get_the_title() : $title;
-			$data['summary'] = get_the_excerpt();
-			$data['source'] = get_bloginfo('name');
-		}
+        if($type=='linkedin') {
+            $data['title'] = (empty($title))? get_the_title() : $title;
+            $data['summary'] = get_the_excerpt();
+            $data['source'] = get_bloginfo('name');
+        }
 
-		return vsprintf($urls[$type], $data);
-	}
+        return vsprintf($urls[$type], $data);
+    }
 
-	return null;
+    return null;
 }

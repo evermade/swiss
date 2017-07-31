@@ -1,25 +1,25 @@
 /*
-	----------------------------------------
+    ----------------------------------------
 
-	ANIMATIONS
-	--
-	Add animations here so you can reference them from other SCSS files
-	Uses mixin/_animation.scss
-	Uses mixin/_keyframes.scss
+    ANIMATIONS
+    --
+    Add animations here so you can reference them from other SCSS files
+    Uses mixin/_animation.scss
+    Uses mixin/_keyframes.scss
 
-	Remember to add your newly made animation to _main.scss
-
-	----------------------------------------
-
-						anim		    animtime	fill		easing			delay
-						--			    --			--			--				--
-	@include animation(	fadeIn, 	    0.6s, 		backwards, 	$ease-out-expo, 0.3s);
+    Remember to add your newly made animation to _main.scss
 
     ----------------------------------------
 
-	Examples:
-    @include animation(	fadeIn, 0.6s, backwards, $ease-out-expo, 0.3s);
-	@include animation( fadeIn );
+                        anim            animtime    fill        easing          delay
+                        --              --          --          --              --
+    @include animation( fadeIn,         0.6s,       backwards,  $ease-out-expo, 0.3s);
+
+    ----------------------------------------
+
+    Examples:
+    @include animation( fadeIn, 0.6s, backwards, $ease-out-expo, 0.3s);
+    @include animation( fadeIn );
     <div data-animate="animated fadeIn"></div>
     <div class="fadeIn"></div>
 

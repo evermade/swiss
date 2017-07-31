@@ -1,131 +1,130 @@
 .b-page-navigation {
-	background:$brand-color;
-	padding: 2rem 0;
+    background: $brand-color;
+    padding: 2rem 0;
 
-	&__container {
-		@include container;
-		@include clearfix;
-		position: relative;
-	}
+    &__container {
+        @include container;
+        @include clearfix;
+        position: relative;
+    }
 
-	&__logo {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		background: url(../../img/logo-white.svg) left center no-repeat;
-		background-size: contain;
-		text-indent: -9999px;
-		width: 120px;
-		z-index: 101;
+    &__logo {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: url(../../img/logo-white.svg) left center no-repeat;
+        background-size: contain;
+        text-indent: -9999px;
+        width: 120px;
+        z-index: 101;
 
-		@include bp(sm){
-			width: 120px;
-		}
-	}
+        @include bp(sm){
+            width: 120px;
+        }
+    }
 
-	.c-mobile-toggle {
-		float: right;
+    .c-mobile-toggle {
+        float: right;
 
-		@include bp(md){
-			display: none;
-		}
-	}
+        @include bp(md){
+            display: none;
+        }
+    }
 
-	&__list {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 100;
-		overflow-y: auto;
-		display: none;
-		background: $brand-color;
-		padding: 50px 5% 5%;
+    &__list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        overflow-y: auto;
+        display: none;
+        background: $brand-color;
+        padding: 50px 5% 5%;
 
-		ul {
-			margin: 0;
-			padding: 0;
+        ul {
+            margin: 0;
+            padding: 0;
 
-			li {
-				list-style: none;
-				margin: 1rem 0;
+            li {
+                list-style: none;
+                margin: 1rem 0;
 
-				a {
-					display: block;
-					color: #fff;
-					@include font-size(lg);
-					padding: 1rem 0;
-					font-weight: $font-weight-strong-base;
-				}
+                a {
+                    display: block;
+                    color: #fff;
+                    @include font-size(lg);
+                    padding: 1rem 0;
+                    font-weight: $font-weight-strong-base;
+                }
 
-				ul {
-					background: darken($brand-color, 5%);
-					padding: 0 0 0 2rem;
+                ul {
+                    background: darken($brand-color, 5%);
+                    padding: 0 0 0 2rem;
 
-					li {
-						display: block;
-					}
-				}
+                    li {
+                        display: block;
+                    }
+                }
 
-				&.current-menu-item {
-					a {
-						opacity: 0.7;
-					}
-				}
-			}
-		}
+                &.current-menu-item {
+                    a {
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
 
-		@include bp(md){
-			display: block;
-			float: right;
-			position: relative;
-			top: auto;
-			left: auto;
-			padding: 0;
-			width: auto;
-			overflow-y: visible;
+        @include bp(md){
+            display: block;
+            float: right;
+            position: relative;
+            top: auto;
+            left: auto;
+            padding: 0;
+            width: auto;
+            overflow-y: visible;
 
-			ul {
-				li {
-					display: inline-block;
-					padding: 0 0 0 2rem;
-					position: relative;
-					a {
-						@include font-size(md);
-						display: inline;
-					}
+            ul {
+                li {
+                    display: inline-block;
+                    padding: 0 0 0 2rem;
+                    position: relative;
+                    a {
+                        @include font-size(md);
+                        display: inline;
+                    }
 
-					ul {
-						position: absolute;
-						top: 90%;
-						opacity: 1;
-						transition: top 0.2s, opacity 0.2s;
-						z-index: 200;
-						padding: 0;
-						width: 150px;
-						left: -999em;
-					}
+                    ul {
+                        position: absolute;
+                        top: 90%;
+                        opacity: 1;
+                        transition: top 0.2s, opacity 0.2s;
+                        z-index: 200;
+                        padding: 0;
+                        width: 150px;
+                        left: -999em;
+                    }
 
-					&:hover {
-						ul {
-							opacity: 1;
-							top: 115%;
-							transition: top 0.2s, opacity 0.3s;
-							left: auto;
-						}
-					}
-				}
-			}
-		}
-	}
+                    &:hover {
+                        ul {
+                            opacity: 1;
+                            top: 115%;
+                            transition: top 0.2s, opacity 0.3s;
+                            left: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 body.js-navigation-open {
+    overflow: hidden;
 
-	overflow: hidden;
-
-	.b-page-navigation__list {
-		display: block;
-	}
+    .b-page-navigation__list {
+        display: block;
+    }
 }

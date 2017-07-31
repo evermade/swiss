@@ -1,17 +1,17 @@
 <?php
-//lets keep block data in class for encapsulation and stopping conflicts across blocks
+// lets keep block data in class for encapsulation and stopping conflicts across blocks
 $block = new \Swiss\Block;
 
-//set and get the acf fields for this block
+// set and get the acf fields for this block
 //$block->get_fields(array('field_name', 'field_name2'));
 
-//set and get the repeater columns for this block
+// set and get the repeater columns for this block
 //$block->get_repeater_field(['repeater_name']);
 
-//setup background image for main section block
+// setup background image for main section block
 //$block->set_background_image('field_name');
 
-//css stuff
+// css stuff
 //$block->addCss($block->fields['field_name'], 'section');
 
 include(__DIR__.'/view.php');

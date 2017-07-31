@@ -1,15 +1,15 @@
 {
-  "name": "Mr Evermade",
-  "version": "1.0.0",
-  "authors": [
-    "webmaster <webmaster@evermade.fi>"
-  ],
-  "dependencies": {
-    "bootstrap-sass": "~3.3",
-    "fontawesome": "latest",
-    "jquery": "~1.12.0",
-    "remodal": "^1.1.0",
-    "flickity": "^2.0.5"
-  },
-  "private": true
+    "name": "Mr Evermade",
+    "version": "1.0.0",
+    "authors": [
+        "webmaster <webmaster@evermade.fi>"
+    ],
+    "dependencies": {
+        "bootstrap-sass": "~3.3",
+        "fontawesome": "latest",
+        "jquery": "~1.12.0",
+        "remodal": "^1.1.0",
+        "flickity": "^2.0.5"
+    },
+    "private": true
 }

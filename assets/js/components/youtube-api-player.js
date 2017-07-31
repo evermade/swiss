@@ -12,256 +12,252 @@ Example with parameters:
 
 (function() {
 
-	//create empty object in the global em var
-	em.youtubeAPIPlayer = {};
+    //create empty object in the global em var
+    em.youtubeAPIPlayer = {};
 
-	// create an array to store references to interval-loops
-	em.youtubeAPIPlayer.loopRefs = [];
+    // create an array to store references to interval-loops
+    em.youtubeAPIPlayer.loopRefs = [];
 
-	//call any functions to be trigger on dom ready
-	em.youtubeAPIPlayer.init = function(){
+    //call any functions to be trigger on dom ready
+    em.youtubeAPIPlayer.init = function() {
 
-		// check that the youtube iframe api isn't already loaded
-		if ($("script[src$='www.youtube.com/iframe_api']").length === 0) {
+        // check that the youtube iframe api isn't already loaded
+        if ($("script[src$='www.youtube.com/iframe_api']").length === 0) {
 
-			var tag = document.createElement('script');
-			tag.src = "https://www.youtube.com/iframe_api";
-			var firstScriptTag = document.getElementsByTagName('script')[0];
-			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-		}
+        }
 
-	};
+    };
 
-	/**
-	 * Function that decides if autoplay should work for the user's device
-	 */
-	em.youtubeAPIPlayer.canAutoplay = function(){
-		if (window.innerWidth < 768) {
-			return 0;
-		} else if (/iPad|iPhone/.test(navigator.userAgent)) {
-			return 0;
-		}
-		return 1;
-	};
+    /**
+     * Function that decides if autoplay should work for the user's device
+     */
+    em.youtubeAPIPlayer.canAutoplay = function() {
+        if (window.innerWidth < 768) {
+            return 0;
+        } else if (/iPad|iPhone/.test(navigator.userAgent)) {
+            return 0;
+        }
 
-	/**
-	 * This will get called once the YouTube script has been loaded
-	 */
-	window.onYouTubeIframeAPIReady = function() {
+        return 1;
+    };
 
-		$('.c-youtube-api-player').each(function(){
-			var el = $(this);
+    /**
+     * This will get called once the YouTube script has been loaded
+     */
+    window.onYouTubeIframeAPIReady = function() {
 
-			if (!em.youtubeAPIPlayer.canAutoplay()) {
-				// force some settings for devices that won't autoplay videos (modify the data-attributes because onReady-function needs to read them again)
-				el.data('controls',1);
-				el.data('loop',0);
-				el.data('autoplay',0);
-				el.data('autoplay-viewport',0);
-			}
+        $('.c-youtube-api-player').each(function() {
+            var $el = $(this);
 
-			// read settings
-			var id = el.data('video-id');
-			var sound = Number(el.data('sound')) || 0;
-			var autoplay = Number(el.data('autoplay')) || 0;
-			var autoplayViewport = Number(el.data('autoplay-viewport')) || 0;
-			var loop = Number(el.data('loop')) || 0;
-			var maskLogo = Number(el.data('mask-logo')) || 0;
-			var controls = Number(el.data('controls')) || 0;
-			var showinfo = Number(el.data('showinfo')) || 0;
-			var related = Number(el.data('related')) || 0;
-			var cover = Number(el.data('cover')) || 0;
+            if (!em.youtubeAPIPlayer.canAutoplay()) {
+                // force some settings for devices that won't autoplay videos (modify the data-attributes because onReady-function needs to read them again)
+                $el.data('controls',1);
+                $el.data('loop',0);
+                $el.data('autoplay',0);
+                $el.data('autoplay-viewport',0);
+            }
 
-			// hide element if it's used as a background cover
-			if (cover) {
-				el.css({
-					'opacity' : 0
-				});
-			}
+            // read settings
+            var id = $el.data('video-id');
+            var sound = Number($el.data('sound')) || 0;
+            var autoplay = Number($el.data('autoplay')) || 0;
+            var autoplayViewport = Number($el.data('autoplay-viewport')) || 0;
+            var loop = Number($el.data('loop')) || 0;
+            var maskLogo = Number($el.data('mask-logo')) || 0;
+            var controls = Number($el.data('controls')) || 0;
+            var showinfo = Number($el.data('showinfo')) || 0;
+            var related = Number($el.data('related')) || 0;
+            var cover = Number($el.data('cover')) || 0;
 
-			// create a unique id for the player
-			var playerId = 'em-player-'+id+'-'+Math.ceil(Math.random()*9999);
+            // hide element if it's used as a background cover
+            if (cover) {
+                $el.css({
+                    'opacity' : 0
+                });
+            }
 
-			// create a stunt-div that YT script will turn into an iframe
-			$('<div id="'+playerId+'"></div>').appendTo(el);
+            // create a unique id for the player
+            var playerId = 'em-player-'+id+'-'+Math.ceil(Math.random()*9999);
 
-			var player = new YT.Player( playerId, {
-				height: '390', // will be overwritten by css
-				width: '640', // this too
-				videoId: id,
-				playerVars: {
-					'autoplay': autoplayViewport ? 0 : autoplay,
-					'controls': controls,
-					'showinfo': showinfo,
-					'rel': related, // show or hide related videos when video ends
-					'iv_load_policy': 3, // hide annotations (notes on video) by default
-					'wmode': 'transparent' // required to use z-index on the element on IE
-				},
-				events: {
-					'onReady': em.youtubeAPIPlayer.onReady,
-					'onStateChange': em.youtubeAPIPlayer.onPlayerStateChange
-				}
-			});
-		});
-	};
+            // create a stunt-div that YT script will turn into an iframe
+            $('<div id="'+playerId+'"></div>').appendTo($el);
 
-	/**
-	 * This will be called once a player has been loaded
-	 */
-	em.youtubeAPIPlayer.onReady = function(event){
+            var player = new YT.Player( playerId, {
+                height: '390', // will be overwritten by css
+                width: '640', // this too
+                videoId: id,
+                playerVars: {
+                    'autoplay': autoplayViewport ? 0 : autoplay,
+                    'controls': controls,
+                    'showinfo': showinfo,
+                    'rel': related, // show or hide related videos when video ends
+                    'iv_load_policy': 3, // hide annotations (notes on video) by default
+                    'wmode': 'transparent' // required to use z-index on the element on IE
+                },
+                events: {
+                    'onReady': em.youtubeAPIPlayer.onReady,
+                    'onStateChange': em.youtubeAPIPlayer.onPlayerStateChange
+                }
+            });
+        });
+    };
 
-		var player = event.target;
-		var el = $(player.getIframe().parentNode);
+    /**
+     * This will be called once a player has been loaded
+     */
+    em.youtubeAPIPlayer.onReady = function(event) {
 
-		var sound = Number(el.data('sound')) || 0;
-		var loop = Number(el.data('loop')) || 0;
-		var autoplay = Number(el.data('autoplay')) || 0;
-		var autoplayViewport = Number(el.data('autoplay-viewport')) || 0;
-		var cover = Number(el.data('cover')) || 0;
+        var player = event.target;
+        var $el = $(player.getIframe().parentNode);
 
-		if (!sound) {
-			event.target.mute();
-		}
+        var sound = Number($el.data('sound')) || 0;
+        var loop = Number($el.data('loop')) || 0;
+        var autoplay = Number($el.data('autoplay')) || 0;
+        var autoplayViewport = Number($el.data('autoplay-viewport')) || 0;
+        var cover = Number($el.data('cover')) || 0;
 
-		if (autoplayViewport) {
-			em.youtubeAPIPlayer.playIfInViewport(player,el,loop);
+        if (!sound) {
+            event.target.mute();
+        }
 
-			// add a window scroll -listener that will start the video once it gets on the screen
-			$(window).on('scroll',function(){
+        if (autoplayViewport) {
+            em.youtubeAPIPlayer.playIfInViewport(player,$el,loop);
 
-				em.youtubeAPIPlayer.playIfInViewport(player,el,loop);
+            // add a window scroll -listener that will start the video once it gets on the screen
+            $(window).on('scroll',function() {
+                em.youtubeAPIPlayer.playIfInViewport(player,$el,loop);
+            });
+        }
 
-			});
+        if (!autoplayViewport && autoplay && loop) {
+            em.youtubeAPIPlayer.makeLoop(player);
+        }
 
-		}
+        var debounceMe = em.helper.debounce(function() {
+            em.youtubeAPIPlayer.onResize($el);
+        }, 250);
 
-		if (!autoplayViewport && autoplay && loop) {
-			em.youtubeAPIPlayer.makeLoop(player);
-		}
+        window.addEventListener('resize', debounceMe);
 
-		var debounceMe = em.helper.debounce(function() {
-			em.youtubeAPIPlayer.onResize(el);
-		}, 250);
+        // make the video cover the parent container
+        if (cover) {
+            em.youtubeAPIPlayer.videoFill($el);
 
-		window.addEventListener('resize', debounceMe);
+            // wait a bit before showing the player, to make sure video is playing
+            setTimeout(function() {
+                $el.css({
+                    'opacity' : 1,
+                    'transition' : 'all 5s ease'
+                });
+            }, 500);
+        }
+    };
 
-		// make the video cover the parent container
-		if (cover) {
-			em.youtubeAPIPlayer.videoFill(el);
+    /**
+     * This will be called when a player's state changes
+     */
+    em.youtubeAPIPlayer.onPlayerStateChange = function(event) {
+        var player = event.target;
+        var $el = $(player.getIframe().parentNode);
+    };
 
-			// wait a bit before showing the player, to make sure video is playing
-			setTimeout(function() {
-				el.css({
-					'opacity' : 1,
-					'transition' : 'all 5s ease'
-				});
-			}, 500);
-		}
-	};
+    /**
+     * Start a player if it's in the viewport
+     */
+    em.youtubeAPIPlayer.playIfInViewport = function(player,$el,loop) {
 
-	/**
-	 * This will be called when a player's state changes
-	 */
-	em.youtubeAPIPlayer.onPlayerStateChange = function(event){
-		var player = event.target;
-		var el = $(player.getIframe().parentNode);
-	};
+        // var scrollTop = window.pageYOffset;
+        // var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-	/**
-	 * Start a player if it's in the viewport
-	 */
-	em.youtubeAPIPlayer.playIfInViewport = function(player,el,loop){
+        if (em.helper.inViewPort($el[0])) {
+            // in viewport, start playing
+            if (!$el.data('playing')) {
+                $el.data('playing',1);
 
-		// var scrollTop = window.pageYOffset;
-		// var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+                player.playVideo(); //console.log('video started');
 
-		if (em.helper.inViewPort(el[0])) {
-			// in viewport, start playing
+                if (loop) {
+                    em.youtubeAPIPlayer.makeLoop(player);
+                }
+            }
+        } else {
+            // not in viewport - stop playback
+            if ($el.data('playing')) {
+                $el.data('playing', 0);
 
-			if (!el.data('playing')) {
-				el.data('playing',1);
+                player.pauseVideo(); //console.log('video paused');
+            }
 
-				player.playVideo(); //console.log('video started');
+        }
+    };
 
-				if (loop) {
-					em.youtubeAPIPlayer.makeLoop(player);
-				}
-			}
-		} else {
-			// not in viewport - stop playback
-			if (el.data('playing')) {
-				el.data('playing',0);
+    /**
+     * Make a player loop without a gap by rewinding the video just before it ends
+     */
+    em.youtubeAPIPlayer.makeLoop = function(player) {
 
-				player.pauseVideo(); //console.log('video paused');
-			}
+        var id = $(player.getIframe()).attr('id');
+        var videoStartOffset = 0; // if there's a fade-in or glitch, try changing this to 0.5 (seconds) (NEEDS TO BE LESS THAN EndOffset)
+        var videoEndOffset = 1; // don't let video run all the way because it'll stop. in case of looping problems, try tweaking this
+        var duration = player.getDuration() - videoEndOffset;
 
-		}
-	};
+        // clear the old timing loop if exists
+        if (typeof(em.youtubeAPIPlayer.loopRefs[id]) != 'undefined') {
+            player.seekTo( videoStartOffset ); //console.log('go to '+videoStartOffset);
+            clearInterval(em.youtubeAPIPlayer.loopRefs[id]); //console.log('clear interval');
+        }
 
-	/**
-	 * Make a player loop without a gap by rewinding the video just before it ends
-	 */
-	em.youtubeAPIPlayer.makeLoop = function(player){
+        // create timing
+        //console.log('set interval');
+        em.youtubeAPIPlayer.loopRefs[id] = setInterval(function() {
 
-		var id = $(player.getIframe()).attr('id');
-		var videoStartOffset = 0; // if there's a fade-in or glitch, try changing this to 0.5 (seconds) (NEEDS TO BE LESS THAN EndOffset)
-		var videoEndOffset = 1; // don't let video run all the way because it'll stop. in case of looping problems, try tweaking this
-		var duration = player.getDuration() - videoEndOffset;
+            if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+                // video is still playing, rewind to the beginning
+                player.seekTo( videoStartOffset ); //console.log('go to '+videoStartOffset);
 
-		// clear the old timing loop if exists
-		if (typeof(em.youtubeAPIPlayer.loopRefs[id]) != 'undefined') {
-			player.seekTo( videoStartOffset ); //console.log('go to '+videoStartOffset);
-			clearInterval(em.youtubeAPIPlayer.loopRefs[id]); //console.log('clear interval');
-		}
+            }
 
-		// create timing
-		//console.log('set interval');
-		em.youtubeAPIPlayer.loopRefs[id] = setInterval(function(){
+        }, duration*1000);
+    };
 
-			if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+    /**
+     * Make the player behave exactly like the background-size: cover css attribute
+     */
+    em.youtubeAPIPlayer.videoFill = function($player, aspectRatio) {
+        var videoHeight, videoWidth;
+        aspectRatio = typeof(aspectRatio) === 'undefined' ? 16/9 : aspectRatio;
 
-				// video is still playing, rewind to the beginning
-				player.seekTo( videoStartOffset ); //console.log('go to '+videoStartOffset);
+        // calculate height and width based on container size
+        if (($player.width() / $player.height()) < aspectRatio) {
 
-			}
+            videoHeight = $player.height();
+            videoWidth = videoHeight * aspectRatio;
 
-		}, duration*1000);
-	};
+        } else {
 
-	/**
-	 * Make the player behave exactly like the background-size: cover css attribute
-	 */
-	em.youtubeAPIPlayer.videoFill = function(player, aspectRatio) {
-		var videoHeight, videoWidth;
-		aspectRatio = typeof(aspectRatio) === 'undefined' ? 16/9 : aspectRatio;
+            videoWidth = $player.width();
+            videoHeight = videoWidth / aspectRatio;
 
-		// calculate height and width based on container size
-		if ((player.width() / player.height()) < aspectRatio) {
+        }
 
-			videoHeight = player.height();
-			videoWidth = videoHeight * aspectRatio;
+        // set video dimensions
+        $player.find('iframe').css({'height': videoHeight+'px', 'width': videoWidth+'px'});
+    };
 
-		} else {
+    /**
+     * Handle browser window resizing
+     */
+    em.youtubeAPIPlayer.onResize = function($el) {
+        var cover = Number($el.data('cover')) || 0;
 
-			videoWidth = player.width();
-			videoHeight = videoWidth / aspectRatio;
-
-		}
-
-		// set video dimensions
-		player.find('iframe').css({'height': videoHeight+'px', 'width': videoWidth+'px'});
-	};
-
-	/**
-	 * Handle browser window resizing
-	 */
-	em.youtubeAPIPlayer.onResize = function(el) {
-		var cover = Number(el.data('cover')) || 0;
-
-		if (cover) {
-			em.youtubeAPIPlayer.videoFill(el);
-		}
-	};
+        if (cover) {
+            em.youtubeAPIPlayer.videoFill($el);
+        }
+    };
 
 })();

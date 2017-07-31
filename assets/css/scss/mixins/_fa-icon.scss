@@ -1,12 +1,12 @@
-@mixin fa-icon($icon: "", $beforeAfter: "before", $padding: 0, $color:""){
-  &:#{$beforeAfter} {
-    display: inline-block;
-    content: $icon;
-    font-family: "FontAwesome";
-    margin: $padding;
+@mixin fa-icon($icon: "", $beforeAfter: "before", $padding: 0, $color: "") {
+    &:#{$beforeAfter} {
+        display: inline-block;
+        content: $icon;
+        font-family: "FontAwesome";
+        margin: $padding;
 
-    @if $color!="" {
-      color: $color;
+        @if $color != "" {
+            color: $color;
+        }
     }
-  }
 }
