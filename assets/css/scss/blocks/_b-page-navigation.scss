@@ -18,7 +18,7 @@
         width: 120px;
         z-index: 101;
 
-        @include bp(sm){
+        @include bp(sm) {
             width: 120px;
         }
     }
@@ -26,7 +26,7 @@
     .c-mobile-toggle {
         float: right;
 
-        @include bp(md){
+        @include bp(md) {
             display: none;
         }
     }
@@ -76,7 +76,7 @@
             }
         }
 
-        @include bp(md){
+        @include bp(md) {
             display: block;
             float: right;
             position: relative;

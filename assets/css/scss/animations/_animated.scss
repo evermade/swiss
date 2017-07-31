@@ -8,7 +8,7 @@
     Remember to add your newly made animation to _main.scss
 
 
-                        anim            animtime	fill        easing          delay
+                        anim            animtime    fill        easing          delay
                         --              --          --          --              --
     @include animation( exampleAnim,    0.6s,       backwards,  $ease-out-expo, 0.3s);
 
@@ -18,7 +18,7 @@
 
     SCSS
     ------
-    @include animation(	fadeInUp, 0.6s, backwards, $ease-out-expo, 0.3s);
+    @include animation( fadeInUp, 0.6s, backwards, $ease-out-expo, 0.3s);
     @include animation( fadeInUp );
 
     HTML
@@ -42,16 +42,17 @@
  * Animation visibility by default
  */
 
-@media only screen and (min-width : $animated-min-width) {
+@media only screen and (min-width: $animated-min-width) {
 
     *[data-animate] {
         opacity: 0;
 
         &.animated {
-            opacity:1;
+            opacity: 1;
         }
     }
 }
+
 
 /**
  * Animation Speeds
@@ -73,8 +74,8 @@
     &--superslow {
         animation-duration: 3.2s;
     }
-
 }
+
 
 /**
  * Animation Delay
@@ -84,11 +85,12 @@
 
 $base-time: 0.10;
 
-@for $i from 1 through 20{
+@for $i from 1 through 20 {
     .delay--#{$i} {
-        animation-delay:unquote(($base-time*$i) + 's'); //0.5, 1, 1.5 etc
+        animation-delay: unquote(($base-time*$i) + 's'); //0.5, 1, 1.5 etc
     }
 }
+
 
 /**
  * Animation Sequence for Child Elements
@@ -100,8 +102,8 @@ $base-time: 0.10;
 
 $base-time: 0.20;
 
-@for $i from 1 through 20{
+@for $i from 1 through 20 {
     .animated--sequence *:nth-child(#{$i}) {
-        animation-delay:unquote(($base-time*$i) + 's'); //0.5, 1, 1.5 etc
+        animation-delay: unquote(($base-time*$i) + 's'); //0.5, 1, 1.5 etc
     }
 }

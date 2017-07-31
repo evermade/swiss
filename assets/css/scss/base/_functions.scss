@@ -1,11 +1,8 @@
-@function span($how-many:1, $grid-size: 12) {
-    @return ($how-many / $grid-size) * 100%
-};
+/* A shorthand for using the brand color profile map */
 
-// A shorthand for using the brand color profile map
 @function brand($company) {
     @return map-get($brand-colors, $company);
-};
+}
 
 @function rem($pixels, $context: $font-size-rem-base) {
     @if (unitless($pixels)) {

@@ -1,6 +1,5 @@
 @mixin center-align-content() {
-    display: -webkit-flex; /* Safari */
-    -webkit-align-items: center; /* Safari 7.0+ */
+    display: -webkit-flex;
     display: flex;
     align-items: center;
 }

@@ -3,26 +3,33 @@
  * well-formatted when the client has control over the content. Typically when
  * the client has the ability to add HTML.
  */
+
 @mixin wysiwyg-html() {
 
     position: relative;
 
-    h1, h2, h3, h4, h5, h6 {
-        margin: 1.4em 0 0.4em 0;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 1.4em;
+        margin-bottom: 0.4em;
 
         &:first-child {
             margin-top: 0;
         }
     }
 
-    ul, ol {
+    ul,
+    ol {
         margin-bottom: 1em;
 
-        ul, ol {
+        ul,
+        ol {
             margin-bottom: 0;
         }
-
-        li {}
     }
 
     p {
@@ -37,29 +44,32 @@
         margin-bottom: 1.5em;
     }
 
-    dl, dd, blockquote {
+    dl,
+    dd,
+    blockquote {
         margin-bottom: 1em;
 
-        & + ol, & + ul {
+        &+ol,
+        &+ul {
             margin-bottom: 0;
         }
     }
 
     /* Editor image styles */
     img {
-        height: auto; // overwrite height-attribute set by WP
+        /* overwrite height-attribute set by WP */
+        height: auto;
     }
 
     pre {
         padding: 1rem 2rem;
-        border: 1px solid rgba(0,0,0,0.1);
+        border: 1px solid rgba(0, 0, 0, 0.1);
         display: block;
         border-radius: $border-radius;
         font-size: 0.9em;
         margin: 0 0 1em;
     }
 
-    // images with captions
     .wp-caption {
         max-width: 100%;
 
@@ -110,8 +120,14 @@
 }
 
 @mixin wysiwyg-html--nowrap() {
-    h1, h2, h3, h4, h5, h6,
-    ul li, ol li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ul li,
+    ol li,
     p {
         text-overflow: ellipsis;
         white-space: nowrap;
