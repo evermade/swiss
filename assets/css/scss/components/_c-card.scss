@@ -1,0 +1,66 @@
+.c-card {
+    width: 100%;
+    background: #fff;
+    position: relative;
+
+    &__image {
+        background: url(http://fakeimg.pl/650x450/000000/fff/?text=img) center center no-repeat;
+        background-size: cover;
+        padding-top: 80%;
+
+        &--skewed {
+            clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+        }
+    }
+
+    &__content {
+        position: relative;
+        padding: 1.7em 1em 1em;
+
+        @include bp(sm) {
+            padding-top: 1.2em;
+        }
+    }
+
+    &__meta {
+        margin: 0 0 1rem 0;
+        @include font-size(sm);
+    }
+
+    &__title {
+        margin: 0 0 2em;
+        height: 3.5em;
+
+        @include bp(sm) {
+            height: 2.4em;
+        }
+
+    }
+
+    &__icon {
+        background: url(http://fakeimg.pl/40x40/000000/fff/?text=img) center no-repeat;
+        background-size: cover;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: -20px;
+        right: 1em;
+        text-indent: -9999px;
+
+        @include bp(sm) {
+            width: 50px;
+            height: 50px;
+            top: -30px;
+            right: 1em;
+        }
+    }
+
+    &__read-more {
+        @include font-size(sm);
+    }
+
+    &--shadow {
+        box-shadow: 0 0 20px 1px rgba(#666, 0.3);
+    }
+
+}

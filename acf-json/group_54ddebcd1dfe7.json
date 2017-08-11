@@ -191,9 +191,9 @@
                         {
                             "key": "field_54de1389f46cf",
                             "label": "Columns",
-                            "name": "columns_columns",
+                            "name": "columns",
                             "type": "repeater",
-                            "instructions": "If your trying to achieve an image - text column layout, please put the image first then the text column.\r\n\r\nThis will result in text - image, then image - text etc in a staggered layout. Also this way it will respond down to mobile devices nicely :)",
+                            "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -239,10 +239,10 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_557551800a89d",
-                            "label": "Slides",
-                            "name": "slides",
-                            "type": "repeater",
+                            "key": "field_598da15f65f34",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -251,94 +251,73 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "collapsed": "",
-                            "min": 1,
-                            "max": 1,
-                            "layout": "row",
-                            "button_label": "Add Slide",
-                            "sub_fields": [
-                                {
-                                    "key": "field_557552080a8a1",
-                                    "label": "Text",
-                                    "name": "text",
-                                    "type": "wysiwyg",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1,
-                                    "delay": 0
-                                },
-                                {
-                                    "key": "field_5575793299a2e",
-                                    "label": "Background",
-                                    "name": "background",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "preview_size": "thumbnail",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": ""
-                                },
-                                {
-                                    "key": "field_58e60e90bd1ea",
-                                    "label": "Overlay",
-                                    "name": "overlay",
-                                    "type": "true_false",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "message": "",
-                                    "default_value": 0,
-                                    "ui": 0,
-                                    "ui_on_text": "",
-                                    "ui_off_text": ""
-                                },
-                                {
-                                    "key": "field_58e613671057e",
-                                    "label": "Youtube ID",
-                                    "name": "youtube_id",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                }
-                            ]
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_598da16b65f35",
+                            "label": "Background Image",
+                            "name": "background_image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_598da17565f36",
+                            "label": "Overlay",
+                            "name": "overlay",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_598da18165f37",
+                            "label": "Youtube ID",
+                            "name": "youtube_id",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -444,6 +423,84 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "598da21d65f38",
+                    "name": "posts",
+                    "label": "Posts (Demo)",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_598da22265f39",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_598da22b65f3a",
+                            "label": "Posts",
+                            "name": "posts",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "post"
+                            ],
+                            "taxonomy": [],
+                            "filters": [
+                                "search"
+                            ],
+                            "elements": "",
+                            "min": 4,
+                            "max": 4,
+                            "return_format": "object"
+                        },
+                        {
+                            "key": "field_598da65b470bf",
+                            "label": "Background Image",
+                            "name": "background_image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -472,5 +529,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1491473272
+    "modified": 1502455395
 }

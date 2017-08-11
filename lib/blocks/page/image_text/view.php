@@ -1,6 +1,6 @@
 <section class="b-image-text b-image-text--<?php echo $block->get('layout'); ?> b-image-text--<?php echo $block->get('background_image_mode'); ?>">
 
-    <div class="b-image-text__image" style="background-image: url(<?php echo \Swiss\Acf\get_image('large', $block->get('image'), 'url'); ?>);"></div>
+    <div class="b-image-text__image" style="background-image: url(<?php echo \Swiss\Acf\getImageUrl('large', $block->get('image')); ?>);"></div>
 
     <div class="container">
         <div class="row">

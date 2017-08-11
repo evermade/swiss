@@ -1,31 +1,48 @@
 <?php namespace Swiss\Acf;
 
-function get_image($size='large', $key, $type='img', $class=null) {
+/**
+ * to fetch and return a url from a ACF image array
+ *
+ * @param string $size
+ * @param [type] $key
+ * @return void
+ */
+function getImageUrl($size='large', $key=null) {
 
-    // allows us to pass an array or a key to fetch
+    if(empty($key) || empty($size)) return null;
+
+    // allows us to pass an array or a key to fetch from current post
     $image = (is_string($key))? get_field($key) : $key;
 
-    if(!empty($image) && isset($image['sizes'][$size])){
+    // do we have our image
+    if(!empty($image) && is_array($image)){
 
-        // if an image is requested do so, else return a url
-        if($type == 'img') {
-            return sprintf('<img src="%s" alt="%s" class="%s" %s>', $image['sizes'][$size], $image['alt'], $class);
+        // special case for originals as they are outside the sizes array
+        if($size == 'original'){
+            return $image['url'];
         }
-        else {
+        elseif(isset($image['sizes'][$size])) {
             return $image['sizes'][$size];
         }
-
     }
 
     return null;
 }
 
+/**
+ * to return an image tag from a ACF image array
+ *
+ * @param string $size
+ * @param [type] $key
+ * @param string $class
+ * @return void
+ */
+function getImage($size='medium-large', $key=null, $class=''){
 
-function get_image_url($key, $size='large') {
-    $image = get_field($key);
+    $image_url = Swiss\Acf\getImageUrl($size, $key);
 
-    if(!empty($image) && isset($image['sizes'][$size])) {
-        return $image['sizes'][$size];
+    if($image_url){
+        return sprintf('<img src="%s" alt="image" class="%s" %s>', $image_url, $class);
     }
 
     return null;

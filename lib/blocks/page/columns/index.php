@@ -3,7 +3,7 @@
 $block = new \Swiss\Block;
 
 // set and get the repeater columns for this post
-$block->get_repeater_field(['columns_columns']);
+$block->get_fields(['columns']);
 
 // how many max per row
 $block->set('per_row', 4);

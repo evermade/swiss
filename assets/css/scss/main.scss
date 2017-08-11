@@ -77,6 +77,7 @@
  * A bunch of layouts
  */
 @import "layouts/l-columns";
+@import "layouts/l-cards";
 
 /**
  * Blocks
@@ -89,6 +90,7 @@
 @import "blocks/b-page-content";
 @import "blocks/b-page-navigation";
 @import "blocks/b-toolbox";
+@import "blocks/b-cards";
 
 /**
  * Components
@@ -106,6 +108,7 @@
 @import "components/c-post-small";
 @import "components/c-table";
 @import "components/c-youtube-api-player";
+@import "components/c-card";
 
 /**
  * Animations
