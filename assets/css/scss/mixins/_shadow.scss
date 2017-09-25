@@ -1,0 +1,18 @@
+/*
+_variables include 2 different variables:
+
+$shadow
+$shadow-large
+
+$shadow will be used most often within buttons and even in boxes.
+$shadow-large should be
+
+ */
+@mixin shadow($size: small){
+    @if $size == small {
+        box-shadow: $shadow;
+    }
+    @if $size == large {
+        box-shadow: $shadow-large;
+    }
+}

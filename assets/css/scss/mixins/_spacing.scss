@@ -1,50 +1,46 @@
-// This needs either simplifying or proper documentation -jaamo
-@mixin spacing($size: base, $where: top, $reset: false, $which: padding) {
+/*
 
-    $spacingDirection: #{$which}-#{$where} !default;
+This uses $spacing-sizes matrix. Feel free to add more spacings there if they have a reusable logic to it.
+Don't try to add new rows into the matrix just to support a single component.
+
+@include spacing(section,top,padding);
+
+ */
+
+@mixin spacing($spacing-size-label: box, $where: all, $which: margin) {
+    
+    $spacingDirection: #{$which}-#{$where};
 
     @if $where == all {
         $spacingDirection: $which;
     }
 
-    // sometimes we need to reset the padding/margin
-    @if $reset == true {
-        #{$which}: 0;
-    }
+    // check if we have matching font-size
+    @if map-has-key($spacing-sizes, $spacing-size-label) {
 
-    @if $size == xs {
-        #{$spacingDirection}: rem($spacing-xs);
-    }
+        // set the var for checking the prev breakpoint spacing-size
+        $prev-spacing-size: 0;
 
-    @if $size == sm {
-        #{$spacingDirection}: rem($spacing-sm);
-    }
+        // loop through breakpoints
+        @each $bp-label, $spacing-size in map-get($spacing-sizes, $spacing-size-label) {
 
-    @if $size == base {
-        #{$spacingDirection}: rem($spacing);
-    }
+            // only add new spacing-size declaration if we don't already have it for previous breakpoint
+            @if $bp-label == xs {
+                #{$spacingDirection}: $spacing-size;
+            }
+            @else if $spacing-size != $prev-spacing-size {
+                @include bp($bp-label) {
+                    #{$spacingDirection}: $spacing-size;
+                }
+            }
 
-    @if $size == md {
-        #{$spacingDirection}: rem($spacing);
-
-        @include bp(md) {
-            #{$spacingDirection}: rem($spacing-md);
+            // this for checking that we don't add duplicate spacing-sizes
+            $prev-spacing-size: $spacing-size;
         }
     }
 
-    @if $size == lg {
-        #{$spacingDirection}: rem($spacing-md);
-
-        @include bp(md) {
-            #{$spacingDirection}: rem($spacing-lg);
-        }
-    }
-
-    @if $size == xl {
-        #{$spacingDirection}: rem($spacing-lg);
-
-        @include bp(sm) {
-            #{$spacingDirection}: rem($spacing-xl);
-        }
+    // error message
+    @else {
+        @warn "`#{$spacing-size-label}` font-size could not be found on the font-size matrix.";
     }
 }

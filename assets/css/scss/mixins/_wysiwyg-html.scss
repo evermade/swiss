@@ -14,8 +14,8 @@
     h4,
     h5,
     h6 {
-        margin-top: 1.4em;
-        margin-bottom: 0.4em;
+        margin-top: $text-spacing*0.8em;
+        margin-bottom: $text-spacing*0.3em;
 
         &:first-child {
             margin-top: 0;
@@ -24,7 +24,6 @@
 
     ul,
     ol {
-        margin-bottom: 1em;
 
         ul,
         ol {
@@ -33,7 +32,7 @@
     }
 
     p {
-        margin-bottom: 1.5em;
+        margin: $text-spacing*0.8em 0;
 
         &:last-child {
             margin-bottom: 0;
@@ -41,13 +40,13 @@
     }
 
     hr {
-        margin-bottom: 1.5em;
+        margin: $text-spacing*1.5em 0;
     }
 
     dl,
     dd,
     blockquote {
-        margin-bottom: 1em;
+        margin: $text-spacing*1em 0
 
         &+ol,
         &+ul {
@@ -87,7 +86,6 @@
     .alignnone {
         width: 100%;
         display: block;
-        margin-bottom: rem($spacing);
 
         img {
             width: 100%;
@@ -99,13 +97,11 @@
         margin-left: auto;
         margin-right: auto;
         display: block;
-        margin-bottom: rem($spacing);
     }
 
     .alignleft,
     .alignright {
         max-width: 48%;
-        margin-bottom: rem($spacing-xs);
     }
 
     .alignleft {

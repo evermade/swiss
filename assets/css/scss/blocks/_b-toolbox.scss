@@ -1,29 +1,109 @@
 .b-toolbox {
     // generic section/block styles (paddings, ect..)
-    @include section;
+    @include spacing(section,top, padding);
+    @include spacing(section,bottom, padding);
+
+    background:#fff;
+
+    &__scheme-wrapper{
+        @include shadow;
+        padding:4rem;
+    }
 
     // different container sizes
     &__container {
         @include container;
+
+        &:after{
+            content:"";
+            display:block;
+            clear:both;
+        }
     }
 
-    // just a bootstap row :)
-    &__row {
-        @include make-row;
+    &__sidebar{
+        width:27rem;
+        float:left;
     }
 
-    // this is what we use to control the width of the inside
-    &__content {
-        @include make-xs-column(12);
+    &__content{
+        float:right;
+        width:calc(100% - 30rem);
     }
 
-    // this can be used for adding box-shadows / non-grid related paddings / etc..
-    &__wrapper {
-        position: relative;
+    &__component-row{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-flow: flex-start;
+        align-items: stretch;
+        justify-content: space-between;
+        position:relative;
+
+        padding:0 0 0 20%;
+        margin:4rem 0;
+
+        &[data-name]:before { 
+            @include transition;
+            @include font-size(sm);
+            content: attr(data-name);
+            display:block;
+            width:18%;
+            position:absolute;
+            top:0;
+            left:0;
+            color:rgb(125,125,125);
+        }
+
+        & > *{
+            max-width:60%;
+        }
+
+        &[data-description]:after { 
+            @include transition;
+            @include font-size(sm);
+            content: attr(data-description);
+            display:block;
+            width:35%;
+            float:right;
+            color:rgb(125,125,125);
+        }
     }
 
-    // @TODO: cheating i know, for now this will do to allow blocks in the toolbox column
-    .b-base__container {
-        width: 100%;
+    &__box{
+        height:7.5rem;
+        width:7.5rem;
+        display:block;
+        position:relative;
+
+        &--shadow{
+            @include shadow;
+
+            &--large{
+                @include shadow(large);
+            }
+        }
+
+        &--border-radius{
+            @include border-radius;
+            background:rgb(125,125,125);
+        }
+
+        &--spacing-section{
+            @include spacing(section,top,padding);
+            background:rgb(125,125,125);
+            height:0;
+            border-width:2px 0;
+            border-style:solid;
+            border-color:rgb(255,0,0);
+        }
+
+        &--spacing-box{
+            @include spacing(box,top,padding);
+            background:rgb(125,125,125);
+            height:0;
+            border-width:2px 0;
+            border-style:solid;
+            border-color:rgb(255,0,0);
+        }
     }
 }

@@ -14,29 +14,24 @@
 
 
 // Colors
-$red:           #ff0060;
-$dark-grey:     #50525b;
-$grey:          #50525b;
 $green:         #0ac572;
-$light-grey:    #ccc;
-$almost-white:  #e4e4e4;
-$almost-black:  #22182c;
-
 
 // Link colors to meaningful variables
 $brand-color:       $green;
+$text-color:        #666;
+$headline-color:    #000;
+
 $body-bg:           #fff;
-$link-color:        $brand-color;
-$link-hover-color:  darken($link-color, 15%);
+$link-color:        $green;
 
 
-// Font sizes for responsive scalability (used by font-size mixin). Feel free to add new sizes on project basis if needed :)
+// Font sizes for responsive scalability (used by @mixin font-size). Feel free to add new sizes on project basis if needed :)
 // Sizes are taken from the Swiss-Template-v2-beta.sketch
 $font-sizes: (
     sm:     (xs: 14px, sm: 14px, md: 14px, lg: 14px, xl: 14px),
     md:     (xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px), // body text size
     lg:     (xs: 20px, sm: 20px, md: 20px, lg: 20px, xl: 20px),
-    button: (xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px),
+    button: (xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px), 
     h6:     (xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px),
     h5:     (xs: 18px, sm: 18px, md: 18px, lg: 18px, xl: 18px),
     h4:     (xs: 20px, sm: 20px, md: 20px, lg: 20px, xl: 20px),
@@ -48,30 +43,39 @@ $font-sizes: (
 $font-size-base: md; // base size based on font-size labels in the sass map
 
 
-// Typography
-$font-family-base:          "Roboto", sans-serif;
-$text-color:                $dark-grey;
-$font-weight-base:          400;
-$font-weight-strong-base:   700;
+// Spacing sizes for responsive scalability (used by @mixin spacing). Feel free to add new sizes on project basis if needed :)
+// [section,box] is being used for out-the-box components so those shouldnt be removed.
+$spacing-sizes: (
+    section:        (xs: 2.5rem, sm: 4rem, md: 4rem, lg: 10rem, xl: 10rem),
+    box:            (xs: 1.5rem, sm: 1.5rem, md: 2rem, lg: 2rem, xl: 2rem)
+);
 
-$line-height-base:          1.628571429;
+
+// Typography
+$text-family:               "Roboto", sans-serif;
+$text-color:                $text-color;
+$text-weight:               400;
+$text-weight-strong:        700;
+
+$line-height:               1.628571429;
 $line-height-computed:      floor(($font-size-base * $line-height-base)) !default;
 
+$text-spacing:              1;
 
 // Headings
 $headings-font-family:      "Roboto", sans-serif;
-$headings-color:            #000;
+$headings-color:            $headline-color;
 $headings-font-weight:      900;
 
 $headings-line-height:      1.2;
 
 
 // Effects
-$animated-min-width:        1025px;                             // animated classes work from this viewport up
 $overlay-bg:                darken($brand-color, 35%);          // @include overlay;
 $overlay-alpha:             0.5;                                // @include overlay;
-$border-radius:             3px;                                // @include border-radius;
-$shadow:                    0 1px 4px 0 rgba(0, 0, 0, 0.1);     // @include shadow;
+$border-radius:             5px;                                // @include border-radius;
+$shadow:                    0 1px 4px 0 rgba(0, 0, 0, 0.5);     // @include shadow();
+$shadow-large:              0 3px 40px 0 rgba(0, 0, 0, 0.5);    // @include shadow(large);
 
 
 // Buttons
@@ -79,23 +83,13 @@ $shadow:                    0 1px 4px 0 rgba(0, 0, 0, 0.1);     // @include shad
 $ui-padding:                0.5em 1em;
 $ui-bg:                     $brand-color;
 $ui-color:                  #fff;
-$ui-weight:                 $font-weight-base;
+$ui-weight:                 $text-weight;
 $ui-border-radius:          $border-radius;
 $ui-shadow:                 $shadow;
 
 
 // Animation Easing
-$ease-out-expo: cubic-bezier(0.190, 1.000, 0.220, 1.000);
-
-
-/**
- * Breakpoints and Container Defaults
- */
-// Breakpoints
-$screen-xl:                 1600px;
-$screen-xl-min:             $screen-xl;
-$screen-lg-max:             $screen-xl-min - 1;
-
+$ease-out-expo:             cubic-bezier(0.190, 1.000, 0.220, 1.000);
 
 // Container Defaults
 $container-max-width:       1270px;
@@ -103,22 +97,44 @@ $container-width:           90%;
 $container-gutter-width:    5%;
 
 
+
+
+
+
+
+
+
+
+
+/*
+    ----------------------------------------
+
+    EXTRA VARIABLES
+    --
+    These will barely get changed.
+
+    ----------------------------------------
+*/
+
+
+
+/**
+ * Breakpoints and Container Defaults
+ */
+
+// animated classes work from this viewport up
+$animated-min-width:        1025px;
+
+// Breakpoints
+$screen-xl:                 1600px;
+$screen-xl-min:             $screen-xl;
+$screen-lg-max:             $screen-xl-min - 1;
+
 // Container Breakpoint sizes
 $container-sm-max:          100%;
 $container-md-max:          100%;
 $container-lg-max:          1170px;
 $container-xl-max:          1241px;
-
-
-// Generic spacing sizes
-$spacing-xxl:               150px;
-$spacing-xl:                100px;
-$spacing-lg:                60px;
-$spacing-md:                40px;
-$spacing-sm:                30px;
-$spacing-xs:                20px;
-$spacing-xxs:               10px;
-$spacing:                   $spacing-md; // Define base spacing, used by Bourbon and others.
 
 // Misc padding/margin sizes
 $col-padding:               15px;

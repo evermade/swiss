@@ -31,6 +31,9 @@
 @import "mixins/animation-sequence";
 @import "mixins/bgimg";
 @import "mixins/bp";
+@import "mixins/btn";
+@import "mixins/btn-small";
+@import "mixins/border-radius";
 @import "mixins/center-align-content";
 @import "mixins/circle";
 @import "mixins/container";
@@ -44,6 +47,8 @@
 @import "mixins/spacing";
 @import "mixins/scheme-html";
 @import "mixins/section";
+@import "mixins/shadow";
+@import "mixins/transition";
 @import "mixins/wysiwyg-html";
 
 /**
@@ -99,6 +104,7 @@
 @import "components/c-asset";
 @import "components/c-background-image";
 @import "components/c-btn";
+@import "components/c-btn-small";
 @import "components/c-chromeframe";
 @import "components/c-hero";
 @import "components/c-list";
@@ -109,6 +115,7 @@
 @import "components/c-table";
 @import "components/c-youtube-api-player";
 @import "components/c-card";
+@import "components/c-image"; 
 
 /**
  * Animations
