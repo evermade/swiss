@@ -100,12 +100,16 @@ p {
     }
 }
 
+i{
+    
+}
+
 strong {
-    font-weight: $font-weight-strong-base;
+    font-weight: $text-weight;
 }
 
 blockquote {
-    padding: 0 0 0 2em;
+    padding: 0;
     border-left: 0.5em solid $brand-color;
     margin: 0;
 }
@@ -135,8 +139,4 @@ a {
         cursor: pointer;
         color: inherit;
     }
-}
-
-p a:hover {
-    text-decoration: underline;
 }

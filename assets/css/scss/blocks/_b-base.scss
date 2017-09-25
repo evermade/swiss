@@ -55,7 +55,7 @@
         position: relative;
 
         &--padded {
-            box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.04);
+            @include shadow(large);
             padding: 2rem;
             background-color: #fff;
 

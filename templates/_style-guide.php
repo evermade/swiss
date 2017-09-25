@@ -1,15 +1,16 @@
 <?php for($i=1; $i<7; $i++): ?>
 <h1 class="h<?php echo $i;?>">Heading <?php echo $i;?></h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum inventore in alias itaque rem.</p>
+<p>Lorem ipsum dolor sit amet, <a href="">consectetur adipisicing</a> elit. Natus culpa quibusdam beatae perspiciatis dolorum reprehenderit ab rerum enim assumenda fugit excepturi neque, amet cumque quasi praesentium accusantium, tempore optio corporis.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus culpa quibusdam beatae perspiciatis dolorum reprehenderit ab rerum enim assumenda fugit excepturi neque, amet cumque quasi praesentium accusantium, tempore optio corporis.</p>
 <?php endfor; ?>
 <hr>
 <?php foreach (['lg', 'md', 'sm', 'xs'] as $size): ?>
 <p class="text-<?php echo $size;?>">Text-
-    <?php echo $size;?> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum inventore in alias itaque rem.</p>
+    <?php echo $size;?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex beatae quaerat debitis vitae mollitia neque fuga a, voluptatem sunt similique atque placeat quam nulla maiores quis iure voluptate ratione soluta!</p>
 <?php endforeach ?>
 <h1>This is the primary heading and there should only be one of these per page</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum inventore in alias itaque rem. Quis fugit quasi quia placeat aut qui expedita ullam veritatis. Excepturi error neque laborum quod amet.</p>
-<p><a href="" class="btn">Button</a> <a href="" class="btn btn--full">Button</a></p>
+<p><a href="" class="c-btn">Button</a> <a href="" class="c-btn c-btn--full">Button</a></p>
 <p class="accent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum inventore in alias itaque rem. Quis fugit quasi quia placeat aut qui expedita ullam veritatis. Excepturi error neque laborum quod amet.</p>
 <ul>
     <li>This is a list item</li>

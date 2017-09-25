@@ -16,10 +16,10 @@
 
     @include scheme-html-default;
 
-    &--dark {
+    &--inverted {
         background: #000;
 
-        @include scheme-html-dark;
+        @include scheme-html-inverted;
     }
 
     /* Add Another scheme here */

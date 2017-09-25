@@ -10,9 +10,13 @@
     ul, li, p, span {
         color: $text-color;
     }
+
+    a:not(.c-btn) {
+        color:$link-color;
+    }
 }
 
-@mixin scheme-html-dark() {
+@mixin scheme-html-inverted() {
 
     h1, h2, h3, h4, h5, h6 {
         color: #fff;
@@ -23,6 +27,6 @@
     }
 
     a:not(.c-btn) {
-        color: #fff;
+        color:$link-color;
     }
 }

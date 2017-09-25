@@ -24,7 +24,7 @@
     }
 
     &__intro {
-        @include margin(lg, bottom);
+        @include spacing(section, bottom);
     }
 
 }

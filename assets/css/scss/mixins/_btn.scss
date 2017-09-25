@@ -1,0 +1,35 @@
+@mixin btn(){
+    @include transition; // default transition
+    
+    background: $ui-bg;
+    border-radius: $ui-border-radius;
+    box-shadow: $ui-shadow;
+    display: inline-block;
+    font-weight: $ui-weight;
+    padding: $ui-padding;
+
+    span,
+    & {
+        color: $ui-color;
+    }
+
+    &:hover {
+        background: darken($ui-bg, 5%);
+        text-decoration: none;
+        color: $ui-color;
+    }
+
+    &--white {
+        background: #fff;
+
+        span,
+        & {
+            color: $brand-color;
+        }
+
+        &:hover {
+            background: darken(#fff, 5%);
+            color: $brand-color;
+        }
+    }
+}

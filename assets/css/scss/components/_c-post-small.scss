@@ -7,7 +7,7 @@
     }
 
     &__content {
-        @include padding(base, all);
+        @include spacing(box, all, padding);
         width: 100%;
         position: relative;
         z-index: 4;

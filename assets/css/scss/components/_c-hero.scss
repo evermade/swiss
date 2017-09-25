@@ -6,7 +6,8 @@
 
     &__content {
         @include align-element(vertical);
-        @include padding(base, all);
+        @include spacing(section, top, padding);
+        @include spacing(section, bottom, padding);
         width: 100%;
         text-align: center;
         z-index: 4;
@@ -31,7 +32,7 @@
             transform: translateY(0%);
         }
 
-        @include scheme-html-dark;
+        @include scheme-html-inverted;
 
     }
 

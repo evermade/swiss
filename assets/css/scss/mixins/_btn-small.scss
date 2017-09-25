@@ -1,0 +1,10 @@
+@mixin btn-small(){
+    @include transition; // default transition
+
+    &:after{
+        font-family: FontAwesome;
+        content: "\f105";
+        color: inherit;
+        margin-left: 1em;
+    }
+}
