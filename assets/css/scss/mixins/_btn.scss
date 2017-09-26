@@ -13,7 +13,7 @@
         color: $ui-color;
     }
 
-    &:hover {
+    &:hover, &:focus {
         background: darken($ui-bg, 5%);
         text-decoration: none;
         color: $ui-color;

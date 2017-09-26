@@ -2,7 +2,25 @@
 
 <span id="top"></span>
 
+
 <?php
+// Pulls all the folder components from the folder structure
+/*
+foreach($folders as $folder):
+    $folders[$folder] = glob(get_template_directory().'/templates/toolbox/'.$folder.'/*.php');
+
+?>
+
+<h3><?php echo $folder; ?></h3>
+<ul>
+<?php
+foreach($folders[$folder] as $c):
+    echo '<li><a href="/em/#'.basename($c).'">'.basename($c, '.php').'</a></li>';
+endforeach; ?>
+</ul>
+<?php endforeach;*/
+
+
 foreach($folders as $folder => $templates):
 
     if(!is_array($templates)) continue;

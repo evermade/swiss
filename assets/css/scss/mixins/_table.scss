@@ -1,0 +1,26 @@
+/*
+
+Feel free to customize heavily.
+
+Being used in @mixin wysiwyg-html;
+
+ */
+
+@mixin table(){
+    width:100%;
+    border:1px solid darken($body-bg, 10%);
+
+    th{
+        background: darken($body-bg, 5%);
+    }
+
+    tr{
+        border-top:1px solid darken($body-bg, 10%);
+
+    }
+
+    td,th{
+        padding:0.2em 1em;
+        text-align:left;
+    }
+}

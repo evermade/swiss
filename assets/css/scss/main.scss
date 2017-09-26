@@ -49,6 +49,7 @@
 @import "mixins/section";
 @import "mixins/shadow";
 @import "mixins/transition";
+@import "mixins/table";
 @import "mixins/wysiwyg-html";
 
 /**
@@ -59,6 +60,7 @@
 
 @import "vendor/flickity";
 @import "vendor/remodal";
+@import "vendor/em-toolbox";
 
 /**
  * Functions
@@ -94,7 +96,6 @@
 @import "blocks/b-image-text";
 @import "blocks/b-page-content";
 @import "blocks/b-page-navigation";
-@import "blocks/b-toolbox";
 @import "blocks/b-cards";
 
 /**
@@ -111,6 +112,7 @@
 @import "components/c-mobile-toggle";
 @import "components/c-overlay";
 @import "components/c-page-numbers";
+@import "components/c-page-navigation"; 
 @import "components/c-post-small";
 @import "components/c-table";
 @import "components/c-youtube-api-player";
