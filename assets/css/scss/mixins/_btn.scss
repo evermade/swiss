@@ -1,35 +1,20 @@
-@mixin btn(){
+@mixin btn($btn-text-color: #fff, $btn-bg-color: $brand-color, $btn-extra-color: $brand-color){
     @include transition; // default transition
     
-    background: $ui-bg;
-    border-radius: $ui-border-radius;
-    box-shadow: $ui-shadow;
+    background: $btn-bg-color;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
     display: inline-block;
-    font-weight: $ui-weight;
-    padding: $ui-padding;
+    padding: 0.5em 1em;
 
     span,
     & {
-        color: $ui-color;
+        color: $btn-text-color;
     }
 
-    &:hover {
-        background: darken($ui-bg, 5%);
+    &:hover, &:focus {
+        background: darken($btn-bg-color, 5%);
         text-decoration: none;
-        color: $ui-color;
-    }
-
-    &--white {
-        background: #fff;
-
-        span,
-        & {
-            color: $brand-color;
-        }
-
-        &:hover {
-            background: darken(#fff, 5%);
-            color: $brand-color;
-        }
+        color: $btn-text-color;
     }
 }

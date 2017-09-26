@@ -1,4 +1,4 @@
-@mixin btn-small(){
+@mixin cta-link(){
     @include transition; // default transition
 
     &:after{

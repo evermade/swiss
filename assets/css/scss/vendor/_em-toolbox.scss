@@ -1,7 +1,5 @@
 .b-toolbox {
     // generic section/block styles (paddings, ect..)
-    @include spacing(section,top, padding);
-    @include spacing(section,bottom, padding);
 
     background:#fff;
 
@@ -19,16 +17,6 @@
             display:block;
             clear:both;
         }
-    }
-
-    &__sidebar{
-        width:27rem;
-        float:left;
-    }
-
-    &__content{
-        float:right;
-        width:calc(100% - 30rem);
     }
 
     &__component-row{
@@ -92,18 +80,44 @@
             @include spacing(section,top,padding);
             background:rgb(125,125,125);
             height:0;
-            border-width:2px 0;
-            border-style:solid;
-            border-color:rgb(255,0,0);
         }
 
         &--spacing-box{
             @include spacing(box,top,padding);
             background:rgb(125,125,125);
             height:0;
-            border-width:2px 0;
-            border-style:solid;
-            border-color:rgb(255,0,0);
+        }
+    }
+
+    &__tabs{
+        padding:4rem 0;
+        ul{
+            margin:0;
+            padding:0;
+            text-align:center;
+
+            li{
+                display:inline-block;
+
+                a{
+                    @include btn;
+                }
+            }
+        }
+    }
+
+    &__playground-form{
+        text-align:center;
+        padding:2rem 0;
+        margin-bottom:4rem;
+        background:#f4f4f4;
+
+        p{
+            margin-bottom:1rem;
+        }
+
+        a{
+            color:$link-color;
         }
     }
 }

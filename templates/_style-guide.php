@@ -4,9 +4,9 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus culpa quibusdam beatae perspiciatis dolorum reprehenderit ab rerum enim assumenda fugit excepturi neque, amet cumque quasi praesentium accusantium, tempore optio corporis.</p>
 <?php endfor; ?>
 <hr>
-<?php foreach (['lg', 'md', 'sm', 'xs'] as $size): ?>
+<?php foreach (['lg', 'md', 'sm'] as $size): ?>
 <p class="text-<?php echo $size;?>">Text-
-    <?php echo $size;?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex beatae quaerat debitis vitae mollitia neque fuga a, voluptatem sunt similique atque placeat quam nulla maiores quis iure voluptate ratione soluta!</p>
+    <?php echo $size;?> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex beatae quaerat debitis vitae mollitia neque fuga a, voluptatem sunt similique atque placeat quam nulla maiores quis iure voluptate ratione soluta!</p>
 <?php endforeach ?>
 <h1>This is the primary heading and there should only be one of these per page</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum inventore in alias itaque rem. Quis fugit quasi quia placeat aut qui expedita ullam veritatis. Excepturi error neque laborum quod amet.</p>

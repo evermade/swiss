@@ -78,16 +78,6 @@ $shadow:                    0 1px 4px 0 rgba(0, 0, 0, 0.5);     // @include shad
 $shadow-large:              0 3px 40px 0 rgba(0, 0, 0, 0.5);    // @include shadow(large);
 
 
-// Buttons
-// components/btn, components/page-numbers
-$ui-padding:                0.5em 1em;
-$ui-bg:                     $brand-color;
-$ui-color:                  #fff;
-$ui-weight:                 $text-weight;
-$ui-border-radius:          $border-radius;
-$ui-shadow:                 $shadow;
-
-
 // Animation Easing
 $ease-out-expo:             cubic-bezier(0.190, 1.000, 0.220, 1.000);
 

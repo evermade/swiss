@@ -8,10 +8,9 @@
 
         <div class="c-mobile-toggle"><div></div><div></div><div></div></div>
 
-        <?php wp_nav_menu(array('container_class' => 'b-page-navigation__list', 'menu_class' => 'b-page-navigation__list__ul', 'theme_location' => 'header-navigation')); ?>
+        <?php wp_nav_menu(array('container_class' => 'b-page-navigation__list', 'menu_class' => 'c-page-navigation', 'theme_location' => 'header-navigation')); ?>
 
     </div>
 
 </header>
 <div class="b-page-content">
-    <div class="scheme">

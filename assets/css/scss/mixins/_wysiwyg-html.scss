@@ -22,15 +22,6 @@
         }
     }
 
-    ul,
-    ol {
-
-        ul,
-        ol {
-            margin-bottom: 0;
-        }
-    }
-
     p {
         margin: $text-spacing*0.8em 0;
 
@@ -43,10 +34,24 @@
         margin: $text-spacing*1.5em 0;
     }
 
+    table{
+        @include table();
+    }
+
+    ul,
+    ol {
+
+        ul,
+        ol {
+            margin-bottom: 0;
+        }
+    }
+
     dl,
     dd,
     blockquote {
-        margin: $text-spacing*1em 0
+        margin: $text-spacing*1em 0;
+        padding-left:1em;
 
         &+ol,
         &+ul {
@@ -61,10 +66,10 @@
     }
 
     pre {
+        @include border-radius;
         padding: 1rem 2rem;
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(125,125,125, 0.3);
         display: block;
-        border-radius: $border-radius;
         font-size: 0.9em;
         margin: 0 0 1em;
     }
