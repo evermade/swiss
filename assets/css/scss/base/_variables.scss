@@ -60,7 +60,7 @@ $text-weight-strong:        700;
 $line-height:               1.628571429;
 $line-height-computed:      floor(($font-size-base * $line-height-base)) !default;
 
-$text-spacing:              2;
+$text-spacing:              1;
 
 // Headings
 $headings-font-family:      "Roboto", sans-serif;
@@ -76,16 +76,6 @@ $overlay-alpha:             0.5;                                // @include over
 $border-radius:             5px;                                // @include border-radius;
 $shadow:                    0 1px 4px 0 rgba(0, 0, 0, 0.5);     // @include shadow();
 $shadow-large:              0 3px 40px 0 rgba(0, 0, 0, 0.5);    // @include shadow(large);
-
-
-// Buttons
-// components/btn, components/page-numbers
-$ui-padding:                0.5em 1em;
-$ui-bg:                     $brand-color;
-$ui-color:                  #fff;
-$ui-weight:                 $text-weight;
-$ui-border-radius:          $border-radius;
-$ui-shadow:                 $shadow;
 
 
 // Animation Easing

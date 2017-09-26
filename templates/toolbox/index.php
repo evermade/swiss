@@ -40,16 +40,16 @@
             </div>
             <div class="b-toolbox__component-row" data-name="a" data-description="">
                 <a href="">Lorem ipsum</a>
-            </div>
-
+            </div> 
+ 
             <h5>Components</h5> 
             <hr>
 
             <div class="b-toolbox__component-row" data-name=".c-btn" data-description="@include btn;">
                 <a href="/" class="c-btn">Normal Button</a>
             </div>
-            <div class="b-toolbox__component-row" data-name=".c-btn-small" data-description="@include btn-small;">
-                <a href="/" class="c-btn-small">Small Button</a>
+            <div class="b-toolbox__component-row" data-name=".c-cta-link" data-description="@include cta-link;">
+                <a href="/" class="c-cta-link">Small Button</a>
             </div>
 
             <h5>Elements</h5>

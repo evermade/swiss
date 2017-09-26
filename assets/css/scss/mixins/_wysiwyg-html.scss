@@ -35,7 +35,7 @@
     }
 
     table{
-        @include table;
+        @include table();
     }
 
     ul,
