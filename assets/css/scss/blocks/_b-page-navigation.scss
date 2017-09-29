@@ -1,5 +1,4 @@
 .b-page-navigation {
-    background: $brand-color;
     padding: 2rem 0;
 
     &__container {
@@ -12,7 +11,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: url(../../img/logo-white.svg) left center no-repeat;
+        background: url(../../img/logo-black.svg) left center no-repeat;
         background-size: contain;
         text-indent: -9999px;
         width: 120px;
@@ -32,7 +31,6 @@
         z-index: 100;
         overflow-y: auto;
         display: none;
-        background: $brand-color;
         padding: 50px 5% 5%;
 
         @include bp(md) {
@@ -61,5 +59,10 @@ body.js-navigation-open {
 
     .b-page-navigation__list {
         display: block;
+        background:$brand-color;
+
+        @include bp(sm){
+            background: none;
+        }
     }
 }

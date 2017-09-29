@@ -1,0 +1,32 @@
+.c-blog-taxonomy{
+
+    @include spacing(section,top,margin);
+    @include spacing(box,all,padding);
+    @include shadow();
+    @include border-radius;
+
+    @include bp(sm){
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    &__title{
+        @include spacing(box,bottom,margin);
+    }
+
+    &__item{
+        @include bp(xs,max){
+            @include spacing(itemspace,bottom,margin);
+
+            &:last-child{
+                margin-bottom:0;
+            }
+        }
+        @include bp(sm){
+            width:45%;
+            margin-right:5%;
+        }
+    }
+
+}

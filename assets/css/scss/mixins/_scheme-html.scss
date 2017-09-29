@@ -1,32 +1,77 @@
-/**
- * the idea here is this merely affects the html markup, leaving background to the scheme block, or proper content
- */
-@mixin scheme-html-default() {
+/*
+
+COLOR SCHEMES
+-----------
+All global color's should be set here.
+
+Connect the scheme to areas of the website by using:
+@include scheme-html-example();
+
+Don't use the @scheme-html(); because then you will have no way to later on reuse it.
+
+*/
+
+
+
+@mixin scheme-html(
+        $s-text-color:        $text-color,
+        $s-headings-color:    $headings-color,
+        $s-link-color:        $link-color
+    ){
+
+    p a{
+        color: $s-link-color;
+    }
 
     h1, h2, h3, h4, h5, h6 {
-        color: $headings-color;
+        color: $s-headings-color;
+
+        a{
+            color: $s-headings-color;
+        }
     }
 
     ul, li, p, span {
-        color: $text-color;
+        color: $s-text-color;
     }
 
-    a:not(.c-btn) {
-        color:$link-color;
-    }
+    /*
+
+    NEW COMPONENTS?
+    -----------
+    Feel free to heavily customize the contents of the scheme for project's requirements.
+
+    */
+
+}
+
+
+
+@mixin scheme-html-default() {
+    @include scheme-html();
 }
 
 @mixin scheme-html-inverted() {
-
-    h1, h2, h3, h4, h5, h6 {
-        color: #fff;
-    }
-
-    ul, li, p, span {
-        color: #fff;
-    }
-
-    a:not(.c-btn) {
-        color:$link-color;
-    }
+    @include scheme-html( #fff , #fff , #fff );
 }
+
+
+
+/*
+
+NEW SCHEME?
+-----------
+Feel free to create more schemes in the bottom of this file and link elements to them.
+
+*/
+
+@mixin scheme-html-example() {
+    @include scheme-html( #fff , #fff , #fff );
+}
+
+
+
+
+
+
+

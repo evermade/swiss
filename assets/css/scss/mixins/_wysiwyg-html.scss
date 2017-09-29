@@ -30,6 +30,10 @@
         }
     }
 
+    strong {
+        font-weight: $text-weight-strong;
+    }
+
     hr {
         margin: $text-spacing*1.5em 0;
     }

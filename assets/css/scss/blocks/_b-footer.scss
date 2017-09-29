@@ -1,53 +1,69 @@
 .b-footer {
-    @include section;
-    text-align: center;
+    @include spacing(itemspace,top,padding);
+    @include spacing(section,bottom,padding);
 
-    &__container {
+    background: darken($body-bg, 2%);
+
+    &__container{
         @include container;
     }
 
-    &__navigation {
-        margin-bottom: 4rem;
-        @include make-row;
+    &__logo{
+        width: 12rem;
+        float: left;
+    }
 
-        &__column {
-            @include make-md-column(4);
+    &__social-media{
+        width:50%;
+        float: right;
 
-            margin-bottom: 1.5rem;
+        @include bp(sm){
+            width: 12rem;
+            text-align: right;
+        }
+    }
 
-            @include bp(md) {
-                margin-bottom: 0;
-            }
+    &__navigation{
+        @include spacing(itemspace,top,padding);
 
-            &--logo {
-                @include bp(md) {
-                    text-align: left;
+        clear: both;
+
+        @include bp(md){
+            @include spacing(section,left,padding);
+
+            clear: none;
+            padding-top: 0;
+            margin-left: 12rem;
+            margin-right: 12rem;
+        }
+    }
+
+    &__copyright{
+        @include spacing(box,top,padding);
+        @include font-size(sm);
+
+        border-top: 1px solid $border-color;
+
+        p{
+            text-align: center;
+
+            @include bp(md){
+
+                &:first-child{
+                    float: left;
                 }
+
+                &:last-child{
+                    float: right;
+                }
+
             }
         }
-    }
 
-    &__credits {
-        @include make-row;
-
-        &__column {
-            @include make-xs-column(12);
-            @include font-size(sm);
+        &:after{
+            content: "";
+            display: block;
+            clear: both;
         }
-    }
-
-    &__social {
-        @include make-row;
-
-        &__column {
-            @include make-xs-column(12);
-        }
-
-        margin-bottom: 4rem;
-    }
-
-    &__logo {
-        width: 100%;
-        max-width: 120px;
     }
 }

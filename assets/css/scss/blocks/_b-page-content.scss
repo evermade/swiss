@@ -1,3 +1,4 @@
 .b-page-content {
+    @include animation( fadeInUp, 0.6s, backwards, $ease-out-expo, 0s);
     width: 100%;
 }

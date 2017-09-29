@@ -1,47 +1,83 @@
 <?php global $wp_query; ?>
 
- <section class="b-base">
-    <div class="b-base__container">
-        <div class="b-base__row">
-            <div class="b-base__content">
-                <div class="b-base__wrapper">
+ <section class="b-blog">
 
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-4 col-sm-push-8">
-                            <?php include(get_template_directory().'/templates/blog/_search.php'); ?>
-                            <?php include(get_template_directory().'/templates/blog/_categories.php'); ?>
-                            <?php include(get_template_directory().'/templates/blog/_archive.php'); ?>
-                            <?php include(get_template_directory().'/templates/blog/_tags.php'); ?>
-                        </div>
-                        <div class="col-xs-12 col-sm-8 col-sm-pull-4">
+    <?php if ( have_posts() && ( get_search_query() || is_category() || is_date() || is_tag() || is_author() ) == false ): 
 
-                        <?php include(get_template_directory().'/templates/blog/_header.php'); ?>
+        // the amount of items in the spotlight
+        $spotlightAmount = 3;
+        ?>
 
-                            <?php
+        <div class="b-blog__container b-blog__container--wider">
+            <div class="l-divided-spotlight" data-column-count="<?php echo $spotlightAmount; ?>">
+                <div class="l-divided-spotlight__items">
 
-                                if ( have_posts() ):
+                    <?php
 
-                                    while ( have_posts() ): the_post();
+                    $i = 0;
 
-                                        $my_post = new \Swiss\Post($post);
+                    while ( have_posts() && $i < $spotlightAmount ): the_post();
 
-                                        include(get_template_directory().'/templates/blog/post-small.php');
+                        $my_post = new \Swiss\Post($post);
+                        ?>
 
-                                    endwhile;
+                            <div class="l-divided-spotlight__item">
+                                <?php include(get_template_directory().'/templates/blog/_c-blog-post-big.php'); ?>
+                            </div>
 
-                                else: ?>
+                        <?php
 
-                                    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+                        $i++;
 
-                                <?php endif; ?>
+                    endwhile;
 
-                            <?php echo paginate_links(['type'=>'list', 'prev_next'=>false]); ?>
-
-                        </div>
-                    </div><!-- end of row -->
+                    ?>
 
                 </div>
             </div>
         </div>
+
+    <?php else: ?>
+
+        <div class="b-blog__container b-blog__container--wider">
+            <?php include(get_template_directory().'/templates/blog/_c-blog-header.php'); ?>
+        </div>
+
+    <?php endif; ?>
+
+    <div class="b-blog__container">
+        <div class="l-blog">
+
+            <div class="l-blog__sidebar">
+                <?php include(get_template_directory().'/templates/blog/_sidebar.php'); ?>
+            </div> 
+
+            <div class="l-blog__content">
+                <div class="l-blog__content__listing">
+                    <?php
+
+                    if ( have_posts() ):
+
+                        while ( have_posts() ): the_post();
+
+                            $my_post = new \Swiss\Post($post);
+
+                            include(get_template_directory().'/templates/blog/_c-blog-post.php');
+
+                        endwhile;
+
+                    else: ?>
+
+                        <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="b-blog__container">
+        <?php echo paginate_links(['type'=>'list', 'prev_next'=>false]); ?>
+    </div>
+    
 </section>

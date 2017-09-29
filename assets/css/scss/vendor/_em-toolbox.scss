@@ -4,13 +4,19 @@
     background:#fff;
 
     &__scheme-wrapper{
-        @include shadow;
+        @include animation;
+        @include shadow(large);
         padding:4rem;
     }
 
     // different container sizes
     &__container {
         @include container;
+
+        .h-wysiwyg-html{
+            max-width:800px;
+            margin:auto;
+        }
 
         &:after{
             content:"";
@@ -107,10 +113,10 @@
     }
 
     &__playground-form{
+        @include shadow(large);
         text-align:center;
         padding:2rem 0;
         margin-bottom:4rem;
-        background:#f4f4f4;
 
         p{
             margin-bottom:1rem;

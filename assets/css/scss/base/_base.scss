@@ -31,7 +31,6 @@ body {
     @include font-size(base);
 
     background-color: $body-bg;
-    color: $text-color;
     font-family: $text-family;
     font-weight: $text-weight;
     line-height: $line-height;
@@ -45,13 +44,14 @@ button,
 input,
 select,
 textarea {
-    color: $text-color;
     font-family: inherit;
     line-height: inherit;
 }
 
-a {
-    cursor: pointer;
+img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
 }
 
 // ::-moz-selection {
@@ -62,8 +62,3 @@ a {
 //     background: #eee;
 //     text-shadow: none;
 // }
-img {
-    vertical-align: middle;
-    max-width: 100%;
-    height: auto;
-}

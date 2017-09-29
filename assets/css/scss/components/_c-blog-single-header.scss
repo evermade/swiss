@@ -1,0 +1,14 @@
+.c-blog-single-header{
+
+    @include full-cover; // makes the component wrap in its parent component size
+
+    &__text{
+        @include scheme-html-inverted();
+        @include spacing(itemspace, all, padding);
+        position:absolute;
+        bottom:0;
+        left:0;
+        max-width:80rem;
+        z-index:1;
+    }
+}

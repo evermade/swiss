@@ -1,0 +1,17 @@
+.c-sidebar-search{
+    input{
+        width:70%;
+        float:left;
+    }
+
+    button{
+        width:30%;
+        float:right;
+    }
+
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+}

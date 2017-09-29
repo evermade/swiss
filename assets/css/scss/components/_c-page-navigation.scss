@@ -8,14 +8,13 @@
 
         a {
             display: block;
-            color: #fff;
             @include font-size(lg);
             padding: 1rem 0;
             font-weight: $text-weight;
         }
 
         ul {
-            background: darken($brand-color, 5%);
+            background:$brand-color;
             padding: 0 0 0 2rem;
 
             li {
