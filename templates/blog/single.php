@@ -89,16 +89,14 @@
 
 
 <section class="b-blog b-blog--space-above">
-    <?php    
-    // the amount of items in the spotlight
+    <?php
+    
+    // amount of items pulled. Also sets the layout with data-column-count
     $amountOfPosts = 3;
 
-    $args = array(
-        'posts_per_page'  => $amountOfPosts,
-        'exclude'         => $post->ID
-    );
+    // Pulls posts according to the logic from lib/functions/blog.php
+    $moreposts = Swiss\Blog\getPostsReadMore($amountOfPosts, $post->ID);
 
-    $moreposts = get_posts($args);
     ?>
 
     <div class="b-blog__container">

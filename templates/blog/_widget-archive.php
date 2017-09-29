@@ -1,5 +1,5 @@
 <div class="c-sidebar-widget">
-    <h3 class="c-sidebar-widget__title js-sidebar-widget-mobile-open">Archive</h3>
+    <h3 class="c-sidebar-widget__title js-blog__sidebar-mobile">Archive</h3>
     <div class="c-sidebar-widget__content">
 
         <ul class="c-sidebar-ul">

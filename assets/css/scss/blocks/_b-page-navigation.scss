@@ -59,9 +59,10 @@ body.js-navigation-open {
 
     .b-page-navigation__list {
         display: block;
-        
-        @include bp(sm,max){
-            background:$brand-color;
+        background:$brand-color;
+
+        @include bp(sm){
+            background: none;
         }
     }
 }
