@@ -1,0 +1,83 @@
+.c-sidebar-widget{
+    @include transition;
+
+    @include bp(md){
+        @include spacing(itemspace,top,margin);
+    }
+
+    &:first-child{
+        margin-top: 0;
+    }
+
+    &__title{
+        @include transition;
+        font-size: 2rem;
+        border-bottom: 1px solid $border-color;
+
+        @include spacing(box,bottom,padding);
+        
+        @include bp(sm,max){
+            @include spacing(box,top,padding);
+            
+            border-bottom: none;
+            border-top: 1px solid $border-color;
+            position:relative;
+
+            &:after{
+                @include transition;
+                font-family:FontAwesome;
+                content:"\f104";
+                position:absolute;
+                top:50%;
+                right:0;
+                width:1em;
+                height:1em;
+                line-height:1em;
+                text-align:center;
+                transform:translate(-50%,-50%) rotate(-90deg);
+            }
+        }
+    }
+
+    &__content{
+        @include transition;
+        @include spacing(box,top,padding);
+
+        @include bp(sm,max){
+            height:0;
+            padding:0;
+            overflow:hidden;
+            @include spacing(box,left,padding);
+            @include spacing(box,right,padding);
+        }
+    }
+
+    @include bp(sm,max){
+        &--open{
+            background:darken($body-bg,5%);
+
+            .c-sidebar-widget__title{
+                @include spacing(box,left,padding);
+
+                &:after{
+                    transform:translate(-50%,-50%) rotate(90deg);
+                }
+            }
+
+            .c-sidebar-widget__content{
+                @include spacing(box,bottom,padding);
+                height:auto;
+            }
+        }
+    }
+
+    &:last-child{
+
+        @include bp(sm,max){
+
+            border-bottom: 1px solid $border-color;
+
+        }
+
+    }
+}

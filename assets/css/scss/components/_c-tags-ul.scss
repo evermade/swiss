@@ -1,0 +1,31 @@
+.c-tags-ul{
+
+    margin:-0.2em;
+    padding:0;
+
+    li{
+        display:block;
+        float:left;
+    }
+
+    a{
+        @include font-size(sm);
+        @include border-radius;
+        background:$body-bg;
+        color:$text-color;
+        display:block;
+        border-width:1px 1px 2px 1px;
+        border-style:solid;
+        border-color:$border-color;
+        margin:0.2em;
+        line-height:1;
+        padding:0.2em 0.4em;
+        text-transform:uppercase;
+    }
+
+    &:after{
+        content:"";
+        clear:both;
+        display:block;
+    }
+}

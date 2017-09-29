@@ -1,7 +1,9 @@
 <?php for($i=1; $i<7; $i++): ?>
-<h1 class="h<?php echo $i;?>">Heading <?php echo $i;?></h1>
+<h1 class="h<?php echo $i;?>">H<?php echo $i;?>: This is a testing text for a headline and it is actually very long so make sure it line-height looks good.</h1>
 <p>Lorem ipsum dolor sit amet, <a href="">consectetur adipisicing</a> elit. Natus culpa quibusdam beatae perspiciatis dolorum reprehenderit ab rerum enim assumenda fugit excepturi neque, amet cumque quasi praesentium accusantium, tempore optio corporis.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus culpa quibusdam beatae perspiciatis dolorum reprehenderit ab rerum enim assumenda fugit excepturi neque, amet cumque quasi praesentium accusantium, tempore optio corporis.</p>
+<?php if($i == 1){?>
+<p>Lorem ipsum dolor sit amet, <a href="">consectetur adipisicing</a> elit. Natus culpa quibusdam beatae perspiciatis dolorum reprehenderit ab rerum enim assumenda fugit excepturi neque, amet cumque quasi praesentium accusantium, tempore optio corporis.</p>
+<?php } ?>
 <?php endfor; ?>
 <hr>
 <?php foreach (['lg', 'md', 'sm'] as $size): ?>

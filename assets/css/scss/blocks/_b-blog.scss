@@ -1,0 +1,22 @@
+.b-blog{
+    
+    &__container{
+        @include container;
+
+        &--wider{
+            max-width:$container-max-width+100;
+        }
+
+        &+&{
+            @include spacing(itemspace,top,margin);
+        }
+
+        &:first-child{
+            margin-top:0;
+        }
+    }
+
+    &--space-above{
+        @include spacing(section,top,margin);
+    }
+}

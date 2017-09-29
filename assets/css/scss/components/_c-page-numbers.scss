@@ -1,5 +1,4 @@
-.page-numbers {
-    margin: 0.5em 1em;
+.page-numbers,.c-page-numbers {
     padding: 0;
     text-align: center;
 
@@ -9,15 +8,20 @@
 
     a,
     span {
-        @include shadow;
-        padding: 0.5em 1em;
-        background: $brand-color;
-        color: #fff;
+        padding: 0.6em 1em;
+        line-height:1;
         display: block;
-        border-radius: $border-radius;
     }
 
-    .current {
+    a{
+        @include border-radius;
+        @include shadow;
+    }
+
+    span.current{
+        @include border-radius;
+        @include shadow;
+
         background: $brand-color;
         color: #fff;
     }

@@ -9,37 +9,37 @@
             <hr>
 
             <div class="b-toolbox__component-row" data-name="h1, .h1" data-description="">
-                <h1>This is a headline</h1>
+                <h1>This is a testing text for a headline and it is actually very long so make sure it line-height looks good.</h1>
             </div>
             <div class="b-toolbox__component-row" data-name="h2, .h2" data-description="">
-                <h2>This is a headline</h2>
+                <h2>This is a testing text for a headline and it is actually very long so make sure it line-height looks good.</h2>
             </div>
             <div class="b-toolbox__component-row" data-name="h3, .h3" data-description="">
-                <h3>This is a headline</h3>
+                <h3>This is a testing text for a headline and it is actually very long so make sure it line-height looks good.</h3>
             </div>
             <div class="b-toolbox__component-row" data-name="h4, .h4" data-description="">
-                <h4>This is a headline</h4>
+                <h4>This is a testing text for a headline and it is actually very long so make sure it line-height looks good.</h4>
             </div>
             <div class="b-toolbox__component-row" data-name="h5, .h5" data-description="">
-                <h5>This is a headline</h5>
+                <h5>This is a testing text for a headline and it is actually very long so make sure it line-height looks good.</h5>
             </div>
             <div class="b-toolbox__component-row" data-name="h6, .h6" data-description="">
-                <h6>This is a headline</h6>
+                <h6>This is a testing text for a headline and it is actually very long so make sure it line-height looks good.</h6>
             </div>
             <div class="b-toolbox__component-row" data-name="p.text-lg" data-description="">
-                <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore voluptatibus hic ab, tempora sunt eos illo fuga rem consectetur corporis molestiae doloribus impedit magni nulla, pariatur cupiditate fugit, magnam eligendi.</p>
+                <p class="text-lg">This is a testing text for a paragraph and it is actually very long so make sure it line-height looks good. This is a testing text for a paragraph and it is actually very long so make sure it line-height looks good.</p>
             </div>
             <div class="b-toolbox__component-row" data-name="p" data-description="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore voluptatibus hic ab, tempora sunt eos illo fuga rem consectetur corporis molestiae doloribus impedit magni nulla, pariatur cupiditate fugit, magnam eligendi.</p>
+                <p>This is a testing text for a paragraph and it is actually very long so make sure it line-height looks good. This is a testing text for a paragraph and it is actually very long so make sure it line-height looks good.</p>
             </div>
             <div class="b-toolbox__component-row" data-name="p.text-sm" data-description="">
-                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore voluptatibus hic ab, tempora sunt eos illo fuga rem consectetur corporis molestiae doloribus impedit magni nulla, pariatur cupiditate fugit, magnam eligendi.</p>
+                <p class="text-sm">This is a testing text for a paragraph and it is actually very long so make sure it line-height looks good. This is a testing text for a paragraph and it is actually very long so make sure it line-height looks good.</p>
             </div>
             <div class="b-toolbox__component-row" data-name="p > a" data-description="">
-                <p><a href="">Lorem ipsum</a></p>
+                <p>This is a testing text for a paragraph and it is actually very long so <a href="#">make sure it line-height looks good</a>. This is a testing text for a paragraph and it is actually very long so make sure it line-height looks good.</p>
             </div>
             <div class="b-toolbox__component-row" data-name="a" data-description="">
-                <a href="">Lorem ipsum</a>
+                <p><a href="">Link text which might be longer</a></p>
             </div> 
  
             <h5>Components</h5> 
@@ -100,31 +100,31 @@
             <hr>
 
             <div class="b-toolbox__component-row" data-name="@bp" data-description="Responsive rules for classes.">
-                @include bp(md,max);
+                <p>@include bp(md,max);</p>
             </div>
 
             <div class="b-toolbox__component-row" data-name="@font-size" data-description="Responsive font-sizes. Uses the $font-sizes variable matrix found under _variables.scss">
-                @include font-size(base);
+                <p>@include font-size(base);</p>
             </div>
 
             <div class="b-toolbox__component-row" data-name="@container" data-description="The width of the website container. Use it as much as possible.">
-                @include container;
+                <p>@include container;</p>
             </div>
 
             <div class="b-toolbox__component-row" data-name="@section" data-description="Apply to all b-block section elements. This way we can apply changes to all sections later on.">
-                @include section;
+                <p>@include section;</p>
             </div>
 
             <div class="b-toolbox__component-row" data-name="@spacing" data-description="Spacing mixin that should only be used for classes that has a purpose for it. @include padding(section); is a good example.">
-                @include spacing(section,top,padding);
+                <p>@include spacing(section,top,padding);</p>
             </div>
 
             <div class="b-toolbox__component-row" data-name="@transition" data-description="Default animation for ui:hover and similar.">
-                @include transition;
+                <p>@include transition;</p>
             </div>
 
             <div class="b-toolbox__component-row" data-name="@animation" data-description="Animation for visual attractiveness. Choose from animation/_animation.scss. Feel free to create new animations for projects.">
-                @include animation( fadeInUp, 0.6s, backwards, $ease-out-expo, 0.3s);
+                <p>@include animation( fadeInUp, 0.6s, backwards, $ease-out-expo, 0.3s);</p>
             </div>
 
 

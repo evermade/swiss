@@ -1,0 +1,6 @@
+.c-sidebar{
+    @include bp(sm,max){
+        @include spacing(section,top,margin);
+        @include spacing(section,bottom,margin);
+    }
+}

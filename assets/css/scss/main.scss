@@ -85,6 +85,8 @@
  */
 @import "layouts/l-columns";
 @import "layouts/l-cards";
+@import "layouts/l-blog";
+@import "layouts/l-divided-spotlight";
 
 /**
  * Blocks
@@ -97,6 +99,7 @@
 @import "blocks/b-page-content";
 @import "blocks/b-page-navigation";
 @import "blocks/b-cards";
+@import "blocks/b-blog";
 
 /**
  * Components
@@ -105,6 +108,12 @@
 @import "components/c-asset";
 @import "components/c-background-image";
 @import "components/c-btn";
+@import "components/c-blog-post";
+@import "components/c-blog-post-big";
+@import "components/c-blog-header";
+@import "components/c-blog-single-header";
+@import "components/c-blog-author";
+@import "components/c-blog-taxonomy"; 
 @import "components/c-cta-link";
 @import "components/c-chromeframe";
 @import "components/c-hero";
@@ -113,8 +122,12 @@
 @import "components/c-overlay";
 @import "components/c-page-numbers";
 @import "components/c-page-navigation"; 
-@import "components/c-post-small";
+@import "components/c-sidebar";
+@import "components/c-sidebar-widget";
+@import "components/c-sidebar-ul";
+@import "components/c-sidebar-search"; 
 @import "components/c-table";
+@import "components/c-tags-ul";
 @import "components/c-youtube-api-player";
 @import "components/c-card";
 @import "components/c-image"; 

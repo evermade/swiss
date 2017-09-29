@@ -3,30 +3,38 @@
  */
 @mixin scheme-html-default() {
 
+    p a{
+        color:$link-color;
+    }
+
     h1, h2, h3, h4, h5, h6 {
         color: $headings-color;
+
+        a{
+            color: $headings-color;
+        }
     }
 
     ul, li, p, span {
         color: $text-color;
     }
-
-    a:not(.c-btn) {
-        color:$link-color;
-    }
 }
 
 @mixin scheme-html-inverted() {
 
+    p a{
+        color:$link-color;
+    }
+
     h1, h2, h3, h4, h5, h6 {
         color: #fff;
+
+        a{
+            color: #fff;
+        }
     }
 
     ul, li, p, span {
         color: #fff;
-    }
-
-    a:not(.c-btn) {
-        color:$link-color;
     }
 }
