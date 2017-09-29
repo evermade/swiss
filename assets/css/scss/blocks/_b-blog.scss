@@ -9,6 +9,7 @@
 
         &+&{
             @include spacing(itemspace,top,margin);
+            @include spacing(itemspace,bottom,margin);
         }
 
         &:first-child{
