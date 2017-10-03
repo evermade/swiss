@@ -31,9 +31,9 @@
 @import "mixins/animation-sequence";
 @import "mixins/bgimg";
 @import "mixins/bp";
+@import "mixins/border-radius";
 @import "mixins/btn";
 @import "mixins/cta-link";
-@import "mixins/border-radius";
 @import "mixins/center-align-content";
 @import "mixins/circle";
 @import "mixins/container";
@@ -51,6 +51,7 @@
 @import "mixins/transition";
 @import "mixins/table";
 @import "mixins/wysiwyg-html";
+@import "mixins/z-index";
 
 /**
  * #CUSTOM VENDOR
@@ -100,6 +101,8 @@
 @import "blocks/b-page-navigation";
 @import "blocks/b-cards";
 @import "blocks/b-blog";
+@import "blocks/b-image";
+@import "blocks/b-scheme";
 
 /**
  * Components

@@ -1,0 +1,18 @@
+/*
+
+The following z-index shouldn't be changed on a project basis. Keep them consistent.
+
+ */
+
+$z-index: (
+    popup:      300,
+    header:     200,
+    assetfront: 150,
+    content:    100,
+    footer:     100,
+    assetback:  50
+);
+
+@mixin z-index(){
+    z-index: 100; 
+}

@@ -2,8 +2,6 @@
     @include spacing(itemspace,top,padding);
     @include spacing(section,bottom,padding);
 
-    background: darken($body-bg, 2%);
-
     &__container{
         @include container;
     }

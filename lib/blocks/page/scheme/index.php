@@ -3,12 +3,12 @@
 $block = new \Swiss\Block;
 
 // set and get the acf fields for this block
-$block->get_fields(array('name', 'background_image', 'background_image_style'));
+$block->get_fields(array('scheme_color', 'background_image', 'background_image_style'));
 
 // set and get the repeater columns for this block
 $block->get_repeater_field(['assets']);
 
-$block->addCss('scheme--'.$block->get('name'), 'section');
+$block->addCss('scheme--'.$block->get('scheme_color'), 'section');
 
 $assets_html = '';
 

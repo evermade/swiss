@@ -1,0 +1,10 @@
+.b-image{
+    @include section(false);
+
+    &__image{
+        display:block;
+        margin:auto;
+        width:100%;
+    }
+
+}

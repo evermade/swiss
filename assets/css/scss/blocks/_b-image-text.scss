@@ -1,68 +1,117 @@
+$sectionMargin: false;      // does section have top/bottom margin
+$textMargin: true;          // does textarea have top/bottom margin
+
+
 .b-image-text {
-    position: relative;
-    padding: 0;
-
-    @include bp(sm) {
-        padding: 6rem 0;
+    @include section($sectionMargin);
+    
+    @include bp(sm){
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
     }
 
-    @include bp(md) {
-        padding: 10rem 0;
-    }
-
-    &__image {
-
-        pointer-events: none;
-        height: 40vh;
-        @include bgimg;
-
-        @include bp(sm) {
-            @include full-cover;
-
-            left: 0;
-            right: auto;
-            width: 50%;
-            margin-bottom: 0;
-        }
-    }
-
-    &--contain {
-        .b-image-text__image {
-            background-size: contain;
-        }
-    }
-
-    &__text {
-        padding: 4rem 15px;
-
-        @include bp(sm) {
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 60%;
-        }
-    }
-
-    &+& {
-        margin-top: 4rem;
-
-        @include bp(sm) {
-            margin-top: 0;
-        }
+    &--right {
+        flex-direction: row;
     }
 
 
     &--left {
+        flex-direction: row-reverse;
+    }
 
-        .b-image-text__image {
-            right: 0;
-            left: auto;
+
+
+    &__container{
+        display:flex;
+        align-items:center;
+        width:$container-width;
+        margin:auto;
+
+        @include bp(sm){
+            max-width:$container-max-width/2;
+            width:$container-width/2;
+            margin:initial;
         }
 
-        .b-image-text__text {
-            @include bp(sm) {
-                padding-left: 0 !important;
-                padding-right: 60%;
+    }
+
+        &__text{
+            @if $textMargin == true {
+                @include spacing(section,top,padding);
+                @include spacing(section,bottom,padding);
+            }
+
+            @if $textMargin == false {
+                @include bp(xs,max){
+                    @include spacing(section,top,padding);
+                    @include spacing(section,bottom,padding);
+                }
+            }
+
+            .b-image-text--right &{
+                @include bp(sm) {
+                    @include spacing(section,left,padding);
+                }
+            }
+
+            .b-image-text--left &{
+                @include bp(sm) {
+                    @include spacing(section,right,padding);
+                }
             }
         }
+
+
+
+    &__image-area{
+        position:relative;
+        display: flex;
+        overflow:hidden;
+        background-size:cover;
+        background-position:center;
+        min-height:50rem;
+
+        @include bp(sm){
+            width:50%;
+            min-height:0;
+            padding-top:0;
+        }
+
+        .b-image-text--vert-bottom &{
+            align-items: flex-end;
+        }
+
+        .b-image-text--vert-middle &{
+            align-items: center;
+        }
+
+        .b-image-text--vert-top &{
+            align-items: flex-start;
+        }
+
+        .b-image-text--right &{
+            justify-content: flex-end;
+        }
+
+        .b-image-text--left &{
+            justify-content: flex-start;
+        }
     }
+
+
+
+
+        &__foreground-img{
+            width:100%;
+
+            @include bp(xs,max){
+                width:100%;
+                height:auto;
+            }
+        }
+
+
+
 }

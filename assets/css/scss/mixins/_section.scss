@@ -1,6 +1,12 @@
-@mixin section() {
-    @include spacing(section, top);
-    @include spacing(section, bottom);
+@mixin section($spacing: true) {
 
     position: relative;
+
+    @if $spacing == true {
+
+        @include spacing(section, top);
+        @include spacing(section, bottom);
+
+    }
+    
 }
