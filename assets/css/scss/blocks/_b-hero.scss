@@ -4,6 +4,7 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
+    position:relative;
 
     // Makes sure the ratio stays the same across different viewports.
     &:after{
