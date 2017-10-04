@@ -2,6 +2,8 @@
     @include section(false);
 
     &__image{
+        @include z-index(content);
+        position:relative;
         display:block;
         margin:auto;
         width:100%;

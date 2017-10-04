@@ -48,11 +48,15 @@ Don't use the @scheme-html(); because then you will have no way to later on reus
 
 
 @mixin scheme-html-default() {
+
     @include scheme-html();
+
 }
 
 @mixin scheme-html-inverted() {
-    @include scheme-html( #fff , #fff , #fff );
+
+    @include scheme-html( #ccc, #fff, #ccc);
+
 }
 
 

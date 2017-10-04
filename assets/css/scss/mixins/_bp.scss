@@ -1,3 +1,20 @@
+/*
+
+EXAMPLE:
+----
+
+breakpoint and up           breakpoint max value and down
+--                          --
+@include bp(sm);            @include bp(xs,max);
+@include bp(md);            @include bp(sm,max);
+@include bp(lg);            @include bp(md,max);
+@include bp(xl);            @include bp(lg,max);
+
+
+@include bp(568px);          // also possible
+
+ */
+
 @mixin bp($point: "sm", $mobile-first: "min") {
 
     $xs: 0;

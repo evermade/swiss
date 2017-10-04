@@ -100,9 +100,25 @@ p {
     }
 }
 
-i{
-    
+
+
+// links
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.1s ease;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        cursor: pointer;
+        color: inherit;
+    }
 }
+
+
+
+// Higher value texts
 
 strong {
     font-weight: $text-weight;
@@ -113,6 +129,12 @@ blockquote {
     border-left: 0.5em solid $brand-color;
     margin: 0;
 }
+
+em {
+
+}
+
+
 
 // Unordered and Ordered lists
 ul,
@@ -127,16 +149,6 @@ hr {
     background: rgba(125, 125, 125, 0.5);
 }
 
-// links
-a {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.1s ease;
-
-    &:hover,
-    &:focus {
-        text-decoration: none;
-        cursor: pointer;
-        color: inherit;
-    }
+i{
+    
 }

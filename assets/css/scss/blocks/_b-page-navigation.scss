@@ -1,4 +1,6 @@
 .b-page-navigation {
+    @include z-index(header);
+    position:relative;
     padding: 2rem 0;
 
     &__container {

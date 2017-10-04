@@ -10,6 +10,9 @@ $columnspace: 3%;
     &__item {
 
         @include spacing(itemspace,top,margin);
+        @include z-index(content);
+        
+        position:relative;
 
         @include bp(sm){
             margin-top:0;

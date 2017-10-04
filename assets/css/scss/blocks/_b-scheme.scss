@@ -3,7 +3,14 @@
     &:before,&:after{
         content:"";
         display:block;
-        height:1px;
+        height:1px;        
+    }
+
+    &:before{
+        margin-bottom:-1px;
+    }
+
+    &:after{
         margin-top:-1px;
     }
 
@@ -31,7 +38,7 @@
         align-content: flex-start;
     }
 
-    &--stretch{
+    &--align-stretch{
         align-items: stretch;
     }
 }

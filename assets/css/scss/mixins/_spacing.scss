@@ -3,7 +3,12 @@
 This uses $spacing-sizes matrix. Feel free to add more spacings there if they have a reusable logic to it.
 Don't try to add new rows into the matrix just to support a single component.
 
+EXAMPLE:
+----
+
 @include spacing(section,top,padding);
+@include spacing(itemspace,all,margin);
+@include spacing(box,bottom,margin);
 
  */
 

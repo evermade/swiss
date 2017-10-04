@@ -1,18 +1,34 @@
 /*
 
-The following z-index shouldn't be changed on a project basis. Keep them consistent.
+The following z-index shouldn't be changed on a project basis. Keep them consistent across projects.
 
  */
 
-$z-index: (
-    popup:      300,
-    header:     200,
-    assetfront: 150,
-    content:    100,
-    footer:     100,
-    assetback:  50
+$z-indexs: (
+    popup:          300,
+    header:         200,
+    assetfront:     150,
+    content:        100,
+    footer:         75,
+    assetback:      50
 );
 
-@mixin z-index(){
-    z-index: 100; 
+/*
+
+$addToZindex:   How much you want to have it above the original z-index
+$z-index:       Which z-index default setting
+
+ */
+
+@mixin z-index($z-index: content, $addToZindex: 0){
+    
+    // check if we have matching z-index
+        
+    @if map-has-key($z-indexs, $z-index) {
+        z-index: #{map-get($z-indexs, $z-index)+$addToZindex};
+    }
+
+    @else {
+        @warn "`#{$z-index}` z-index could not be found on the $z-indexs matrix.";
+    }
 }

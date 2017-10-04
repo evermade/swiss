@@ -1,4 +1,18 @@
-@mixin btn($btn-text-color: #fff, $btn-bg-color: $brand-color, $btn-extra-color: $brand-color){
+/*
+
+EXAMPLE:
+----
+@include btn;                           // default button
+@include btn(#000,$brand-color,#000);   // customized colors
+
+ */
+
+@mixin btn(
+        $btn-text-color: #fff, 
+        $btn-bg-color: $brand-color, 
+        $btn-extra-color: $brand-color
+    ){
+
     @include transition; // default transition
     
     background: $btn-bg-color;

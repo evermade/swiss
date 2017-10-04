@@ -1,9 +1,17 @@
 .b-footer {
+    @include z-index(footer);
     @include spacing(itemspace,top,padding);
     @include spacing(section,bottom,padding);
+    position:relative;
 
     &__container{
         @include container;
+
+        &:after{
+            content:"";
+            display:block;
+            clear:both;
+        }
     }
 
     &__logo{
@@ -37,6 +45,7 @@
     }
 
     &__copyright{
+        @include spacing(box,top,margin);
         @include spacing(box,top,padding);
         @include font-size(sm);
 

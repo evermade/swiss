@@ -26,6 +26,22 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_59d49d647fe8d",
+                            "label": "Scheme",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
                             "key": "field_5846bc36abec7",
                             "label": "Color Scheme",
                             "name": "scheme_color",
@@ -40,7 +56,7 @@
                             },
                             "choices": {
                                 "default": "Default",
-                                "inverted": "Dark"
+                                "inverted": "Inverted"
                             },
                             "default_value": [
                                 "default"
@@ -51,6 +67,22 @@
                             "ajax": 0,
                             "return_format": "value",
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_59d49db77fe8f",
+                            "label": "Extra Assets",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_5846bc8aabeca",
@@ -169,6 +201,86 @@
                                     "maxlength": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_59d49d7c7fe8e",
+                            "label": "Layout Settings",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_59d49dce7fe90",
+                            "label": "Full height",
+                            "name": "scheme_full_height",
+                            "type": "select",
+                            "instructions": "Is the minimum height of the scheme block window full height. This allows us to position blocks nicely.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "normal": "No",
+                                "full-height": "Yes, Full Height"
+                            },
+                            "default_value": [
+                                "normal"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59d49e487fe91",
+                            "label": "Block Vertical Alignment",
+                            "name": "scheme_block_vertical_alignment",
+                            "type": "select",
+                            "instructions": "If full-height is enabled: How does the blocks position.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59d49dce7fe90",
+                                        "operator": "==",
+                                        "value": "full-height"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "align-top": "Top",
+                                "align-center": "Center",
+                                "align-bottom": "Bottom",
+                                "align-stretch": "Stretch Full-height"
+                            },
+                            "default_value": [
+                                "align-center"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -770,5 +882,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1507040765
+    "modified": 1507107753
 }
