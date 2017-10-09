@@ -1,4 +1,5 @@
 .b-scheme{
+    position:relative;
 
     &:before,&:after{
         content:"";
@@ -14,16 +15,26 @@
         margin-top:-1px;
     }
 
+    &__images{
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+
     &--full-height{
 
         display: flex;
         align-content: center;
         align-items: center;
         flex-wrap: wrap;
-        min-height:100vh;
+        min-height: 100vh;
 
         & > section{
-            width:100%;
+            width: 100%;
         }
 
     }

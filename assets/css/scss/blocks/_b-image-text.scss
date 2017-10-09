@@ -69,6 +69,7 @@ $textMargin:    true;           // does textarea have top/bottom margin
 
 
     &__image-area{
+        @include z-index(content);
         position:relative;
         display: flex;
         overflow:hidden;

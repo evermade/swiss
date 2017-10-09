@@ -1,0 +1,195 @@
+/*
+background
+top
+bottom
+left
+right
+fifty-left
+fifty-right
+ */
+
+$assetOuterSpace: $container-max-width/2;
+$assetOuterSpace: $assetOuterSpace + 60px;
+
+.c-scheme-asset{
+    pointer-events: none;
+    position: absolute;
+    display: none;
+
+
+
+    &--visibility{
+        &-sm{
+            @media (max-width: 575px) {
+                display:block;
+            }
+        }
+
+        &-md{
+            @media (min-width: 768px) and (max-width: 991px) {
+                display:block;
+            }
+        }
+
+        &-lg{
+            @media (min-width: 992px) {
+                display:block;
+            }
+        }
+    }
+
+
+
+    &--zindex{
+
+        &-back{
+            @include z-index(assetback);
+        }
+
+        &-front{
+            @include z-index(assetfront);
+        }
+
+    }
+
+
+
+    &--size{
+        &-normal{
+            background-repeat: no-repeat;
+        }
+
+        &-cover{
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        &-contain{
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &-pattern{
+            background-repeat: repeat;
+        }
+
+        &-contain-height{
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+        }
+
+        &-contain-width{
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+        }
+    }
+
+
+
+    &--placement{
+
+        &-background{
+            top:0;
+            left:0;
+            right:0;
+            height:100%;
+        }
+
+        &-top{
+            top:0;
+            left:0;
+            right:0;
+            min-height:40px;
+        }
+
+        &-bottom{
+            bottom:0;
+            left:0;
+            right:0;
+            min-height:40px;
+        }
+
+        &-left{
+            left:0;
+            width:calc(50% - #{$assetOuterSpace});
+            top:0;
+            height:100%;
+        }
+
+        &-right{
+            right:0;
+            width:calc(50% - #{$assetOuterSpace});
+            top:0;
+            height:100%;
+        }
+
+        &-fifty-left{
+            height:100%;
+            left:0;
+            width:50%;            
+        }
+
+        &-fifty-right{
+            height:100%;
+            right:0;
+            width:50%;
+        }
+
+    }
+
+
+
+    &--anim-duration{
+        &-fast {
+            animation-fill-mode: both !important;
+            opacity: 1;
+            animation-duration: 1s !important;
+        }
+
+        &-normal {
+            animation-fill-mode: both !important;
+            opacity: 1;
+            animation-duration: 1s !important;
+        }
+
+        &-slow {
+            animation-fill-mode: both !important;
+            opacity: 1;
+            animation-duration: 1.6s !important;
+        }
+
+        &-veryslow {
+            animation-fill-mode: both !important;
+            opacity: 1;
+            animation-duration: 3.2s !important;
+        }
+    }
+
+
+
+    &--position{
+        
+        &-top{
+            background-position-y: top;
+        }
+
+        &-right{
+            background-position-x: right;
+        }
+        
+        &-bottom{
+            background-position-y: bottom;
+        }
+
+        &-left{
+            background-position-x: left;
+        }
+        
+        &-center{
+            background-position: center;
+        }
+
+    }
+
+
+}

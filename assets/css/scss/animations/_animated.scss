@@ -67,11 +67,19 @@
 
 .duration {
 
+    &--fast {
+        animation-duration: 1s;
+    }
+
+    &--normal {
+        animation-duration: 1s;
+    }
+
     &--slow {
         animation-duration: 1.6s;
     }
 
-    &--superslow {
+    &--veryslow {
         animation-duration: 3.2s;
     }
 }
