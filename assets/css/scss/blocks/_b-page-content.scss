@@ -1,4 +1,6 @@
 .b-page-content {
     @include animation( fadeInUp, 1s, backwards, $ease-out-expo, 0s);
     width: 100%;
+    max-width:1600px;
+    margin:auto;
 }
