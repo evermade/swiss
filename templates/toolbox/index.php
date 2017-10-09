@@ -92,6 +92,10 @@
                 <div class="b-toolbox__box b-toolbox__box--spacing-section"></div>
             </div>
 
+            <div class="b-toolbox__component-row" data-name="$spacing-sizes[itemspace]" data-description="@include spacing(itemspace);">
+                <div class="b-toolbox__box b-toolbox__box--spacing-itemspace"></div>
+            </div> 
+
             <div class="b-toolbox__component-row" data-name="$spacing-sizes[box]" data-description="@include spacing(box);">
                 <div class="b-toolbox__box b-toolbox__box--spacing-box"></div>
             </div> 

@@ -101,7 +101,7 @@
                             "min": 0,
                             "max": 0,
                             "layout": "block",
-                            "button_label": "Add Row",
+                            "button_label": "Add Asset",
                             "sub_fields": [
                                 {
                                     "key": "field_59d753dfe9f4f",
@@ -325,7 +325,7 @@
                                     "allow_custom": 0,
                                     "save_custom": 0,
                                     "default_value": [
-                                        "sm",
+                                        "md",
                                         "lg"
                                     ],
                                     "layout": "vertical",
@@ -1244,5 +1244,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1507544272
+    "modified": 1507557117
 }

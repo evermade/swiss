@@ -1,7 +1,7 @@
 .b-toolbox {
     // generic section/block styles (paddings, ect..)
 
-    background:#fff;
+    background:$body-bg;
 
     &__scheme-wrapper{
         @include animation;
@@ -84,6 +84,12 @@
 
         &--spacing-section{
             @include spacing(section,top,padding);
+            background:rgb(125,125,125);
+            height:0;
+        }
+
+        &--spacing-itemspace{
+            @include spacing(itemspace,top,padding);
             background:rgb(125,125,125);
             height:0;
         }

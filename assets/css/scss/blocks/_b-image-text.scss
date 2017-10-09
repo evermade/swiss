@@ -1,5 +1,14 @@
-$sectionMargin: false;          // does section have top/bottom margin
-$textMargin:    true;           // does textarea have top/bottom margin
+/*
+
+Documentation
+-----
+https://evermade.atlassian.net/wiki/spaces/EV/pages/71630912/B+Image+Text
+
+ */
+
+$sectionMargin:     false;          // section top/bottom margin
+$textMargin:        true;           // textarea top/bottom margin
+$containerWrapper:  false;          // image container width
 
 
 .b-image-text {
@@ -8,8 +17,13 @@ $textMargin:    true;           // does textarea have top/bottom margin
     @include bp(sm){
         display: flex;
         flex-wrap: nowrap;
-        justify-content: flex-start;
         align-items: stretch;
+
+        @if $containerWrapper == true {
+            justify-content: center;
+        } else {
+            justify-content: flex-start;
+        }
     }
 
     &--right {
@@ -82,9 +96,14 @@ $textMargin:    true;           // does textarea have top/bottom margin
         }
 
         @include bp(sm){
-            width:50%;
             min-height:0;
             padding-top:0;
+            width: 50%;
+
+            @if $containerWrapper == true {
+                max-width: $container-max-width/2;
+                width: $container-width/2;
+            }
         }
 
         .b-image-text--vert-bottom &{
@@ -107,8 +126,6 @@ $textMargin:    true;           // does textarea have top/bottom margin
             justify-content: flex-start;
         }
     }
-
-
 
 
         &__foreground-img{
