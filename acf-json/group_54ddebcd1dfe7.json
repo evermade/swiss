@@ -957,10 +957,10 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_59d398c5a1963",
+                            "key": "field_59db311d49dfb",
                             "label": "Image",
-                            "name": "image_image",
-                            "type": "image",
+                            "name": "",
+                            "type": "tab",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -969,22 +969,150 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array",
-                            "preview_size": "thumbnail",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_59db339149dfe",
+                            "label": "Images",
+                            "name": "image_images",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 1,
+                            "max": 3,
+                            "layout": "table",
+                            "button_label": "Add Image",
+                            "sub_fields": [
+                                {
+                                    "key": "field_59db33a649dff",
+                                    "label": "Image",
+                                    "name": "image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "thumbnail",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_59db33b049e00",
+                                    "label": "Visible Breakpoints",
+                                    "name": "breakpoints",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "all": "All breakpoints",
+                                        "sm": "Mobile",
+                                        "md": "Tablet",
+                                        "lg": "Desktop"
+                                    },
+                                    "default_value": [
+                                        "all"
+                                    ],
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "return_format": "value",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_59db33fd49e01",
+                                    "label": "Maximum Width",
+                                    "name": "maximum_width",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": 1200,
+                                    "prepend": "",
+                                    "append": "px",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_59db3494030cf",
+                                    "label": "Image Height",
+                                    "name": "image_height",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "image-ratio": "Scale down",
+                                        "keep-height": "Keep height"
+                                    },
+                                    "default_value": [
+                                        "image-ratio"
+                                    ],
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "return_format": "value",
+                                    "placeholder": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_59db312f49dfc",
+                            "label": "Settings",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_59d39924a1964",
-                            "label": "Maximum Width",
-                            "name": "image_maximum_width",
-                            "type": "number",
+                            "label": "Image Wrapper",
+                            "name": "image_wrapper",
+                            "type": "select",
                             "instructions": "The maximum width of the image in pixels.",
                             "required": 0,
                             "conditional_logic": 0,
@@ -993,13 +1121,19 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "px",
-                            "min": "",
-                            "max": "",
-                            "step": ""
+                            "choices": {
+                                "section": "Section (full width)",
+                                "container": "Container (content width)"
+                            },
+                            "default_value": [
+                                "section"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -1110,5 +1244,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1507287993
+    "modified": 1507538124
 }
