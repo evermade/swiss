@@ -3,10 +3,10 @@
 $block = new \Swiss\Block;
 
 // set and get the acf fields for this block
-$block->get_fields(array(
-    'layout', 
-    'text', 
-    'image', 
+$block->getFields(array(
+    'layout',
+    'text',
+    'image',
     'image_foreground',
     'image_foreground_vertical_alignment',
     'image_foreground_maximum_width'

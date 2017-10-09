@@ -3,7 +3,7 @@
 $block = new \Swiss\Block;
 
 // set and get the acf fields for this block
-$block->get_fields(array('image_image', 'image_maximum_width'));
+$block->getFields(array('image_image', 'image_maximum_width'));
 
 $imageCSS = "";
 
