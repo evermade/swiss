@@ -9,29 +9,29 @@ fifty-right
  */
 
 $assetOuterSpace: $container-max-width/2;
-$assetOuterSpace: $assetOuterSpace + 60px;
+$assetOuterSpace: $assetOuterSpace+60px;
 
-.c-scheme-asset{
+.c-scheme-asset {
     pointer-events: none;
     position: absolute;
     display: none;
 
 
 
-    &--visibility{
-        &-sm{
+    &--visibility {
+        &-sm {
             @media (max-width: 575px) {
                 display:block;
             }
         }
 
-        &-md{
+        &-md {
             @media (min-width: 768px) and (max-width: 991px) {
                 display:block;
             }
         }
 
-        &-lg{
+        &-lg {
             @media (min-width: 992px) {
                 display:block;
             }
@@ -40,45 +40,44 @@ $assetOuterSpace: $assetOuterSpace + 60px;
 
 
 
-    &--zindex{
+    &--zindex {
 
-        &-back{
+        &-back {
             @include z-index(assetback);
         }
 
-        &-front{
+        &-front {
             @include z-index(assetfront);
         }
-
     }
 
 
 
-    &--size{
-        &-normal{
+    &--size {
+        &-normal {
             background-repeat: no-repeat;
         }
 
-        &-cover{
+        &-cover {
             background-size: cover;
             background-repeat: no-repeat;
         }
 
-        &-contain{
+        &-contain {
             background-size: contain;
             background-repeat: no-repeat;
         }
 
-        &-pattern{
+        &-pattern {
             background-repeat: repeat;
         }
 
-        &-contain-height{
+        &-contain-height {
             background-size: auto 100%;
             background-repeat: no-repeat;
         }
 
-        &-contain-width{
+        &-contain-width {
             background-size: 100% auto;
             background-repeat: no-repeat;
         }
@@ -86,60 +85,59 @@ $assetOuterSpace: $assetOuterSpace + 60px;
 
 
 
-    &--placement{
+    &--placement {
 
-        &-background{
-            top:0;
-            left:0;
-            right:0;
-            height:100%;
+        &-background {
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
         }
 
-        &-top{
-            top:0;
-            left:0;
-            right:0;
-            min-height:40px;
+        &-top {
+            top: 0;
+            left: 0;
+            right: 0;
+            min-height: 40px;
         }
 
-        &-bottom{
-            bottom:0;
-            left:0;
-            right:0;
-            min-height:40px;
+        &-bottom {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            min-height: 40px;
         }
 
-        &-left{
-            left:0;
+        &-left {
+            left: 0;
             width:calc(50% - #{$assetOuterSpace});
-            top:0;
-            height:100%;
+            top: 0;
+            height: 100%;
         }
 
-        &-right{
-            right:0;
+        &-right {
+            right: 0;
             width:calc(50% - #{$assetOuterSpace});
-            top:0;
-            height:100%;
+            top: 0;
+            height: 100%;
         }
 
-        &-fifty-left{
-            height:100%;
-            left:0;
-            width:50%;            
+        &-fifty-left {
+            height: 100%;
+            left: 0;
+            width: 50%;
         }
 
-        &-fifty-right{
-            height:100%;
-            right:0;
-            width:50%;
+        &-fifty-right {
+            height: 100%;
+            right: 0;
+            width: 50%;
         }
-
     }
 
 
 
-    &--anim-duration{
+    &--anim-duration {
         &-fast {
             animation-fill-mode: both !important;
             opacity: 1;
@@ -167,29 +165,26 @@ $assetOuterSpace: $assetOuterSpace + 60px;
 
 
 
-    &--position{
-        
-        &-top{
+    &--position {
+
+        &-top {
             background-position-y: top;
         }
 
-        &-right{
+        &-right {
             background-position-x: right;
         }
-        
-        &-bottom{
+
+        &-bottom {
             background-position-y: bottom;
         }
 
-        &-left{
+        &-left {
             background-position-x: left;
         }
-        
-        &-center{
+
+        &-center {
             background-position: center;
         }
-
     }
-
-
 }

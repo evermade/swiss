@@ -1,9 +1,8 @@
-@mixin cta-link($link-color: $brand-color){
+@mixin cta-link($link-color: $brand-color) {
     @include transition; // default transition
+    color: $link-color;
 
-    color:$link-color;
-
-    &:after{
+    &:after {
         font-family: FontAwesome;
         content: "\f105";
         color: inherit;

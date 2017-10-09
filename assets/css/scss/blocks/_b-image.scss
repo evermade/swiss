@@ -1,12 +1,11 @@
-.b-image{
+.b-image {
     @include section(false);
 
-    &__image{
+    &__image {
         @include z-index(content);
-        position:relative;
-        display:block;
-        margin:auto;
-        width:100%;
+        position: relative;
+        display: block;
+        margin: auto;
+        width: 100%;
     }
-
 }

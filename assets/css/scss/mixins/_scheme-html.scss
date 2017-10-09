@@ -11,27 +11,29 @@ Don't use the @scheme-html(); because then you will have no way to later on reus
 
 */
 
+@mixin scheme-html($s-text-color: $text-color, $s-headings-color: $headings-color, $s-link-color: $link-color) {
 
-
-@mixin scheme-html(
-        $s-text-color:        $text-color,
-        $s-headings-color:    $headings-color,
-        $s-link-color:        $link-color
-    ){
-
-    p a{
+    p a {
         color: $s-link-color;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         color: $s-headings-color;
 
-        a{
+        a {
             color: $s-headings-color;
         }
     }
 
-    ul, li, p, span {
+    ul,
+    li,
+    p,
+    span {
         color: $s-text-color;
     }
 
@@ -42,7 +44,6 @@ Don't use the @scheme-html(); because then you will have no way to later on reus
     Feel free to heavily customize the contents of the scheme for project's requirements.
 
     */
-
 }
 
 
@@ -50,14 +51,14 @@ Don't use the @scheme-html(); because then you will have no way to later on reus
 @mixin scheme-html-default() {
 
     @include scheme-html();
-
 }
 
 @mixin scheme-html-inverted() {
 
     @include scheme-html( #ccc, #fff, #ccc);
-
 }
+
+
 
 
 
@@ -70,12 +71,5 @@ Feel free to create more schemes in the bottom of this file and link elements to
 */
 
 @mixin scheme-html-example() {
-    @include scheme-html( #fff , #fff , #fff );
+    @include scheme-html( #fff, #fff, #fff);
 }
-
-
-
-
-
-
-

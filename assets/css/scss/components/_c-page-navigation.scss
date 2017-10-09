@@ -1,4 +1,4 @@
-.c-page-navigation{
+.c-page-navigation {
     margin: 0;
     padding: 0;
 
@@ -14,7 +14,7 @@
         }
 
         ul {
-            background:$brand-color;
+            background: $brand-color;
             padding: 0 0 0 2rem;
 
             li {
@@ -29,7 +29,7 @@
         }
     }
 
-    @include bp(md){
+    @include bp(md) {
         li {
             display: inline-block;
             padding: 0 0 0 2rem;

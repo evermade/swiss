@@ -1,21 +1,22 @@
-.b-scheme{
-    position:relative;
+.b-scheme {
+    position: relative;
 
-    &:before,&:after{
-        content:"";
-        display:block;
-        height:1px;        
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+        height: 1px;
     }
 
-    &:before{
-        margin-bottom:-1px;
+    &:before {
+        margin-bottom: -1px;
     }
 
-    &:after{
-        margin-top:-1px;
+    &:after {
+        margin-top: -1px;
     }
 
-    &__images{
+    &__images {
         pointer-events: none;
         position: absolute;
         top: 0;
@@ -25,7 +26,7 @@
         overflow: hidden;
     }
 
-    &--full-height{
+    &--full-height {
 
         display: flex;
         align-content: center;
@@ -33,23 +34,22 @@
         flex-wrap: wrap;
         min-height: 100vh;
 
-        & > section{
+        &>section {
             width: 100%;
         }
-
     }
 
-    &--align-bottom{
+    &--align-bottom {
         align-items: flex-end;
         align-content: flex-end;
     }
 
-    &--align-top{
+    &--align-top {
         align-items: flex-start;
         align-content: flex-start;
     }
 
-    &--align-stretch{
+    &--align-stretch {
         align-items: stretch;
     }
 }

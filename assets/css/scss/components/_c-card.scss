@@ -23,7 +23,7 @@
     }
 
     &__meta {
-        margin: 0 0 1rem 0;
+        margin: 0 0 1rem;
         @include font-size(sm);
     }
 
@@ -34,7 +34,6 @@
         @include bp(sm) {
             height: 2.4em;
         }
-
     }
 
     &__icon {
@@ -62,5 +61,4 @@
     &--shadow {
         box-shadow: 0 0 20px 1px rgba(#666, 0.3);
     }
-
 }

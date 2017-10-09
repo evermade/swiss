@@ -1,6 +1,6 @@
 .b-page-navigation {
     @include z-index(header);
-    position:relative;
+    position: relative;
     padding: 2rem 0;
 
     &__container {
@@ -61,9 +61,9 @@ body.js-navigation-open {
 
     .b-page-navigation__list {
         display: block;
-        background:$brand-color;
+        background: $brand-color;
 
-        @include bp(sm){
+        @include bp(sm) {
             background: none;
         }
     }

@@ -20,10 +20,10 @@ $z-index:       Which z-index default setting
 
  */
 
-@mixin z-index($z-index: content, $addToZindex: 0){
-    
+@mixin z-index($z-index: content, $addToZindex: 0) {
+
     // check if we have matching z-index
-        
+
     @if map-has-key($z-indexs, $z-index) {
         z-index: #{map-get($z-indexs, $z-index)+$addToZindex};
     }
