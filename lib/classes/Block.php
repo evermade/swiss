@@ -7,9 +7,9 @@ namespace Swiss;
 class Block extends BlockHelper
 {
 
-    var $fields = array(); // for ACF fields only
-    var $data = array(); // for custom data, public accesible
-    var $css = array(); // for css styles
+    protected $fields = array(); // for ACF fields only
+    protected $data = array(); // for custom data, public accesible
+    protected $css = array(); // for css styles
 
     public function __construct($fields = array())
     {
@@ -53,7 +53,6 @@ class Block extends BlockHelper
         return $this->{$array}[$key] = $value;
     }
 
-    //
     /**
      * [get get our data field, you can pass in data or fields to grab specific array data]
      * @param  [type] $key   [description]

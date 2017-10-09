@@ -8,6 +8,6 @@ $block->getFields(['columns', 'columns_reverse_desktop', 'columns_vertical_align
 // how many max per row
 $block->set('per_row', 4);
 
-$blockExtraClass = "l-columns--".$block->fields['columns_reverse_desktop']." l-columns--".$block->fields['columns_vertical_alignment']." l-columns--horizontal-".$block->fields['columns_horizontal_alignment'];
+$blockExtraClass = "l-columns--".$block->get('columns_reverse_desktop')." l-columns--".$block->get('columns_vertical_alignment')." l-columns--horizontal-".$block->get('columns_horizontal_alignment');
 
 include(__DIR__.'/view.php');

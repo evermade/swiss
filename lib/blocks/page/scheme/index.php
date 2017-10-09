@@ -37,8 +37,8 @@ set b-scheme layout classes correctly
 
 $bSchemeClass = "";
 
-if ($block->fields['scheme_full_height'] == "full-height"):
-    $bSchemeClass .= " b-scheme--".$block->fields['scheme_block_vertical_alignment']." b-scheme--".$block->fields['scheme_full_height'];
+if ($block->get('scheme_full_height') == "full-height"):
+    $bSchemeClass .= " b-scheme--".$block->get('scheme_block_vertical_alignment')." b-scheme--".$block->get('scheme_full_height');
 endif;
 
 include(__DIR__.'/view.php');
