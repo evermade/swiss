@@ -32,7 +32,7 @@ if($block->fields['scheme_images']){
             endforeach;
 
             foreach($asset['visibility'] as $vis):
-                $assetClass .= " c-scheme-asset--visibility-".$vis;
+                $assetClass .= " h-visible-".$vis;
             endforeach;
 
             $assetClass .= " c-scheme-asset--zindex-".$asset['z-index'];

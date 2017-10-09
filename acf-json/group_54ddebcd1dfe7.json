@@ -957,7 +957,7 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_59db311d49dfb",
+                            "key": "field_59db4aa232f00",
                             "label": "Image",
                             "name": "",
                             "type": "tab",
@@ -1058,7 +1058,7 @@
                                         "id": ""
                                     },
                                     "default_value": "",
-                                    "placeholder": 1200,
+                                    "placeholder": "",
                                     "prepend": "",
                                     "append": "px",
                                     "maxlength": ""
@@ -1077,7 +1077,7 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "image-ratio": "Scale down",
+                                        "keep-ratio": "Scale down",
                                         "keep-height": "Keep height"
                                     },
                                     "default_value": [
@@ -1244,5 +1244,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1507538124
+    "modified": 1507544272
 }
