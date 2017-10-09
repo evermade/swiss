@@ -1,4 +1,5 @@
-.page-numbers,.c-page-numbers {
+.page-numbers,
+.c-page-numbers {
     padding: 0;
     text-align: center;
 
@@ -9,16 +10,16 @@
     a,
     span {
         padding: 0.6em 1em;
-        line-height:1;
+        line-height: 1;
         display: block;
     }
 
-    a{
+    a {
         @include border-radius;
         @include shadow;
     }
 
-    span.current{
+    span.current {
         @include border-radius;
         @include shadow;
 

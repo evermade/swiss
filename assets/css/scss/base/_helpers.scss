@@ -33,7 +33,7 @@
     @include full-cover;
 }
 
-body{
+body {
 
     .h-visible-sm {
         @media (max-width: $screen-xs-max) {
@@ -48,7 +48,7 @@ body{
     }
 
     .h-visible-lg {
-        @media (min-width: $screen-lg-min){
+        @media (min-width: $screen-lg-min) {
             display: block;
         }
     }
@@ -56,5 +56,4 @@ body{
     .h-visible-all {
         display: block;
     }
-
 }

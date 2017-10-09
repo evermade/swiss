@@ -13,10 +13,10 @@ https://evermade.atlassian.net/wiki/spaces/EV/pages/71630912/B+Image+Text
 $block = new \Swiss\Block;
 
 // set and get the acf fields for this block
-$block->get_fields(array(
-    'layout', 
-    'text', 
-    'image', 
+$block->getFields(array(
+    'layout',
+    'text',
+    'image',
     'image_foreground',
     'image_foreground_vertical_alignment',
     'image_foreground_maximum_width'
@@ -35,16 +35,16 @@ $imageAreaCSS = "background-image: url(".\Swiss\Acf\getImageUrl('large', $block-
 // set foreground image
 $foregroundCSS = "";
 
-if($block->fields['image_foreground_maximum_width']){
-    $foregroundCSS .= "max-width:".$block->fields['image_foreground_maximum_width']."px;";
+if($block->get('image_foreground_maximum_width')){
+    $foregroundCSS .= "max-width:".$block->get('image_foreground_maximum_width')."px;";
 }
 
-if($block->fields['image_foreground']){
+if($block->get('image_foreground')){
     $imageForeground .= "<img style='".$foregroundCSS."' class='b-image-text__foreground-img' src='".\Swiss\Acf\getImageUrl('large', $block->get('image_foreground'))."' />";
 }
 
 // set image ratio using the images original sizes;
-/*$imageTextPaddingTop = ($block->fields['image']['height']/$block->fields['image']['width'])*100;
+/*$imageTextPaddingTop = ($block->get('image')['height']/$block->get('image')['width'])*100;
 
 if($imageTextPaddingTop){
     $imageCSS .= "padding-top:".$imageTextPaddingTop."%;";

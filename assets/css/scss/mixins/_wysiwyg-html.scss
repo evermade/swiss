@@ -38,7 +38,7 @@
         margin: $text-spacing*1.5em 0;
     }
 
-    table{
+    table {
         @include table();
     }
 
@@ -55,7 +55,7 @@
     dd,
     blockquote {
         margin: $text-spacing*1em 0;
-        padding-left:1em;
+        padding-left: 1em;
 
         &+ol,
         &+ul {
@@ -72,7 +72,7 @@
     pre {
         @include border-radius;
         padding: 1rem 2rem;
-        border: 1px solid rgba(125,125,125, 0.3);
+        border: 1px solid rgba(125, 125, 125, 0.3);
         display: block;
         font-size: 0.9em;
         margin: 0 0 1em;

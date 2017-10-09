@@ -4,16 +4,15 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    position:relative;
+    position: relative; // Makes sure the ratio stays the same across different viewports.
 
-    // Makes sure the ratio stays the same across different viewports.
-    &:after{
+    &:after {
         content: "";
         width: 1px;
         padding-top: 33.3333%;
     }
 
-    &__background{
+    &__background {
         @include animation( fadeIn, 5s, backwards, $ease-out-expo, 0s);
         @include full-cover;
 
@@ -21,20 +20,19 @@
         background-position: center;
     }
 
-    &__container{
+    &__container {
         @include container;
     }
 
     &__content {
-        @include spacing(section,top);
-        @include spacing(section,bottom);
+        @include spacing(section, top);
+        @include spacing(section, bottom);
         @include animation( zoomIn, 2s, backwards, $ease-out-expo, 0s);
 
-        @include bp(md){
+        @include bp(md) {
 
-            max-width:60%;
-            margin:auto;
-
+            max-width: 60%;
+            margin: auto;
         }
     }
 }

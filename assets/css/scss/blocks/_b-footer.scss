@@ -1,41 +1,41 @@
 .b-footer {
     @include z-index(footer);
-    @include spacing(itemspace,top,padding);
-    @include spacing(section,bottom,padding);
-    position:relative;
+    @include spacing(itemspace, top, padding);
+    @include spacing(section, bottom, padding);
+    position: relative;
 
-    &__container{
+    &__container {
         @include container;
 
-        &:after{
-            content:"";
-            display:block;
-            clear:both;
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
         }
     }
 
-    &__logo{
+    &__logo {
         width: 12rem;
         float: left;
     }
 
-    &__social-media{
-        width:50%;
+    &__social-media {
+        width: 50%;
         float: right;
 
-        @include bp(sm){
+        @include bp(sm) {
             width: 12rem;
             text-align: right;
         }
     }
 
-    &__navigation{
-        @include spacing(itemspace,top,padding);
+    &__navigation {
+        @include spacing(itemspace, top, padding);
 
         clear: both;
 
-        @include bp(md){
-            @include spacing(section,left,padding);
+        @include bp(md) {
+            @include spacing(section, left, padding);
 
             clear: none;
             padding-top: 0;
@@ -44,30 +44,29 @@
         }
     }
 
-    &__copyright{
-        @include spacing(box,top,margin);
-        @include spacing(box,top,padding);
+    &__copyright {
+        @include spacing(box, top, margin);
+        @include spacing(box, top, padding);
         @include font-size(sm);
 
         border-top: 1px solid $border-color;
 
-        p{
+        p {
             text-align: center;
 
-            @include bp(md){
+            @include bp(md) {
 
-                &:first-child{
+                &:first-child {
                     float: left;
                 }
 
-                &:last-child{
+                &:last-child {
                     float: right;
                 }
-
             }
         }
 
-        &:after{
+        &:after {
             content: "";
             display: block;
             clear: both;

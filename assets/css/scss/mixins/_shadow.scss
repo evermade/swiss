@@ -13,11 +13,12 @@ EXAMPLE:
 @include shadow(large);
 
  */
-@mixin shadow($size: small){
-    @if $size == small {
+
+@mixin shadow($size: small) {
+    @if $size==small {
         box-shadow: $shadow;
     }
-    @if $size == large {
+    @if $size==large {
         box-shadow: $shadow-large;
     }
 }

@@ -7,14 +7,9 @@ EXAMPLE:
 
  */
 
-@mixin btn(
-        $btn-text-color: #fff, 
-        $btn-bg-color: $brand-color, 
-        $btn-extra-color: $brand-color
-    ){
+@mixin btn( $btn-text-color: #fff, $btn-bg-color: $brand-color, $btn-extra-color: $brand-color) {
 
     @include transition; // default transition
-    
     background: $btn-bg-color;
     border-radius: $border-radius;
     box-shadow: $shadow;
@@ -26,7 +21,8 @@ EXAMPLE:
         color: $btn-text-color;
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         background: darken($btn-bg-color, 5%);
         text-decoration: none;
         color: $btn-text-color;

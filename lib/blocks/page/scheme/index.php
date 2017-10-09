@@ -3,15 +3,12 @@
 $block = new \Swiss\Block;
 
 // set and get the acf fields for this block
-$block->get_fields(array(
-    'scheme_color', 
-    'scheme_images', 
+$block->getFields(array(
+    'scheme_color',
+    'scheme_images',
     'scheme_full_height',
     'scheme_block_vertical_alignment'
 ));
-
-// set and get the repeater columns for this block
-//$block->get_repeater_field(['assets']);
 
 if ($block->get('scheme_color')):
     $block->addCss('scheme--'.$block->get('scheme_color'), 'section');
@@ -28,7 +25,7 @@ if (!empty($block->repeaters['assets'])):
 
 endif;
 
-/* 
+/*
 
 set b-scheme layout classes correctly
 .b-scheme--full-height
@@ -40,13 +37,8 @@ set b-scheme layout classes correctly
 
 $bSchemeClass = "";
 
-if ($block->fields['scheme_full_height'] == "full-height"):
-    $bSchemeClass .= " b-scheme--".$block->fields['scheme_block_vertical_alignment']." b-scheme--".$block->fields['scheme_full_height']; 
+if ($block->get('scheme_full_height') == "full-height"):
+    $bSchemeClass .= " b-scheme--".$block->get('scheme_block_vertical_alignment')." b-scheme--".$block->get('scheme_full_height');
 endif;
-
-
-
-// setup background image for main section block
-//$block->set_background_image('background_image');
 
 include(__DIR__.'/view.php');

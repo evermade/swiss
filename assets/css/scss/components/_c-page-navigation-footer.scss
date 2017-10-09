@@ -1,4 +1,4 @@
-.c-page-navigation-footer{
+.c-page-navigation-footer {
     @include font-size(sm);
 
     margin: 0;
@@ -10,43 +10,38 @@
     align-items: stretch;
 
     // Primary Level
-
-    & > li{
-        @include spacing(box,right,padding);
-        @include spacing(itemspace,bottom,padding);
+    & > li {
+        @include spacing(box, right, padding);
+        @include spacing(itemspace, bottom, padding);
 
         display: block;
-        width:50%;
+        width: 50%;
 
-        @include bp(sm){
-            width:25%;
+        @include bp(sm) {
+            width: 25%;
         }
 
-        & > a{
-            margin-bottom:0.5em;
+        & > a {
+            margin-bottom: 0.5em;
 
             display: block;
             font-weight: $text-weight-strong;
         }
 
-
-
         // Secondary Level
-
-        & > ul{
+        & > ul {
             margin: 0;
             padding: 0;
 
-            li{
+            li {
                 display: block;
             }
 
-            a{
-                display:block;
-                line-height:1.2em;
-                padding:0.3em 0;
+            a {
+                display: block;
+                line-height: 1.2em;
+                padding: 0.3em 0;
             }
-
         }
     }
 }

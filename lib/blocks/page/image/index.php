@@ -3,7 +3,7 @@
 $block = new \Swiss\Block;
 
 // set and get the acf fields for this block
-$block->get_fields(array('image_images', 'image_wrapper'));
+$block->getFields(array('image_images', 'image_wrapper'));
 
 echo '<section class="b-image">';
 

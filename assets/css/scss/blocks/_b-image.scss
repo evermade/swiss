@@ -1,25 +1,23 @@
-.b-image{
+.b-image {
     @include section(false);
 
-    &__container{
+    &__container {
         @include container;
     }
 
-    &__image-wrapper{
-        margin:auto;
-        display:none;
+    &__image-wrapper {
+        margin: auto;
+        display: none;
     }
 
-        &__image{
+    &__image {
 
-            @include z-index(content);
+        @include z-index(content);
 
-            position: relative;
-            display: block;
-            margin: auto;
-            width: 100%;
-            background-size: auto 100%;
-
-        }
-
+        position: relative;
+        display: block;
+        margin: auto;
+        width: 100%;
+        background-size: auto 100%;
+    }
 }

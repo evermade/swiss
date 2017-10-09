@@ -6,22 +6,21 @@ https://evermade.atlassian.net/wiki/spaces/EV/pages/71630912/B+Image+Text
 
  */
 
-$sectionMargin:     false;          // section top/bottom margin
-$textMargin:        true;           // textarea top/bottom margin
-$containerWrapper:  false;          // image container width
-
-
+$sectionMargin : false; // section top/bottom margin
+$textMargin : true; // textarea top/bottom margin
+$containerWrapper : false; // image container width
 .b-image-text {
     @include section($sectionMargin);
-    
-    @include bp(sm){
+
+    @include bp(sm) {
         display: flex;
         flex-wrap: nowrap;
         align-items: stretch;
 
-        @if $containerWrapper == true {
+        @if $containerWrapper==true {
             justify-content: center;
-        } else {
+        }
+        else {
             justify-content: flex-start;
         }
     }
@@ -37,106 +36,102 @@ $containerWrapper:  false;          // image container width
 
 
 
-    &__container{
+    &__container {
         display: flex;
         align-items: center;
         width: $container-width;
         margin: auto;
 
-        @include bp(sm){
+        @include bp(sm) {
             max-width: $container-max-width/2;
             width: $container-width/2;
             margin: initial;
         }
-
     }
 
-        &__text{
-            @include z-index(content);
-            position: relative;
+    &__text {
+        @include z-index(content);
+        position: relative;
 
-            @if $textMargin == true {
-                @include spacing(section,top,padding);
-                @include spacing(section,bottom,padding);
-            }
+        @if $textMargin==true {
+            @include spacing(section, top, padding);
+            @include spacing(section, bottom, padding);
+        }
 
-            @if $textMargin == false {
-                @include bp(xs,max){
-                    @include spacing(section,top,padding);
-                    @include spacing(section,bottom,padding);
-                }
-            }
-
-            .b-image-text--right &{
-                @include bp(sm) {
-                    @include spacing(section,left,padding);
-                }
-            }
-
-            .b-image-text--left &{
-                @include bp(sm) {
-                    @include spacing(section,right,padding);
-                }
+        @if $textMargin==false {
+            @include bp(xs, max) {
+                @include spacing(section, top, padding);
+                @include spacing(section, bottom, padding);
             }
         }
 
+        .b-image-text--right & {
+            @include bp(sm) {
+                @include spacing(section, left, padding);
+            }
+        }
+
+        .b-image-text--left & {
+            @include bp(sm) {
+                @include spacing(section, right, padding);
+            }
+        }
+    }
 
 
-    &__image-area{
+
+    &__image-area {
         @include z-index(content);
-        position:relative;
+        position: relative;
         display: flex;
-        overflow:hidden;
-        background-size:cover;
-        background-position:center;
-        min-height:35rem;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        min-height: 35rem;
 
-        &.animated{
+        &.animated {
             @include animation( zoomIn, 1s, backwards, $ease-out-expo, 0s);
         }
 
-        @include bp(sm){
-            min-height:0;
-            padding-top:0;
+        @include bp(sm) {
+            min-height: 0;
+            padding-top: 0;
             width: 50%;
 
-            @if $containerWrapper == true {
+            @if $containerWrapper==true {
                 max-width: $container-max-width/2;
                 width: $container-width/2;
             }
         }
 
-        .b-image-text--vert-bottom &{
+        .b-image-text--vert-bottom & {
             align-items: flex-end;
         }
 
-        .b-image-text--vert-middle &{
+        .b-image-text--vert-middle & {
             align-items: center;
         }
 
-        .b-image-text--vert-top &{
+        .b-image-text--vert-top & {
             align-items: flex-start;
         }
 
-        .b-image-text--right &{
+        .b-image-text--right & {
             justify-content: flex-end;
         }
 
-        .b-image-text--left &{
+        .b-image-text--left & {
             justify-content: flex-start;
         }
     }
 
 
-        &__foreground-img{
-            width:100%;
+    &__foreground-img {
+        width: 100%;
 
-            @include bp(xs,max){
-                width:100%;
-                height:auto;
-            }
+        @include bp(xs, max) {
+            width: 100%;
+            height: auto;
         }
-
-
-
+    }
 }
