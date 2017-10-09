@@ -20,7 +20,7 @@ $containerWrapper : false; // image container width
         @if $containerWrapper==true {
             justify-content: center;
         }
-        else {
+        @else {
             justify-content: flex-start;
         }
     }
