@@ -13,12 +13,16 @@
 .scheme {
     position: relative;
 
-    @include scheme-html-default;
+    [data-scheme-target] {
+        @include scheme-html-default;
+    }
 
     &--inverted {
         background: #000;
 
-        @include scheme-html-inverted;
+        [data-scheme-target] {
+            @include scheme-html-inverted;
+        }
     }
 
     /* Add Another scheme here */
