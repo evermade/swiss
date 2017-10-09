@@ -1,14 +1,5 @@
 <?php
 
-/*
-
-Documentation
------
-https://evermade.atlassian.net/wiki/spaces/EV/pages/71630912/B+Image+Text
-
- */
-
-
 // lets keep block data in class for encapsulation and stopping conflicts across blocks
 $block = new \Swiss\Block;
 
