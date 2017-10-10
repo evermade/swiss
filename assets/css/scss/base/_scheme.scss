@@ -1,16 +1,9 @@
 /*
-    ----------------------------------------
-
-    SCHEMES
-    --
-    Create schemes that can be used to manipulate components and blocks.
-    Try to define colors in components and blocks as little as possible.
-    Lets try to affect background colors here and in the element context, leaving the scheme-html mixins to handle
-    the html elements. This way they can be used in other contexts outside the scheme scope
-    ----------------------------------------
+    Scheme Context
+    Signify a new styling context
 */
 
-.scheme {
+.s-context {
     position: relative;
 
     [data-scheme-target] {
@@ -24,7 +17,5 @@
             @include scheme-html-inverted;
         }
     }
-
-    /* Add Another scheme here */
 
 }

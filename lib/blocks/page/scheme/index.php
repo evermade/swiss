@@ -10,8 +10,10 @@ $block->getFields(array(
     'scheme_block_vertical_alignment'
 ));
 
-if ($block->get('scheme_color')):
-    $block->addCss('scheme--'.$block->get('scheme_color'), 'section');
+$block->addCss('s-context', 's-context');
+
+if ($block->get('scheme_color') && $block->get('scheme_color') != 'default'):
+    $block->addCss('s-context--'.$block->get('scheme_color'), 's-context');
 endif;
 
 $assets_html = '';
@@ -35,10 +37,10 @@ set b-scheme layout classes correctly
 
 */
 
-$bSchemeClass = "";
+$block->addCss('b-scheme', 'b-scheme');
 
 if ($block->get('scheme_full_height') == "full-height"):
-    $bSchemeClass .= " b-scheme--".$block->get('scheme_block_vertical_alignment')." b-scheme--".$block->get('scheme_full_height');
+    $block->addCss("b-scheme--".$block->get('scheme_block_vertical_alignment')." b-scheme--".$block->get('scheme_full_height'), 'b-scheme');
 endif;
 
 include(__DIR__.'/view.php');

@@ -38,16 +38,11 @@ Don't use the @scheme-html(); because then you will have no way to later on reus
     }
 
     /*
-
-    NEW COMPONENTS?
-    -----------
-    Feel free to heavily customize the contents of the scheme for project's requirements.
-
+        Components? Amend the variation of that component within the component itself. This encapsulates the styles which makes it easier to find, debug and modify.
     */
 }
 
-
-
+// shortcuts for resuable schemes
 @mixin scheme-html-default() {
 
     @include scheme-html();
@@ -56,20 +51,4 @@ Don't use the @scheme-html(); because then you will have no way to later on reus
 @mixin scheme-html-inverted() {
 
     @include scheme-html( #ccc, #fff, #ccc);
-}
-
-
-
-
-
-/*
-
-NEW SCHEME?
------------
-Feel free to create more schemes in the bottom of this file and link elements to them.
-
-*/
-
-@mixin scheme-html-example() {
-    @include scheme-html( #fff, #fff, #fff);
 }

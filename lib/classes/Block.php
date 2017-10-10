@@ -83,10 +83,10 @@ class BlockHelper
             return null;
 
         if (!isset($this->css[$key])) {
-            $this->css[$key] = null;
+            $this->css[$key] = [];
         }
 
-        $this->css[$key] .= ' ' . $css;
+        $this->css[$key][] = $css;
 
         return true;
     }
@@ -98,7 +98,13 @@ class BlockHelper
      */
     public function getCss($key = null)
     {
-        return $this->get($key, 'css');
+        $key = $this->get($key, 'css');
+
+        if($key){
+            return implode(' ', $key);
+        }
+
+        return null;
     }
 
 }

@@ -1,19 +1,4 @@
 // base helper classes
-.h-clearfix {
-    @include clearfix;
-}
-
-.h-center-align-element {
-    @include align-element(all);
-}
-
-.h-center-align-content {
-    @include center-align-content;
-}
-
-.h-equal-height {
-    @include equal-height();
-}
 
 .h-clickable {
     position: relative;
@@ -27,10 +12,6 @@
 
 .h-wysiwyg-html {
     @include wysiwyg-html;
-}
-
-.h-full-cover {
-    @include full-cover;
 }
 
 body {

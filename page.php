@@ -6,7 +6,7 @@ Template Name: Page Blocks
 get_header();
 ?>
 
-<div class="scheme">
+<div class="s-context">
     <?php \Swiss\Acf\postBlocks(); ?>
 </div>
 

@@ -1,8 +1,6 @@
 .l-blog {
     &__content {
 
-        @include scheme-html-default();
-
         @include bp(md) {
             @include spacing(section, right, padding);
 
