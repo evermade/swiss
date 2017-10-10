@@ -13,7 +13,7 @@ Don't use the @scheme-html(); because then you will have no way to later on reus
 
 @mixin scheme-html($s-text-color: $text-color, $s-headings-color: $headings-color, $s-link-color: $link-color) {
 
-    p a {
+    p a:not(.c-btn) {
         color: $s-link-color;
     }
 
@@ -25,7 +25,7 @@ Don't use the @scheme-html(); because then you will have no way to later on reus
     h6 {
         color: $s-headings-color;
 
-        a {
+        a:not(.c-btn) {
             color: $s-headings-color;
         }
     }
