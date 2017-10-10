@@ -7,7 +7,7 @@
             <div class="b-cards__content">
                 <div class="b-cards__wrapper">
 
-                    <?php echo \Swiss\sprint('<div class="b-cards__intro"><div class="h-wysiwyg-html">%s</div></div>', $block->get('text')); ?>
+                    <?php echo \Swiss\sprint('<div class="b-cards__intro"><div class="h-wysiwyg-html" data-scheme-target>%s</div></div>', $block->get('text')); ?>
 
                     <?php if(!empty($block->get('posts'))): ?>
 

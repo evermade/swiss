@@ -6,7 +6,7 @@
 
     <div class="b-image-text__container">
         <div class="b-image-text__text">
-            <div class="h-wysiwyg-html"><?php echo $block->get('text'); ?></div>
+            <div class="h-wysiwyg-html" data-scheme-target><?php echo $block->get('text'); ?></div>
         </div>
     </div><!-- end of wrapper -->
 

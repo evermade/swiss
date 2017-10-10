@@ -15,7 +15,7 @@
                         */
                     ?>
 
-                    <?php echo \Swiss\sprint('<div class="h-wysiwyg-html">%s</div>', $block->get('text')); ?>
+                    <?php echo \Swiss\sprint('<div class="h-wysiwyg-html" data-scheme-target>%s</div>', $block->get('text')); ?>
 
                     <?php if(!empty($block->get('posts'))): ?>
 

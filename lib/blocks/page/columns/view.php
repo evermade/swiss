@@ -1,5 +1,5 @@
 <section class="b-base">
-    <div class="b-base__container"> 
+    <div class="b-base__container">
 
         <?php if(!empty($block->get('columns'))): foreach(array_chunk($block->get('columns'), $block->get('per_row', 'data')) as $set): ?>
 
@@ -8,7 +8,7 @@
                 <?php foreach($set as $p):  ?>
 
                 <div class="l-columns__item">
-                    <div class="h-wysiwyg-html">
+                    <div class="h-wysiwyg-html" data-scheme-target>
                          <?php echo \Swiss\get_from('column', $p); ?>
                     </div>
                 </div>

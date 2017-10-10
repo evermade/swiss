@@ -1,8 +1,10 @@
+$cards-gutter: 15px;
+
 .l-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: -1rem;
+    margin: -$cards-gutter;
 
     &:after {
         content: "";
@@ -12,7 +14,7 @@
 
     &__item {
         width: 100%;
-        padding: 1rem;
+        padding: $cards-gutter;
 
         @include bp(sm) {
             width: 33.333%;
