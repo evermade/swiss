@@ -1,82 +1,52 @@
-$columnspace: 3%;
+$columns-gutter: 30px;
 
 .l-columns {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    @include make-row($columns-gutter);
 
     &__item {
+        @include spacing(itemspace, bottom, margin);
 
-        @include spacing(itemspace, top, margin);
-        @include z-index(content);
-
-        position: relative;
-
-        @include bp(sm) {
-            margin-top: 0;
+        @include bp(md) {
+            margin-bottom: 0;
         }
 
-        &:nth-child(3),
-        &:nth-child(4) {
-            @include bp(sm) {
-                @include spacing(itemspace, top, margin);
-            }
+        @include make-md-column(12, $columns-gutter);
 
-            @include bp(md) {
-                margin-top: 0;
-            }
-        }
-
-        &:first-child {
-            margin-top: 0;
-        } // different column width variations
+        // different column width variations
         [data-column-count="1"] & {
-            width: 100%;
-
-            @include bp(sm) {
-                width: 70%;
-            }
+            @include make-md-column(10, $columns-gutter);
+            @include make-md-column-push(1);
         }
 
         [data-column-count="2"] & {
-            width: 100%;
-
-            @include bp(sm) {
-                width: 50% - $columnspace;
-            }
+            @include make-md-column(6, $columns-gutter);
         }
 
         [data-column-count="3"] & {
-            width: 100%;
-
-            @include bp(sm) {
-                width: 33.3333333% - $columnspace;
-            }
+            @include make-md-column(4, $columns-gutter);
         }
 
         [data-column-count="4"] & {
-            width: 100%;
+            @include make-sm-column(6, $columns-gutter);
+            @include make-md-column(3, $columns-gutter);
+        }
 
-            @include bp(sm) {
-                width: 50% - $columnspace;
-            }
+        // clear floats
+        &:nth-child(2n + 3) {
+            [data-column-count="4"] & {
+                clear: left;
 
-            @include bp(md) {
-                width: 25% - $columnspace;
+                @include bp(md) {
+                    clear: none;
+                }
             }
         }
-    }
 
-    &--reversed {
-        flex-direction: row-reverse;
-    }
-
-    &--horizontal-center {
-        justify-content: center;
-    }
-
-    &--center {
-        align-items: center;
+        // margins when stacked
+        &:not(:last-child) {
+            @include bp(md) {
+                margin-bottom: 0;
+            }
+        }
     }
 }
