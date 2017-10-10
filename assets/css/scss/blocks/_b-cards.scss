@@ -6,6 +6,10 @@
     /* different container sizes */
     &__container {
         @include container;
+
+        &--intro {
+            max-width: 700px;
+        }
     }
 
     /* just a row :) */

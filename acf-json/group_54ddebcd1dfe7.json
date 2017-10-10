@@ -16,11 +16,8 @@
                 "class": "",
                 "id": ""
             },
-            "button_label": "Add Block",
-            "min": "",
-            "max": "",
-            "layouts": [
-                {
+            "layouts": {
+                "5846bbdaabec6": {
                     "key": "5846bbdaabec6",
                     "name": "scheme",
                     "label": "Scheme",
@@ -529,7 +526,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "54de1384f46ce": {
                     "key": "54de1384f46ce",
                     "name": "columns",
                     "label": "Columns",
@@ -641,12 +638,28 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "557550fa0a89b": {
                     "key": "557550fa0a89b",
                     "name": "hero",
                     "label": "Hero",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_59dccba7750c4",
+                            "label": "Content",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
                         {
                             "key": "field_598da15f65f34",
                             "label": "Text",
@@ -693,6 +706,22 @@
                             "mime_types": ""
                         },
                         {
+                            "key": "field_59dccbb2750c5",
+                            "label": "Settings",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
                             "key": "field_598da17565f36",
                             "label": "Overlay",
                             "name": "overlay",
@@ -736,7 +765,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "58e60bb890b89": {
                     "key": "58e60bb890b89",
                     "name": "image_text",
                     "label": "Image Text",
@@ -924,7 +953,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "59d398b6a1962": {
                     "key": "59d398b6a1962",
                     "name": "image",
                     "label": "Image",
@@ -1119,10 +1148,10 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "598da21d65f38": {
                     "key": "598da21d65f38",
                     "name": "posts",
-                    "label": "Posts (Demo)",
+                    "label": "Posts",
                     "display": "row",
                     "sub_fields": [
                         {
@@ -1152,32 +1181,6 @@
                             "type": "relationship",
                             "value": null,
                             "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "post_type": [
-                                "post"
-                            ],
-                            "taxonomy": [],
-                            "filters": [
-                                "search"
-                            ],
-                            "elements": "",
-                            "min": 4,
-                            "max": 4,
-                            "return_format": "object"
-                        },
-                        {
-                            "key": "field_598da65b470bf",
-                            "label": "Background Image",
-                            "name": "background_image",
-                            "type": "image",
-                            "value": null,
-                            "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -1185,22 +1188,29 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array",
-                            "preview_size": "thumbnail",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
+                            "post_type": [
+                                "post",
+                                "page"
+                            ],
+                            "taxonomy": [],
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "elements": "",
+                            "min": 4,
+                            "max": 4,
+                            "return_format": "object"
                         }
                     ],
                     "min": "",
                     "max": ""
                 }
-            ]
+            },
+            "button_label": "Add Block",
+            "min": "",
+            "max": ""
         }
     ],
     "location": [
@@ -1227,5 +1237,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1507640095
+    "modified": 1507645248
 }
