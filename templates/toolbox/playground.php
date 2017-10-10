@@ -1,3 +1,12 @@
+<?php
+
+if(isset($_GET['file'])):
+
+    $template = get_template_directory().'/templates/toolbox/playground/'.$_GET['file'];
+    if(file_exists($template)) include($template);
+
+endif; ?>
+
 <section class="b-toolbox">
     <div class="b-toolbox__container">
         <?php
@@ -18,10 +27,3 @@
 
     </div>
 </section>
-
-<?php if(isset($_GET['file'])): ?>
-<?php
-$template = get_template_directory().'/templates/toolbox/playground/'.$_GET['file'];
-if(file_exists($template)) include($template);
-?>
-<?php endif; ?>
