@@ -7,6 +7,7 @@
             "label": "Blocks",
             "name": "page_blocks",
             "type": "flexible_content",
+            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -46,6 +47,7 @@
                             "label": "Color Scheme",
                             "name": "scheme_color",
                             "type": "select",
+                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -89,6 +91,7 @@
                             "label": "Images",
                             "name": "scheme_images",
                             "type": "repeater",
+                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -101,7 +104,7 @@
                             "min": 0,
                             "max": 0,
                             "layout": "block",
-                            "button_label": "Add Asset",
+                            "button_label": "Add Row",
                             "sub_fields": [
                                 {
                                     "key": "field_59d753dfe9f4f",
@@ -124,6 +127,7 @@
                                     "label": "Image",
                                     "name": "image",
                                     "type": "image",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -148,6 +152,7 @@
                                     "label": "Placement",
                                     "name": "placement",
                                     "type": "select",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -179,6 +184,7 @@
                                     "label": "Custom CSS",
                                     "name": "custom_css",
                                     "type": "textarea",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": [
@@ -222,6 +228,7 @@
                                     "label": "Image Alignment",
                                     "name": "position",
                                     "type": "checkbox",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -251,6 +258,7 @@
                                     "label": "Position (Z)",
                                     "name": "z-index",
                                     "type": "select",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -278,6 +286,7 @@
                                     "label": "Size",
                                     "name": "size",
                                     "type": "select",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -309,6 +318,7 @@
                                     "label": "Visibility",
                                     "name": "visibility",
                                     "type": "checkbox",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -325,7 +335,7 @@
                                     "allow_custom": 0,
                                     "save_custom": 0,
                                     "default_value": [
-                                        "md",
+                                        "sm",
                                         "lg"
                                     ],
                                     "layout": "vertical",
@@ -353,6 +363,7 @@
                                     "label": "Animation Style",
                                     "name": "animation_style",
                                     "type": "select",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -383,6 +394,7 @@
                                     "label": "Animation Speed",
                                     "name": "animation_speed",
                                     "type": "select",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -412,6 +424,7 @@
                                     "label": "Animation Delay",
                                     "name": "animation_delay",
                                     "type": "number",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -451,6 +464,7 @@
                             "label": "Full height",
                             "name": "scheme_full_height",
                             "type": "select",
+                            "value": null,
                             "instructions": "Is the minimum height of the scheme block window full height. This allows us to position blocks nicely.",
                             "required": 0,
                             "conditional_logic": 0,
@@ -478,6 +492,7 @@
                             "label": "Block Vertical Alignment",
                             "name": "scheme_block_vertical_alignment",
                             "type": "select",
+                            "value": null,
                             "instructions": "If full-height is enabled: How does the blocks position.",
                             "required": 0,
                             "conditional_logic": [
@@ -541,6 +556,7 @@
                             "label": "Columns",
                             "name": "columns",
                             "type": "repeater",
+                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -560,6 +576,7 @@
                                     "label": "Content",
                                     "name": "column",
                                     "type": "wysiwyg",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -594,10 +611,11 @@
                         },
                         {
                             "key": "field_59d35b69d0d97",
-                            "label": "Text Horizontal Alignment",
+                            "label": "Content Horizontal Alignment",
                             "name": "columns_horizontal_alignment",
                             "type": "select",
-                            "instructions": "",
+                            "value": null,
+                            "instructions": "This should be used when only 1 column is used, else will not take effect. It will center align the content container, but not the content itself, as that styling can be done in the wysiwyg editor upon context.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -606,65 +624,11 @@
                                 "id": ""
                             },
                             "choices": {
-                                "left": "Left",
-                                "center": "Center"
+                                "h-left": "Left",
+                                "h-center": "Center"
                             },
                             "default_value": [
-                                "left"
-                            ],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "return_format": "value",
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_59d3441817421",
-                            "label": "Text Vertical Alignment",
-                            "name": "columns_vertical_alignment",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "33.333333",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "top": "Top",
-                                "center": "Center"
-                            },
-                            "default_value": [
-                                "top"
-                            ],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "return_format": "value",
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_59d3445817422",
-                            "label": "Reverse Desktop",
-                            "name": "columns_reverse_desktop",
-                            "type": "select",
-                            "instructions": "Reverse the order of columns in desktop. In mobile the order will be original.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "33.333333",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "default": "Default",
-                                "reversed": "Reversed"
-                            },
-                            "default_value": [
-                                "default"
+                                "h-left"
                             ],
                             "allow_null": 0,
                             "multiple": 0,
@@ -688,6 +652,7 @@
                             "label": "Text",
                             "name": "text",
                             "type": "wysiwyg",
+                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -707,6 +672,7 @@
                             "label": "Background Image",
                             "name": "background_image",
                             "type": "image",
+                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -731,6 +697,7 @@
                             "label": "Overlay",
                             "name": "overlay",
                             "type": "true_false",
+                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -750,6 +717,7 @@
                             "label": "Youtube ID",
                             "name": "youtube_id",
                             "type": "text",
+                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -795,6 +763,7 @@
                             "label": "Layout",
                             "name": "layout",
                             "type": "radio",
+                            "value": null,
                             "instructions": "",
                             "required": 1,
                             "conditional_logic": 0,
@@ -819,6 +788,7 @@
                             "label": "Image",
                             "name": "image",
                             "type": "image",
+                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -843,6 +813,7 @@
                             "label": "Text",
                             "name": "text",
                             "type": "wysiwyg",
+                            "value": null,
                             "instructions": "",
                             "required": 1,
                             "conditional_logic": 0,
@@ -878,6 +849,7 @@
                             "label": "Foreground Image",
                             "name": "image_foreground",
                             "type": "image",
+                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -902,6 +874,7 @@
                             "label": "Foreground Vertical Alignment",
                             "name": "image_foreground_vertical_alignment",
                             "type": "select",
+                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -930,6 +903,7 @@
                             "label": "Foreground Maximum Width",
                             "name": "image_foreground_maximum_width",
                             "type": "number",
+                            "value": null,
                             "instructions": "Maximum width in pixels.",
                             "required": 0,
                             "conditional_logic": 0,
@@ -957,7 +931,7 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_59db4aa232f00",
+                            "key": "field_59db311d49dfb",
                             "label": "Image",
                             "name": "",
                             "type": "tab",
@@ -977,6 +951,7 @@
                             "label": "Images",
                             "name": "image_images",
                             "type": "repeater",
+                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -996,6 +971,7 @@
                                     "label": "Image",
                                     "name": "image",
                                     "type": "image",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1020,6 +996,7 @@
                                     "label": "Visible Breakpoints",
                                     "name": "breakpoints",
                                     "type": "select",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1049,6 +1026,7 @@
                                     "label": "Maximum Width",
                                     "name": "maximum_width",
                                     "type": "text",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1058,7 +1036,7 @@
                                         "id": ""
                                     },
                                     "default_value": "",
-                                    "placeholder": "",
+                                    "placeholder": 1200,
                                     "prepend": "",
                                     "append": "px",
                                     "maxlength": ""
@@ -1068,6 +1046,7 @@
                                     "label": "Image Height",
                                     "name": "image_height",
                                     "type": "select",
+                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1077,7 +1056,7 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "keep-ratio": "Scale down",
+                                        "image-ratio": "Scale down",
                                         "keep-height": "Keep height"
                                     },
                                     "default_value": [
@@ -1113,6 +1092,7 @@
                             "label": "Image Wrapper",
                             "name": "image_wrapper",
                             "type": "select",
+                            "value": null,
                             "instructions": "The maximum width of the image in pixels.",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1150,6 +1130,7 @@
                             "label": "Text",
                             "name": "text",
                             "type": "wysiwyg",
+                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1169,6 +1150,7 @@
                             "label": "Posts",
                             "name": "posts",
                             "type": "relationship",
+                            "value": null,
                             "instructions": "",
                             "required": 1,
                             "conditional_logic": 0,
@@ -1194,6 +1176,7 @@
                             "label": "Background Image",
                             "name": "background_image",
                             "type": "image",
+                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1244,5 +1227,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1507557117
+    "modified": 1507639760
 }

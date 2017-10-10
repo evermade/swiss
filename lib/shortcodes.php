@@ -10,10 +10,7 @@ function button($atts)
         'url' => '#'
     ), $atts));
 
-    return sprintf('<a href="%s" class="c-btn %s"><span>%s</span></a>', $url, $class, $text);
+    return sprintf('<a href="%s" class="c-btn %s">%s</a>', $url, $class, $text);
 }
 
-function register()
-{
-    add_shortcode('button', 'Swiss\Shortcodes\button');
-}
+add_shortcode('button', 'Swiss\Shortcodes\button');

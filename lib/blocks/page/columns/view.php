@@ -1,7 +1,7 @@
 <section class="b-base">
     <div class="b-base__container">
 
-        <div class="l-columns <?php echo $blockExtraClass; ?>" data-column-count="<?php echo sizeof($block->get('columns')); ?>">
+        <div class="l-columns <?php echo $block->getCss('layout'); ?>" data-column-count="<?php echo sizeof($block->get('columns')); ?>">
 
         <?php foreach($block->get('columns') as $k => $p): ?>
 
