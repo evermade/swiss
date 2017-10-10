@@ -612,7 +612,7 @@
                         {
                             "key": "field_59d35b69d0d97",
                             "label": "Content Horizontal Alignment",
-                            "name": "columns_horizontal_alignment",
+                            "name": "horizontal_alignment",
                             "type": "select",
                             "value": null,
                             "instructions": "This should be used when only 1 column is used, else will not take effect. It will center align the content container, but not the content itself, as that styling can be done in the wysiwyg editor upon context.",
@@ -1227,5 +1227,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1507639760
+    "modified": 1507640095
 }

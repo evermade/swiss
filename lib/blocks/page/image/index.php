@@ -7,9 +7,9 @@ $block->getFields(array('image_images', 'image_wrapper'));
 
 echo '<section class="b-image">';
 
-    echo '<div class="b-image__'.$block->fields['image_wrapper'].'">';
+    echo '<div class="b-image__'.$block->get('image_wrapper').'">';
 
-        foreach ($block->fields['image_images'] as $image) {
+        foreach ($block->get('image_images') as $image) {
 
             $imageCSS = "";
             $imageWrapperCSS = "";
