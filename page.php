@@ -7,7 +7,7 @@ get_header();
 ?>
 
 <div class="scheme">
-    <?php \Swiss\post_blocks(); ?>
+    <?php \Swiss\Acf\postBlocks(); ?>
 </div>
 
 <?php

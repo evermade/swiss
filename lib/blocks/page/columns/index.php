@@ -10,4 +10,4 @@ $block->set('per_row', 4);
 
 $blockExtraClass = "l-columns--".$block->get('columns_reverse_desktop')." l-columns--".$block->get('columns_vertical_alignment')." l-columns--horizontal-".$block->get('columns_horizontal_alignment');
 
-include(__DIR__.'/view.php');
+if(!empty($block->get('columns'))) include(__DIR__.'/view.php');

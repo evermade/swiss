@@ -1,23 +1,19 @@
 <section class="b-base">
     <div class="b-base__container">
 
-        <?php if(!empty($block->get('columns'))): foreach(array_chunk($block->get('columns'), $block->get('per_row', 'data')) as $set): ?>
+        <div class="l-columns <?php echo $blockExtraClass; ?>" data-column-count="<?php echo sizeof($block->get('columns')); ?>">
 
-            <div class="l-columns <?php echo $blockExtraClass; ?>" data-column-count="<?php echo sizeof($set); ?>">
+        <?php foreach($block->get('columns') as $k => $p): ?>
 
-                <?php foreach($set as $p):  ?>
-
-                <div class="l-columns__item">
-                    <div class="h-wysiwyg-html" data-scheme-target>
-                         <?php echo \Swiss\get_from('column', $p); ?>
-                    </div>
+            <div class="l-columns__item">
+                <div class="h-wysiwyg-html" data-scheme-target>
+                    <?php echo \Swiss\getFrom('column', $p); ?>
                 </div>
+            </div>
 
-                <?php endforeach; ?>
+        <?php endforeach; ?>
 
-            </div><!-- end of l-columns layout -->
-
-        <?php endforeach; endif; ?>
+        </div><!-- end of l-columns layout -->
 
     </div>
 </section>

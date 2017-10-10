@@ -6,7 +6,7 @@
  * @param  array  $array [description]
  * @return [type]        [description]
  */
-function get_from($key=null, $array=array()) {
+function getFrom($key=null, $array=array()) {
 
     // if we have an object
     if(is_object($array) && isset($array->{$key})) {
@@ -111,117 +111,24 @@ function feature_image_url($size='medium-large', $post=null) {
     return $img;
 }
 
-function is_acf_active() {
-    return (function_exists('has_sub_field'))? true : false;
-}
-
 function is_dev() {
     return (getenv('APP_ENV') == 'production')? false : true;
 }
 
-function js_log($info='') {
-    echo "<script>console.log(".json_encode($info).");</script>";
-}
-
-function log($str='', $file='swiss.log') {
-
-    //check is writable and env is correct
-    if(!\Swiss\is_dev() || !is_writable(get_template_directory().'/'.$file)){
-        return false;
-    }
-
-    // if annray then encode
-    if(is_array($str)) {
-        $str = "\r\n".json_encode($str)."\r\n";
-    }
-    else {
-        $str = "\r\n".$str."\r\n";
-    }
-
-    // write/append to file
-    $myfile = file_put_contents(get_template_directory().'/'.$file, $str.PHP_EOL , FILE_APPEND);
-
-    return true;
-}
-
-function debug($msg=null) {
+function debug($msg=null, $style='php') {
     if(\Swiss\is_dev()) {
-        echo "<pre>"; print_r($msg); echo "</pre>";
+
+        if($style == 'php'){
+            echo "<pre>"; print_r($msg); echo "</pre>";
+        }
+
+        if($style == 'js'){
+            echo "<script>console.log(".json_encode($info).");</script>";
+        }
+
         return true;
     }
     return false;
-}
-
-/**
- * get the post blocks by a specific type, by default we get the page type of blocks
- * this way it allows different block groups to be created and not pollute the main page block space
- * for example we could have the following post types each with thier own block group (page, story etc)
- * @param  string $name [description]
- * @return [type]       [description]
- */
-function post_blocks($name='page') {
-
-    //lets check is ACF available
-    if (!\Swiss\is_acf_active() || empty($name)) return false;
-
-    //loop the blocks fields
-    while(has_sub_field($name.'_blocks')) {
-        $template = get_template_directory().'/lib/blocks/'.$name.'/'.str_replace(' ', '_', strtolower(get_row_layout())).'/index.php';
-        if(!file_exists($template)) {
-            \Swiss\debug($template ." - Template not found");
-            continue;
-        }
-
-        //to help debugging
-        echo '<!-- ('.basename(dirname($template)).') block -->';
-        include($template);
-    }
-
-    return true;
-}
-
-/**
- * [animate description]
- * @param  string $classes           [description]
- * @param  array  $defaults_selected [description]
- * @return [type]                    [description]
- */
-function animate($classes='animated fadeInUp', $defaults_selected=array()) {
-
-    $defaults = array(
-        'background'    => 'animatedsuperslow fadeIn animateddelay1',
-        'heading'       => 'animatedslow fadeIn',
-        'el-up'         => 'animated fadeInUp',
-        'el-in'         => 'animated fadeIn',
-    );
-
-    if(is_array($defaults_selected)) {
-        foreach ($defaults_selected as $value) {
-            if(array_key_exists($value, $defaults)) $classes .= ' '.$defaults[$value];
-        }
-    }
-
-    //lets cleanse
-    $classes = implode(' ', array_unique(explode(' ', $classes)));
-
-    echo sprintf('data-animate="%s"', $classes);
-    return true;
-}
-
-/**
- * [image description]
- * @param  [type] $obj  [description]
- * @param  string $size [description]
- * @return [type]       [description]
- */
-function image($img=null, $size='large', $classes='') {
-    if(isset($img) && is_array($img) && isset($img['sizes'][$size])) {
-        $caption = (!empty($img['cpation']))? $img['cpation'] : basename($img['sizes'][$size]);
-        return '<img src="'.$img['sizes'][$size].'" alt="'.$caption.'" class="'.$classes.'" />';
-    }
-    else {
-        return false;
-    }
 }
 
 /**
