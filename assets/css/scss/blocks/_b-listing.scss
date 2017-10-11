@@ -1,4 +1,4 @@
-.b-columns-listing {
+.b-listing {
     /* generic section/block styles (paddings, ect..) */
     @include section;
     position: relative;
@@ -27,6 +27,11 @@
     /* this is used for adding box-shadows / non-grid related paddings / etc.. */
     &__wrapper {
         position: relative;
+    }
+
+    &__see-more {
+        @include spacing(itemspace, top);
+        text-align: center;
     }
 
 }

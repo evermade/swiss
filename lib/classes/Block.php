@@ -59,10 +59,10 @@ class Block extends BlockHelper
      * @param  string $array [description]
      * @return [type]        [description]
      */
-    public function get($key=null, $array = 'fields')
+    public function get($key=null, $array = 'fields', $default=null)
     {
         if (!isset($this->{$array}[$key]))
-            return null;
+            return $default;
 
         return $this->{$array}[$key];
     }
