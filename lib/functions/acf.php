@@ -46,7 +46,7 @@ function getImageUrl($size='large', $key=null) {
     if(!empty($image) && is_array($image)){
 
         // special case for originals as they are outside the sizes array
-        if($size == 'original'){
+        if($size == 'original' && isset($image['url'])){
             return $image['url'];
         }
         elseif(isset($image['sizes'][$size])) {
