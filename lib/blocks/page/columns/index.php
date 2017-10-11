@@ -3,9 +3,8 @@
 $block = new \Swiss\Block;
 
 // set and get the repeater columns for this post
-$block->get_fields(['columns']);
+$block->getFields(['columns', 'horizontal_alignment']);
 
-// how many max per row
-$block->set('per_row', 4);
+$block->addCss('l-columns--'.$block->get('horizontal_alignment'), 'layout');
 
-include(__DIR__.'/view.php');
+if(!empty($block->get('columns'))) include(__DIR__.'/view.php');

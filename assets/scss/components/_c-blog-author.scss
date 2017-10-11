@@ -1,0 +1,50 @@
+.c-blog-author {
+
+    @include spacing(itemspace, bottom);
+
+    position: relative;
+
+
+    &:hover {
+        .c-blog-author__avatar {
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+    }
+
+    &__avatar {
+        @include transition;
+        @include animation( zoomIn, 0.6s, backwards, $ease-out-expo, 1s);
+
+        float: left;
+
+        img {
+            @include shadow;
+
+            border-radius: 50%;
+            width: 4.5rem;
+            opacity: 0.9;
+        }
+    }
+
+    &__text {
+        @include spacing(box, left, padding);
+        @include animation( fadeInRight, 0.6s, backwards, $ease-out-expo, 1.2s);
+
+        margin-left: 4.5rem;
+
+        p {
+            @include font-size(sm);
+            margin-top: 0.2em;
+        }
+    }
+
+    &__link {
+        @include full-cover;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}

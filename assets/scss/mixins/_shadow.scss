@@ -1,0 +1,24 @@
+/*
+_variables.scss includes 2 different shadow variables:
+
+$shadow
+$shadow-large
+
+$shadow will be used most often within buttons and even in boxes.
+$shadow-large should be used with caution
+
+EXAMPLE:
+------
+@include shadow(small);
+@include shadow(large);
+
+ */
+
+@mixin shadow($size: small) {
+    @if $size==small {
+        box-shadow: $shadow;
+    }
+    @if $size==large {
+        box-shadow: $shadow-large;
+    }
+}

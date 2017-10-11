@@ -1,0 +1,21 @@
+/*
+
+EXAMPLE:
+----
+@include section;           // with top and bottom margin
+@include section(false);    // no top and bottom margin
+
+ */
+
+@mixin section($spacing: true) {
+
+    position: relative;
+
+    @if $spacing == true {
+
+        @include spacing(section, top);
+        @include spacing(section, bottom);
+
+    }
+    
+}

@@ -1,9 +1,11 @@
 <section class="b-toolbox">
     <div class="b-toolbox__container">
-        <div id="js-toolbox-scheme-target" class="b-toolbox__scheme-wrapper scheme">
-            <a href="#" class="c-btn js-toolbox-switch" data-activate-scheme="scheme">Default</a>
-            <a href="#" class="c-btn js-toolbox-switch" data-activate-scheme="scheme--inverted">Inverted</a>
+        <div id="js-toolbox-scheme-target" class="b-toolbox__scheme-wrapper s-context">
+            <a href="#" class="c-btn js-toolbox-switch" data-activate-scheme="s-context">Default</a>
+            <a href="#" class="c-btn js-toolbox-switch" data-activate-scheme="s-context--inverted">Inverted</a>
             <br><br>
+
+            <div data-scheme-target>
 
             <h5>Typography</h5>
             <hr>
@@ -40,9 +42,9 @@
             </div>
             <div class="b-toolbox__component-row" data-name="a" data-description="">
                 <p><a href="">Link text which might be longer</a></p>
-            </div> 
- 
-            <h5>Components</h5> 
+            </div>
+
+            <h5>Components</h5>
             <hr>
 
             <div class="b-toolbox__component-row" data-name=".c-btn" data-description="@include btn;">
@@ -57,14 +59,14 @@
 
             <div class="b-toolbox__component-row" data-name=".c-overlay" data-description="$overlay-bg, @include overlay;">
                 <div class="b-toolbox__box">
-                    <div class="c-image" style="background-image:url('http://lorempixel.com/100/100/');"></div> 
+                    <div class="c-image" style="background-image:url('http://lorempixel.com/100/100/');"></div>
                     <div class="c-overlay"></div>
                 </div>
             </div>
 
             <div class="b-toolbox__component-row" data-name=".c-image" data-description="">
                 <div class="b-toolbox__box">
-                    <div class="c-image" style="background-image:url('http://lorempixel.com/100/100/');"></div> 
+                    <div class="c-image" style="background-image:url('http://lorempixel.com/100/100/');"></div>
                 </div>
             </div>
 
@@ -92,9 +94,13 @@
                 <div class="b-toolbox__box b-toolbox__box--spacing-section"></div>
             </div>
 
+            <div class="b-toolbox__component-row" data-name="$spacing-sizes[itemspace]" data-description="@include spacing(itemspace);">
+                <div class="b-toolbox__box b-toolbox__box--spacing-itemspace"></div>
+            </div>
+
             <div class="b-toolbox__component-row" data-name="$spacing-sizes[box]" data-description="@include spacing(box);">
                 <div class="b-toolbox__box b-toolbox__box--spacing-box"></div>
-            </div> 
+            </div>
 
             <h5>Mixins</h5>
             <hr>
@@ -127,7 +133,7 @@
                 <p>@include animation( fadeInUp, 0.6s, backwards, $ease-out-expo, 0.3s);</p>
             </div>
 
-
+            </div>
 
         </div>
     </div>

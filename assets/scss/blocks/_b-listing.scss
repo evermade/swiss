@@ -1,0 +1,37 @@
+.b-listing {
+    /* generic section/block styles (paddings, ect..) */
+    @include section;
+    position: relative;
+
+    /* different container sizes */
+    &__container {
+        @include container;
+
+        &--intro {
+            max-width: 700px;
+            @include spacing(itemspace, bottom);
+            text-align: center;
+        }
+    }
+
+    /* just a row :) */
+    &__row {
+        @include make-row;
+    }
+
+    /* this is what we use to control the width of the insides */
+    &__content {
+        @include make-xs-column(12);
+    }
+
+    /* this is used for adding box-shadows / non-grid related paddings / etc.. */
+    &__wrapper {
+        position: relative;
+    }
+
+    &__see-more {
+        @include spacing(itemspace, top);
+        text-align: center;
+    }
+
+}

@@ -1,6 +1,0 @@
-@mixin section() {
-    @include spacing(section, top);
-    @include spacing(section, bottom);
-
-    position: relative;
-}

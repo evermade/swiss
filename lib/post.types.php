@@ -1,4 +1,5 @@
-<?php namespace Swiss\PostTypes;
+<?php
+namespace Swiss\PostTypes;
 
 /*
  * -----------------------------------------------------
@@ -6,7 +7,8 @@
  * -----------------------------------------------------
  */
 
-function example_setup_type() {
+function exampleSetup()
+{
 
     $labels = array(
         'name'                  => _x( 'Examples', 'post type general name', 'swiss' ),
@@ -49,8 +51,9 @@ function example_setup_type() {
  * -----------------------------------------------------
  */
 
-function set_custom_types() {
-    // example_setup_type();
+function setCustomTypes()
+{
+    // exampleSetup();
 }
 
-add_action( 'init', 'Swiss\PostTypes\set_custom_types' );
+add_action( 'init', 'Swiss\PostTypes\setCustomTypes' );

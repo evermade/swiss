@@ -1,0 +1,135 @@
+.b-toolbox {
+    // generic section/block styles (paddings, ect..)
+
+    background:$body-bg;
+
+    &__scheme-wrapper{
+        @include animation;
+        @include shadow(large);
+        padding:4rem;
+    }
+
+    // different container sizes
+    &__container {
+        @include container;
+
+        .h-wysiwyg-html{
+            max-width:800px;
+            margin:auto;
+        }
+
+        &:after{
+            content:"";
+            display:block;
+            clear:both;
+        }
+    }
+
+    &__component-row{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-flow: flex-start;
+        align-items: stretch;
+        justify-content: space-between;
+        position:relative;
+
+        padding:0 0 0 20%;
+        margin:4rem 0;
+
+        &[data-name]:before { 
+            @include transition;
+            @include font-size(sm);
+            content: attr(data-name);
+            display:block;
+            width:18%;
+            position:absolute;
+            top:0;
+            left:0;
+            color:rgb(125,125,125);
+        }
+
+        & > *{
+            max-width:60%;
+        }
+
+        &[data-description]:after { 
+            @include transition;
+            @include font-size(sm);
+            content: attr(data-description);
+            display:block;
+            width:35%;
+            float:right;
+            color:rgb(125,125,125);
+        }
+    }
+
+    &__box{
+        height:7.5rem;
+        width:7.5rem;
+        display:block;
+        position:relative;
+
+        &--shadow{
+            @include shadow;
+
+            &--large{
+                @include shadow(large);
+            }
+        }
+
+        &--border-radius{
+            @include border-radius;
+            background:rgb(125,125,125);
+        }
+
+        &--spacing-section{
+            @include spacing(section,top,padding);
+            background:rgb(125,125,125);
+            height:0;
+        }
+
+        &--spacing-itemspace{
+            @include spacing(itemspace,top,padding);
+            background:rgb(125,125,125);
+            height:0;
+        }
+
+        &--spacing-box{
+            @include spacing(box,top,padding);
+            background:rgb(125,125,125);
+            height:0;
+        }
+    }
+
+    &__tabs{
+        padding:4rem 0;
+        ul{
+            margin:0;
+            padding:0;
+            text-align:center;
+
+            li{
+                display:inline-block;
+
+                a{
+                    @include btn;
+                }
+            }
+        }
+    }
+
+    &__playground-form{
+        @include shadow(large);
+        text-align:center;
+        padding:2rem 0;
+        margin-bottom:4rem;
+
+        p{
+            margin-bottom:1rem;
+        }
+
+        a{
+            color:$link-color;
+        }
+    }
+}

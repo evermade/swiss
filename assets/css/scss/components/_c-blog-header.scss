@@ -1,9 +1,0 @@
-.c-blog-header{
-
-    @include spacing(itemspace,top,padding);
-    @include spacing(itemspace,bottom,padding);
-    @include spacing(itemspace,bottom,margin);
-    @include shadow;
-
-    text-align:center;
-}

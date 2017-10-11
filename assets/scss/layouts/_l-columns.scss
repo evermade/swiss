@@ -1,0 +1,55 @@
+$columns-gutter: 30px;
+
+.l-columns {
+    @include make-row($columns-gutter);
+
+    &__item {
+        @include spacing(itemspace, bottom, margin);
+
+        @include bp(md) {
+            margin-bottom: 0;
+        }
+
+        @include make-md-column(12, $columns-gutter);
+
+        [data-column-count="1"] & {
+            @include make-md-column(8, $columns-gutter);
+        }
+
+        // different column width variations
+        [data-column-count="1"].l-columns--h-center & {
+            @include make-md-column-push(2);
+        }
+
+        [data-column-count="2"] & {
+            @include make-md-column(6, $columns-gutter);
+        }
+
+        [data-column-count="3"] & {
+            @include make-md-column(4, $columns-gutter);
+        }
+
+        [data-column-count="4"] & {
+            @include make-sm-column(6, $columns-gutter);
+            @include make-md-column(3, $columns-gutter);
+        }
+
+        // clear floats
+        &:nth-child(2n + 3) {
+            [data-column-count="4"] & {
+                clear: left;
+
+                @include bp(md) {
+                    clear: none;
+                }
+            }
+        }
+
+        // margins when stacked
+        &:not(:last-child) {
+            @include bp(md) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

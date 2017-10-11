@@ -1,0 +1,51 @@
+/*
+
+This uses $spacing-sizes matrix. Feel free to add more spacings there if they have a reusable logic to it.
+Don't try to add new rows into the matrix just to support a single component.
+
+EXAMPLE:
+----
+
+@include spacing(section,top,padding);
+@include spacing(itemspace,all,margin);
+@include spacing(box,bottom,margin);
+
+ */
+
+@mixin spacing($spacing-size-label: box, $where: all, $which: margin) {
+    
+    $spacingDirection: #{$which}-#{$where};
+
+    @if $where == all {
+        $spacingDirection: $which;
+    }
+
+    // check if we have matching font-size
+    @if map-has-key($spacing-sizes, $spacing-size-label) {
+
+        // set the var for checking the prev breakpoint spacing-size
+        $prev-spacing-size: 0;
+
+        // loop through breakpoints
+        @each $bp-label, $spacing-size in map-get($spacing-sizes, $spacing-size-label) {
+
+            // only add new spacing-size declaration if we don't already have it for previous breakpoint
+            @if $bp-label == xs {
+                #{$spacingDirection}: $spacing-size;
+            }
+            @else if $spacing-size != $prev-spacing-size {
+                @include bp($bp-label) {
+                    #{$spacingDirection}: $spacing-size;
+                }
+            }
+
+            // this for checking that we don't add duplicate spacing-sizes
+            $prev-spacing-size: $spacing-size;
+        }
+    }
+
+    // error message
+    @else {
+        @warn "`#{$spacing-size-label}` font-size could not be found on the font-size matrix.";
+    }
+}

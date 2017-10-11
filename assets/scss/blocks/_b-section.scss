@@ -1,0 +1,55 @@
+.b-section {
+    position: relative;
+
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+        height: 1px;
+    }
+
+    &:before {
+        margin-bottom: -1px;
+    }
+
+    &:after {
+        margin-top: -1px;
+    }
+
+    &__images {
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &--full-height {
+
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        min-height: 100vh;
+
+        &>section {
+            width: 100%;
+        }
+    }
+
+    &--align-bottom {
+        align-items: flex-end;
+        align-content: flex-end;
+    }
+
+    &--align-top {
+        align-items: flex-start;
+        align-content: flex-start;
+    }
+
+    &--align-stretch {
+        align-items: stretch;
+    }
+}

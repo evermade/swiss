@@ -1,4 +1,5 @@
-<?php namespace Swiss;
+<?php
+namespace Swiss;
 
 // custom config
 require_once( get_template_directory().'/lib/config.php' );
@@ -32,7 +33,7 @@ require_once( get_template_directory().'/lib/image-sizes.php' );
 // rest-api
 require_once( get_template_directory().'/lib/rest-api.php' );
 
-// // lets loop and include the block init files
+// lets loop and include the block init files
 // foreach(glob(get_template_directory().'/lib/blocks/*/init.php') as $block_config){
 //     include_once($block_config);
 // }

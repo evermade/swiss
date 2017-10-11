@@ -1,4 +1,4 @@
-<section class="b-base">
+<section class="b-base <?php echo $block->getCss('someIndentifer');?>">
 
     <?php echo \Swiss\sprint('<div class="c-background-image" style="background-image:url(%s);"></div><div class="c-overlay"></div>', \Swiss\Acf\getImageUrl('large', $block->get('background_image'))); ?>
 
@@ -15,7 +15,7 @@
                         */
                     ?>
 
-                    <?php echo \Swiss\sprint('<div class="h-wysiwyg-html">%s</div>', $block->get('text')); ?>
+                    <?php echo \Swiss\sprint('<div class="h-wysiwyg-html" data-scheme-target>%s</div>', $block->get('text')); ?>
 
                     <?php if(!empty($block->get('posts'))): ?>
 
