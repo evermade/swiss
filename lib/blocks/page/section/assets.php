@@ -15,11 +15,11 @@ $asset['custom_css']
 
  */
 
-if($block->get('scheme_images')){
+if($block->get('assets')){
 
-    echo '<div class="b-scheme__images">';
+    echo '<div class="b-section__assets">';
 
-        foreach($block->get('scheme_images') as $asset){
+        foreach($block->get('assets') as $asset){
 
             // CREATE VARIABLES
             $assetClass = "";
@@ -28,22 +28,22 @@ if($block->get('scheme_images')){
 
             // CLASS
             foreach($asset['position'] as $pos):
-                $assetClass .= " c-scheme-asset--position-".$pos;
+                $assetClass .= " c-section-asset--position-".$pos;
             endforeach;
 
             foreach($asset['visibility'] as $vis):
                 $assetClass .= " h-visible-".$vis;
             endforeach;
 
-            $assetClass .= " c-scheme-asset--zindex-".$asset['z-index'];
-            $assetClass .= " c-scheme-asset--placement-".$asset['placement'];
-            $assetClass .= " c-scheme-asset--size-".$asset['size'];
+            $assetClass .= " c-section-asset--zindex-".$asset['z-index'];
+            $assetClass .= " c-section-asset--placement-".$asset['placement'];
+            $assetClass .= " c-section-asset--size-".$asset['size'];
 
             // DATA ANIMATE
             if($asset['animation_style'] != "none" && $asset['animation_speed']){
                 $assetAnimation .= 'data-animate="';
                 $assetAnimation .= $asset['animation_style']." ";
-                $assetAnimation .= "c-scheme-asset--anim-duration-".$asset['animation_speed']." ";
+                $assetAnimation .= "c-section-asset--anim-duration-".$asset['animation_speed']." ";
                 $assetAnimation .= '" ';
 
                 $assetStyle .= "animation-delay:".$asset['animation_delay']."s;";
@@ -58,7 +58,7 @@ if($block->get('scheme_images')){
 
             // COMBINE EVERYTHING
             echo '<div
-                class="c-scheme-asset '.$assetClass.'"
+                class="c-section-asset '.$assetClass.'"
                 style="'.$assetStyle.'"
                 '.$assetAnimation.'
             ></div>';
