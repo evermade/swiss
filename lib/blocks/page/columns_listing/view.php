@@ -1,40 +1,20 @@
-<section class="b-base <?php echo $block->getCss('someIndentifer');?>">
+<section class="b-columns-listing">
 
-    <?php echo \Swiss\sprint('<div class="c-background-image" style="background-image:url(%s);"></div><div class="c-overlay"></div>', \Swiss\Acf\getImageUrl('large', $block->get('background_image'))); ?>
+    <?php echo \Swiss\sprint('<div class="b-columns-listing__container b-columns-listing__container--intro"><div class="h-wysiwyg-html" data-scheme-target>%s</div></div>', $block->get('text')); ?>
 
-    <div class="b-base__container">
-        <div class="b-base__row">
-            <div class="b-base__content">
-                <div class="b-base__wrapper">
+    <div class="b-columns-listing__container">
+        <div class="l-cards">
 
-                    <?php
-                        /*
-                            * DEMO CODE, PLEASE ADJUST ACCORDINGLY!
-                            * This is where you put your layouts and components
-                            * Try to use templates and functions as much as you can
-                        */
-                    ?>
+        <?php foreach($block->get('columns') as $k => $v): ?>
 
-                    <?php echo \Swiss\sprint('<div class="h-wysiwyg-html" data-scheme-target>%s</div>', $block->get('text')); ?>
+            <div class="l-cards__item">
+                <?php include get_template_directory().'/templates/_column-listing-card.php'; ?>
+            </div>
 
-                    <?php if(!empty($block->get('posts'))): ?>
+        <?php endforeach; ?>
 
-                        <div class="l-columns" data-column-count="<?php echo sizeof($block->get('posts')); ?>">
+        </div>
 
-                        <?php global $post; foreach($block->get('posts') as $k => $post): setup_postdata($post); ?>
+    </div><!-- end of b-columns-listing__container -->
 
-                            <div class="l-columns__item">
-                                <?php echo \Swiss\template('_card-sample.php', $post); ?>
-                            </div>
-
-                        <?php endforeach; wp_reset_postdata(); ?>
-
-                        </div>
-
-                    <?php endif; ?>
-
-                </div><!-- end of b-base__wrapper -->
-            </div><!-- end of b-base__content -->
-        </div><!-- end of b-base__row -->
-    </div><!-- end of b-base__container -->
-</section><!-- end of b-base -->
+</section><!-- end of b-columns-listing -->

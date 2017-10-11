@@ -4,7 +4,7 @@
 
     <div class="b-cards__container b-cards__container--intro">
 
-        <?php echo \Swiss\sprint('<div class="b-cards__intro"><div class="h-wysiwyg-html" data-scheme-target>%s</div></div>', $block->get('text')); ?>
+        <?php echo \Swiss\sprint('<div class="h-wysiwyg-html" data-scheme-target>%s</div>', $block->get('text')); ?>
 
     </div>
 

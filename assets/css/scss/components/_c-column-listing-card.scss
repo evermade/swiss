@@ -1,0 +1,35 @@
+.c-column-listing-card {
+
+    text-align: center;
+
+    &__image {
+
+        @include spacing(box, left, padding);
+        @include spacing(box, right, padding);
+
+        &__inner {
+            padding-top: 100%;
+            @include bgimg(cover);
+
+            .c-column-listing-card--circle & {
+                border-radius: 50%;
+                overflow: hidden;
+
+            }
+
+            .c-column-listing-card--icon & {
+                background-size: contain;
+                padding-top: 20%;
+            }
+        }
+
+    }
+
+    &__title {
+        @include spacing(box, top, margin);
+    }
+
+    &__text {
+        @include spacing(box, top, margin);
+    }
+}

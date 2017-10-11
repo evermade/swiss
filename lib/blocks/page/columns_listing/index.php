@@ -3,11 +3,6 @@
 $block = new \Swiss\Block;
 
 // set and get the acf fields for this block
-$block->getFields(array('background_image', 'text', 'posts'));
+$block->getFields(array('columns', 'image_type', 'text'));
 
-// build a class list, or set of inline styles
-if(true) {
-    $block->addCss('some-class', 'someIndentifer');
-}
-
-include(__DIR__.'/view.php');
+if(!empty($block->get('columns'))) include(__DIR__.'/view.php');
