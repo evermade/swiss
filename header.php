@@ -8,7 +8,7 @@
 
         <div class="c-mobile-toggle"><div></div><div></div><div></div></div>
 
-        <?php wp_nav_menu(array('container_class' => 'b-page-navigation__list', 'menu_class' => 'c-page-navigation', 'theme_location' => 'header-navigation')); ?>
+        <?php wp_nav_menu(array('container_class' => 'b-page-navigation__list', 'menu_class' => 'c-page-navigation', 'theme_location' => 'header-navigation', 'fallback_cb' => false)); ?>
 
     </div>
 

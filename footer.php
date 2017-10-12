@@ -6,7 +6,7 @@
 <footer class="b-footer">
 
     <div class="b-footer__container">
-        
+
         <div class="b-footer__logo">
 
             <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
@@ -23,8 +23,8 @@
 
         <div class="b-footer__navigation">
 
-            <?php wp_nav_menu(array('theme_location' => 'footer-navigation', 'menu_class' => 'c-page-navigation-footer', 'container' => '')); ?>
-            
+            <?php wp_nav_menu(array('theme_location' => 'footer-navigation', 'menu_class' => 'c-page-navigation-footer', 'container' => '', 'fallback_cb' => false)); ?>
+
         </div>
 
     </div>
