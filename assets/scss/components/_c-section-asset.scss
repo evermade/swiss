@@ -94,20 +94,6 @@ $assetOuterSpace: $assetOuterSpace+60px;
             height: 100%;
         }
 
-        &-top {
-            top: 0;
-            left: 0;
-            right: 0;
-            min-height: 40px;
-        }
-
-        &-bottom {
-            bottom: 0;
-            left: 0;
-            right: 0;
-            min-height: 40px;
-        }
-
         &-left {
             left: 0;
             width:calc(50% - #{$assetOuterSpace});
@@ -125,12 +111,14 @@ $assetOuterSpace: $assetOuterSpace+60px;
         &-fifty-left {
             height: 100%;
             left: 0;
+            top: 0;
             width: 50%;
         }
 
         &-fifty-right {
             height: 100%;
             right: 0;
+            top: 0;
             width: 50%;
         }
     }

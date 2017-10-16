@@ -6,6 +6,7 @@
     /* different container sizes */
     &__container {
         @include container;
+        @include z-index(content);
 
         &--intro {
             max-width: 700px;
