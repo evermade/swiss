@@ -51,6 +51,7 @@ $containerWrapper : false; // image container width
 
     &__text {
         @include z-index(content);
+        
         position: relative;
 
         @if $textMargin==true {
