@@ -13,14 +13,14 @@ EXAMPLE:
  */
 
 @mixin spacing($spacing-size-label: box, $where: all, $which: margin) {
-    
+
     $spacingDirection: #{$which}-#{$where};
 
     @if $where == all {
         $spacingDirection: $which;
     }
 
-    // check if we have matching font-size
+    // check if we have matching spacing size
     @if map-has-key($spacing-sizes, $spacing-size-label) {
 
         // set the var for checking the prev breakpoint spacing-size
@@ -46,6 +46,6 @@ EXAMPLE:
 
     // error message
     @else {
-        @warn "`#{$spacing-size-label}` font-size could not be found on the font-size matrix.";
+        @warn "`#{$spacing-size-label}` spacing size could not be found on the spacing size matrix.";
     }
 }
