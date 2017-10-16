@@ -6,6 +6,8 @@
     /* different container sizes */
     &__container {
         @include container;
+        @include z-index(content);
+        position: relative;
 
         &--full {
             @include container(full);
