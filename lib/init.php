@@ -18,6 +18,9 @@ require_once( get_template_directory().'/lib/classes/Post.php' );
 // hooks
 require_once( get_template_directory().'/lib/hooks.php' );
 
+// some security
+require_once( get_template_directory().'/lib/security.php' );
+
 // custom post types
 require_once( get_template_directory().'/lib/post.types.php' );
 

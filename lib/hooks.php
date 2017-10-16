@@ -93,10 +93,6 @@ function em_load_theme_textdomain() {
     load_theme_textdomain('swiss', get_template_directory() . '/languages');
 }
 
-function remove_script_version($src) {
-    return $src ? esc_url(remove_query_arg('ver', $src)) : false;
-}
-
 function lower_wpseo_priority( $html ) {
     return 'low';
 }
@@ -117,24 +113,6 @@ add_action( 'admin_init', '\Swiss\Hooks\custom_post_types_editing' );
 
 // lets add our local languages for the swiss text domain
 add_action( 'after_setup_theme', '\Swiss\Hooks\em_load_theme_textdomain' );
-
-// remove stupid wp and plugin tags for security
-remove_action( 'wp_head', 'rsd_link' );
-remove_action( 'wp_head', 'wp_generator' );
-remove_action( 'wp_head', 'rest_output_link_wp_head' );
-remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-remove_action( 'wp_head', 'wp_oembed_add_host_js' );
-remove_action( 'wp_head', 'wlwmanifest_link' );
-remove_action( 'wp_head', 'meta_generator_tag' );
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-remove_action( 'admin_print_styles', 'print_emoji_styles' );
-remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
-
-// remove version numbers from asset links
-add_filter( 'script_loader_src', '\Swiss\Hooks\remove_script_version', 15, 1 );
-add_filter( 'style_loader_src', '\Swiss\Hooks\remove_script_version', 15, 1 );
 
 // navigation
 add_action( 'init', '\Swiss\Hooks\register_my_menus' );

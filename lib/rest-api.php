@@ -29,12 +29,12 @@ function myAwesomePosts()
     return $json;
 }
 
-add_action('rest_api_init', function()
-{
+// add_action('rest_api_init', function()
+// {
 
-    register_rest_route('swiss/v1', '/posts', array(
-        'methods' => 'GET',
-        'callback' => '\Swiss\RestApi\myAwesomePosts'
-    ));
+//     register_rest_route('swiss/v1', '/posts', array(
+//         'methods' => 'GET',
+//         'callback' => '\Swiss\RestApi\myAwesomePosts'
+//     ));
 
-});
+// });
