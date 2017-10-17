@@ -15,6 +15,9 @@ $cards-gutter: 15px;
     &__item {
         width: 100%;
         padding: $cards-gutter;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
         @include bp(sm) {
             width: 33.333%;

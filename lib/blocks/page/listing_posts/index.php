@@ -3,7 +3,7 @@
 $block = new \Swiss\Block;
 
 // set and get the acf fields for this block
-$block->getFields(array('text', 'posts', 'number_of_posts', 'see_more', 'see_more_text', 'see_more_url'));
+$block->getFields(array('section_header', 'posts', 'number_of_posts', 'see_more', 'see_more_text', 'see_more_url'));
 
 //if we dont have activities lets go get us some
 if(empty($block->get('posts'))){

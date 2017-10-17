@@ -1,8 +1,9 @@
 <section class="b-listing">
 
-    <?php echo \Swiss\sprint('<div class="b-listing__container b-listing__container--intro"><div class="h-wysiwyg-html" data-scheme-target>%s</div></div>', $block->get('text')); ?>
-
     <div class="b-listing__container">
+
+        <?php include get_template_directory().'/templates/_section-header.php'; ?>
+
         <div class="l-cards">
 
         <?php foreach($block->get('columns') as $k => $v): ?>

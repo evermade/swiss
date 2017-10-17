@@ -22,6 +22,7 @@
 
     &__container {
         @include container;
+        @include z-index(content);
     }
 
     &__content {
