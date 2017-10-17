@@ -1,4 +1,4 @@
-<div class="c-column-listing c-column-listing--<?php echo $block->get('image_type'); ?>">
+<div class="c-column-listing c-column-listing--<?php echo $block->get('image_type'); ?>" data-scheme-target>
 
     <div class="c-column-listing__image">
         <div class="c-column-listing__image__inner" style="background-image: url(<?php echo \Swiss\Acf\getImageUrl('medium-large', \Swiss\getFrom('image', $v)); ?>)"></div>

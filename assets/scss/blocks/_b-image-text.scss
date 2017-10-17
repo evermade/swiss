@@ -8,7 +8,7 @@ https://evermade.atlassian.net/wiki/spaces/EV/pages/71630912/B+Image+Text
 
 $sectionMargin : false; // section top/bottom margin
 $textMargin : true; // textarea top/bottom margin
-$containerWrapper : false; // image container width
+
 .b-image-text {
     @include section($sectionMargin);
 
@@ -17,10 +17,11 @@ $containerWrapper : false; // image container width
         flex-wrap: nowrap;
         align-items: stretch;
 
-        @if $containerWrapper==true {
+        &--container-width{
             justify-content: center;
         }
-        @else {
+
+        &--full-width{
             justify-content: flex-start;
         }
     }
@@ -99,7 +100,7 @@ $containerWrapper : false; // image container width
             padding-top: 0;
             width: 50%;
 
-            @if $containerWrapper==true {
+            .b-image-text--container-width &{
                 max-width: $container-max-width/2;
                 width: $container-width/2;
             }

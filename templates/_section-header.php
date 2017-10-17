@@ -1,0 +1,1 @@
+<?php echo \Swiss\sprint('<div class="c-section-header"><div class="c-section-header__text"><div class="h-wysiwyg-html" data-scheme-target>%s</div></div></div>', $block->get('section-header')); ?>

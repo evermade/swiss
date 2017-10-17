@@ -6,6 +6,7 @@ $block = new \Swiss\Block;
 // set and get the acf fields for this block
 $block->getFields(array(
     'layout',
+    'layout_width',
     'text',
     'image',
     'image_foreground',

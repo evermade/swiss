@@ -1,0 +1,10 @@
+.c-section-header{
+    @include container;
+    @include spacing(itemspace,bottom,margin);
+
+    &__text{
+        max-width:800px;
+        margin:auto;
+        text-align:center;
+    }
+}

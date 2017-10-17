@@ -8,11 +8,14 @@
         @include spacing(box, right, padding);
 
         &__inner {
-            padding-top: 100%;
+            padding-top: 56.25%;
             @include bgimg(cover);
 
             .c-column-listing--circle & {
                 border-radius: 50%;
+                padding-top:75%;
+                width:75%;
+                margin:auto;
                 overflow: hidden;
             }
 
