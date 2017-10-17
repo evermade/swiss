@@ -1,8 +1,8 @@
 <section class="b-listing">
 
-    <?php include get_template_directory().'/templates/_section-header.php'; ?>
-
     <div class="b-listing__container">
+
+        <?php include get_template_directory().'/templates/_section-header.php'; ?>
 
         <?php if(!empty($block->get('posts'))): ?>
 

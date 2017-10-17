@@ -1,8 +1,9 @@
 <section class="b-listing">
 
-    <?php include get_template_directory().'/templates/_section-header.php'; ?>
-
     <div class="b-listing__container">
+
+        <?php include get_template_directory().'/templates/_section-header.php'; ?>
+
         <div class="l-cards">
 
         <?php foreach($block->get('columns') as $k => $v): ?>
