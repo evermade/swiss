@@ -1,4 +1,4 @@
-<div class="c-sidebar-widget">
+<div class="c-sidebar-widget" data-scheme-target>
     <h3 class="c-sidebar-widget__title js-blog__sidebar-mobile">Search</h3>
     <div class="c-sidebar-widget__content">
 

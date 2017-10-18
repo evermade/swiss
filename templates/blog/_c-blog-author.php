@@ -5,7 +5,7 @@
             <?php echo get_avatar( get_the_author_meta('email') , 90 ); ?>
 
         </div>
-        <div class="c-blog-author__text">
+        <div class="c-blog-author__text" data-scheme-target>
             <h5><strong>Written by </strong><?php echo the_author_link(); ?></h5>
             <p><?php echo get_the_author_meta('description'); ?></p>
         </div>

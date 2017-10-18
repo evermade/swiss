@@ -1,6 +1,6 @@
 <?php global $wp_query; ?>
 
- <section class="b-blog">
+ <section class="b-blog s-context">
 
     <?php if ( have_posts() && ( get_search_query() || is_category() || is_date() || is_tag() || is_author() ) == false ): 
 

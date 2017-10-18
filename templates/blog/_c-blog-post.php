@@ -8,7 +8,7 @@
 
     <div class="c-blog-post__text">
 
-        <div class="h-wysiwyg-html">
+        <div class="h-wysiwyg-html" data-scheme-target>
             <h2 class="h3">
                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                     <?php the_title(); ?>

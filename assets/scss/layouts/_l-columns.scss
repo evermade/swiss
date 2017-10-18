@@ -4,10 +4,11 @@ $columns-gutter: 30px;
     @include make-row($columns-gutter);
 
     &__item {
-        @include spacing(itemspace, bottom, margin);
 
-        @include bp(md) {
-            margin-bottom: 0;
+        @include bp(sm,max){
+            &+&{
+                @include spacing(section, top, margin);
+            }
         }
 
         @include make-md-column(12, $columns-gutter);

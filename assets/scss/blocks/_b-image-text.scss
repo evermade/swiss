@@ -17,11 +17,11 @@ $textMargin : true; // textarea top/bottom margin
         flex-wrap: nowrap;
         align-items: stretch;
 
-        &--container-width{
+        &--container-width {
             justify-content: center;
         }
 
-        &--full-width{
+        &--full-width {
             justify-content: flex-start;
         }
     }
@@ -100,7 +100,7 @@ $textMargin : true; // textarea top/bottom margin
             padding-top: 0;
             width: 50%;
 
-            .b-image-text--container-width &{
+            .b-image-text--container-width & {
                 max-width: $container-max-width/2;
                 width: $container-width/2;
             }
