@@ -5,8 +5,8 @@ $columns-gutter: 30px;
 
     &__item {
 
-        @include bp(sm,max){
-            &+&{
+        @include bp(sm,max) {
+            &+& {
                 @include spacing(section, top, margin);
             }
         }

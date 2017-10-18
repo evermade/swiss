@@ -17,7 +17,7 @@
 body {
 
     .h-visible-mobile {
-        @include bp(sm,max){
+        @include bp(sm,max) {
             display: block;
         }
     }
@@ -29,7 +29,7 @@ body {
     }
 
     .h-visible-desktop {
-        @include bp(xl){
+        @include bp(xl) {
             display: block;
         }
     }

@@ -1,9 +1,9 @@
-.c-section-header{
+.c-section-header {
     @include spacing(itemspace,bottom,margin);
 
-    &__text{
-        max-width:800px;
-        margin:auto;
-        text-align:center;
+    &__text {
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
     }
 }
