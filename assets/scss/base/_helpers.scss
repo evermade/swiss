@@ -16,20 +16,20 @@
 
 body {
 
-    .h-visible-sm {
-        @media (max-width: $screen-xs-max) {
+    .h-visible-mobile {
+        @include bp(sm,max) {
             display: block;
         }
     }
 
-    .h-visible-md {
-        @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+    .h-visible-laptop {
+        @media (min-width: $screen-md-min) and (max-width: $screen-lg-max) {
             display: block;
         }
     }
 
-    .h-visible-lg {
-        @media (min-width: $screen-lg-min) {
+    .h-visible-desktop {
+        @include bp(xl) {
             display: block;
         }
     }

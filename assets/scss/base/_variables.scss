@@ -46,9 +46,9 @@ $font-size-base: md; // base size based on font-size labels in the sass map
 // Spacing sizes for responsive scalability (used by @mixin spacing). Feel free to add new sizes on project basis if needed :)
 // [section,box] is being used for out-the-box components so those shouldnt be removed.
 $spacing-sizes: (
-    section:        (xs: 2.5rem, sm: 4rem, md: 6rem, lg: 8rem, xl: 10rem),
-    itemspace:      (xs: 3.5rem, sm: 3.5rem, md: 3rem, lg: 4rem, xl: 5rem),
-    box:            (xs: 1.5rem, sm: 1.5rem, md: 2rem, lg: 2rem, xl: 2rem)
+    section:        (xs: 25px, sm: 35px, md: 60px, lg: 80px, xl: 100px),
+    itemspace:      (xs: 20px, sm: 25px, md: 30px, lg: 40px, xl: 50px),
+    box:            (xs: 10px, sm: 15px, md: 20px, lg: 20px, xl: 20px)
 );
 
 

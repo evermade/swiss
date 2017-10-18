@@ -20,12 +20,21 @@
         &:first-child {
             margin-top: 0;
         }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     p {
         margin: $text-spacing*0.8em 0;
 
+        &:first-child {
+            margin-top: 0;
+        }
+
         &:last-child {
+            margin: $text-spacing*0.8em 0 0;
             margin-bottom: 0;
         }
     }

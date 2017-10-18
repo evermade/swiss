@@ -342,9 +342,9 @@
                                     },
                                     "choices": {
                                         "all": "All breakpoints",
-                                        "sm": "Mobile",
-                                        "md": "Tablet",
-                                        "lg": "Desktop"
+                                        "mobile": "Mobile (xs,sm)",
+                                        "laptop": "Laptop (md, lg)",
+                                        "desktop": "Desktop (xl)"
                                     },
                                     "default_value": [
                                         "all"
@@ -1390,15 +1390,16 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "sm": "Mobile",
-                                        "md": "Tablet",
-                                        "lg": "Desktop"
+                                        "mobile": "Mobile (xs,sm)",
+                                        "laptop": "Laptop (md,lg)",
+                                        "desktop": "Desktop (xl)"
                                     },
                                     "allow_custom": 0,
                                     "save_custom": 0,
                                     "default_value": [
-                                        "md",
-                                        "lg"
+                                        "mobile",
+                                        "laptop",
+                                        "desktop"
                                     ],
                                     "layout": "vertical",
                                     "toggle": 0,
@@ -1618,5 +1619,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1508242272
+    "modified": 1508320713
 }

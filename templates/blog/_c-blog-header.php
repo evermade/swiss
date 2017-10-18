@@ -1,6 +1,6 @@
 <?php if (get_search_query() || is_category() || is_date() || is_tag() || is_author()) : ?> 
 
-    <div class="c-blog-header">
+    <div class="c-blog-header" data-scheme-target>
 
         <p><?php echo $wp_query->post_count; ?> posts found.</p>
 
