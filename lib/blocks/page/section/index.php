@@ -42,6 +42,8 @@ set b-section layout classes correctly
 
 $block->addCss('b-section', 'b-section');
 
+$block->addCss("b-section--visibility-".$block->get('overflow_visibility'), 'b-section');
+
 if ($block->get('full_height') == "full-height"):
     $block->addCss("b-section--".$block->get('vertical_alignment')." b-section--".$block->get('full_height')." b-section--visibility-".$block->get('overflow_visibility'), 'b-section');
 endif;

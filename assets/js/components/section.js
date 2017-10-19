@@ -25,10 +25,14 @@
                 if($(window).scrollTop() > $(this).parent().offset().top+$(this).parent().height()-$(this).height()){
                     $(this).removeClass("b-section__blocks--fixed");
                     $(this).parent().addClass("b-section--fixed-bottom");
+                    $(this).attr("style","");
                 } else if($(window).scrollTop() >= $(this).parent().offset().top){
+                    $(this).css("width", $(this).width());
+                    $(this).css("left", $(this).offset().left);
                     $(this).addClass("b-section__blocks--fixed");
                     $(this).parent().removeClass("b-section--fixed-bottom");
                 } else {
+                    $(this).attr("style","");
                     $(this).removeClass("b-section__blocks--fixed");
                     $(this).parent().removeClass("b-section--fixed-bottom");
                 }

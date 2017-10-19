@@ -51,8 +51,8 @@ if($block->get('assets')){
             }
 
             // SET PARALLAX INDEX
-            if($asset['parallax_speedNumber'] != ""){
-                $parallaxIndex = $asset['parallax_speedNumber'];
+            if($asset['parallax_speed'] != ""){
+                $parallaxIndex = $asset['parallax_speed'];
             }
 
             // CSS
