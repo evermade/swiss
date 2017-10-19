@@ -1149,8 +1149,36 @@
                             "endpoint": 0
                         },
                         {
+                            "key": "field_59e8526006521",
+                            "label": "Overflow Visibility",
+                            "name": "overflow_visibility",
+                            "type": "select",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "visible": "Visible (Assets overlap section)",
+                                "hidden": "Hidden (Assets are cut off on side of the section)"
+                            },
+                            "default_value": [
+                                "visible"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
                             "key": "field_5846bc8aabeca",
-                            "label": "Images",
+                            "label": "Assets",
                             "name": "assets",
                             "type": "repeater",
                             "value": null,
@@ -1503,6 +1531,28 @@
                                     "min": "",
                                     "max": "",
                                     "step": ""
+                                },
+                                {
+                                    "key": "field_59e852d806522",
+                                    "label": "Parallax Speed",
+                                    "name": "parallax_speed",
+                                    "type": "number",
+                                    "value": null,
+                                    "instructions": "Set to 0 to disable parallax speed. Possibility to add negative and positive parallax. Values from -5 to 5 are relatively safe.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "25",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "min": "",
+                                    "max": "",
+                                    "step": ""
                                 }
                             ]
                         },
@@ -1587,6 +1637,72 @@
                             "ajax": 0,
                             "return_format": "value",
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_59e8534b06523",
+                            "label": "Pin blocks",
+                            "name": "pin_blocks",
+                            "type": "select",
+                            "value": null,
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59d49dce7fe90",
+                                        "operator": "==",
+                                        "value": "full-height"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "disable": "Disabled (block doesn't scroll down)",
+                                "enabled": "Enabled (block scroll to the end of the section)"
+                            },
+                            "default_value": [
+                                "disabled"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59e853cb06524",
+                            "label": "Minimum height (laptop\/desktop)",
+                            "name": "minimum_height",
+                            "type": "number",
+                            "value": null,
+                            "instructions": "When using Pin blocks sometimes we want the section to be a lot higher than the window height or the height the block is. This height will be disabled for mobile.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59d49dce7fe90",
+                                        "operator": "==",
+                                        "value": "full-height"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "px",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": ""
                         }
                     ],
                     "min": "",
@@ -1619,5 +1735,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1508320713
+    "modified": 1508399441
 }

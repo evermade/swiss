@@ -7,7 +7,10 @@ $block->getFields(array(
     'scheme',
     'assets',
     'full_height',
-    'vertical_alignment'
+    'vertical_alignment',
+    'pin_blocks',
+    'overflow_visibility',
+    'minimum_height'
 ));
 
 $block->addCss('s-context', 's-context');
@@ -40,7 +43,7 @@ set b-section layout classes correctly
 $block->addCss('b-section', 'b-section');
 
 if ($block->get('full_height') == "full-height"):
-    $block->addCss("b-section--".$block->get('vertical_alignment')." b-section--".$block->get('full_height'), 'b-section');
+    $block->addCss("b-section--".$block->get('vertical_alignment')." b-section--".$block->get('full_height')." b-section--visibility-".$block->get('overflow_visibility'), 'b-section');
 endif;
 
 include(__DIR__.'/view.php');
