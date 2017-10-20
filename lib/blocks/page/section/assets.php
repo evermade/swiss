@@ -64,7 +64,7 @@ if($block->get('assets')){
 
             // COMBINE EVERYTHING
             echo '<div
-                data-parallax-index="'.$parallaxIndex.'"
+                data-parallax="'.$parallaxIndex.'"
                 class="c-section-asset js-section__asset '.$assetClass.'"
                 style="'.$assetStyle.'"
                 '.$assetAnimation.'

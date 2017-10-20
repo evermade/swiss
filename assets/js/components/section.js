@@ -1,79 +1,50 @@
 (function() {
 
-    // create empty object in the global em var, dont forget to add the init call in the main.js!
+    // WILL BE REWRITTEN FOR SURE
+
     em.section = {
 
     };
 
-    // call any functions to be trigger on dom ready
     em.section.init = function() {
-        em.section.parallax();
-    };
-
-    em.section.parallax = function() {
-        em.section.assetParallaxRender();
 
         $( window ).scroll(function() {
-            em.section.assetParallaxRender();
-            em.section.scrollsection();
+            em.parallax.render();
+            em.section.pinelement();
         });
 
     };
 
-        em.section.scrollsection = function() {
-            $('.js-section__section-scroll').each(function(){
-                if($(window).scrollTop() > $(this).parent().offset().top+$(this).parent().height()-$(this).height()){
-                    $(this).removeClass("b-section__blocks--fixed");
-                    $(this).parent().addClass("b-section--fixed-bottom");
-                    $(this).attr("style","");
-                } else if($(window).scrollTop() >= $(this).parent().offset().top){
-                    $(this).css("width", $(this).width());
-                    $(this).css("left", $(this).offset().left);
-                    $(this).addClass("b-section__blocks--fixed");
-                    $(this).parent().removeClass("b-section--fixed-bottom");
-                } else {
-                    $(this).attr("style","");
-                    $(this).removeClass("b-section__blocks--fixed");
-                    $(this).parent().removeClass("b-section--fixed-bottom");
-                }
-            });
-        };
+    em.section.pinelement = function() {
 
-        em.section.assetParallaxRender = function(){
-            var windowMiddle = $(window).scrollTop()+$(window).height()/2;
-            $('.js-section__asset').each(function(){
-                var parallaxIndex = $(this).data("parallax-index");
-                if(parallaxIndex !== 0){
-                    var assetHeight = $(this).height();
-                    var assetMiddle = $(this).offset().top+assetHeight/2;
-                    var differenceIndex = assetMiddle-windowMiddle;
-                    var visibleArea = assetHeight;
+        $('.js-section__section-scroll').each(function(){
 
-                    if(visibleArea < $(window).height()/2){
-                        visibleArea = $(window).height()/2;
-                        visibleArea = visibleArea+assetHeight;
-                    }
+            if($(window).scrollTop() > $(this).parent().offset().top+$(this).parent().height()-$(this).height()){
 
-                    if(differenceIndex > -visibleArea && differenceIndex < visibleArea){
+                // fix to the bottom
+                $(this).removeClass("b-section__blocks--fixed");
+                $(this).parent().addClass("b-section--fixed-bottom");
+                $(this).attr("style","");
 
-                        var parallaxPosition = (differenceIndex+assetHeight)/(assetHeight+assetHeight);
-                        var position = assetHeight*parallaxPosition*parallaxIndex-assetHeight/2*parallaxIndex;
-                        
+            } else if($(window).scrollTop() >= $(this).parent().offset().top){
 
-                        if(parallaxIndex < 0){
-                            position = assetHeight*parallaxPosition*parallaxIndex-assetHeight/2*parallaxIndex;
-                        }
+                // element is pinned
+                $(this).css("width", $(this).width());
+                $(this).css("left", $(this).offset().left);
+                $(this).addClass("b-section__blocks--fixed");
+                $(this).parent().removeClass("b-section--fixed-bottom");
 
-                        console.log(position);
+            } else {
 
-                        $(this).css("transform", "translate(0,"+position+"px)");
+                // fix to the top
+                $(this).attr("style","");
+                $(this).removeClass("b-section__blocks--fixed");
+                $(this).parent().removeClass("b-section--fixed-bottom");
 
-                    }
-                } else {
-                    $(this).removeClass("js-section__asset");
-                }
-                
-            });
-        };
+            }
+
+        });
+
+    };
 
 })();
