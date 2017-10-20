@@ -1538,7 +1538,7 @@
                                     "name": "parallax_speed",
                                     "type": "number",
                                     "value": null,
-                                    "instructions": "Set to 0 to disable parallax speed. Possibility to add negative and positive parallax. Values from -5 to 5 are relatively safe.",
+                                    "instructions": "Set to 0 to disable parallax speed. Possibility to add negative and positive parallax. Values between -1 and 1 are supported.",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -1550,8 +1550,8 @@
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
-                                    "min": "",
-                                    "max": "",
+                                    "min": -1,
+                                    "max": 3,
                                     "step": ""
                                 }
                             ]
@@ -1735,5 +1735,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1508399441
+    "modified": 1508493732
 }

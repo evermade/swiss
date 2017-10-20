@@ -46,6 +46,8 @@
             }
 
             em.animations.animate();
+            em.parallax.render();
+            em.sticky.render();
 
         }).scroll();
     };

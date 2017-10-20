@@ -17,7 +17,8 @@
     em.parallax = {
         elements: $("*[data-parallax]"),
         windowMiddle: $(window).scrollTop()+$(window).height()/2,
-        windowHeight: $(window).height()
+        windowHeight: $(window).height(),
+        speedMultiplier: 1.4
     };
 
     // call any functions to be trigger on dom ready
@@ -56,13 +57,13 @@
                     // calculate new position
                     var parallaxPosition = (differenceIndex+assetHeight)/(assetHeight+assetHeight);
                     var position = assetHeight*parallaxPosition*parallaxIndex-assetHeight/2*parallaxIndex;
-                    
+                   
                     if(parallaxIndex < 0){
                         position = assetHeight*parallaxPosition*parallaxIndex-assetHeight/2*parallaxIndex;
                     }
 
                     // re-adust position
-                    $(this).css("transform", "translate(0,"+position+"px)");
+                    $(this).css("transform", "translate(0,"+position*em.parallax.speedMultiplier+"px)");
 
                 }
             }
