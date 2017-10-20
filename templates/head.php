@@ -33,7 +33,7 @@
         if(!window.$) $ = jQuery;
     }
     else {
-        document.write('<script src="<?php echo get_template_directory_uri();?>/assets/vendor/jquery/dist/jquery.min.js"><\/script>');
+        document.write('<script src="<?php echo get_template_directory_uri();?>/assets/node_modules/jquery/dist/jquery.min.js"><\/script>');
     }
     </script>
 
