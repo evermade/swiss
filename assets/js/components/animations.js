@@ -40,8 +40,7 @@
     em.animations.setup = function(){
 
         $(window).on("scroll", function() {
-            
-            em.parallax.render();
+
             em.sticky.render();
 
             if(!em.animations.canWe()) {

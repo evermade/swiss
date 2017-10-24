@@ -72,7 +72,7 @@ Scrolls to the very bottom of the document. All Viewports
     };
 
     em.sticky.render = function() {
-
+        
         var windowScrollTop = $(window).scrollTop();
         var windowHeight = $(window).height();
 
