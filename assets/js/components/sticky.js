@@ -3,13 +3,19 @@
 HOW TO USE:
 
 Scrolls across the parent component. Viewports 992 and higher
-<div data-sticky="parent" data-sticky-viewport="> 992"></div>
+<div data-sticky="parent" data-sticky-viewport="> 992">
+    <div>The child element will stick</div>
+</div>
 
 Scrolls to the $(window).scrollTop() 2000px and unsticks. All viewports
-<div data-sticky="2000px"></div>
+<div data-sticky="2000px">
+    <div>The child element will stick</div>
+</div>
 
 Scrolls to the very bottom of the document. All Viewports
-<div data-sticky></div>
+<div data-sticky>
+    <div>The child element will stick</div>
+</div>
 
 */
 (function() {
