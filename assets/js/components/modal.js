@@ -30,6 +30,8 @@
  *  call em.modal.setup() again afterwards
  */
 
+import remodal from 'remodal';
+
 (function() {
 
     //create empty object in the global em var, dont forget to add the init call in the main.js!

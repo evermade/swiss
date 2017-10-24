@@ -12,10 +12,7 @@ function publicScriptsAndStyles()
 
     // scripts
     wp_enqueue_script( 'modernizr', '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js' );
-    wp_enqueue_script( 'remodal', get_template_directory_uri().'/assets/node_modules/remodal/dist/remodal.min.js', array(), null, true );
-    wp_enqueue_script( 'flickity', get_template_directory_uri().'/assets/node_modules/flickity/dist/flickity.pkgd.min.js', array(), null, true );
 
-    // lets try keep this last to allow third party deps to be loaded before
     wp_enqueue_script( 'myquery', get_template_directory_uri().'/assets/dist/js/myquery.'.filemtime(get_stylesheet_directory() . '/assets/dist/js/myquery.js').'.js', array(), null, true );
 
     // fonts
@@ -23,9 +20,6 @@ function publicScriptsAndStyles()
 
     // styles
     wp_enqueue_style( 'our-css', get_template_directory_uri().'/assets/dist/css/main.'.filemtime(get_stylesheet_directory() . '/assets/dist/css/main.css').'.css' );
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/node_modules/font-awesome/css/font-awesome.min.css' );
-    wp_enqueue_style( 'remodal', get_template_directory_uri().'/assets/node_modules/remodal/dist/remodal.css' );
-    wp_enqueue_style( 'flickity', get_template_directory_uri().'/assets/node_modules/flickity/dist/flickity.min.css' );
 
 }
 
