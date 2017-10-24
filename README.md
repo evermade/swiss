@@ -47,7 +47,7 @@ Coming soon, if you beat me to it, please comment here :)
 
 ## Notes
 
-* All front end dependencies must go through Bower, 3 digit versioning
+* All front end dependencies must go through npm, 3 digit versioning
 * Any code please namespace.
 
 ## Contributors
