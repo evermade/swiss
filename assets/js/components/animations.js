@@ -40,14 +40,15 @@
     em.animations.setup = function(){
 
         $(window).on("scroll", function() {
+            
+            em.parallax.render();
+            em.sticky.render();
 
             if(!em.animations.canWe()) {
                 return false;
             }
 
             em.animations.animate();
-            em.parallax.render();
-            em.sticky.render();
 
         }).scroll();
     };

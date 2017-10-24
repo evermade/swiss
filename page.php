@@ -8,7 +8,9 @@ get_header();
 
 <div class="s-context">
     <div>
-        <?php \Swiss\Acf\postBlocks(); ?>
+        <div>
+            <?php \Swiss\Acf\postBlocks(); ?>
+        </div>
     </div>
 </div>
 

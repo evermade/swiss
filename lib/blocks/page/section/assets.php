@@ -25,7 +25,6 @@ if($block->get('assets')){
             $assetClass = "";
             $assetAnimation = "";
             $assetStyle = "";
-            $parallaxIndex = "0";
 
             // CLASS
             foreach($asset['position'] as $pos):
@@ -50,11 +49,6 @@ if($block->get('assets')){
                 $assetStyle .= "animation-delay:".$asset['animation_delay']."s;";
             }
 
-            // SET PARALLAX INDEX
-            if($asset['parallax_speed'] != ""){
-                $parallaxIndex = $asset['parallax_speed'];
-            }
-
             // CSS
             if($asset['placement'] == "custom"){
                 $assetStyle .= $asset['custom_css'];
@@ -64,8 +58,7 @@ if($block->get('assets')){
 
             // COMBINE EVERYTHING
             echo '<div
-                data-parallax="'.$parallaxIndex.'"
-                class="c-section-asset js-section__asset '.$assetClass.'"
+                class="c-section-asset js-section__asset '.$assetClass.'" 
                 style="'.$assetStyle.'"
                 '.$assetAnimation.'
             ></div>';

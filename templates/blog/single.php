@@ -74,7 +74,7 @@
 
                 </div>
 
-                <div class="l-blog__sidebar">
+                <div class="l-blog__sidebar" data-sticky="parent">
                     <?php include(get_template_directory().'/templates/blog/_sidebar.php'); ?>
                 </div>
 
