@@ -48,7 +48,7 @@
     <div class="b-blog__container">
         <div class="l-blog">
 
-            <div class="l-blog__sidebar" data-swiss-sticky="parent" data-swiss-sticky-viewport="> 992">
+            <div class="l-blog__sidebar">
                 <?php include(get_template_directory().'/templates/blog/_sidebar.php'); ?>
             </div> 
 
