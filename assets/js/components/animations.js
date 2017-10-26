@@ -1,60 +1,56 @@
-(function() {
+const animations = {
 
-    // create empty object in the global em variable
-    em.animations = {
-        elements: {},
-        winWidthOk: false
-    };
+    // create some properties
+    elements: [],
+    winWidthOk: false,
 
     // call any functions to be trigger on dom ready
-    em.animations.init = function(){
-        em.animations.capture();
-        em.animations.checkRequiredWidth();
-        em.animations.animateFirstBlockIn();
-        em.animations.setup();
-    };
+    init: function () {
+        this.capture();
+        this.checkRequiredWidth();
+        this.animateFirstBlockIn();
+        this.setup();
+    },
 
-    em.animations.capture = function() {
-        em.animations.elements = $("[data-animate]");
-    };
+    capture: function () {
+        this.elements = $("[data-animate]");
+    },
 
-    em.animations.checkRequiredWidth = function() {
-        if(window.innerWidth>1024) {
-            em.animations.winWidthOk = true;
-            em.animations.animate();
-            em.animations.animateFirstBlockIn();
+    checkRequiredWidth: function () {
+        if (window.innerWidth > 1024) {
+            this.winWidthOk = true;
+            this.animate();
+            this.animateFirstBlockIn();
         }
         else {
-            em.animations.winWidthOk = false;
+            this.winWidthOk = false;
         }
-    };
+    },
 
-    em.animations.canWe = function(){
-        if(em.animations.elements.length && em.animations.winWidthOk === true) {
+    canWe: function () {
+        if (this.elements.length && this.winWidthOk === true) {
             return true;
         }
 
         return false;
-    };
+    },
 
-    em.animations.setup = function(){
+    setup: function () {
+        $(window).on("scroll", () => {
 
-        $(window).on("scroll", function() {
+            //em.sticky.render();
 
-            em.sticky.render();
-
-            if(!em.animations.canWe()) {
+            if (!this.canWe()) {
                 return false;
             }
 
-            em.animations.animate();
+            this.animate();
 
         }).scroll();
-    };
+    },
 
-    em.animations.animate = function() {
-        em.animations.elements.each(function() {
-
+    animate: function () {
+        this.elements.each(function () {
             var $win = $(window),
                 $el = $(this),
                 scrollTop = $win.scrollTop(),
@@ -63,23 +59,26 @@
 
             // el.toggleClass( el.data("animate"), elTop < (scrollTop+windowHeight));
 
-            if(elTop < (scrollTop+windowHeight)) {
+            if (elTop < (scrollTop + windowHeight)) {
                 $el.addClass($el.data("animate"));
             }
         });
-    };
+    },
 
-    em.animations.animateFirstBlockIn = function() {
-        if(em.animations.canWe()) {
+    animateFirstBlockIn: function () {
+        if (this.canWe()) {
             var $el = $('.main-header > section.hero + section');
             var $container = $el.find('div').eq(0);
 
-            if(!$el.hasClass('toBeAnimated')) {
+            if (!$el.hasClass('toBeAnimated')) {
                 $container.addClass('animated fadeInUp');
             }
             else {
-                $container.css({opacity: 1});
+                $container.css({ opacity: 1 });
             }
         }
-    };
-})();
+    }
+
+};
+
+animations.init();
