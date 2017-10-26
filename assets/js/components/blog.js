@@ -1,21 +1,21 @@
-(function() {
+// an example using an object liternal notation to encapsulate into a nice package
+const blog = {
 
-    // create empty object in the global em var, dont forget to add the init call in the main.js!
-    em.blog = {};
+    // create some properties
+    elements: [],
+    y: false,
 
-    // call any functions to be trigger on dom ready
-    em.blog.init = function() {
-        em.blog.sidebarMobile();
-    };
+    init: function () {
+        this.setupMobileClick();
+    },
 
-    em.blog.sidebarMobile = function() {
-
-        // On mobile the sidebar widgets open and close when the user clicks them.
-        
-        $('.js-blog__sidebar-mobile').on("click",function(){
+    setupMobileClick: function () {
+        $('.js-blog__sidebar-mobile').on("click", function () {
             $(this).parent().toggleClass("c-sidebar-widget--open");
         });
-        
-    };
+    }
 
-})();
+};
+
+// finally boot the beast up
+blog.init();
