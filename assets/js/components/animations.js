@@ -38,8 +38,6 @@ const animations = {
     setup: function () {
         $(window).on("scroll", () => {
 
-            //em.sticky.render();
-
             if (!this.canWe()) {
                 return false;
             }

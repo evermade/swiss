@@ -1,17 +1,9 @@
-(function() {
+import Flickity from 'flickity';
 
-    // create empty object in the global em var, dont forget to add the init call in the main.js!
-    em.flickity = {};
+// http://flickity.metafizzy.co/options.html
 
-    // call any functions to be trigger on dom ready
-    em.flickity.init = function() {
-        em.flickity.defaultslick();
-    };
+const elements = document.querySelectorAll('.js-flickity');
 
-    em.flickity.defaultslick  = function() {
-        $('.js-flickity').flickity({
-            // http://flickity.metafizzy.co/options.html
-            // options: option,
-        });
-    };
-})();
+if (elements.length > 0){
+    let flky = new Flickity('.js-flickity');
+}

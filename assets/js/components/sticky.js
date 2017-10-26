@@ -37,6 +37,12 @@ sticky.init = function () {
         sticky.defineStickyEnd();
     }, 500);
 
+    $(window).on("scroll", () => {
+
+        sticky.render();
+
+    }).scroll();
+
 };
 
 sticky.defineStickyEnd = function () {

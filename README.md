@@ -1,4 +1,4 @@
-# Swiss Theme
+# Swiss Wordpress Theme
 
 The bestest Wordpress theme Evermade.
 
@@ -7,48 +7,45 @@ The bestest Wordpress theme Evermade.
 * Advanced Custom Fields Pro plugin
 * Cache busting at your nginx or apache level, see [https://github.com/h5bp/server-configs-nginx/blob/master/h5bp/location/cache-busting.conf](https://github.com/h5bp/server-configs-nginx/blob/master/h5bp/location/cache-busting.conf)
 
-## Usage
 
-* If using with Dockerpress when you are editing files ensure you run `em gulp` from the project app root so files are copied to `dist/`
+## General
 
-## Theme Details
+* Briefly discuss any features of this project.
 
-#### General
-
-* Briefly discuss any features of this project, for example REST API
-
-#### Gulp
-
-* If you need to add more files to the Gulp watch, a JS or CSS library, then add it to the corresponding index in the `gulpfile.js` paths var in the project app root.
-
-#### Front end magic
+### Front end magic
 
 * Using Bootstrap, mostly commented out, using the grid only.
 * Font Awesome is in use and available out of the box
-* [Remodal](https://github.com/VodkaBears/Remodal#remodal) is the current implemented modal
 
-#### Blocks
-
-* **Scheme**, this allows users to create scheme of content within a page. It gracefully falls back if no scheme blocks are used on the page, where the default scheme is open in the header until another scheme block is found or the footer where the previous scheme is then  closed.
-* **Columns block**, this allows users to create 1 - 4 horizontal columns of content.
-* **Hero**, does what it says on the tin.
-
-#### Actions/Hooks/Filters
+### Actions/Hooks/Filters
 
 * A couple of hooks to remove the redundant WP version, extra info meta tags in the header.
 * An ACF admin JS hook to collapase all ACF blocks by default in the WP Admin.
-* We have added a **Swiss** text domain for languages. An example `<?php _e('Enjoy', 'swiss'); ?>`
+* We have added a `Swiss` text domain for languages. An example `<?php _e('Enjoy', 'swiss'); ?>`
 * We have registered a custom shortcode for buttons in the TinyMCE WP Admin editor
+
+## Blocks
+
+* [Section](lib/blocks/page/section/README.md)
+* [Hero](lib/blocks/page/hero/README.md)
+* [Columns](lib/blocks/page/columns/README.md)
+* [Image](lib/blocks/page/image/README.md)
+* [Image Text](lib/blocks/page/image_text/README.md)
+* [Listing](lib/blocks/page/listing/README.md)
+* [Listing Posts](lib/blocks/page/listing_posts/README.md)
 
 ## Tests
 
 Coming soon, if you beat me to it, please comment here :)
 
-
 ## Notes
 
-* All front end dependencies must go through Bower, 3 digit versioning
+* All front end dependencies must go through npm, 3 digit versioning
 * Any code please namespace.
+
+## Issues
+
+If you have an issue or have found a bug, please [create an issue](https://bitbucket.org/evermade/swiss/issues/new).
 
 ## Contributors
 
