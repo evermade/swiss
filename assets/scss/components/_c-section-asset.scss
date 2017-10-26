@@ -170,9 +170,13 @@ $assetOuterSpace: $assetOuterSpace+60px;
         &-left {
             background-position-x: left;
         }
-
-        &-center {
-            background-position: center;
-        }
     }
+}
+
+.c-section-asset--position-right.c-section-asset--position-center, .c-section-asset--position-left.c-section-asset--position-center {
+    background-position-y: center;
+}
+
+.c-section-asset--position-top.c-section-asset--position-center, .c-section-asset--position-bottom.c-section-asset--position-center {
+    background-position-x: center;
 }

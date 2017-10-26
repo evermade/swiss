@@ -58,7 +58,7 @@ if($block->get('assets')){
 
             // COMBINE EVERYTHING
             echo '<div
-                class="c-section-asset '.$assetClass.'"
+                class="c-section-asset js-section__asset '.$assetClass.'" 
                 style="'.$assetStyle.'"
                 '.$assetAnimation.'
             ></div>';
