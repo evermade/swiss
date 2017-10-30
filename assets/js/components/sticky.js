@@ -31,7 +31,6 @@ sticky = {
 // call any functions to be trigger on dom ready
 sticky.init = function () {
 
-    sticky.defineStickyEnd();
 
     setTimeout(function () {
         sticky.defineStickyEnd();
