@@ -13,9 +13,9 @@ EXAMPLE:
 
     @if $spacing == true {
 
-        @include spacing(section, top);
-        @include spacing(section, bottom);
+        @include spacing(margin, top, section);
+        @include spacing(margin, bottom, section);
 
     }
-    
+
 }

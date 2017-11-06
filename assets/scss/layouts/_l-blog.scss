@@ -2,7 +2,7 @@
     &__content {
 
         @include bp(md) {
-            @include spacing(section, right, padding);
+            @include spacing(padding, right, section);
 
             float: left;
             width: 75%;
@@ -26,7 +26,7 @@
     }
 
     ul.page-numbers {
-        @include spacing(itemspace, top, margin);
+        @include spacing(margin, top, itemspace);
     }
 
     &:after {

@@ -26,8 +26,8 @@
     }
 
     &__content {
-        @include spacing(section, top);
-        @include spacing(section, bottom);
+        @include spacing(margin, top, section);
+        @include spacing(margin, bottom, section);
         @include animation( zoomIn, 2s, backwards, $ease-out-expo, 0s);
 
         @include bp(md) {

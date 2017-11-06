@@ -3,7 +3,7 @@
     @include scheme-html-inverted();
 
     &__text {
-        @include spacing(itemspace, all, padding);
+        @include spacing(padding, all, itemspace);
         position: absolute;
         bottom: 0;
         left: 0;

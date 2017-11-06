@@ -1,5 +1,5 @@
 .c-section-header {
-    @include spacing(itemspace,bottom,margin);
+    @include spacing(margin, bottom, itemspace);
 
     &__text {
         max-width: 800px;

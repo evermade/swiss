@@ -11,8 +11,8 @@
 
     // Primary Level
     & > li {
-        @include spacing(box, right, padding);
-        @include spacing(itemspace, bottom, padding);
+        @include spacing(padding, right, box);
+        @include spacing(padding, bottom, itemspace);
 
         display: block;
         width: 50%;

@@ -121,8 +121,8 @@
                 <p>@include section;</p>
             </div>
 
-            <div class="b-toolbox__component-row" data-name="@spacing" data-description="Spacing mixin that should only be used for classes that has a purpose for it. @include padding(section); is a good example.">
-                <p>@include spacing(section,top,padding);</p>
+            <div class="b-toolbox__component-row" data-name="@spacing" data-description="Spacing mixin that should only be used for classes that has a purpose for it.">
+                <p>@include spacing(padding, top, section);</p>
             </div>
 
             <div class="b-toolbox__component-row" data-name="@transition" data-description="Default animation for ui:hover and similar.">

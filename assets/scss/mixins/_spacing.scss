@@ -6,13 +6,13 @@ Don't try to add new rows into the matrix just to support a single component.
 EXAMPLE:
 ----
 
-@include spacing(section,top,padding);
-@include spacing(itemspace,all,margin);
-@include spacing(box,bottom,margin);
+@include spacing(padding, top, section);
+@include spacing(margin, all, itemspace);
+@include spacing(margin, bottom, box);
 
  */
 
-@mixin spacing($spacing-size-label: box, $where: all, $which: margin) {
+@mixin spacing($which: margin, $where: all, $spacing-size-label: box) {
 
     $spacingDirection: #{$which}-#{$where};
 

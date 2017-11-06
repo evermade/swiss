@@ -8,8 +8,8 @@
         }
 
         &+& {
-            @include spacing(itemspace, top, margin);
-            @include spacing(itemspace, bottom, margin);
+            @include spacing(margin, top, itemspace);
+            @include spacing(margin, bottom, itemspace);
         }
 
         &:first-child {
@@ -18,6 +18,6 @@
     }
 
     &--space-above {
-        @include spacing(section, top, margin);
+        @include spacing(margin, top, section);
     }
 }

@@ -52,30 +52,30 @@ $textMargin : true; // textarea top/bottom margin
 
     &__text {
         @include z-index(content);
-        
+
         position: relative;
 
         @if $textMargin==true {
-            @include spacing(section, top, padding);
-            @include spacing(section, bottom, padding);
+            @include spacing(padding, top, section);
+            @include spacing(padding, bottom, section);
         }
 
         @if $textMargin==false {
             @include bp(xs, max) {
-                @include spacing(section, top, padding);
-                @include spacing(section, bottom, padding);
+                @include spacing(padding, top, section);
+                @include spacing(padding, bottom, section);
             }
         }
 
         .b-image-text--right & {
             @include bp(sm) {
-                @include spacing(section, left, padding);
+                @include spacing(padding, left, section);
             }
         }
 
         .b-image-text--left & {
             @include bp(sm) {
-                @include spacing(section, right, padding);
+                @include spacing(padding, right, section);
             }
         }
     }
