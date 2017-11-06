@@ -2,7 +2,7 @@
     @include transition;
 
     @include bp(md) {
-        @include spacing(itemspace, top, margin);
+        @include spacing(margin, top, itemspace);
     }
 
     &:first-child {
@@ -14,10 +14,10 @@
         font-size: 2rem;
         border-bottom: 1px solid $border-color;
 
-        @include spacing(box, bottom, padding);
+        @include spacing(padding, bottom, box);
 
         @include bp(sm, max) {
-            @include spacing(box, top, padding);
+            @include spacing(padding, top, box);
 
             border-bottom: none;
             border-top: 1px solid $border-color;
@@ -41,14 +41,14 @@
 
     &__content {
         @include transition;
-        @include spacing(box, top, padding);
+        @include spacing(padding, top, box);
 
         @include bp(sm, max) {
             height: 0;
             padding: 0;
             overflow: hidden;
-            @include spacing(box, left, padding);
-            @include spacing(box, right, padding);
+            @include spacing(padding, left, box);
+            @include spacing(padding, right, box);
         }
     }
 
@@ -57,7 +57,7 @@
             background: darken($body-bg, 5%);
 
             .c-sidebar-widget__title {
-                @include spacing(box, left, padding);
+                @include spacing(padding, left, box);
 
                 &:after {
                     transform: translate(-50%, -50%) rotate(90deg);
@@ -65,7 +65,7 @@
             }
 
             .c-sidebar-widget__content {
-                @include spacing(box, bottom, padding);
+                @include spacing(padding, bottom, box);
                 height: auto;
             }
         }

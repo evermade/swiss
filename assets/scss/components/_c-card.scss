@@ -11,7 +11,8 @@
     }
 
     &__content {
-        @include spacing(box);
+        @include spacing(margin, all, box);
+
         position: relative;
     }
 

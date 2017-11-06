@@ -10,7 +10,7 @@
 
         &--intro {
             max-width: 700px;
-            @include spacing(itemspace, bottom);
+            @include spacing(margin, bottom, itemspace);
             text-align: center;
         }
     }
@@ -31,7 +31,8 @@
     }
 
     &__see-more {
-        @include spacing(itemspace, top);
+        @include spacing(margin, top, itemspace);
+
         text-align: center;
     }
 

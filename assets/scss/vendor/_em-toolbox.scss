@@ -36,7 +36,7 @@
         padding:0 0 0 20%;
         margin:4rem 0;
 
-        &[data-name]:before { 
+        &[data-name]:before {
             @include transition;
             @include font-size(sm);
             content: attr(data-name);
@@ -52,7 +52,7 @@
             max-width:60%;
         }
 
-        &[data-description]:after { 
+        &[data-description]:after {
             @include transition;
             @include font-size(sm);
             content: attr(data-description);
@@ -83,19 +83,19 @@
         }
 
         &--spacing-section{
-            @include spacing(section,top,padding);
+            @include spacing(padding, top, section);
             background:rgb(125,125,125);
             height:0;
         }
 
         &--spacing-itemspace{
-            @include spacing(itemspace,top,padding);
+            @include spacing(padding, top, itemspace);
             background:rgb(125,125,125);
             height:0;
         }
 
         &--spacing-box{
-            @include spacing(box,top,padding);
+            @include spacing(padding, top, box);
             background:rgb(125,125,125);
             height:0;
         }

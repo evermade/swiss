@@ -1,7 +1,7 @@
 .b-footer {
     @include z-index(footer);
-    @include spacing(itemspace, top, padding);
-    @include spacing(section, bottom, padding);
+    @include spacing(padding, top, itemspace);
+    @include spacing(padding, bottom, section);
     position: relative;
 
     &__container {
@@ -30,12 +30,12 @@
     }
 
     &__navigation {
-        @include spacing(itemspace, top, padding);
+        @include spacing(padding, top, itemspace);
 
         clear: both;
 
         @include bp(md) {
-            @include spacing(section, left, padding);
+            @include spacing(padding, left, section);
 
             clear: none;
             padding-top: 0;
@@ -45,8 +45,8 @@
     }
 
     &__copyright {
-        @include spacing(box, top, margin);
-        @include spacing(box, top, padding);
+        @include spacing(margin, top, box);
+        @include spacing(padding, top, box);
         @include font-size(sm);
 
         border-top: 1px solid $border-color;

@@ -1,7 +1,7 @@
 .c-blog-post {
 
-    @include spacing(itemspace, top, margin);
-    @include spacing(itemspace, bottom, margin);
+    @include spacing(margin, top, itemspace);
+    @include spacing(margin, bottom itemspace);
 
     &:after {
         content: "";
@@ -18,8 +18,8 @@
 
         @include bp(xs, max) {
             float: right;
-            @include spacing(box, left, margin);
-            @include spacing(box, bottom, margin);
+            @include spacing(margin, left, box);
+            @include spacing(margin, bottom, box);
         }
 
         @include bp(sm) {
@@ -33,7 +33,7 @@
 
         @include bp(sm) {
 
-            @include spacing(itemspace, left, padding);
+            @include spacing(padding, left, itemspace);
 
             margin-left: 24rem;
         }

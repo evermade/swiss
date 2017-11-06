@@ -4,8 +4,8 @@
 
     &__image {
 
-        @include spacing(box, left, padding);
-        @include spacing(box, right, padding);
+        @include spacing(padding, left, box);
+        @include spacing(padding, right, box);
 
         &__inner {
             padding-top: 56.25%;
@@ -28,10 +28,10 @@
     }
 
     &__title {
-        @include spacing(box, top, margin);
+        @include spacing(margin, top, box);
     }
 
     &__text {
-        @include spacing(box, top, margin);
+        @include spacing(margin, top, box);
     }
 }

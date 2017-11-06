@@ -1,7 +1,7 @@
 .c-blog-taxonomy {
 
-    @include spacing(section, top, margin);
-    @include spacing(box, all, padding);
+    @include spacing(margin, top, section);
+    @include spacing(padding, all, box);
     @include shadow();
     @include border-radius;
 
@@ -12,12 +12,12 @@
     }
 
     &__title {
-        @include spacing(box, bottom, margin);
+        @include spacing(margin, bottom, box);
     }
 
     &__item {
         @include bp(xs, max) {
-            @include spacing(itemspace, bottom, margin);
+            @include spacing(margin, bottom, itemspace);
 
             &:last-child {
                 margin-bottom: 0;

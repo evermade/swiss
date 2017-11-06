@@ -6,8 +6,8 @@
 
     &__content {
         @include align-element(vertical);
-        @include spacing(section, top, padding);
-        @include spacing(section, bottom, padding);
+        @include spacing(padding, top, section);
+        @include spacing(padding, bottom, section);
         width: 100%;
         text-align: center;
         z-index: 4;
