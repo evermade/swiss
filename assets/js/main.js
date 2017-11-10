@@ -1,22 +1,11 @@
-var em = {}; //global var for all evermade modules
+// import our console helper from h5bp, may not be needed
+import "./plugins.js";
 
-$(document).ready(function(){
-
-	// Let's loop the em object for keys are call their init functions.
-	for(var key in em){
-
-		// Check if init function exists.
-		if (typeof(em[key].init) === "function") {
-
-			// Run init function.
-			em[key].init();
-
-		} else {
-
-			console.error("Your block " + key + " doesn't define init-method.");
-
-		}
-
-	}
-
-});
+// our components
+import "./components/animations.js";
+import "./components/blog.js";
+import "./components/flickity.js";
+import "./components/forms.js";
+import "./components/page-navigation.js";
+import "./components/sticky.js";
+import "./components/toolbox.js";

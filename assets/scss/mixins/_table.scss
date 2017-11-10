@@ -1,0 +1,33 @@
+/*
+
+Feel free to customize heavily.
+
+Being used in @mixin wysiwyg-html;
+
+ */
+
+@mixin table( $table-color: $body-bg, $table-text-color: $text-color, $table-headline-color: $headline-color) {
+
+    width: 100%;
+    border: 1px solid darken($table-color, 10%);
+
+    tr {
+        border-top: 1px solid darken($table-color, 10%);
+    }
+
+    td,
+    th {
+        padding: 0.2em 1em;
+        text-align: left;
+    }
+
+    th {
+        background: darken($table-color, 5%);
+        color: $table-headline-color;
+    }
+
+    td {
+        background: $table-color;
+        color: $table-text-color;
+    }
+}

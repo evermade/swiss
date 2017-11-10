@@ -1,0 +1,21 @@
+/*
+    Scheme Context
+    Signify a new styling context
+*/
+
+.s-context {
+    position: relative;
+
+    [data-scheme-target] {
+        @include scheme-html-default;
+    }
+
+    &--inverted {
+        background: #000;
+
+        [data-scheme-target] {
+            @include scheme-html-inverted;
+        }
+    }
+
+}

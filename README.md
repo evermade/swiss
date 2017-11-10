@@ -1,11 +1,52 @@
-**Swiss**, the bestest Wordpress theme evermade.
+# Swiss Wordpress Theme
 
-**Usage**
+The bestest Wordpress theme Evermade.
 
-1. clone me and cd into this repo.
-2. npm run build
-3. And enjoy :)
-
-**Requirements**
+## Requirements
 
 * Advanced Custom Fields Pro plugin
+* Cache busting at your nginx or apache level, see [https://github.com/h5bp/server-configs-nginx/blob/master/h5bp/location/cache-busting.conf](https://github.com/h5bp/server-configs-nginx/blob/master/h5bp/location/cache-busting.conf)
+
+
+## General
+
+* Briefly discuss any features of this project.
+
+### Front end magic
+
+* Using Bootstrap, mostly commented out, using the grid only.
+* Font Awesome is in use and available out of the box
+
+### Actions/Hooks/Filters
+
+* A couple of hooks to remove the redundant WP version, extra info meta tags in the header.
+* An ACF admin JS hook to collapase all ACF blocks by default in the WP Admin.
+* We have added a `Swiss` text domain for languages. An example `<?php _e('Enjoy', 'swiss'); ?>`
+* We have registered a custom shortcode for buttons in the TinyMCE WP Admin editor
+
+## Blocks
+
+* [Section](lib/blocks/page/section/README.md)
+* [Hero](lib/blocks/page/hero/README.md)
+* [Columns](lib/blocks/page/columns/README.md)
+* [Image](lib/blocks/page/image/README.md)
+* [Image Text](lib/blocks/page/image_text/README.md)
+* [Listing](lib/blocks/page/listing/README.md)
+* [Listing Posts](lib/blocks/page/listing_posts/README.md)
+
+## Tests
+
+Coming soon, if you beat me to it, please comment here :)
+
+## Notes
+
+* All front end dependencies must go through npm, 3 digit versioning
+* Any code please namespace.
+
+## Issues
+
+If you have an issue or have found a bug, please [create an issue](https://bitbucket.org/evermade/swiss/issues/new).
+
+## Contributors
+
+* Paul Stewart

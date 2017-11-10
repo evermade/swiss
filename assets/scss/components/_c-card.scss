@@ -1,0 +1,30 @@
+.c-card {
+    @include shadow();
+
+    width: 100%;
+    position: relative;
+
+    &__image {
+        background: url(http://fakeimg.pl/650x450/000000/fff/?text=img) center center no-repeat;
+        background-size: cover;
+        padding-top: 56.25%;
+    }
+
+    &__content {
+        @include spacing(margin, all, box);
+
+        position: relative;
+    }
+
+    &__meta {
+        @include font-size(sm);
+    }
+
+    &__title {
+        margin: 0.2em 0;
+    }
+
+    &__read-more {
+        @include font-size(sm);
+    }
+}

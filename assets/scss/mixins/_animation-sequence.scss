@@ -1,0 +1,20 @@
+/*
+This will add a delay to all children and animate them in one by one
+
+Example:
+--------
+@include animation-sequence(0.10, 10);
+
+& > *{
+    @include animation(bounceIn, 2s);
+}
+--------
+
+*/
+@mixin animation-sequence($base-time: 0.20, $howmany: 10) {
+    @for $i from 1 through $howmany {
+        & *:nth-child(#{$i}) {
+            animation-delay: unquote(($base-time*$i) + 's'); // 0.5, 1, 1.5 etc
+        }
+    }
+}

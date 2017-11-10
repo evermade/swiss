@@ -1,0 +1,9 @@
+ @import '../node_modules/flickity/css/flickity.css';
+
+.flickity-page-dots {
+    bottom: 5% !important;
+
+    .dot {
+        background: #fff !important;
+    }
+}

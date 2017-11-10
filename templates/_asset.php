@@ -1,0 +1,1 @@
+<div class="c-asset <?php echo \Swiss\getFrom('class', $data); ?>" style="background-image: url(<?php echo \Swiss\Acf\getImageUrl('original', $data); ?>); <?php echo \Swiss\getFrom('style', $data); ?>"></div>

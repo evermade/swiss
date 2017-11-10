@@ -1,25 +1,24 @@
-<?php get_header(); ?>
+<?php
+/*
 
-<section class="single-article">
-	<div class="container">
+SINGLE VIEW RELOCATED
+----
+single.php has been moved under /templates/post-type/single.php for consistency's sake.
 
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<header>
-				<h1><?php the_title(); ?></h1>
-				<p class="accent">Posted on <?php the_time('F jS, Y') ?></p>
-			</header>
-			<article>
-				<?php the_content(); ?>
-				<?php echo Helper::share_page(); ?>
-			</article>
+This file only checks what the post type is and then pulls the correct template.
 
-			<?php endwhile; else: ?>
+ */
 
-			<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+// check our current post type
+$type = (empty(get_post_type()) || get_post_type() == 'post')? 'blog' : get_post_type();
 
-		<?php endif; ?>
+// our post index path within templates
+$path = get_template_directory().'/templates/'.$type.'/single.php';
 
-	</div>
-</section>
-
-<?php get_footer();
+// if we have a post type index file, use it, else default to blog
+if(file_exists($path)) {
+    include($path);
+}
+else {
+    include(get_template_directory().'/templates/blog/single.php');
+}

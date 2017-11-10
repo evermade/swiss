@@ -1,8 +1,0 @@
-@mixin circle($radius) {
-  @include border-radius(50%);
-  height: $radius;
-  width: $radius;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-}

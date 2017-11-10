@@ -1,42 +1,29 @@
 <?php
-	$files = glob(get_template_directory().'/templates/toolbox/playground/*.php');
-?>
 
-<br><br>
+if(isset($_GET['file'])):
 
-<section class="section">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				<form action="" method="get" accept-charset="utf-8">
-					<label for="file">Select a dev file</label>
-					<select name="file" class="js-on-change-submit">
-						<option value="">--</option>
-					<?php foreach($files as $file): ?>
-						<option value="<?php echo basename($file);?>"><?php echo basename($file);?></option>
-					<?php endforeach; ?>
-					</select>
-					<input type="hidden" name="page" value="playground">
-				</form>
-			</div>
-		</div><!-- end of row -->
+    $template = get_template_directory().'/templates/toolbox/playground/'.$_GET['file'];
+    if(file_exists($template)) include($template);
 
-		<br><br>
-		
-		<?php if(isset($_GET['file'])): ?>
-		<div class="row">
-			<div class="col-xs-12">
-			<header class="section-header">
-				<h1 class="section-header__title"><?php echo basename($file);?></h1>
-			</header>
+endif; ?>
 
-				<?php
-				$template = get_template_directory().'/templates/toolbox/playground/'.$_GET['file'];
-				if(file_exists($template)) include($template);
-				?>
-			</div>
-		</div>
-	<?php endif; ?>
+<section class="b-toolbox">
+    <div class="b-toolbox__container">
+        <?php
+            $files = glob(get_template_directory().'/templates/toolbox/playground/*.php');
+        ?>
 
-	</div><!-- end of wrapper -->
-</section><!-- end of section --> 
+        <form class="b-toolbox__playground-form" action="<?php echo home_url( add_query_arg( null, null )); ?>" method="GET" accept-charset="utf-8">
+            <p>Create files under /templates/toolbox/playground/. Try to find elements from <a href="http://codepen.evermade.fi/">Evermade's Codepen</a></p>
+            <label for="file">Select a dev file</label>
+            <select name="file" class="js-on-change-submit">
+                <option value="">--</option>
+            <?php foreach($files as $file): ?>
+                <option value="<?php echo basename($file);?>"><?php echo basename($file);?></option>
+            <?php endforeach; ?>
+            </select>
+            <input type="hidden" name="t" value="playground">
+        </form>
+
+    </div>
+</section>

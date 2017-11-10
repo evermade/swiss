@@ -1,2 +1,2 @@
 <?php
-require(get_template_directory().'/em/init.php');
+require(get_template_directory().'/lib/init.php');

@@ -2,24 +2,30 @@
 
 get_header(); ?>
 
-<section class="hero">
+</div>
 
-    <div class="hero__slides slick--hero">
-            
-        <div class="hero__slide">
+<div class="scheme scheme--dark">
 
-            <div class="hero__slide__content">
+<section class="b-hero">
 
-                <h1 class="hero__slide__title">Whoops a daisy</h1>
+    <div class="c-background-image"></div>
 
-                <h2 class="hero__slide__subtitle">This page could not be found&hellip;</h2>
-                <a href="<?php echo home_url(); ?>" class="btn hero__slide__btn">Go to Home</a>
-            </div><!-- end of hero-slide content -->
+    <div class="b-hero__container">
+            <div class="b-hero__row">
+                <div class="b-hero__content" data-column-size="8">
+                    <div class="b-hero__wrapper">
+                        <div class="h-wysiwyg-html text-center">
+                            <h1>Whoops a daisy</h1>
+                            <p>This page could not be found&hellip;</p>
+                            <a href="<?php echo home_url(); ?>" class="c-btn c-btn--white">Go to Home</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        </div><!-- end of hero-slide -->
+</section>
 
-    </div><!-- end of hero-slides -->
-
-</section><!-- end of hero -->
+<div class="scheme">
 
 <?php get_footer();

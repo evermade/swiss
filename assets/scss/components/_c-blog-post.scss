@@ -1,0 +1,58 @@
+.c-blog-post {
+
+    @include spacing(margin, top, itemspace);
+    @include spacing(margin, bottom itemspace);
+
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    &__image {
+        @include border-radius;
+        overflow: hidden;
+        width: 14rem;
+        height: 10rem;
+        position: relative;
+
+        @include bp(xs, max) {
+            float: right;
+            @include spacing(margin, left, box);
+            @include spacing(margin, bottom, box);
+        }
+
+        @include bp(sm) {
+            float: left;
+            width: 24rem;
+            height: 16rem;
+        }
+    }
+
+    &__text {
+
+        @include bp(sm) {
+
+            @include spacing(padding, left, itemspace);
+
+            margin-left: 24rem;
+        }
+
+        p {
+            @include font-size(sm);
+        }
+    }
+
+    &__date {
+        float: right;
+        opacity: 0.5;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

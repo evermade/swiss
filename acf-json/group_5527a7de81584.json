@@ -3,11 +3,11 @@
     "title": "Website Options",
     "fields": [
         {
-            "key": "field_5652f15ee21de",
-            "label": "Google Analytics Trackers",
-            "name": "opt_google_analytics",
-            "type": "repeater",
-            "instructions": "If multiple trackers are in use, we need to name at least 1 unnamed tracker, and the remaining trackers named.\r\n\r\nSo typically lets not name the clients tracker as for default and name each tracker after that. So evermade would be a named tracker.",
+            "key": "field_58e666b7708fb",
+            "label": "All",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,42 +15,103 @@
                 "class": "",
                 "id": ""
             },
-            "min": "",
-            "max": "",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5652f15ee21de",
+            "label": "Google Analytics Trackers",
+            "name": "opt_google_analytics",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_590c7e5b02b49",
+            "label": "Social Media",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_590c7d5f02b46",
+            "label": "Social Media",
+            "name": "opt_social_media",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
             "layout": "table",
-            "button_label": "Add Row",
+            "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_5652f46334582",
-                    "label": "Name",
-                    "name": "opt_google_analytics_name",
-                    "type": "text",
+                    "key": "field_590c7d6802b47",
+                    "label": "Service",
+                    "name": "service",
+                    "type": "select",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": 50,
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
+                    "choices": {
+                        "facebook": "Facebook",
+                        "twitter": "Twitter",
+                        "instagram": "Instagram",
+                        "youtube": "Youtube",
+                        "linkedin": "Linkedin",
+                        "tumblr": "Tumblr",
+                        "pinterest": "Pinterest"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
                 },
                 {
-                    "key": "field_5652f42de21df",
-                    "label": "Code",
-                    "name": "opt_google_analytics_code",
+                    "key": "field_590c7d9b02b48",
+                    "label": "URL",
+                    "name": "url",
                     "type": "text",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": 50,
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -58,9 +119,7 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
+                    "maxlength": ""
                 }
             ]
         }
@@ -82,5 +141,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1448278730
+    "modified": 1493991317
 }

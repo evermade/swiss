@@ -1,0 +1,39 @@
+$cards-gutter: 15px;
+
+.l-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -$cards-gutter;
+
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+    &__item {
+        width: 100%;
+        padding: $cards-gutter;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include bp(sm) {
+            width: 33.333%;
+        }
+
+        @include bp(md) {
+            width: 25%;
+        }
+    }
+
+    // for our bad ass veterans
+    .no-flexbox & {
+        display: block;
+
+        &__item {
+            float: left;
+        }
+    }
+}

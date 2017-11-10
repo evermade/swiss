@@ -1,0 +1,40 @@
+// base helper classes
+
+.h-clickable {
+    position: relative;
+    cursor: pointer;
+    display: block;
+
+    &__item {
+        @include overlay(transparent, 0);
+    }
+}
+
+.h-wysiwyg-html {
+    @include wysiwyg-html;
+}
+
+body {
+
+    .h-visible-mobile {
+        @include bp(sm,max) {
+            display: block;
+        }
+    }
+
+    .h-visible-laptop {
+        @media (min-width: $screen-md-min) and (max-width: $screen-lg-max) {
+            display: block;
+        }
+    }
+
+    .h-visible-desktop {
+        @include bp(xl) {
+            display: block;
+        }
+    }
+
+    .h-visible-all {
+        display: block;
+    }
+}

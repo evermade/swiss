@@ -1,0 +1,64 @@
+html {
+    box-sizing: border-box;
+    font-size: 8px;
+
+    @include bp(xs) {
+        font-size: 8.5px;
+    }
+
+    @include bp(sm) {
+        font-size: 9px;
+    }
+
+    @include bp(md) {
+        font-size: 9.5px;
+        overflow-y: scroll;
+    }
+
+    @include bp(lg) {
+        font-size: 10px;
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    outline: none;
+}
+
+body {
+    @include font-size(base);
+
+    background-color: $body-bg;
+    font-family: $text-family;
+    font-weight: $text-weight;
+    line-height: $line-height;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    line-height: inherit;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+
+// ::-moz-selection {
+//     background: #eee;
+//     text-shadow: none;
+// }
+// ::selection {
+//     background: #eee;
+//     text-shadow: none;
+// }

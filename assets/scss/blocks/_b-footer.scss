@@ -1,0 +1,75 @@
+.b-footer {
+    @include z-index(footer);
+    @include spacing(padding, top, itemspace);
+    @include spacing(padding, bottom, section);
+    position: relative;
+
+    &__container {
+        @include container;
+
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+
+    &__logo {
+        width: 12rem;
+        float: left;
+    }
+
+    &__social-media {
+        width: 50%;
+        float: right;
+
+        @include bp(sm) {
+            width: 12rem;
+            text-align: right;
+        }
+    }
+
+    &__navigation {
+        @include spacing(padding, top, itemspace);
+
+        clear: both;
+
+        @include bp(md) {
+            @include spacing(padding, left, section);
+
+            clear: none;
+            padding-top: 0;
+            margin-left: 12rem;
+            margin-right: 12rem;
+        }
+    }
+
+    &__copyright {
+        @include spacing(margin, top, box);
+        @include spacing(padding, top, box);
+        @include font-size(sm);
+
+        border-top: 1px solid $border-color;
+
+        p {
+            text-align: center;
+
+            @include bp(md) {
+
+                &:first-child {
+                    float: left;
+                }
+
+                &:last-child {
+                    float: right;
+                }
+            }
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+}

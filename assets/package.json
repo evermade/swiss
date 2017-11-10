@@ -1,0 +1,19 @@
+{
+  "name": "evermade-swiss",
+  "version": "1.0.0",
+  "description": "Front end asset management for Swiss",
+  "main": "index.js",
+  "repository": "https://bitbucket.org/evermade/swiss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mr. Evermade",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "flickity": "^2.0.10",
+    "font-awesome": "^4.7.0",
+    "jquery": "^1.12.0",
+    "remodal": "^1.1.1"
+  }
+}

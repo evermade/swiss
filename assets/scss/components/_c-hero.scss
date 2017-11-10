@@ -1,0 +1,47 @@
+.c-hero {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+    color: #fff;
+
+    &__content {
+        @include align-element(vertical);
+        @include spacing(padding, top, section);
+        @include spacing(padding, bottom, section);
+        width: 100%;
+        text-align: center;
+        z-index: 4;
+
+        &--left {
+            text-align: left;
+        }
+
+        &--right {
+            text-align: right;
+        }
+
+        &--top {
+            top: 0;
+            bottom: auto;
+            transform: translateY(0%);
+        }
+
+        &--bottom {
+            top: auto;
+            bottom: 0;
+            transform: translateY(0%);
+        }
+
+        @include scheme-html-inverted;
+
+    }
+
+    &--cover {
+        @include full-cover;
+    }
+
+    &--square {
+        padding-top: 100%;
+        height: 0;
+    }
+}

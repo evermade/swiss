@@ -1,0 +1,81 @@
+.c-sidebar-widget {
+    @include transition;
+
+    @include bp(md) {
+        @include spacing(margin, top, itemspace);
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &__title {
+        @include transition;
+        font-size: 2rem;
+        border-bottom: 1px solid $border-color;
+
+        @include spacing(padding, bottom, box);
+
+        @include bp(sm, max) {
+            @include spacing(padding, top, box);
+
+            border-bottom: none;
+            border-top: 1px solid $border-color;
+            position: relative;
+
+            &:after {
+                @include transition;
+                font-family: FontAwesome;
+                content: "\f104";
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: 1em;
+                height: 1em;
+                line-height: 1em;
+                text-align: center;
+                transform: translate(-50%, -50%) rotate(-90deg);
+            }
+        }
+    }
+
+    &__content {
+        @include transition;
+        @include spacing(padding, top, box);
+
+        @include bp(sm, max) {
+            height: 0;
+            padding: 0;
+            overflow: hidden;
+            @include spacing(padding, left, box);
+            @include spacing(padding, right, box);
+        }
+    }
+
+    @include bp(sm, max) {
+        &--open {
+            background: darken($body-bg, 5%);
+
+            .c-sidebar-widget__title {
+                @include spacing(padding, left, box);
+
+                &:after {
+                    transform: translate(-50%, -50%) rotate(90deg);
+                }
+            }
+
+            .c-sidebar-widget__content {
+                @include spacing(padding, bottom, box);
+                height: auto;
+            }
+        }
+    }
+
+    &:last-child {
+
+        @include bp(sm, max) {
+
+            border-bottom: 1px solid $border-color;
+        }
+    }
+}

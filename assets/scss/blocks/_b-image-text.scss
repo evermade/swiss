@@ -1,0 +1,139 @@
+/*
+
+Documentation
+-----
+https://evermade.atlassian.net/wiki/spaces/EV/pages/71630912/B+Image+Text
+
+ */
+
+$sectionMargin : false; // section top/bottom margin
+$textMargin : true; // textarea top/bottom margin
+
+.b-image-text {
+    @include section($sectionMargin);
+
+    @include bp(sm) {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: stretch;
+
+        &--container-width {
+            justify-content: center;
+        }
+
+        &--full-width {
+            justify-content: flex-start;
+        }
+    }
+
+    &--right {
+        flex-direction: row;
+    }
+
+
+    &--left {
+        flex-direction: row-reverse;
+    }
+
+
+
+    &__container {
+        display: flex;
+        align-items: center;
+        width: $container-width;
+        margin: auto;
+
+        @include bp(sm) {
+            max-width: $container-max-width/2;
+            width: $container-width/2;
+            margin: initial;
+        }
+    }
+
+    &__text {
+        @include z-index(content);
+
+        position: relative;
+
+        @if $textMargin==true {
+            @include spacing(padding, top, section);
+            @include spacing(padding, bottom, section);
+        }
+
+        @if $textMargin==false {
+            @include bp(xs, max) {
+                @include spacing(padding, top, section);
+                @include spacing(padding, bottom, section);
+            }
+        }
+
+        .b-image-text--right & {
+            @include bp(sm) {
+                @include spacing(padding, left, section);
+            }
+        }
+
+        .b-image-text--left & {
+            @include bp(sm) {
+                @include spacing(padding, right, section);
+            }
+        }
+    }
+
+
+
+    &__image-area {
+        @include z-index(content);
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        min-height: 35rem;
+
+        &.animated {
+            @include animation( zoomIn, 1s, backwards, $ease-out-expo, 0s);
+        }
+
+        @include bp(sm) {
+            min-height: 0;
+            padding-top: 0;
+            width: 50%;
+
+            .b-image-text--container-width & {
+                max-width: $container-max-width/2;
+                width: $container-width/2;
+            }
+        }
+
+        .b-image-text--vert-bottom & {
+            align-items: flex-end;
+        }
+
+        .b-image-text--vert-middle & {
+            align-items: center;
+        }
+
+        .b-image-text--vert-top & {
+            align-items: flex-start;
+        }
+
+        .b-image-text--right & {
+            justify-content: flex-end;
+        }
+
+        .b-image-text--left & {
+            justify-content: flex-start;
+        }
+    }
+
+
+    &__foreground-img {
+        width: 100%;
+
+        @include bp(xs, max) {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

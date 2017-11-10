@@ -1,0 +1,150 @@
+/**
+ * The wysiwyg-html mixin is used to ensure that the contents of an element stay
+ * well-formatted when the client has control over the content. Typically when
+ * the client has the ability to add HTML.
+ */
+
+@mixin wysiwyg-html() {
+
+    position: relative;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: $text-spacing*0.8em;
+        margin-bottom: $text-spacing*0.3em;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    p {
+        margin: $text-spacing*0.8em 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin: $text-spacing*0.8em 0 0;
+            margin-bottom: 0;
+        }
+    }
+
+    strong {
+        font-weight: $text-weight-strong;
+    }
+
+    hr {
+        margin: $text-spacing*1.5em 0;
+    }
+
+    table {
+        @include table();
+    }
+
+    ul,
+    ol {
+
+        ul,
+        ol {
+            margin-bottom: 0;
+        }
+    }
+
+    dl,
+    dd,
+    blockquote {
+        margin: $text-spacing*1em 0;
+        padding-left: 1em;
+
+        &+ol,
+        &+ul {
+            margin-bottom: 0;
+        }
+    }
+
+    /* Editor image styles */
+    img {
+        /* overwrite height-attribute set by WP */
+        height: auto;
+    }
+
+    pre {
+        @include border-radius;
+        padding: 1rem 2rem;
+        border: 1px solid rgba(125, 125, 125, 0.3);
+        display: block;
+        font-size: 0.9em;
+        margin: 0 0 1em;
+    }
+
+    .wp-caption {
+        max-width: 100%;
+
+        img {
+            margin-bottom: 0.3em;
+        }
+    }
+
+    p.wp-caption-text {
+        @include font-size(sm);
+        opacity: 0.6;
+        margin: 0;
+    }
+
+    .alignnone {
+        width: 100%;
+        display: block;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .aligncenter {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .alignleft,
+    .alignright {
+        max-width: 48%;
+    }
+
+    .alignleft {
+        float: left;
+        margin-right: 2%;
+    }
+
+    .alignright {
+        float: right;
+        margin-left: 2%;
+    }
+}
+
+@mixin wysiwyg-html--nowrap() {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ul li,
+    ol li,
+    p {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}

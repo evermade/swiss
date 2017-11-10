@@ -1,3 +1,0 @@
-@mixin margin($size: base, $where: top, $reset: false){
-  @include paddingMargin(margin, $size, $where, $reset);
-}

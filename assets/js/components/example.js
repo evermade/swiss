@@ -1,15 +1,19 @@
-(function() {
+// an example using an object liternal notation to encapsulate into a nice package
+const example = {
 
-    //create empty object in the global em var, dont forget to add the init call in the main.js!
-    em.example = {};
+    // create some properties
+    elements: [],
+    y: false,
 
-    //call any functions to be trigger on dom ready
-    em.example.init = function() {
-        em.example.setup();
-    };
+    init: function () {
+        this.capture();
+    },
 
-    em.example.setup = function() {
+    capture: function () {
+        this.elements = document.querySelectorAll('.something');
+    }
 
-    };
+};
 
-})();
+// finally boot the beast up
+example.init();

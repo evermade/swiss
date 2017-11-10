@@ -1,0 +1,37 @@
+.c-column-listing {
+
+    text-align: center;
+
+    &__image {
+
+        @include spacing(padding, left, box);
+        @include spacing(padding, right, box);
+
+        &__inner {
+            padding-top: 56.25%;
+            @include bgimg(cover);
+
+            .c-column-listing--circle & {
+                border-radius: 50%;
+                padding-top:75%;
+                width:75%;
+                margin:auto;
+                overflow: hidden;
+            }
+
+            .c-column-listing--icon & {
+                background-size: contain;
+                padding-top: 20%;
+            }
+        }
+
+    }
+
+    &__title {
+        @include spacing(margin, top, box);
+    }
+
+    &__text {
+        @include spacing(margin, top, box);
+    }
+}

@@ -1,0 +1,37 @@
+.l-blog {
+    &__content {
+
+        @include bp(md) {
+            @include spacing(padding, right, section);
+
+            float: left;
+            width: 75%;
+        }
+
+        &__listing {
+            @include animation-sequence(0.10, 20);
+
+            &>* {
+                @include animation();
+            }
+        }
+    }
+
+    &__sidebar {
+        @include bp(md) {
+            @include animation();
+            float: right;
+            width: 25%;
+        }
+    }
+
+    ul.page-numbers {
+        @include spacing(margin, top, itemspace);
+    }
+
+    &:after {
+        clear: both;
+        display: block;
+        content: "";
+    }
+}
