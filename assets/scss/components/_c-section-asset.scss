@@ -155,6 +155,10 @@ $assetOuterSpace: $assetOuterSpace+60px;
 
     &--position {
 
+        &-center {
+            background-position: center;
+        }
+
         &-top {
             background-position-y: top;
         }

@@ -2,7 +2,7 @@ html {
     box-sizing: border-box;
     font-size: 8px;
     overflow-x: hidden;
-    overflow-y: auto; 
+    overflow-y: auto;
 
     @include bp(xs) {
         font-size: 8.5px;

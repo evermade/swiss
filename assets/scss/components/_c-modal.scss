@@ -85,7 +85,7 @@ $modalOuterMarginDouble: 60px;
 
         [data-modal-style="inline"] &,
         [data-modal-style="external"] & {
-            @include spacing(itemspace, all, padding);
+            @include spacing(padding, all, itemspace);
             @include shadow(large);
 
             max-width: $container-max-width - $modalOuterMarginDouble;
