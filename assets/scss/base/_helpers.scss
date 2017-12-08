@@ -16,6 +16,10 @@
 
 body {
 
+    .h-hidden {
+        display: none;
+    }
+
     .h-visible-mobile {
         @include bp(sm,max) {
             display: block;
@@ -36,5 +40,19 @@ body {
 
     .h-visible-all {
         display: block;
+    }
+}
+
+.h-youtube-wrapper {
+    padding-top: 56.25%;
+    position: relative;
+    background: #000;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }

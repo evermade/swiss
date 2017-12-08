@@ -1,7 +1,7 @@
 <?php
     global $app;
 ?>
-</div><!-- end of .page-content -->
+</div><!-- end of .page-content --> 
 
 <footer class="b-footer">
 
@@ -39,5 +39,7 @@
     </div>
 
 </footer><!-- end of footer -->
+
+<?php include(get_template_directory().'/templates/modals.php'); ?>
 
 <?php include(get_template_directory().'/templates/foot.php'); ?>
