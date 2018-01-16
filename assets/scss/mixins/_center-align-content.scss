@@ -1,5 +1,11 @@
-@mixin center-align-content() {
+@mixin center-align-content( $direction: 'vertical' ) {
     display: -webkit-flex;
     display: flex;
-    align-items: center;
+    @if $direction == 'vertical' or $direction == 'all' {
+        align-items: center;
+    }
+    @if $direction == 'horizontal' or $direction == 'all' {
+        justify-items: center;
+    }
 }
+
