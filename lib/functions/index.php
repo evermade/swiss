@@ -123,7 +123,7 @@ function debug($msg=null, $style='php') {
         }
 
         if($style == 'js'){
-            echo "<script>console.log(".json_encode($info).");</script>";
+            echo "<script>console.log(".json_encode($msg).");</script>";
         }
 
         return true;

@@ -1,164 +1,215 @@
-/**
- * Generic modal for Swiss, extends VodkaBears/Remodal
- *
- * Usage examples:
- *
- * - Define modal and link to it:
- *
- *   <div class="remodal" data-remodal-id="modal-some-unique-id">
- *     <p>Hello</p><p>Yes, this is modal</p>
- *   </div>
- *
- *   <a data-remodal-target="modal-some-unique-id">Open modal</a>
- *
- *
- * - Spawn a modal dynamically:
- *
- *   <script> em.modal.spawn( '<img src="http://pyht.io/assets/img/slide-pyhtio.jpg">' ); </script>
- *
- * or:
- *
- *   <script> em.modal.spawn({content:'<p>What? Who is this?</p><p>Modal? Is that you?</p>',padded:1})
- *
- * or load content from server:
- *
- *   <script> em.modal.spawn({url:'/admin-ajax.php?action=give_me_some_sweet_ass_html',padded:1}); </script>
- *
- *
- * - If new modals are loaded with ajax:
- *
- *  call em.modal.setup() again afterwards
+/*
+
+Files:
+---------------------
+_c-modal.scss              // Popup wrapper styling
+modal.js                   // Template
+/templates/modals.php      // <modals> wrapper where all popups are
+
+
+---------------------
+EXAMPLES
+---------------------
+
+PLAY YOUTUBE VIDEO
+--
+<a href="https://www.youtube.com/watch?v=vr0qNXmkUJ8&t=16s" data-swiss-modal="youtube">Play Video</a>
+
+
+IMAGE POPUP
+--
+<a href="/wp-content/uploads/2017/09/everblox_example_red.png" data-swiss-modal="image">View Image</a>
+
+
+EXTERNAL WEBSITE HTML
+--
+<a href="/slug/ .b-footer" data-swiss-modal="external">Open External HTML</a>
+
+
+INLINE
+--
+<a href="#example-id" data-swiss-modal="inline">Open Inline HTML</a>
+<div id="example-id" class="h-hidden">
+    <h2>Modal</h2>
+    <p>This content will appear within the container of the modal.</p>
+</div>
+
+
+---------------------
+GET CONTENT FUNCTIONS - data-swiss-modal=""
+---------------------
+modal.getContentYoutube();
+modal.getContentImage();
+modal.getContentExternal();
+modal.getContentInline();
+
  */
+const modal = {
 
-import remodal from 'remodal';
+    // create some properties
+    elements: [],
 
-(function() {
+    // Init popup functionality
+    init: function () {
 
-    //create empty object in the global em var, dont forget to add the init call in the main.js!
-    em.modal = {};
-
-    em.modal.options = {
-        hashTracking: false
-    };
-
-    em.modal.firstRun = true;
-
-    //call any functions to be trigger on dom ready
-    em.modal.init = function() {
-        em.modal.setup();
-        em.modal.closeCallback();
-    };
-
-    em.modal.setup = function() {
-        $('[data-remodal-id]').remodal( em.modal.options );
-
-        if (em.modal.firstRun) {
-
-            $(document).on('opened', '.remodal', function () {
-                // create the close button if it isn't there already
-                var $openModal = $('.remodal.remodal-is-opened');
-                if (!$openModal.find('.remodal-close').length) {
-                    $openModal.append('<button data-remodal-action="close" class="remodal-close js-hidden"></button>');
-
-                    // just to make the opening feel a little smoother:
-                    setTimeout(function(){$openModal.find('.remodal-close').removeClass('js-hidden');},50);
-                }
-            });
-
-            em.modal.firstRun = false;
-        }
-    };
-
-    em.modal.closeCallback = function() {
-        $(document).on('closed', '.remodal', function (e) {
-            // modal was closed (the contents remain in the DOM)
-            // destroy video players etc here if needed
-
-            $(".modal-temp").remove();
+        $('html').on("click", '[data-modal-action="close"]' ,function(){
+            modal.close($(this));
         });
-    };
 
-    em.modal.spawn = function(options) {
-        var date = new Date();
-        var modal_id = 'modal-'+date.getTime();
+        $('html').on("click", '[data-swiss-modal]' ,function(e){
+            e.preventDefault();
+            modal.clickOpen($(this));
+        });
 
-        var $modal = $('<div class="remodal modal-temp" data-remodal-id="'+modal_id+'"></div>');
+    },
 
-        if (typeof(options) == 'string') {
-            if (options.match(/^(https?:)?\//)) {
-                // options is a url
-                // regexp searches for protocol or slash in the beginning of the string
+    // On click open popup and get content for it
+    clickOpen: function (clickedButton) {
 
-                $modal.load(options, function( html ){
-                    // options loaded
-                    em.modal.show($modal);
-                });
+        // get modal content
+        const content = modal.getContent($(clickedButton).attr("href"), $(clickedButton).data("swiss-modal"));
+        
+        // position the window accordingly and disable scrolling
+        $('body').attr("data-last-position",$(window).scrollTop());
 
-            } else if (options !== '') {
-                // assume options is a piece of markup
+        $('body').css({
+            height: $(document).height() + 'px',
+            overflowY: "scroll" 
+        });
 
-                $modal.append(options);
-                em.modal.show($modal);
+        $('html').css({
+            maxHeight: '100vh',
+            overflow: "hidden" 
+        });
 
+        // generate modal from template
+        $('modals').append(modal.template(content, $(clickedButton).data("swiss-modal")));
+
+    },
+
+        // different ways to get content
+        getContent: function(value = "Content undefined", type = "html"){
+            if(type == "youtube"){
+                return modal.getContentYoutube(value);
             }
-        } else if (typeof(options)!='undefined') {
 
-            if (options instanceof jQuery) {
-                // options is a jQuery object
+            if(type == "image"){
+                return modal.getContentImage(value);
+            }
 
-                $modal.append(options);
-                em.modal.show($modal);
+            if(type == "external"){
+                return modal.getContentExternal(value);
+            }
 
-            } else if (typeof(options)=='object') {
-                // options is a javascript object
+            if(type == "inline"){
+                return modal.getContentInline(value);
+            }
 
-                if (options.padded) {
-                    $modal.addClass('remodal--padded');
+            return value;
+        },
+
+
+            // YOUTUBE: Create iframe and a youtube wrapper for the 16x9 ratio video
+            getContentYoutube: function(value){
+
+                let video_id = value.split('v=')[1];
+                const ampersandPosition = video_id.indexOf('&');
+
+                if(ampersandPosition != -1) {
+                  video_id = video_id.substring(0, ampersandPosition);
                 }
 
-                if (options.url) {
-                    $modal.load(options.url, function(html) {
-                        // options loaded
-                        em.modal.show($modal);
-                    });
-                } else if (options.content) {
-                    $modal.append(options.content);
-                    em.modal.show($modal);
-                }
-            }
-        }
-    };
+                const output = `<iframe src="https://www.youtube.com/embed/${video_id}" frameborder="0" allowfullscreen></iframe>`;
 
-    em.modal.show = function($modal) {
-        var instance = $modal.remodal(em.modal.options);
-        instance.open();
-    };
+                return output;
 
-    /**
-     * Helper function to create a new remodal and play a video in it
-     * @param videoId (Video id)
-     * @param videoType (Video type - optional, defaults to Youtube, also accepts vimeo)
-     */
-    em.modal.playVideo = function(videoId, videoType) {
-        if (typeof(videoId)=='undefined') {
-            return false;
-        }
+            },
 
-        if (typeof(videoType)=='undefined') {
-            videoType = 'youtube';
-        }
+            // EXTERNAL: Pull html from an external page
+            getContentExternal: function(value){
 
-        videoId = videoId.replace(/[^A-Za-z0-9_-]/g,''); // clean the video id string
-        var remodalId = 'remodal-video-'+videoId;
-        var videoSrc = '';
+                const urlParameters = value.split(" .");
 
-        if (videoType == 'vimeo') {
-            videoSrc = 'https://player.vimeo.com/video/'+videoId+'?autoplay=1';
+                $.get(urlParameters[0], function(data) {
+                    var $response = $('<div />').html(data);
+                    var $newContent = $response.find('.'+urlParameters[1]);
+
+                    $(".c-modal__content").removeClass("h-wysiwyg-html");
+                    $(".c-modal__content").html($newContent);
+
+                },'html');
+
+                return(`<div class="c-loader">Loading ...</div>`);
+
+            },
+
+            // INLINE: get content from a <div id="target-id"></div>
+            getContentInline: function(value){
+                return($(value).html());
+            },
+
+            // IMAGE: place image url within an img href and return the image html
+            getContentImage: function(value){
+                return(`<img src="${value}" >`);
+            },
+
+
+
+    // The popup template
+    template: function(content = "<h1>Content has not been set</h1>", style = "default", workspace = "none") {
+
+        const html = `<div class="c-modal" data-modal-style="${style}" data-modal-namespace="${workspace}">
+
+            <div class="c-modal__shadow"></div>
+
+            <div class="c-modal__wrapper">
+
+                <div class="c-modal__container">
+
+                    <div class="c-modal__interface">
+                        <div class="c-modal__close" data-modal-action="close"></div>
+                    </div>
+                    
+                    <div class="c-modal__content h-wysiwyg-html">
+                        ${content}
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>`;
+
+        return html;
+    },
+
+    // Close the popup
+    close: function (modal) {
+
+        // clear window position from disabling the scroll
+        $('body').css({
+            height: "",
+            overflowY: "" 
+        });
+
+        $('html').css({
+            maxHeight: "",
+            overflow: "" 
+        });
+
+        // scroll to windows original position before enabling popup
+        $(window).scrollTop($('body').attr("data-last-position"));
+
+        // remove the modal from DOM
+        if($(modal).hasClass("c-modal")){
+            $(modal).remove();
         } else {
-            videoSrc = 'https://www.youtube.com/embed/'+videoId+'?autoplay=1';
+            $(modal).closest(".c-modal").remove();
         }
-        var $modal = $('<div class="remodal modal-temp" data-remodal-id="'+remodalId+'"><div class="remodal__video"><iframe width="560" height="315" src="'+videoSrc+'" frameborder="0" allowfullscreen></iframe></div></div>');
-        $modal.appendTo('body').remodal().open();
-    };
 
-})();
+    }
+
+};
+
+// finally boot the beast up
+modal.init();

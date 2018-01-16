@@ -31,7 +31,6 @@ sticky = {
 // call any functions to be trigger on dom ready
 sticky.init = function () {
 
-    sticky.defineStickyEnd();
 
     setTimeout(function () {
         sticky.defineStickyEnd();
@@ -72,7 +71,7 @@ sticky.defineStickyEnd = function () {
         // define default paraments
         $(this).attr("data-sticky-status", "");
         $(this).attr("data-sticky-original-top", $(this).offset().top);
-        $(this).attr("style", "height:" + $(this).height() + "px;position:relative;");
+        $(this).attr("style", "height:" + $(this).height() + "px;width:"+$(this).width()+"px;position:relative;");
 
     });
 

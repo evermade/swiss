@@ -8,4 +8,5 @@ import "./components/flickity.js";
 import "./components/forms.js";
 import "./components/page-navigation.js";
 import "./components/sticky.js";
+import "./components/modal.js";
 import "./components/toolbox.js";
