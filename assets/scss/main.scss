@@ -26,32 +26,7 @@
  * Mixins
  *
  */
-@import "mixins/align-element";
-@import "mixins/animation-sequence";
-@import "mixins/animation";
-@import "mixins/bgimg";
-@import "mixins/border-radius";
-@import "mixins/bp";
-@import "mixins/btn";
-@import "mixins/center-align-content";
-@import "mixins/circle";
-@import "mixins/container";
-@import "mixins/cta-link";
-@import "mixins/equal-height";
-@import "mixins/fa-icon";
-@import "mixins/font-size";
-@import "mixins/full-cover";
-@import "mixins/helpers";
-@import "mixins/keyframes";
-@import "mixins/overlay";
-@import "mixins/scheme-html";
-@import "mixins/section";
-@import "mixins/shadow";
-@import "mixins/spacing";
-@import "mixins/table";
-@import "mixins/transition";
-@import "mixins/wysiwyg-html";
-@import "mixins/z-index";
+@import "mixins/index";
 
 /**
  * #CUSTOM VENDOR
