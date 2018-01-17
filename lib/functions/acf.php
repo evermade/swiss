@@ -109,6 +109,7 @@ function registerLocalBlockFieldGroups(){
         $layouts = array();
 
         // lets loop and build our acf layouts array
+        // @todo: this could be moved per block if it even needs to register fields
         foreach(glob(get_template_directory().'/lib/blocks/page/*/includes/acf.php') as $layout){
             $layouts[] = include_once ($layout);
         }
