@@ -105,6 +105,8 @@ add_filter( 'show_admin_bar', '__return_false' );
 // lets add feature image to posts by default
 add_theme_support( 'post-thumbnails' );
 
+add_theme_support( 'title-tag' );
+
 // register new buttons in the editor
 add_action( 'admin_head', '\Swiss\Hooks\custom_mce_em_buttons' );
 
