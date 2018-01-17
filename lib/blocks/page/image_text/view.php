@@ -1,6 +1,6 @@
 <section class="b-image-text b-image-text--<?php echo $block->get('layout_width'); ?> b-image-text--<?php echo $block->get('layout'); ?> b-image-text--vert-<?php echo $block->get('image_foreground_vertical_alignment'); ?>">
 
-    <div class="b-image-text__image-area" data-animate="animated" style="<?php echo $imageAreaCSS; ?>">
+    <div class="b-image-text__image-area" style="<?php echo $imageAreaCSS; ?>">
         <?php echo $imageForeground; ?>
     </div>
 
