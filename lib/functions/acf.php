@@ -94,3 +94,81 @@ function getOption($group_fields) {
 function isAcfActive() {
     return (function_exists('has_sub_field'))? true : false;
 }
+
+/**
+ * Register our local block field groups via PHP to help distribute and share blocks amognst projects
+ *
+ * @return void
+ */
+function registerLocalBlockFieldGroups(){
+
+    // if we have ACF enabled
+    if( function_exists('acf_add_local_field_group') ){
+
+        // an array to hold our layouts
+        $layouts = array();
+
+        // lets loop and build our acf layouts array
+        foreach(glob(get_template_directory().'/lib/blocks/page/*/acf.php') as $layout){
+            $layouts[] = include($layout);
+        }
+
+        /**
+         * Register our fields y'all
+         * https://www.advancedcustomfields.com/resources/register-fields-via-php/
+         */
+        acf_add_local_field_group(array (
+            'key' => 'group_54ddebcd1dfe7',
+            'title' => 'Page Blocks!',
+            'fields' => array (
+                array (
+                    'key' => 'field_54ddee97933e5',
+                    'label' => 'Blocks',
+                    'name' => 'page_blocks',
+                    'type' => 'flexible_content',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array (
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'button_label' => 'Add Block',
+                    'min' => '',
+                    'max' => '',
+                    'layouts' => $layouts,
+                ),
+            ),
+            'location' => array (
+                array (
+                    array (
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'page',
+                    ),
+                ),
+                array (
+                    array (
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'post',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => 1,
+            'description' => '',
+            'modified' => 1516178549,
+        ));
+
+        return true;
+    }
+
+    return false;
+}
