@@ -14,7 +14,7 @@ function postBlocks($name='page') {
 
     //loop the blocks fields
     while(has_sub_field($name.'_blocks')) {
-        $template = get_template_directory().'/lib/blocks/'.$name.'/'.str_replace(' ', '_', strtolower(get_row_layout())).'/run.php';
+        $template = get_template_directory().'/lib/blocks/'.$name.'/'.str_replace(' ', '-', strtolower(get_row_layout())).'/run.php';
         if(!file_exists($template)) {
             \Swiss\debug($template ." - Template not found");
             continue;
@@ -118,6 +118,8 @@ function registerLocalBlockFieldGroups(){
         foreach(glob(get_template_directory().'/lib/blocks/page/*/init.php') as $blockInit){
             include_once ($blockInit);
         }
+
+        if(empty($layouts)) return false;
 
         /**
          * Register our fields y'all
