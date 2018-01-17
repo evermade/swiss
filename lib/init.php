@@ -36,11 +36,6 @@ require_once( get_template_directory().'/lib/image-sizes.php' );
 // rest-api
 require_once( get_template_directory().'/lib/rest-api.php' );
 
-// lets loop and include the block init files
-// foreach(glob(get_template_directory().'/lib/blocks/*/init.php') as $block_config){
-//     include_once($block_config);
-// }
-
 $app = null;
 
 // Fires after WordPress has finished loading but before any headers are sent

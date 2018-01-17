@@ -14,7 +14,7 @@ function postBlocks($name='page') {
 
     //loop the blocks fields
     while(has_sub_field($name.'_blocks')) {
-        $template = get_template_directory().'/lib/blocks/'.$name.'/'.str_replace(' ', '_', strtolower(get_row_layout())).'/index.php';
+        $template = get_template_directory().'/lib/blocks/'.$name.'/'.str_replace(' ', '_', strtolower(get_row_layout())).'/run.php';
         if(!file_exists($template)) {
             \Swiss\debug($template ." - Template not found");
             continue;
@@ -109,8 +109,13 @@ function registerLocalBlockFieldGroups(){
         $layouts = array();
 
         // lets loop and build our acf layouts array
-        foreach(glob(get_template_directory().'/lib/blocks/page/*/acf.php') as $layout){
-            $layouts[] = include($layout);
+        foreach(glob(get_template_directory().'/lib/blocks/page/*/includes/acf.php') as $layout){
+            $layouts[] = include_once ($layout);
+        }
+
+        // lets loop and include the block init files, could be merged with the above, moving on
+        foreach(glob(get_template_directory().'/lib/blocks/page/*/init.php') as $blockInit){
+            include_once ($blockInit);
         }
 
         /**
