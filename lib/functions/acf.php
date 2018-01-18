@@ -7,13 +7,13 @@
  * @param  string $name [description]
  * @return [type]       [description]
  */
-function postBlocks($name='page') {
+function postBlocks($name='page', $version='v1') {
 
     //lets check is ACF available
     if (!\Swiss\Acf\isAcfActive() || empty($name)) return false;
 
     //loop the blocks fields
-    while(has_sub_field($name.'_blocks')) {
+    while(has_sub_field('swiss_'.$name.'_blocks_'.$version)) {
         $template = get_template_directory().'/lib/blocks/'.$name.'/'.str_replace(' ', '-', strtolower(get_row_layout())).'/run.php';
         if(!file_exists($template)) {
             \Swiss\debug($template ." - Template not found");
@@ -105,34 +105,28 @@ function registerLocalBlockFieldGroups(){
     // if we have ACF enabled
     if( function_exists('acf_add_local_field_group') ){
 
-        // an array to hold our layouts
-        $layouts = array();
+        // an global array to hold our layouts
+        $swissBlockLayouts = array();
 
-        // lets loop and build our acf layouts array
-        // @todo: this could be moved per block if it even needs to register fields
-        foreach(glob(get_template_directory().'/lib/blocks/page/*/includes/acf.php') as $layout){
-            $layouts[] = include_once ($layout);
-        }
-
-        // lets loop and include the block init files, could be merged with the above, moving on
+        // lets loop and include the block init files
         foreach(glob(get_template_directory().'/lib/blocks/page/*/init.php') as $blockInit){
             include_once ($blockInit);
         }
 
-        if(empty($layouts)) return false;
+        if(empty($swissBlockLayouts)) return false;
 
         /**
          * Register our fields y'all
          * https://www.advancedcustomfields.com/resources/register-fields-via-php/
          */
         acf_add_local_field_group(array (
-            'key' => 'group_54ddebcd1dfe7',
-            'title' => 'Page Blocks!',
+            'key' => 'group_swiss_page_blocks_v1',
+            'title' => 'Blocks',
             'fields' => array (
                 array (
-                    'key' => 'field_54ddee97933e5',
+                    'key' => 'field_swiss_page_blocks_v1',
                     'label' => 'Blocks',
-                    'name' => 'page_blocks',
+                    'name' => 'swiss_page_blocks_v1',
                     'type' => 'flexible_content',
                     'instructions' => '',
                     'required' => 0,
@@ -145,7 +139,7 @@ function registerLocalBlockFieldGroups(){
                     'button_label' => 'Add Block',
                     'min' => '',
                     'max' => '',
-                    'layouts' => $layouts,
+                    'layouts' => $swissBlockLayouts,
                 ),
             ),
             'location' => array (
