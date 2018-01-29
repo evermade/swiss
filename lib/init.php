@@ -12,8 +12,6 @@ require_once( get_template_directory().'/lib/functions/index.php' );
 // classes, maybe use psr auto loading?
 require_once( get_template_directory().'/lib/classes/App.php' );
 require_once( get_template_directory().'/lib/classes/Block.php' );
-require_once( get_template_directory().'/lib/classes/User.php' );
-require_once( get_template_directory().'/lib/classes/Post.php' );
 
 // hooks
 require_once( get_template_directory().'/lib/hooks.php' );
@@ -22,7 +20,7 @@ require_once( get_template_directory().'/lib/hooks.php' );
 require_once( get_template_directory().'/lib/security.php' );
 
 // custom post types
-require_once( get_template_directory().'/lib/post.types.php' );
+require_once( get_template_directory().'/lib/post-types.php' );
 
 // custom shortcodes
 require_once( get_template_directory().'/lib/shortcodes.php' );

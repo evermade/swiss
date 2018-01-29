@@ -14,7 +14,8 @@ class Block extends BlockHelper
     public function __construct($fields = array())
     {
         if (!empty($fields)) {
-            $this->fields = $data;
+            $this->fields = $fields;
+            $this->getFields($fields);
         }
     }
 
