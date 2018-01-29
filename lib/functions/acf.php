@@ -105,6 +105,8 @@ function registerLocalBlockFieldGroups(){
     // if we have ACF enabled
     if( function_exists('acf_add_local_field_group') ){
 
+        global $swissBlockLayouts;
+
         // an global array to hold our layouts
         $swissBlockLayouts = array();
 
