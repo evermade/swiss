@@ -6,7 +6,7 @@
 *.o
 *.so
 
-#Packages 
+#Packages
 *.7z
 *.dmg
 *.gz
@@ -36,3 +36,4 @@ Thumbs.db
 node_modules/
 assets/vendor/*
 assets/dist/
+lib/blocks/
