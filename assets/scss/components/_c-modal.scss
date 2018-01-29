@@ -40,7 +40,7 @@ $modalOuterMarginDouble: 60px;
         }
     }
 
-    &__wrapper { // DONT EDIT. High probability of breaking things 
+    &__wrapper { // DONT EDIT. High probability of breaking things
         position: relative;
         max-height: 100%;
         width: 100%;
@@ -70,7 +70,7 @@ $modalOuterMarginDouble: 60px;
             color: #fff;
             content: "\2715";
         }
-    }    
+    }
 
     &__nextprev {
         @include z-index(modal);
@@ -82,11 +82,11 @@ $modalOuterMarginDouble: 60px;
         cursor: pointer;
         text-align: center;
         transform: translateY(-50%);
-        
+
         &:before {
             line-height: 4rem;
             font-size: 2rem;
-            font-family: FontAwesome;
+            font-family: FontAwesome, serif;
         }
 
         &--next {
@@ -195,7 +195,7 @@ $modalOuterMarginDouble: 60px;
                 height: auto;
             }
         }
-        
+
 
 
 

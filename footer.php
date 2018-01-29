@@ -1,7 +1,7 @@
 <?php
     global $app;
 ?>
-</div><!-- end of .page-content --> 
+</div><!-- end of .page-content -->
 
 <footer class="b-footer">
 
