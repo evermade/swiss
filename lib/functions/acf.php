@@ -14,14 +14,12 @@ function postBlocks($name='page', $version='v1') {
 
     //loop the blocks fields
     while(has_sub_field('swiss_'.$name.'_blocks_'.$version)) {
-        $template = get_template_directory().'/lib/blocks/'.$name.'/'.str_replace(' ', '-', strtolower(get_row_layout())).'/run.php';
+        $template = get_template_directory().'/lib/blocks/'.$name.'/'.str_replace(' ', '-', strtolower(get_row_layout())).'/render.php';
         if(!file_exists($template)) {
             \Swiss\debug($template ." - Template not found");
             continue;
         }
 
-        //to help debugging
-        echo '<!-- ('.basename(dirname($template)).') block -->';
         include($template);
     }
 
