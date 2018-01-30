@@ -105,17 +105,14 @@ function registerLocalBlockFieldGroups(){
     // if we have ACF enabled
     if( function_exists('acf_add_local_field_group') ){
 
-        global $swissBlockLayouts;
-
-        // an global array to hold our layouts
-        $swissBlockLayouts = array();
-
-        // lets loop and include the block init files
+        // lets loop and include the block init files to do their thing
         foreach(glob(get_template_directory().'/lib/blocks/page/*/init.php') as $blockInit){
             include_once ($blockInit);
         }
 
-        if(empty($swissBlockLayouts)) return false;
+        $layouts = \apply_filters( 'swiss_block_layouts', []);
+
+        if(empty($layouts)) return false;
 
         /**
          * Register our fields y'all
@@ -141,7 +138,7 @@ function registerLocalBlockFieldGroups(){
                     'button_label' => 'Add Block',
                     'min' => '',
                     'max' => '',
-                    'layouts' => $swissBlockLayouts,
+                    'layouts' => $layouts,
                 ),
             ),
             'location' => array (
