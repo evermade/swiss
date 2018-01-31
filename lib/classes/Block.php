@@ -77,11 +77,11 @@ class Block extends BlockHelper
      * @return void
      */
     public function getImage($size='medium-large', $key=null, $class=''){
-        return \Swiss\Acf\getImage($size, $this->get($key), $class);
+        return \Evermade\Swiss\Acf\getImage($size, $this->get($key), $class);
     }
 
     public function getImageUrl($size='original', $key=null){
-        return \Swiss\Acf\getImageUrl($size, $this->get($key));
+        return \Evermade\Swiss\Acf\getImageUrl($size, $this->get($key));
     }
 
 }

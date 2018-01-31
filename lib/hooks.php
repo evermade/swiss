@@ -135,4 +135,4 @@ add_filter( 'wpseo_metabox_prio', '\Swiss\Hooks\lower_wpseo_priority' );
 add_filter( 'acf/load_value/key=field_54ddee97933e5', '\Swiss\Hooks\default_blocks', 10, 3 );
 
 // when ACF inits lets add our local block field groups
-add_action('acf/init', '\Swiss\Acf\registerLocalBlockFieldGroups');
+add_action('acf/init', '\Evermade\Swiss\Acf\registerLocalBlockFieldGroups');

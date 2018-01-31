@@ -1,4 +1,4 @@
-<?php namespace Swiss\Acf;
+<?php namespace Evermade\Swiss\Acf;
 
 /**
  * get the post blocks by a specific type, by default we get the page type of blocks
@@ -10,7 +10,7 @@
 function postBlocks($name='page', $version='v1') {
 
     //lets check is ACF available
-    if (!\Swiss\Acf\isAcfActive() || empty($name)) return false;
+    if (!\Evermade\Swiss\Acf\isAcfActive() || empty($name)) return false;
 
     //loop the blocks fields
     while(has_sub_field('swiss_'.$name.'_blocks_'.$version)) {
@@ -66,7 +66,7 @@ function getImageUrl($size='original', $data=null) {
  */
 function getImage($size='medium-large', $key=null, $class=''){
 
-    $imageUrl = \Swiss\Acf\getImageUrl($size, $key);
+    $imageUrl = \Evermade\Swiss\Acf\getImageUrl($size, $key);
 
     if($imageUrl){
         return sprintf('<img src="%s" alt="image" class="%s">', $imageUrl, $class);
@@ -77,7 +77,7 @@ function getImage($size='medium-large', $key=null, $class=''){
 
 function getOption($group_fields) {
 
-    if(empty($group_fields) || !is_array($group_fields) || !\Swiss\Acf\isAcfActive()) {
+    if(empty($group_fields) || !is_array($group_fields) || !\Evermade\Swiss\Acf\isAcfActive()) {
         return false;
     }
 
