@@ -68,6 +68,22 @@ class Block extends BlockHelper
         return $this->{$array}[$key];
     }
 
+    /**
+     * a wrapper function to allow the use of the main ACF function outside of the block context, ie single post etc
+     *
+     * @param string $size
+     * @param [type] $key
+     * @param string $class
+     * @return void
+     */
+    public function getImage($size='medium-large', $key=null, $class=''){
+        return \Swiss\Acf\getImage($size, $this->get($key), $class);
+    }
+
+    public function getImageUrl($size='original', $key=null){
+        return \Swiss\Acf\getImageUrl($size, $this->get($key));
+    }
+
 }
 
 class BlockHelper

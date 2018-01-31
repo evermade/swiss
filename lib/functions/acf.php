@@ -33,12 +33,13 @@ function postBlocks($name='page', $version='v1') {
  * @param [type] $key
  * @return void
  */
-function getImageUrl($size='large', $key=null) {
+function getImageUrl($size='original', $data=null) {
 
-    if(empty($key) || empty($size)) return null;
+    // bail out if we dont have what we need
+    if(empty($data) || empty($size)) return null;
 
     // allows us to pass an array or a key to fetch from current post
-    $image = (is_string($key))? get_field($key) : $key;
+    $image = (is_string($data))? \get_field($data) : $data;
 
     // do we have our image
     if(!empty($image) && is_array($image)){
@@ -65,10 +66,10 @@ function getImageUrl($size='large', $key=null) {
  */
 function getImage($size='medium-large', $key=null, $class=''){
 
-    $image_url = Swiss\Acf\getImageUrl($size, $key);
+    $imageUrl = \Swiss\Acf\getImageUrl($size, $key);
 
-    if($image_url){
-        return sprintf('<img src="%s" alt="image" class="%s" %s>', $image_url, $class);
+    if($imageUrl){
+        return sprintf('<img src="%s" alt="image" class="%s">', $imageUrl, $class);
     }
 
     return null;
