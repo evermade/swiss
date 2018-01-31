@@ -1,4 +1,4 @@
-<?php namespace Swiss;
+<?php namespace Evermade\Swiss;
 
 /**
  * a simple function to help dry out views of checking array indexes and object properties
@@ -81,7 +81,7 @@ function get_image_sizes($size = '') {
 
 function default_img($size='thumbnail', $text='img') {
 
-    $sizes = \Swiss\get_image_sizes();
+    $sizes = \Evermade\Swiss\get_image_sizes();
 
     if(isset($sizes[$size])) {
         return sprintf('https://fakeimg.pl/%sx%s/666/fff/?text=%s', $sizes[$size]['width'], $sizes[$size]['height'], $text);
@@ -105,7 +105,7 @@ function feature_image_url($size='medium-large', $post=null) {
     $img = \wp_get_attachment_image_src(get_post_thumbnail_id($post), $size)[0];
 
     if(empty($img)) {
-        $img = \Swiss\default_img($size, 'img');
+        $img = \Evermade\Swiss\default_img($size, 'img');
     }
 
     return $img;
@@ -116,7 +116,7 @@ function is_dev() {
 }
 
 function debug($msg=null, $style='php') {
-    if(\Swiss\is_dev()) {
+    if(\Evermade\Swiss\is_dev()) {
 
         if($style == 'php'){
             echo "<pre>"; print_r($msg); echo "</pre>";
@@ -267,7 +267,7 @@ function share_page() {
         );
 
         foreach($services as $key => $value) {
-             $services[$key]['url'] = \Swiss\share_link($key);
+             $services[$key]['url'] = \Evermade\Swiss\share_link($key);
         }
 
         ob_start();
@@ -292,7 +292,7 @@ function share_link($type='facebook', $url=null, $title='') {
         );
 
     if(array_key_exists($type, $urls)) {
-        $data['url'] = (empty($url))? \Swiss\cur_page_url() : $url;
+        $data['url'] = (empty($url))? \Evermade\Swiss\cur_page_url() : $url;
 
         if($type=='twitter') {
             $data['title'] = (empty($title))? get_the_title() : $title;

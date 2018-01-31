@@ -1,5 +1,5 @@
 <?php
-namespace Swiss;
+namespace Evermade\Swiss;
 
 /**
  * Block class for keeping data together whilst looping many blocks within a page, and maybe ajax in future

@@ -17,7 +17,7 @@
 
         <div class="b-footer__social-media">
 
-            <?php echo \Swiss\template('_social-media.php', $app->get('opt_social_media')); ?>
+            <?php echo \Evermade\Swiss\template('_social-media.php', $app->get('opt_social_media')); ?>
 
         </div>
 

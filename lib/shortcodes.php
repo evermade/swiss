@@ -1,5 +1,5 @@
 <?php
-namespace Swiss\Shortcodes;
+namespace Evermade\Swiss\Shortcodes;
 
 function button($atts)
 {
@@ -13,4 +13,4 @@ function button($atts)
     return sprintf('<a href="%s" class="c-btn %s">%s</a>', $url, $class, $text);
 }
 
-add_shortcode('button', 'Swiss\Shortcodes\button');
+add_shortcode('button', 'Evermade\Swiss\Shortcodes\button');

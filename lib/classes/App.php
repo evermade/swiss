@@ -1,5 +1,5 @@
 <?php
-namespace Swiss;
+namespace Evermade\Swiss;
 
 /**
  * A generic App class

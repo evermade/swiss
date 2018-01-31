@@ -1,4 +1,4 @@
-<?php namespace Swiss\Hooks;
+<?php namespace Evermade\Swiss\Hooks;
 
 function default_blocks($value, $post_id, $field) {
 
@@ -72,8 +72,8 @@ function custom_mce_em_buttons() {
     }
     // Check if WYSIWYG is enabled then add filters
     if ( 'true' == get_user_option( 'rich_editing' ) ) {
-        add_filter( 'mce_external_plugins', '\Swiss\Hooks\custom_tinymce_plugin' );
-        add_filter( 'mce_buttons', '\Swiss\Hooks\register_mce_button' );
+        add_filter( 'mce_external_plugins', '\Evermade\Swiss\Hooks\custom_tinymce_plugin' );
+        add_filter( 'mce_buttons', '\Evermade\Swiss\Hooks\register_mce_button' );
     }
 }
 
@@ -108,31 +108,31 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'title-tag' );
 
 // register new buttons in the editor
-add_action( 'admin_head', '\Swiss\Hooks\custom_mce_em_buttons' );
+add_action( 'admin_head', '\Evermade\Swiss\Hooks\custom_mce_em_buttons' );
 
 // lets remove the main text editor from the post type as we are using block system
-add_action( 'admin_init', '\Swiss\Hooks\custom_post_types_editing' );
+add_action( 'admin_init', '\Evermade\Swiss\Hooks\custom_post_types_editing' );
 
 // lets add our local languages for the swiss text domain
-add_action( 'after_setup_theme', '\Swiss\Hooks\em_load_theme_textdomain' );
+add_action( 'after_setup_theme', '\Evermade\Swiss\Hooks\em_load_theme_textdomain' );
 
 // navigation
-add_action( 'init', '\Swiss\Hooks\register_my_menus' );
+add_action( 'init', '\Evermade\Swiss\Hooks\register_my_menus' );
 
 // lets setup our theme upon activating it
-add_action( 'after_switch_theme', '\Swiss\Hooks\theme_setup_options' );
+add_action( 'after_switch_theme', '\Evermade\Swiss\Hooks\theme_setup_options' );
 
 // hide update nags
-add_action( 'admin_menu','\Swiss\Hooks\hide_wp_update_nag' );
+add_action( 'admin_menu','\Evermade\Swiss\Hooks\hide_wp_update_nag' );
 
 // remove wp top bar stuff
-add_action( 'admin_bar_menu', '\Swiss\Hooks\remove_wp_logo', 999 );
+add_action( 'admin_bar_menu', '\Evermade\Swiss\Hooks\remove_wp_logo', 999 );
 
 // Lower the display priority of Yoast SEO meta box
-add_filter( 'wpseo_metabox_prio', '\Swiss\Hooks\lower_wpseo_priority' );
+add_filter( 'wpseo_metabox_prio', '\Evermade\Swiss\Hooks\lower_wpseo_priority' );
 
 // Add default page blocks feature
-add_filter( 'acf/load_value/key=field_54ddee97933e5', '\Swiss\Hooks\default_blocks', 10, 3 );
+add_filter( 'acf/load_value/key=field_54ddee97933e5', '\Evermade\Swiss\Hooks\default_blocks', 10, 3 );
 
 // when ACF inits lets add our local block field groups
 add_action('acf/init', '\Evermade\Swiss\Acf\registerLocalBlockFieldGroups');

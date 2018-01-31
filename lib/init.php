@@ -1,5 +1,5 @@
 <?php
-namespace Swiss;
+namespace Evermade\Swiss;
 
 // custom config
 require_once( get_template_directory().'/lib/config.php' );
@@ -42,5 +42,5 @@ add_action( 'init', function() {
     global $app;
 
     // lets initialise our global app
-    $app = new \Swiss\App;
+    $app = new \Evermade\Swiss\App;
 });

@@ -1,5 +1,5 @@
 <?php
-namespace Swiss\PostTypes;
+namespace Evermade\Swiss\PostTypes;
 
 /*
  * -----------------------------------------------------
@@ -56,4 +56,4 @@ function setCustomTypes()
     // exampleSetup();
 }
 
-add_action( 'init', 'Swiss\PostTypes\setCustomTypes' );
+add_action( 'init', 'Evermade\Swiss\PostTypes\setCustomTypes' );
