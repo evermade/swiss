@@ -4,7 +4,7 @@ namespace Evermade\Swiss;
 /**
  * Block class for keeping data together whilst looping many blocks within a page, and maybe ajax in future
  */
-class Block extends BlockHelper
+class Block
 {
 
     protected $fields = array(); // for ACF fields only
@@ -82,46 +82,6 @@ class Block extends BlockHelper
 
     public function getImageUrl($size='original', $key=null){
         return \Evermade\Swiss\Acf\getImageUrl($size, $this->get($key));
-    }
-
-}
-
-class BlockHelper
-{
-
-    /**
-     * a method to build css classes, inline styles for elements
-     * @param [type] $css [description]
-     * @param [type] $key [description]
-     */
-    public function addCss($css = null, $key = null)
-    {
-        if (empty($css) || empty($key))
-            return null;
-
-        if (!isset($this->css[$key])) {
-            $this->css[$key] = [];
-        }
-
-        $this->css[$key][] = $css;
-
-        return true;
-    }
-
-    /**
-     * the getter method for the results of the addCss method
-     * @param  [type] $key [description]
-     * @return [type]      [description]
-     */
-    public function getCss($key = null)
-    {
-        $key = $this->get($key, 'css');
-
-        if($key){
-            return implode(' ', $key);
-        }
-
-        return null;
     }
 
 }

@@ -1,36 +1,11 @@
 {
     "key": "group_54ddebcd1dfe7",
     "title": "Page Blocks",
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
-    "description": "",
-    "modified": 1517470761,
     "fields": [
         {
             "key": "field_54ddee97933e5",
-            "label": "Blocks SYNC",
-            "name": "page_blocks",
+            "label": "Block Development",
+            "name": "block_development",
             "type": "flexible_content",
             "instructions": "",
             "required": 0,
@@ -40,11 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "button_label": "Add Block",
-            "min": "",
-            "max": "",
-            "layouts": [
-                {
+            "layouts": {
+                "54de1384f46ce": {
                     "key": "54de1384f46ce",
                     "name": "columns",
                     "label": "Columns",
@@ -153,7 +125,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "557550fa0a89b": {
                     "key": "557550fa0a89b",
                     "name": "hero",
                     "label": "Hero",
@@ -276,7 +248,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "59d398b6a1962": {
                     "key": "59d398b6a1962",
                     "name": "image",
                     "label": "Image",
@@ -465,7 +437,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "58e60bb890b89": {
                     "key": "58e60bb890b89",
                     "name": "image_text",
                     "label": "Image Text",
@@ -690,7 +662,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "59ddb8f85c542": {
                     "key": "59ddb8f85c542",
                     "name": "listing",
                     "label": "Listing",
@@ -878,7 +850,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "598da21d65f38": {
                     "key": "598da21d65f38",
                     "name": "listing_posts",
                     "label": "Listing Posts",
@@ -1074,7 +1046,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "5846bbdaabec6": {
                     "key": "5846bbdaabec6",
                     "name": "section",
                     "label": "Section",
@@ -1661,7 +1633,35 @@
                     "min": "",
                     "max": ""
                 }
-            ]
+            },
+            "button_label": "Add Block",
+            "min": "",
+            "max": ""
         }
-    ]
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1517493896
 }
