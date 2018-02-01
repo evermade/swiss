@@ -48,10 +48,6 @@ function hide_wp_update_nag() {
     remove_filter( 'update_footer', 'core_update_footer' ); // update notice in the footer
 }
 
-function theme_setup_options() {
-    \Swiss\activate_plugin( 'advanced-custom-fields-pro/acf.php' );
-}
-
 function register_my_menus() {
     register_nav_menus(
         array(
@@ -118,9 +114,6 @@ add_action( 'after_setup_theme', '\Evermade\Swiss\Hooks\em_load_theme_textdomain
 
 // navigation
 add_action( 'init', '\Evermade\Swiss\Hooks\register_my_menus' );
-
-// lets setup our theme upon activating it
-add_action( 'after_switch_theme', '\Evermade\Swiss\Hooks\theme_setup_options' );
 
 // hide update nags
 add_action( 'admin_menu','\Evermade\Swiss\Hooks\hide_wp_update_nag' );

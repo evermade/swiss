@@ -178,65 +178,6 @@ function excerpt($str, $limit = 255) {
     return ($strlen>=$limit) ? substr($str, 0, $limit)."&hellip;" : $str;
 }
 
-/**
- * [truncate description]
- * @param  [type]  $s      [description]
- * @param  [type]  $l      [description]
- * @param  string  $e      [description]
- * @param  boolean $isHTML [description]
- * @return [type]          [description]
- */
-function truncate($s, $l, $e = '...', $isHTML = false) {
-    $i = 0;
-    $tags = array();
-
-    if($isHTML) {
-        preg_match_all('/<[^>]+>([^<]*)/', $s, $m, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
-        foreach($m as $o){
-            if($o[0][1] - $i >= $l)
-                break;
-            $t = substr(strtok($o[0][0], " \t\n\r\0\x0B>"), 1);
-            if($t[0] != '/')
-                $tags[] = $t;
-            elseif(end($tags) == substr($t, 1))
-                array_pop($tags);
-            $i += $o[1][1] - $o[0][1];
-        }
-    }
-
-    return substr($s, 0, $l = min(strlen($s),  $l + $i)) . (count($tags = array_reverse($tags)) ? '</' . implode('></', $tags) . '>' : '') . (strlen($s) > $l ? $e : '');
-}
-
-function activate_plugin($plugin=null) {
-
-    if(empty($plugin) || !is_readable(WP_PLUGIN_DIR.'/'.$plugin)) return false;
-
-    $active_plugins = get_option('active_plugins');
-
-    if(empty($active_plugins)) $active_plugins = [];
-
-    if(!in_array($plugin, $active_plugins)) {
-         array_push($active_plugins, $plugin);
-    }
-
-    update_option('active_plugins', $active_plugins);
-
-    return true;
-}
-
-function cur_page_url() {
-    $pageURL = 'http';
-    if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") { $pageURL .= "s"; }
-    $pageURL .= "://";
-    if ($_SERVER["SERVER_PORT"] != "80") {
-        $pageURL .= $_SERVER['HTTP_HOST'].":".$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
-    } else {
-        $pageURL .= $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-    }
-
-    return $pageURL;
-}
-
 function share_page() {
 
     $html = null;
