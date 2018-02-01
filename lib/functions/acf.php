@@ -172,3 +172,40 @@ function registerLocalBlockFieldGroups(){
 
     return false;
 }
+
+function defaultBlocks($value, $post_id, $field) {
+
+    global $post;
+
+    // if value is NULL then we have a new page and we want to add the default blocks
+    if(!empty($value)) return $value;
+
+    // get our defaults
+    $defaults = get_field('post_block_defaults', 'option');
+
+    // if we have some
+    if(!empty($defaults)) {
+
+        // loop our defaults
+        foreach ($defaults as $a => $b) {
+
+            // if our current post type editing page is this one lets go
+            if($b['post_type'] == $post->post_type){
+
+                // make value var array so we can push in
+                $value = array();
+
+                // loop the blocks in this post type
+                foreach ($b['blocks'] as $c => $d) {
+
+                    // finally push in
+                    array_push($value, array('acf_fc_layout' => $d['block']));
+
+                }
+            }
+        }
+    }
+
+    // and return
+    return $value;
+}
