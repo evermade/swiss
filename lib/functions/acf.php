@@ -16,7 +16,7 @@ function postBlocks($name='page', $version='v1') {
     while(has_sub_field('swiss_'.$name.'_blocks_'.$version)) {
         $template = get_template_directory().'/lib/blocks/'.$name.'/'.str_replace(' ', '-', strtolower(get_row_layout())).'/render.php';
         if(!file_exists($template)) {
-            \Swiss\debug($template ." - Template not found");
+            \Evermade\Swiss\debug($template ." - Template not found");
             continue;
         }
 
