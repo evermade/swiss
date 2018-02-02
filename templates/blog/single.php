@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php if (have_posts()) : global $post; while (have_posts()) : the_post(); $my_post = new \Swiss\Post($post); ?>
+<?php if (have_posts()) : global $post; while (have_posts()) : the_post(); $my_post = new \Evermade\Swiss\Post($post); ?>
 
 <div class="s-context">
     <section class="b-blog">
@@ -28,7 +28,7 @@
                     </div>
 
 
-                    <?php 
+                    <?php
                     $post_categories = wp_get_post_categories( $post->ID );
                     $post_tags = wp_get_post_tags($post->ID);
                     ?>
@@ -42,13 +42,13 @@
 
                                     <h5 class="c-blog-taxonomy__title">Article Categories</h5>
                                     <ul class="c-tags-ul">
-                                        <?php    
+                                        <?php
                                         foreach($post_categories as $c){
                                             $cat = get_category( $c );
                                             $link = get_category_link($c);?>
                                                 <li><a href="<?php echo $link; ?>"><?php echo $cat->name; ?></a></li>
                                         <?php } ?>
-                                        
+
                                     </ul>
                                 </div>
 
@@ -91,12 +91,12 @@
 
     <section class="b-blog b-blog--space-above">
         <?php
-        
+
         // amount of items pulled. Also sets the layout with data-column-count
         $amountOfPosts = 3;
 
         // Pulls posts according to the logic from lib/functions/blog.php
-        $moreposts = Swiss\Blog\getPostsReadMore($amountOfPosts, $post->ID);
+        $moreposts = \Evermade\Swiss\Blog\getPostsReadMore($amountOfPosts, $post->ID);
 
         ?>
 
@@ -112,7 +112,7 @@
                 <div class="l-divided-spotlight__items">
 
                     <?php foreach ($moreposts as $post) {
-                        $my_post = new \Swiss\Post($post);
+                        $my_post = new \Evermade\Swiss\Post($post);
                         ?>
 
                         <div class="l-divided-spotlight__item">

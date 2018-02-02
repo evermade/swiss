@@ -44,7 +44,7 @@ function custom_tinymce_plugin( $plugin_array ) {
 
 function register_mce_button( $buttons ) {
     array_push( $buttons, 'custom_mce_em_button' );
-    if(\Evermade\Swiss\is_dev()) array_push( $buttons, 'custom_mce_em_lorem' );
+    if(\Evermade\Swiss\isDev()) array_push( $buttons, 'custom_mce_em_lorem' );
     return $buttons;
 }
 

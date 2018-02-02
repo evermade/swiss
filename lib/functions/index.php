@@ -37,7 +37,7 @@ function template($name = null, $data=null, $dir='templates') {
     return $html;
 }
 
-function get_image_sizes($size = '') {
+function getImageSizes($size = '') {
 
     global $_wp_additional_image_sizes;
 
@@ -79,9 +79,9 @@ function get_image_sizes($size = '') {
         return $sizes;
 }
 
-function default_img($size='thumbnail', $text='img') {
+function defaultImg($size='thumbnail', $text='img') {
 
-    $sizes = \Evermade\Swiss\get_image_sizes();
+    $sizes = \Evermade\Swiss\getImageSizes();
 
     if(isset($sizes[$size])) {
         return sprintf('https://fakeimg.pl/%sx%s/666/fff/?text=%s', $sizes[$size]['width'], $sizes[$size]['height'], $text);
@@ -90,7 +90,7 @@ function default_img($size='thumbnail', $text='img') {
     return sprintf('https://fakeimg.pl/%sx%s/666/fff/?text=%s', 850, 850, $text);
 }
 
-function feature_image_url($size='medium-large', $post=null) {
+function featureImageUrl($size='medium-large', $post=null) {
 
     //if we have no post then lets bring in the global post
     if(empty($post)){
@@ -105,18 +105,18 @@ function feature_image_url($size='medium-large', $post=null) {
     $img = \wp_get_attachment_image_src(get_post_thumbnail_id($post), $size)[0];
 
     if(empty($img)) {
-        $img = \Evermade\Swiss\default_img($size, 'img');
+        $img = \Evermade\Swiss\defaultImg($size, 'img');
     }
 
     return $img;
 }
 
-function is_dev() {
+function isDev() {
     return (getenv('APP_ENV') == 'production')? false : true;
 }
 
 function debug($msg=null, $style='php') {
-    if(\Evermade\Swiss\is_dev()) {
+    if(\Evermade\Swiss\isDev()) {
 
         if($style == 'php'){
             echo "<pre>"; print_r($msg); echo "</pre>";

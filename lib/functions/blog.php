@@ -1,4 +1,4 @@
-<?php namespace Swiss\Blog;
+<?php namespace Evermade\Swiss\Blog;
 
 /**
  * a simple function to help dry out views of checking array indexes and object properties
