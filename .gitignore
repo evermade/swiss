@@ -36,4 +36,3 @@ Thumbs.db
 node_modules/
 assets/vendor/*
 assets/dist/
-lib/blocks/
