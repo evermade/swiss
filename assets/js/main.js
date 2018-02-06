@@ -1,3 +1,6 @@
+// add babel-polyfill for IE
+import 'babel-polyfill';
+
 // import our console helper from h5bp, may not be needed
 import "./plugins.js";
 
