@@ -1,4 +1,6 @@
-<?php get_header();
+<?php
+
+get_header();
 
 // check our current post type
 $type = (empty(get_post_type()) || get_post_type() == 'post')? 'blog' : get_post_type();

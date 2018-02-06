@@ -21,7 +21,28 @@ function register_my_menus() {
 }
 
 function custom_post_types_editing() {
-    remove_post_type_support( 'page', 'editor' );
+
+    $postId = false;
+
+    // get our POST from the URL or post payload
+	if( isset( $_GET['post'] ) )
+		$postId = $_GET['post'];
+	elseif( isset( $_POST['post_ID'] ) )
+        $postId = $_POST['post_ID'];
+
+    $postId = intval( $postId );
+
+	if( ! $postId )
+        return;
+
+    if ( isset( $postId ) ) {
+        $template = get_post_meta( $postId, '_wp_page_template', true );
+
+        // if the Everblox template then hide the editor as we dont need it
+        if ('page-everblox.php' === $template ) {
+            remove_post_type_support( 'page', 'editor' );
+        }
+    }
 }
 
 function custom_mce_em_buttons() {

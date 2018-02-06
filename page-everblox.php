@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page Blocks
+Template Name: Everblox
 */
 
 get_header();

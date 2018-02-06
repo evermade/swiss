@@ -1,4 +1,7 @@
 <?php
+
+// this is the evermade toolbox, with style guides etc
+
 get_header();
 
 if(!isset($_GET['t'])) {

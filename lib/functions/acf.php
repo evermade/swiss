@@ -140,19 +140,12 @@ function registerLocalBlockFieldGroups(){
                     'layouts' => $layouts,
                 ),
             ),
-            'location' => array (
-                array (
-                    array (
-                        'param' => 'post_type',
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_template',
                         'operator' => '==',
-                        'value' => 'page',
-                    ),
-                ),
-                array (
-                    array (
-                        'param' => 'post_type',
-                        'operator' => '==',
-                        'value' => 'post',
+                        'value' => 'page-everblox.php',
                     ),
                 ),
             ),
