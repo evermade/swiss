@@ -6,7 +6,7 @@
  * @param  array  $array [description]
  * @return [type]        [description]
  */
-function getFrom($key=null, $array=array()) {
+function getFrom($key=null, $array=array(), $default=null) {
 
     // if we have an object
     if(is_object($array) && isset($array->{$key})) {
@@ -16,7 +16,7 @@ function getFrom($key=null, $array=array()) {
     // else we have an array
     if(is_array($array) && isset($array[$key])) return $array[$key];
 
-    return null;
+    return $default;
 }
 
 /**
