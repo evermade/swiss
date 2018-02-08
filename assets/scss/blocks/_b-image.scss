@@ -1,0 +1,23 @@
+.b-image {
+    @include section(false);
+
+    &__container {
+        @include container;
+    }
+
+    &__image-wrapper {
+        margin: auto;
+        display: none;
+    }
+
+    &__image {
+
+        @include z-index(content);
+
+        position: relative;
+        display: block;
+        margin: auto;
+        width: 100%;
+        background-size: auto 100%;
+    }
+}

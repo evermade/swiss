@@ -1,0 +1,37 @@
+.b-hero {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative; // Makes sure the ratio stays the same across different viewports.
+
+    &:after {
+        content: "";
+        width: 1px;
+        padding-top: 33.3333%;
+    }
+
+    &__background {
+        @include full-cover;
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__container {
+        @include container;
+        @include z-index(content);
+    }
+
+    &__content {
+        @include spacing(margin, top, section);
+        @include spacing(margin, bottom, section);
+
+        @include bp(md) {
+
+            max-width: 60%;
+            margin: auto;
+        }
+    }
+}
