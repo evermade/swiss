@@ -1,13 +1,12 @@
 {
     "key": "group_54ddebcd1dfe7",
-    "title": "Page Blocks",
+    "title": "Block Development",
     "fields": [
         {
             "key": "field_54ddee97933e5",
-            "label": "Blocks",
-            "name": "page_blocks",
+            "label": "Block Development",
+            "name": "block_development",
             "type": "flexible_content",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,11 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "button_label": "Add Block",
-            "min": "",
-            "max": "",
-            "layouts": [
-                {
+            "layouts": {
+                "54de1384f46ce": {
                     "key": "54de1384f46ce",
                     "name": "columns",
                     "label": "Columns",
@@ -47,7 +43,6 @@
                             "label": "Columns",
                             "name": "columns",
                             "type": "repeater",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -67,7 +62,6 @@
                                     "label": "Content",
                                     "name": "column",
                                     "type": "wysiwyg",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -105,7 +99,6 @@
                             "label": "Content Horizontal Alignment",
                             "name": "horizontal_alignment",
                             "type": "select",
-                            "value": null,
                             "instructions": "This should be used when only 1 column is used, else will not take effect. It will center align the content container, but not the content itself, as that styling can be done in the wysiwyg editor upon context.",
                             "required": 0,
                             "conditional_logic": 0,
@@ -132,7 +125,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "557550fa0a89b": {
                     "key": "557550fa0a89b",
                     "name": "hero",
                     "label": "Hero",
@@ -159,7 +152,6 @@
                             "label": "Text",
                             "name": "text",
                             "type": "wysiwyg",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -179,7 +171,6 @@
                             "label": "Background Image",
                             "name": "background_image",
                             "type": "image",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -220,7 +211,6 @@
                             "label": "Overlay",
                             "name": "overlay",
                             "type": "true_false",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -240,7 +230,6 @@
                             "label": "Youtube ID",
                             "name": "youtube_id",
                             "type": "text",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -259,7 +248,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "59d398b6a1962": {
                     "key": "59d398b6a1962",
                     "name": "image",
                     "label": "Image",
@@ -286,7 +275,6 @@
                             "label": "Images",
                             "name": "image_images",
                             "type": "repeater",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -306,7 +294,6 @@
                                     "label": "Image",
                                     "name": "image",
                                     "type": "image",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -331,7 +318,6 @@
                                     "label": "Visible Breakpoints",
                                     "name": "breakpoints",
                                     "type": "select",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -361,7 +347,6 @@
                                     "label": "Maximum Width",
                                     "name": "maximum_width",
                                     "type": "text",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -381,7 +366,6 @@
                                     "label": "Image Height",
                                     "name": "image_height",
                                     "type": "select",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -427,7 +411,6 @@
                             "label": "Image Wrapper",
                             "name": "image_wrapper",
                             "type": "select",
-                            "value": null,
                             "instructions": "The maximum width of the image in pixels.",
                             "required": 0,
                             "conditional_logic": 0,
@@ -454,7 +437,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "58e60bb890b89": {
                     "key": "58e60bb890b89",
                     "name": "image_text",
                     "label": "Image Text",
@@ -481,7 +464,6 @@
                             "label": "Layout",
                             "name": "layout",
                             "type": "radio",
-                            "value": null,
                             "instructions": "",
                             "required": 1,
                             "conditional_logic": 0,
@@ -506,7 +488,6 @@
                             "label": "Image",
                             "name": "image",
                             "type": "image",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -531,7 +512,6 @@
                             "label": "Text",
                             "name": "text",
                             "type": "wysiwyg",
-                            "value": null,
                             "instructions": "",
                             "required": 1,
                             "conditional_logic": 0,
@@ -567,7 +547,6 @@
                             "label": "Foreground Image",
                             "name": "image_foreground",
                             "type": "image",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -592,7 +571,6 @@
                             "label": "Foreground Vertical Alignment",
                             "name": "image_foreground_vertical_alignment",
                             "type": "select",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -621,7 +599,6 @@
                             "label": "Foreground Maximum Width",
                             "name": "image_foreground_maximum_width",
                             "type": "number",
-                            "value": null,
                             "instructions": "Maximum width in pixels.",
                             "required": 0,
                             "conditional_logic": 0,
@@ -659,7 +636,6 @@
                             "label": "Full width",
                             "name": "layout_width",
                             "type": "select",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -686,7 +662,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "59ddb8f85c542": {
                     "key": "59ddb8f85c542",
                     "name": "listing",
                     "label": "Listing",
@@ -713,7 +689,6 @@
                             "label": "Columns",
                             "name": "columns",
                             "type": "repeater",
-                            "value": null,
                             "instructions": "",
                             "required": 1,
                             "conditional_logic": 0,
@@ -733,7 +708,6 @@
                                     "label": "Image",
                                     "name": "image",
                                     "type": "image",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 1,
                                     "conditional_logic": 0,
@@ -758,7 +732,6 @@
                                     "label": "Title",
                                     "name": "title",
                                     "type": "text",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 1,
                                     "conditional_logic": 0,
@@ -778,7 +751,6 @@
                                     "label": "Text",
                                     "name": "text",
                                     "type": "wysiwyg",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -816,7 +788,6 @@
                             "label": "Section Header",
                             "name": "section_header",
                             "type": "wysiwyg",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -852,7 +823,6 @@
                             "label": "Image Type",
                             "name": "image_type",
                             "type": "select",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -880,7 +850,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "598da21d65f38": {
                     "key": "598da21d65f38",
                     "name": "listing_posts",
                     "label": "Listing Posts",
@@ -907,7 +877,6 @@
                             "label": "Posts",
                             "name": "posts",
                             "type": "relationship",
-                            "value": null,
                             "instructions": "If left empty will show the number of latest posts found in the settings.",
                             "required": 0,
                             "conditional_logic": 0,
@@ -949,7 +918,6 @@
                             "label": "Section Header",
                             "name": "section_header",
                             "type": "wysiwyg",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -985,7 +953,6 @@
                             "label": "Number of Posts",
                             "name": "number_of_posts",
                             "type": "number",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1007,7 +974,6 @@
                             "label": "See More",
                             "name": "see_more",
                             "type": "true_false",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1027,7 +993,6 @@
                             "label": "See More Text",
                             "name": "see_more_text",
                             "type": "text",
-                            "value": null,
                             "instructions": "",
                             "required": 1,
                             "conditional_logic": [
@@ -1055,7 +1020,6 @@
                             "label": "See More URL",
                             "name": "see_more_url",
                             "type": "text",
-                            "value": null,
                             "instructions": "",
                             "required": 1,
                             "conditional_logic": [
@@ -1082,7 +1046,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "5846bbdaabec6": {
                     "key": "5846bbdaabec6",
                     "name": "section",
                     "label": "Section",
@@ -1109,7 +1073,6 @@
                             "label": "Scheme",
                             "name": "scheme",
                             "type": "select",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1153,7 +1116,6 @@
                             "label": "Overflow Visibility",
                             "name": "overflow_visibility",
                             "type": "select",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1181,7 +1143,6 @@
                             "label": "Assets",
                             "name": "assets",
                             "type": "repeater",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1217,7 +1178,6 @@
                                     "label": "Image",
                                     "name": "image",
                                     "type": "image",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1242,7 +1202,6 @@
                                     "label": "Placement",
                                     "name": "placement",
                                     "type": "select",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1274,7 +1233,6 @@
                                     "label": "Custom CSS",
                                     "name": "custom_css",
                                     "type": "textarea",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": [
@@ -1318,7 +1276,6 @@
                                     "label": "Image Alignment",
                                     "name": "position",
                                     "type": "checkbox",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1348,7 +1305,6 @@
                                     "label": "Position (Z)",
                                     "name": "z-index",
                                     "type": "select",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1376,7 +1332,6 @@
                                     "label": "Size",
                                     "name": "size",
                                     "type": "select",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1408,7 +1363,6 @@
                                     "label": "Visibility",
                                     "name": "visibility",
                                     "type": "checkbox",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1454,7 +1408,6 @@
                                     "label": "Animation Style",
                                     "name": "animation_style",
                                     "type": "select",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1485,7 +1438,6 @@
                                     "label": "Animation Speed",
                                     "name": "animation_speed",
                                     "type": "select",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1515,7 +1467,6 @@
                                     "label": "Animation Delay",
                                     "name": "animation_delay",
                                     "type": "number",
-                                    "value": null,
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -1555,7 +1506,6 @@
                             "label": "Full height",
                             "name": "full_height",
                             "type": "select",
-                            "value": null,
                             "instructions": "Is the minimum height of the scheme block window full height. This allows us to position blocks nicely.",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1583,7 +1533,6 @@
                             "label": "Block Vertical Alignment",
                             "name": "vertical_alignment",
                             "type": "select",
-                            "value": null,
                             "instructions": "If full-height is enabled: How does the blocks position.",
                             "required": 0,
                             "conditional_logic": [
@@ -1621,7 +1570,6 @@
                             "label": "Pin blocks",
                             "name": "pin_blocks",
                             "type": "select",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
@@ -1657,7 +1605,6 @@
                             "label": "Minimum height (laptop\/desktop)",
                             "name": "minimum_height",
                             "type": "number",
-                            "value": null,
                             "instructions": "When using Pin blocks sometimes we want the section to be a lot higher than the window height or the height the block is. This height will be disabled for mobile.",
                             "required": 0,
                             "conditional_logic": [
@@ -1686,22 +1633,18 @@
                     "min": "",
                     "max": ""
                 }
-            ]
+            },
+            "button_label": "Add Block",
+            "min": "",
+            "max": ""
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_taxonomy",
                 "operator": "==",
-                "value": "page"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
+                "value": "product_visibility:rated-5"
             }
         ]
     ],
@@ -1713,5 +1656,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1508843480
+    "modified": 1517898509
 }

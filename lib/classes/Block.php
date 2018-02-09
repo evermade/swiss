@@ -1,10 +1,10 @@
 <?php
-namespace Swiss;
+namespace Evermade\Swiss;
 
 /**
  * Block class for keeping data together whilst looping many blocks within a page, and maybe ajax in future
  */
-class Block extends BlockHelper
+class Block
 {
 
     protected $fields = array(); // for ACF fields only
@@ -14,7 +14,8 @@ class Block extends BlockHelper
     public function __construct($fields = array())
     {
         if (!empty($fields)) {
-            $this->fields = $data;
+            $this->fields = $fields;
+            $this->getFields($fields);
         }
     }
 
@@ -67,44 +68,20 @@ class Block extends BlockHelper
         return $this->{$array}[$key];
     }
 
-}
-
-class BlockHelper
-{
-
     /**
-     * a method to build css classes, inline styles for elements
-     * @param [type] $css [description]
-     * @param [type] $key [description]
+     * a wrapper function to allow the use of the main ACF function outside of the block context, ie single post etc
+     *
+     * @param string $size
+     * @param [type] $key
+     * @param string $class
+     * @return void
      */
-    public function addCss($css = null, $key = null)
-    {
-        if (empty($css) || empty($key))
-            return null;
-
-        if (!isset($this->css[$key])) {
-            $this->css[$key] = [];
-        }
-
-        $this->css[$key][] = $css;
-
-        return true;
+    public function getImage($size='medium-large', $key=null, $class=''){
+        return \Evermade\Swiss\Acf\getImage($size, $this->get($key), $class);
     }
 
-    /**
-     * the getter method for the results of the addCss method
-     * @param  [type] $key [description]
-     * @return [type]      [description]
-     */
-    public function getCss($key = null)
-    {
-        $key = $this->get($key, 'css');
-
-        if($key){
-            return implode(' ', $key);
-        }
-
-        return null;
+    public function getImageUrl($size='original', $key=null){
+        return \Evermade\Swiss\Acf\getImageUrl($size, $this->get($key));
     }
 
 }

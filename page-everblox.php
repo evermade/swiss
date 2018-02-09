@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page Blocks
+Template Name: Everblox
 */
 
 get_header();
@@ -9,7 +9,7 @@ get_header();
 <div class="s-context">
     <div>
         <div>
-            <?php \Swiss\Acf\postBlocks(); ?>
+            <?php \Evermade\Swiss\Acf\postBlocks(); ?>
         </div>
     </div>
 </div>

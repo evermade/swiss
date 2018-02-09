@@ -2,7 +2,7 @@
 
  <section class="b-blog s-context">
 
-    <?php if ( have_posts() && ( get_search_query() || is_category() || is_date() || is_tag() || is_author() ) == false ): 
+    <?php if ( have_posts() && ( get_search_query() || is_category() || is_date() || is_tag() || is_author() ) == false ):
 
         // the amount of items in the spotlight
         $spotlightAmount = 3;
@@ -18,7 +18,7 @@
 
                     while ( have_posts() && $i < $spotlightAmount ): the_post();
 
-                        $my_post = new \Swiss\Post($post);
+                        $my_post = new \Evermade\Swiss\Post($post);
                         ?>
 
                             <div class="l-divided-spotlight__item">
@@ -50,7 +50,7 @@
 
             <div class="l-blog__sidebar">
                 <?php include(get_template_directory().'/templates/blog/_sidebar.php'); ?>
-            </div> 
+            </div>
 
             <div class="l-blog__content">
                 <div class="l-blog__content__listing">
@@ -60,7 +60,7 @@
 
                         while ( have_posts() ): the_post();
 
-                            $my_post = new \Swiss\Post($post);
+                            $my_post = new \Evermade\Swiss\Post($post);
 
                             include(get_template_directory().'/templates/blog/_c-blog-post.php');
 
@@ -79,5 +79,5 @@
     <div class="b-blog__container">
         <?php echo paginate_links(['type'=>'list', 'prev_next'=>false]); ?>
     </div>
-    
+
 </section>

@@ -1,4 +1,4 @@
-<?php namespace Swiss;
+<?php namespace Evermade\Swiss;
 
 /**
  * a simple function to help dry out views of checking array indexes and object properties
@@ -6,7 +6,7 @@
  * @param  array  $array [description]
  * @return [type]        [description]
  */
-function getFrom($key=null, $array=array()) {
+function getFrom($key=null, $array=array(), $default=null) {
 
     // if we have an object
     if(is_object($array) && isset($array->{$key})) {
@@ -16,7 +16,7 @@ function getFrom($key=null, $array=array()) {
     // else we have an array
     if(is_array($array) && isset($array[$key])) return $array[$key];
 
-    return null;
+    return $default;
 }
 
 /**
@@ -37,7 +37,7 @@ function template($name = null, $data=null, $dir='templates') {
     return $html;
 }
 
-function get_image_sizes($size = '') {
+function getImageSizes($size = '') {
 
     global $_wp_additional_image_sizes;
 
@@ -79,9 +79,9 @@ function get_image_sizes($size = '') {
         return $sizes;
 }
 
-function default_img($size='thumbnail', $text='img') {
+function defaultImg($size='thumbnail', $text='img') {
 
-    $sizes = \Swiss\get_image_sizes();
+    $sizes = \Evermade\Swiss\getImageSizes();
 
     if(isset($sizes[$size])) {
         return sprintf('https://fakeimg.pl/%sx%s/666/fff/?text=%s', $sizes[$size]['width'], $sizes[$size]['height'], $text);
@@ -90,7 +90,7 @@ function default_img($size='thumbnail', $text='img') {
     return sprintf('https://fakeimg.pl/%sx%s/666/fff/?text=%s', 850, 850, $text);
 }
 
-function feature_image_url($size='medium-large', $post=null) {
+function featureImageUrl($size='medium-large', $post=null) {
 
     //if we have no post then lets bring in the global post
     if(empty($post)){
@@ -105,18 +105,18 @@ function feature_image_url($size='medium-large', $post=null) {
     $img = \wp_get_attachment_image_src(get_post_thumbnail_id($post), $size)[0];
 
     if(empty($img)) {
-        $img = \Swiss\default_img($size, 'img');
+        $img = \Evermade\Swiss\defaultImg($size, 'img');
     }
 
     return $img;
 }
 
-function is_dev() {
+function isDev() {
     return (getenv('APP_ENV') == 'production')? false : true;
 }
 
 function debug($msg=null, $style='php') {
-    if(\Swiss\is_dev()) {
+    if(\Evermade\Swiss\isDev()) {
 
         if($style == 'php'){
             echo "<pre>"; print_r($msg); echo "</pre>";
@@ -178,65 +178,6 @@ function excerpt($str, $limit = 255) {
     return ($strlen>=$limit) ? substr($str, 0, $limit)."&hellip;" : $str;
 }
 
-/**
- * [truncate description]
- * @param  [type]  $s      [description]
- * @param  [type]  $l      [description]
- * @param  string  $e      [description]
- * @param  boolean $isHTML [description]
- * @return [type]          [description]
- */
-function truncate($s, $l, $e = '...', $isHTML = false) {
-    $i = 0;
-    $tags = array();
-
-    if($isHTML) {
-        preg_match_all('/<[^>]+>([^<]*)/', $s, $m, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
-        foreach($m as $o){
-            if($o[0][1] - $i >= $l)
-                break;
-            $t = substr(strtok($o[0][0], " \t\n\r\0\x0B>"), 1);
-            if($t[0] != '/')
-                $tags[] = $t;
-            elseif(end($tags) == substr($t, 1))
-                array_pop($tags);
-            $i += $o[1][1] - $o[0][1];
-        }
-    }
-
-    return substr($s, 0, $l = min(strlen($s),  $l + $i)) . (count($tags = array_reverse($tags)) ? '</' . implode('></', $tags) . '>' : '') . (strlen($s) > $l ? $e : '');
-}
-
-function activate_plugin($plugin=null) {
-
-    if(empty($plugin) || !is_readable(WP_PLUGIN_DIR.'/'.$plugin)) return false;
-
-    $active_plugins = get_option('active_plugins');
-
-    if(empty($active_plugins)) $active_plugins = [];
-
-    if(!in_array($plugin, $active_plugins)) {
-         array_push($active_plugins, $plugin);
-    }
-
-    update_option('active_plugins', $active_plugins);
-
-    return true;
-}
-
-function cur_page_url() {
-    $pageURL = 'http';
-    if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") { $pageURL .= "s"; }
-    $pageURL .= "://";
-    if ($_SERVER["SERVER_PORT"] != "80") {
-        $pageURL .= $_SERVER['HTTP_HOST'].":".$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
-    } else {
-        $pageURL .= $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-    }
-
-    return $pageURL;
-}
-
 function share_page() {
 
     $html = null;
@@ -267,7 +208,7 @@ function share_page() {
         );
 
         foreach($services as $key => $value) {
-             $services[$key]['url'] = \Swiss\share_link($key);
+             $services[$key]['url'] = \Evermade\Swiss\share_link($key);
         }
 
         ob_start();
@@ -292,7 +233,7 @@ function share_link($type='facebook', $url=null, $title='') {
         );
 
     if(array_key_exists($type, $urls)) {
-        $data['url'] = (empty($url))? \Swiss\cur_page_url() : $url;
+        $data['url'] = (empty($url))? \Evermade\Swiss\cur_page_url() : $url;
 
         if($type=='twitter') {
             $data['title'] = (empty($title))? get_the_title() : $title;

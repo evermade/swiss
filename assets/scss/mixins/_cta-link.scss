@@ -3,7 +3,7 @@
     color: $link-color;
 
     &:after {
-        font-family: FontAwesome;
+        font-family: FontAwesome, serif;
         content: "\f105";
         color: inherit;
         margin-left: 1em;

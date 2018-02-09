@@ -1,6 +1,6 @@
 <div class="c-card" data-animate="animated zoomIn">
 
-    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><div class="c-card__image" style="background-image:url(<?php echo \Swiss\feature_image_url('medium-large'); ?>);"></div></a>
+    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><div class="c-card__image" style="background-image:url(<?php echo \Evermade\Swiss\featureImageUrl('medium-large'); ?>);"></div></a>
 
     <div class="c-card__content" data-scheme-target>
 

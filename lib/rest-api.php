@@ -1,5 +1,5 @@
 <?php
-namespace Swiss\RestApi;
+namespace Evermade\Swiss\RestApi;
 
 function myAwesomePosts()
 {
@@ -34,7 +34,7 @@ function myAwesomePosts()
 
 //     register_rest_route('swiss/v1', '/posts', array(
 //         'methods' => 'GET',
-//         'callback' => '\Swiss\RestApi\myAwesomePosts'
+//         'callback' => '\Evermade\Swiss\RestApi\myAwesomePosts'
 //     ));
 
 // });
