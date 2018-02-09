@@ -1,17 +1,17 @@
 <?php namespace Evermade\Swiss\Hooks;
 
-function remove_wp_logo( $wp_admin_bar ) {
+function removeWpLogo( $wp_admin_bar ) {
     $wp_admin_bar->remove_node( 'updates' );
     $wp_admin_bar->remove_node( 'comments' );
     $wp_admin_bar->remove_node( 'wpseo-menu' );
 }
 
-function hide_wp_update_nag() {
+function hideWpUpdateNag() {
     remove_action( 'admin_notices', 'update_nag', 3 ); // update notice at the top of the screen
     remove_filter( 'update_footer', 'core_update_footer' ); // update notice in the footer
 }
 
-function register_my_menus() {
+function registerMenus() {
     register_nav_menus(
         array(
             'header-navigation' => __( 'Header Navigation' ),
@@ -20,32 +20,14 @@ function register_my_menus() {
     );
 }
 
-function custom_post_types_editing() {
-
-    $postId = false;
-
-    // get our POST from the URL or post payload
-	if( isset( $_GET['post'] ) )
-		$postId = $_GET['post'];
-	elseif( isset( $_POST['post_ID'] ) )
-        $postId = $_POST['post_ID'];
-
-    $postId = intval( $postId );
-
-	if( ! $postId )
-        return;
-
-    if ( isset( $postId ) ) {
-        $template = get_post_meta( $postId, '_wp_page_template', true );
-
-        // if the Everblox template then hide the editor as we dont need it
-        if ('page-everblox.php' === $template ) {
-            remove_post_type_support( 'page', 'editor' );
-        }
+function hideEditor() {
+    $template_file = basename( get_page_template() );
+    if($template_file == 'page.php'){
+        remove_post_type_support('page', 'editor');
     }
 }
 
-function custom_mce_em_buttons() {
+function customMCEbuttons() {
     // Check if user have permission
     if ( !current_user_can( 'edit_posts' ) && !current_user_can( 'edit_pages' ) ) {
         return;
@@ -69,11 +51,11 @@ function register_mce_button( $buttons ) {
     return $buttons;
 }
 
-function em_load_theme_textdomain() {
+function loadTextDomain() {
     load_theme_textdomain('swiss', get_template_directory() . '/languages');
 }
 
-function lower_wpseo_priority( $html ) {
+function lowerWpseoPriority( $html ) {
     return 'low';
 }
 
@@ -88,25 +70,25 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'title-tag' );
 
 // register new buttons in the editor
-add_action( 'admin_head', '\Evermade\Swiss\Hooks\custom_mce_em_buttons' );
+add_action( 'admin_head', '\Evermade\Swiss\Hooks\customMCEbuttons' );
 
 // lets remove the main text editor from the post type as we are using block system
-add_action( 'admin_init', '\Evermade\Swiss\Hooks\custom_post_types_editing' );
+add_action( 'admin_head', '\Evermade\Swiss\Hooks\hideEditor' );
 
 // lets add our local languages for the swiss text domain
-add_action( 'after_setup_theme', '\Evermade\Swiss\Hooks\em_load_theme_textdomain' );
+add_action( 'after_setup_theme', '\Evermade\Swiss\Hooks\loadTextDomain' );
 
 // navigation
-add_action( 'init', '\Evermade\Swiss\Hooks\register_my_menus' );
+add_action( 'init', '\Evermade\Swiss\Hooks\registerMenus' );
 
 // hide update nags
-add_action( 'admin_menu','\Evermade\Swiss\Hooks\hide_wp_update_nag' );
+add_action( 'admin_menu','\Evermade\Swiss\Hooks\hideWpUpdateNag' );
 
 // remove wp top bar stuff
-add_action( 'admin_bar_menu', '\Evermade\Swiss\Hooks\remove_wp_logo', 999 );
+add_action( 'admin_bar_menu', '\Evermade\Swiss\Hooks\removeWpLogo', 999 );
 
 // Lower the display priority of Yoast SEO meta box
-add_filter( 'wpseo_metabox_prio', '\Evermade\Swiss\Hooks\lower_wpseo_priority' );
+add_filter( 'wpseo_metabox_prio', '\Evermade\Swiss\Hooks\lowerWpseoPriority' );
 
 // Add default page blocks feature
 add_filter( 'acf/load_value/key=field_swiss_page_blocks_v1', '\Evermade\Swiss\Acf\defaultBlocks', 10, 3 );

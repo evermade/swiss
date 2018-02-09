@@ -1,9 +1,7 @@
 <?php
-/*
-Template Name: Everblox
-*/
 
 get_header();
+
 ?>
 
 <div class="s-context">
@@ -15,4 +13,5 @@ get_header();
 </div>
 
 <?php
+
 get_footer();
