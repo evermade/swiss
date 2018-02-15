@@ -2,7 +2,7 @@
 
  <section class="b-blog s-context">
 
-    <?php if ( have_posts() && ( get_search_query() || is_category() || is_date() || is_tag() || is_author() ) == false ):
+    <?php if (have_posts() && (get_search_query() || is_category() || is_date() || is_tag() || is_author()) == false):
 
         // the amount of items in the spotlight
         $spotlightAmount = 3;
@@ -16,7 +16,7 @@
 
                     $i = 0;
 
-                    while ( have_posts() && $i < $spotlightAmount ): the_post();
+                    while (have_posts() && $i < $spotlightAmount): the_post();
 
                         $my_post = new \Evermade\Swiss\Post($post);
                         ?>
@@ -56,9 +56,9 @@
                 <div class="l-blog__content__listing">
                     <?php
 
-                    if ( have_posts() ):
+                    if (have_posts()):
 
-                        while ( have_posts() ): the_post();
+                        while (have_posts()): the_post();
 
                             $my_post = new \Evermade\Swiss\Post($post);
 

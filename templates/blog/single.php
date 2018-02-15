@@ -29,48 +29,57 @@
 
 
                     <?php
-                    $post_categories = wp_get_post_categories( $post->ID );
+                    $post_categories = wp_get_post_categories($post->ID);
                     $post_tags = wp_get_post_tags($post->ID);
                     ?>
 
-                    <?php if($post_categories || $post_tags){?>
+                    <?php if ($post_categories || $post_tags) {
+                        ?>
 
                         <div class="c-blog-taxonomy">
-                            <?php if($post_categories){?>
+                            <?php if ($post_categories) {
+                            ?>
 
                                 <div class="c-blog-taxonomy__item">
 
                                     <h5 class="c-blog-taxonomy__title">Article Categories</h5>
                                     <ul class="c-tags-ul">
                                         <?php
-                                        foreach($post_categories as $c){
-                                            $cat = get_category( $c );
-                                            $link = get_category_link($c);?>
+                                        foreach ($post_categories as $c) {
+                                            $cat = get_category($c);
+                                            $link = get_category_link($c); ?>
                                                 <li><a href="<?php echo $link; ?>"><?php echo $cat->name; ?></a></li>
-                                        <?php } ?>
+                                        <?php
+                                        } ?>
 
                                     </ul>
                                 </div>
 
-                            <?php } ?>
+                            <?php
+                        } ?>
 
-                            <?php if($post_tags){?>
+                            <?php if ($post_tags) {
+                            ?>
 
                                 <div class="c-blog-taxonomy__item">
                                     <h5 class="c-blog-taxonomy__title">Article Tags</h5>
                                     <ul class="c-tags-ul">
-                                        <?php foreach ($post_tags as $tag) {?>
+                                        <?php foreach ($post_tags as $tag) {
+                                ?>
                                             <li><a href="<?php echo get_tag_link($tag->term_id); ?>"><?php echo $tag->name; ?></a></li>
-                                        <?php } ?>
+                                        <?php
+                            } ?>
                                     </ul>
                                 </div>
 
-                            <?php } ?>
+                            <?php
+                        } ?>
                         </div>
 
-                    <?php } ?>
+                    <?php
+                    } ?>
 
-                    <?php //echo \Swiss\share_page(); ?>
+                    <?php //echo \Swiss\share_page();?>
 
                 </div>
 
@@ -112,14 +121,14 @@
                 <div class="l-divided-spotlight__items">
 
                     <?php foreach ($moreposts as $post) {
-                        $my_post = new \Evermade\Swiss\Post($post);
-                        ?>
+            $my_post = new \Evermade\Swiss\Post($post); ?>
 
                         <div class="l-divided-spotlight__item">
                             <?php include(get_template_directory().'/templates/blog/_c-blog-post-big.php'); ?>
                         </div>
 
-                    <?php } ?>
+                    <?php
+        } ?>
 
                 </div>
             </div>

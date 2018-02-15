@@ -45,8 +45,9 @@ class App
      */
     public function set($key = null, $value = null, $array = 'data')
     {
-        if (!isset($this->{$array}))
+        if (!isset($this->{$array})) {
             return false;
+        }
 
         return $this->{$array}[$key] = $value;
     }
@@ -58,8 +59,9 @@ class App
      */
     public function get($key = null, $array = 'data')
     {
-        if (!isset($this->{$array}[$key]))
+        if (!isset($this->{$array}[$key])) {
             return null;
+        }
 
         return $this->{$array}[$key];
     }

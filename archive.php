@@ -9,10 +9,9 @@ $type = (empty(get_post_type()) || get_post_type() == 'post')? 'blog' : get_post
 $path = get_template_directory().'/templates/'.$type.'/index.php';
 
 // if we have a post type index file, use it, else default to blog
-if(file_exists($path)) {
+if (file_exists($path)) {
     include($path);
-}
-else {
+} else {
     include(get_template_directory().'/templates/blog/index.php');
 }
 

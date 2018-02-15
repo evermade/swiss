@@ -4,7 +4,7 @@
 
 get_header();
 
-if(!isset($_GET['t'])) {
+if (!isset($_GET['t'])) {
     $_GET['t'] = 'index';
 }
 
