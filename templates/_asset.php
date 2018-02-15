@@ -1,1 +1,1 @@
-<div class="c-asset <?php echo \Swiss\getFrom('class', $data); ?>" style="background-image: url(<?php echo \Swiss\Acf\getImageUrl('original', $data); ?>); <?php echo \Swiss\getFrom('style', $data); ?>"></div>
+<div class="c-asset <?php echo \Evermade\Swiss\getFrom('class', $data); ?>" style="background-image: url(<?php echo \Evermade\Swiss\Acf\getImageUrl('original', $data); ?>); <?php echo \Evermade\Swiss\getFrom('style', $data); ?>"></div>

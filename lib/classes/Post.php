@@ -1,29 +1,31 @@
-<?php namespace Swiss;
+<?php namespace Evermade\Swiss;
 
 /**
- * This class to keep life dry, and encapulsate common WP tasks into a class
+ * This class to keep life dry, and encapulsate common WP Post tasks into a class
  */
 class Post {
 
-    public $post = null;
-    public $author = null;
-    public $tags = null;
-    public $meta = null;
+    protected $post = null;
+    protected $author = null;
+    protected $tags = null;
+    protected $meta = null;
+    protected $acf = null;
 
-    public function __construct($post=null, $setup=array('acf', 'image')) {
+    public function __construct($post=null, $setup=array('image', 'acf')) {
 
         $this->post = new \stdClass;
 
         if(!empty($post) && is_object($post)) {
-            $this->set_post($post)->setup_wp_stuff($setup);
+            $this->setPost($post)->setup($setup);
         }
+
     }
 
-    public function is_valid_post() {
+    public function isValid() {
         return (empty($this->post) || !is_object($this->post))? false : true;
     }
 
-    public function set_post($post=null) {
+    public function setPost($post=null) {
 
         if(empty($post) || !is_object($post)) return false;
 
@@ -32,43 +34,49 @@ class Post {
         return $this;
     }
 
-    public function setup_wp_stuff($setup=array()) {
+    public function setup($setup=array()) {
 
-        if(!$this->is_valid_post()) return false;
+        if(!$this->isValid()) return false;
 
         if(in_array('meta', $setup)) {
-            $this->get_meta();
+            $this->getMeta();
         }
 
         if(in_array('tags', $setup)) {
-            $this->get_tags();
+            $this->getTags();
         }
 
         if(in_array('author', $setup)) {
-            $this->get_author();
+            $this->getAuthor();
         }
 
         if(in_array('image', $setup)) {
-            $this->feature_image = $this->get_feature_image();
+            $this->featureImage = $this->getFeatureImage();
         }
 
         if(in_array('acf', $setup)) {
-            $this->get_acf();
+            $this->getAcf();
         }
 
-        return $this;
+        return true;
     }
 
-    public function get($key=null, $array='post'){
-        if(isset($this->{$array}->{$key})){
-            return $this->{$array}->{$key};
+    public function get($key, $property = 'post', $default = null){
+
+        if(isset($this->{$property}) && is_array($this->{$property})){
+            if(isset($this->{$property}[$key])) return $this->{$property}[$key];
         }
-        return null;
+
+		if(isset($this->{$property}) && is_object($this->{$property})){
+            if(isset($this->{$property}->{$key})) return $this->{$property}->{$key};
+        }
+
+        return $default;
     }
 
-    public function get_meta() {
+    public function getMeta() {
 
-        if(!$this->is_valid_post()) return false;
+        if(!$this->isValid()) return false;
 
         $this->meta = new \stdClass;
 
@@ -85,50 +93,30 @@ class Post {
         return $this->meta;
     }
 
-    public function get_tags() {
+    public function getTags() {
         $this->tags = \wp_get_post_tags($this->post->ID);
 
         return $this->tags;
     }
 
-    public function get_author(){
-        if(isset($this->post->post_author) && !empty($this->post->post_author)) {
-            $this->author = new \Swiss\User($this->post->post_author);
+    public function getFeatureImage($size='medium-large', $default=true) {
+
+        // if we have a feature image already lets use that
+        if(!empty($this->featureImage)){
+            return $this->featureImage;
         }
 
-        return $this->author;
-    }
-
-    public function get_feature_image($size='medium-large', $force = false, $default=true) {
-
-        // if we have a feature image and we are not forcing to use the prefetched image use that
-        if(!empty($this->feature_image) && !$force){
-            return $this->feature_image;
-        }
-
-        $this->feature_image = \wp_get_attachment_image_src(get_post_thumbnail_id($this->post->ID), $size)[0];
+        $this->featureImage = \wp_get_attachment_image_src(\get_post_thumbnail_id($this->post->ID), $size)[0];
 
         // if no default image is found, and we want a default, get one
-        if(empty($this->feature_image) && $default) {
-            $this->feature_image = \Swiss\default_img($size, 'img');
+        if(empty($this->featureImage) && $default) {
+            $this->featureImage = \Evermade\Swiss\defaultImg($size, 'img');
         }
 
-        return $this->feature_image;
+        return $this->featureImage;
     }
 
-    public function has_feature_image() {
-        return (!empty($this->feature_image))? true : false;
-    }
-
-    public function comments_open() {
-        if(isset($this->post->ID)){
-            return \comments_open($this->post->ID); // need to implement
-        }
-
-        return false;
-    }
-
-    public function get_acf() {
+    public function getAcf() {
         $fields = \get_fields($this->post->ID);
 
         if(!empty($fields)) {

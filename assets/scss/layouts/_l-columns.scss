@@ -17,11 +17,6 @@ $columns-gutter: 30px;
             @include make-md-column(8, $columns-gutter);
         }
 
-        // different column width variations
-        [data-column-count="1"].l-columns--h-center & {
-            @include make-md-column-push(2);
-        }
-
         [data-column-count="2"] & {
             @include make-md-column(6, $columns-gutter);
         }
@@ -33,6 +28,11 @@ $columns-gutter: 30px;
         [data-column-count="4"] & {
             @include make-sm-column(6, $columns-gutter);
             @include make-md-column(3, $columns-gutter);
+        }
+
+        // different column width variations
+        [data-column-count="1"].l-columns--h-center & {
+            @include make-md-column-push(2);
         }
 
         // clear floats

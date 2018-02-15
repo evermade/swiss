@@ -4,13 +4,6 @@
 
     position: relative;
 
-
-    &:hover {
-        .c-blog-author__avatar {
-            transform: scale3d(1.1, 1.1, 1.1);
-        }
-    }
-
     &__avatar {
         @include transition;
         @include animation( zoomIn, 0.6s, backwards, $ease-out-expo, 1s);
@@ -46,5 +39,11 @@
         content: "";
         display: block;
         clear: both;
+    }
+
+    &:hover {
+        .c-blog-author__avatar {
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
     }
 }

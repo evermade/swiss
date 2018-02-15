@@ -1,38 +1,36 @@
-# Swiss Wordpress Theme
+# Swiss
 
-The bestest Wordpress theme Evermade.
+The bestest WordPress theme Evermade.
 
 ## Requirements
 
-* Advanced Custom Fields Pro plugin
-* Cache busting at your nginx or apache level, see [https://github.com/h5bp/server-configs-nginx/blob/master/h5bp/location/cache-busting.conf](https://github.com/h5bp/server-configs-nginx/blob/master/h5bp/location/cache-busting.conf)
+* [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/) plugin
+* Cache busting at your Nginx or apache level, see [https://github.com/h5bp/server-configs-nginx/blob/master/h5bp/location/cache-busting.conf](https://github.com/h5bp/server-configs-nginx/blob/master/h5bp/location/cache-busting.conf)
 
+## Usage
+
+To be primarily used in a [Dockerpress build](https://bitbucket.org/evermade/dockerpress).
 
 ## General
 
 * Briefly discuss any features of this project.
 
-### Front end magic
+### Everblox
+
+Please see [here](https://evermade.atlassian.net/wiki/spaces/EV/pages/432701441/Development) for more.
+
+### Front end
 
 * Using Bootstrap, mostly commented out, using the grid only.
 * Font Awesome is in use and available out of the box
+* All front end dependencies must go through npm, 3 digit versioning
 
 ### Actions/Hooks/Filters
 
 * A couple of hooks to remove the redundant WP version, extra info meta tags in the header.
-* An ACF admin JS hook to collapase all ACF blocks by default in the WP Admin.
+* An ACF admin JS hook to collapse all ACF blocks by default in the WP Admin.
 * We have added a `Swiss` text domain for languages. An example `<?php _e('Enjoy', 'swiss'); ?>`
 * We have registered a custom shortcode for buttons in the TinyMCE WP Admin editor
-
-## Blocks
-
-* [Section](lib/blocks/page/section/README.md)
-* [Hero](lib/blocks/page/hero/README.md)
-* [Columns](lib/blocks/page/columns/README.md)
-* [Image](lib/blocks/page/image/README.md)
-* [Image Text](lib/blocks/page/image_text/README.md)
-* [Listing](lib/blocks/page/listing/README.md)
-* [Listing Posts](lib/blocks/page/listing_posts/README.md)
 
 ## Tests
 
@@ -40,7 +38,6 @@ Coming soon, if you beat me to it, please comment here :)
 
 ## Notes
 
-* All front end dependencies must go through npm, 3 digit versioning
 * Any code please namespace.
 
 ## Issues

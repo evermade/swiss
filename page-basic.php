@@ -1,6 +1,7 @@
 <?php
-
-// this is the fallback template file if no other templates in the hierarchy are found
+/*
+Template Name: Basic
+*/
 
 get_header();
 

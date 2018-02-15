@@ -2,7 +2,7 @@
     &:#{$beforeAfter} {
         display: inline-block;
         content: $icon;
-        font-family: "FontAwesome";
+        font-family: "FontAwesome", serif;
         margin: $padding;
 
         @if $color != "" {

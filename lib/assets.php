@@ -1,5 +1,5 @@
 <?php
-namespace Swiss\Assets;
+namespace Evermade\Swiss\Assets;
 
 function publicScriptsAndStyles()
 {
@@ -23,11 +23,11 @@ function publicScriptsAndStyles()
 
 }
 
-add_action( 'wp_enqueue_scripts', 'Swiss\Assets\publicScriptsAndStyles' );
+add_action( 'wp_enqueue_scripts', 'Evermade\Swiss\Assets\publicScriptsAndStyles' );
 
 function admin_scripts_and_styles()
 {
     wp_enqueue_script( 'em_acf', get_template_directory_uri().'/assets/admin/js/acf.'.filemtime(get_stylesheet_directory() . '/assets/admin/js/acf.js').'.js', array(), null, true );
 }
 
-add_action( 'admin_enqueue_scripts', 'Swiss\Assets\admin_scripts_and_styles' );
+add_action( 'admin_enqueue_scripts', 'Evermade\Swiss\Assets\admin_scripts_and_styles' );

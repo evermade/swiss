@@ -11,6 +11,7 @@ modal.js                   // Template
 EXAMPLES
 ---------------------
 
+
 PLAY YOUTUBE VIDEO
 --
 <a href="https://www.youtube.com/watch?v=vr0qNXmkUJ8&t=16s" data-swiss-modal="youtube">Play Video</a>
@@ -35,6 +36,12 @@ INLINE
 </div>
 
 
+GALLERY NEXT/PREV (NAMESPACE FUNCTIONALITY)
+--
+<a href="https://www.youtube.com/watch?v=vr0qNXmkUJ8&t=16s" data-swiss-modal-namespace="youtube-gallery" data-swiss-modal="youtube">Play Video 1</a>
+<a href="https://www.youtube.com/watch?v=vr0qNXmkUJ8&t=10s" data-swiss-modal-namespace="youtube-gallery" data-swiss-modal="youtube">Play Video 2</a>
+
+
 ---------------------
 GET CONTENT FUNCTIONS - data-swiss-modal=""
 ---------------------
@@ -52,7 +59,20 @@ const modal = {
     // Init popup functionality
     init: function () {
 
-        $('html').on("click", '[data-modal-action="close"]' ,function(){
+        $('html').on("click", '[data-swiss-modal-action="prev"],[data-swiss-modal-action="next"]' ,function(){
+            modal.close($(this));
+            let nextPrevModal;
+
+            if($(this).data("swiss-modal-action") == "prev"){
+                nextPrevModal = modal.clickOpen(modal.getNextPrev(-1));
+                $(nextPrevModal).addClass("c-modal--anim-prev");
+            } else {
+                nextPrevModal = modal.clickOpen(modal.getNextPrev(1));
+                $(nextPrevModal).addClass("c-modal--anim-next");
+            }
+        });
+
+        $('html').on("click", '[data-swiss-modal-action="close"]' ,function(){
             modal.close($(this));
         });
 
@@ -82,8 +102,18 @@ const modal = {
             overflow: "hidden" 
         });
 
+        // remove namespace active
+        $('.h-modal-namespace-active').removeClass("h-modal-namespace-active");
+
+        // make active for namespace
+        $(clickedButton).addClass("h-modal-namespace-active");
+
         // generate modal from template
-        $('modals').append(modal.template(content, $(clickedButton).data("swiss-modal")));
+        const template = modal.template(content, $(clickedButton).data("swiss-modal"), $(clickedButton).data("swiss-modal-namespace"));
+
+        const finalModal = $(template).appendTo('modals');
+
+        return finalModal;
 
     },
 
@@ -156,9 +186,28 @@ const modal = {
 
 
     // The popup template
-    template: function(content = "<h1>Content has not been set</h1>", style = "default", workspace = "none") {
+    template: function(content = "<h1>Content has not been set</h1>", style = "default", namespace = "none") {
 
-        const html = `<div class="c-modal" data-modal-style="${style}" data-modal-namespace="${workspace}">
+        let prevUi = "";
+        let nextUi = "";
+
+        // if namespace is set then show next prev elements
+        if(namespace != "none"){
+
+            // if prev element is available. Show Prev UI
+            if(modal.getNextPrev(-1)){
+                prevUi = `<div class="c-modal__nextprev c-modal__nextprev--prev" data-swiss-modal-action="prev" data-swiss-modal-namespace="${namespace}"></div>`;
+            }
+
+            // if next element is available. Show Next UI
+            if(modal.getNextPrev(1)){
+                nextUi = `<div class="c-modal__nextprev c-modal__nextprev--next" data-swiss-modal-action="next" data-swiss-modal-namespace="${namespace}"></div>`;
+            }
+
+        }
+
+        // create template and include next/prev depending on namespace
+        const html = `<div class="c-modal" data-swiss-modal-style="${style}">
 
             <div class="c-modal__shadow"></div>
 
@@ -167,7 +216,9 @@ const modal = {
                 <div class="c-modal__container">
 
                     <div class="c-modal__interface">
-                        <div class="c-modal__close" data-modal-action="close"></div>
+                        ${prevUi}
+                        ${nextUi}
+                        <div class="c-modal__close" data-swiss-modal-action="close"></div>
                     </div>
                     
                     <div class="c-modal__content h-wysiwyg-html">
@@ -207,6 +258,29 @@ const modal = {
             $(modal).closest(".c-modal").remove();
         }
 
+    },
+
+    // get the next/prev element. If no element is found then return false.
+    getNextPrev: function (nextprev = 1) {
+
+        const nsCurrent = $('.h-modal-namespace-active');
+
+        const nsElements = $('[data-swiss-modal-namespace="'+$(nsCurrent).data("swiss-modal-namespace")+'"]:not(.c-modal__nextprev)');
+
+        const nsIndex = $(nsElements).index(nsCurrent);
+
+        if(nsIndex+nextprev < 0){
+            return false;
+        }
+
+        if(nsIndex+nextprev > nsElements.length-1){
+            return false;
+        }
+
+        const nsNew = $(nsElements).eq(nsIndex+nextprev);
+
+        return nsNew;
+        //console.log(nsNew,nsElements.length,nsIndex+nextprev);
     }
 
 };

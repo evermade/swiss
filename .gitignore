@@ -6,7 +6,7 @@
 *.o
 *.so
 
-#Packages 
+#Packages
 *.7z
 *.dmg
 *.gz

@@ -1,6 +1,6 @@
 <?php
 
-namespace Swiss\Security;
+namespace Evermade\Swiss\Security;
 
 function removeScriptVersion($src)
 {
@@ -22,8 +22,8 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
 
 // remove version numbers from asset links
-add_filter( 'script_loader_src', '\Swiss\Security\removeScriptVersion', 15, 1 );
-add_filter( 'style_loader_src', '\Swiss\Security\removeScriptVersion', 15, 1 );
+add_filter( 'script_loader_src', '\Evermade\Swiss\Security\removeScriptVersion', 15, 1 );
+add_filter( 'style_loader_src', '\Evermade\Swiss\Security\removeScriptVersion', 15, 1 );
 
 // lets disable the user endpoint
 add_filter( 'rest_endpoints', function( $endpoints ){

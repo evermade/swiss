@@ -5,15 +5,18 @@
     justify-content: flex-start;
     align-items: center;
     position: relative; // Makes sure the ratio stays the same across different viewports.
-
+    
+    /** 
+     * [1] Fix issues with Firefox failing to apply padding to the element.
+     */
     &:after {
         content: "";
         width: 1px;
         padding-top: 33.3333%;
+        display: table; /*[1]*/
     }
 
     &__background {
-        @include animation( fadeIn, 5s, backwards, $ease-out-expo, 0s);
         @include full-cover;
 
         background-size: cover;
@@ -28,7 +31,6 @@
     &__content {
         @include spacing(margin, top, section);
         @include spacing(margin, bottom, section);
-        @include animation( zoomIn, 2s, backwards, $ease-out-expo, 0s);
 
         @include bp(md) {
 
