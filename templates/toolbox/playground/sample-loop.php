@@ -9,13 +9,13 @@ $args = array(
 $custom_query = new WP_Query($args);
 
 // lets check if our query returned results
-if($custom_query->have_posts()):
+if ($custom_query->have_posts()):
 
     // bring the post var into this scope
     global $post;
 
     // lets loop and setup the post data per post object from our query to utilise the WP template tags
-    foreach($custom_query->posts as $post): setup_postdata($post);
+    foreach ($custom_query->posts as $post): setup_postdata($post);
 
         // an example of getting the acf fields from this post
         $my_post = new \Swiss\Post($post);

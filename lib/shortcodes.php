@@ -3,7 +3,6 @@ namespace Evermade\Swiss\Shortcodes;
 
 function button($atts)
 {
-
     extract(shortcode_atts(array(
         'class' => '',
         'text' => 'Submit',

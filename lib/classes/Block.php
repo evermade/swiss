@@ -6,7 +6,6 @@ namespace Evermade\Swiss;
  */
 class Block
 {
-
     protected $fields = array(); // for ACF fields only
     protected $data = array(); // for custom data, public accesible
     protected $css = array(); // for css styles
@@ -27,9 +26,9 @@ class Block
      */
     public function getFields($fields = array(), $parent = true)
     {
-
-        if (!is_array($fields))
+        if (!is_array($fields)) {
             return false;
+        }
 
         foreach ($fields as $field) {
             if ($parent) {
@@ -48,8 +47,9 @@ class Block
      */
     public function set($key = null, $value = null, $array = 'data')
     {
-        if (!isset($this->{$array}))
+        if (!isset($this->{$array})) {
             return false;
+        }
 
         return $this->{$array}[$key] = $value;
     }
@@ -62,8 +62,9 @@ class Block
      */
     public function get($key=null, $array = 'fields', $default=null)
     {
-        if (!isset($this->{$array}[$key]))
+        if (!isset($this->{$array}[$key])) {
             return $default;
+        }
 
         return $this->{$array}[$key];
     }
@@ -76,12 +77,13 @@ class Block
      * @param string $class
      * @return void
      */
-    public function getImage($size='medium-large', $key=null, $class=''){
+    public function getImage($size='medium-large', $key=null, $class='')
+    {
         return \Evermade\Swiss\Acf\getImage($size, $this->get($key), $class);
     }
 
-    public function getImageUrl($size='original', $key=null){
+    public function getImageUrl($size='original', $key=null)
+    {
         return \Evermade\Swiss\Acf\getImageUrl($size, $this->get($key));
     }
-
 }

@@ -7,15 +7,18 @@
  * @param  string $name [description]
  * @return [type]       [description]
  */
-function postBlocks($name='page', $version='v1') {
+function postBlocks($name='page', $version='v1')
+{
 
     //lets check is ACF available
-    if (!\Evermade\Swiss\Acf\isAcfActive() || empty($name)) return false;
+    if (!\Evermade\Swiss\Acf\isAcfActive() || empty($name)) {
+        return false;
+    }
 
     //loop the blocks fields
-    while(has_sub_field('swiss_'.$name.'_blocks_'.$version)) {
+    while (has_sub_field('swiss_'.$name.'_blocks_'.$version)) {
         $template = get_template_directory().'/lib/blocks/'.$name.'/'.str_replace(' ', '-', strtolower(get_row_layout())).'/render.php';
-        if(!file_exists($template)) {
+        if (!file_exists($template)) {
             \Evermade\Swiss\debug($template ." - Template not found");
             continue;
         }
@@ -33,22 +36,24 @@ function postBlocks($name='page', $version='v1') {
  * @param [type] $key
  * @return void
  */
-function getImageUrl($size='original', $data=null) {
+function getImageUrl($size='original', $data=null)
+{
 
     // bail out if we dont have what we need
-    if(empty($data) || empty($size)) return null;
+    if (empty($data) || empty($size)) {
+        return null;
+    }
 
     // allows us to pass an array or a key to fetch from current post
     $image = (is_string($data))? \get_field($data) : $data;
 
     // do we have our image
-    if(!empty($image) && is_array($image)){
+    if (!empty($image) && is_array($image)) {
 
         // special case for originals as they are outside the sizes array
-        if($size == 'original' && isset($image['url'])){
+        if ($size == 'original' && isset($image['url'])) {
             return $image['url'];
-        }
-        elseif(isset($image['sizes'][$size])) {
+        } elseif (isset($image['sizes'][$size])) {
             return $image['sizes'][$size];
         }
     }
@@ -64,33 +69,34 @@ function getImageUrl($size='original', $data=null) {
  * @param string $class
  * @return void
  */
-function getImage($size='medium-large', $key=null, $class=''){
-
+function getImage($size='medium-large', $key=null, $class='')
+{
     $imageUrl = \Evermade\Swiss\Acf\getImageUrl($size, $key);
 
-    if($imageUrl){
+    if ($imageUrl) {
         return sprintf('<img src="%s" alt="image" class="%s">', $imageUrl, $class);
     }
 
     return null;
 }
 
-function getOption($group_fields) {
-
-    if(empty($group_fields) || !is_array($group_fields) || !\Evermade\Swiss\Acf\isAcfActive()) {
+function getOption($group_fields)
+{
+    if (empty($group_fields) || !is_array($group_fields) || !\Evermade\Swiss\Acf\isAcfActive()) {
         return false;
     }
 
     $group_data = array();
 
-    foreach($group_fields as $field) {
+    foreach ($group_fields as $field) {
         $group_data[$field] = \get_field($field, 'option');
     }
 
     return $group_data;
 }
 
-function isAcfActive() {
+function isAcfActive()
+{
     return (function_exists('has_sub_field'))? true : false;
 }
 
@@ -99,29 +105,32 @@ function isAcfActive() {
  *
  * @return void
  */
-function registerLocalBlockFieldGroups(){
+function registerLocalBlockFieldGroups()
+{
 
     // if we have ACF enabled
-    if( function_exists('acf_add_local_field_group') ){
+    if (function_exists('acf_add_local_field_group')) {
 
         // lets loop and include the block init files to do their thing
-        foreach(glob(get_template_directory().'/lib/blocks/page/*/init.php') as $blockInit){
-            include_once ($blockInit);
+        foreach (glob(get_template_directory().'/lib/blocks/page/*/init.php') as $blockInit) {
+            include_once($blockInit);
         }
 
-        $layouts = \apply_filters( 'swiss_block_layouts', []);
+        $layouts = \apply_filters('swiss_block_layouts', []);
 
-        if(empty($layouts)) return false;
+        if (empty($layouts)) {
+            return false;
+        }
 
         /**
          * Register our fields y'all
          * https://www.advancedcustomfields.com/resources/register-fields-via-php/
          */
-        acf_add_local_field_group(array (
+        acf_add_local_field_group(array(
             'key' => 'group_swiss_page_blocks_v1',
             'title' => 'Blocks',
-            'fields' => array (
-                array (
+            'fields' => array(
+                array(
                     'key' => 'field_swiss_page_blocks_v1',
                     'label' => 'Blocks',
                     'name' => 'swiss_page_blocks_v1',
@@ -129,7 +138,7 @@ function registerLocalBlockFieldGroups(){
                     'instructions' => '',
                     'required' => 0,
                     'conditional_logic' => 0,
-                    'wrapper' => array (
+                    'wrapper' => array(
                         'width' => '',
                         'class' => '',
                         'id' => '',
@@ -166,24 +175,26 @@ function registerLocalBlockFieldGroups(){
     return false;
 }
 
-function defaultBlocks($value, $post_id, $field) {
-
+function defaultBlocks($value, $post_id, $field)
+{
     global $post;
 
     // if value is NULL then we have a new page and we want to add the default blocks
-    if(!empty($value)) return $value;
+    if (!empty($value)) {
+        return $value;
+    }
 
     // get our defaults
     $defaults = get_field('post_block_defaults', 'option');
 
     // if we have some
-    if(!empty($defaults)) {
+    if (!empty($defaults)) {
 
         // loop our defaults
         foreach ($defaults as $a => $b) {
 
             // if our current post type editing page is this one lets go
-            if($b['post_type'] == $post->post_type){
+            if ($b['post_type'] == $post->post_type) {
 
                 // make value var array so we can push in
                 $value = array();
@@ -193,7 +204,6 @@ function defaultBlocks($value, $post_id, $field) {
 
                     // finally push in
                     array_push($value, array('acf_fc_layout' => $d['block']));
-
                 }
             }
         }

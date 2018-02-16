@@ -2,7 +2,7 @@
 
 $sizes = \Swiss\get_image_sizes();
 
-foreach($sizes as $key => $value): ?>
+foreach ($sizes as $key => $value): ?>
 
 <section class="section">
     <h2><?php echo $key;?> - <?php echo $value['width'];?> x <?php echo $value['height'];?> (<?php echo ($value['crop'] == 1)? 'cropped' : 'not cropped';?>)</h2>

@@ -3,7 +3,6 @@ namespace Evermade\Swiss\RestApi;
 
 function myAwesomePosts()
 {
-
     $json = array();
 
     $args = array(
@@ -16,7 +15,6 @@ function myAwesomePosts()
     global $post;
 
     if (!empty($query->posts)) {
-
         foreach ($query->posts as $post) {
 
             //setup_postdata($post);

@@ -12,13 +12,13 @@
                 'echo'              => false
             );
 
-            if(!empty(get_post_type())) {
+            if (!empty(get_post_type())) {
                 $args['post_type'] = get_post_type();
             }
 
             $archives = wp_get_archives($args);
 
-            $archives = preg_replace( '~(&nbsp;)(\(\d++\))~', '$1<span class="count">$2</span>', $archives );
+            $archives = preg_replace('~(&nbsp;)(\(\d++\))~', '$1<span class="count">$2</span>', $archives);
 
             $archives = str_replace("(", "", $archives);
             $archives = str_replace(")", "", $archives);

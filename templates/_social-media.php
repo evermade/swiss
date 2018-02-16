@@ -1,8 +1,10 @@
-<?php if(empty($data)) return false; ?>
+<?php if (empty($data)) {
+    return false;
+} ?>
 
 <ul class="c-social-media-ul">
 
-    <?php foreach($data as $key => $value): ?>
+    <?php foreach ($data as $key => $value): ?>
 
         <li><a href="<?php echo $value['url']; ?>"><i class="fa fa-<?php echo $value['service']; ?>" aria-hidden="true"></i></a></li>
 
