@@ -47,3 +47,11 @@ If you have an issue or have found a bug, please [create an issue](https://bitbu
 ## Contributors
 
 * Paul Stewart
+* Mikael Toivio
+* Pekka Wallenius
+* Timo Sundvik
+* Juha Lehtonen
+* Jaakko Alajoki
+* Joonas Pyhtilä
+* Jaakko  Alajoki
+* Tuomas Hirvonen
