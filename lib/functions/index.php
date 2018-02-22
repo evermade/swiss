@@ -87,7 +87,7 @@ function defaultImg($size='thumbnail', $text='img')
     return sprintf('https://fakeimg.pl/%sx%s/666/fff/?text=%s', 850, 850, $text);
 }
 
-function featureImageUrl($size='medium-large', $post=null)
+function featuredImageUrl($size='medium-large', $post=null)
 {
 
     //if we have no post then lets bring in the global post

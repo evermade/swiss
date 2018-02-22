@@ -2,7 +2,7 @@
 
     <div class="c-blog-post-big__image">
 
-        <div class="c-background-image" style="background-image:url(<?php echo $my_post->getFeatureImage('hero-large'); ?>);"></div>
+        <div class="c-background-image" style="background-image:url(<?php echo $my_post->getFeaturedImage('hero-large'); ?>);"></div>
         <div class="c-overlay"></div>
 
     </div>
