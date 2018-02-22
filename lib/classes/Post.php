@@ -55,7 +55,7 @@ class Post
         }
 
         if (in_array('image', $setup)) {
-            $this->featureImage = $this->getFeatureImage();
+            $this->featuredImage = $this->getFeaturedImage();
         }
 
         if (in_array('acf', $setup)) {
@@ -110,22 +110,22 @@ class Post
         return $this->tags;
     }
 
-    public function getFeatureImage($size='medium-large', $default=true)
+    public function getFeaturedImage($size='medium-large', $default=true)
     {
 
         // if we have a feature image already lets use that
-        if (!empty($this->featureImage)) {
-            return $this->featureImage;
+        if (!empty($this->featuredImage)) {
+            return $this->featuredImage;
         }
 
-        $this->featureImage = \wp_get_attachment_image_src(\get_post_thumbnail_id($this->post->ID), $size)[0];
+        $this->featuredImage = \wp_get_attachment_image_src(\get_post_thumbnail_id($this->post->ID), $size)[0];
 
         // if no default image is found, and we want a default, get one
-        if (empty($this->featureImage) && $default) {
-            $this->featureImage = \Evermade\Swiss\defaultImg($size, 'img');
+        if (empty($this->featuredImage) && $default) {
+            $this->featuredImage = \Evermade\Swiss\defaultImg($size, 'img');
         }
 
-        return $this->featureImage;
+        return $this->featuredImage;
     }
 
     public function getAcf()
