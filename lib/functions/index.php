@@ -255,3 +255,8 @@ function share_link($type='facebook', $url=null, $title='')
 
     return null;
 }
+
+function cur_page_url() {
+    global $wp;
+    return home_url( $wp->request );
+}
