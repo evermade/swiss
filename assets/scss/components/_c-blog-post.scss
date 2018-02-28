@@ -10,7 +10,7 @@
     }
 
     &__image {
-        @include border-radius;
+        border-radius: $border-radius;
         overflow: hidden;
         width: 14rem;
         height: 10rem;

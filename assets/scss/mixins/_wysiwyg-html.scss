@@ -79,7 +79,7 @@
     }
 
     pre {
-        @include border-radius;
+        border-radius: $border-radius;
         padding: 1rem 2rem;
         border: 1px solid rgba(125, 125, 125, 0.3);
         display: block;
