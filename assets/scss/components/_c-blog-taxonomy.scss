@@ -3,7 +3,7 @@
     @include spacing(margin, top, section);
     @include spacing(padding, all, box);
     @include shadow();
-    @include border-radius;
+    border-radius: $border-radius;
 
     @include bp(sm) {
         display: flex;

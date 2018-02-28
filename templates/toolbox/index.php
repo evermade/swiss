@@ -81,10 +81,6 @@
                 <div class="b-toolbox__box b-toolbox__box--shadow--large"></div>
             </div>
 
-            <div class="b-toolbox__component-row" data-name="$border-radius" data-description="@include border-radius;">
-                <div class="b-toolbox__box b-toolbox__box--border-radius"></div>
-            </div>
-
             <h5>Spacing</h5>
             <hr>
 

@@ -78,7 +78,7 @@
         }
 
         &--border-radius{
-            @include border-radius;
+            border-radius: $border-radius;
             background:rgb(125,125,125);
         }
 
