@@ -1,5 +1,5 @@
 .c-cta-link {
-    @include transition; // default transition
+    transition: $default-transition;
     color: $brand-color;
 
     &:after {
