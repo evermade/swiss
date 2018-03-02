@@ -1,5 +1,5 @@
 .c-sidebar-widget {
-    @include transition;
+    transition: $default-transition;
 
     @include bp(md) {
         @include spacing(margin, top, itemspace);
@@ -10,7 +10,7 @@
     }
 
     &__title {
-        @include transition;
+        transition: $default-transition;
         font-size: 2rem;
         border-bottom: 1px solid $border-color;
 
@@ -24,7 +24,7 @@
             position: relative;
 
             &:after {
-                @include transition;
+                transition: $default-transition;
                 font-family: FontAwesome, serif;
                 content: "\f104";
                 position: absolute;
@@ -40,7 +40,7 @@
     }
 
     &__content {
-        @include transition;
+        transition: $default-transition;
         @include spacing(padding, top, box);
 
         @include bp(sm, max) {

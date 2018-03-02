@@ -1,5 +1,5 @@
 @mixin cta-link($link-color: $brand-color) {
-    @include transition; // default transition
+    transition: $default-transition;
     color: $link-color;
 
     &:after {

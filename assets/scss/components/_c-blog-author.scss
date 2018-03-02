@@ -5,7 +5,7 @@
     position: relative;
 
     &__avatar {
-        @include transition;
+        transition: $default-transition;
         @include animation( zoomIn, 0.6s, backwards, $ease-out-expo, 1s);
 
         float: left;

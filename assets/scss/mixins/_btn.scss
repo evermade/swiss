@@ -9,7 +9,7 @@ EXAMPLE:
 
 @mixin btn( $btn-text-color: #fff, $btn-bg-color: $brand-color, $btn-extra-color: $brand-color, $btn-padding: 0.5em 1em, $btn-shadow: $shadow) {
 
-    @include transition; // default transition
+    transition: $default-transition;
     background: $btn-bg-color;
     border-radius: $border-radius;
     box-shadow: $btn-shadow;
