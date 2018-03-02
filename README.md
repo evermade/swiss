@@ -1,23 +1,11 @@
-# Swiss
+# Swiss / Everblox
 
-The bestest WordPress theme Evermade.
+Base theme & modular building blocks for WordPress created by Evermade.
 
 ## Requirements
 
 * [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/pro/) plugin
 * Cache busting at your Nginx or apache level, see [https://github.com/h5bp/server-configs-nginx/blob/master/h5bp/location/cache-busting.conf](https://github.com/h5bp/server-configs-nginx/blob/master/h5bp/location/cache-busting.conf)
-
-## Usage
-
-To be primarily used in a [Dockerpress build](https://bitbucket.org/evermade/dockerpress).
-
-## General
-
-* Briefly discuss any features of this project.
-
-### Everblox
-
-Please see [here](https://evermade.atlassian.net/wiki/spaces/EV/pages/432701441/Development) for more.
 
 ### Front end
 
@@ -32,17 +20,9 @@ Please see [here](https://evermade.atlassian.net/wiki/spaces/EV/pages/432701441/
 * We have added a `Swiss` text domain for languages. An example `<?php _e('Enjoy', 'swiss'); ?>`
 * We have registered a custom shortcode for buttons in the TinyMCE WP Admin editor
 
-## Tests
-
-Coming soon, if you beat me to it, please comment here :)
-
 ## Notes
 
-* Any code please namespace.
-
-## Issues
-
-If you have an issue or have found a bug, please [create an issue](https://bitbucket.org/evermade/swiss/issues/new).
+* Use namespaces for PHP.
 
 ## Contributors
 
