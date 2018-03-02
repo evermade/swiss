@@ -74,7 +74,7 @@ $headings-line-height:      1.2;
 // Effects
 $overlay-bg:                darken($brand-color, 35%);          // @include overlay;
 $overlay-alpha:             0.5;                                // @include overlay;
-$border-radius:             5px;                                // @include border-radius;
+$border-radius:             5px;
 $shadow:                    0 1px 4px 0 rgba(0, 0, 0, 0.3);     // @include shadow();
 $shadow-large:              0 3px 40px 0 rgba(0, 0, 0, 0.2);    // @include shadow(large);
 

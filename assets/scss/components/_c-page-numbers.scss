@@ -14,13 +14,13 @@
         display: block;
     }
 
-    a {
-        @include border-radius;
+    a {       
+        border-radius: $border-radius;
         @include shadow;
     }
 
-    span.current {
-        @include border-radius;
+    span.current {     
+        border-radius: $border-radius;
         @include shadow;
 
         background: $brand-color;

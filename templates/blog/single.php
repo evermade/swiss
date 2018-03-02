@@ -79,7 +79,7 @@
                     <?php
                     } ?>
 
-                    <?php //echo \Swiss\share_page();?>
+                    <?php //echo Evermade\Swiss\share_page();?>
 
                 </div>
 

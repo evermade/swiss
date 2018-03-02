@@ -10,7 +10,7 @@
 
     a {
         @include font-size(sm);
-        @include border-radius;
+        border-radius: $border-radius;
         background: $body-bg;
         color: $text-color;
         display: block;
