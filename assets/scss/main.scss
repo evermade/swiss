@@ -1,37 +1,39 @@
 /**
- * CONTENTS
+ * This is the main Swiss Sass index file.
  *
- * (Pro tip: prefix your search with '#' to jump directly to titles)
- *
- * Bootstrap........Include Bootstrap pieces separately
- * Custom...........Our code
+ * Prefix your search with '#' to jump directly to titles.
  */
 
 /**
- * As Bootstrap is required by our core, for grids etc we need this first
+ * #Frameworks
+ *
+ * Import any frameworks or plugins that are required by core Swiss first.
  */
 
 @import "vendor/bootstrap";
 
 /**
- * #CUSTOM
- *
- * All of our custom code.
+ * #Variables
  */
 
-//include the base variables and mixins
 @import "base/variables";
 
 /**
- * Mixins
- *
+ * #Mixins
  */
+
 @import "mixins/index";
 
 /**
- * #CUSTOM VENDOR
+ * #Functions
+ */
+
+@import "base/functions";
+
+/**
+ * #Vendor
  *
- * All of our custom vendor code.
+ * Place any plugin customization files here.
  */
 
 @import "vendor/em-toolbox";
@@ -39,16 +41,9 @@
 @import "vendor/remodal";
 
 /**
- * Functions
- *
+ * #Base styles
  */
-@import "base/functions";
 
-/**
- * Base
- *
- * include the base helpers, typography etc
- */
 @import "base/base";
 @import "base/helpers";
 @import "base/print";
@@ -56,18 +51,9 @@
 @import "base/typography";
 
 /**
- * Layouts
- * A bunch of layouts
+ * #Blocks
  */
-@import "layouts/l-blog";
-@import "layouts/l-cards";
-@import "layouts/l-columns";
-@import "layouts/l-divided-spotlight";
 
-/**
- * Blocks
- * Block contain of layouts and components, and those should styled individually with modifiers
- */
 @import "blocks/b-base";
 @import "blocks/b-blog";
 @import "blocks/b-footer";
@@ -80,9 +66,18 @@
 @import "blocks/b-section";
 
 /**
- * Components
- * Include the components core which can/would be amended to that project
+ * #Layouts
  */
+
+@import "layouts/l-blog";
+@import "layouts/l-cards";
+@import "layouts/l-columns";
+@import "layouts/l-divided-spotlight";
+
+/**
+ * #Components
+ */
+
 @import "components/c-asset";
 @import "components/c-background-image";
 @import "components/c-blog-author";
@@ -116,9 +111,11 @@
 @import "components/c-youtube-api-player";
 
 /**
- * Animations
- * New animations should go under /animations/
+ * #Animations
+ *
+ * All new animations should go under the animations folder.
  */
+
 @import "animations/animated";
 
 @import "animations/fadeIn";

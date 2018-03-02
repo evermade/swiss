@@ -10,11 +10,11 @@
             display: block;
             @include font-size(lg);
             padding: 1rem 0;
-            font-weight: $text-weight;
+            font-weight: $font-weight-default;
         }
 
         ul {
-            background: $brand-color;
+            background: $color-brand;
             padding: 0 0 0 2rem;
 
             li {

@@ -141,7 +141,7 @@ $modalOuterMarginDouble: 60px;
             width: $container-width;
             margin: $modalOuterMargin auto;
 
-            background: $body-bg;
+            background: $color-body;
         }
 
         [data-swiss-modal-style="youtube"] & {
@@ -175,7 +175,7 @@ $modalOuterMarginDouble: 60px;
             height: 100vh;
             max-width: 100%;
             width: auto;
-            background: $body-bg;
+            background: $color-body;
 
             display: flex;
             align-items: center;

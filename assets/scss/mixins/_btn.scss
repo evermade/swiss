@@ -3,15 +3,15 @@
 EXAMPLE:
 ----
 @include btn;                           // default button
-@include btn(#000,$brand-color,#000);   // customized colors
+@include btn(#000,$color-brand,#000);   // customized colors
 
  */
 
-@mixin btn( $btn-text-color: #fff, $btn-bg-color: $brand-color, $btn-extra-color: $brand-color, $btn-padding: 0.5em 1em, $btn-shadow: $shadow) {
+@mixin btn( $btn-text-color: #fff, $btn-bg-color: $color-brand, $btn-extra-color: $color-brand, $btn-padding: 0.5em 1em, $btn-shadow: $box-shadow-default) {
 
-    transition: $default-transition;
+    transition: $transition-default;
     background: $btn-bg-color;
-    border-radius: $border-radius;
+    border-radius: $border-radius-default;
     box-shadow: $btn-shadow;
     display: inline-block;
     padding: $btn-padding;

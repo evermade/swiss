@@ -49,7 +49,7 @@
         @include spacing(padding, top, box);
         @include font-size(sm);
 
-        border-top: 1px solid $border-color;
+        border-top: 1px solid $border-color-default;
 
         p {
             text-align: center;

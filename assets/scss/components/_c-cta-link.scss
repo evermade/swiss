@@ -1,9 +1,9 @@
 .c-cta-link {
-    transition: $default-transition;
-    color: $brand-color;
+    transition: $transition-default;
+    color: $color-brand;
 
     &:after {
-        font-family: 'Font Awesome\ 5 Free';   
+        font-family: 'Font Awesome\ 5 Free';
         content: "\f105";
         font-weight:900;
         color: inherit;

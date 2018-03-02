@@ -16,9 +16,9 @@ EXAMPLE:
 
 @mixin shadow($size: small) {
     @if $size==small {
-        box-shadow: $shadow;
+        box-shadow: $box-shadow-default;
     }
     @if $size==large {
-        box-shadow: $shadow-large;
+        box-shadow: $box-shadow-large;
     }
 }

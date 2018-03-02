@@ -43,7 +43,7 @@ $text-margin-multiplier: 1;
     }
 
     strong {
-        font-weight: $text-weight-strong;
+        font-weight: $font-weight-strong;
     }
 
     hr {
@@ -82,7 +82,7 @@ $text-margin-multiplier: 1;
     }
 
     pre {
-        border-radius: $border-radius;
+        border-radius: $border-radius-default;
         padding: 1rem 2rem;
         border: 1px solid rgba(125, 125, 125, 0.3);
         display: block;

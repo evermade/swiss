@@ -4,7 +4,7 @@
     @return map-get($brand-colors, $company);
 }
 
-@function rem($pixels, $context: $font-size-rem-base) {
+@function rem($pixels, $context: 10px) {
     @if (unitless($pixels)) {
         $pixels: $pixels * 1px;
     }

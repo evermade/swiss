@@ -1,7 +1,7 @@
 .b-toolbox {
     // generic section/block styles (paddings, ect..)
 
-    background:$body-bg;
+    background: $color-body;
 
     &__scheme-wrapper{
         @include animation;
@@ -37,7 +37,7 @@
         margin:4rem 0;
 
         &[data-name]:before {
-            transition: $default-transition;
+            transition: $transition-default;
             @include font-size(sm);
             content: attr(data-name);
             display:block;
@@ -53,7 +53,7 @@
         }
 
         &[data-description]:after {
-            transition: $default-transition;
+            transition: $transition-default;
             @include font-size(sm);
             content: attr(data-description);
             display:block;
@@ -78,7 +78,7 @@
         }
 
         &--border-radius{
-            border-radius: $border-radius;
+            border-radius: $border-radius-default;
             background:rgb(125,125,125);
         }
 
@@ -129,7 +129,7 @@
         }
 
         a{
-            color:$link-color;
+            color:$color-link;
         }
     }
 }
