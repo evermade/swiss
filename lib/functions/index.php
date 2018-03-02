@@ -178,7 +178,7 @@ function excerpt($str, $limit = 255)
     return ($strlen>=$limit) ? substr($str, 0, $limit)."&hellip;" : $str;
 }
 
-function share_page()
+function sharePage()
 {
     $html = null;
     $template = get_template_directory().'/templates/_share-page.php';
@@ -208,7 +208,7 @@ function share_page()
         );
 
         foreach ($services as $key => $value) {
-            $services[$key]['url'] = \Evermade\Swiss\share_link($key);
+            $services[$key]['url'] = \Evermade\Swiss\shareLink($key);
         }
 
         ob_start();
@@ -220,7 +220,14 @@ function share_page()
     return $html;
 }
 
-function share_link($type='facebook', $url=null, $title='')
+/**
+ * Create a share-link to different social media platforms.
+ * @param  string $type  [description]
+ * @param  string $url   [description]
+ * @param  string $title [description]
+ * @return string        [description]
+ */
+function shareLink($type='facebook', $url=null, $title='')
 {
     $data = array();
     $urls = array(
@@ -232,7 +239,7 @@ function share_link($type='facebook', $url=null, $title='')
         );
 
     if (array_key_exists($type, $urls)) {
-        $data['url'] = (empty($url))? \Evermade\Swiss\cur_page_url() : $url;
+        $data['url'] = (empty($url))? \Evermade\Swiss\currentPageUrl() : $url;
 
         if ($type=='twitter') {
             $data['title'] = (empty($title))? get_the_title() : $title;
@@ -256,7 +263,18 @@ function share_link($type='facebook', $url=null, $title='')
     return null;
 }
 
-function cur_page_url() {
-    global $wp;
-    return home_url( $wp->request );
+/**
+ * Returns the fully qualified URL for a request.
+ * @return string The request URL, including the protocol and query parameters.
+ */
+function currentPageUrl()
+{
+    $pageURL = 'http';
+    if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") {
+        $pageURL .= "s";
+    }
+    $pageURL .= "://";
+    $pageURL .= $_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
+
+    return $pageURL;
 }
