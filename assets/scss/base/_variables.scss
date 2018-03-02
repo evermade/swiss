@@ -1,35 +1,37 @@
-/*
-    ----------------------------------------
+/**
+ * Define the global variables used across the project here.
+ *
+ * 1) Always create variables with a meaningful context.
+ * 2) Avoid defining component specific variables on the global level.
+ * 3) See other files in the base folder for more global styles.
+ */
 
-    VARIABLES
-    --
-    Go through this and try to get them as close to the design as possible.
+// Project colors (do not directly reference outside this file).
+$color-black-almost:        #222;
+$color-green-bright:        #0ac572;
+$color-grey:                #666;
+$color-grey-light:          #eee;
+$color-grey-dark:           #444;
+$color-white-almost:        #f6f6f6;
 
-    Once these are done check these:
-        - base/typography.scss
-        - base/scheme.scss
+// Bind colors to meaningful variables.
+$color-brand:               $color-green-bright;
+$color-text:                $color-grey;
+$color-heading:             #000;
+$color-body:                #fff;
+$color-link:                $color-green-bright;
+$color-link-hover:          darken($color-green-bright, 15%);
+$color-overlay:             darken($color-brand, 35%);
 
-    ----------------------------------------
-*/
+/**
+ * Font sizes for responsive scalability (used by @mixin font-size).
+ *
+ * Define new sizes as needed.
+ */
 
-
-// Colors
-$green:         #0ac572;
-
-// Link colors to meaningful variables
-$brand-color:       $green;
-$text-color:        #666;
-$headline-color:    #000;
-
-$body-bg:           #fff;
-$link-color:        $green;
-
-
-// Font sizes for responsive scalability (used by @mixin font-size). Feel free to add new sizes on project basis if needed :)
-// Sizes are taken from the Swiss-Template-v2-beta.sketch
 $font-sizes: (
     sm:     (xs: 14px, sm: 14px, md: 14px, lg: 14px, xl: 14px),
-    md:     (xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px), // body text size
+    md:     (xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px),
     lg:     (xs: 20px, sm: 20px, md: 20px, lg: 20px, xl: 20px),
     button: (xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px),
     h6:     (xs: 16px, sm: 16px, md: 16px, lg: 16px, xl: 16px),
@@ -40,122 +42,99 @@ $font-sizes: (
     h1:     (xs: 34px, sm: 36px, md: 42px, lg: 48px, xl: 48px)
 );
 
-$font-size-base: md; // base size based on font-size labels in the sass map
+// Set the document base font size.
+$font-size-base:            md;
 
+// Font families
+$font-family-default:       "Roboto", Helvetica, Arial, sans-serif;
+$font-family-heading:       $font-family-default;
 
-// Spacing sizes for responsive scalability (used by @mixin spacing). Feel free to add new sizes on project basis if needed :)
-// [section,box] is being used for out-the-box components so those shouldnt be removed.
+// Font weights
+$font-weight-default:       400;
+$font-weight-strong:        700;
+$font-weight-heading:       $font-weight-strong;
+
+// Line heights
+$line-height-base:          1.628571429;
+$line-height-heading:       1.2;
+
+/**
+ * Spacing sizes for responsive scalability (used by @mixin spacing).
+ *
+ * Define new sizes as needed.
+ */
+
 $spacing-sizes: (
     section:        (xs: 25px, sm: 35px, md: 60px, lg: 80px, xl: 100px),
     itemspace:      (xs: 20px, sm: 25px, md: 30px, lg: 40px, xl: 50px),
     box:            (xs: 10px, sm: 15px, md: 20px, lg: 20px, xl: 20px)
 );
 
+// Border radiuses
+$border-radius-default:     5px;
+$border-radius-small:       2px;
+$border-radius-large:       15px;
 
-// Typography
-$text-family:               "Roboto", sans-serif;
-$text-color:                $text-color;
-$text-weight:               400;
-$text-weight-strong:        700;
+// Box shadows
+$box-shadow-default:        0 1px 4px 0 rgba(0, 0, 0, 0.3);
+$box-shadow-large:          0 3px 40px 0 rgba(0, 0, 0, 0.2);
 
-$line-height:               1.628571429;
-$line-height-computed:      floor(($font-size-base * $line-height-base)) !default;
+// Border colors
+$border-color-default:      #ccc;
+$border-color-light:        #f4f4f4;
 
-$text-spacing:              1;
-
-// Headings
-$headings-font-family:      "Roboto", sans-serif;
-$headings-color:            $headline-color;
-$headings-font-weight:      900;
-
-$headings-line-height:      1.2;
-
-
-// Effects
-$overlay-bg:                darken($brand-color, 35%);          // @include overlay;
-$overlay-alpha:             0.5;                                // @include overlay;
-$border-radius:             5px;
-$shadow:                    0 1px 4px 0 rgba(0, 0, 0, 0.3);     // @include shadow();
-$shadow-large:              0 3px 40px 0 rgba(0, 0, 0, 0.2);    // @include shadow(large);
-
-
-// Borders
-$border-color:              #cccccc;            // Used for HR lines. High impact
-$ui-border-color:           #f4f4f4;            // User for lines to differentiate small UI components. Low Impact
-
-// Animation Easing
+// Animation easing methods
 $ease-out-expo:             cubic-bezier(0.190, 1.000, 0.220, 1.000);
-$default-transition:        all 0.6s $ease-out-expo;
+$ease-out-sine:             cubic-bezier(0.390, 0.575, 0.565, 1.000);
+$ease-in-out-quart:         cubic-bezier(0.770, 0.000, 0.175, 1.000);
 
-// Container Defaults
-$container-max-width:       1270px;
-$container-width:           90%;
-$container-gutter-width:    5%;
+// Transitions
+$transition-default:        all 0.5s $ease-out-expo;
+$transition-fast:           all 0.25s $ease-out-expo;
+$transition-slow:           all 1s $ease-out-sine;
+$transition-slide:          all 1s $ease-in-out-quart;
 
-
-
-
-
-
-
-
-
-
-
-/*
-    ----------------------------------------
-
-    EXTRA VARIABLES
-    --
-    These will barely get changed.
-
-    ----------------------------------------
-*/
-
-
+// Opacity
+$opacity-overlay:           0.5;
 
 /**
- * Breakpoints and Container Defaults
+ * Core variables.
+ *
+ * Take care in changing the following values as they can fundamentally
+ * change the behavior of the site.
  */
 
-// animated classes work from this viewport up
-$animated-min-width:        1025px;
-
-// Breakpoints
+// Bootstrap grid overrides
 $screen-xl:                 1600px;
 $screen-xl-min:             $screen-xl;
 $screen-lg-max:             $screen-xl-min - 1;
 
-// Container Breakpoint sizes
+// Grid container
+$container-max-width:       1270px;
+$container-width:           90%;
+$container-gutter-width:    5%;
 $container-sm-max:          100%;
 $container-md-max:          100%;
 $container-lg-max:          1170px;
 $container-xl-max:          1241px;
 
-// Misc padding/margin sizes
-$col-padding:               15px;
-$body-padding-bp:           sm;
-$body-padding-sm:           10px;
-$body-padding:              10px;
-$header-margin-top:         110px;
-$header-margin-top-sm:      75px; // height of the header
-
+// CSS animation minimum window width.
+$animated-min-width:        1025px;
 
 /**
  * Font sizes for <html> element, used as a base for the rem units in different
  * breakpoints. This should not be changed.
  */
+
 $font-size-rem-sm:          8.5px;
 $font-size-rem-md:          9.5px;
 $font-size-rem-base:        10px;
-
-
 
 /**
  * Brand color profiles. Find more at: http://brandcolors.net
  *
  * Use map with the "brand" helper function:
- *   ...
+ *
  *   color: brand(facebook);
  *   background-color: brand(instagram);
  */
