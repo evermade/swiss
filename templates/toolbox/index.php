@@ -125,10 +125,6 @@
                 <p>@include spacing(padding, top, section);</p>
             </div>
 
-            <div class="b-toolbox__component-row" data-name="@transition" data-description="Default animation for ui:hover and similar.">
-                <p>@include transition;</p>
-            </div>
-
             <div class="b-toolbox__component-row" data-name="@animation" data-description="Animation for visual attractiveness. Choose from animation/_animation.scss. Feel free to create new animations for projects.">
                 <p>@include animation( fadeInUp, 0.6s, backwards, $ease-out-expo, 0.3s);</p>
             </div>

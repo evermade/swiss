@@ -37,7 +37,7 @@
         margin:4rem 0;
 
         &[data-name]:before {
-            @include transition;
+            transition: $default-transition;
             @include font-size(sm);
             content: attr(data-name);
             display:block;
@@ -53,7 +53,7 @@
         }
 
         &[data-description]:after {
-            @include transition;
+            transition: $default-transition;
             @include font-size(sm);
             content: attr(data-description);
             display:block;
