@@ -1,5 +1,5 @@
 .c-sidebar-widget {
-    transition: $default-transition;
+    transition: $transition-default;
 
     @include bp(md) {
         @include spacing(margin, top, itemspace);
@@ -10,9 +10,9 @@
     }
 
     &__title {
-        transition: $default-transition;
+        transition: $transition-default;
         font-size: 2rem;
-        border-bottom: 1px solid $border-color;
+        border-bottom: 1px solid $border-color-default;
 
         @include spacing(padding, bottom, box);
 
@@ -20,11 +20,11 @@
             @include spacing(padding, top, box);
 
             border-bottom: none;
-            border-top: 1px solid $border-color;
+            border-top: 1px solid $border-color-default;
             position: relative;
 
             &:after {
-                transition: $default-transition;
+                transition: $transition-default;
                 font-family: FontAwesome, serif;
                 content: "\f104";
                 position: absolute;
@@ -40,7 +40,7 @@
     }
 
     &__content {
-        transition: $default-transition;
+        transition: $transition-default;
         @include spacing(padding, top, box);
 
         @include bp(sm, max) {
@@ -54,7 +54,7 @@
 
     @include bp(sm, max) {
         &--open {
-            background: darken($body-bg, 5%);
+            background: darken($color-body, 5%);
 
             .c-sidebar-widget__title {
                 @include spacing(padding, left, box);
@@ -75,7 +75,7 @@
 
         @include bp(sm, max) {
 
-            border-bottom: 1px solid $border-color;
+            border-bottom: 1px solid $border-color-default;
         }
     }
 }

@@ -22,9 +22,9 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: $headings-font-family;
-    font-weight: $headings-font-weight;
-    line-height: $headings-line-height;
+    font-family: $font-family-heading;
+    font-weight: $font-weight-heading;
+    line-height: $line-height-heading;
     margin: 0;
     padding: 0;
 }
@@ -113,12 +113,12 @@ a {
 
 // Higher value texts
 strong {
-    font-weight: $text-weight;
+    font-weight: $font-weight-default;
 }
 
 blockquote {
     padding: 0;
-    border-left: 0.5em solid $brand-color;
+    border-left: 0.5em solid $color-brand;
     margin: 0;
 }
 

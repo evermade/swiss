@@ -14,16 +14,16 @@
         display: block;
     }
 
-    a {       
-        border-radius: $border-radius;
+    a {
+        border-radius: $border-radius-default;
         @include shadow;
     }
 
-    span.current {     
-        border-radius: $border-radius;
+    span.current {
+        border-radius: $border-radius-default;
         @include shadow;
 
-        background: $brand-color;
+        background: $color-brand;
         color: #fff;
     }
 }

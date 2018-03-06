@@ -1,4 +1,4 @@
-@mixin overlay($color: $overlay-bg, $percentage: $overlay-alpha, $z-index: auto, $fade: false, $dir: top) {
+@mixin overlay($color: $color-overlay, $percentage: $opacity-overlay, $z-index: auto, $fade: false, $dir: top) {
     @include full-cover;
     z-index: $z-index;
     background: rgba($color, $percentage);

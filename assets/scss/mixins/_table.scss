@@ -6,7 +6,7 @@ Being used in @mixin wysiwyg-html;
 
  */
 
-@mixin table( $table-color: $body-bg, $table-text-color: $text-color, $table-headline-color: $headline-color) {
+@mixin table( $table-color: $color-body, $table-text-color: $color-text, $table-headline-color: $color-heading) {
 
     width: 100%;
     border: 1px solid darken($table-color, 10%);

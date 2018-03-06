@@ -4,6 +4,9 @@
  * the client has the ability to add HTML.
  */
 
+// Base multiplier for all text element margins
+$text-margin-multiplier: 1;
+
 @mixin wysiwyg-html() {
 
     position: relative;
@@ -14,8 +17,8 @@
     h4,
     h5,
     h6 {
-        margin-top: $text-spacing*0.8em;
-        margin-bottom: $text-spacing*0.3em;
+        margin-top: $text-margin-multiplier * 0.8em;
+        margin-bottom: $text-margin-multiplier * 0.3em;
 
         &:first-child {
             margin-top: 0;
@@ -27,24 +30,24 @@
     }
 
     p {
-        margin: $text-spacing*0.8em 0;
+        margin: $text-margin-multiplier * 0.8em 0;
 
         &:first-child {
             margin-top: 0;
         }
 
         &:last-child {
-            margin: $text-spacing*0.8em 0 0;
+            margin: $text-margin-multiplier * 0.8em 0 0;
             margin-bottom: 0;
         }
     }
 
     strong {
-        font-weight: $text-weight-strong;
+        font-weight: $font-weight-strong;
     }
 
     hr {
-        margin: $text-spacing*1.5em 0;
+        margin: $text-margin-multiplier * 1.5em 0;
     }
 
     table {
@@ -63,7 +66,7 @@
     dl,
     dd,
     blockquote {
-        margin: $text-spacing*1em 0;
+        margin: $text-margin-multiplier * 1em 0;
         padding-left: 1em;
 
         &+ol,
@@ -79,7 +82,7 @@
     }
 
     pre {
-        border-radius: $border-radius;
+        border-radius: $border-radius-default;
         padding: 1rem 2rem;
         border: 1px solid rgba(125, 125, 125, 0.3);
         display: block;

@@ -73,11 +73,11 @@
             <h5>Variables</h5>
             <hr>
 
-            <div class="b-toolbox__component-row" data-name="$shadow" data-description="@include shadow;">
+            <div class="b-toolbox__component-row" data-name="$box-shadow-default" data-description="">
                 <div class="b-toolbox__box b-toolbox__box--shadow"></div>
             </div>
 
-            <div class="b-toolbox__component-row" data-name="$shadow-large" data-description="@include shadow(large);">
+            <div class="b-toolbox__component-row" data-name="$box-shadow-large" data-description="">
                 <div class="b-toolbox__box b-toolbox__box--shadow--large"></div>
             </div>
 

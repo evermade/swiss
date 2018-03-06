@@ -61,8 +61,8 @@ body.has-open-navigation {
 
     .b-page-navigation__list {
         display: block;
-        background: $brand-color;
-        border-top: 6.5rem solid $brand-color;
+        background: $color-brand;
+        border-top: 6.5rem solid $color-brand;
         padding-top:0;
 
         @include bp(sm) {

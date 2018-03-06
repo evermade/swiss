@@ -6,7 +6,7 @@
 
     &__items {
         @include bp(sm) {
-            border-radius: $border-radius;
+            border-radius: $border-radius-default;
             overflow: hidden;
 
             position: absolute;

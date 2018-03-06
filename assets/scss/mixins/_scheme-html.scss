@@ -11,7 +11,7 @@ Don't use the @scheme-html(); because then you will have no way to later on reus
 
 */
 
-@mixin scheme-html($s-text-color: $text-color, $s-headings-color: $headings-color, $s-link-color: $link-color) {
+@mixin scheme-html($s-text-color: $color-text, $s-headings-color: $color-heading, $s-link-color: $color-link) {
 
     p a:not(.c-btn) {
         color: $s-link-color;

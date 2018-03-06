@@ -1,9 +1,9 @@
 .c-blog-taxonomy {
-
     @include spacing(margin, top, section);
     @include spacing(padding, all, box);
     @include shadow();
-    border-radius: $border-radius;
+
+    border-radius: $border-radius-default;
 
     @include bp(sm) {
         display: flex;
