@@ -22,7 +22,7 @@ Base theme & modular building blocks for WordPress created by Evermade.
 
 ## Notes
 
-* Use namespaces for PHP.
+* Use namespaces for PHP!
 
 ## Contributors
 
