@@ -1,0 +1,55 @@
+.c-share {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &__title {
+        display: inline-block;
+        padding-right: 1rem;
+    }
+
+    &__list {
+        display: inline;
+        font-size: 0;
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            margin: 0 0.15rem;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            line-height: 1;
+            color: #fff;
+            background-color: $color-brand;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+
+            &.facebook {
+                background-color: brand(facebook);
+            }
+
+            &.twitter {
+                background-color: brand(twitter);
+            }
+
+            &.linkedin {
+                background-color: brand(linkedin);
+            }
+
+            &.google {
+                background-color: brand(google-plus);
+            }
+
+            &:hover {
+                background-color: #000;
+            }
+        }
+    }
+}

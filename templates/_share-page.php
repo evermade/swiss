@@ -1,6 +1,12 @@
-<ul class="c-list c-list--horizontal c-list--padded">
-    <li class=""><?php _e('Share this page', 'swiss'); ?></li>
-    <?php foreach ($services as $key => $value): ?>
-    <li><a href="<?php echo $value['url'];?>" title="<?php _e('Share', 'swiss'); ?> <?php echo ucfirst($key);?>" class=""><i class="<?php echo $value['icon'];?>"></i> <?php echo ucfirst($key);?></a></li>
-    <?php endforeach; ?>
-</ul>
+<div class="c-share">
+    <h6 class="c-share__title"><?php _e('Share', 'swiss'); ?></h6>
+    <ul class="c-share__list">
+        <?php foreach ($services as $key => $value): ?>
+            <li>
+                <a href="<?php echo $value['url'];?>" title="<?php _e('Share on ', 'swiss'); echo ucfirst($key);?>" class="<?php echo $key; ?>">
+                    <i class="<?php echo $value['icon'];?>"></i>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
