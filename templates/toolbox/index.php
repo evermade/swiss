@@ -70,6 +70,39 @@
                 </div>
             </div>
 
+            <div class="b-toolbox__component-row" data-name=".c-share" data-description="Add sharing icons on any page.">
+                <div class="c-share">
+                    <h6 class="c-share__title">Share:</h6>
+                    <ul class="c-share__list">
+                        <li>
+                            <a href="http://www.facebook.com/sharer/sharer.php?u=http://timo.em87.io/hello-world/" title="Share on Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://twitter.com/share?url=http://timo.em87.io/hello-world/&text=Hello world!" title="Share on Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://timo.em87.io/hello-world/&title=Hello world!&summary=Welcome to WordPress. This is your first post. Edit or delete it, then start writing!&source=swiss" title="Share on Linkedin">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/share?url=http://timo.em87.io/hello-world/" title="Share on Google">
+                                <i class="fab fa-google"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:?subject=Hello world!&body=http://timo.em87.io/hello-world/" title="Share on Email">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <h5>Variables</h5>
             <hr>
 
