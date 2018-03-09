@@ -187,7 +187,7 @@ function sharePage()
         $services = array(
             'facebook'=> array(
                 'url'=>'',
-                'icon' => 'fab fa-facebook'
+                'icon' => 'fab fa-facebook-f'
             ),
             'twitter'=> array(
                 'url'=>'',
@@ -195,7 +195,7 @@ function sharePage()
             ),
             'linkedin'=> array(
                 'url'=>'',
-                'icon' => 'fab fa-linkedin'
+                'icon' => 'fab fa-linkedin-in'
             ),
             'google'=> array(
                 'url'=>'',
