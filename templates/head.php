@@ -32,9 +32,6 @@
     if (window.jQuery) {
         if(!window.$) $ = jQuery;
     }
-    else {
-        document.write('<script src="<?php echo get_template_directory_uri();?>/assets/node_modules/jquery/dist/jquery.min.js"><\/script>');
-    }
     </script>
 
     <?php include(get_template_directory().'/templates/tracking.php'); ?>
