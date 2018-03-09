@@ -72,7 +72,7 @@
 
             <div class="b-toolbox__component-row" data-name=".c-share" data-description="Add sharing icons on any page.">
                 <div class="c-share">
-                    <h6 class="c-share__title">Share:</h6>
+                    <h6 class="c-share__title">Share</h6>
                     <ul class="c-share__list">
                         <li>
                             <a href="http://www.facebook.com/sharer/sharer.php?u=http://timo.em87.io/hello-world/" title="Share on Facebook" class="facebook">
