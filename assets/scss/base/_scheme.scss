@@ -1,7 +1,10 @@
-/*
-    Scheme Context
-    Signify a new styling context
-*/
+/**
+ * Creates a context for color schemes.
+ *
+ * 1) The s-context class sets the container of a specific scheme.
+ * 2) Add data-scheme-target to all elements within a scheme that
+ *    should be targeted by the color rules.
+ */
 
 .s-context {
     position: relative;

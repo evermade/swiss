@@ -1,27 +1,16 @@
-/*
-    ----------------------------------------
-
-    TYPOGRAPHY
-    --
-    Let's try to keep this clear from colors because
-    these elements can be used in dark and light areas.
-
-    ----------------------------------------
-*/
+/**
+ * Place all basic typography here. You can define more specific
+ * font styles in the components.
+ *
+ * 1) Do not define any colors here. All these fonts will need to
+ *    work in both light and dark areas.
+ * 2) All margins and paddings should be defined in either the
+ *    wysiwyg-html mixin or specific components.
+ */
 
 // Headings
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: $font-family-heading;
     font-weight: $font-weight-heading;
     line-height: $line-height-heading;
@@ -29,67 +18,35 @@ h6,
     padding: 0;
 }
 
-h1,
-.h1 {
+h1, .h1 {
     @include font-size(h1);
 }
 
-h2,
-.h2 {
+h2, .h2 {
     @include font-size(h2);
 }
 
-h3,
-.h3 {
+h3, .h3 {
     @include font-size(h3);
 }
 
-h4,
-.h4 {
+h4, .h4 {
     @include font-size(h4);
 }
 
-h5,
-.h5 {
+h5, .h5 {
     @include font-size(h5);
 }
 
-h6,
-.h6 {
+h6, .h6 {
     @include font-size(h6);
 }
 
-
-
-
-/* generate helper classes for all font-sizes (.text-sm, .text-md, etc..) */
-
-@each $font-size-label, $font-size-map in $font-sizes {
-    .text-#{$font-size-label} {
-        @include font-size($font-size-label, important);
-    }
-}
-
-.text-center {
-    text-align: center !important;
-}
-
-.text-right {
-    text-align: right !important;
-}
-
-.text-left {
-    text-align: left !important;
-}
-
-
-
-
-/* some helper methods we can use to extend from within css, rather than multiple classes in the markup */
-
+// Other text elements
 p {
     margin: 0;
     padding: 0;
+
     &:last-child {
         margin-bottom: 0;
     }
@@ -98,20 +55,6 @@ p {
     }
 }
 
-// links
-a {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.1s ease;
-    &:hover,
-    &:focus {
-        text-decoration: none;
-        cursor: pointer;
-        color: inherit;
-    }
-}
-
-// Higher value texts
 strong {
     font-weight: $font-weight-default;
 }
@@ -126,7 +69,6 @@ em {
     position: relative;
 }
 
-// Unordered and Ordered lists
 ul,
 ol {
     margin: 0;
@@ -141,4 +83,45 @@ hr {
 
 i {
     position: relative;
+}
+
+// Links
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.1s ease;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        cursor: pointer;
+        color: inherit;
+    }
+}
+
+// Text positioning
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+/**
+ * Helper classes for all sizes in the font size map. See the
+ * map in variables for a list of all sizes.
+ *
+ * Example:
+ * .text-sm, .text-md, .text-lg, .text-button
+ */
+
+@each $font-size-label, $font-size-map in $font-sizes {
+    .text-#{$font-size-label} {
+        @include font-size($font-size-label, important);
+    }
 }
