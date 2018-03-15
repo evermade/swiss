@@ -27,6 +27,9 @@
                         </article>
                     </div>
 
+                    <div class="c-blog-share">
+                        <?php echo Evermade\Swiss\sharePage(); ?>
+                    </div>
 
                     <?php
                     $post_categories = wp_get_post_categories($post->ID);
@@ -78,8 +81,6 @@
 
                     <?php
                     } ?>
-
-                    <?php //echo Evermade\Swiss\sharePage();?>
 
                 </div>
 

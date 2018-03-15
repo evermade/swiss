@@ -1,8 +1,18 @@
-// base helper classes
+/**
+ * Define helper classes used to override default component
+ * behavior.
+ *
+ * 1) Think carefully should something be a stand-alone component
+ *    rather than a helper.
+ * 2) If CSS inheritance is an issue, use !important flag on the
+ *    properties. Don't try to force a parent class on the
+ *    definitions.
+ */
 
+// Make any element behave like a clickable link.
 .h-clickable {
-    position: relative;
     cursor: pointer;
+    position: relative;
     display: block;
 
     &__item {
@@ -10,43 +20,16 @@
     }
 }
 
+// Helper for basic WYSIWYG editor styles.
 .h-wysiwyg-html {
     @include wysiwyg-html;
 }
 
-body {
-
-    .h-hidden {
-        display: none;
-    }
-
-    .h-visible-mobile {
-        @include bp(sm,max) {
-            display: block;
-        }
-    }
-
-    .h-visible-laptop {
-        @media (min-width: $screen-md-min) and (max-width: $screen-lg-max) {
-            display: block;
-        }
-    }
-
-    .h-visible-desktop {
-        @include bp(xl) {
-            display: block;
-        }
-    }
-
-    .h-visible-all {
-        display: block;
-    }
-}
-
+// A 16:9 wrapper class for any YouTube embed.
 .h-youtube-wrapper {
+    background: #000;
     padding-top: 56.25%;
     position: relative;
-    background: #000;
 
     iframe {
         position: absolute;
@@ -55,4 +38,35 @@ body {
         width: 100%;
         height: 100%;
     }
+}
+
+/**
+ * Visibility helpers for elements. Note that these override
+ * any existing display settings.
+ */
+
+.h-hidden {
+    display: none !important;
+}
+
+.h-visible-mobile {
+    @include bp(sm,max) {
+        display: block !important;
+    }
+}
+
+.h-visible-laptop {
+    @media (min-width: $screen-md-min) and (max-width: $screen-lg-max) {
+        display: block !important;
+    }
+}
+
+.h-visible-desktop {
+    @include bp(xl) {
+        display: block !important;
+    }
+}
+
+.h-visible-all {
+    display: block !important;
 }

@@ -1,10 +1,17 @@
+/**
+ * Styles for the print media. Your goal should always be to use
+ * as little ink as possible to save the baby dolphins.
+ *
+ * 1) Black prints faster: http://www.sanbeiji.com/archives/953
+ * 2) Printing tables: http://css-discuss.incutio.com/wiki/Printing_Tables
+ */
+
 @media print {
     *,
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
+        color: #000 !important;
         box-shadow: none !important;
         text-shadow: none !important;
     }
@@ -22,9 +29,9 @@
         content: " (" attr(title) ")";
     }
 
-    /*
+    /**
      * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
+     * or use the `javascript:` pseudo protocol.
      */
 
     a[href^="#"]:after,
@@ -37,11 +44,6 @@
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
 
     thead {
         display: table-header-group;

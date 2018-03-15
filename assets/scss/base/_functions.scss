@@ -1,8 +1,17 @@
-/* A shorthand for using the brand color profile map */
+/**
+ * A shorthand for using the brand color profile map.
+ * You can find the brand color list in the variables file.
+ */
 
 @function brand($company) {
     @return map-get($brand-colors, $company);
 }
+
+/**
+ * Convert pixel values to rem using a context modifier.
+ * The default of 10px means that rem(10) equals 1rem,
+ * rem(15) equals 1.5rem etc.
+ */
 
 @function rem($pixels, $context: 10px) {
     @if (unitless($pixels)) {
