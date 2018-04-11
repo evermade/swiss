@@ -16,11 +16,11 @@
                     </nav>
                 </div>
                 <div class="l-navigation-bar__tools">
-                    <div class="l-navigation-bar__social">
-                        <?php echo \Evermade\Swiss\template('_social-media.php', $app->get('opt_social_media')); ?>
-                    </div>
                     <div class="l-navigation-bar__menu-toggle">
                         <?php include(get_template_directory().'/templates/_menu-toggle.php'); ?>
+                    </div>
+                    <div class="l-navigation-bar__social">
+                        <?php echo \Evermade\Swiss\template('_social-media.php', $app->get('opt_social_media')); ?>
                     </div>
                 </div>
             </div>
