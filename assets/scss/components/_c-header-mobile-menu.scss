@@ -1,11 +1,11 @@
 /**
  * This component defines the styles for the mobile menu.
- * The $padding-sub-menu variable sets the indentation for each
+ * The $sub-menu-padding variable sets the indentation for each
  * level of navigation.
  */
 
 .c-header-mobile-menu {
-    $padding-sub-menu: 5%;
+    $sub-menu-padding: 5%;
 
     position: relative;
 
@@ -30,7 +30,7 @@
 
             // Styles for the child menus
             .sub-menu {
-                padding-left: $padding-sub-menu;
+                padding-left: $sub-menu-padding;
                 margin-bottom: 1.5rem;
 
                 .menu-item {
@@ -48,7 +48,7 @@
 
                             font-size: 11px;
                             color: #fff;
-                            left: $padding-sub-menu * -1;
+                            left: $sub-menu-padding * -1;
                         }
                     }
 
