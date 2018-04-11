@@ -5,10 +5,10 @@
  * on the dropdowns.
  */
 
-$sub-menu-offset: -10px;
-$sub-menu-vertical-padding: 1rem;
-
 .c-header-menu {
+    $sub-menu-offset: -10px;
+    $sub-menu-vertical-padding: 1rem;
+
     position: relative;
 
     ul {
