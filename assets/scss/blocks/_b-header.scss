@@ -1,0 +1,90 @@
+/**
+ * The header block handles the top level positioning of the header
+ * bar and mobile menu.
+ *
+ * 1) Try to handle the display state and positioning of the various
+ *    bar and menu elements in the layout instead of block level.
+ * 2) Headroom.js is used to show and hide the header bar based on
+ *    user behaviour.
+ * 3) Opening or closing the mobile menu is handled by toggling a
+ *    open-mobile-menu -class on the body element with JavaScript.
+ */
+
+.b-header {
+    @include z-index(header);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    pointer-events: none;
+
+    @include bp($breakpoint-desktop) {
+        height: auto;
+    }
+
+    &__bar {
+        position: relative;
+        z-index: 2;
+        pointer-events: auto;
+        background-color: #fff;
+        color: #000;
+        transition: $transition-default;
+
+        .open-mobile-menu & {
+
+            @include bp($breakpoint-mobile, max) {
+                background-color: $color-brand;
+            }
+        }
+    }
+
+    &__container {
+        @include container;
+    }
+
+    &__mobile-navigation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: auto;
+        background-color: $color-brand;
+        color: #fff;
+        transition: $transition-default;
+        transform: translateY(-100%);
+        visibility: hidden;
+
+        @include bp($breakpoint-desktop) {
+            display: none;
+        }
+
+        .open-mobile-menu & {
+            transform: translateY(0%);
+            visibility: visible;
+        }
+    }
+
+    /**
+     * Headroom.js makes the header hidden when the user scrolls down.
+     * Read more from: http://wicky.nillia.ms/headroom.js/
+     */
+
+    &.headroom--not-top {
+
+        .b-header__bar {
+            transform: translate3d(0, -105%, 0);
+        }
+
+        &.headroom--pinned {
+
+            .b-header__bar {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+}

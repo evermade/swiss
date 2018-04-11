@@ -1,0 +1,58 @@
+/**
+ * The navigation bar layout handles displaying and positioning the
+ * various navigation elements. Instead of showing and hiding
+ * individual components, do it in this file.
+ */
+
+.l-navigation-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $height-navigation-mobile;
+
+    @include bp($breakpoint-desktop) {
+        height: $height-navigation-desktop;
+    }
+
+    &__tools {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-end;
+
+        > div {
+
+            @include bp($breakpoint-desktop) {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+
+            &:last-child {
+                @include bp($breakpoint-desktop) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    &__menu {
+        @include bp($breakpoint-mobile, max) {
+            display: none;
+        }
+    }
+
+    &__social {
+        @include font-size(lg);
+
+        @include bp($breakpoint-mobile, max) {
+            display: none;
+        }
+    }
+
+    &__menu-toggle {
+        @include bp($breakpoint-desktop) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.c-site-logo {
+    position: relative;
+
+    &__image {
+        display: block;
+        height: $height-navigation-mobile * 0.9;
+        width: 125px;
+        font-size: 0;
+        color: transparent;
+        background-image: url(../img/logo-black.svg);
+        background-size: contain;
+        background-position: 0 50%;
+        background-repeat: no-repeat;
+
+        @include bp(lg) {
+            width: 165px;
+        }
+
+        .open-mobile-menu & {
+
+            @include bp($breakpoint-mobile, max) {
+                background-image: url(../img/logo-white.svg);
+            }
+        }
+    }
+}

@@ -11,6 +11,7 @@
  */
 
 @import "vendor/bootstrap";
+@import "vendor/fontawesome";
 
 /**
  * #Variables
@@ -57,12 +58,12 @@
 @import "blocks/b-base";
 @import "blocks/b-blog";
 @import "blocks/b-footer";
+@import "blocks/b-header";
 @import "blocks/b-hero";
 @import "blocks/b-image-text";
 @import "blocks/b-image";
 @import "blocks/b-listing";
 @import "blocks/b-page-content";
-@import "blocks/b-page-navigation";
 @import "blocks/b-section";
 
 /**
@@ -73,6 +74,8 @@
 @import "layouts/l-cards";
 @import "layouts/l-columns";
 @import "layouts/l-divided-spotlight";
+@import "layouts/l-mobile-navigation";
+@import "layouts/l-navigation-bar";
 
 /**
  * #Components
@@ -92,13 +95,14 @@
 @import "components/c-chromeframe";
 @import "components/c-column-listing";
 @import "components/c-cta-link";
+@import "components/c-header-menu";
+@import "components/c-header-mobile-menu";
 @import "components/c-hero";
 @import "components/c-image";
-@import "components/c-mobile-toggle";
+@import "components/c-menu-toggle";
 @import "components/c-modal";
 @import "components/c-overlay";
 @import "components/c-page-navigation-footer";
-@import "components/c-page-navigation";
 @import "components/c-page-numbers";
 @import "components/c-section-asset";
 @import "components/c-section-header";
@@ -107,6 +111,7 @@
 @import "components/c-sidebar-ul";
 @import "components/c-sidebar-widget";
 @import "components/c-sidebar";
+@import "components/c-site-logo";
 @import "components/c-social-media";
 @import "components/c-table";
 @import "components/c-tags-ul";

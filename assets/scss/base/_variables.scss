@@ -17,8 +17,10 @@ $color-white-almost:        #f6f6f6;
 // Bind colors to meaningful variables.
 $color-brand:               $color-green-bright;
 $color-text:                $color-grey;
+$color-text-inverted:       #fff;
 $color-heading:             #000;
 $color-body:                #fff;
+$color-body-inverted:       #000;
 $color-link:                $color-green-bright;
 $color-link-hover:          darken($color-green-bright, 15%);
 $color-overlay:             darken($color-brand, 35%);
@@ -96,6 +98,25 @@ $transition-slide:          all 1s $ease-in-out-quart;
 
 // Opacity
 $opacity-overlay:           0.5;
+
+/**
+ * These are breakpoint targets that signify drastic changes in behavior.
+ * Use sparingly, as experience should be as similar as possible,
+ * regardless of viewport size.
+ */
+
+// Maximum width of mobile devices
+$breakpoint-mobile:         sm;
+
+// Minimum width of desktop devices
+$breakpoint-desktop:        md;
+
+/**
+ * Navigation bar sizes are also used to offset blocks.
+ */
+
+$height-navigation-mobile:  55px;
+$height-navigation-desktop: 85px;
 
 /**
  * Core variables.

@@ -40,6 +40,12 @@
     }
 }
 
+// Hide accessability features
+.h-accessability {
+    position: fixed;
+    top: -9999px;
+}
+
 /**
  * Visibility helpers for elements. Note that these override
  * any existing display settings.

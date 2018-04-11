@@ -1,0 +1,51 @@
+/**
+ * The mobile navigation layout handles displaying and positioning the
+ * various navigation elements within the mobile menu. Instead of showing
+ * and hiding individual components, do it in this file.
+ */
+
+.l-mobile-navigation {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.5s $ease-out-expo;
+
+    &__menu {
+        @include spacing(padding, top, itemspace);
+        @include spacing(padding, bottom, itemspace);
+
+        position: absolute;
+        width: 100%;
+        top: $height-navigation-mobile;
+        bottom: $height-navigation-mobile;
+        padding-left: $container-gutter-width;
+        padding-right: $container-gutter-width;
+        overflow: auto;
+    }
+
+    &__tools {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: $height-navigation-mobile;
+        padding-left: $container-gutter-width;
+        padding-right: $container-gutter-width;
+        background-color: #fff;
+        color: $color-brand;
+        transform: translateY($height-navigation-mobile);
+        transition: transform 0.5s $ease-out-expo;
+
+        .open-mobile-menu & {
+            transform: translateY(0);
+            transition: transform 0.5s 0.25s $ease-out-expo;
+        }
+    }
+
+    &__social {
+        @include font-size(lg);
+    }
+}
