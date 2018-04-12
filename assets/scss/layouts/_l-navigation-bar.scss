@@ -11,7 +11,7 @@
     justify-content: space-between;
     height: $height-navigation-mobile;
 
-    @include bp($breakpoint-desktop) {
+    @include bp($breakpoint-navigation-desktop) {
         height: $height-navigation-desktop;
     }
 
@@ -23,13 +23,13 @@
 
         > div {
 
-            @include bp($breakpoint-desktop) {
+            @include bp($breakpoint-navigation-desktop) {
                 margin-left: 1rem;
                 margin-right: 1rem;
             }
 
             &:last-child {
-                @include bp($breakpoint-desktop) {
+                @include bp($breakpoint-navigation-desktop) {
                     margin-right: 0;
                 }
             }
@@ -37,7 +37,7 @@
     }
 
     &__menu {
-        @include bp($breakpoint-mobile, max) {
+        @include bp($breakpoint-navigation-mobile, max) {
             display: none;
         }
     }
@@ -45,13 +45,13 @@
     &__social {
         @include font-size(lg);
 
-        @include bp($breakpoint-mobile, max) {
+        @include bp($breakpoint-navigation-mobile, max) {
             display: none;
         }
     }
 
     &__menu-toggle {
-        @include bp($breakpoint-desktop) {
+        @include bp($breakpoint-navigation-desktop) {
             display: none;
         }
     }

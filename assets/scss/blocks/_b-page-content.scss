@@ -4,11 +4,11 @@
 
     &--offset {
 
-        @include bp($breakpoint-mobile, max) {
+        @include bp($breakpoint-navigation-mobile, max) {
             padding-top: $height-navigation-mobile;
         }
 
-        @include bp($breakpoint-desktop) {
+        @include bp($breakpoint-navigation-desktop) {
             padding-top: $height-navigation-desktop;
         }
     }

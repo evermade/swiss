@@ -47,7 +47,7 @@ body {
 
     // Disable scrolling when mobile menu is open
     &.open-mobile-menu {
-        @include bp($breakpoint-mobile, max) {
+        @include bp($breakpoint-navigation-mobile, max) {
             overflow: hidden;
         }
     }

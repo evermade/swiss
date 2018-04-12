@@ -18,7 +18,7 @@
 
         .open-mobile-menu & {
 
-            @include bp($breakpoint-mobile, max) {
+            @include bp($breakpoint-navigation-mobile, max) {
                 background-image: url(../img/logo-white.svg);
             }
         }
