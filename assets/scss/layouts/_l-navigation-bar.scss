@@ -21,6 +21,15 @@
         align-items: center;
         justify-content: flex-end;
 
+        /**
+        * If you don't need any tools apart from the mobile menu toggle
+        * set display to none on the tools container on desktop breakpoint.
+        *
+        * @include bp($breakpoint-navigation-desktop) {
+        *     display: none;
+        * }
+        */
+
         > div {
 
             @include bp($breakpoint-navigation-desktop) {

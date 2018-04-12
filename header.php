@@ -16,6 +16,13 @@
                     </nav>
                 </div>
                 <div class="l-navigation-bar__tools">
+                    <?php
+                    /**
+                     * If you don't need any other tools apart from the menu-toggle,
+                     * you can either move it from tools to one level above or set
+                     * the CSS display of tools to "none" on desktop resolutions.
+                     */
+                    ?>
                     <div class="l-navigation-bar__menu-toggle">
                         <?php include(get_template_directory().'/templates/_menu-toggle.php'); ?>
                     </div>
