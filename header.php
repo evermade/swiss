@@ -12,7 +12,7 @@
                 </div>
                 <div class="l-navigation-bar__menu">
                     <nav>
-                        <?php wp_nav_menu(array('container_class' => 'c-header-menu', 'menu_class' => 'c-header-menu__list', 'theme_location' => 'header-navigation', 'fallback_cb' => false)); ?>
+                        <?php wp_nav_menu(array('container_class' => 'c-header-menu-desktop', 'menu_class' => 'c-header-menu-desktop__list', 'theme_location' => 'header-navigation', 'fallback_cb' => false)); ?>
                     </nav>
                 </div>
                 <div class="l-navigation-bar__tools">
@@ -38,7 +38,7 @@
 
         <div class="l-mobile-navigation">
             <div class="l-mobile-navigation__menu">
-                <?php wp_nav_menu(array('container_class' => 'c-header-mobile-menu', 'menu_class' => 'c-header-mobile-menu__list', 'theme_location' => 'header-navigation', 'fallback_cb' => false)); ?>
+                <?php wp_nav_menu(array('container_class' => 'c-header-menu-mobile', 'menu_class' => 'c-header-menu-mobile__list', 'theme_location' => 'header-navigation', 'fallback_cb' => false)); ?>
             </div>
             <div class="l-mobile-navigation__tools">
                 <div class="l-mobile-navigation__social">
