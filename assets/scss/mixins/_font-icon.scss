@@ -1,0 +1,34 @@
+/**
+ * Helper for adding Font Awesome 5 icons in CSS.
+ *
+ * Font Awesome 5 has been split into 3 different fonts: regular,
+ * solid and brands. If your icon doesn't show, make sure you
+ * are using the correct family name in the second parameter.
+ */
+
+@mixin font-icon($icon: null, $family: regular) {
+
+    @if $icon != null {
+
+        @if $family == brands {
+            font-family: 'Font Awesome 5 Brands';
+            font-weight: normal;
+        }
+
+        @else if $family == solid {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+        }
+
+        @else {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 400;
+        }
+
+        content: fa-content($icon);
+    }
+
+    @else {
+        @warn "Icon not specified.";
+    }
+}

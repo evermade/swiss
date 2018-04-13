@@ -1,0 +1,131 @@
+/**
+ * This component defines the look of the desktop header menu.
+ * It's recommended to always use a negative value for the
+ * $sub-menu-offset value, to avoid mouse movement stuttering
+ * on the dropdowns.
+ */
+
+.c-header-menu-desktop {
+    $sub-menu-offset: -10px;
+    $sub-menu-vertical-padding: 1rem;
+
+    position: relative;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+
+        > .menu-item {
+            @include font-size(md);
+
+            position: relative;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+
+            > a {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                height: $height-navigation-desktop;
+            }
+
+            // Styles for the dropdown menu
+            .sub-menu {
+                position: absolute;
+                top: $height-navigation-desktop + $sub-menu-offset;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 120%;
+                min-width: 175px;
+                background-color: $color-brand;
+                color: #fff;
+                opacity: 0;
+                visibility: hidden;
+                transition: padding 0.25s $ease-out-expo;
+
+                .menu-item {
+
+                    > a {
+                        display: block;
+                        padding: $sub-menu-vertical-padding 1.5rem;
+                        border-bottom: solid 1px rgba(#000, 0.075);
+                        transition: padding 0.25s $ease-out-expo,
+                                    background-color 0.25s $ease-out-expo;
+
+                        &:hover {
+                            background-color: rgba(#000, 0.075);
+                            border-bottom: solid 1px transparent;
+                        }
+                    }
+
+                    // Styles for the current page's menu item
+                    &.current-menu-item > a {
+                        background-color: rgba(#000, 0.075);
+                        border-bottom: solid 1px transparent;
+                    }
+
+                    /**
+                     * We use the top and bottom paddings of the first
+                     * and last items for the opening animation.
+                     */
+
+                    &:first-child > a {
+                        padding-top: 0;
+                    }
+
+                    &:last-child > a {
+                        padding-bottom: 0;
+                        border-bottom: none;
+                    }
+                }
+            }
+
+            // Styles for top level items that have child items.
+            &.menu-item-has-children > a {
+                padding-right: 15px;
+
+                &::after {
+                    @include align-element(vertical);
+                    @include font-icon($fa-var-caret-down, solid);
+
+                    font-size: 11px;
+                    color: $color-brand;
+                    right: 0;
+                }
+            }
+
+            // Hover styles for top level menu items.
+            &:hover {
+
+                .sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+
+                    /**
+                     * We use the top and bottom paddings of the first
+                     * and last items for the opening animation.
+                     */
+
+                    .menu-item {
+
+                        &:first-child > a {
+                            padding-top: $sub-menu-vertical-padding * 1.25;
+                        }
+
+                        &:last-child > a {
+                            padding-bottom: $sub-menu-vertical-padding * 1.25;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

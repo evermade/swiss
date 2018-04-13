@@ -9,8 +9,6 @@
 html {
     box-sizing: border-box;
     font-size: 8px;
-    overflow-x: hidden;
-    overflow-y: auto;
 
     @include bp(xs) {
         font-size: 8.5px;
@@ -22,7 +20,6 @@ html {
 
     @include bp(md) {
         font-size: 9.5px;
-        overflow-y: scroll;
     }
 
     @include bp(lg) {
@@ -47,6 +44,13 @@ body {
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    // Disable scrolling when mobile menu is open
+    &.open-mobile-menu {
+        @include bp($breakpoint-navigation-mobile, max) {
+            overflow: hidden;
+        }
+    }
 }
 
 html,

@@ -1,0 +1,67 @@
+/**
+ * The navigation bar layout handles displaying and positioning the
+ * various navigation elements. Instead of showing and hiding
+ * individual components, do it in this file.
+ */
+
+.l-navigation-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $height-navigation-mobile;
+
+    @include bp($breakpoint-navigation-desktop) {
+        height: $height-navigation-desktop;
+    }
+
+    &__tools {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-end;
+
+        /**
+        * If you don't need any tools apart from the mobile menu toggle
+        * set display to none on the tools container on desktop breakpoint.
+        *
+        * @include bp($breakpoint-navigation-desktop) {
+        *     display: none;
+        * }
+        */
+
+        > div {
+
+            @include bp($breakpoint-navigation-desktop) {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+
+            &:last-child {
+                @include bp($breakpoint-navigation-desktop) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    &__menu {
+        @include bp($breakpoint-navigation-mobile, max) {
+            display: none;
+        }
+    }
+
+    &__social {
+        @include font-size(lg);
+
+        @include bp($breakpoint-navigation-mobile, max) {
+            display: none;
+        }
+    }
+
+    &__menu-toggle {
+        @include bp($breakpoint-navigation-desktop) {
+            display: none;
+        }
+    }
+}

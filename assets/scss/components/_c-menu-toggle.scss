@@ -1,0 +1,44 @@
+.c-menu-toggle {
+    position: relative;
+    cursor: pointer;
+    height: $height-navigation-mobile;
+    width: 20px;
+
+    &__icon {
+        @include align-element();
+
+        div {
+            position: relative;
+            width: 20px;
+            height: 3px;
+            margin-bottom: 4px;
+            background: $color-brand;
+            transition: all 0.2s $ease-in-out-quart;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .open-mobile-menu & {
+
+            div {
+                opacity: 0;
+                background: #fff;
+
+                &:first-child {
+                    transform: rotate(45deg);
+                    opacity: 1;
+                    top: 7px;
+                }
+
+                &:last-child {
+                    transform: rotate(-45deg);
+                    -webkit-transform: rotate(-45deg);
+                    opacity: 1;
+                    top: -7px;
+                }
+            }
+        }
+    }
+}
