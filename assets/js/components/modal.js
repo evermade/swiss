@@ -14,7 +14,7 @@ EXAMPLES
 
 PLAY YOUTUBE VIDEO
 --
-<a href="https://www.youtube.com/watch?v=vr0qNXmkUJ8&t=16s" data-swiss-modal="youtube">Play Video</a>
+<a href="https://www.youtube.com/watch?v=vr0qNXmkUJ8&t=16s" data-swiss-modal="youtube" data-autoplay="1">Play Video</a>
 
 
 IMAGE POPUP
@@ -24,7 +24,7 @@ IMAGE POPUP
 
 EXTERNAL WEBSITE HTML
 --
-<a href="/slug/ .b-footer" data-swiss-modal="external">Open External HTML</a>
+<a href="/em/ .b-footer" data-swiss-modal="external">Open External HTML</a>
 
 
 INLINE
@@ -38,8 +38,8 @@ INLINE
 
 GALLERY NEXT/PREV (NAMESPACE FUNCTIONALITY)
 --
-<a href="https://www.youtube.com/watch?v=vr0qNXmkUJ8&t=16s" data-swiss-modal-namespace="youtube-gallery" data-swiss-modal="youtube">Play Video 1</a>
-<a href="https://www.youtube.com/watch?v=vr0qNXmkUJ8&t=10s" data-swiss-modal-namespace="youtube-gallery" data-swiss-modal="youtube">Play Video 2</a>
+<a href="http://placeowl.com/640" data-swiss-modal-namespace="test-gallery" data-swiss-modal="image">View Image 1</a>
+<a href="http://placeowl.com/480" data-swiss-modal-namespace="test-gallery" data-swiss-modal="image">View Image 2</a>
 
 
 ---------------------
@@ -92,7 +92,7 @@ const modal = {
         const $clickedButton = $(clickedButton);
 
         // get modal content
-        const content = modal.getContent( $clickedButton.attr("href"), $clickedButton.data("swiss-modal") );
+        const content = modal.getContent( $clickedButton );
 
         // position the window accordingly and disable scrolling
         $('body')
@@ -123,43 +123,57 @@ const modal = {
 
     },
 
-        // different ways to get content
-        getContent: function(value = "Content undefined", type = "html"){
-            if(type == "youtube"){
-                return modal.getContentYoutube(value);
-            }
+    // different ways to get content
+    getContent: function( $link ) {
 
-            if(type == "image"){
-                return modal.getContentImage(value);
-            }
+        const href = $link.attr("href");
+        const type = $link.data("swiss-modal");
 
-            if(type == "external"){
-                return modal.getContentExternal(value);
-            }
+        if ( type == "youtube" ) {
+            const options = {
+                autoplay: Number( $link.data("autoplay") ),
+            };
+            return modal.getContentYoutube( href, options );
+        }
 
-            if(type == "inline"){
-                return modal.getContentInline(value);
-            }
+        if ( type == "image" ) {
+            return modal.getContentImage( href );
+        }
 
-            return value;
-        },
+        if ( type == "external" ) {
+            return modal.getContentExternal( href );
+        }
+
+        if ( type == "inline" ) {
+            return modal.getContentInline( href );
+        }
+
+        return href;
+    },
 
 
-            // YOUTUBE: Create iframe and a youtube wrapper for the 16x9 ratio video
-            getContentYoutube: function(value){
+    // YOUTUBE: Create iframe and a youtube wrapper for the 16x9 ratio video
+    getContentYoutube: function(url, options){
 
-                let video_id = value.split('v=')[1];
-                const ampersandPosition = video_id.indexOf('&');
+        const regex = new RegExp('(youtu.be/|youtube.com/watch\\?v=)(\\w+)');
+        const matches = regex.exec( url );
+        const video_id = matches ? matches[2] : 0;
 
-                if(ampersandPosition != -1) {
-                  video_id = video_id.substring(0, ampersandPosition);
-                }
+        const autoplay = options && options.autoplay ? 1 : 0;
 
-                const output = `<iframe src="https://www.youtube.com/embed/${video_id}" frameborder="0" allowfullscreen></iframe>`;
+        return video_id ? `<iframe src="https://www.youtube.com/embed/${video_id}?autoplay=${autoplay}" frameborder="0" allowfullscreen></iframe>` : '';
 
-                return output;
+    },
 
-            },
+    // INLINE: get content from a <div id="target-id"></div>
+    getContentInline: function(value){
+        return($(value).html());
+    },
+
+    // IMAGE: place image url within an img href and return the image html
+    getContentImage: function(value){
+        return(`<img src="${value}" >`);
+    },
 
             // EXTERNAL: Pull html from an external page
             getContentExternal: function(value){
@@ -179,15 +193,6 @@ const modal = {
 
             },
 
-            // INLINE: get content from a <div id="target-id"></div>
-            getContentInline: function(value){
-                return($(value).html());
-            },
-
-            // IMAGE: place image url within an img href and return the image html
-            getContentImage: function(value){
-                return(`<img src="${value}" >`);
-            },
 
 
 
