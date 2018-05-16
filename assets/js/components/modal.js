@@ -59,61 +59,67 @@ const modal = {
     // Init popup functionality
     init: function () {
 
-        $('html').on("click", '[data-swiss-modal-action="prev"],[data-swiss-modal-action="next"]' ,function(){
-            modal.close($(this));
-            let nextPrevModal;
+        $(document)
 
-            if($(this).data("swiss-modal-action") == "prev"){
-                nextPrevModal = modal.clickOpen(modal.getNextPrev(-1));
-                $(nextPrevModal).addClass("c-modal--anim-prev");
-            } else {
-                nextPrevModal = modal.clickOpen(modal.getNextPrev(1));
-                $(nextPrevModal).addClass("c-modal--anim-next");
-            }
-        });
+            .on("click", '[data-swiss-modal-action="prev"],[data-swiss-modal-action="next"]' ,function(){
+                modal.close( this );
+                let nextPrevModal;
 
-        $('html').on("click", '[data-swiss-modal-action="close"]' ,function(){
-            modal.close($(this));
-        });
+                if( $(this).data("swiss-modal-action") == "prev" ){
+                    nextPrevModal = modal.clickOpen(modal.getNextPrev(-1));
+                    $(nextPrevModal).addClass("c-modal--anim-prev");
+                } else {
+                    nextPrevModal = modal.clickOpen(modal.getNextPrev(1));
+                    $(nextPrevModal).addClass("c-modal--anim-next");
+                }
+            })
 
-        $('html').on("click", '[data-swiss-modal]' ,function(e){
-            e.preventDefault();
-            modal.clickOpen($(this));
-        });
+            .on("click", '[data-swiss-modal-action="close"]' ,function(){
+                modal.close( this );
+            })
+
+            .on("click", '[data-swiss-modal]' ,function(e){
+                e.preventDefault();
+                modal.clickOpen( this );
+            })
+        ;
 
     },
 
     // On click open popup and get content for it
     clickOpen: function (clickedButton) {
 
-        // get modal content
-        const content = modal.getContent($(clickedButton).attr("href"), $(clickedButton).data("swiss-modal"));
-        
-        // position the window accordingly and disable scrolling
-        $('body').attr("data-last-position",$(window).scrollTop());
+        const $clickedButton = $(clickedButton);
 
-        $('body').css({
-            height: $(document).height() + 'px',
-            overflowY: "scroll" 
-        });
+        // get modal content
+        const content = modal.getContent( $clickedButton.attr("href"), $clickedButton.data("swiss-modal") );
+
+        // position the window accordingly and disable scrolling
+        $('body')
+
+            .attr( "data-last-position", $(window).scrollTop() )
+
+            .css({
+                height: $(document).height() + 'px',
+                overflowY: "scroll"
+            })
+        ;
 
         $('html').css({
             maxHeight: '100vh',
-            overflow: "hidden" 
+            overflow: "hidden"
         });
 
         // remove namespace active
         $('.h-modal-namespace-active').removeClass("h-modal-namespace-active");
 
         // make active for namespace
-        $(clickedButton).addClass("h-modal-namespace-active");
+        $clickedButton.addClass("h-modal-namespace-active");
 
         // generate modal from template
-        const template = modal.template(content, $(clickedButton).data("swiss-modal"), $(clickedButton).data("swiss-modal-namespace"));
+        const template = modal.template(content, $clickedButton.data("swiss-modal"), $clickedButton.data("swiss-modal-namespace"));
 
-        const finalModal = $(template).appendTo('modals');
-
-        return finalModal;
+        return $(template).appendTo('modals');
 
     },
 
@@ -192,15 +198,15 @@ const modal = {
         let nextUi = "";
 
         // if namespace is set then show next prev elements
-        if(namespace != "none"){
+        if ( namespace != "none" ) {
 
             // if prev element is available. Show Prev UI
-            if(modal.getNextPrev(-1)){
+            if ( modal.getNextPrev(-1) ) {
                 prevUi = `<div class="c-modal__nextprev c-modal__nextprev--prev" data-swiss-modal-action="prev" data-swiss-modal-namespace="${namespace}"></div>`;
             }
 
             // if next element is available. Show Next UI
-            if(modal.getNextPrev(1)){
+            if ( modal.getNextPrev(1) ) {
                 nextUi = `<div class="c-modal__nextprev c-modal__nextprev--next" data-swiss-modal-action="next" data-swiss-modal-namespace="${namespace}"></div>`;
             }
 
@@ -209,7 +215,7 @@ const modal = {
         // create template and include next/prev depending on namespace
         const html = `<div class="c-modal" data-swiss-modal-style="${style}">
 
-            <div class="c-modal__shadow"></div>
+            <div class="c-modal__shadow" data-swiss-modal-action="close"></div>
 
             <div class="c-modal__wrapper">
 
@@ -220,7 +226,7 @@ const modal = {
                         ${nextUi}
                         <div class="c-modal__close" data-swiss-modal-action="close"></div>
                     </div>
-                    
+
                     <div class="c-modal__content h-wysiwyg-html">
                         ${content}
                     </div>
@@ -235,28 +241,26 @@ const modal = {
     },
 
     // Close the popup
-    close: function (modal) {
+    close: function ( modal ) {
+
+        const $modal = modal.classList.contains('c-modal') ? $(modal) : $(modal).closest(".c-modal");
 
         // clear window position from disabling the scroll
         $('body').css({
             height: "",
-            overflowY: "" 
+            overflowY: ""
         });
 
         $('html').css({
             maxHeight: "",
-            overflow: "" 
+            overflow: ""
         });
 
         // scroll to windows original position before enabling popup
         $(window).scrollTop($('body').attr("data-last-position"));
 
         // remove the modal from DOM
-        if($(modal).hasClass("c-modal")){
-            $(modal).remove();
-        } else {
-            $(modal).closest(".c-modal").remove();
-        }
+        $modal.remove();
 
     },
 
@@ -269,11 +273,11 @@ const modal = {
 
         const nsIndex = $(nsElements).index(nsCurrent);
 
-        if(nsIndex+nextprev < 0){
+        if ( nsIndex+nextprev < 0 ) {
             return false;
         }
 
-        if(nsIndex+nextprev > nsElements.length-1){
+        if ( nsIndex+nextprev > nsElements.length-1 ) {
             return false;
         }
 
