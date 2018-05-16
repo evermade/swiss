@@ -155,7 +155,7 @@ const modal = {
     // YOUTUBE: Create iframe and a youtube wrapper for the 16x9 ratio video
     getContentYoutube: function(url, options){
 
-        const regex = new RegExp('(youtu.be/|youtube.com/watch\\?v=)(\\w+)');
+        const regex = new RegExp('(youtu.be/|youtube.com/watch\\?v=)([\\w\\-]+)');
         const matches = regex.exec( url );
         const video_id = matches ? matches[2] : 0;
 
