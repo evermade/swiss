@@ -46,14 +46,7 @@ $textMargin : true; // textarea top/bottom margin
         @include bp(sm) {
             max-width: $container-max-width/2;
             width: $container-width/2;
-            margin: initial;
-
-            .b-image-text--left & {
-                margin-right: 0px;
-            }
-            .b-image-text--right & {
-                margin-left: 0px;
-            }
+            margin: 0;
         }
     }
 
