@@ -7,6 +7,7 @@ namespace Evermade\Swiss\PostTypes;
  * -----------------------------------------------------
  */
 
+/*
 function exampleSetup()
 {
     $labels = array(
@@ -37,12 +38,13 @@ function exampleSetup()
         'exclude_from_search'   => true,
         'menu_icon'             => 'dashicons-book',
         'rewrite'               => array(
-            'slug' => _x('example', 'URL slug', 'swiss')
+            'slug' => 'example'
         )
     );
 
     register_post_type('example', $args);
 }
+*/
 
 /*
  * -----------------------------------------------------
