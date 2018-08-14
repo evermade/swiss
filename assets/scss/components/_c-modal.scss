@@ -146,12 +146,11 @@ $modalOuterMarginDouble: 60px;
 
         [data-swiss-modal-style="youtube"] & {
 
-            height: 100vh;
             width: 100%;
+            padding-top: 56.25%;
             margin: 0;
 
             @include bp(md) {
-                height: calc(100vh - 60px);
                 width: calc(100vw - 60px);
                 margin: $modalOuterMargin;
             }
@@ -172,7 +171,6 @@ $modalOuterMarginDouble: 60px;
         [data-swiss-modal-style="image"] & {
             @include shadow(large);
 
-            height: 100vh;
             max-width: 100%;
             width: auto;
             background: $color-body;
@@ -182,7 +180,6 @@ $modalOuterMarginDouble: 60px;
             justify-content: center;
 
             @include bp(md) {
-                height: calc(100vh - 60px);
                 margin: $modalOuterMargin;
             }
 

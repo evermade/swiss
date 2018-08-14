@@ -14,7 +14,7 @@ EXAMPLES
 
 PLAY YOUTUBE VIDEO
 --
-<a href="https://www.youtube.com/watch?v=vr0qNXmkUJ8&t=16s" data-swiss-modal="youtube">Play Video</a>
+<a href="https://www.youtube.com/watch?v=vr0qNXmkUJ8&t=16s" data-swiss-modal="youtube" data-autoplay="1">Play Video</a>
 
 
 IMAGE POPUP
@@ -24,7 +24,7 @@ IMAGE POPUP
 
 EXTERNAL WEBSITE HTML
 --
-<a href="/slug/ .b-footer" data-swiss-modal="external">Open External HTML</a>
+<a href="/em/ .b-footer" data-swiss-modal="external">Open External HTML</a>
 
 
 INLINE
@@ -38,8 +38,8 @@ INLINE
 
 GALLERY NEXT/PREV (NAMESPACE FUNCTIONALITY)
 --
-<a href="https://www.youtube.com/watch?v=vr0qNXmkUJ8&t=16s" data-swiss-modal-namespace="youtube-gallery" data-swiss-modal="youtube">Play Video 1</a>
-<a href="https://www.youtube.com/watch?v=vr0qNXmkUJ8&t=10s" data-swiss-modal-namespace="youtube-gallery" data-swiss-modal="youtube">Play Video 2</a>
+<a href="http://placeowl.com/640" data-swiss-modal-namespace="test-gallery" data-swiss-modal="image">View Image 1</a>
+<a href="http://placeowl.com/480" data-swiss-modal-namespace="test-gallery" data-swiss-modal="image">View Image 2</a>
 
 
 ---------------------
@@ -59,101 +59,121 @@ const modal = {
     // Init popup functionality
     init: function () {
 
-        $('html').on("click", '[data-swiss-modal-action="prev"],[data-swiss-modal-action="next"]' ,function(){
-            modal.close($(this));
-            let nextPrevModal;
+        $(document)
 
-            if($(this).data("swiss-modal-action") == "prev"){
-                nextPrevModal = modal.clickOpen(modal.getNextPrev(-1));
-                $(nextPrevModal).addClass("c-modal--anim-prev");
-            } else {
-                nextPrevModal = modal.clickOpen(modal.getNextPrev(1));
-                $(nextPrevModal).addClass("c-modal--anim-next");
-            }
-        });
+            .on("click", '[data-swiss-modal-action="prev"],[data-swiss-modal-action="next"]' ,function(){
+                modal.close( this );
+                let nextPrevModal;
 
-        $('html').on("click", '[data-swiss-modal-action="close"]' ,function(){
-            modal.close($(this));
-        });
+                if( $(this).data("swiss-modal-action") == "prev" ){
+                    nextPrevModal = modal.clickOpen(modal.getNextPrev(-1));
+                    $(nextPrevModal).addClass("c-modal--anim-prev");
+                } else {
+                    nextPrevModal = modal.clickOpen(modal.getNextPrev(1));
+                    $(nextPrevModal).addClass("c-modal--anim-next");
+                }
+            })
 
-        $('html').on("click", '[data-swiss-modal]' ,function(e){
-            e.preventDefault();
-            modal.clickOpen($(this));
-        });
+            .on("click", '[data-swiss-modal-action="close"]' ,function(){
+                modal.close( this );
+            })
+
+            .on("click", '[data-swiss-modal]' ,function(e){
+                e.preventDefault();
+                modal.clickOpen( this );
+            })
+        ;
 
     },
 
     // On click open popup and get content for it
     clickOpen: function (clickedButton) {
 
-        // get modal content
-        const content = modal.getContent($(clickedButton).attr("href"), $(clickedButton).data("swiss-modal"));
-        
-        // position the window accordingly and disable scrolling
-        $('body').attr("data-last-position",$(window).scrollTop());
+        const $clickedButton = $(clickedButton);
 
-        $('body').css({
-            height: $(document).height() + 'px',
-            overflowY: "scroll" 
-        });
+        // get modal content
+        const content = modal.getContent( $clickedButton );
+
+        // position the window accordingly and disable scrolling
+        $('body')
+
+            .attr( "data-last-position", $(window).scrollTop() )
+
+            .css({
+                height: $(document).height() + 'px',
+                overflowY: "scroll"
+            })
+        ;
 
         $('html').css({
             maxHeight: '100vh',
-            overflow: "hidden" 
+            overflow: "hidden"
         });
 
         // remove namespace active
         $('.h-modal-namespace-active').removeClass("h-modal-namespace-active");
 
         // make active for namespace
-        $(clickedButton).addClass("h-modal-namespace-active");
+        $clickedButton.addClass("h-modal-namespace-active");
 
         // generate modal from template
-        const template = modal.template(content, $(clickedButton).data("swiss-modal"), $(clickedButton).data("swiss-modal-namespace"));
+        const template = modal.template(content, $clickedButton.data("swiss-modal"), $clickedButton.data("swiss-modal-namespace"));
 
-        const finalModal = $(template).appendTo('modals');
-
-        return finalModal;
+        return $(template).appendTo('modals');
 
     },
 
-        // different ways to get content
-        getContent: function(value = "Content undefined", type = "html"){
-            if(type == "youtube"){
-                return modal.getContentYoutube(value);
-            }
+    // different ways to get content
+    getContent: function( $link ) {
 
-            if(type == "image"){
-                return modal.getContentImage(value);
-            }
+        const href = $link.attr("href");
+        const type = $link.data("swiss-modal");
 
-            if(type == "external"){
-                return modal.getContentExternal(value);
-            }
+        if ( type == "youtube" ) {
+            const options = {
+                autoplay: Number( $link.data("autoplay") ),
+            };
+            return modal.getContentYoutube( href, options );
+        }
 
-            if(type == "inline"){
-                return modal.getContentInline(value);
-            }
+        if ( type == "image" ) {
+            return modal.getContentImage( href );
+        }
 
-            return value;
-        },
+        if ( type == "external" ) {
+            return modal.getContentExternal( href );
+        }
+
+        if ( type == "inline" ) {
+            return modal.getContentInline( href );
+        }
+
+        return href;
+    },
 
 
-            // YOUTUBE: Create iframe and a youtube wrapper for the 16x9 ratio video
-            getContentYoutube: function(value){
+    // YOUTUBE: Create iframe and a youtube wrapper for the 16x9 ratio video
+    getContentYoutube: function(url, options){
 
-                let video_id = value.split('v=')[1];
-                const ampersandPosition = video_id.indexOf('&');
+        const regex = new RegExp('(youtu.be/|youtube.com/watch\\?v=)([\\w\\-]+)');
+        const matches = regex.exec( url );
+        const video_id = matches ? matches[2] : 0;
 
-                if(ampersandPosition != -1) {
-                  video_id = video_id.substring(0, ampersandPosition);
-                }
+        const autoplay = options && options.autoplay ? 1 : 0;
 
-                const output = `<iframe src="https://www.youtube.com/embed/${video_id}" frameborder="0" allowfullscreen></iframe>`;
+        return video_id ? `<iframe src="https://www.youtube.com/embed/${video_id}?autoplay=${autoplay}" frameborder="0" allowfullscreen></iframe>` : '';
 
-                return output;
+    },
 
-            },
+    // INLINE: get content from a <div id="target-id"></div>
+    getContentInline: function(value){
+        return($(value).html());
+    },
+
+    // IMAGE: place image url within an img href and return the image html
+    getContentImage: function(value){
+        return(`<img src="${value}" >`);
+    },
 
             // EXTERNAL: Pull html from an external page
             getContentExternal: function(value){
@@ -173,15 +193,6 @@ const modal = {
 
             },
 
-            // INLINE: get content from a <div id="target-id"></div>
-            getContentInline: function(value){
-                return($(value).html());
-            },
-
-            // IMAGE: place image url within an img href and return the image html
-            getContentImage: function(value){
-                return(`<img src="${value}" >`);
-            },
 
 
 
@@ -192,15 +203,15 @@ const modal = {
         let nextUi = "";
 
         // if namespace is set then show next prev elements
-        if(namespace != "none"){
+        if ( namespace != "none" ) {
 
             // if prev element is available. Show Prev UI
-            if(modal.getNextPrev(-1)){
+            if ( modal.getNextPrev(-1) ) {
                 prevUi = `<div class="c-modal__nextprev c-modal__nextprev--prev" data-swiss-modal-action="prev" data-swiss-modal-namespace="${namespace}"></div>`;
             }
 
             // if next element is available. Show Next UI
-            if(modal.getNextPrev(1)){
+            if ( modal.getNextPrev(1) ) {
                 nextUi = `<div class="c-modal__nextprev c-modal__nextprev--next" data-swiss-modal-action="next" data-swiss-modal-namespace="${namespace}"></div>`;
             }
 
@@ -209,7 +220,7 @@ const modal = {
         // create template and include next/prev depending on namespace
         const html = `<div class="c-modal" data-swiss-modal-style="${style}">
 
-            <div class="c-modal__shadow"></div>
+            <div class="c-modal__shadow" data-swiss-modal-action="close"></div>
 
             <div class="c-modal__wrapper">
 
@@ -220,7 +231,7 @@ const modal = {
                         ${nextUi}
                         <div class="c-modal__close" data-swiss-modal-action="close"></div>
                     </div>
-                    
+
                     <div class="c-modal__content h-wysiwyg-html">
                         ${content}
                     </div>
@@ -235,28 +246,26 @@ const modal = {
     },
 
     // Close the popup
-    close: function (modal) {
+    close: function ( modal ) {
+
+        const $modal = modal.classList.contains('c-modal') ? $(modal) : $(modal).closest(".c-modal");
 
         // clear window position from disabling the scroll
         $('body').css({
             height: "",
-            overflowY: "" 
+            overflowY: ""
         });
 
         $('html').css({
             maxHeight: "",
-            overflow: "" 
+            overflow: ""
         });
 
         // scroll to windows original position before enabling popup
         $(window).scrollTop($('body').attr("data-last-position"));
 
         // remove the modal from DOM
-        if($(modal).hasClass("c-modal")){
-            $(modal).remove();
-        } else {
-            $(modal).closest(".c-modal").remove();
-        }
+        $modal.remove();
 
     },
 
@@ -269,11 +278,11 @@ const modal = {
 
         const nsIndex = $(nsElements).index(nsCurrent);
 
-        if(nsIndex+nextprev < 0){
+        if ( nsIndex+nextprev < 0 ) {
             return false;
         }
 
-        if(nsIndex+nextprev > nsElements.length-1){
+        if ( nsIndex+nextprev > nsElements.length-1 ) {
             return false;
         }
 
