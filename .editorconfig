@@ -7,20 +7,15 @@ root = true
 [*]
 charset = utf-8
 end_of_line = lf
+indent_size = 2
 indent_style = space
 insert_final_newline = true
 
 # Get rid of whitespace to avoid diffs with a bunch of EOL changes
 trim_trailing_whitespace = true
 
-[*.js]
-indent_size = 4
-
-[{*.scss,*.css}]
-indent_size = 4
-
 [*.php]
 indent_size = 4
 
-[*.json]
-indent_size = 2
+[{*.css,*.scss}]
+indent_size = 4

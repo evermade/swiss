@@ -9,13 +9,13 @@
 let anchors = document.querySelectorAll('a');
 
 if (anchors.length > 0) {
-    for (let i = 0; i < anchors.length; ++i) {
-        let a = new RegExp('/' + window.location.host + '/');
-        let b = new RegExp(/mailto:/); // prevent target blank on mailto links
+  for (let i = 0; i < anchors.length; ++i) {
+    let a = new RegExp('/' + window.location.host + '/');
+    let b = new RegExp(/mailto:/); // prevent target blank on mailto links
 
-        if (!a.test(anchors[i].href) && !b.test(anchors[i].href)) {
-            anchors[i].setAttribute("target", "_blank");
-            anchors[i].setAttribute("rel", "noopener noreferrer");
-        }
+    if (!a.test(anchors[i].href) && !b.test(anchors[i].href)) {
+      anchors[i].setAttribute("target", "_blank");
+      anchors[i].setAttribute("rel", "noopener noreferrer");
     }
+  }
 }

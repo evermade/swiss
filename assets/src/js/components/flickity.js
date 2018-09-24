@@ -5,5 +5,5 @@ import Flickity from 'flickity';
 const elements = document.querySelectorAll('.js-flickity');
 
 if (elements.length > 0){
-    let flky = new Flickity('.js-flickity');
+  let flky = new Flickity('.js-flickity');
 }

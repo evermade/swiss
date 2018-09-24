@@ -1,4 +1,8 @@
-#Compiled source
+# Project specific ignores
+node_modules/
+assets/dist/
+
+# Compiled source
 *.com
 *.class
 *.dll
@@ -6,7 +10,7 @@
 *.o
 *.so
 
-#Packages
+# Packages
 *.7z
 *.dmg
 *.gz
@@ -16,13 +20,13 @@
 *.tar
 *.zip
 
-#Logs and databases
+# Logs and databases
 *.log
 *.sql
 *.sqlite
 logs/
 
-#OS generated files
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -31,8 +35,3 @@ logs/
 .Trashes
 ebs.db
 Thumbs.db
-
-#misc
-node_modules/
-assets/vendor/*
-assets/dist/
