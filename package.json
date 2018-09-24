@@ -8,6 +8,9 @@
     "dev": "webpack --hide-modules --watch",
     "clean": "del-cli ./assets/dist"
   },
+  "engines": {
+    "node" : ">=8.11.4"
+  },
   "babel": {
     "presets": [
       "@babel/preset-react",
