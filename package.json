@@ -1,0 +1,62 @@
+{
+  "name": "swiss",
+  "version": "2.0.0",
+  "description": "A Evermade Wordpress Theme Build",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && webpack -p",
+    "dev": "webpack --hide-modules --watch",
+    "clean": "del-cli ./assets/dist"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env"
+    ]
+  },
+  "browserslist": [
+    "> 1%"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:evermade/swiss.git"
+  },
+  "author": "Mr Evermade",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.4",
+    "autoprefixer": "^9.1.1",
+    "babel-loader": "^8.0.0",
+    "bootstrap-sass": "^3.3.7",
+    "css-loader": "^1.0.0",
+    "del": "^3.0.0",
+    "del-cli": "^1.1.0",
+    "eslint": "^5.6.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "file-loader": "^2.0.0",
+    "flickity": "^2.1.1",
+    "glob": "^7.1.2",
+    "headroom.js": "^0.9.4",
+    "jquery": "^1.12.0",
+    "mini-css-extract-plugin": "^0.4.3",
+    "node-sass": "^4.9.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "remodal": "^1.1.1",
+    "sass-loader": "^7.1.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^1.1.1",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1"
+  },
+  "devDependencies": {}
+}
