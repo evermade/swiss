@@ -7,7 +7,7 @@
         width: 125px;
         font-size: 0;
         color: transparent;
-        background-image: url(../img/logo-black.svg);
+        background-image: url(../../img/logo-black.svg);
         background-size: contain;
         background-position: 0 50%;
         background-repeat: no-repeat;
@@ -19,7 +19,7 @@
         .open-mobile-menu & {
 
             @include bp($breakpoint-navigation-mobile, max) {
-                background-image: url(../img/logo-white.svg);
+                background-image: url(../../img/logo-white.svg);
             }
         }
     }
