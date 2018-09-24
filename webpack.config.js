@@ -14,7 +14,9 @@ const DIST_DIR = `${ASSETS_DIR}/dist`;
 
 const config = {
   mode: 'development',
-  entry: `${SRC_DIR}/main.js`,
+  entry: {
+    main: `${SRC_DIR}/main.js`,
+  },
   output: {
     filename: '[name].js',
     path: DIST_DIR
