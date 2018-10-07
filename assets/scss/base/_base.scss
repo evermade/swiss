@@ -38,6 +38,7 @@ body {
     @include font-size(base);
 
     background-color: $color-body;
+    color: $color-text;
     font-family: $font-family-default;
     font-weight: $font-weight-default;
     line-height: $line-height-base;
