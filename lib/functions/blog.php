@@ -6,7 +6,7 @@
  * @param  array  $array [description]
  * @return [type]        [description]
  */
-function getPostsReadMore($postAmount, $postExcluded = "")
+function getPostsReadMore(int $postAmount, $postExcluded = "") : array
 {
     $args = array(
         'posts_per_page'  => $postAmount,
