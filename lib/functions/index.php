@@ -6,7 +6,7 @@
  * @param  array  $array [description]
  * @return [type]        [description]
  */
-function getFrom($key=null, $array=array(), $default=null)
+function getFrom($key=null, array $array=array(), $default=null)
 {
 
     // if we have an object
@@ -28,7 +28,7 @@ function getFrom($key=null, $array=array(), $default=null)
  * @param  [type] &$data [data pass in by reference to template]
  * @return [type]        [html]
  */
-function template($name = null, $data=null, $dir='templates')
+function template(?string $name = null, $data=null, string $dir='templates') : ?string
 {
     if (!file_exists((get_template_directory().'/'.$dir.'/'.$name))) {
         return null;
@@ -42,7 +42,7 @@ function template($name = null, $data=null, $dir='templates')
     return $html;
 }
 
-function getImageSizes($size = '')
+function getImageSizes(string $size = '')
 {
     global $_wp_additional_image_sizes;
 
@@ -57,10 +57,10 @@ function getImageSizes($size = '')
             $sizes[ $_size ]['crop'] = (bool) get_option($_size . '_crop');
         } elseif (isset($_wp_additional_image_sizes[ $_size ])) {
             $sizes[ $_size ] = array(
-                                'width' => $_wp_additional_image_sizes[ $_size ]['width'],
-                                'height' => $_wp_additional_image_sizes[ $_size ]['height'],
-                                'crop' =>  $_wp_additional_image_sizes[ $_size ]['crop']
-                        );
+                'width' => $_wp_additional_image_sizes[ $_size ]['width'],
+                'height' => $_wp_additional_image_sizes[ $_size ]['height'],
+                'crop' => $_wp_additional_image_sizes[ $_size ]['crop']
+            );
         }
     }
 
@@ -76,7 +76,7 @@ function getImageSizes($size = '')
     return $sizes;
 }
 
-function defaultImg($size='thumbnail', $text='img')
+function defaultImg(string $size='thumbnail', string $text='img') : string
 {
     $sizes = \Evermade\Swiss\getImageSizes();
 
@@ -87,7 +87,7 @@ function defaultImg($size='thumbnail', $text='img')
     return sprintf('https://fakeimg.pl/%sx%s/666/fff/?text=%s', 850, 850, $text);
 }
 
-function featuredImageUrl($size='medium-large', $post=null)
+function featuredImageUrl(string $size='medium-large', ?object $post=null) : ?string
 {
 
     //if we have no post then lets bring in the global post
@@ -109,12 +109,12 @@ function featuredImageUrl($size='medium-large', $post=null)
     return $img;
 }
 
-function isDev()
+function isDev() : bool
 {
     return (getenv('APP_ENV') == 'production')? false : true;
 }
 
-function debug($msg=null, $style='php')
+function debug($msg=null, string $style='php') : bool
 {
     if (\Evermade\Swiss\isDev()) {
         if ($style == 'php') {
@@ -135,10 +135,10 @@ function debug($msg=null, $style='php')
 /**
  * a generic sprintf for handling both arrays and single strings for quick if templating
  * @param  string $str   [description]
- * @param  [type] $input [description]
- * @return [type]        [description]
+ * @param  string|array $input [description]
+ * @return string|null        [description]
  */
-function sprint($str='', $input)
+function sprint(string $str='', $input) : ?string
 {
 
     //if an array
@@ -168,17 +168,21 @@ function sprint($str='', $input)
 
 /**
  * [excerpt description]
- * @param  [type]  $str   [description]
- * @param  integer $limit [description]
- * @return [type]         [description]
+ * @param  string  $str [description]
+ * @param  int $limit   [description]
+ * @return string       [description]
  */
-function excerpt($str, $limit = 255)
+function excerpt(string $str, int $limit = 255) : string
 {
     $strlen = strlen($str);
     return ($strlen>=$limit) ? substr($str, 0, $limit)."&hellip;" : $str;
 }
 
-function sharePage()
+/**
+ * [sharePage description]
+ * @return string  [description]
+ */
+function sharePage() : ?string
 {
     $html = null;
     $template = get_template_directory().'/templates/_share-page.php';
@@ -225,9 +229,9 @@ function sharePage()
  * @param  string $type  [description]
  * @param  string $url   [description]
  * @param  string $title [description]
- * @return string        [description]
+ * @return string|null   [description]
  */
-function shareLink($type='facebook', $url=null, $title='')
+function shareLink(string $type='facebook', ?string $url=null, string $title='') : ?string
 {
     $data = array();
     $urls = array(
@@ -267,7 +271,7 @@ function shareLink($type='facebook', $url=null, $title='')
  * Returns the fully qualified URL for a request.
  * @return string The request URL, including the protocol and query parameters.
  */
-function currentPageUrl()
+function currentPageUrl() : string
 {
     $pageURL = 'http';
     if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") {

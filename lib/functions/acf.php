@@ -7,7 +7,7 @@
  * @param  string $name [description]
  * @return [type]       [description]
  */
-function postBlocks($name='page', $version='v1')
+function postBlocks(string $name='page', string $version='v1') : bool
 {
 
     //lets check is ACF available
@@ -34,9 +34,9 @@ function postBlocks($name='page', $version='v1')
  *
  * @param string $size
  * @param [type] $key
- * @return void
+ * @return string|null
  */
-function getImageUrl($size='original', $data=null)
+function getImageUrl(string $size='original', $data=null) : ?string
 {
 
     // bail out if we dont have what we need
@@ -67,9 +67,9 @@ function getImageUrl($size='original', $data=null)
  * @param string $size
  * @param [type] $key
  * @param string $class
- * @return void
+ * @return string|null
  */
-function getImage($size='medium-large', $key=null, $class='')
+function getImage(string $size='medium-large', $key=null, string $class='') : ?string
 {
     $imageUrl = \Evermade\Swiss\Acf\getImageUrl($size, $key);
 
@@ -95,7 +95,7 @@ function getOption($group_fields)
     return $group_data;
 }
 
-function isAcfActive()
+function isAcfActive() : bool
 {
     return (function_exists('has_sub_field'))? true : false;
 }
@@ -103,9 +103,9 @@ function isAcfActive()
 /**
  * Register our local block field groups via PHP to help distribute and share blocks amognst projects
  *
- * @return void
+ * @return bool
  */
-function registerLocalBlockFieldGroups()
+function registerLocalBlockFieldGroups() : bool
 {
 
     // if we have ACF enabled
@@ -175,7 +175,7 @@ function registerLocalBlockFieldGroups()
     return false;
 }
 
-function defaultBlocks($value, $post_id, $field)
+function defaultBlocks($value, int $post_id, $field)
 {
     global $post;
 
