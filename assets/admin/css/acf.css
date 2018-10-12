@@ -1,0 +1,7 @@
+.layout .acf-fc-layout-handle[data-block-title]::after {
+    content: attr(data-block-title);
+    display: inline;
+    font-size: 85%;
+    opacity: 0.6;
+    margin: 0 0 0 1em;
+}
