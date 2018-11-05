@@ -1,68 +1,75 @@
 (function() {
-
     jQuery(function() {
-
-        function collapse( el ) {
-            el.addClass("-collapsed");
+        function collapse(el) {
+            el.classList.add("-collapsed");
         }
 
-        function styleSectionBlocks( el ) {
-            if ( el.data('layout') == 'section' ) {
-
-                el.css({'background': '#eee'});
-
-                if ( found > 1 ) {
-                    el.css({'margin-top': '40px'});
+        function styleSectionBlocks(el, first) {
+            if (el.getAttribute("data-layout") == "section") {
+                el.style.backgroundColor = "#eee";
+                if (!first) {
+                    el.style.marginTop = "40px";
                 }
-
-                found++;
-
             }
         }
 
-        function appendBlockTitle( el ) {
+        function readTextInputs(el) {
+            // define selectors to search
+            var selectors = [
+                'input[name*="_title"]',
+                'input[name*="_heading"]'
+            ];
+            var textInput = el.querySelector(selectors.join(","));
 
+            return textInput ? textInput.value : "";
+        }
+
+        function readTextareas(el) {
+            // define selectors to search
+            var selectors = [
+                'textarea[name*="_columns"]',
+                'textarea[name*="_hero"]',
+                'textarea[name*="_section-header"]',
+                'textarea[name*="_slide-list"]'
+            ];
+            var textarea = el.querySelector(selectors.join(","));
+
+            return textarea
+                ? jQuery("<div>" + textarea.value + "</div>")
+                      .find("h1,h2,h3")
+                      .text()
+                : "";
+        }
+
+        function appendBlockTitle(el) {
             // sniff the block title from the acf markup
 
-            var $handle = el.find('.acf-fc-layout-handle');
-            $handle.find('.js-block-title').remove();
+            // the handle is where we'll inject the title
+            var handle = el.querySelector(".acf-fc-layout-handle");
 
-            var blockTitle = '';
+            if (!handle) return false;
 
-            var titleInput = el.find('input[name*="_title"],input[name*="_heading"]');
-            blockTitle = titleInput.length ? titleInput.val() : '';
+            // look for a title in some text -inputs first
+            var blockTitle = readTextInputs(el);
 
-            if ( blockTitle == '' ) {
-                // no title-field, try to find first header in a columns textarea
-                var textarea = el.find('textarea[name*="_columns"],textarea[name*="_hero"],textarea[name*="_section-header"],textarea[name*="_slide-list"]');
-                if ( textarea.length ) {
-                    blockTitle = jQuery( '<div>'+textarea.val()+'</div>' ).find('h1,h2,h3').text();
-                }
-            }
+            // if a title wasn't found in any text inputs, try wysiwyg editors
+            blockTitle = blockTitle ? blockTitle : readTextareas(el);
 
-            if ( blockTitle != '' ) {
-                // just add data attribute, css will handle the rest
-                $handle[0].setAttribute('data-block-title', blockTitle);
-            }
-
+            // inject the block title in the acf markup if found
+            handle.setAttribute("data-block-title", blockTitle);
         }
 
         function runAll() {
-            jQuery('.layout').each(function(index) {
+            var blocks = document.querySelectorAll(".layout");
 
-                var $block = $(this);
-                collapse( $block );
-                styleSectionBlocks( $block );
-                appendBlockTitle( $block );
-
-            });
+            for (var i = 0; i < blocks.length; i++) {
+                collapse(blocks[i]);
+                styleSectionBlocks(blocks[i], i == 0);
+                appendBlockTitle(blocks[i]);
+            }
         }
 
-
         // initial run
-        var found = 0;
         runAll();
-
     });
-
 })();
