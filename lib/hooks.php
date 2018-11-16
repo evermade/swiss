@@ -47,7 +47,7 @@ function customMCEbuttons()
 // load our js
 function custom_tinymce_plugin($plugin_array)
 {
-    $plugin_array['custom_mce_em_buttons'] = get_template_directory_uri() .'/assets/admin/js/editor_plugin.js';
+    $plugin_array['custom_mce_em_buttons'] = get_template_directory_uri() .'/assets/admin/js/editor_plugin.' . filemtime(get_template_directory() . '/assets/admin/js/editor_plugin.js') . '.js';
     return $plugin_array;
 }
 
