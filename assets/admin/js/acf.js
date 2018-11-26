@@ -60,7 +60,7 @@
         }
 
         function runAll() {
-            var blocks = document.querySelectorAll(".layout");
+            var blocks = document.querySelectorAll(".layout:not(.acf-clone)");
 
             for (var i = 0; i < blocks.length; i++) {
                 collapse(blocks[i]);
